@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { ToDoListIncludeSchema } from '../inputTypeSchemas/ToDoListIncludeSchema'
-import { ToDoListWhereInputSchema } from '../inputTypeSchemas/ToDoListWhereInputSchema'
-import { ToDoListOrderByWithRelationInputSchema } from '../inputTypeSchemas/ToDoListOrderByWithRelationInputSchema'
-import { ToDoListWhereUniqueInputSchema } from '../inputTypeSchemas/ToDoListWhereUniqueInputSchema'
-import { ToDoListScalarFieldEnumSchema } from '../inputTypeSchemas/ToDoListScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+import { ToDoListIncludeSchema } from '../inputTypeSchemas/ToDoListIncludeSchema.js'
+import { ToDoListWhereInputSchema } from '../inputTypeSchemas/ToDoListWhereInputSchema.js'
+import { ToDoListOrderByWithRelationInputSchema } from '../inputTypeSchemas/ToDoListOrderByWithRelationInputSchema.js'
+import { ToDoListWhereUniqueInputSchema } from '../inputTypeSchemas/ToDoListWhereUniqueInputSchema.js'
+import { ToDoListScalarFieldEnumSchema } from '../inputTypeSchemas/ToDoListScalarFieldEnumSchema.js'
 import { ToDoFindManyArgsSchema } from "../outputTypeSchemas/ToDoFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
@@ -12,7 +12,6 @@ import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyA
 import { ToDoListCountOutputTypeArgsSchema } from "../outputTypeSchemas/ToDoListCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const ToDoListSelectSchema: z.ZodType<Prisma.ToDoListSelect> = z.object({
   id: z.boolean().optional(),
   label: z.boolean().optional(),
@@ -25,7 +24,6 @@ export const ToDoListSelectSchema: z.ZodType<Prisma.ToDoListSelect> = z.object({
   subjects: z.union([z.boolean(),z.lazy(() => SubjectFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => ToDoListCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const ToDoListFindFirstOrThrowArgsSchema: z.ZodType<Prisma.ToDoListFindFirstOrThrowArgs> = z.object({
   select: ToDoListSelectSchema.optional(),
   include: ToDoListIncludeSchema.optional(),
@@ -36,5 +34,4 @@ export const ToDoListFindFirstOrThrowArgsSchema: z.ZodType<Prisma.ToDoListFindFi
   skip: z.number().optional(),
   distinct: z.union([ ToDoListScalarFieldEnumSchema,ToDoListScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default ToDoListFindFirstOrThrowArgsSchema;

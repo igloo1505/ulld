@@ -1,11 +1,9 @@
-import {
-  TopicUncheckedUpdateManyWithoutKanbanInputSchema,
-  TopicUncheckedUpdateManyWithoutKanbanInputSchema_default
-} from "../../chunk-O7GQ4JMX.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  TopicUncheckedUpdateManyWithoutKanbanInputSchema,
-  TopicUncheckedUpdateManyWithoutKanbanInputSchema_default as default
-};
-//# sourceMappingURL=TopicUncheckedUpdateManyWithoutKanbanInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const TopicUncheckedUpdateManyWithoutKanbanInputSchema = z.object({
+    value: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastAccess: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default TopicUncheckedUpdateManyWithoutKanbanInputSchema;

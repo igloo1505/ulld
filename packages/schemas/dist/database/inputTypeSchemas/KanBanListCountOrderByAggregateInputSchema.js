@@ -1,10 +1,9 @@
-import {
-  KanBanListCountOrderByAggregateInputSchema,
-  KanBanListCountOrderByAggregateInputSchema_default
-} from "../../chunk-GO3U4SKA.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanBanListCountOrderByAggregateInputSchema,
-  KanBanListCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=KanBanListCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const KanBanListCountOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    indexWithinBoard: z.lazy(() => SortOrderSchema).optional(),
+    title: z.lazy(() => SortOrderSchema).optional(),
+    boardId: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default KanBanListCountOrderByAggregateInputSchema;

@@ -1,12 +1,10 @@
-import {
-  AutoSettingUpdateInputSchema,
-  AutoSettingUpdateInputSchema_default
-} from "../../chunk-3MCATGK5.js";
-import "../../chunk-GFG2PSHJ.js";
-import "../../chunk-76RQYGNI.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  AutoSettingUpdateInputSchema,
-  AutoSettingUpdateInputSchema_default as default
-};
-//# sourceMappingURL=AutoSettingUpdateInputSchema.js.map
+import { z } from 'zod';
+import { autoSettingSchema } from './autoSettingSchema.js';
+import { EnumautoSettingFieldUpdateOperationsInputSchema } from './EnumautoSettingFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+export const AutoSettingUpdateInputSchema = z.object({
+    type: z.union([z.lazy(() => autoSettingSchema), z.lazy(() => EnumautoSettingFieldUpdateOperationsInputSchema)]).optional(),
+    glob: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    value: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default AutoSettingUpdateInputSchema;

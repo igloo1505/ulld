@@ -1,9 +1,6 @@
-import {
-  EquationUpdatekeywordsInputSchema,
-  EquationUpdatekeywordsInputSchema_default
-} from "../../chunk-C4BQGMUK.js";
-export {
-  EquationUpdatekeywordsInputSchema,
-  EquationUpdatekeywordsInputSchema_default as default
-};
-//# sourceMappingURL=EquationUpdatekeywordsInputSchema.js.map
+import { z } from 'zod';
+export const EquationUpdatekeywordsInputSchema = z.object({
+    set: z.string().array().optional(),
+    push: z.union([z.string(), z.string().array()]).optional(),
+}).strict();
+export default EquationUpdatekeywordsInputSchema;

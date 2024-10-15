@@ -1,13 +1,15 @@
-import {
-  EnumTaskCategoryNullableWithAggregatesFilterSchema,
-  EnumTaskCategoryNullableWithAggregatesFilterSchema_default
-} from "../../chunk-TJD45Q2I.js";
-import "../../chunk-A3WXRJIM.js";
-import "../../chunk-4A6JCUBO.js";
-import "../../chunk-T4CHWTHS.js";
-import "../../chunk-45PPNBUK.js";
-export {
-  EnumTaskCategoryNullableWithAggregatesFilterSchema,
-  EnumTaskCategoryNullableWithAggregatesFilterSchema_default as default
-};
-//# sourceMappingURL=EnumTaskCategoryNullableWithAggregatesFilterSchema.js.map
+import { z } from 'zod';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { NestedEnumTaskCategoryNullableWithAggregatesFilterSchema } from './NestedEnumTaskCategoryNullableWithAggregatesFilterSchema.js';
+import { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema.js';
+import { NestedEnumTaskCategoryNullableFilterSchema } from './NestedEnumTaskCategoryNullableFilterSchema.js';
+export const EnumTaskCategoryNullableWithAggregatesFilterSchema = z.object({
+    equals: z.lazy(() => TaskCategorySchema).optional().nullable(),
+    in: z.lazy(() => TaskCategorySchema).array().optional().nullable(),
+    notIn: z.lazy(() => TaskCategorySchema).array().optional().nullable(),
+    not: z.union([z.lazy(() => TaskCategorySchema), z.lazy(() => NestedEnumTaskCategoryNullableWithAggregatesFilterSchema)]).optional().nullable(),
+    _count: z.lazy(() => NestedIntNullableFilterSchema).optional(),
+    _min: z.lazy(() => NestedEnumTaskCategoryNullableFilterSchema).optional(),
+    _max: z.lazy(() => NestedEnumTaskCategoryNullableFilterSchema).optional()
+}).strict();
+export default EnumTaskCategoryNullableWithAggregatesFilterSchema;

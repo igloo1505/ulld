@@ -1,16 +1,15 @@
-import {
-  PracticeExamScalarWhereWithAggregatesInputSchema,
-  PracticeExamScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-YXUTXVK4.js";
-import "../../chunk-S2WAI7QC.js";
-import "../../chunk-TPDRVVNK.js";
-import "../../chunk-XCQN6FNH.js";
-import "../../chunk-7P2FYBUR.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-export {
-  PracticeExamScalarWhereWithAggregatesInputSchema,
-  PracticeExamScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=PracticeExamScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+export const PracticeExamScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => PracticeExamScalarWhereWithAggregatesInputSchema), z.lazy(() => PracticeExamScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => PracticeExamScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => PracticeExamScalarWhereWithAggregatesInputSchema), z.lazy(() => PracticeExamScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    correctCount: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    inCorrectCount: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    timeLimitInSeconds: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    timeCompletedInSeconds: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    date: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default PracticeExamScalarWhereWithAggregatesInputSchema;

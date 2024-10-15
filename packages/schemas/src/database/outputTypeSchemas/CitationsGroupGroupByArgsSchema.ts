@@ -1,10 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { CitationsGroupWhereInputSchema } from '../inputTypeSchemas/CitationsGroupWhereInputSchema'
-import { CitationsGroupOrderByWithAggregationInputSchema } from '../inputTypeSchemas/CitationsGroupOrderByWithAggregationInputSchema'
-import { CitationsGroupScalarFieldEnumSchema } from '../inputTypeSchemas/CitationsGroupScalarFieldEnumSchema'
-import { CitationsGroupScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/CitationsGroupScalarWhereWithAggregatesInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+import { CitationsGroupWhereInputSchema } from '../inputTypeSchemas/CitationsGroupWhereInputSchema.js'
+import { CitationsGroupOrderByWithAggregationInputSchema } from '../inputTypeSchemas/CitationsGroupOrderByWithAggregationInputSchema.js'
+import { CitationsGroupScalarFieldEnumSchema } from '../inputTypeSchemas/CitationsGroupScalarFieldEnumSchema.js'
+import { CitationsGroupScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/CitationsGroupScalarWhereWithAggregatesInputSchema.js'
 export const CitationsGroupGroupByArgsSchema: z.ZodType<Prisma.CitationsGroupGroupByArgs> = z.object({
   where: CitationsGroupWhereInputSchema.optional(),
   orderBy: z.union([ CitationsGroupOrderByWithAggregationInputSchema.array(),CitationsGroupOrderByWithAggregationInputSchema ]).optional(),
@@ -13,5 +12,4 @@ export const CitationsGroupGroupByArgsSchema: z.ZodType<Prisma.CitationsGroupGro
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default CitationsGroupGroupByArgsSchema;

@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { EquationIncludeSchema } from '../inputTypeSchemas/EquationIncludeSchema'
-import { EquationWhereInputSchema } from '../inputTypeSchemas/EquationWhereInputSchema'
-import { EquationOrderByWithRelationInputSchema } from '../inputTypeSchemas/EquationOrderByWithRelationInputSchema'
-import { EquationWhereUniqueInputSchema } from '../inputTypeSchemas/EquationWhereUniqueInputSchema'
-import { EquationScalarFieldEnumSchema } from '../inputTypeSchemas/EquationScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+import { EquationIncludeSchema } from '../inputTypeSchemas/EquationIncludeSchema.js'
+import { EquationWhereInputSchema } from '../inputTypeSchemas/EquationWhereInputSchema.js'
+import { EquationOrderByWithRelationInputSchema } from '../inputTypeSchemas/EquationOrderByWithRelationInputSchema.js'
+import { EquationWhereUniqueInputSchema } from '../inputTypeSchemas/EquationWhereUniqueInputSchema.js'
+import { EquationScalarFieldEnumSchema } from '../inputTypeSchemas/EquationScalarFieldEnumSchema.js'
 import { RelatedValuesFindManyArgsSchema } from "../outputTypeSchemas/RelatedValuesFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
@@ -13,7 +13,6 @@ import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyA
 import { EquationCountOutputTypeArgsSchema } from "../outputTypeSchemas/EquationCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const EquationSelectSchema: z.ZodType<Prisma.EquationSelect> = z.object({
   id: z.boolean().optional(),
   equationId: z.boolean().optional(),
@@ -33,7 +32,6 @@ export const EquationSelectSchema: z.ZodType<Prisma.EquationSelect> = z.object({
   mdxNotes: z.union([z.boolean(),z.lazy(() => MdxNoteFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => EquationCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const EquationFindFirstOrThrowArgsSchema: z.ZodType<Prisma.EquationFindFirstOrThrowArgs> = z.object({
   select: EquationSelectSchema.optional(),
   include: EquationIncludeSchema.optional(),
@@ -44,5 +42,4 @@ export const EquationFindFirstOrThrowArgsSchema: z.ZodType<Prisma.EquationFindFi
   skip: z.number().optional(),
   distinct: z.union([ EquationScalarFieldEnumSchema,EquationScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default EquationFindFirstOrThrowArgsSchema;

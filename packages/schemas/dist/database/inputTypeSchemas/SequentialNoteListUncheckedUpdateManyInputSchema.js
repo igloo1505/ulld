@@ -1,10 +1,6 @@
-import {
-  SequentialNoteListUncheckedUpdateManyInputSchema,
-  SequentialNoteListUncheckedUpdateManyInputSchema_default
-} from "../../chunk-X5NC6HM6.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  SequentialNoteListUncheckedUpdateManyInputSchema,
-  SequentialNoteListUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=SequentialNoteListUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+export const SequentialNoteListUncheckedUpdateManyInputSchema = z.object({
+    sequentialKey: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default SequentialNoteListUncheckedUpdateManyInputSchema;

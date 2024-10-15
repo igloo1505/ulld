@@ -1,10 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { DailyFocusWhereInputSchema } from '../inputTypeSchemas/DailyFocusWhereInputSchema'
-import { DailyFocusOrderByWithAggregationInputSchema } from '../inputTypeSchemas/DailyFocusOrderByWithAggregationInputSchema'
-import { DailyFocusScalarFieldEnumSchema } from '../inputTypeSchemas/DailyFocusScalarFieldEnumSchema'
-import { DailyFocusScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/DailyFocusScalarWhereWithAggregatesInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+import { DailyFocusWhereInputSchema } from '../inputTypeSchemas/DailyFocusWhereInputSchema.js'
+import { DailyFocusOrderByWithAggregationInputSchema } from '../inputTypeSchemas/DailyFocusOrderByWithAggregationInputSchema.js'
+import { DailyFocusScalarFieldEnumSchema } from '../inputTypeSchemas/DailyFocusScalarFieldEnumSchema.js'
+import { DailyFocusScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/DailyFocusScalarWhereWithAggregatesInputSchema.js'
 export const DailyFocusGroupByArgsSchema: z.ZodType<Prisma.DailyFocusGroupByArgs> = z.object({
   where: DailyFocusWhereInputSchema.optional(),
   orderBy: z.union([ DailyFocusOrderByWithAggregationInputSchema.array(),DailyFocusOrderByWithAggregationInputSchema ]).optional(),
@@ -13,5 +12,4 @@ export const DailyFocusGroupByArgsSchema: z.ZodType<Prisma.DailyFocusGroupByArgs
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default DailyFocusGroupByArgsSchema;

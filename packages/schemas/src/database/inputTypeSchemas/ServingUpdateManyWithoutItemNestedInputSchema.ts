@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ServingCreateWithoutItemInputSchema } from './ServingCreateWithoutItemInputSchema';
-import { ServingUncheckedCreateWithoutItemInputSchema } from './ServingUncheckedCreateWithoutItemInputSchema';
-import { ServingCreateOrConnectWithoutItemInputSchema } from './ServingCreateOrConnectWithoutItemInputSchema';
-import { ServingUpsertWithWhereUniqueWithoutItemInputSchema } from './ServingUpsertWithWhereUniqueWithoutItemInputSchema';
-import { ServingCreateManyItemInputEnvelopeSchema } from './ServingCreateManyItemInputEnvelopeSchema';
-import { ServingWhereUniqueInputSchema } from './ServingWhereUniqueInputSchema';
-import { ServingUpdateWithWhereUniqueWithoutItemInputSchema } from './ServingUpdateWithWhereUniqueWithoutItemInputSchema';
-import { ServingUpdateManyWithWhereWithoutItemInputSchema } from './ServingUpdateManyWithWhereWithoutItemInputSchema';
-import { ServingScalarWhereInputSchema } from './ServingScalarWhereInputSchema';
-
+import { ServingCreateWithoutItemInputSchema } from './ServingCreateWithoutItemInputSchema.js';
+import { ServingUncheckedCreateWithoutItemInputSchema } from './ServingUncheckedCreateWithoutItemInputSchema.js';
+import { ServingCreateOrConnectWithoutItemInputSchema } from './ServingCreateOrConnectWithoutItemInputSchema.js';
+import { ServingUpsertWithWhereUniqueWithoutItemInputSchema } from './ServingUpsertWithWhereUniqueWithoutItemInputSchema.js';
+import { ServingCreateManyItemInputEnvelopeSchema } from './ServingCreateManyItemInputEnvelopeSchema.js';
+import { ServingWhereUniqueInputSchema } from './ServingWhereUniqueInputSchema.js';
+import { ServingUpdateWithWhereUniqueWithoutItemInputSchema } from './ServingUpdateWithWhereUniqueWithoutItemInputSchema.js';
+import { ServingUpdateManyWithWhereWithoutItemInputSchema } from './ServingUpdateManyWithWhereWithoutItemInputSchema.js';
+import { ServingScalarWhereInputSchema } from './ServingScalarWhereInputSchema.js';
 export const ServingUpdateManyWithoutItemNestedInputSchema: z.ZodType<Prisma.ServingUpdateManyWithoutItemNestedInput> = z.object({
   create: z.union([ z.lazy(() => ServingCreateWithoutItemInputSchema),z.lazy(() => ServingCreateWithoutItemInputSchema).array(),z.lazy(() => ServingUncheckedCreateWithoutItemInputSchema),z.lazy(() => ServingUncheckedCreateWithoutItemInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ServingCreateOrConnectWithoutItemInputSchema),z.lazy(() => ServingCreateOrConnectWithoutItemInputSchema).array() ]).optional(),
@@ -24,5 +22,4 @@ export const ServingUpdateManyWithoutItemNestedInputSchema: z.ZodType<Prisma.Ser
   updateMany: z.union([ z.lazy(() => ServingUpdateManyWithWhereWithoutItemInputSchema),z.lazy(() => ServingUpdateManyWithWhereWithoutItemInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => ServingScalarWhereInputSchema),z.lazy(() => ServingScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default ServingUpdateManyWithoutItemNestedInputSchema;

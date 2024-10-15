@@ -1,10 +1,6 @@
-import {
-  DJTSumOrderByAggregateInputSchema,
-  DJTSumOrderByAggregateInputSchema_default
-} from "../../chunk-I3TP2IZR.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DJTSumOrderByAggregateInputSchema,
-  DJTSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=DJTSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const DJTSumOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default DJTSumOrderByAggregateInputSchema;

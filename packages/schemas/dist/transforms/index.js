@@ -1,7 +1,9 @@
-import {
-  dateTimeStringTransform
-} from "../chunk-YVRRK3PZ.js";
-export {
-  dateTimeStringTransform
+export const dateTimeStringTransform = (a) => {
+    if (typeof a === "string") {
+        return new Date(a);
+    }
+    if (a instanceof Date) {
+        return a;
+    }
+    return new Date();
 };
-//# sourceMappingURL=index.js.map

@@ -1,11 +1,8 @@
-import {
-  GoogleCalendarAuthUncheckedUpdateManyInputSchema,
-  GoogleCalendarAuthUncheckedUpdateManyInputSchema_default
-} from "../../chunk-SEMAW2TQ.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-TKIJII67.js";
-export {
-  GoogleCalendarAuthUncheckedUpdateManyInputSchema,
-  GoogleCalendarAuthUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+export const GoogleCalendarAuthUncheckedUpdateManyInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    auth: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default GoogleCalendarAuthUncheckedUpdateManyInputSchema;

@@ -1,10 +1,6 @@
-import {
-  EquationSumOrderByAggregateInputSchema,
-  EquationSumOrderByAggregateInputSchema_default
-} from "../../chunk-UQK5STBQ.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  EquationSumOrderByAggregateInputSchema,
-  EquationSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=EquationSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const EquationSumOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default EquationSumOrderByAggregateInputSchema;

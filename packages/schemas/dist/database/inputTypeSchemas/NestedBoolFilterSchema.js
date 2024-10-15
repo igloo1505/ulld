@@ -1,9 +1,6 @@
-import {
-  NestedBoolFilterSchema,
-  NestedBoolFilterSchema_default
-} from "../../chunk-FAJNE46X.js";
-export {
-  NestedBoolFilterSchema,
-  NestedBoolFilterSchema_default as default
-};
-//# sourceMappingURL=NestedBoolFilterSchema.js.map
+import { z } from 'zod';
+export const NestedBoolFilterSchema = z.object({
+    equals: z.boolean().optional(),
+    not: z.union([z.boolean(), z.lazy(() => NestedBoolFilterSchema)]).optional(),
+}).strict();
+export default NestedBoolFilterSchema;

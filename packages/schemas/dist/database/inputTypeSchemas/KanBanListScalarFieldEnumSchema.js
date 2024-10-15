@@ -1,9 +1,3 @@
-import {
-  KanBanListScalarFieldEnumSchema,
-  KanBanListScalarFieldEnumSchema_default
-} from "../../chunk-BENEIZWA.js";
-export {
-  KanBanListScalarFieldEnumSchema,
-  KanBanListScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=KanBanListScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const KanBanListScalarFieldEnumSchema = z.enum(['id', 'indexWithinBoard', 'title', 'boardId']);
+export default KanBanListScalarFieldEnumSchema;

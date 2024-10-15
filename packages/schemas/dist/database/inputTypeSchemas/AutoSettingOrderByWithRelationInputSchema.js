@@ -1,12 +1,11 @@
-import {
-  AutoSettingOrderByWithRelationInputSchema,
-  AutoSettingOrderByWithRelationInputSchema_default
-} from "../../chunk-DBH6HSXO.js";
-import "../../chunk-Q6QXW4MG.js";
-import "../../chunk-EP4FEKMS.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  AutoSettingOrderByWithRelationInputSchema,
-  AutoSettingOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=AutoSettingOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { AutoSettingOrderByRelevanceInputSchema } from './AutoSettingOrderByRelevanceInputSchema.js';
+export const AutoSettingOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    type: z.lazy(() => SortOrderSchema).optional(),
+    glob: z.lazy(() => SortOrderSchema).optional(),
+    value: z.lazy(() => SortOrderSchema).optional(),
+    _relevance: z.lazy(() => AutoSettingOrderByRelevanceInputSchema).optional()
+}).strict();
+export default AutoSettingOrderByWithRelationInputSchema;

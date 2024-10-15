@@ -1,29 +1,24 @@
-import {
-  QuoteFindFirstArgsSchema,
-  QuoteFindFirstArgsSchema_default,
-  QuoteSelectSchema
-} from "../../chunk-PYH7RFVY.js";
-import "../../chunk-OMG37DQS.js";
-import "../../chunk-776SWEVY.js";
-import "../../chunk-MDC4V7ZL.js";
-import "../../chunk-LGRUCKTG.js";
-import "../../chunk-OQ4XMP32.js";
-import "../../chunk-BT6JUMEM.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-WVDZRY2Y.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  QuoteFindFirstArgsSchema,
-  QuoteSelectSchema,
-  QuoteFindFirstArgsSchema_default as default
-};
-//# sourceMappingURL=QuoteFindFirstArgsSchema.js.map
+import { z } from 'zod';
+import { QuoteWhereInputSchema } from '../inputTypeSchemas/QuoteWhereInputSchema.js';
+import { QuoteOrderByWithRelationInputSchema } from '../inputTypeSchemas/QuoteOrderByWithRelationInputSchema.js';
+import { QuoteWhereUniqueInputSchema } from '../inputTypeSchemas/QuoteWhereUniqueInputSchema.js';
+import { QuoteScalarFieldEnumSchema } from '../inputTypeSchemas/QuoteScalarFieldEnumSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const QuoteSelectSchema = z.object({
+    body: z.boolean().optional(),
+    author: z.boolean().optional(),
+    source: z.boolean().optional(),
+    pinned: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+}).strict();
+export const QuoteFindFirstArgsSchema = z.object({
+    select: QuoteSelectSchema.optional(),
+    where: QuoteWhereInputSchema.optional(),
+    orderBy: z.union([QuoteOrderByWithRelationInputSchema.array(), QuoteOrderByWithRelationInputSchema]).optional(),
+    cursor: QuoteWhereUniqueInputSchema.optional(),
+    take: z.number().optional(),
+    skip: z.number().optional(),
+    distinct: z.union([QuoteScalarFieldEnumSchema, QuoteScalarFieldEnumSchema.array()]).optional(),
+}).strict();
+export default QuoteFindFirstArgsSchema;

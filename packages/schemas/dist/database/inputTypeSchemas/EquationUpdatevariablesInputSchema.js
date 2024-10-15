@@ -1,9 +1,6 @@
-import {
-  EquationUpdatevariablesInputSchema,
-  EquationUpdatevariablesInputSchema_default
-} from "../../chunk-TJ6LKQUQ.js";
-export {
-  EquationUpdatevariablesInputSchema,
-  EquationUpdatevariablesInputSchema_default as default
-};
-//# sourceMappingURL=EquationUpdatevariablesInputSchema.js.map
+import { z } from 'zod';
+export const EquationUpdatevariablesInputSchema = z.object({
+    set: z.string().array().optional(),
+    push: z.union([z.string(), z.string().array()]).optional(),
+}).strict();
+export default EquationUpdatevariablesInputSchema;

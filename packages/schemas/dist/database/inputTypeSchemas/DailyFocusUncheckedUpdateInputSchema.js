@@ -1,11 +1,8 @@
-import {
-  DailyFocusUncheckedUpdateInputSchema,
-  DailyFocusUncheckedUpdateInputSchema_default
-} from "../../chunk-MC4CJQSB.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  DailyFocusUncheckedUpdateInputSchema,
-  DailyFocusUncheckedUpdateInputSchema_default as default
-};
-//# sourceMappingURL=DailyFocusUncheckedUpdateInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const DailyFocusUncheckedUpdateInputSchema = z.object({
+    value: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default DailyFocusUncheckedUpdateInputSchema;

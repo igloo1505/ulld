@@ -1,10 +1,12 @@
-import {
-  DefinitionMinOrderByAggregateInputSchema,
-  DefinitionMinOrderByAggregateInputSchema_default
-} from "../../chunk-W47HOKN2.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DefinitionMinOrderByAggregateInputSchema,
-  DefinitionMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=DefinitionMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const DefinitionMinOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    label: z.lazy(() => SortOrderSchema).optional(),
+    content: z.lazy(() => SortOrderSchema).optional(),
+    alphabeticalLabel: z.lazy(() => SortOrderSchema).optional(),
+    mdxNoteId: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default DefinitionMinOrderByAggregateInputSchema;

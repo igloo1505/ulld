@@ -1,11 +1,15 @@
-import {
-  WaitlistRequestPartialSchema,
-  WaitlistRequestSchema,
-  WaitlistRequestSchema_default
-} from "../../chunk-BIYSDWDS.js";
-export {
-  WaitlistRequestPartialSchema,
-  WaitlistRequestSchema,
-  WaitlistRequestSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestSchema.js.map
+import { z } from 'zod';
+/////////////////////////////////////////
+// WAITLIST REQUEST SCHEMA
+/////////////////////////////////////////
+export const WaitlistRequestSchema = z.object({
+    id: z.number().int(),
+    email: z.string(),
+    receivedOn: z.coerce.date(),
+    emailsSent: z.number().int(),
+});
+/////////////////////////////////////////
+// WAITLIST REQUEST PARTIAL SCHEMA
+/////////////////////////////////////////
+export const WaitlistRequestPartialSchema = WaitlistRequestSchema.partial();
+export default WaitlistRequestSchema;

@@ -1,10 +1,9 @@
-import {
-  ReadingListMaxOrderByAggregateInputSchema,
-  ReadingListMaxOrderByAggregateInputSchema_default
-} from "../../chunk-T7KC7DPK.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ReadingListMaxOrderByAggregateInputSchema,
-  ReadingListMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=ReadingListMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ReadingListMaxOrderByAggregateInputSchema = z.object({
+    name: z.lazy(() => SortOrderSchema).optional(),
+    description: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastUpdate: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default ReadingListMaxOrderByAggregateInputSchema;

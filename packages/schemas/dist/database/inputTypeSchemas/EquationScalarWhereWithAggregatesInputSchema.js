@@ -1,28 +1,24 @@
-import {
-  EquationScalarWhereWithAggregatesInputSchema,
-  EquationScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-QIX2QD6S.js";
-import "../../chunk-OSEN3URL.js";
-import "../../chunk-U3XMZABL.js";
-import "../../chunk-BZ55PUI6.js";
-import "../../chunk-VFKLP7TG.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-S2WAI7QC.js";
-import "../../chunk-TPDRVVNK.js";
-import "../../chunk-XCQN6FNH.js";
-import "../../chunk-7P2FYBUR.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-3OYDE7JL.js";
-import "../../chunk-JHSRNRH3.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  EquationScalarWhereWithAggregatesInputSchema,
-  EquationScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=EquationScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { JsonWithAggregatesFilterSchema } from './JsonWithAggregatesFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+export const EquationScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => EquationScalarWhereWithAggregatesInputSchema), z.lazy(() => EquationScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => EquationScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => EquationScalarWhereWithAggregatesInputSchema), z.lazy(() => EquationScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    equationId: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    title: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    desc: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    content: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    asPython: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    variableLegend: z.lazy(() => JsonWithAggregatesFilterSchema).optional(),
+    variables: z.lazy(() => StringNullableListFilterSchema).optional(),
+    keywords: z.lazy(() => StringNullableListFilterSchema).optional(),
+    createdAt: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+    lastAccess: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default EquationScalarWhereWithAggregatesInputSchema;

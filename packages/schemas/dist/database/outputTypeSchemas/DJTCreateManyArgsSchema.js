@@ -1,10 +1,7 @@
-import {
-  DJTCreateManyArgsSchema,
-  DJTCreateManyArgsSchema_default
-} from "../../chunk-N6IFINWE.js";
-import "../../chunk-VBDH3DP4.js";
-export {
-  DJTCreateManyArgsSchema,
-  DJTCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=DJTCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { DJTCreateManyInputSchema } from '../inputTypeSchemas/DJTCreateManyInputSchema.js';
+export const DJTCreateManyArgsSchema = z.object({
+    data: z.union([DJTCreateManyInputSchema, DJTCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default DJTCreateManyArgsSchema;

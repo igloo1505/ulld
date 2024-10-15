@@ -1,10 +1,7 @@
-import {
-  ReadingListCreateManyAndReturnArgsSchema,
-  ReadingListCreateManyAndReturnArgsSchema_default
-} from "../../chunk-UAJWB2NO.js";
-import "../../chunk-DTV766SZ.js";
-export {
-  ReadingListCreateManyAndReturnArgsSchema,
-  ReadingListCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=ReadingListCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { ReadingListCreateManyInputSchema } from '../inputTypeSchemas/ReadingListCreateManyInputSchema.js';
+export const ReadingListCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([ReadingListCreateManyInputSchema, ReadingListCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default ReadingListCreateManyAndReturnArgsSchema;

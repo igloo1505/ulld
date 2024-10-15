@@ -19,7 +19,6 @@
     "test": "prettier --check . && xo && ava"
   },
   "types": "dist/index.d.ts",
-  "exports": "./lib/index.js",
   "engines": {
     "node": ">=18.0.0"
   },

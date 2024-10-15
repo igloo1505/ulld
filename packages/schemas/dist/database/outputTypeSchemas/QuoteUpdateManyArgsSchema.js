@@ -1,25 +1,9 @@
-import {
-  QuoteUpdateManyArgsSchema,
-  QuoteUpdateManyArgsSchema_default
-} from "../../chunk-7JBDPEOW.js";
-import "../../chunk-HTNUGRZO.js";
-import "../../chunk-PH2L5N2H.js";
-import "../../chunk-BT6JUMEM.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  QuoteUpdateManyArgsSchema,
-  QuoteUpdateManyArgsSchema_default as default
-};
-//# sourceMappingURL=QuoteUpdateManyArgsSchema.js.map
+import { z } from 'zod';
+import { QuoteUpdateManyMutationInputSchema } from '../inputTypeSchemas/QuoteUpdateManyMutationInputSchema.js';
+import { QuoteUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/QuoteUncheckedUpdateManyInputSchema.js';
+import { QuoteWhereInputSchema } from '../inputTypeSchemas/QuoteWhereInputSchema.js';
+export const QuoteUpdateManyArgsSchema = z.object({
+    data: z.union([QuoteUpdateManyMutationInputSchema, QuoteUncheckedUpdateManyInputSchema]),
+    where: QuoteWhereInputSchema.optional(),
+}).strict();
+export default QuoteUpdateManyArgsSchema;

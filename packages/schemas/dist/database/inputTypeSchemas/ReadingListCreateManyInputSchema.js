@@ -1,9 +1,8 @@
-import {
-  ReadingListCreateManyInputSchema,
-  ReadingListCreateManyInputSchema_default
-} from "../../chunk-DTV766SZ.js";
-export {
-  ReadingListCreateManyInputSchema,
-  ReadingListCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=ReadingListCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const ReadingListCreateManyInputSchema = z.object({
+    name: z.string(),
+    description: z.string().optional().nullable(),
+    createdAt: z.coerce.date().optional(),
+    lastUpdate: z.coerce.date().optional()
+}).strict();
+export default ReadingListCreateManyInputSchema;

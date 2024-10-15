@@ -1,11 +1,12 @@
-import {
-  NoteTypePartialSchema,
-  NoteTypeSchema,
-  NoteTypeSchema_default
-} from "../../chunk-2MVGGONP.js";
-export {
-  NoteTypePartialSchema,
-  NoteTypeSchema,
-  NoteTypeSchema_default as default
-};
-//# sourceMappingURL=NoteTypeSchema.js.map
+import { z } from 'zod';
+/////////////////////////////////////////
+// NOTE TYPE SCHEMA
+/////////////////////////////////////////
+export const NoteTypeSchema = z.object({
+    name: z.string(),
+});
+/////////////////////////////////////////
+// NOTE TYPE PARTIAL SCHEMA
+/////////////////////////////////////////
+export const NoteTypePartialSchema = NoteTypeSchema.partial();
+export default NoteTypeSchema;

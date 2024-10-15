@@ -1,13 +1,7 @@
-import {
-  SettingsCreateManyAndReturnArgsSchema,
-  SettingsCreateManyAndReturnArgsSchema_default
-} from "../../chunk-S4S7CZYS.js";
-import "../../chunk-YVELXHHQ.js";
-import "../../chunk-XOBHDDTF.js";
-import "../../chunk-ZXTFXMHW.js";
-import "../../chunk-T77FYKUT.js";
-export {
-  SettingsCreateManyAndReturnArgsSchema,
-  SettingsCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=SettingsCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { SettingsCreateManyInputSchema } from '../inputTypeSchemas/SettingsCreateManyInputSchema.js';
+export const SettingsCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([SettingsCreateManyInputSchema, SettingsCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default SettingsCreateManyAndReturnArgsSchema;

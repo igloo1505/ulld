@@ -1,17 +1,49 @@
-import {
-  HealthReportOrderByWithAggregationInputSchema,
-  HealthReportOrderByWithAggregationInputSchema_default
-} from "../../chunk-AKIKB7WJ.js";
-import "../../chunk-IMQPYCVW.js";
-import "../../chunk-7KITCQU7.js";
-import "../../chunk-BD7ENEIH.js";
-import "../../chunk-UU2WREW6.js";
-import "../../chunk-PLBSOUHV.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  HealthReportOrderByWithAggregationInputSchema,
-  HealthReportOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=HealthReportOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { HealthReportCountOrderByAggregateInputSchema } from './HealthReportCountOrderByAggregateInputSchema.js';
+import { HealthReportAvgOrderByAggregateInputSchema } from './HealthReportAvgOrderByAggregateInputSchema.js';
+import { HealthReportMaxOrderByAggregateInputSchema } from './HealthReportMaxOrderByAggregateInputSchema.js';
+import { HealthReportMinOrderByAggregateInputSchema } from './HealthReportMinOrderByAggregateInputSchema.js';
+import { HealthReportSumOrderByAggregateInputSchema } from './HealthReportSumOrderByAggregateInputSchema.js';
+export const HealthReportOrderByWithAggregationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    title: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    summary: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    overall: z.lazy(() => SortOrderSchema).optional(),
+    skin: z.lazy(() => SortOrderSchema).optional(),
+    bloat: z.lazy(() => SortOrderSchema).optional(),
+    weight_feeling: z.lazy(() => SortOrderSchema).optional(),
+    fullness: z.lazy(() => SortOrderSchema).optional(),
+    weight: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    cardiacCapacity: z.lazy(() => SortOrderSchema).optional(),
+    jawLine: z.lazy(() => SortOrderSchema).optional(),
+    joints: z.lazy(() => SortOrderSchema).optional(),
+    flexibility: z.lazy(() => SortOrderSchema).optional(),
+    anxiety: z.lazy(() => SortOrderSchema).optional(),
+    anxiety_desc: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    mood_desc: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    mood: z.lazy(() => SortOrderSchema).optional(),
+    sexDrive: z.lazy(() => SortOrderSchema).optional(),
+    intruisiveThoughts: z.lazy(() => SortOrderSchema).optional(),
+    caffeineIntake: z.lazy(() => SortOrderSchema).optional(),
+    glutenIntake: z.lazy(() => SortOrderSchema).optional(),
+    sugarIntake: z.lazy(() => SortOrderSchema).optional(),
+    artificialSweetenerIntake: z.lazy(() => SortOrderSchema).optional(),
+    artificalDyes: z.lazy(() => SortOrderSchema).optional(),
+    sleepQuality: z.lazy(() => SortOrderSchema).optional(),
+    hydration: z.lazy(() => SortOrderSchema).optional(),
+    twitching: z.lazy(() => SortOrderSchema).optional(),
+    sleepHours: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    calorie_est: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    times_meals_more_than_gap_apart: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    estHoursInExcessFast: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    dietId: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    created: z.lazy(() => SortOrderSchema).optional(),
+    _count: z.lazy(() => HealthReportCountOrderByAggregateInputSchema).optional(),
+    _avg: z.lazy(() => HealthReportAvgOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => HealthReportMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => HealthReportMinOrderByAggregateInputSchema).optional(),
+    _sum: z.lazy(() => HealthReportSumOrderByAggregateInputSchema).optional()
+}).strict();
+export default HealthReportOrderByWithAggregationInputSchema;

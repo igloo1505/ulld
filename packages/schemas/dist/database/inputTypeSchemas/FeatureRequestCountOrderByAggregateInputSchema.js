@@ -1,10 +1,11 @@
-import {
-  FeatureRequestCountOrderByAggregateInputSchema,
-  FeatureRequestCountOrderByAggregateInputSchema_default
-} from "../../chunk-2Z5PX7BY.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  FeatureRequestCountOrderByAggregateInputSchema,
-  FeatureRequestCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const FeatureRequestCountOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    email: z.lazy(() => SortOrderSchema).optional(),
+    message: z.lazy(() => SortOrderSchema).optional(),
+    category: z.lazy(() => SortOrderSchema).optional(),
+    userBase: z.lazy(() => SortOrderSchema).optional(),
+    receivedOn: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default FeatureRequestCountOrderByAggregateInputSchema;

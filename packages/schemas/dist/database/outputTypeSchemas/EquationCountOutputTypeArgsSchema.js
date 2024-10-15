@@ -1,10 +1,6 @@
-import {
-  EquationCountOutputTypeArgsSchema,
-  EquationCountOutputTypeArgsSchema_default
-} from "../../chunk-MONL7CLA.js";
-import "../../chunk-3WHBANT2.js";
-export {
-  EquationCountOutputTypeArgsSchema,
-  EquationCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=EquationCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { EquationCountOutputTypeSelectSchema } from './EquationCountOutputTypeSelectSchema.js';
+export const EquationCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => EquationCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default EquationCountOutputTypeSelectSchema;

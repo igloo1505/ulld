@@ -1,18 +1,11 @@
-import {
-  CitationsGroupScalarWhereWithAggregatesInputSchema,
-  CitationsGroupScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-M7J2M3EO.js";
-import "../../chunk-BZ55PUI6.js";
-import "../../chunk-VFKLP7TG.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-3OYDE7JL.js";
-import "../../chunk-JHSRNRH3.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  CitationsGroupScalarWhereWithAggregatesInputSchema,
-  CitationsGroupScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+export const CitationsGroupScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => CitationsGroupScalarWhereWithAggregatesInputSchema), z.lazy(() => CitationsGroupScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => CitationsGroupScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => CitationsGroupScalarWhereWithAggregatesInputSchema), z.lazy(() => CitationsGroupScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    name: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    description: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+}).strict();
+export default CitationsGroupScalarWhereWithAggregatesInputSchema;

@@ -1,21 +1,14 @@
-import {
-  TopicScalarWhereWithAggregatesInputSchema,
-  TopicScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-F5HYC2IS.js";
-import "../../chunk-VKTRMAGB.js";
-import "../../chunk-Y6KFO3UF.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-XCQN6FNH.js";
-import "../../chunk-7P2FYBUR.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-3OYDE7JL.js";
-import "../../chunk-JHSRNRH3.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  TopicScalarWhereWithAggregatesInputSchema,
-  TopicScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=TopicScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+export const TopicScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => TopicScalarWhereWithAggregatesInputSchema), z.lazy(() => TopicScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => TopicScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => TopicScalarWhereWithAggregatesInputSchema), z.lazy(() => TopicScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    value: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    kanbanId: z.union([z.lazy(() => IntNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    createdAt: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+    lastAccess: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default TopicScalarWhereWithAggregatesInputSchema;

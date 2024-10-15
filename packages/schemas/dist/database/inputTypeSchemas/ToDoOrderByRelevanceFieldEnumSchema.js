@@ -1,9 +1,3 @@
-import {
-  ToDoOrderByRelevanceFieldEnumSchema,
-  ToDoOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-MEVAFWQ5.js";
-export {
-  ToDoOrderByRelevanceFieldEnumSchema,
-  ToDoOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=ToDoOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const ToDoOrderByRelevanceFieldEnumSchema = z.enum(['task', 'details', 'status']);
+export default ToDoOrderByRelevanceFieldEnumSchema;

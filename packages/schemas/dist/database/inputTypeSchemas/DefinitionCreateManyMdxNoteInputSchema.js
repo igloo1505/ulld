@@ -1,9 +1,10 @@
-import {
-  DefinitionCreateManyMdxNoteInputSchema,
-  DefinitionCreateManyMdxNoteInputSchema_default
-} from "../../chunk-WBF2Y67K.js";
-export {
-  DefinitionCreateManyMdxNoteInputSchema,
-  DefinitionCreateManyMdxNoteInputSchema_default as default
-};
-//# sourceMappingURL=DefinitionCreateManyMdxNoteInputSchema.js.map
+import { z } from 'zod';
+export const DefinitionCreateManyMdxNoteInputSchema = z.object({
+    id: z.string(),
+    label: z.string().optional().nullable(),
+    content: z.string().optional().nullable(),
+    alphabeticalLabel: z.string().optional().nullable(),
+    createdAt: z.coerce.date().optional(),
+    lastAccess: z.coerce.date().optional()
+}).strict();
+export default DefinitionCreateManyMdxNoteInputSchema;

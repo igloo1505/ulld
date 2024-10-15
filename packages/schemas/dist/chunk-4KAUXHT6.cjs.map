@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/BibOrderByRelevanceFieldEnumSchema.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AACX,IAAM,qCAAqC,EAAE,KAAK,CAAC,UAAU,CAAC;AACrE,IAAO,6CAAQ","sourcesContent":["import { z } from 'zod';\nexport const BibOrderByRelevanceFieldEnumSchema = z.enum(['filename']);\nexport default BibOrderByRelevanceFieldEnumSchema;"]}

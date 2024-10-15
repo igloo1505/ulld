@@ -1,11 +1,9 @@
-import {
-  RandomImageOrderByRelevanceInputSchema,
-  RandomImageOrderByRelevanceInputSchema_default
-} from "../../chunk-RUMOSXK6.js";
-import "../../chunk-35CHNW2P.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  RandomImageOrderByRelevanceInputSchema,
-  RandomImageOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=RandomImageOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { RandomImageOrderByRelevanceFieldEnumSchema } from './RandomImageOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const RandomImageOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => RandomImageOrderByRelevanceFieldEnumSchema), z.lazy(() => RandomImageOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default RandomImageOrderByRelevanceInputSchema;

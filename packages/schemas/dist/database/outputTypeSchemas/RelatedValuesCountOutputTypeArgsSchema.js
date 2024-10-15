@@ -1,10 +1,6 @@
-import {
-  RelatedValuesCountOutputTypeArgsSchema,
-  RelatedValuesCountOutputTypeArgsSchema_default
-} from "../../chunk-37QIGEAZ.js";
-import "../../chunk-ZKOREBRP.js";
-export {
-  RelatedValuesCountOutputTypeArgsSchema,
-  RelatedValuesCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { RelatedValuesCountOutputTypeSelectSchema } from './RelatedValuesCountOutputTypeSelectSchema.js';
+export const RelatedValuesCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => RelatedValuesCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default RelatedValuesCountOutputTypeSelectSchema;

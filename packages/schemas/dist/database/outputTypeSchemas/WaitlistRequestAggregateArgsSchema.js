@@ -1,22 +1,12 @@
-import {
-  WaitlistRequestAggregateArgsSchema,
-  WaitlistRequestAggregateArgsSchema_default
-} from "../../chunk-QALTOQXN.js";
-import "../../chunk-XL7WEO6A.js";
-import "../../chunk-LQBO56AD.js";
-import "../../chunk-QDGOPKB3.js";
-import "../../chunk-WBUZRDLR.js";
-import "../../chunk-7ELNXEAA.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-WVDZRY2Y.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  WaitlistRequestAggregateArgsSchema,
-  WaitlistRequestAggregateArgsSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestAggregateArgsSchema.js.map
+import { z } from 'zod';
+import { WaitlistRequestWhereInputSchema } from '../inputTypeSchemas/WaitlistRequestWhereInputSchema.js';
+import { WaitlistRequestOrderByWithRelationInputSchema } from '../inputTypeSchemas/WaitlistRequestOrderByWithRelationInputSchema.js';
+import { WaitlistRequestWhereUniqueInputSchema } from '../inputTypeSchemas/WaitlistRequestWhereUniqueInputSchema.js';
+export const WaitlistRequestAggregateArgsSchema = z.object({
+    where: WaitlistRequestWhereInputSchema.optional(),
+    orderBy: z.union([WaitlistRequestOrderByWithRelationInputSchema.array(), WaitlistRequestOrderByWithRelationInputSchema]).optional(),
+    cursor: WaitlistRequestWhereUniqueInputSchema.optional(),
+    take: z.number().optional(),
+    skip: z.number().optional(),
+}).strict();
+export default WaitlistRequestAggregateArgsSchema;

@@ -1,9 +1,7 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { DJTWhereInputSchema } from '../inputTypeSchemas/DJTWhereInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+import { DJTWhereInputSchema } from '../inputTypeSchemas/DJTWhereInputSchema.js'
 export const DJTDeleteManyArgsSchema: z.ZodType<Prisma.DJTDeleteManyArgs> = z.object({
   where: DJTWhereInputSchema.optional(),
 }).strict() ;
-
 export default DJTDeleteManyArgsSchema;

@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { EquationCountOrderByAggregateInputSchema } from './EquationCountOrderByAggregateInputSchema';
-import { EquationAvgOrderByAggregateInputSchema } from './EquationAvgOrderByAggregateInputSchema';
-import { EquationMaxOrderByAggregateInputSchema } from './EquationMaxOrderByAggregateInputSchema';
-import { EquationMinOrderByAggregateInputSchema } from './EquationMinOrderByAggregateInputSchema';
-import { EquationSumOrderByAggregateInputSchema } from './EquationSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { EquationCountOrderByAggregateInputSchema } from './EquationCountOrderByAggregateInputSchema.js';
+import { EquationAvgOrderByAggregateInputSchema } from './EquationAvgOrderByAggregateInputSchema.js';
+import { EquationMaxOrderByAggregateInputSchema } from './EquationMaxOrderByAggregateInputSchema.js';
+import { EquationMinOrderByAggregateInputSchema } from './EquationMinOrderByAggregateInputSchema.js';
+import { EquationSumOrderByAggregateInputSchema } from './EquationSumOrderByAggregateInputSchema.js';
 export const EquationOrderByWithAggregationInputSchema: z.ZodType<Prisma.EquationOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   equationId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -27,5 +25,4 @@ export const EquationOrderByWithAggregationInputSchema: z.ZodType<Prisma.Equatio
   _min: z.lazy(() => EquationMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => EquationSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default EquationOrderByWithAggregationInputSchema;

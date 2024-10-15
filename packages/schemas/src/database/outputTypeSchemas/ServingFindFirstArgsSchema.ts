@@ -1,14 +1,13 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { ServingIncludeSchema } from '../inputTypeSchemas/ServingIncludeSchema'
-import { ServingWhereInputSchema } from '../inputTypeSchemas/ServingWhereInputSchema'
-import { ServingOrderByWithRelationInputSchema } from '../inputTypeSchemas/ServingOrderByWithRelationInputSchema'
-import { ServingWhereUniqueInputSchema } from '../inputTypeSchemas/ServingWhereUniqueInputSchema'
-import { ServingScalarFieldEnumSchema } from '../inputTypeSchemas/ServingScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+import { ServingIncludeSchema } from '../inputTypeSchemas/ServingIncludeSchema.js'
+import { ServingWhereInputSchema } from '../inputTypeSchemas/ServingWhereInputSchema.js'
+import { ServingOrderByWithRelationInputSchema } from '../inputTypeSchemas/ServingOrderByWithRelationInputSchema.js'
+import { ServingWhereUniqueInputSchema } from '../inputTypeSchemas/ServingWhereUniqueInputSchema.js'
+import { ServingScalarFieldEnumSchema } from '../inputTypeSchemas/ServingScalarFieldEnumSchema.js'
 import { DietaryItemArgsSchema } from "../outputTypeSchemas/DietaryItemArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const ServingSelectSchema: z.ZodType<Prisma.ServingSelect> = z.object({
   id: z.boolean().optional(),
   dietaryItemId: z.boolean().optional(),
@@ -16,7 +15,6 @@ export const ServingSelectSchema: z.ZodType<Prisma.ServingSelect> = z.object({
   quant_guess: z.boolean().optional(),
   item: z.union([z.boolean(),z.lazy(() => DietaryItemArgsSchema)]).optional(),
 }).strict()
-
 export const ServingFindFirstArgsSchema: z.ZodType<Prisma.ServingFindFirstArgs> = z.object({
   select: ServingSelectSchema.optional(),
   include: ServingIncludeSchema.optional(),
@@ -27,5 +25,4 @@ export const ServingFindFirstArgsSchema: z.ZodType<Prisma.ServingFindFirstArgs> 
   skip: z.number().optional(),
   distinct: z.union([ ServingScalarFieldEnumSchema,ServingScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default ServingFindFirstArgsSchema;

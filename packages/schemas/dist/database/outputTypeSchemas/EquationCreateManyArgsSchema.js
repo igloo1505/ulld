@@ -1,14 +1,7 @@
-import {
-  EquationCreateManyArgsSchema,
-  EquationCreateManyArgsSchema_default
-} from "../../chunk-57MRGPJD.js";
-import "../../chunk-EO4T5KUC.js";
-import "../../chunk-P65CY5HZ.js";
-import "../../chunk-L5R5LLYC.js";
-import "../../chunk-ZXTFXMHW.js";
-import "../../chunk-T77FYKUT.js";
-export {
-  EquationCreateManyArgsSchema,
-  EquationCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=EquationCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { EquationCreateManyInputSchema } from '../inputTypeSchemas/EquationCreateManyInputSchema.js';
+export const EquationCreateManyArgsSchema = z.object({
+    data: z.union([EquationCreateManyInputSchema, EquationCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default EquationCreateManyArgsSchema;

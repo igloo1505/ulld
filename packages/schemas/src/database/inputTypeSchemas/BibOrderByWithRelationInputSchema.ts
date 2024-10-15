@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { BibEntryOrderByRelationAggregateInputSchema } from './BibEntryOrderByRelationAggregateInputSchema';
-import { BibOrderByRelevanceInputSchema } from './BibOrderByRelevanceInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { BibEntryOrderByRelationAggregateInputSchema } from './BibEntryOrderByRelationAggregateInputSchema.js';
+import { BibOrderByRelevanceInputSchema } from './BibOrderByRelevanceInputSchema.js';
 export const BibOrderByWithRelationInputSchema: z.ZodType<Prisma.BibOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   filename: z.lazy(() => SortOrderSchema).optional(),
@@ -13,5 +11,4 @@ export const BibOrderByWithRelationInputSchema: z.ZodType<Prisma.BibOrderByWithR
   entries: z.lazy(() => BibEntryOrderByRelationAggregateInputSchema).optional(),
   _relevance: z.lazy(() => BibOrderByRelevanceInputSchema).optional()
 }).strict();
-
 export default BibOrderByWithRelationInputSchema;

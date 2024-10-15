@@ -1,9 +1,3 @@
-import {
-  GoogleCalendarAuthScalarFieldEnumSchema,
-  GoogleCalendarAuthScalarFieldEnumSchema_default
-} from "../../chunk-4JIK343P.js";
-export {
-  GoogleCalendarAuthScalarFieldEnumSchema,
-  GoogleCalendarAuthScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const GoogleCalendarAuthScalarFieldEnumSchema = z.enum(['id', 'auth']);
+export default GoogleCalendarAuthScalarFieldEnumSchema;

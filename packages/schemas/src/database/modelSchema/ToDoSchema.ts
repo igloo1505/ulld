@@ -1,30 +1,28 @@
 import { z } from 'zod';
-import { TaskCategorySchema } from '../inputTypeSchemas/TaskCategorySchema'
-import type { MdxNoteWithRelations } from './MdxNoteSchema'
-import type { MdxNotePartialWithRelations } from './MdxNoteSchema'
-import type { TagWithRelations } from './TagSchema'
-import type { TagPartialWithRelations } from './TagSchema'
-import type { TopicWithRelations } from './TopicSchema'
-import type { TopicPartialWithRelations } from './TopicSchema'
-import type { SubjectWithRelations } from './SubjectSchema'
-import type { SubjectPartialWithRelations } from './SubjectSchema'
-import type { ToDoListWithRelations } from './ToDoListSchema'
-import type { ToDoListPartialWithRelations } from './ToDoListSchema'
-import { MdxNoteWithRelationsSchema } from './MdxNoteSchema'
-import { MdxNotePartialWithRelationsSchema } from './MdxNoteSchema'
-import { TagWithRelationsSchema } from './TagSchema'
-import { TagPartialWithRelationsSchema } from './TagSchema'
-import { TopicWithRelationsSchema } from './TopicSchema'
-import { TopicPartialWithRelationsSchema } from './TopicSchema'
-import { SubjectWithRelationsSchema } from './SubjectSchema'
-import { SubjectPartialWithRelationsSchema } from './SubjectSchema'
-import { ToDoListWithRelationsSchema } from './ToDoListSchema'
-import { ToDoListPartialWithRelationsSchema } from './ToDoListSchema'
-
+import { TaskCategorySchema } from '../inputTypeSchemas/TaskCategorySchema.js'
+import type { MdxNoteWithRelations } from './MdxNoteSchema.js'
+import type { MdxNotePartialWithRelations } from './MdxNoteSchema.js'
+import type { TagWithRelations } from './TagSchema.js'
+import type { TagPartialWithRelations } from './TagSchema.js'
+import type { TopicWithRelations } from './TopicSchema.js'
+import type { TopicPartialWithRelations } from './TopicSchema.js'
+import type { SubjectWithRelations } from './SubjectSchema.js'
+import type { SubjectPartialWithRelations } from './SubjectSchema.js'
+import type { ToDoListWithRelations } from './ToDoListSchema.js'
+import type { ToDoListPartialWithRelations } from './ToDoListSchema.js'
+import { MdxNoteWithRelationsSchema } from './MdxNoteSchema.js'
+import { MdxNotePartialWithRelationsSchema } from './MdxNoteSchema.js'
+import { TagWithRelationsSchema } from './TagSchema.js'
+import { TagPartialWithRelationsSchema } from './TagSchema.js'
+import { TopicWithRelationsSchema } from './TopicSchema.js'
+import { TopicPartialWithRelationsSchema } from './TopicSchema.js'
+import { SubjectWithRelationsSchema } from './SubjectSchema.js'
+import { SubjectPartialWithRelationsSchema } from './SubjectSchema.js'
+import { ToDoListWithRelationsSchema } from './ToDoListSchema.js'
+import { ToDoListPartialWithRelationsSchema } from './ToDoListSchema.js'
 /////////////////////////////////////////
 // TO DO SCHEMA
 /////////////////////////////////////////
-
 export const ToDoSchema = z.object({
   category: TaskCategorySchema.nullable(),
   id: z.number().int(),
@@ -39,21 +37,15 @@ export const ToDoSchema = z.object({
   toDoListId: z.number().int().nullable(),
   completedOn: z.coerce.date().nullable(),
 })
-
 export type ToDo = z.infer<typeof ToDoSchema>
-
 /////////////////////////////////////////
 // TO DO PARTIAL SCHEMA
 /////////////////////////////////////////
-
 export const ToDoPartialSchema = ToDoSchema.partial()
-
 export type ToDoPartial = z.infer<typeof ToDoPartialSchema>
-
 /////////////////////////////////////////
 // TO DO RELATION SCHEMA
 /////////////////////////////////////////
-
 export type ToDoRelations = {
   associatedNotes: MdxNoteWithRelations[];
   tags: TagWithRelations[];
@@ -63,9 +55,7 @@ export type ToDoRelations = {
   child: ToDoWithRelations[];
   ToDoList?: ToDoListWithRelations | null;
 };
-
 export type ToDoWithRelations = z.infer<typeof ToDoSchema> & ToDoRelations
-
 export const ToDoWithRelationsSchema: z.ZodType<ToDoWithRelations> = ToDoSchema.merge(z.object({
   associatedNotes: z.lazy(() => MdxNoteWithRelationsSchema).array(),
   tags: z.lazy(() => TagWithRelationsSchema).array(),
@@ -75,11 +65,9 @@ export const ToDoWithRelationsSchema: z.ZodType<ToDoWithRelations> = ToDoSchema.
   child: z.lazy(() => ToDoWithRelationsSchema).array(),
   ToDoList: z.lazy(() => ToDoListWithRelationsSchema).nullable(),
 }))
-
 /////////////////////////////////////////
 // TO DO PARTIAL RELATION SCHEMA
 /////////////////////////////////////////
-
 export type ToDoPartialRelations = {
   associatedNotes?: MdxNotePartialWithRelations[];
   tags?: TagPartialWithRelations[];
@@ -89,9 +77,7 @@ export type ToDoPartialRelations = {
   child?: ToDoPartialWithRelations[];
   ToDoList?: ToDoListPartialWithRelations | null;
 };
-
 export type ToDoPartialWithRelations = z.infer<typeof ToDoPartialSchema> & ToDoPartialRelations
-
 export const ToDoPartialWithRelationsSchema: z.ZodType<ToDoPartialWithRelations> = ToDoPartialSchema.merge(z.object({
   associatedNotes: z.lazy(() => MdxNotePartialWithRelationsSchema).array(),
   tags: z.lazy(() => TagPartialWithRelationsSchema).array(),
@@ -101,9 +87,7 @@ export const ToDoPartialWithRelationsSchema: z.ZodType<ToDoPartialWithRelations>
   child: z.lazy(() => ToDoPartialWithRelationsSchema).array(),
   ToDoList: z.lazy(() => ToDoListPartialWithRelationsSchema).nullable(),
 })).partial()
-
 export type ToDoWithPartialRelations = z.infer<typeof ToDoSchema> & ToDoPartialRelations
-
 export const ToDoWithPartialRelationsSchema: z.ZodType<ToDoWithPartialRelations> = ToDoSchema.merge(z.object({
   associatedNotes: z.lazy(() => MdxNotePartialWithRelationsSchema).array(),
   tags: z.lazy(() => TagPartialWithRelationsSchema).array(),
@@ -113,5 +97,4 @@ export const ToDoWithPartialRelationsSchema: z.ZodType<ToDoWithPartialRelations>
   child: z.lazy(() => ToDoPartialWithRelationsSchema).array(),
   ToDoList: z.lazy(() => ToDoListPartialWithRelationsSchema).nullable(),
 }).partial())
-
 export default ToDoSchema;

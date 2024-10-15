@@ -1,27 +1,28 @@
-import {
-  ToDoScalarWhereInputSchema,
-  ToDoScalarWhereInputSchema_default
-} from "../../chunk-QSWRLQUO.js";
-import "../../chunk-O7PIU7VL.js";
-import "../../chunk-4A6JCUBO.js";
-import "../../chunk-T4CHWTHS.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  ToDoScalarWhereInputSchema,
-  ToDoScalarWhereInputSchema_default as default
-};
-//# sourceMappingURL=ToDoScalarWhereInputSchema.js.map
+import { z } from 'zod';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeNullableFilterSchema } from './DateTimeNullableFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { EnumTaskCategoryNullableFilterSchema } from './EnumTaskCategoryNullableFilterSchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+export const ToDoScalarWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => ToDoScalarWhereInputSchema), z.lazy(() => ToDoScalarWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => ToDoScalarWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => ToDoScalarWhereInputSchema), z.lazy(() => ToDoScalarWhereInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    createdAt: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    task: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    dueAt: z.union([z.lazy(() => DateTimeNullableFilterSchema), z.coerce.date()]).optional().nullable(),
+    details: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    parentId: z.union([z.lazy(() => IntNullableFilterSchema), z.number()]).optional().nullable(),
+    category: z.union([z.lazy(() => EnumTaskCategoryNullableFilterSchema), z.lazy(() => TaskCategorySchema)]).optional().nullable(),
+    bookmarked: z.union([z.lazy(() => BoolFilterSchema), z.boolean()]).optional(),
+    status: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    priority: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    toDoListId: z.union([z.lazy(() => IntNullableFilterSchema), z.number()]).optional().nullable(),
+    completedOn: z.union([z.lazy(() => DateTimeNullableFilterSchema), z.coerce.date()]).optional().nullable(),
+}).strict();
+export default ToDoScalarWhereInputSchema;

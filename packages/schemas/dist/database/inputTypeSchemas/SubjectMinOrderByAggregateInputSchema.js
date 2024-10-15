@@ -1,10 +1,9 @@
-import {
-  SubjectMinOrderByAggregateInputSchema,
-  SubjectMinOrderByAggregateInputSchema_default
-} from "../../chunk-ESSK2IMU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SubjectMinOrderByAggregateInputSchema,
-  SubjectMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SubjectMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SubjectMinOrderByAggregateInputSchema = z.object({
+    value: z.lazy(() => SortOrderSchema).optional(),
+    kanbanId: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SubjectMinOrderByAggregateInputSchema;

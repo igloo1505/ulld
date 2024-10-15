@@ -1,9 +1,3 @@
-import {
-  KanbanScalarFieldEnumSchema,
-  KanbanScalarFieldEnumSchema_default
-} from "../../chunk-ZMBA6D2Z.js";
-export {
-  KanbanScalarFieldEnumSchema,
-  KanbanScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=KanbanScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const KanbanScalarFieldEnumSchema = z.enum(['id', 'title', 'createdAt', 'lastUpdate']);
+export default KanbanScalarFieldEnumSchema;

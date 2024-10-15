@@ -1,18 +1,29 @@
-import {
-  DietUpdateManyMutationInputSchema,
-  DietUpdateManyMutationInputSchema_default
-} from "../../chunk-5P7JIK5S.js";
-import "../../chunk-E3GOTFX5.js";
-import "../../chunk-LVS4FGLV.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-GNOT4FVG.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  DietUpdateManyMutationInputSchema,
-  DietUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=DietUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema.js';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
+import { EnumTERTIARY_TOGGLEFieldUpdateOperationsInputSchema } from './EnumTERTIARY_TOGGLEFieldUpdateOperationsInputSchema.js';
+import { NullableFloatFieldUpdateOperationsInputSchema } from './NullableFloatFieldUpdateOperationsInputSchema.js';
+import { DietUpdategoalsInputSchema } from './DietUpdategoalsInputSchema.js';
+import { DIETARY_GOALSchema } from './DIETARY_GOALSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const DietUpdateManyMutationInputSchema = z.object({
+    name: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    summary: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    activelyFollowing: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)]).optional(),
+    gf: z.union([z.lazy(() => TERTIARY_TOGGLESchema), z.lazy(() => EnumTERTIARY_TOGGLEFieldUpdateOperationsInputSchema)]).optional(),
+    vegan: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)]).optional(),
+    pescatarian: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)]).optional(),
+    vegetarian: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)]).optional(),
+    fasting: z.union([z.lazy(() => TERTIARY_TOGGLESchema), z.lazy(() => EnumTERTIARY_TOGGLEFieldUpdateOperationsInputSchema)]).optional(),
+    cardioTraining: z.union([z.lazy(() => TERTIARY_TOGGLESchema), z.lazy(() => EnumTERTIARY_TOGGLEFieldUpdateOperationsInputSchema)]).optional(),
+    weightTraining: z.union([z.lazy(() => TERTIARY_TOGGLESchema), z.lazy(() => EnumTERTIARY_TOGGLEFieldUpdateOperationsInputSchema)]).optional(),
+    carb: z.union([z.number(), z.lazy(() => NullableFloatFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    pro: z.union([z.number(), z.lazy(() => NullableFloatFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    fat: z.union([z.number(), z.lazy(() => NullableFloatFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    goals: z.union([z.lazy(() => DietUpdategoalsInputSchema), z.lazy(() => DIETARY_GOALSchema).array()]).optional(),
+    created: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastUpdate: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default DietUpdateManyMutationInputSchema;

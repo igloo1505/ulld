@@ -1,12 +1,23 @@
-import {
-  JsonWithAggregatesFilterSchema,
-  JsonWithAggregatesFilterSchema_default
-} from "../../chunk-OSEN3URL.js";
-import "../../chunk-U3XMZABL.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-IIKKCTNR.js";
-export {
-  JsonWithAggregatesFilterSchema,
-  JsonWithAggregatesFilterSchema_default as default
-};
-//# sourceMappingURL=JsonWithAggregatesFilterSchema.js.map
+import { z } from 'zod';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedJsonFilterSchema } from './NestedJsonFilterSchema.js';
+export const JsonWithAggregatesFilterSchema = z.object({
+    equals: InputJsonValueSchema.optional(),
+    path: z.string().array().optional(),
+    string_contains: z.string().optional(),
+    string_starts_with: z.string().optional(),
+    string_ends_with: z.string().optional(),
+    array_contains: InputJsonValueSchema.optional().nullable(),
+    array_starts_with: InputJsonValueSchema.optional().nullable(),
+    array_ends_with: InputJsonValueSchema.optional().nullable(),
+    lt: InputJsonValueSchema.optional(),
+    lte: InputJsonValueSchema.optional(),
+    gt: InputJsonValueSchema.optional(),
+    gte: InputJsonValueSchema.optional(),
+    not: InputJsonValueSchema.optional(),
+    _count: z.lazy(() => NestedIntFilterSchema).optional(),
+    _min: z.lazy(() => NestedJsonFilterSchema).optional(),
+    _max: z.lazy(() => NestedJsonFilterSchema).optional()
+}).strict();
+export default JsonWithAggregatesFilterSchema;

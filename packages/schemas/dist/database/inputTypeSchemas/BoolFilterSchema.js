@@ -1,10 +1,7 @@
-import {
-  BoolFilterSchema,
-  BoolFilterSchema_default
-} from "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-export {
-  BoolFilterSchema,
-  BoolFilterSchema_default as default
-};
-//# sourceMappingURL=BoolFilterSchema.js.map
+import { z } from 'zod';
+import { NestedBoolFilterSchema } from './NestedBoolFilterSchema.js';
+export const BoolFilterSchema = z.object({
+    equals: z.boolean().optional(),
+    not: z.union([z.boolean(), z.lazy(() => NestedBoolFilterSchema)]).optional(),
+}).strict();
+export default BoolFilterSchema;

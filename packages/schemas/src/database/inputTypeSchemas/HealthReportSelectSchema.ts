@@ -1,7 +1,6 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
+import type { Prisma } from '@ulld/database/db';
 import { DietArgsSchema } from "../outputTypeSchemas/DietArgsSchema"
-
 export const HealthReportSelectSchema: z.ZodType<Prisma.HealthReportSelect> = z.object({
   id: z.boolean().optional(),
   title: z.boolean().optional(),
@@ -38,5 +37,4 @@ export const HealthReportSelectSchema: z.ZodType<Prisma.HealthReportSelect> = z.
   created: z.boolean().optional(),
   currentDiet: z.union([z.boolean(),z.lazy(() => DietArgsSchema)]).optional(),
 }).strict()
-
 export default HealthReportSelectSchema;

@@ -1,0 +1,1 @@
+{"version":3,"file":"ToDoListUpdateManyArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/ToDoListUpdateManyArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAIhD,eAAO,MAAM,4BAA4B,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,sBAAsB,CAGvE,CAAE;AACb,eAAe,4BAA4B,CAAC"}

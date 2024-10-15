@@ -1,10 +1,6 @@
-import {
-  EnumImageAlignmentFieldUpdateOperationsInputSchema,
-  EnumImageAlignmentFieldUpdateOperationsInputSchema_default
-} from "../../chunk-ME22URTV.js";
-import "../../chunk-XOBHDDTF.js";
-export {
-  EnumImageAlignmentFieldUpdateOperationsInputSchema,
-  EnumImageAlignmentFieldUpdateOperationsInputSchema_default as default
-};
-//# sourceMappingURL=EnumImageAlignmentFieldUpdateOperationsInputSchema.js.map
+import { z } from 'zod';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
+export const EnumImageAlignmentFieldUpdateOperationsInputSchema = z.object({
+    set: z.lazy(() => ImageAlignmentSchema).optional()
+}).strict();
+export default EnumImageAlignmentFieldUpdateOperationsInputSchema;

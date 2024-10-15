@@ -1,13 +1,11 @@
-import {
-  ServingUncheckedUpdateManyWithoutItemInputSchema,
-  ServingUncheckedUpdateManyWithoutItemInputSchema_default
-} from "../../chunk-CKWHLXAV.js";
-import "../../chunk-P5ZWTHAL.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-GNOT4FVG.js";
-import "../../chunk-TKIJII67.js";
-export {
-  ServingUncheckedUpdateManyWithoutItemInputSchema,
-  ServingUncheckedUpdateManyWithoutItemInputSchema_default as default
-};
-//# sourceMappingURL=ServingUncheckedUpdateManyWithoutItemInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { NullableFloatFieldUpdateOperationsInputSchema } from './NullableFloatFieldUpdateOperationsInputSchema.js';
+import { QUANTITY_GUESSSchema } from './QUANTITY_GUESSSchema.js';
+import { NullableEnumQUANTITY_GUESSFieldUpdateOperationsInputSchema } from './NullableEnumQUANTITY_GUESSFieldUpdateOperationsInputSchema.js';
+export const ServingUncheckedUpdateManyWithoutItemInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    quant_oz: z.union([z.number(), z.lazy(() => NullableFloatFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    quant_guess: z.union([z.lazy(() => QUANTITY_GUESSSchema), z.lazy(() => NullableEnumQUANTITY_GUESSFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default ServingUncheckedUpdateManyWithoutItemInputSchema;

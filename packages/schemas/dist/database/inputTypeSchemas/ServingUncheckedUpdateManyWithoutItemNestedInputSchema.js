@@ -1,54 +1,24 @@
-import {
-  ServingUncheckedUpdateManyWithoutItemNestedInputSchema,
-  ServingUncheckedUpdateManyWithoutItemNestedInputSchema_default
-} from "../../chunk-2NTNEQGL.js";
-import "../../chunk-WZVXK2VQ.js";
-import "../../chunk-ADXXXKPT.js";
-import "../../chunk-QX3GHUID.js";
-import "../../chunk-VFB5WXXW.js";
-import "../../chunk-U4ZAQM7N.js";
-import "../../chunk-LDU6EOA5.js";
-import "../../chunk-CKWHLXAV.js";
-import "../../chunk-JVQHRCWA.js";
-import "../../chunk-P5ZWTHAL.js";
-import "../../chunk-Q4TGFXPZ.js";
-import "../../chunk-RGEOUWDE.js";
-import "../../chunk-LVZPXU3C.js";
-import "../../chunk-O4KQDRJZ.js";
-import "../../chunk-IBJBBFSU.js";
-import "../../chunk-BRBARM24.js";
-import "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-GNOT4FVG.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  ServingUncheckedUpdateManyWithoutItemNestedInputSchema,
-  ServingUncheckedUpdateManyWithoutItemNestedInputSchema_default as default
-};
-//# sourceMappingURL=ServingUncheckedUpdateManyWithoutItemNestedInputSchema.js.map
+import { z } from 'zod';
+import { ServingCreateWithoutItemInputSchema } from './ServingCreateWithoutItemInputSchema.js';
+import { ServingUncheckedCreateWithoutItemInputSchema } from './ServingUncheckedCreateWithoutItemInputSchema.js';
+import { ServingCreateOrConnectWithoutItemInputSchema } from './ServingCreateOrConnectWithoutItemInputSchema.js';
+import { ServingUpsertWithWhereUniqueWithoutItemInputSchema } from './ServingUpsertWithWhereUniqueWithoutItemInputSchema.js';
+import { ServingCreateManyItemInputEnvelopeSchema } from './ServingCreateManyItemInputEnvelopeSchema.js';
+import { ServingWhereUniqueInputSchema } from './ServingWhereUniqueInputSchema.js';
+import { ServingUpdateWithWhereUniqueWithoutItemInputSchema } from './ServingUpdateWithWhereUniqueWithoutItemInputSchema.js';
+import { ServingUpdateManyWithWhereWithoutItemInputSchema } from './ServingUpdateManyWithWhereWithoutItemInputSchema.js';
+import { ServingScalarWhereInputSchema } from './ServingScalarWhereInputSchema.js';
+export const ServingUncheckedUpdateManyWithoutItemNestedInputSchema = z.object({
+    create: z.union([z.lazy(() => ServingCreateWithoutItemInputSchema), z.lazy(() => ServingCreateWithoutItemInputSchema).array(), z.lazy(() => ServingUncheckedCreateWithoutItemInputSchema), z.lazy(() => ServingUncheckedCreateWithoutItemInputSchema).array()]).optional(),
+    connectOrCreate: z.union([z.lazy(() => ServingCreateOrConnectWithoutItemInputSchema), z.lazy(() => ServingCreateOrConnectWithoutItemInputSchema).array()]).optional(),
+    upsert: z.union([z.lazy(() => ServingUpsertWithWhereUniqueWithoutItemInputSchema), z.lazy(() => ServingUpsertWithWhereUniqueWithoutItemInputSchema).array()]).optional(),
+    createMany: z.lazy(() => ServingCreateManyItemInputEnvelopeSchema).optional(),
+    set: z.union([z.lazy(() => ServingWhereUniqueInputSchema), z.lazy(() => ServingWhereUniqueInputSchema).array()]).optional(),
+    disconnect: z.union([z.lazy(() => ServingWhereUniqueInputSchema), z.lazy(() => ServingWhereUniqueInputSchema).array()]).optional(),
+    delete: z.union([z.lazy(() => ServingWhereUniqueInputSchema), z.lazy(() => ServingWhereUniqueInputSchema).array()]).optional(),
+    connect: z.union([z.lazy(() => ServingWhereUniqueInputSchema), z.lazy(() => ServingWhereUniqueInputSchema).array()]).optional(),
+    update: z.union([z.lazy(() => ServingUpdateWithWhereUniqueWithoutItemInputSchema), z.lazy(() => ServingUpdateWithWhereUniqueWithoutItemInputSchema).array()]).optional(),
+    updateMany: z.union([z.lazy(() => ServingUpdateManyWithWhereWithoutItemInputSchema), z.lazy(() => ServingUpdateManyWithWhereWithoutItemInputSchema).array()]).optional(),
+    deleteMany: z.union([z.lazy(() => ServingScalarWhereInputSchema), z.lazy(() => ServingScalarWhereInputSchema).array()]).optional(),
+}).strict();
+export default ServingUncheckedUpdateManyWithoutItemNestedInputSchema;

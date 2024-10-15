@@ -1,9 +1,10 @@
-import {
-  JsonValueSchema,
-  JsonValueSchema_default
-} from "../../chunk-WWHEEPM6.js";
-export {
-  JsonValueSchema,
-  JsonValueSchema_default as default
-};
-//# sourceMappingURL=JsonValueSchema.js.map
+import { z } from 'zod';
+export const JsonValueSchema = z.lazy(() => z.union([
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.literal(null),
+    z.record(z.lazy(() => JsonValueSchema.optional())),
+    z.array(z.lazy(() => JsonValueSchema)),
+]));
+export default JsonValueSchema;

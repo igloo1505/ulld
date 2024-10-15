@@ -1,9 +1,5 @@
-import {
-  NullableDateTimeFieldUpdateOperationsInputSchema,
-  NullableDateTimeFieldUpdateOperationsInputSchema_default
-} from "../../chunk-FYUHI5X3.js";
-export {
-  NullableDateTimeFieldUpdateOperationsInputSchema,
-  NullableDateTimeFieldUpdateOperationsInputSchema_default as default
-};
-//# sourceMappingURL=NullableDateTimeFieldUpdateOperationsInputSchema.js.map
+import { z } from 'zod';
+export const NullableDateTimeFieldUpdateOperationsInputSchema = z.object({
+    set: z.coerce.date().optional().nullable()
+}).strict();
+export default NullableDateTimeFieldUpdateOperationsInputSchema;

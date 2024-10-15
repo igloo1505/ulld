@@ -1,25 +1,96 @@
-import {
-  fromMdxStringOptSchema,
-  internalMdxStringParseParamSchema,
-  internalMdxStringParseParamSchemaOptionalAppConfig,
-  mdxNoteFromStringPropsSchema,
-  mdxNoteIntriguingValSummaryPropsSchema,
-  parseParamsSchema,
-  unifiedMdxParserParamSchema,
-  unifiedMdxParserSchema
-} from "../../../chunk-5FYPI22Y.js";
-import "../../../chunk-KDNETXET.js";
-import "../../../chunk-HZ5UTSVD.js";
-import "../../../chunk-YTEVVTH6.js";
-import "../../../chunk-5YA7CDO7.js";
-export {
-  fromMdxStringOptSchema,
-  internalMdxStringParseParamSchema,
-  internalMdxStringParseParamSchemaOptionalAppConfig,
-  mdxNoteFromStringPropsSchema,
-  mdxNoteIntriguingValSummaryPropsSchema,
-  parseParamsSchema,
-  unifiedMdxParserParamSchema,
-  unifiedMdxParserSchema
-};
-//# sourceMappingURL=main.js.map
+import { mdxNotePropsSchema } from "../../../api/prismaMdxRelations/mdxNote/classProps.js";
+import { minimalParsableAppConfig } from "@ulld/configschema/zod-refinedAppConfigs";
+import { documentTypeConfigSchema, documentTypeConfigSchemaInner, } from "@ulld/configschema/zod/documentConfigSchema";
+import { appConfigSchema } from "@ulld/configschema/zod/main";
+import { z } from "zod";
+import { extendedFrontMatterSchema, frontMatterSchema, } from "../../frontMatter/main.js";
+export const mdxNoteFromStringPropsSchema = mdxNotePropsSchema
+    .pick({
+    raw: true,
+    rootRelativePath: true,
+    bookmarked: true,
+})
+    .merge(z.object({
+    docTypeData: documentTypeConfigSchema,
+}));
+export const mdxNoteIntriguingValSummaryPropsSchema = mdxNotePropsSchema
+    .omit({
+    latexTitle: true,
+    raw: true,
+    floatImages: true,
+    formatted: true,
+    citations: true,
+    quickLinkId: true,
+    citationsListOrder: true,
+    outgoingQuickLinks: true,
+    equationIds: true,
+    isProtected: true,
+    sequentialKey: true,
+    sequentialIndex: true,
+    remoteUrl: true,
+    noLog: true,
+    saveFormatted: true,
+    trackRemote: true,
+    topics: true,
+    tags: true,
+    subjects: true,
+});
+const noteDetailsReturn = z.object({
+    id: z.number().int(),
+    quickLink: z.string().nullish(),
+    bookmarked: z.boolean(),
+    sequentialKey: z.string().nullish(),
+    sequentialIndex: z.number().nullish(),
+    firstSync: z.date().or(z.string()),
+    lastSync: z.date().or(z.string()),
+});
+export const unifiedMdxParserParamSchema = z.object({
+    content: z.string(),
+    docTypeData: documentTypeConfigSchemaInner.required({
+        docType: true,
+        id: true,
+        url: true,
+    }),
+    // docTypeData: z
+    //   .union([
+    //     documentTypeConfigSchemaInner.required({
+    //       docType: true,
+    //       id: true,
+    //       url: true,
+    //     }),
+    //     z.object({}),
+    //   ])
+    //   .default({}),
+    data: frontMatterSchema.deepPartial(),
+    appConfig: appConfigSchema,
+    serverClient: z.any(),
+    db: noteDetailsReturn.optional(),
+});
+export const unifiedMdxParserSchema = z
+    .function()
+    .args(unifiedMdxParserParamSchema)
+    .returns(z.promise(extendedFrontMatterSchema));
+export const fromMdxStringOptSchema = z
+    .object({
+    noteTypeId: z.string().optional(),
+})
+    .default({});
+export const parseParamsSchema = z.object({
+    appConfig: minimalParsableAppConfig,
+    docTypeData: z.union([documentTypeConfigSchema, z.object({})]).default({}),
+    parser: unifiedMdxParserSchema,
+});
+export const internalMdxStringParseParamSchema = z.object({
+    _opts: fromMdxStringOptSchema,
+    props: mdxNoteFromStringPropsSchema,
+    parseParams: parseParamsSchema,
+});
+export const internalMdxStringParseParamSchemaOptionalAppConfig = internalMdxStringParseParamSchema
+    .omit({
+    parseParams: true,
+})
+    .extend({
+    parseParams: parseParamsSchema.partial({
+        appConfig: true,
+    }),
+});

@@ -1,10 +1,7 @@
-import {
-  WhiteboardMinOrderByAggregateInputSchema,
-  WhiteboardMinOrderByAggregateInputSchema_default
-} from "../../chunk-J25RR3UG.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  WhiteboardMinOrderByAggregateInputSchema,
-  WhiteboardMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=WhiteboardMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const WhiteboardMinOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    data: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default WhiteboardMinOrderByAggregateInputSchema;

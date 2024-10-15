@@ -1,9 +1,3 @@
-import {
-  WaitlistRequestOrderByRelevanceFieldEnumSchema,
-  WaitlistRequestOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-QDGOPKB3.js";
-export {
-  WaitlistRequestOrderByRelevanceFieldEnumSchema,
-  WaitlistRequestOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const WaitlistRequestOrderByRelevanceFieldEnumSchema = z.enum(['email']);
+export default WaitlistRequestOrderByRelevanceFieldEnumSchema;

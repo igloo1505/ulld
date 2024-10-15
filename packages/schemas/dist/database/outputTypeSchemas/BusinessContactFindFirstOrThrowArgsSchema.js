@@ -1,27 +1,27 @@
-import {
-  BusinessContactFindFirstOrThrowArgsSchema,
-  BusinessContactFindFirstOrThrowArgsSchema_default,
-  BusinessContactSelectSchema
-} from "../../chunk-MPSQCPJA.js";
-import "../../chunk-UMC2HT6W.js";
-import "../../chunk-IXBV5ZV4.js";
-import "../../chunk-TPXEAHL6.js";
-import "../../chunk-G5FF5Q2V.js";
-import "../../chunk-F6RVJCDM.js";
-import "../../chunk-4TBUKZ6H.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-WVDZRY2Y.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  BusinessContactFindFirstOrThrowArgsSchema,
-  BusinessContactSelectSchema,
-  BusinessContactFindFirstOrThrowArgsSchema_default as default
-};
-//# sourceMappingURL=BusinessContactFindFirstOrThrowArgsSchema.js.map
+import { z } from 'zod';
+import { BusinessContactWhereInputSchema } from '../inputTypeSchemas/BusinessContactWhereInputSchema.js';
+import { BusinessContactOrderByWithRelationInputSchema } from '../inputTypeSchemas/BusinessContactOrderByWithRelationInputSchema.js';
+import { BusinessContactWhereUniqueInputSchema } from '../inputTypeSchemas/BusinessContactWhereUniqueInputSchema.js';
+import { BusinessContactScalarFieldEnumSchema } from '../inputTypeSchemas/BusinessContactScalarFieldEnumSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const BusinessContactSelectSchema = z.object({
+    id: z.boolean().optional(),
+    companyName: z.boolean().optional(),
+    contactName: z.boolean().optional(),
+    contactPreference: z.boolean().optional(),
+    email: z.boolean().optional(),
+    phone: z.boolean().optional(),
+    message: z.boolean().optional(),
+    purpose: z.boolean().optional(),
+}).strict();
+export const BusinessContactFindFirstOrThrowArgsSchema = z.object({
+    select: BusinessContactSelectSchema.optional(),
+    where: BusinessContactWhereInputSchema.optional(),
+    orderBy: z.union([BusinessContactOrderByWithRelationInputSchema.array(), BusinessContactOrderByWithRelationInputSchema]).optional(),
+    cursor: BusinessContactWhereUniqueInputSchema.optional(),
+    take: z.number().optional(),
+    skip: z.number().optional(),
+    distinct: z.union([BusinessContactScalarFieldEnumSchema, BusinessContactScalarFieldEnumSchema.array()]).optional(),
+}).strict();
+export default BusinessContactFindFirstOrThrowArgsSchema;

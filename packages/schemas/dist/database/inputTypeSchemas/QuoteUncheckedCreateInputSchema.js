@@ -1,9 +1,9 @@
-import {
-  QuoteUncheckedCreateInputSchema,
-  QuoteUncheckedCreateInputSchema_default
-} from "../../chunk-G4FY7B4N.js";
-export {
-  QuoteUncheckedCreateInputSchema,
-  QuoteUncheckedCreateInputSchema_default as default
-};
-//# sourceMappingURL=QuoteUncheckedCreateInputSchema.js.map
+import { z } from 'zod';
+export const QuoteUncheckedCreateInputSchema = z.object({
+    body: z.string(),
+    author: z.string(),
+    source: z.string().optional().nullable(),
+    pinned: z.boolean().optional(),
+    createdAt: z.coerce.date().optional()
+}).strict();
+export default QuoteUncheckedCreateInputSchema;

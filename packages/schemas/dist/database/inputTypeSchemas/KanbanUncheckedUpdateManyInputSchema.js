@@ -1,12 +1,11 @@
-import {
-  KanbanUncheckedUpdateManyInputSchema,
-  KanbanUncheckedUpdateManyInputSchema_default
-} from "../../chunk-ZGBD7U7C.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  KanbanUncheckedUpdateManyInputSchema,
-  KanbanUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=KanbanUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const KanbanUncheckedUpdateManyInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    title: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastUpdate: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default KanbanUncheckedUpdateManyInputSchema;

@@ -1,10 +1,7 @@
-import {
-  KanBanListCreateManyAndReturnArgsSchema,
-  KanBanListCreateManyAndReturnArgsSchema_default
-} from "../../chunk-4TNIS53E.js";
-import "../../chunk-KGXKIKBX.js";
-export {
-  KanBanListCreateManyAndReturnArgsSchema,
-  KanBanListCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=KanBanListCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { KanBanListCreateManyInputSchema } from '../inputTypeSchemas/KanBanListCreateManyInputSchema.js';
+export const KanBanListCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([KanBanListCreateManyInputSchema, KanBanListCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default KanBanListCreateManyAndReturnArgsSchema;

@@ -1,10 +1,9 @@
-import {
-  DietaryItemSumOrderByAggregateInputSchema,
-  DietaryItemSumOrderByAggregateInputSchema_default
-} from "../../chunk-TADXQLRT.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DietaryItemSumOrderByAggregateInputSchema,
-  DietaryItemSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=DietaryItemSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const DietaryItemSumOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    gi: z.lazy(() => SortOrderSchema).optional(),
+    calsPerOz: z.lazy(() => SortOrderSchema).optional(),
+    impactScore: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default DietaryItemSumOrderByAggregateInputSchema;

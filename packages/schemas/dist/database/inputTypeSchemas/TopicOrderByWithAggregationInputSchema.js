@@ -1,17 +1,20 @@
-import {
-  TopicOrderByWithAggregationInputSchema,
-  TopicOrderByWithAggregationInputSchema_default
-} from "../../chunk-WEZTN24G.js";
-import "../../chunk-NCRCHHG7.js";
-import "../../chunk-WE6X3JVD.js";
-import "../../chunk-4G62NWGE.js";
-import "../../chunk-HK4W55RN.js";
-import "../../chunk-MG56Q72T.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TopicOrderByWithAggregationInputSchema,
-  TopicOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=TopicOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { TopicCountOrderByAggregateInputSchema } from './TopicCountOrderByAggregateInputSchema.js';
+import { TopicAvgOrderByAggregateInputSchema } from './TopicAvgOrderByAggregateInputSchema.js';
+import { TopicMaxOrderByAggregateInputSchema } from './TopicMaxOrderByAggregateInputSchema.js';
+import { TopicMinOrderByAggregateInputSchema } from './TopicMinOrderByAggregateInputSchema.js';
+import { TopicSumOrderByAggregateInputSchema } from './TopicSumOrderByAggregateInputSchema.js';
+export const TopicOrderByWithAggregationInputSchema = z.object({
+    value: z.lazy(() => SortOrderSchema).optional(),
+    kanbanId: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional(),
+    _count: z.lazy(() => TopicCountOrderByAggregateInputSchema).optional(),
+    _avg: z.lazy(() => TopicAvgOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => TopicMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => TopicMinOrderByAggregateInputSchema).optional(),
+    _sum: z.lazy(() => TopicSumOrderByAggregateInputSchema).optional()
+}).strict();
+export default TopicOrderByWithAggregationInputSchema;

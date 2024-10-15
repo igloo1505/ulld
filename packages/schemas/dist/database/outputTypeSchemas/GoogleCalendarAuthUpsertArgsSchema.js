@@ -1,24 +1,19 @@
-import {
-  GoogleCalendarAuthSelectSchema,
-  GoogleCalendarAuthUpsertArgsSchema,
-  GoogleCalendarAuthUpsertArgsSchema_default
-} from "../../chunk-7WHSKM66.js";
-import "../../chunk-GKWFDQDS.js";
-import "../../chunk-IRKKYEOI.js";
-import "../../chunk-SDSWJTRD.js";
-import "../../chunk-NYPOJTFG.js";
-import "../../chunk-5DVVRNLD.js";
-import "../../chunk-L4VQ3HR7.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  GoogleCalendarAuthSelectSchema,
-  GoogleCalendarAuthUpsertArgsSchema,
-  GoogleCalendarAuthUpsertArgsSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthUpsertArgsSchema.js.map
+import { z } from 'zod';
+import { GoogleCalendarAuthWhereUniqueInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthWhereUniqueInputSchema.js';
+import { GoogleCalendarAuthCreateInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthCreateInputSchema.js';
+import { GoogleCalendarAuthUncheckedCreateInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthUncheckedCreateInputSchema.js';
+import { GoogleCalendarAuthUpdateInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthUpdateInputSchema.js';
+import { GoogleCalendarAuthUncheckedUpdateInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthUncheckedUpdateInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const GoogleCalendarAuthSelectSchema = z.object({
+    id: z.boolean().optional(),
+    auth: z.boolean().optional(),
+}).strict();
+export const GoogleCalendarAuthUpsertArgsSchema = z.object({
+    select: GoogleCalendarAuthSelectSchema.optional(),
+    where: GoogleCalendarAuthWhereUniqueInputSchema,
+    create: z.union([GoogleCalendarAuthCreateInputSchema, GoogleCalendarAuthUncheckedCreateInputSchema]),
+    update: z.union([GoogleCalendarAuthUpdateInputSchema, GoogleCalendarAuthUncheckedUpdateInputSchema]),
+}).strict();
+export default GoogleCalendarAuthUpsertArgsSchema;

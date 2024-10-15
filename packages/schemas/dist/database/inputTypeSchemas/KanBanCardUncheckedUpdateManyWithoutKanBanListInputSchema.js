@@ -1,11 +1,10 @@
-import {
-  KanBanCardUncheckedUpdateManyWithoutKanBanListInputSchema,
-  KanBanCardUncheckedUpdateManyWithoutKanBanListInputSchema_default
-} from "../../chunk-63JFI33A.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-TKIJII67.js";
-export {
-  KanBanCardUncheckedUpdateManyWithoutKanBanListInputSchema,
-  KanBanCardUncheckedUpdateManyWithoutKanBanListInputSchema_default as default
-};
-//# sourceMappingURL=KanBanCardUncheckedUpdateManyWithoutKanBanListInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+export const KanBanCardUncheckedUpdateManyWithoutKanBanListInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    indexWithinList: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    label: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    details: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default KanBanCardUncheckedUpdateManyWithoutKanBanListInputSchema;

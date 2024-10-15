@@ -1,9 +1,5 @@
-import {
-  MdxNoteCreateoutgoingQuickLinksInputSchema,
-  MdxNoteCreateoutgoingQuickLinksInputSchema_default
-} from "../../chunk-HAVVN653.js";
-export {
-  MdxNoteCreateoutgoingQuickLinksInputSchema,
-  MdxNoteCreateoutgoingQuickLinksInputSchema_default as default
-};
-//# sourceMappingURL=MdxNoteCreateoutgoingQuickLinksInputSchema.js.map
+import { z } from 'zod';
+export const MdxNoteCreateoutgoingQuickLinksInputSchema = z.object({
+    set: z.string().array()
+}).strict();
+export default MdxNoteCreateoutgoingQuickLinksInputSchema;

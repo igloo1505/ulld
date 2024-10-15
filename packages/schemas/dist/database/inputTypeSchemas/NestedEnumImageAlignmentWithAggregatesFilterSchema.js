@@ -1,12 +1,14 @@
-import {
-  NestedEnumImageAlignmentWithAggregatesFilterSchema,
-  NestedEnumImageAlignmentWithAggregatesFilterSchema_default
-} from "../../chunk-QZQVVGZE.js";
-import "../../chunk-I2T6ONVQ.js";
-import "../../chunk-XOBHDDTF.js";
-import "../../chunk-IIKKCTNR.js";
-export {
-  NestedEnumImageAlignmentWithAggregatesFilterSchema,
-  NestedEnumImageAlignmentWithAggregatesFilterSchema_default as default
-};
-//# sourceMappingURL=NestedEnumImageAlignmentWithAggregatesFilterSchema.js.map
+import { z } from 'zod';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedEnumImageAlignmentFilterSchema } from './NestedEnumImageAlignmentFilterSchema.js';
+export const NestedEnumImageAlignmentWithAggregatesFilterSchema = z.object({
+    equals: z.lazy(() => ImageAlignmentSchema).optional(),
+    in: z.lazy(() => ImageAlignmentSchema).array().optional(),
+    notIn: z.lazy(() => ImageAlignmentSchema).array().optional(),
+    not: z.union([z.lazy(() => ImageAlignmentSchema), z.lazy(() => NestedEnumImageAlignmentWithAggregatesFilterSchema)]).optional(),
+    _count: z.lazy(() => NestedIntFilterSchema).optional(),
+    _min: z.lazy(() => NestedEnumImageAlignmentFilterSchema).optional(),
+    _max: z.lazy(() => NestedEnumImageAlignmentFilterSchema).optional()
+}).strict();
+export default NestedEnumImageAlignmentWithAggregatesFilterSchema;

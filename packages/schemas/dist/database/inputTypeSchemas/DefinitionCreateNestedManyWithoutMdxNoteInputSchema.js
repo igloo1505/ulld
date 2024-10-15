@@ -1,47 +1,13 @@
-import {
-  DefinitionCreateNestedManyWithoutMdxNoteInputSchema,
-  DefinitionCreateNestedManyWithoutMdxNoteInputSchema_default
-} from "../../chunk-DAJCJGTB.js";
-import "../../chunk-DLKC4WBS.js";
-import "../../chunk-NI7GTVHO.js";
-import "../../chunk-WBF2Y67K.js";
-import "../../chunk-D6VBWLLC.js";
-import "../../chunk-YF5QNY5O.js";
-import "../../chunk-6Q2POV45.js";
-import "../../chunk-LSOXTUZL.js";
-import "../../chunk-O6F53QLE.js";
-import "../../chunk-KLW7VRYK.js";
-import "../../chunk-QRRELMSU.js";
-import "../../chunk-YSW3P2HE.js";
-import "../../chunk-O7PIU7VL.js";
-import "../../chunk-4A6JCUBO.js";
-import "../../chunk-V2TZ67XY.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-T4CHWTHS.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DefinitionCreateNestedManyWithoutMdxNoteInputSchema,
-  DefinitionCreateNestedManyWithoutMdxNoteInputSchema_default as default
-};
-//# sourceMappingURL=DefinitionCreateNestedManyWithoutMdxNoteInputSchema.js.map
+import { z } from 'zod';
+import { DefinitionCreateWithoutMdxNoteInputSchema } from './DefinitionCreateWithoutMdxNoteInputSchema.js';
+import { DefinitionUncheckedCreateWithoutMdxNoteInputSchema } from './DefinitionUncheckedCreateWithoutMdxNoteInputSchema.js';
+import { DefinitionCreateOrConnectWithoutMdxNoteInputSchema } from './DefinitionCreateOrConnectWithoutMdxNoteInputSchema.js';
+import { DefinitionCreateManyMdxNoteInputEnvelopeSchema } from './DefinitionCreateManyMdxNoteInputEnvelopeSchema.js';
+import { DefinitionWhereUniqueInputSchema } from './DefinitionWhereUniqueInputSchema.js';
+export const DefinitionCreateNestedManyWithoutMdxNoteInputSchema = z.object({
+    create: z.union([z.lazy(() => DefinitionCreateWithoutMdxNoteInputSchema), z.lazy(() => DefinitionCreateWithoutMdxNoteInputSchema).array(), z.lazy(() => DefinitionUncheckedCreateWithoutMdxNoteInputSchema), z.lazy(() => DefinitionUncheckedCreateWithoutMdxNoteInputSchema).array()]).optional(),
+    connectOrCreate: z.union([z.lazy(() => DefinitionCreateOrConnectWithoutMdxNoteInputSchema), z.lazy(() => DefinitionCreateOrConnectWithoutMdxNoteInputSchema).array()]).optional(),
+    createMany: z.lazy(() => DefinitionCreateManyMdxNoteInputEnvelopeSchema).optional(),
+    connect: z.union([z.lazy(() => DefinitionWhereUniqueInputSchema), z.lazy(() => DefinitionWhereUniqueInputSchema).array()]).optional(),
+}).strict();
+export default DefinitionCreateNestedManyWithoutMdxNoteInputSchema;

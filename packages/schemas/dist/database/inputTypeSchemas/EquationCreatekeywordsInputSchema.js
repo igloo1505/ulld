@@ -1,9 +1,5 @@
-import {
-  EquationCreatekeywordsInputSchema,
-  EquationCreatekeywordsInputSchema_default
-} from "../../chunk-L5R5LLYC.js";
-export {
-  EquationCreatekeywordsInputSchema,
-  EquationCreatekeywordsInputSchema_default as default
-};
-//# sourceMappingURL=EquationCreatekeywordsInputSchema.js.map
+import { z } from 'zod';
+export const EquationCreatekeywordsInputSchema = z.object({
+    set: z.string().array()
+}).strict();
+export default EquationCreatekeywordsInputSchema;

@@ -1,10 +1,10 @@
-import {
-  KanBanCardMaxOrderByAggregateInputSchema,
-  KanBanCardMaxOrderByAggregateInputSchema_default
-} from "../../chunk-FMXQSN5V.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanBanCardMaxOrderByAggregateInputSchema,
-  KanBanCardMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=KanBanCardMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const KanBanCardMaxOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    listId: z.lazy(() => SortOrderSchema).optional(),
+    indexWithinList: z.lazy(() => SortOrderSchema).optional(),
+    label: z.lazy(() => SortOrderSchema).optional(),
+    details: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default KanBanCardMaxOrderByAggregateInputSchema;

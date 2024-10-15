@@ -1,13 +1,15 @@
-import {
-  PracticeExamScalarWhereInputSchema,
-  PracticeExamScalarWhereInputSchema_default
-} from "../../chunk-G5T6CKCO.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-export {
-  PracticeExamScalarWhereInputSchema,
-  PracticeExamScalarWhereInputSchema_default as default
-};
-//# sourceMappingURL=PracticeExamScalarWhereInputSchema.js.map
+import { z } from 'zod';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+export const PracticeExamScalarWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => PracticeExamScalarWhereInputSchema), z.lazy(() => PracticeExamScalarWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => PracticeExamScalarWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => PracticeExamScalarWhereInputSchema), z.lazy(() => PracticeExamScalarWhereInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    correctCount: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    inCorrectCount: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    timeLimitInSeconds: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    timeCompletedInSeconds: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    date: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default PracticeExamScalarWhereInputSchema;

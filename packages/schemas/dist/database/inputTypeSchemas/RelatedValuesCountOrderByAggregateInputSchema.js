@@ -1,10 +1,9 @@
-import {
-  RelatedValuesCountOrderByAggregateInputSchema,
-  RelatedValuesCountOrderByAggregateInputSchema_default
-} from "../../chunk-MNTCVBWA.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  RelatedValuesCountOrderByAggregateInputSchema,
-  RelatedValuesCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const RelatedValuesCountOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    input: z.lazy(() => SortOrderSchema).optional(),
+    output: z.lazy(() => SortOrderSchema).optional(),
+    equationId: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default RelatedValuesCountOrderByAggregateInputSchema;

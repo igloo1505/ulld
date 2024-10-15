@@ -1,9 +1,6 @@
-import {
-  RelatedValuesUpdateequationIdInputSchema,
-  RelatedValuesUpdateequationIdInputSchema_default
-} from "../../chunk-ZAB5GZST.js";
-export {
-  RelatedValuesUpdateequationIdInputSchema,
-  RelatedValuesUpdateequationIdInputSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesUpdateequationIdInputSchema.js.map
+import { z } from 'zod';
+export const RelatedValuesUpdateequationIdInputSchema = z.object({
+    set: z.number().array().optional(),
+    push: z.union([z.number(), z.number().array()]).optional(),
+}).strict();
+export default RelatedValuesUpdateequationIdInputSchema;

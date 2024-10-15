@@ -1,10 +1,7 @@
-import {
-  GoogleCalendarAuthMinOrderByAggregateInputSchema,
-  GoogleCalendarAuthMinOrderByAggregateInputSchema_default
-} from "../../chunk-RYECTYUV.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  GoogleCalendarAuthMinOrderByAggregateInputSchema,
-  GoogleCalendarAuthMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const GoogleCalendarAuthMinOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    auth: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default GoogleCalendarAuthMinOrderByAggregateInputSchema;

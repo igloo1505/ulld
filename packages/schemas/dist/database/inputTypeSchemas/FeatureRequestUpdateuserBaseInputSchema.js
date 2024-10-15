@@ -1,9 +1,6 @@
-import {
-  FeatureRequestUpdateuserBaseInputSchema,
-  FeatureRequestUpdateuserBaseInputSchema_default
-} from "../../chunk-O2N5IA22.js";
-export {
-  FeatureRequestUpdateuserBaseInputSchema,
-  FeatureRequestUpdateuserBaseInputSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestUpdateuserBaseInputSchema.js.map
+import { z } from 'zod';
+export const FeatureRequestUpdateuserBaseInputSchema = z.object({
+    set: z.string().array().optional(),
+    push: z.union([z.string(), z.string().array()]).optional(),
+}).strict();
+export default FeatureRequestUpdateuserBaseInputSchema;

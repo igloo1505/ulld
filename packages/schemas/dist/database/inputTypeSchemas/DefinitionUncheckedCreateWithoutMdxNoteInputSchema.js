@@ -1,9 +1,10 @@
-import {
-  DefinitionUncheckedCreateWithoutMdxNoteInputSchema,
-  DefinitionUncheckedCreateWithoutMdxNoteInputSchema_default
-} from "../../chunk-YF5QNY5O.js";
-export {
-  DefinitionUncheckedCreateWithoutMdxNoteInputSchema,
-  DefinitionUncheckedCreateWithoutMdxNoteInputSchema_default as default
-};
-//# sourceMappingURL=DefinitionUncheckedCreateWithoutMdxNoteInputSchema.js.map
+import { z } from 'zod';
+export const DefinitionUncheckedCreateWithoutMdxNoteInputSchema = z.object({
+    id: z.string(),
+    label: z.string().optional().nullable(),
+    content: z.string().optional().nullable(),
+    alphabeticalLabel: z.string().optional().nullable(),
+    createdAt: z.coerce.date().optional(),
+    lastAccess: z.coerce.date().optional()
+}).strict();
+export default DefinitionUncheckedCreateWithoutMdxNoteInputSchema;

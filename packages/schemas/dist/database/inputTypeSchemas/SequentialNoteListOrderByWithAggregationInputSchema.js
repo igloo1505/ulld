@@ -1,13 +1,12 @@
-import {
-  SequentialNoteListOrderByWithAggregationInputSchema,
-  SequentialNoteListOrderByWithAggregationInputSchema_default
-} from "../../chunk-4TUV7AGT.js";
-import "../../chunk-IQFYUSUS.js";
-import "../../chunk-7TCCZFTX.js";
-import "../../chunk-4LKAQLEL.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SequentialNoteListOrderByWithAggregationInputSchema,
-  SequentialNoteListOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=SequentialNoteListOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SequentialNoteListCountOrderByAggregateInputSchema } from './SequentialNoteListCountOrderByAggregateInputSchema.js';
+import { SequentialNoteListMaxOrderByAggregateInputSchema } from './SequentialNoteListMaxOrderByAggregateInputSchema.js';
+import { SequentialNoteListMinOrderByAggregateInputSchema } from './SequentialNoteListMinOrderByAggregateInputSchema.js';
+export const SequentialNoteListOrderByWithAggregationInputSchema = z.object({
+    sequentialKey: z.lazy(() => SortOrderSchema).optional(),
+    _count: z.lazy(() => SequentialNoteListCountOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => SequentialNoteListMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => SequentialNoteListMinOrderByAggregateInputSchema).optional()
+}).strict();
+export default SequentialNoteListOrderByWithAggregationInputSchema;

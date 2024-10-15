@@ -1,10 +1,6 @@
-import {
-  PracticeExamOrderByRelationAggregateInputSchema,
-  PracticeExamOrderByRelationAggregateInputSchema_default
-} from "../../chunk-3RAFLYCZ.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  PracticeExamOrderByRelationAggregateInputSchema,
-  PracticeExamOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=PracticeExamOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const PracticeExamOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default PracticeExamOrderByRelationAggregateInputSchema;

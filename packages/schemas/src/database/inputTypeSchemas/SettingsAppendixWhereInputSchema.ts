@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from './StringFilterSchema';
-import { BytesFilterSchema } from './BytesFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { BytesFilterSchema } from './BytesFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const SettingsAppendixWhereInputSchema: z.ZodType<Prisma.SettingsAppendixWhereInput> = z.object({
   AND: z.union([ z.lazy(() => SettingsAppendixWhereInputSchema),z.lazy(() => SettingsAppendixWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => SettingsAppendixWhereInputSchema).array().optional(),
@@ -14,5 +12,4 @@ export const SettingsAppendixWhereInputSchema: z.ZodType<Prisma.SettingsAppendix
   createdAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   updatedAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default SettingsAppendixWhereInputSchema;

@@ -1,12 +1,11 @@
-import {
-  ReadingListUncheckedUpdateManyWithoutIpynbNotesInputSchema,
-  ReadingListUncheckedUpdateManyWithoutIpynbNotesInputSchema_default
-} from "../../chunk-CE5A2DDA.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  ReadingListUncheckedUpdateManyWithoutIpynbNotesInputSchema,
-  ReadingListUncheckedUpdateManyWithoutIpynbNotesInputSchema_default as default
-};
-//# sourceMappingURL=ReadingListUncheckedUpdateManyWithoutIpynbNotesInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const ReadingListUncheckedUpdateManyWithoutIpynbNotesInputSchema = z.object({
+    name: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    description: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastUpdate: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default ReadingListUncheckedUpdateManyWithoutIpynbNotesInputSchema;

@@ -1,10 +1,7 @@
-import {
-  WhiteboardMaxOrderByAggregateInputSchema,
-  WhiteboardMaxOrderByAggregateInputSchema_default
-} from "../../chunk-ZCPRYW5O.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  WhiteboardMaxOrderByAggregateInputSchema,
-  WhiteboardMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=WhiteboardMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const WhiteboardMaxOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    data: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default WhiteboardMaxOrderByAggregateInputSchema;

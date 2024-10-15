@@ -1,12 +1,20 @@
-import {
-  FloatNullableWithAggregatesFilterSchema,
-  FloatNullableWithAggregatesFilterSchema_default
-} from "../../chunk-DOHO4RJ2.js";
-import "../../chunk-VWMCQIY7.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-45PPNBUK.js";
-export {
-  FloatNullableWithAggregatesFilterSchema,
-  FloatNullableWithAggregatesFilterSchema_default as default
-};
-//# sourceMappingURL=FloatNullableWithAggregatesFilterSchema.js.map
+import { z } from 'zod';
+import { NestedFloatNullableWithAggregatesFilterSchema } from './NestedFloatNullableWithAggregatesFilterSchema.js';
+import { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema.js';
+import { NestedFloatNullableFilterSchema } from './NestedFloatNullableFilterSchema.js';
+export const FloatNullableWithAggregatesFilterSchema = z.object({
+    equals: z.number().optional().nullable(),
+    in: z.number().array().optional().nullable(),
+    notIn: z.number().array().optional().nullable(),
+    lt: z.number().optional(),
+    lte: z.number().optional(),
+    gt: z.number().optional(),
+    gte: z.number().optional(),
+    not: z.union([z.number(), z.lazy(() => NestedFloatNullableWithAggregatesFilterSchema)]).optional().nullable(),
+    _count: z.lazy(() => NestedIntNullableFilterSchema).optional(),
+    _avg: z.lazy(() => NestedFloatNullableFilterSchema).optional(),
+    _sum: z.lazy(() => NestedFloatNullableFilterSchema).optional(),
+    _min: z.lazy(() => NestedFloatNullableFilterSchema).optional(),
+    _max: z.lazy(() => NestedFloatNullableFilterSchema).optional()
+}).strict();
+export default FloatNullableWithAggregatesFilterSchema;

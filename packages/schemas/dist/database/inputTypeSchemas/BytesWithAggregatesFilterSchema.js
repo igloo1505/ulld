@@ -1,12 +1,14 @@
-import {
-  BytesWithAggregatesFilterSchema,
-  BytesWithAggregatesFilterSchema_default
-} from "../../chunk-WNFCNG2A.js";
-import "../../chunk-OUBZLTWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-KZADD6H2.js";
-export {
-  BytesWithAggregatesFilterSchema,
-  BytesWithAggregatesFilterSchema_default as default
-};
-//# sourceMappingURL=BytesWithAggregatesFilterSchema.js.map
+import { z } from 'zod';
+import { NestedBytesWithAggregatesFilterSchema } from './NestedBytesWithAggregatesFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedBytesFilterSchema } from './NestedBytesFilterSchema.js';
+export const BytesWithAggregatesFilterSchema = z.object({
+    equals: z.instanceof(Buffer).optional(),
+    in: z.instanceof(Buffer).array().optional(),
+    notIn: z.instanceof(Buffer).array().optional(),
+    not: z.union([z.instanceof(Buffer), z.lazy(() => NestedBytesWithAggregatesFilterSchema)]).optional(),
+    _count: z.lazy(() => NestedIntFilterSchema).optional(),
+    _min: z.lazy(() => NestedBytesFilterSchema).optional(),
+    _max: z.lazy(() => NestedBytesFilterSchema).optional()
+}).strict();
+export default BytesWithAggregatesFilterSchema;

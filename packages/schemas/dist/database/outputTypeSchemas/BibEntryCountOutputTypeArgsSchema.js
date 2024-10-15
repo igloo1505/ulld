@@ -1,10 +1,6 @@
-import {
-  BibEntryCountOutputTypeArgsSchema,
-  BibEntryCountOutputTypeArgsSchema_default
-} from "../../chunk-UAZ7DCZJ.js";
-import "../../chunk-ZUUAOV4O.js";
-export {
-  BibEntryCountOutputTypeArgsSchema,
-  BibEntryCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=BibEntryCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { BibEntryCountOutputTypeSelectSchema } from './BibEntryCountOutputTypeSelectSchema.js';
+export const BibEntryCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => BibEntryCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default BibEntryCountOutputTypeSelectSchema;

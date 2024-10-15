@@ -1,15 +1,19 @@
-import {
-  KanbanOrderByWithAggregationInputSchema,
-  KanbanOrderByWithAggregationInputSchema_default
-} from "../../chunk-AKGT5RB3.js";
-import "../../chunk-W5WBKUK5.js";
-import "../../chunk-JMFMGQ3G.js";
-import "../../chunk-67AWJ6RA.js";
-import "../../chunk-OJJE4G7H.js";
-import "../../chunk-UQ6LJYZY.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanbanOrderByWithAggregationInputSchema,
-  KanbanOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=KanbanOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { KanbanCountOrderByAggregateInputSchema } from './KanbanCountOrderByAggregateInputSchema.js';
+import { KanbanAvgOrderByAggregateInputSchema } from './KanbanAvgOrderByAggregateInputSchema.js';
+import { KanbanMaxOrderByAggregateInputSchema } from './KanbanMaxOrderByAggregateInputSchema.js';
+import { KanbanMinOrderByAggregateInputSchema } from './KanbanMinOrderByAggregateInputSchema.js';
+import { KanbanSumOrderByAggregateInputSchema } from './KanbanSumOrderByAggregateInputSchema.js';
+export const KanbanOrderByWithAggregationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    title: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastUpdate: z.lazy(() => SortOrderSchema).optional(),
+    _count: z.lazy(() => KanbanCountOrderByAggregateInputSchema).optional(),
+    _avg: z.lazy(() => KanbanAvgOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => KanbanMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => KanbanMinOrderByAggregateInputSchema).optional(),
+    _sum: z.lazy(() => KanbanSumOrderByAggregateInputSchema).optional()
+}).strict();
+export default KanbanOrderByWithAggregationInputSchema;

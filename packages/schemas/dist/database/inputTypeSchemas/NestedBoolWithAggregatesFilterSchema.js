@@ -1,11 +1,11 @@
-import {
-  NestedBoolWithAggregatesFilterSchema,
-  NestedBoolWithAggregatesFilterSchema_default
-} from "../../chunk-TQ7L5ZAX.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-IIKKCTNR.js";
-export {
-  NestedBoolWithAggregatesFilterSchema,
-  NestedBoolWithAggregatesFilterSchema_default as default
-};
-//# sourceMappingURL=NestedBoolWithAggregatesFilterSchema.js.map
+import { z } from 'zod';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedBoolFilterSchema } from './NestedBoolFilterSchema.js';
+export const NestedBoolWithAggregatesFilterSchema = z.object({
+    equals: z.boolean().optional(),
+    not: z.union([z.boolean(), z.lazy(() => NestedBoolWithAggregatesFilterSchema)]).optional(),
+    _count: z.lazy(() => NestedIntFilterSchema).optional(),
+    _min: z.lazy(() => NestedBoolFilterSchema).optional(),
+    _max: z.lazy(() => NestedBoolFilterSchema).optional()
+}).strict();
+export default NestedBoolWithAggregatesFilterSchema;

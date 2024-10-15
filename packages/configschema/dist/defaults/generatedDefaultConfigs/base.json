@@ -47,6 +47,30 @@
         ".db",
         ".html"
     ],
+    "noteTypes": [
+        {
+            "id": "dailyNote",
+            "matchWeight": 50,
+            "fs": "/dailyNotes",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Daily Notes",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "ulld",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "dailyNote",
+            "url": "/dailyNote"
+        }
+    ],
     "bibPath": "/citations.bib",
     "dateHandling": {
         "enableAdvancedFormat": true,

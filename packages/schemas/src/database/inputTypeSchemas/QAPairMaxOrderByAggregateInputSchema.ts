@@ -1,8 +1,6 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
 export const QAPairMaxOrderByAggregateInputSchema: z.ZodType<Prisma.QAPairMaxOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   question: z.lazy(() => SortOrderSchema).optional(),
@@ -12,5 +10,4 @@ export const QAPairMaxOrderByAggregateInputSchema: z.ZodType<Prisma.QAPairMaxOrd
   correctCount: z.lazy(() => SortOrderSchema).optional(),
   inCorrectCount: z.lazy(() => SortOrderSchema).optional()
 }).strict();
-
 export default QAPairMaxOrderByAggregateInputSchema;

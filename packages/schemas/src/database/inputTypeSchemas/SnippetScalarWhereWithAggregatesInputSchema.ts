@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
-import { StringNullableListFilterSchema } from './StringNullableListFilterSchema';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
-
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const SnippetScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.SnippetScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => SnippetScalarWhereWithAggregatesInputSchema),z.lazy(() => SnippetScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => SnippetScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -17,5 +15,4 @@ export const SnippetScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Snipp
   language: z.union([ z.lazy(() => StringWithAggregatesFilterSchema),z.string() ]).optional(),
   createdAt: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default SnippetScalarWhereWithAggregatesInputSchema;

@@ -1,18 +1,13 @@
-import {
-  DailyFocusDeleteArgsSchema,
-  DailyFocusDeleteArgsSchema_default,
-  DailyFocusSelectSchema
-} from "../../chunk-LVWSKHYZ.js";
-import "../../chunk-OFZ4JWLS.js";
-import "../../chunk-COZ5TAGF.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DailyFocusDeleteArgsSchema,
-  DailyFocusSelectSchema,
-  DailyFocusDeleteArgsSchema_default as default
-};
-//# sourceMappingURL=DailyFocusDeleteArgsSchema.js.map
+import { z } from 'zod';
+import { DailyFocusWhereUniqueInputSchema } from '../inputTypeSchemas/DailyFocusWhereUniqueInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const DailyFocusSelectSchema = z.object({
+    value: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+}).strict();
+export const DailyFocusDeleteArgsSchema = z.object({
+    select: DailyFocusSelectSchema.optional(),
+    where: DailyFocusWhereUniqueInputSchema,
+}).strict();
+export default DailyFocusDeleteArgsSchema;

@@ -1,10 +1,9 @@
-import {
-  BytesFilterSchema,
-  BytesFilterSchema_default
-} from "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-export {
-  BytesFilterSchema,
-  BytesFilterSchema_default as default
-};
-//# sourceMappingURL=BytesFilterSchema.js.map
+import { z } from 'zod';
+import { NestedBytesFilterSchema } from './NestedBytesFilterSchema.js';
+export const BytesFilterSchema = z.object({
+    equals: z.instanceof(Buffer).optional(),
+    in: z.instanceof(Buffer).array().optional(),
+    notIn: z.instanceof(Buffer).array().optional(),
+    not: z.union([z.instanceof(Buffer), z.lazy(() => NestedBytesFilterSchema)]).optional(),
+}).strict();
+export default BytesFilterSchema;

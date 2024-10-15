@@ -1,10 +1,9 @@
-import {
-  TopicCountOrderByAggregateInputSchema,
-  TopicCountOrderByAggregateInputSchema_default
-} from "../../chunk-NCRCHHG7.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TopicCountOrderByAggregateInputSchema,
-  TopicCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=TopicCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const TopicCountOrderByAggregateInputSchema = z.object({
+    value: z.lazy(() => SortOrderSchema).optional(),
+    kanbanId: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default TopicCountOrderByAggregateInputSchema;

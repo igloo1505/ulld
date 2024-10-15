@@ -1,4 +1,4 @@
-import { SlotMap as SM } from "./slotMapRootType";
+import { SlotMap as SM } from "./slotMapRootType.js";
 
 export type PluginSlotKey = keyof SM
 

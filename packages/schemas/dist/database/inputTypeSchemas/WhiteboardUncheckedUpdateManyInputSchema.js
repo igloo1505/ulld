@@ -1,11 +1,8 @@
-import {
-  WhiteboardUncheckedUpdateManyInputSchema,
-  WhiteboardUncheckedUpdateManyInputSchema_default
-} from "../../chunk-64KPWEC5.js";
-import "../../chunk-WKMKAR2K.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  WhiteboardUncheckedUpdateManyInputSchema,
-  WhiteboardUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=WhiteboardUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { BytesFieldUpdateOperationsInputSchema } from './BytesFieldUpdateOperationsInputSchema.js';
+export const WhiteboardUncheckedUpdateManyInputSchema = z.object({
+    id: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    data: z.union([z.instanceof(Buffer), z.lazy(() => BytesFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default WhiteboardUncheckedUpdateManyInputSchema;

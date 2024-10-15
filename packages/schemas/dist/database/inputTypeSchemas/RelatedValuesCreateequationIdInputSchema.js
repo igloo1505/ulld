@@ -1,9 +1,5 @@
-import {
-  RelatedValuesCreateequationIdInputSchema,
-  RelatedValuesCreateequationIdInputSchema_default
-} from "../../chunk-M5WMX2EH.js";
-export {
-  RelatedValuesCreateequationIdInputSchema,
-  RelatedValuesCreateequationIdInputSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesCreateequationIdInputSchema.js.map
+import { z } from 'zod';
+export const RelatedValuesCreateequationIdInputSchema = z.object({
+    set: z.number().array()
+}).strict();
+export default RelatedValuesCreateequationIdInputSchema;

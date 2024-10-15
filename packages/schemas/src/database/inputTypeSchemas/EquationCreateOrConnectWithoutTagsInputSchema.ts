@@ -1,13 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { EquationWhereUniqueInputSchema } from './EquationWhereUniqueInputSchema';
-import { EquationCreateWithoutTagsInputSchema } from './EquationCreateWithoutTagsInputSchema';
-import { EquationUncheckedCreateWithoutTagsInputSchema } from './EquationUncheckedCreateWithoutTagsInputSchema';
-
+import { EquationWhereUniqueInputSchema } from './EquationWhereUniqueInputSchema.js';
+import { EquationCreateWithoutTagsInputSchema } from './EquationCreateWithoutTagsInputSchema.js';
+import { EquationUncheckedCreateWithoutTagsInputSchema } from './EquationUncheckedCreateWithoutTagsInputSchema.js';
 export const EquationCreateOrConnectWithoutTagsInputSchema: z.ZodType<Prisma.EquationCreateOrConnectWithoutTagsInput> = z.object({
   where: z.lazy(() => EquationWhereUniqueInputSchema),
   create: z.union([ z.lazy(() => EquationCreateWithoutTagsInputSchema),z.lazy(() => EquationUncheckedCreateWithoutTagsInputSchema) ]),
 }).strict();
-
 export default EquationCreateOrConnectWithoutTagsInputSchema;

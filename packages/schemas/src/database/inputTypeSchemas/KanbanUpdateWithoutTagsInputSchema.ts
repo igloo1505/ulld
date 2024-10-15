@@ -1,12 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { KanBanListUpdateManyWithoutKanbanNestedInputSchema } from './KanBanListUpdateManyWithoutKanbanNestedInputSchema';
-import { SubjectUpdateManyWithoutKanbanNestedInputSchema } from './SubjectUpdateManyWithoutKanbanNestedInputSchema';
-import { TopicUpdateManyWithoutKanbanNestedInputSchema } from './TopicUpdateManyWithoutKanbanNestedInputSchema';
-
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { KanBanListUpdateManyWithoutKanbanNestedInputSchema } from './KanBanListUpdateManyWithoutKanbanNestedInputSchema.js';
+import { SubjectUpdateManyWithoutKanbanNestedInputSchema } from './SubjectUpdateManyWithoutKanbanNestedInputSchema.js';
+import { TopicUpdateManyWithoutKanbanNestedInputSchema } from './TopicUpdateManyWithoutKanbanNestedInputSchema.js';
 export const KanbanUpdateWithoutTagsInputSchema: z.ZodType<Prisma.KanbanUpdateWithoutTagsInput> = z.object({
   title: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   createdAt: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
@@ -15,5 +13,4 @@ export const KanbanUpdateWithoutTagsInputSchema: z.ZodType<Prisma.KanbanUpdateWi
   subjects: z.lazy(() => SubjectUpdateManyWithoutKanbanNestedInputSchema).optional(),
   topics: z.lazy(() => TopicUpdateManyWithoutKanbanNestedInputSchema).optional()
 }).strict();
-
 export default KanbanUpdateWithoutTagsInputSchema;

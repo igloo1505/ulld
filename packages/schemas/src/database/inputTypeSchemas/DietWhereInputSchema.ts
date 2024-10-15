@@ -1,18 +1,16 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from './StringFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { BoolFilterSchema } from './BoolFilterSchema';
-import { EnumTERTIARY_TOGGLEFilterSchema } from './EnumTERTIARY_TOGGLEFilterSchema';
-import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema';
-import { FloatNullableFilterSchema } from './FloatNullableFilterSchema';
-import { EnumDIETARY_GOALNullableListFilterSchema } from './EnumDIETARY_GOALNullableListFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-import { DietaryItemListRelationFilterSchema } from './DietaryItemListRelationFilterSchema';
-import { TimePeriodListRelationFilterSchema } from './TimePeriodListRelationFilterSchema';
-import { HealthReportListRelationFilterSchema } from './HealthReportListRelationFilterSchema';
-
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { EnumTERTIARY_TOGGLEFilterSchema } from './EnumTERTIARY_TOGGLEFilterSchema.js';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
+import { FloatNullableFilterSchema } from './FloatNullableFilterSchema.js';
+import { EnumDIETARY_GOALNullableListFilterSchema } from './EnumDIETARY_GOALNullableListFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { DietaryItemListRelationFilterSchema } from './DietaryItemListRelationFilterSchema.js';
+import { TimePeriodListRelationFilterSchema } from './TimePeriodListRelationFilterSchema.js';
+import { HealthReportListRelationFilterSchema } from './HealthReportListRelationFilterSchema.js';
 export const DietWhereInputSchema: z.ZodType<Prisma.DietWhereInput> = z.object({
   AND: z.union([ z.lazy(() => DietWhereInputSchema),z.lazy(() => DietWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => DietWhereInputSchema).array().optional(),
@@ -37,5 +35,4 @@ export const DietWhereInputSchema: z.ZodType<Prisma.DietWhereInput> = z.object({
   periodsFollowed: z.lazy(() => TimePeriodListRelationFilterSchema).optional(),
   HealthReport: z.lazy(() => HealthReportListRelationFilterSchema).optional()
 }).strict();
-
 export default DietWhereInputSchema;

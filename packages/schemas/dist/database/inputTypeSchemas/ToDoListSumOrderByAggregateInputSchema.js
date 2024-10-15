@@ -1,10 +1,6 @@
-import {
-  ToDoListSumOrderByAggregateInputSchema,
-  ToDoListSumOrderByAggregateInputSchema_default
-} from "../../chunk-6GR3DBXR.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ToDoListSumOrderByAggregateInputSchema,
-  ToDoListSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=ToDoListSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ToDoListSumOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default ToDoListSumOrderByAggregateInputSchema;

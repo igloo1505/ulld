@@ -1,9 +1,8 @@
-import {
-  SettingsAppendixCreateInputSchema,
-  SettingsAppendixCreateInputSchema_default
-} from "../../chunk-A4ZNYCRG.js";
-export {
-  SettingsAppendixCreateInputSchema,
-  SettingsAppendixCreateInputSchema_default as default
-};
-//# sourceMappingURL=SettingsAppendixCreateInputSchema.js.map
+import { z } from 'zod';
+export const SettingsAppendixCreateInputSchema = z.object({
+    id: z.string(),
+    data: z.instanceof(Buffer),
+    createdAt: z.coerce.date().optional(),
+    updatedAt: z.coerce.date().optional()
+}).strict();
+export default SettingsAppendixCreateInputSchema;

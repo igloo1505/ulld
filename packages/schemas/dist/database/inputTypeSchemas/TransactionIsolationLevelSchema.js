@@ -1,9 +1,3 @@
-import {
-  TransactionIsolationLevelSchema,
-  TransactionIsolationLevelSchema_default
-} from "../../chunk-ZGQPDWPH.js";
-export {
-  TransactionIsolationLevelSchema,
-  TransactionIsolationLevelSchema_default as default
-};
-//# sourceMappingURL=TransactionIsolationLevelSchema.js.map
+import { z } from 'zod';
+export const TransactionIsolationLevelSchema = z.enum(['ReadUncommitted', 'ReadCommitted', 'RepeatableRead', 'Serializable']);
+export default TransactionIsolationLevelSchema;

@@ -1,9 +1,7 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { FeatureRequestOrderByRelevanceInputSchema } from './FeatureRequestOrderByRelevanceInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { FeatureRequestOrderByRelevanceInputSchema } from './FeatureRequestOrderByRelevanceInputSchema.js';
 export const FeatureRequestOrderByWithRelationInputSchema: z.ZodType<Prisma.FeatureRequestOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   email: z.lazy(() => SortOrderSchema).optional(),
@@ -13,5 +11,4 @@ export const FeatureRequestOrderByWithRelationInputSchema: z.ZodType<Prisma.Feat
   receivedOn: z.lazy(() => SortOrderSchema).optional(),
   _relevance: z.lazy(() => FeatureRequestOrderByRelevanceInputSchema).optional()
 }).strict();
-
 export default FeatureRequestOrderByWithRelationInputSchema;

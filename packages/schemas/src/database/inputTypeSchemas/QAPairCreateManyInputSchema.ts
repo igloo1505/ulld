@@ -1,7 +1,5 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-
 export const QAPairCreateManyInputSchema: z.ZodType<Prisma.QAPairCreateManyInput> = z.object({
   id: z.string(),
   question: z.string(),
@@ -11,5 +9,4 @@ export const QAPairCreateManyInputSchema: z.ZodType<Prisma.QAPairCreateManyInput
   correctCount: z.number().int().optional(),
   inCorrectCount: z.number().int().optional()
 }).strict();
-
 export default QAPairCreateManyInputSchema;

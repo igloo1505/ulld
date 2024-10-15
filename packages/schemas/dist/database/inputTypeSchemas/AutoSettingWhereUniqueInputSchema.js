@@ -1,18 +1,18 @@
-import {
-  AutoSettingWhereUniqueInputSchema,
-  AutoSettingWhereUniqueInputSchema_default
-} from "../../chunk-6BDYKCTD.js";
-import "../../chunk-ZZLVU5LM.js";
-import "../../chunk-SIPHN6ID.js";
-import "../../chunk-TJEHP7LG.js";
-import "../../chunk-76RQYGNI.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  AutoSettingWhereUniqueInputSchema,
-  AutoSettingWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=AutoSettingWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { AutoSettingWhereInputSchema } from './AutoSettingWhereInputSchema.js';
+import { EnumautoSettingFilterSchema } from './EnumautoSettingFilterSchema.js';
+import { autoSettingSchema } from './autoSettingSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+export const AutoSettingWhereUniqueInputSchema = z.object({
+    id: z.number().int()
+})
+    .and(z.object({
+    id: z.number().int().optional(),
+    AND: z.union([z.lazy(() => AutoSettingWhereInputSchema), z.lazy(() => AutoSettingWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => AutoSettingWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => AutoSettingWhereInputSchema), z.lazy(() => AutoSettingWhereInputSchema).array()]).optional(),
+    type: z.union([z.lazy(() => EnumautoSettingFilterSchema), z.lazy(() => autoSettingSchema)]).optional(),
+    glob: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    value: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+}).strict());
+export default AutoSettingWhereUniqueInputSchema;

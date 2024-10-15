@@ -1,18 +1,24 @@
-import {
-  ToDoUncheckedUpdateManyWithoutParentInputSchema,
-  ToDoUncheckedUpdateManyWithoutParentInputSchema_default
-} from "../../chunk-2O2334IT.js";
-import "../../chunk-Y5EUL3TW.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-FYUHI5X3.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-7KFMTKWN.js";
-import "../../chunk-T4CHWTHS.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  ToDoUncheckedUpdateManyWithoutParentInputSchema,
-  ToDoUncheckedUpdateManyWithoutParentInputSchema_default as default
-};
-//# sourceMappingURL=ToDoUncheckedUpdateManyWithoutParentInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableDateTimeFieldUpdateOperationsInputSchema } from './NullableDateTimeFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { NullableEnumTaskCategoryFieldUpdateOperationsInputSchema } from './NullableEnumTaskCategoryFieldUpdateOperationsInputSchema.js';
+import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema.js';
+import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema.js';
+export const ToDoUncheckedUpdateManyWithoutParentInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    task: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    dueAt: z.union([z.coerce.date(), z.lazy(() => NullableDateTimeFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    details: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    category: z.union([z.lazy(() => TaskCategorySchema), z.lazy(() => NullableEnumTaskCategoryFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    bookmarked: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)]).optional(),
+    status: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    priority: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    toDoListId: z.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    completedOn: z.union([z.coerce.date(), z.lazy(() => NullableDateTimeFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default ToDoUncheckedUpdateManyWithoutParentInputSchema;

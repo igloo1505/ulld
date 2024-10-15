@@ -1,0 +1,1 @@
+{"version":3,"file":"autoSettingSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/autoSettingSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,eAAO,MAAM,iBAAiB,wCAAoC,CAAC;AACnE,MAAM,MAAM,eAAe,GAAG,GAAG,CAAC,CAAC,KAAK,CAAC,OAAO,iBAAiB,CAAC,EAAE,CAAA;AACpE,eAAe,iBAAiB,CAAC"}

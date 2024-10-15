@@ -1,9 +1,6 @@
-import {
-  MdxNoteUpdatecitationsListOrderInputSchema,
-  MdxNoteUpdatecitationsListOrderInputSchema_default
-} from "../../chunk-YYIYEQFH.js";
-export {
-  MdxNoteUpdatecitationsListOrderInputSchema,
-  MdxNoteUpdatecitationsListOrderInputSchema_default as default
-};
-//# sourceMappingURL=MdxNoteUpdatecitationsListOrderInputSchema.js.map
+import { z } from 'zod';
+export const MdxNoteUpdatecitationsListOrderInputSchema = z.object({
+    set: z.string().array().optional(),
+    push: z.union([z.string(), z.string().array()]).optional(),
+}).strict();
+export default MdxNoteUpdatecitationsListOrderInputSchema;

@@ -1,9 +1,3 @@
-import {
-  SequentialNoteListScalarFieldEnumSchema,
-  SequentialNoteListScalarFieldEnumSchema_default
-} from "../../chunk-PO4RRM7V.js";
-export {
-  SequentialNoteListScalarFieldEnumSchema,
-  SequentialNoteListScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=SequentialNoteListScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const SequentialNoteListScalarFieldEnumSchema = z.enum(['sequentialKey']);
+export default SequentialNoteListScalarFieldEnumSchema;

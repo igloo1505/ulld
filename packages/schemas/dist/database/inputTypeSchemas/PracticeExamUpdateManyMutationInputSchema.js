@@ -1,11 +1,11 @@
-import {
-  PracticeExamUpdateManyMutationInputSchema,
-  PracticeExamUpdateManyMutationInputSchema_default
-} from "../../chunk-ATBEKMFT.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-export {
-  PracticeExamUpdateManyMutationInputSchema,
-  PracticeExamUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=PracticeExamUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const PracticeExamUpdateManyMutationInputSchema = z.object({
+    correctCount: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    inCorrectCount: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    timeLimitInSeconds: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    timeCompletedInSeconds: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    date: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default PracticeExamUpdateManyMutationInputSchema;

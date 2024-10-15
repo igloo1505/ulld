@@ -1,34 +1,27 @@
-import {
-  SettingsScalarWhereWithAggregatesInputSchema,
-  SettingsScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-7AEUX6Z7.js";
-import "../../chunk-S4RQE52O.js";
-import "../../chunk-QZQVVGZE.js";
-import "../../chunk-OSEN3URL.js";
-import "../../chunk-U3XMZABL.js";
-import "../../chunk-I2T6ONVQ.js";
-import "../../chunk-XOBHDDTF.js";
-import "../../chunk-YDWZQXJY.js";
-import "../../chunk-TQ7L5ZAX.js";
-import "../../chunk-BZ55PUI6.js";
-import "../../chunk-VFKLP7TG.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-S2WAI7QC.js";
-import "../../chunk-TPDRVVNK.js";
-import "../../chunk-XCQN6FNH.js";
-import "../../chunk-7P2FYBUR.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-3OYDE7JL.js";
-import "../../chunk-JHSRNRH3.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  SettingsScalarWhereWithAggregatesInputSchema,
-  SettingsScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=SettingsScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { EnumImageAlignmentWithAggregatesFilterSchema } from './EnumImageAlignmentWithAggregatesFilterSchema.js';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { JsonWithAggregatesFilterSchema } from './JsonWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+export const SettingsScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema), z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema), z.lazy(() => SettingsScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    tooltips: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    title: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    summary_showCitations: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    summary_showTags: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    landingImageAlign: z.union([z.lazy(() => EnumImageAlignmentWithAggregatesFilterSchema), z.lazy(() => ImageAlignmentSchema)]).optional(),
+    lockedLandingImage: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    cleanOnSync: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    plotTheme: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    pluginSettings: z.lazy(() => JsonWithAggregatesFilterSchema).optional(),
+    firstSync: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+    lastSync: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default SettingsScalarWhereWithAggregatesInputSchema;

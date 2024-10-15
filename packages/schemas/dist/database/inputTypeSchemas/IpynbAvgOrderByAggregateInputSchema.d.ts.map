@@ -1,0 +1,1 @@
+{"version":3,"file":"IpynbAvgOrderByAggregateInputSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/IpynbAvgOrderByAggregateInputSchema.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AAExB,eAAO,MAAM,mCAAmC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,6BAA6B,CAIrF,CAAC;AACZ,eAAe,mCAAmC,CAAC"}

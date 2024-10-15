@@ -1,9 +1,3 @@
-import {
-  DJTOrderByRelevanceFieldEnumSchema,
-  DJTOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-7LAOMPDZ.js";
-export {
-  DJTOrderByRelevanceFieldEnumSchema,
-  DJTOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=DJTOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const DJTOrderByRelevanceFieldEnumSchema = z.enum(['type']);
+export default DJTOrderByRelevanceFieldEnumSchema;

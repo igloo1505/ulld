@@ -1,10 +1,8 @@
-import {
-  RelatedValuesSumOrderByAggregateInputSchema,
-  RelatedValuesSumOrderByAggregateInputSchema_default
-} from "../../chunk-RULB6RPK.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  RelatedValuesSumOrderByAggregateInputSchema,
-  RelatedValuesSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const RelatedValuesSumOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    output: z.lazy(() => SortOrderSchema).optional(),
+    equationId: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default RelatedValuesSumOrderByAggregateInputSchema;

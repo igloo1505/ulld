@@ -1,10 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { QuoteCreateManyInputSchema } from '../inputTypeSchemas/QuoteCreateManyInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+import { QuoteCreateManyInputSchema } from '../inputTypeSchemas/QuoteCreateManyInputSchema.js'
 export const QuoteCreateManyAndReturnArgsSchema: z.ZodType<Prisma.QuoteCreateManyAndReturnArgs> = z.object({
   data: z.union([ QuoteCreateManyInputSchema,QuoteCreateManyInputSchema.array() ]),
   skipDuplicates: z.boolean().optional(),
 }).strict() ;
-
 export default QuoteCreateManyAndReturnArgsSchema;

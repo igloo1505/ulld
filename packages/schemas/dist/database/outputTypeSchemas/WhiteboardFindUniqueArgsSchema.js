@@ -1,18 +1,13 @@
-import {
-  WhiteboardFindUniqueArgsSchema,
-  WhiteboardFindUniqueArgsSchema_default,
-  WhiteboardSelectSchema
-} from "../../chunk-WFDMHE67.js";
-import "../../chunk-AJO3CL4P.js";
-import "../../chunk-ZAT5W63Y.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  WhiteboardFindUniqueArgsSchema,
-  WhiteboardSelectSchema,
-  WhiteboardFindUniqueArgsSchema_default as default
-};
-//# sourceMappingURL=WhiteboardFindUniqueArgsSchema.js.map
+import { z } from 'zod';
+import { WhiteboardWhereUniqueInputSchema } from '../inputTypeSchemas/WhiteboardWhereUniqueInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const WhiteboardSelectSchema = z.object({
+    id: z.boolean().optional(),
+    data: z.boolean().optional(),
+}).strict();
+export const WhiteboardFindUniqueArgsSchema = z.object({
+    select: WhiteboardSelectSchema.optional(),
+    where: WhiteboardWhereUniqueInputSchema,
+}).strict();
+export default WhiteboardFindUniqueArgsSchema;

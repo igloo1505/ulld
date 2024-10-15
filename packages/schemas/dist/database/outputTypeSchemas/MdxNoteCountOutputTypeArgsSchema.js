@@ -1,10 +1,6 @@
-import {
-  MdxNoteCountOutputTypeArgsSchema,
-  MdxNoteCountOutputTypeArgsSchema_default
-} from "../../chunk-CG6F6PGF.js";
-import "../../chunk-KBI4CQE5.js";
-export {
-  MdxNoteCountOutputTypeArgsSchema,
-  MdxNoteCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=MdxNoteCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { MdxNoteCountOutputTypeSelectSchema } from './MdxNoteCountOutputTypeSelectSchema.js';
+export const MdxNoteCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => MdxNoteCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default MdxNoteCountOutputTypeSelectSchema;

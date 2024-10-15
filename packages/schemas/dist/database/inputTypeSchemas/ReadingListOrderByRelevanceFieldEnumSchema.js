@@ -1,9 +1,3 @@
-import {
-  ReadingListOrderByRelevanceFieldEnumSchema,
-  ReadingListOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-QPRVPEZA.js";
-export {
-  ReadingListOrderByRelevanceFieldEnumSchema,
-  ReadingListOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=ReadingListOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const ReadingListOrderByRelevanceFieldEnumSchema = z.enum(['name', 'description']);
+export default ReadingListOrderByRelevanceFieldEnumSchema;

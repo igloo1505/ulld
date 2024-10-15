@@ -1,0 +1,1 @@
+{"version":3,"file":"TagCreateInputSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/TagCreateInputSchema.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AAUxB,eAAO,MAAM,oBAAoB,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,cAAc,CAavD,CAAC;AACZ,eAAe,oBAAoB,CAAC"}

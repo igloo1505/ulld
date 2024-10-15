@@ -1,17 +1,24 @@
-import {
-  BusinessContactOrderByWithAggregationInputSchema,
-  BusinessContactOrderByWithAggregationInputSchema_default
-} from "../../chunk-BTGDEAK6.js";
-import "../../chunk-5YBBGFZC.js";
-import "../../chunk-7RYYTJYN.js";
-import "../../chunk-5CD5RSJD.js";
-import "../../chunk-FVLHONU2.js";
-import "../../chunk-MKKIZ4KD.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  BusinessContactOrderByWithAggregationInputSchema,
-  BusinessContactOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=BusinessContactOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { BusinessContactCountOrderByAggregateInputSchema } from './BusinessContactCountOrderByAggregateInputSchema.js';
+import { BusinessContactAvgOrderByAggregateInputSchema } from './BusinessContactAvgOrderByAggregateInputSchema.js';
+import { BusinessContactMaxOrderByAggregateInputSchema } from './BusinessContactMaxOrderByAggregateInputSchema.js';
+import { BusinessContactMinOrderByAggregateInputSchema } from './BusinessContactMinOrderByAggregateInputSchema.js';
+import { BusinessContactSumOrderByAggregateInputSchema } from './BusinessContactSumOrderByAggregateInputSchema.js';
+export const BusinessContactOrderByWithAggregationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    companyName: z.lazy(() => SortOrderSchema).optional(),
+    contactName: z.lazy(() => SortOrderSchema).optional(),
+    contactPreference: z.lazy(() => SortOrderSchema).optional(),
+    email: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    phone: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    message: z.lazy(() => SortOrderSchema).optional(),
+    purpose: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    _count: z.lazy(() => BusinessContactCountOrderByAggregateInputSchema).optional(),
+    _avg: z.lazy(() => BusinessContactAvgOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => BusinessContactMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => BusinessContactMinOrderByAggregateInputSchema).optional(),
+    _sum: z.lazy(() => BusinessContactSumOrderByAggregateInputSchema).optional()
+}).strict();
+export default BusinessContactOrderByWithAggregationInputSchema;

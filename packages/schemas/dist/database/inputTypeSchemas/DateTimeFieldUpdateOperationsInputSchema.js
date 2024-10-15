@@ -1,9 +1,5 @@
-import {
-  DateTimeFieldUpdateOperationsInputSchema,
-  DateTimeFieldUpdateOperationsInputSchema_default
-} from "../../chunk-VTROTMKZ.js";
-export {
-  DateTimeFieldUpdateOperationsInputSchema,
-  DateTimeFieldUpdateOperationsInputSchema_default as default
-};
-//# sourceMappingURL=DateTimeFieldUpdateOperationsInputSchema.js.map
+import { z } from 'zod';
+export const DateTimeFieldUpdateOperationsInputSchema = z.object({
+    set: z.coerce.date().optional()
+}).strict();
+export default DateTimeFieldUpdateOperationsInputSchema;

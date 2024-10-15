@@ -1,11 +1,7 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true});// src/api/prismaMdxRelations/mdxNote/mdxNoteFieldSchemas.ts
-var _zod = require('zod');
-var sequentialListPropsSchema = _zod.z.object({
-  sequentialKey: _zod.z.string(),
-  MdxNote: _zod.z.any().array().default([]),
-  Ipynb: _zod.z.any().array().default([])
-});
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
+
+var _chunkUPI5AR7Hcjs = require('../../../chunk-UPI5AR7H.cjs');
 
 
-exports.sequentialListPropsSchema = sequentialListPropsSchema;
+exports.sequentialListPropsSchema = _chunkUPI5AR7Hcjs.sequentialListPropsSchema;
 //# sourceMappingURL=mdxNoteFieldSchemas.cjs.map

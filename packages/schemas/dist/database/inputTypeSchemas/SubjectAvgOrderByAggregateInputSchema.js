@@ -1,10 +1,6 @@
-import {
-  SubjectAvgOrderByAggregateInputSchema,
-  SubjectAvgOrderByAggregateInputSchema_default
-} from "../../chunk-ENLC5QLT.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SubjectAvgOrderByAggregateInputSchema,
-  SubjectAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SubjectAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SubjectAvgOrderByAggregateInputSchema = z.object({
+    kanbanId: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SubjectAvgOrderByAggregateInputSchema;

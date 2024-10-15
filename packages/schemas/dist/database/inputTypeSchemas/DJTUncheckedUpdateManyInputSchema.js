@@ -1,12 +1,10 @@
-import {
-  DJTUncheckedUpdateManyInputSchema,
-  DJTUncheckedUpdateManyInputSchema_default
-} from "../../chunk-NKCCSVUU.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-WKMKAR2K.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  DJTUncheckedUpdateManyInputSchema,
-  DJTUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=DJTUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { BytesFieldUpdateOperationsInputSchema } from './BytesFieldUpdateOperationsInputSchema.js';
+export const DJTUncheckedUpdateManyInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    type: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    data: z.union([z.instanceof(Buffer), z.lazy(() => BytesFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default DJTUncheckedUpdateManyInputSchema;

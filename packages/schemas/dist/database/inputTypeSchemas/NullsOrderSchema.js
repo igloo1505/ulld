@@ -1,9 +1,3 @@
-import {
-  NullsOrderSchema,
-  NullsOrderSchema_default
-} from "../../chunk-WAVH2TQU.js";
-export {
-  NullsOrderSchema,
-  NullsOrderSchema_default as default
-};
-//# sourceMappingURL=NullsOrderSchema.js.map
+import { z } from 'zod';
+export const NullsOrderSchema = z.enum(['first', 'last']);
+export default NullsOrderSchema;

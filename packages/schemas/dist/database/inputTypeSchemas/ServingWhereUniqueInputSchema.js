@@ -1,37 +1,22 @@
-import {
-  ServingWhereUniqueInputSchema,
-  ServingWhereUniqueInputSchema_default
-} from "../../chunk-BRBARM24.js";
-import "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  ServingWhereUniqueInputSchema,
-  ServingWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=ServingWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { ServingWhereInputSchema } from './ServingWhereInputSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { FloatNullableFilterSchema } from './FloatNullableFilterSchema.js';
+import { EnumQUANTITY_GUESSNullableFilterSchema } from './EnumQUANTITY_GUESSNullableFilterSchema.js';
+import { QUANTITY_GUESSSchema } from './QUANTITY_GUESSSchema.js';
+import { DietaryItemRelationFilterSchema } from './DietaryItemRelationFilterSchema.js';
+import { DietaryItemWhereInputSchema } from './DietaryItemWhereInputSchema.js';
+export const ServingWhereUniqueInputSchema = z.object({
+    id: z.number().int()
+})
+    .and(z.object({
+    id: z.number().int().optional(),
+    AND: z.union([z.lazy(() => ServingWhereInputSchema), z.lazy(() => ServingWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => ServingWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => ServingWhereInputSchema), z.lazy(() => ServingWhereInputSchema).array()]).optional(),
+    dietaryItemId: z.union([z.lazy(() => IntFilterSchema), z.number().int()]).optional(),
+    quant_oz: z.union([z.lazy(() => FloatNullableFilterSchema), z.number()]).optional().nullable(),
+    quant_guess: z.union([z.lazy(() => EnumQUANTITY_GUESSNullableFilterSchema), z.lazy(() => QUANTITY_GUESSSchema)]).optional().nullable(),
+    item: z.union([z.lazy(() => DietaryItemRelationFilterSchema), z.lazy(() => DietaryItemWhereInputSchema)]).optional(),
+}).strict());
+export default ServingWhereUniqueInputSchema;

@@ -1,9 +1,3 @@
-import {
-  TaskCategorySchema,
-  TaskCategorySchema_default
-} from "../../chunk-T4CHWTHS.js";
-export {
-  TaskCategorySchema,
-  TaskCategorySchema_default as default
-};
-//# sourceMappingURL=TaskCategorySchema.js.map
+import { z } from 'zod';
+export const TaskCategorySchema = z.enum(['bug', 'feature', 'documentation', 'online', 'priority', 'urgent', 'work', 'gym', 'freetime', 'study', 'research', 'paper']);
+export default TaskCategorySchema;

@@ -1,15 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { DietCreateWithoutPeriodsFollowedInputSchema } from './DietCreateWithoutPeriodsFollowedInputSchema';
-import { DietUncheckedCreateWithoutPeriodsFollowedInputSchema } from './DietUncheckedCreateWithoutPeriodsFollowedInputSchema';
-import { DietCreateOrConnectWithoutPeriodsFollowedInputSchema } from './DietCreateOrConnectWithoutPeriodsFollowedInputSchema';
-import { DietWhereUniqueInputSchema } from './DietWhereUniqueInputSchema';
-
+import { DietCreateWithoutPeriodsFollowedInputSchema } from './DietCreateWithoutPeriodsFollowedInputSchema.js';
+import { DietUncheckedCreateWithoutPeriodsFollowedInputSchema } from './DietUncheckedCreateWithoutPeriodsFollowedInputSchema.js';
+import { DietCreateOrConnectWithoutPeriodsFollowedInputSchema } from './DietCreateOrConnectWithoutPeriodsFollowedInputSchema.js';
+import { DietWhereUniqueInputSchema } from './DietWhereUniqueInputSchema.js';
 export const DietCreateNestedOneWithoutPeriodsFollowedInputSchema: z.ZodType<Prisma.DietCreateNestedOneWithoutPeriodsFollowedInput> = z.object({
   create: z.union([ z.lazy(() => DietCreateWithoutPeriodsFollowedInputSchema),z.lazy(() => DietUncheckedCreateWithoutPeriodsFollowedInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => DietCreateOrConnectWithoutPeriodsFollowedInputSchema).optional(),
   connect: z.lazy(() => DietWhereUniqueInputSchema).optional()
 }).strict();
-
 export default DietCreateNestedOneWithoutPeriodsFollowedInputSchema;

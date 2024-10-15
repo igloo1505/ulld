@@ -1,9 +1,3 @@
-import {
-  WaitlistRequestScalarFieldEnumSchema,
-  WaitlistRequestScalarFieldEnumSchema_default
-} from "../../chunk-IPGXNP7B.js";
-export {
-  WaitlistRequestScalarFieldEnumSchema,
-  WaitlistRequestScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const WaitlistRequestScalarFieldEnumSchema = z.enum(['id', 'email', 'receivedOn', 'emailsSent']);
+export default WaitlistRequestScalarFieldEnumSchema;

@@ -1,13 +1,15 @@
-import {
-  EnumautoSettingWithAggregatesFilterSchema,
-  EnumautoSettingWithAggregatesFilterSchema_default
-} from "../../chunk-OOOLQTUF.js";
-import "../../chunk-FTC2MIWQ.js";
-import "../../chunk-TJEHP7LG.js";
-import "../../chunk-76RQYGNI.js";
-import "../../chunk-IIKKCTNR.js";
-export {
-  EnumautoSettingWithAggregatesFilterSchema,
-  EnumautoSettingWithAggregatesFilterSchema_default as default
-};
-//# sourceMappingURL=EnumautoSettingWithAggregatesFilterSchema.js.map
+import { z } from 'zod';
+import { autoSettingSchema } from './autoSettingSchema.js';
+import { NestedEnumautoSettingWithAggregatesFilterSchema } from './NestedEnumautoSettingWithAggregatesFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedEnumautoSettingFilterSchema } from './NestedEnumautoSettingFilterSchema.js';
+export const EnumautoSettingWithAggregatesFilterSchema = z.object({
+    equals: z.lazy(() => autoSettingSchema).optional(),
+    in: z.lazy(() => autoSettingSchema).array().optional(),
+    notIn: z.lazy(() => autoSettingSchema).array().optional(),
+    not: z.union([z.lazy(() => autoSettingSchema), z.lazy(() => NestedEnumautoSettingWithAggregatesFilterSchema)]).optional(),
+    _count: z.lazy(() => NestedIntFilterSchema).optional(),
+    _min: z.lazy(() => NestedEnumautoSettingFilterSchema).optional(),
+    _max: z.lazy(() => NestedEnumautoSettingFilterSchema).optional()
+}).strict();
+export default EnumautoSettingWithAggregatesFilterSchema;

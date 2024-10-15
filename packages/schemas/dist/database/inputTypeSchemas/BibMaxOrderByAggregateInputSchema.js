@@ -1,10 +1,9 @@
-import {
-  BibMaxOrderByAggregateInputSchema,
-  BibMaxOrderByAggregateInputSchema_default
-} from "../../chunk-DVRWZRZR.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  BibMaxOrderByAggregateInputSchema,
-  BibMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=BibMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const BibMaxOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    filename: z.lazy(() => SortOrderSchema).optional(),
+    firstSync: z.lazy(() => SortOrderSchema).optional(),
+    lastSync: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default BibMaxOrderByAggregateInputSchema;

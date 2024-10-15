@@ -1,10 +1,7 @@
-import {
-  WhiteboardCreateManyAndReturnArgsSchema,
-  WhiteboardCreateManyAndReturnArgsSchema_default
-} from "../../chunk-H35AGEVQ.js";
-import "../../chunk-CL5B5JNI.js";
-export {
-  WhiteboardCreateManyAndReturnArgsSchema,
-  WhiteboardCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=WhiteboardCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { WhiteboardCreateManyInputSchema } from '../inputTypeSchemas/WhiteboardCreateManyInputSchema.js';
+export const WhiteboardCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([WhiteboardCreateManyInputSchema, WhiteboardCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default WhiteboardCreateManyAndReturnArgsSchema;

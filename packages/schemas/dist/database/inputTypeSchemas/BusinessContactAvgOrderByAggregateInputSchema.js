@@ -1,10 +1,6 @@
-import {
-  BusinessContactAvgOrderByAggregateInputSchema,
-  BusinessContactAvgOrderByAggregateInputSchema_default
-} from "../../chunk-FVLHONU2.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  BusinessContactAvgOrderByAggregateInputSchema,
-  BusinessContactAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=BusinessContactAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const BusinessContactAvgOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default BusinessContactAvgOrderByAggregateInputSchema;

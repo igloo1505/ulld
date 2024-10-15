@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/SubjectOrderByRelevanceFieldEnumSchema.ts"],"sourcesContent":["import { z } from 'zod';\nexport const SubjectOrderByRelevanceFieldEnumSchema = z.enum(['value']);\nexport default SubjectOrderByRelevanceFieldEnumSchema;"],"mappings":";AAAA,SAAS,SAAS;AACX,IAAM,yCAAyC,EAAE,KAAK,CAAC,OAAO,CAAC;AACtE,IAAO,iDAAQ;","names":[]}

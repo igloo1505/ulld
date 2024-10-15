@@ -1,9 +1,3 @@
-import {
-  BibScalarFieldEnumSchema,
-  BibScalarFieldEnumSchema_default
-} from "../../chunk-GAGYE6VK.js";
-export {
-  BibScalarFieldEnumSchema,
-  BibScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=BibScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const BibScalarFieldEnumSchema = z.enum(['id', 'filename', 'firstSync', 'lastSync']);
+export default BibScalarFieldEnumSchema;

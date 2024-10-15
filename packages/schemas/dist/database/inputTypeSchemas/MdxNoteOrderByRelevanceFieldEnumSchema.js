@@ -1,9 +1,3 @@
-import {
-  MdxNoteOrderByRelevanceFieldEnumSchema,
-  MdxNoteOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-N4M6NZMI.js";
-export {
-  MdxNoteOrderByRelevanceFieldEnumSchema,
-  MdxNoteOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=MdxNoteOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const MdxNoteOrderByRelevanceFieldEnumSchema = z.enum(['dietSummaryKey', 'title', 'latexTitle', 'rootRelativePath', 'noteType', 'content', 'formatted', 'summary', 'citationsListOrder', 'imageSrc', 'href', 'sequentialKey', 'remoteUrl', 'outgoingQuickLinks', 'quickLink']);
+export default MdxNoteOrderByRelevanceFieldEnumSchema;

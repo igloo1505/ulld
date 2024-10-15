@@ -1,11 +1,10 @@
-import {
-  EnumImageAlignmentFilterSchema,
-  EnumImageAlignmentFilterSchema_default
-} from "../../chunk-4ADLVWHU.js";
-import "../../chunk-I2T6ONVQ.js";
-import "../../chunk-XOBHDDTF.js";
-export {
-  EnumImageAlignmentFilterSchema,
-  EnumImageAlignmentFilterSchema_default as default
-};
-//# sourceMappingURL=EnumImageAlignmentFilterSchema.js.map
+import { z } from 'zod';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
+import { NestedEnumImageAlignmentFilterSchema } from './NestedEnumImageAlignmentFilterSchema.js';
+export const EnumImageAlignmentFilterSchema = z.object({
+    equals: z.lazy(() => ImageAlignmentSchema).optional(),
+    in: z.lazy(() => ImageAlignmentSchema).array().optional(),
+    notIn: z.lazy(() => ImageAlignmentSchema).array().optional(),
+    not: z.union([z.lazy(() => ImageAlignmentSchema), z.lazy(() => NestedEnumImageAlignmentFilterSchema)]).optional(),
+}).strict();
+export default EnumImageAlignmentFilterSchema;

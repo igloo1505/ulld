@@ -1,9 +1,7 @@
-import {
-  TimePeriodUncheckedCreateWithoutDietInputSchema,
-  TimePeriodUncheckedCreateWithoutDietInputSchema_default
-} from "../../chunk-CYJOV7OZ.js";
-export {
-  TimePeriodUncheckedCreateWithoutDietInputSchema,
-  TimePeriodUncheckedCreateWithoutDietInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodUncheckedCreateWithoutDietInputSchema.js.map
+import { z } from 'zod';
+export const TimePeriodUncheckedCreateWithoutDietInputSchema = z.object({
+    id: z.number().int().optional(),
+    start: z.coerce.date().optional(),
+    end: z.coerce.date().optional().nullable()
+}).strict();
+export default TimePeriodUncheckedCreateWithoutDietInputSchema;

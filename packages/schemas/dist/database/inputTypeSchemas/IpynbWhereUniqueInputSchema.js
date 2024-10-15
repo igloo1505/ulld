@@ -1,41 +1,58 @@
-import {
-  IpynbWhereUniqueInputSchema,
-  IpynbWhereUniqueInputSchema_default
-} from "../../chunk-NCWREB5M.js";
-import "../../chunk-LSOXTUZL.js";
-import "../../chunk-O6F53QLE.js";
-import "../../chunk-KLW7VRYK.js";
-import "../../chunk-QRRELMSU.js";
-import "../../chunk-YSW3P2HE.js";
-import "../../chunk-O7PIU7VL.js";
-import "../../chunk-4A6JCUBO.js";
-import "../../chunk-V2TZ67XY.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-T4CHWTHS.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  IpynbWhereUniqueInputSchema,
-  IpynbWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=IpynbWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { IpynbWhereInputSchema } from './IpynbWhereInputSchema.js';
+import { BoolNullableFilterSchema } from './BoolNullableFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { FloatNullableListFilterSchema } from './FloatNullableListFilterSchema.js';
+import { BytesFilterSchema } from './BytesFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { TagListRelationFilterSchema } from './TagListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema.js';
+import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema.js';
+import { SequentialNoteListNullableRelationFilterSchema } from './SequentialNoteListNullableRelationFilterSchema.js';
+import { SequentialNoteListWhereInputSchema } from './SequentialNoteListWhereInputSchema.js';
+import { ReadingListListRelationFilterSchema } from './ReadingListListRelationFilterSchema.js';
+export const IpynbWhereUniqueInputSchema = z.union([
+    z.object({
+        id: z.number().int(),
+        rootRelativePath: z.string()
+    }),
+    z.object({
+        id: z.number().int(),
+    }),
+    z.object({
+        rootRelativePath: z.string(),
+    }),
+])
+    .and(z.object({
+    id: z.number().int().optional(),
+    rootRelativePath: z.string().optional(),
+    AND: z.union([z.lazy(() => IpynbWhereInputSchema), z.lazy(() => IpynbWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => IpynbWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => IpynbWhereInputSchema), z.lazy(() => IpynbWhereInputSchema).array()]).optional(),
+    isProtected: z.union([z.lazy(() => BoolNullableFilterSchema), z.boolean()]).optional().nullable(),
+    title: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    latexTitle: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    citationsListOrder: z.lazy(() => StringNullableListFilterSchema).optional(),
+    importantValues: z.lazy(() => FloatNullableListFilterSchema).optional(),
+    href: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    outgoingQuickLinks: z.lazy(() => StringNullableListFilterSchema).optional(),
+    raw: z.union([z.lazy(() => BytesFilterSchema), z.instanceof(Buffer)]).optional(),
+    sequentialKey: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    sequentialIndex: z.union([z.lazy(() => IntNullableFilterSchema), z.number().int()]).optional().nullable(),
+    bookmarked: z.union([z.lazy(() => BoolFilterSchema), z.boolean()]).optional(),
+    firstSync: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    lastSync: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    lastAccess: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    tags: z.lazy(() => TagListRelationFilterSchema).optional(),
+    topics: z.lazy(() => TopicListRelationFilterSchema).optional(),
+    subjects: z.lazy(() => SubjectListRelationFilterSchema).optional(),
+    citations: z.lazy(() => BibEntryListRelationFilterSchema).optional(),
+    sequentialList: z.union([z.lazy(() => SequentialNoteListNullableRelationFilterSchema), z.lazy(() => SequentialNoteListWhereInputSchema)]).optional().nullable(),
+    readingList: z.lazy(() => ReadingListListRelationFilterSchema).optional()
+}).strict());
+export default IpynbWhereUniqueInputSchema;

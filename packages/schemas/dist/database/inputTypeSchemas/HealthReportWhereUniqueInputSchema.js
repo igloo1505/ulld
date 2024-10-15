@@ -1,37 +1,52 @@
-import {
-  HealthReportWhereUniqueInputSchema,
-  HealthReportWhereUniqueInputSchema_default
-} from "../../chunk-LZNACEQH.js";
-import "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  HealthReportWhereUniqueInputSchema,
-  HealthReportWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=HealthReportWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { HealthReportWhereInputSchema } from './HealthReportWhereInputSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { FloatFilterSchema } from './FloatFilterSchema.js';
+import { FloatNullableFilterSchema } from './FloatNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { DietNullableRelationFilterSchema } from './DietNullableRelationFilterSchema.js';
+import { DietWhereInputSchema } from './DietWhereInputSchema.js';
+export const HealthReportWhereUniqueInputSchema = z.object({
+    id: z.number().int()
+})
+    .and(z.object({
+    id: z.number().int().optional(),
+    AND: z.union([z.lazy(() => HealthReportWhereInputSchema), z.lazy(() => HealthReportWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => HealthReportWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => HealthReportWhereInputSchema), z.lazy(() => HealthReportWhereInputSchema).array()]).optional(),
+    title: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    summary: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    overall: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    skin: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    bloat: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    weight_feeling: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    fullness: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    weight: z.union([z.lazy(() => FloatNullableFilterSchema), z.number()]).optional().nullable(),
+    cardiacCapacity: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    jawLine: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    joints: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    flexibility: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    anxiety: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    anxiety_desc: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    mood_desc: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    mood: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    sexDrive: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    intruisiveThoughts: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    caffeineIntake: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    glutenIntake: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    sugarIntake: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    artificialSweetenerIntake: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    artificalDyes: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    sleepQuality: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    hydration: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    twitching: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    sleepHours: z.union([z.lazy(() => FloatNullableFilterSchema), z.number()]).optional().nullable(),
+    calorie_est: z.union([z.lazy(() => IntNullableFilterSchema), z.number().int()]).optional().nullable(),
+    times_meals_more_than_gap_apart: z.union([z.lazy(() => IntNullableFilterSchema), z.number().int()]).optional().nullable(),
+    estHoursInExcessFast: z.union([z.lazy(() => FloatNullableFilterSchema), z.number()]).optional().nullable(),
+    dietId: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    created: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    currentDiet: z.union([z.lazy(() => DietNullableRelationFilterSchema), z.lazy(() => DietWhereInputSchema)]).optional().nullable(),
+}).strict());
+export default HealthReportWhereUniqueInputSchema;

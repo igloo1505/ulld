@@ -1,12 +1,6 @@
-// src/database/inputTypeSchemas/WhiteboardSelectSchema.ts
-import { z } from "zod";
-var WhiteboardSelectSchema = z.object({
-  id: z.boolean().optional(),
-  data: z.boolean().optional()
+import { z } from 'zod';
+export const WhiteboardSelectSchema = z.object({
+    id: z.boolean().optional(),
+    data: z.boolean().optional(),
 }).strict();
-var WhiteboardSelectSchema_default = WhiteboardSelectSchema;
-export {
-  WhiteboardSelectSchema,
-  WhiteboardSelectSchema_default as default
-};
-//# sourceMappingURL=WhiteboardSelectSchema.js.map
+export default WhiteboardSelectSchema;

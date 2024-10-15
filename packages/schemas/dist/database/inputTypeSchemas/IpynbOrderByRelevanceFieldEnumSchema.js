@@ -1,9 +1,3 @@
-import {
-  IpynbOrderByRelevanceFieldEnumSchema,
-  IpynbOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-RVZOCS6Z.js";
-export {
-  IpynbOrderByRelevanceFieldEnumSchema,
-  IpynbOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=IpynbOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const IpynbOrderByRelevanceFieldEnumSchema = z.enum(['rootRelativePath', 'title', 'latexTitle', 'citationsListOrder', 'href', 'outgoingQuickLinks', 'sequentialKey']);
+export default IpynbOrderByRelevanceFieldEnumSchema;

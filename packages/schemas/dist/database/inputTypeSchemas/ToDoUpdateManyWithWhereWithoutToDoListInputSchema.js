@@ -1,38 +1,9 @@
-import {
-  ToDoUpdateManyWithWhereWithoutToDoListInputSchema,
-  ToDoUpdateManyWithWhereWithoutToDoListInputSchema_default
-} from "../../chunk-2SEJJJCS.js";
-import "../../chunk-T4C24MMW.js";
-import "../../chunk-QSWRLQUO.js";
-import "../../chunk-MYRHKTSP.js";
-import "../../chunk-Y5EUL3TW.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-FYUHI5X3.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-7KFMTKWN.js";
-import "../../chunk-O7PIU7VL.js";
-import "../../chunk-4A6JCUBO.js";
-import "../../chunk-T4CHWTHS.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  ToDoUpdateManyWithWhereWithoutToDoListInputSchema,
-  ToDoUpdateManyWithWhereWithoutToDoListInputSchema_default as default
-};
-//# sourceMappingURL=ToDoUpdateManyWithWhereWithoutToDoListInputSchema.js.map
+import { z } from 'zod';
+import { ToDoScalarWhereInputSchema } from './ToDoScalarWhereInputSchema.js';
+import { ToDoUpdateManyMutationInputSchema } from './ToDoUpdateManyMutationInputSchema.js';
+import { ToDoUncheckedUpdateManyWithoutToDoListInputSchema } from './ToDoUncheckedUpdateManyWithoutToDoListInputSchema.js';
+export const ToDoUpdateManyWithWhereWithoutToDoListInputSchema = z.object({
+    where: z.lazy(() => ToDoScalarWhereInputSchema),
+    data: z.union([z.lazy(() => ToDoUpdateManyMutationInputSchema), z.lazy(() => ToDoUncheckedUpdateManyWithoutToDoListInputSchema)]),
+}).strict();
+export default ToDoUpdateManyWithWhereWithoutToDoListInputSchema;

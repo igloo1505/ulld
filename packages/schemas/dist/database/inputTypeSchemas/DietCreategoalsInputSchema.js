@@ -1,10 +1,6 @@
-import {
-  DietCreategoalsInputSchema,
-  DietCreategoalsInputSchema_default
-} from "../../chunk-AYSFFIF5.js";
-import "../../chunk-LRTPFMPI.js";
-export {
-  DietCreategoalsInputSchema,
-  DietCreategoalsInputSchema_default as default
-};
-//# sourceMappingURL=DietCreategoalsInputSchema.js.map
+import { z } from 'zod';
+import { DIETARY_GOALSchema } from './DIETARY_GOALSchema.js';
+export const DietCreategoalsInputSchema = z.object({
+    set: z.lazy(() => DIETARY_GOALSchema).array()
+}).strict();
+export default DietCreategoalsInputSchema;

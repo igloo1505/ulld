@@ -1,13 +1,11 @@
-import {
-  RelatedValuesUpdateManyMutationInputSchema,
-  RelatedValuesUpdateManyMutationInputSchema_default
-} from "../../chunk-2ZV5K5FH.js";
-import "../../chunk-ZAB5GZST.js";
-import "../../chunk-IWZ75T2C.js";
-import "../../chunk-ZXTFXMHW.js";
-import "../../chunk-T77FYKUT.js";
-export {
-  RelatedValuesUpdateManyMutationInputSchema,
-  RelatedValuesUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+import { FloatFieldUpdateOperationsInputSchema } from './FloatFieldUpdateOperationsInputSchema.js';
+import { RelatedValuesUpdateequationIdInputSchema } from './RelatedValuesUpdateequationIdInputSchema.js';
+export const RelatedValuesUpdateManyMutationInputSchema = z.object({
+    input: z.union([z.lazy(() => JsonNullValueInputSchema), InputJsonValueSchema]).optional(),
+    output: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    equationId: z.union([z.lazy(() => RelatedValuesUpdateequationIdInputSchema), z.number().int().array()]).optional(),
+}).strict();
+export default RelatedValuesUpdateManyMutationInputSchema;

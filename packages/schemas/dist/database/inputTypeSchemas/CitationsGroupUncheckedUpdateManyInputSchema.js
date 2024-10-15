@@ -1,11 +1,8 @@
-import {
-  CitationsGroupUncheckedUpdateManyInputSchema,
-  CitationsGroupUncheckedUpdateManyInputSchema_default
-} from "../../chunk-MTIAB2SE.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  CitationsGroupUncheckedUpdateManyInputSchema,
-  CitationsGroupUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+export const CitationsGroupUncheckedUpdateManyInputSchema = z.object({
+    name: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    description: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default CitationsGroupUncheckedUpdateManyInputSchema;

@@ -1,10 +1,8 @@
-import {
-  IpynbSumOrderByAggregateInputSchema,
-  IpynbSumOrderByAggregateInputSchema_default
-} from "../../chunk-CKOO6QK2.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  IpynbSumOrderByAggregateInputSchema,
-  IpynbSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=IpynbSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const IpynbSumOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    importantValues: z.lazy(() => SortOrderSchema).optional(),
+    sequentialIndex: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default IpynbSumOrderByAggregateInputSchema;

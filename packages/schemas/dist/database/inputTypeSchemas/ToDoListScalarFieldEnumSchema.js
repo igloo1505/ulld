@@ -1,9 +1,3 @@
-import {
-  ToDoListScalarFieldEnumSchema,
-  ToDoListScalarFieldEnumSchema_default
-} from "../../chunk-3LVCD5XQ.js";
-export {
-  ToDoListScalarFieldEnumSchema,
-  ToDoListScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=ToDoListScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const ToDoListScalarFieldEnumSchema = z.enum(['id', 'label', 'createdAt', 'lastUpdate', 'lastAccess']);
+export default ToDoListScalarFieldEnumSchema;

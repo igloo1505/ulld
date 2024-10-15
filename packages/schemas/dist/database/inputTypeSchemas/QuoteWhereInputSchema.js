@@ -1,18 +1,16 @@
-import {
-  QuoteWhereInputSchema,
-  QuoteWhereInputSchema_default
-} from "../../chunk-BT6JUMEM.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  QuoteWhereInputSchema,
-  QuoteWhereInputSchema_default as default
-};
-//# sourceMappingURL=QuoteWhereInputSchema.js.map
+import { z } from 'zod';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+export const QuoteWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => QuoteWhereInputSchema), z.lazy(() => QuoteWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => QuoteWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => QuoteWhereInputSchema), z.lazy(() => QuoteWhereInputSchema).array()]).optional(),
+    body: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    author: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    source: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    pinned: z.union([z.lazy(() => BoolFilterSchema), z.boolean()]).optional(),
+    createdAt: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default QuoteWhereInputSchema;

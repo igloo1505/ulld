@@ -1,10 +1,8 @@
-import {
-  ServingUncheckedCreateWithoutItemInputSchema,
-  ServingUncheckedCreateWithoutItemInputSchema_default
-} from "../../chunk-IBJBBFSU.js";
-import "../../chunk-LUUG3TNG.js";
-export {
-  ServingUncheckedCreateWithoutItemInputSchema,
-  ServingUncheckedCreateWithoutItemInputSchema_default as default
-};
-//# sourceMappingURL=ServingUncheckedCreateWithoutItemInputSchema.js.map
+import { z } from 'zod';
+import { QUANTITY_GUESSSchema } from './QUANTITY_GUESSSchema.js';
+export const ServingUncheckedCreateWithoutItemInputSchema = z.object({
+    id: z.number().int().optional(),
+    quant_oz: z.number().optional().nullable(),
+    quant_guess: z.lazy(() => QUANTITY_GUESSSchema).optional().nullable()
+}).strict();
+export default ServingUncheckedCreateWithoutItemInputSchema;

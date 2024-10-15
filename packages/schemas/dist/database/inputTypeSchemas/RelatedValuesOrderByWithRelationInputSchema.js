@@ -1,11 +1,11 @@
-import {
-  RelatedValuesOrderByWithRelationInputSchema,
-  RelatedValuesOrderByWithRelationInputSchema_default
-} from "../../chunk-G75HTSBH.js";
-import "../../chunk-UFL4PV4Z.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  RelatedValuesOrderByWithRelationInputSchema,
-  RelatedValuesOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { EquationOrderByRelationAggregateInputSchema } from './EquationOrderByRelationAggregateInputSchema.js';
+export const RelatedValuesOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    input: z.lazy(() => SortOrderSchema).optional(),
+    output: z.lazy(() => SortOrderSchema).optional(),
+    equationId: z.lazy(() => SortOrderSchema).optional(),
+    equations: z.lazy(() => EquationOrderByRelationAggregateInputSchema).optional()
+}).strict();
+export default RelatedValuesOrderByWithRelationInputSchema;

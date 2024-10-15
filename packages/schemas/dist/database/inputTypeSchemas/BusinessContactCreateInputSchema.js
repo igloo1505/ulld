@@ -1,9 +1,11 @@
-import {
-  BusinessContactCreateInputSchema,
-  BusinessContactCreateInputSchema_default
-} from "../../chunk-N7M6GREX.js";
-export {
-  BusinessContactCreateInputSchema,
-  BusinessContactCreateInputSchema_default as default
-};
-//# sourceMappingURL=BusinessContactCreateInputSchema.js.map
+import { z } from 'zod';
+export const BusinessContactCreateInputSchema = z.object({
+    companyName: z.string(),
+    contactName: z.string(),
+    contactPreference: z.string(),
+    email: z.string().optional().nullable(),
+    phone: z.string().optional().nullable(),
+    message: z.string(),
+    purpose: z.string().optional().nullable()
+}).strict();
+export default BusinessContactCreateInputSchema;

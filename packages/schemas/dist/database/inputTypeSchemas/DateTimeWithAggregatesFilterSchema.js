@@ -1,12 +1,18 @@
-import {
-  DateTimeWithAggregatesFilterSchema,
-  DateTimeWithAggregatesFilterSchema_default
-} from "../../chunk-XCQN6FNH.js";
-import "../../chunk-7P2FYBUR.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-export {
-  DateTimeWithAggregatesFilterSchema,
-  DateTimeWithAggregatesFilterSchema_default as default
-};
-//# sourceMappingURL=DateTimeWithAggregatesFilterSchema.js.map
+import { z } from 'zod';
+import { NestedDateTimeWithAggregatesFilterSchema } from './NestedDateTimeWithAggregatesFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedDateTimeFilterSchema } from './NestedDateTimeFilterSchema.js';
+export const DateTimeWithAggregatesFilterSchema = z.object({
+    equals: z.coerce.date().optional(),
+    in: z.coerce.date().array().optional(),
+    notIn: z.coerce.date().array().optional(),
+    lt: z.coerce.date().optional(),
+    lte: z.coerce.date().optional(),
+    gt: z.coerce.date().optional(),
+    gte: z.coerce.date().optional(),
+    not: z.union([z.coerce.date(), z.lazy(() => NestedDateTimeWithAggregatesFilterSchema)]).optional(),
+    _count: z.lazy(() => NestedIntFilterSchema).optional(),
+    _min: z.lazy(() => NestedDateTimeFilterSchema).optional(),
+    _max: z.lazy(() => NestedDateTimeFilterSchema).optional()
+}).strict();
+export default DateTimeWithAggregatesFilterSchema;

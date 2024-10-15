@@ -1,9 +1,5 @@
-import {
-  NoteTypeCreateManyInputSchema,
-  NoteTypeCreateManyInputSchema_default
-} from "../../chunk-MU5C7PFG.js";
-export {
-  NoteTypeCreateManyInputSchema,
-  NoteTypeCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=NoteTypeCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const NoteTypeCreateManyInputSchema = z.object({
+    name: z.string()
+}).strict();
+export default NoteTypeCreateManyInputSchema;

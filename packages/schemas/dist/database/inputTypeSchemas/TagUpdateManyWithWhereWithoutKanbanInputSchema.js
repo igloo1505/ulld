@@ -1,21 +1,9 @@
-import {
-  TagUpdateManyWithWhereWithoutKanbanInputSchema,
-  TagUpdateManyWithWhereWithoutKanbanInputSchema_default
-} from "../../chunk-FUSDFXPS.js";
-import "../../chunk-3PUACFST.js";
-import "../../chunk-3GYZKHEJ.js";
-import "../../chunk-NAMMQGQZ.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  TagUpdateManyWithWhereWithoutKanbanInputSchema,
-  TagUpdateManyWithWhereWithoutKanbanInputSchema_default as default
-};
-//# sourceMappingURL=TagUpdateManyWithWhereWithoutKanbanInputSchema.js.map
+import { z } from 'zod';
+import { TagScalarWhereInputSchema } from './TagScalarWhereInputSchema.js';
+import { TagUpdateManyMutationInputSchema } from './TagUpdateManyMutationInputSchema.js';
+import { TagUncheckedUpdateManyWithoutKanbanInputSchema } from './TagUncheckedUpdateManyWithoutKanbanInputSchema.js';
+export const TagUpdateManyWithWhereWithoutKanbanInputSchema = z.object({
+    where: z.lazy(() => TagScalarWhereInputSchema),
+    data: z.union([z.lazy(() => TagUpdateManyMutationInputSchema), z.lazy(() => TagUncheckedUpdateManyWithoutKanbanInputSchema)]),
+}).strict();
+export default TagUpdateManyWithWhereWithoutKanbanInputSchema;

@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { WhiteboardCountOrderByAggregateInputSchema } from './WhiteboardCountOrderByAggregateInputSchema';
-import { WhiteboardMaxOrderByAggregateInputSchema } from './WhiteboardMaxOrderByAggregateInputSchema';
-import { WhiteboardMinOrderByAggregateInputSchema } from './WhiteboardMinOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { WhiteboardCountOrderByAggregateInputSchema } from './WhiteboardCountOrderByAggregateInputSchema.js';
+import { WhiteboardMaxOrderByAggregateInputSchema } from './WhiteboardMaxOrderByAggregateInputSchema.js';
+import { WhiteboardMinOrderByAggregateInputSchema } from './WhiteboardMinOrderByAggregateInputSchema.js';
 export const WhiteboardOrderByWithAggregationInputSchema: z.ZodType<Prisma.WhiteboardOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   data: z.lazy(() => SortOrderSchema).optional(),
@@ -13,5 +11,4 @@ export const WhiteboardOrderByWithAggregationInputSchema: z.ZodType<Prisma.White
   _max: z.lazy(() => WhiteboardMaxOrderByAggregateInputSchema).optional(),
   _min: z.lazy(() => WhiteboardMinOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default WhiteboardOrderByWithAggregationInputSchema;

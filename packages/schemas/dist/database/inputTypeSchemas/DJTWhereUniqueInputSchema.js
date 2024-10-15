@@ -1,17 +1,16 @@
-import {
-  DJTWhereUniqueInputSchema,
-  DJTWhereUniqueInputSchema_default
-} from "../../chunk-ZKHP557W.js";
-import "../../chunk-AMDBRTLV.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DJTWhereUniqueInputSchema,
-  DJTWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=DJTWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { DJTWhereInputSchema } from './DJTWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { BytesFilterSchema } from './BytesFilterSchema.js';
+export const DJTWhereUniqueInputSchema = z.object({
+    id: z.number().int()
+})
+    .and(z.object({
+    id: z.number().int().optional(),
+    AND: z.union([z.lazy(() => DJTWhereInputSchema), z.lazy(() => DJTWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => DJTWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => DJTWhereInputSchema), z.lazy(() => DJTWhereInputSchema).array()]).optional(),
+    type: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    data: z.union([z.lazy(() => BytesFilterSchema), z.instanceof(Buffer)]).optional(),
+}).strict());
+export default DJTWhereUniqueInputSchema;

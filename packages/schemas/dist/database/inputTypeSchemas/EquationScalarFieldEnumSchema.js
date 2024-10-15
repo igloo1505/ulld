@@ -1,9 +1,3 @@
-import {
-  EquationScalarFieldEnumSchema,
-  EquationScalarFieldEnumSchema_default
-} from "../../chunk-I7LBMM7X.js";
-export {
-  EquationScalarFieldEnumSchema,
-  EquationScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=EquationScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const EquationScalarFieldEnumSchema = z.enum(['id', 'equationId', 'title', 'desc', 'content', 'asPython', 'variableLegend', 'variables', 'keywords', 'createdAt', 'lastAccess']);
+export default EquationScalarFieldEnumSchema;

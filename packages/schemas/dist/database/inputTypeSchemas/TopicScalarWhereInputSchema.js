@@ -1,16 +1,14 @@
-import {
-  TopicScalarWhereInputSchema,
-  TopicScalarWhereInputSchema_default
-} from "../../chunk-JO42GRGQ.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  TopicScalarWhereInputSchema,
-  TopicScalarWhereInputSchema_default as default
-};
-//# sourceMappingURL=TopicScalarWhereInputSchema.js.map
+import { z } from 'zod';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+export const TopicScalarWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => TopicScalarWhereInputSchema), z.lazy(() => TopicScalarWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => TopicScalarWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => TopicScalarWhereInputSchema), z.lazy(() => TopicScalarWhereInputSchema).array()]).optional(),
+    value: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    kanbanId: z.union([z.lazy(() => IntNullableFilterSchema), z.number()]).optional().nullable(),
+    createdAt: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    lastAccess: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default TopicScalarWhereInputSchema;

@@ -1,10 +1,7 @@
-import {
-  TimePeriodCreateManyDietInputEnvelopeSchema,
-  TimePeriodCreateManyDietInputEnvelopeSchema_default
-} from "../../chunk-ZWHELD3Z.js";
-import "../../chunk-4W4TUDSE.js";
-export {
-  TimePeriodCreateManyDietInputEnvelopeSchema,
-  TimePeriodCreateManyDietInputEnvelopeSchema_default as default
-};
-//# sourceMappingURL=TimePeriodCreateManyDietInputEnvelopeSchema.js.map
+import { z } from 'zod';
+import { TimePeriodCreateManyDietInputSchema } from './TimePeriodCreateManyDietInputSchema.js';
+export const TimePeriodCreateManyDietInputEnvelopeSchema = z.object({
+    data: z.union([z.lazy(() => TimePeriodCreateManyDietInputSchema), z.lazy(() => TimePeriodCreateManyDietInputSchema).array()]),
+    skipDuplicates: z.boolean().optional()
+}).strict();
+export default TimePeriodCreateManyDietInputEnvelopeSchema;

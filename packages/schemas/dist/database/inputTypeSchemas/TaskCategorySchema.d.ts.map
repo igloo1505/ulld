@@ -1,0 +1,1 @@
+{"version":3,"file":"TaskCategorySchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/TaskCategorySchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,eAAO,MAAM,kBAAkB,yIAA4H,CAAC;AAC5J,MAAM,MAAM,gBAAgB,GAAG,GAAG,CAAC,CAAC,KAAK,CAAC,OAAO,kBAAkB,CAAC,EAAE,CAAA;AACtE,eAAe,kBAAkB,CAAC"}

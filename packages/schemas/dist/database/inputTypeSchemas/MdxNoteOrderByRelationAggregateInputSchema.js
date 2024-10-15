@@ -1,10 +1,6 @@
-import {
-  MdxNoteOrderByRelationAggregateInputSchema,
-  MdxNoteOrderByRelationAggregateInputSchema_default
-} from "../../chunk-FEI37AUG.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  MdxNoteOrderByRelationAggregateInputSchema,
-  MdxNoteOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=MdxNoteOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const MdxNoteOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default MdxNoteOrderByRelationAggregateInputSchema;

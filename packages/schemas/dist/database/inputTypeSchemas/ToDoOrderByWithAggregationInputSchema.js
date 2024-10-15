@@ -1,17 +1,28 @@
-import {
-  ToDoOrderByWithAggregationInputSchema,
-  ToDoOrderByWithAggregationInputSchema_default
-} from "../../chunk-374TGSAE.js";
-import "../../chunk-WWUDH4KB.js";
-import "../../chunk-NXDMIYOF.js";
-import "../../chunk-JLYLUD4S.js";
-import "../../chunk-MUI7E7DO.js";
-import "../../chunk-EQFWSGBX.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ToDoOrderByWithAggregationInputSchema,
-  ToDoOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=ToDoOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { ToDoCountOrderByAggregateInputSchema } from './ToDoCountOrderByAggregateInputSchema.js';
+import { ToDoAvgOrderByAggregateInputSchema } from './ToDoAvgOrderByAggregateInputSchema.js';
+import { ToDoMaxOrderByAggregateInputSchema } from './ToDoMaxOrderByAggregateInputSchema.js';
+import { ToDoMinOrderByAggregateInputSchema } from './ToDoMinOrderByAggregateInputSchema.js';
+import { ToDoSumOrderByAggregateInputSchema } from './ToDoSumOrderByAggregateInputSchema.js';
+export const ToDoOrderByWithAggregationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    task: z.lazy(() => SortOrderSchema).optional(),
+    dueAt: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    details: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    parentId: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    category: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    bookmarked: z.lazy(() => SortOrderSchema).optional(),
+    status: z.lazy(() => SortOrderSchema).optional(),
+    priority: z.lazy(() => SortOrderSchema).optional(),
+    toDoListId: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    completedOn: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    _count: z.lazy(() => ToDoCountOrderByAggregateInputSchema).optional(),
+    _avg: z.lazy(() => ToDoAvgOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => ToDoMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => ToDoMinOrderByAggregateInputSchema).optional(),
+    _sum: z.lazy(() => ToDoSumOrderByAggregateInputSchema).optional()
+}).strict();
+export default ToDoOrderByWithAggregationInputSchema;

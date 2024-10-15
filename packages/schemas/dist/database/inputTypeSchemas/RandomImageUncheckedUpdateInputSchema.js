@@ -1,11 +1,8 @@
-import {
-  RandomImageUncheckedUpdateInputSchema,
-  RandomImageUncheckedUpdateInputSchema_default
-} from "../../chunk-33SR3KXZ.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  RandomImageUncheckedUpdateInputSchema,
-  RandomImageUncheckedUpdateInputSchema_default as default
-};
-//# sourceMappingURL=RandomImageUncheckedUpdateInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const RandomImageUncheckedUpdateInputSchema = z.object({
+    path: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default RandomImageUncheckedUpdateInputSchema;

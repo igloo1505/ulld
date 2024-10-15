@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { PracticeExamCreateWithoutTagsInputSchema } from './PracticeExamCreateWithoutTagsInputSchema';
-import { PracticeExamUncheckedCreateWithoutTagsInputSchema } from './PracticeExamUncheckedCreateWithoutTagsInputSchema';
-import { PracticeExamCreateOrConnectWithoutTagsInputSchema } from './PracticeExamCreateOrConnectWithoutTagsInputSchema';
-import { PracticeExamUpsertWithWhereUniqueWithoutTagsInputSchema } from './PracticeExamUpsertWithWhereUniqueWithoutTagsInputSchema';
-import { PracticeExamWhereUniqueInputSchema } from './PracticeExamWhereUniqueInputSchema';
-import { PracticeExamUpdateWithWhereUniqueWithoutTagsInputSchema } from './PracticeExamUpdateWithWhereUniqueWithoutTagsInputSchema';
-import { PracticeExamUpdateManyWithWhereWithoutTagsInputSchema } from './PracticeExamUpdateManyWithWhereWithoutTagsInputSchema';
-import { PracticeExamScalarWhereInputSchema } from './PracticeExamScalarWhereInputSchema';
-
+import { PracticeExamCreateWithoutTagsInputSchema } from './PracticeExamCreateWithoutTagsInputSchema.js';
+import { PracticeExamUncheckedCreateWithoutTagsInputSchema } from './PracticeExamUncheckedCreateWithoutTagsInputSchema.js';
+import { PracticeExamCreateOrConnectWithoutTagsInputSchema } from './PracticeExamCreateOrConnectWithoutTagsInputSchema.js';
+import { PracticeExamUpsertWithWhereUniqueWithoutTagsInputSchema } from './PracticeExamUpsertWithWhereUniqueWithoutTagsInputSchema.js';
+import { PracticeExamWhereUniqueInputSchema } from './PracticeExamWhereUniqueInputSchema.js';
+import { PracticeExamUpdateWithWhereUniqueWithoutTagsInputSchema } from './PracticeExamUpdateWithWhereUniqueWithoutTagsInputSchema.js';
+import { PracticeExamUpdateManyWithWhereWithoutTagsInputSchema } from './PracticeExamUpdateManyWithWhereWithoutTagsInputSchema.js';
+import { PracticeExamScalarWhereInputSchema } from './PracticeExamScalarWhereInputSchema.js';
 export const PracticeExamUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Prisma.PracticeExamUpdateManyWithoutTagsNestedInput> = z.object({
   create: z.union([ z.lazy(() => PracticeExamCreateWithoutTagsInputSchema),z.lazy(() => PracticeExamCreateWithoutTagsInputSchema).array(),z.lazy(() => PracticeExamUncheckedCreateWithoutTagsInputSchema),z.lazy(() => PracticeExamUncheckedCreateWithoutTagsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => PracticeExamCreateOrConnectWithoutTagsInputSchema),z.lazy(() => PracticeExamCreateOrConnectWithoutTagsInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const PracticeExamUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Prism
   updateMany: z.union([ z.lazy(() => PracticeExamUpdateManyWithWhereWithoutTagsInputSchema),z.lazy(() => PracticeExamUpdateManyWithWhereWithoutTagsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => PracticeExamScalarWhereInputSchema),z.lazy(() => PracticeExamScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default PracticeExamUpdateManyWithoutTagsNestedInputSchema;

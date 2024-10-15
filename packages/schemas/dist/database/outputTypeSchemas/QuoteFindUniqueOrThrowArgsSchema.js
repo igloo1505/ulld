@@ -1,22 +1,16 @@
-import {
-  QuoteFindUniqueOrThrowArgsSchema,
-  QuoteFindUniqueOrThrowArgsSchema_default,
-  QuoteSelectSchema
-} from "../../chunk-TA7NR7IJ.js";
-import "../../chunk-OQ4XMP32.js";
-import "../../chunk-BT6JUMEM.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  QuoteFindUniqueOrThrowArgsSchema,
-  QuoteSelectSchema,
-  QuoteFindUniqueOrThrowArgsSchema_default as default
-};
-//# sourceMappingURL=QuoteFindUniqueOrThrowArgsSchema.js.map
+import { z } from 'zod';
+import { QuoteWhereUniqueInputSchema } from '../inputTypeSchemas/QuoteWhereUniqueInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const QuoteSelectSchema = z.object({
+    body: z.boolean().optional(),
+    author: z.boolean().optional(),
+    source: z.boolean().optional(),
+    pinned: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+}).strict();
+export const QuoteFindUniqueOrThrowArgsSchema = z.object({
+    select: QuoteSelectSchema.optional(),
+    where: QuoteWhereUniqueInputSchema,
+}).strict();
+export default QuoteFindUniqueOrThrowArgsSchema;

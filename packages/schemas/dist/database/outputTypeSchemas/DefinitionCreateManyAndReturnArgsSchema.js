@@ -1,10 +1,7 @@
-import {
-  DefinitionCreateManyAndReturnArgsSchema,
-  DefinitionCreateManyAndReturnArgsSchema_default
-} from "../../chunk-LPXLG7J6.js";
-import "../../chunk-PICJJJY4.js";
-export {
-  DefinitionCreateManyAndReturnArgsSchema,
-  DefinitionCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=DefinitionCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { DefinitionCreateManyInputSchema } from '../inputTypeSchemas/DefinitionCreateManyInputSchema.js';
+export const DefinitionCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([DefinitionCreateManyInputSchema, DefinitionCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default DefinitionCreateManyAndReturnArgsSchema;

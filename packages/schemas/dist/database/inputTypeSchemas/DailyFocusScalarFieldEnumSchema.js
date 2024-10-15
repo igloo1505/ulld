@@ -1,9 +1,3 @@
-import {
-  DailyFocusScalarFieldEnumSchema,
-  DailyFocusScalarFieldEnumSchema_default
-} from "../../chunk-CPCBAQ3E.js";
-export {
-  DailyFocusScalarFieldEnumSchema,
-  DailyFocusScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=DailyFocusScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const DailyFocusScalarFieldEnumSchema = z.enum(['value', 'createdAt']);
+export default DailyFocusScalarFieldEnumSchema;

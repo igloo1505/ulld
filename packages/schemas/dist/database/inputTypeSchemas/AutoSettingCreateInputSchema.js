@@ -1,10 +1,8 @@
-import {
-  AutoSettingCreateInputSchema,
-  AutoSettingCreateInputSchema_default
-} from "../../chunk-5QGKR5FV.js";
-import "../../chunk-76RQYGNI.js";
-export {
-  AutoSettingCreateInputSchema,
-  AutoSettingCreateInputSchema_default as default
-};
-//# sourceMappingURL=AutoSettingCreateInputSchema.js.map
+import { z } from 'zod';
+import { autoSettingSchema } from './autoSettingSchema.js';
+export const AutoSettingCreateInputSchema = z.object({
+    type: z.lazy(() => autoSettingSchema),
+    glob: z.string(),
+    value: z.string()
+}).strict();
+export default AutoSettingCreateInputSchema;

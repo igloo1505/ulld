@@ -1,9 +1,3 @@
-import {
-  SettingsAppendixScalarFieldEnumSchema,
-  SettingsAppendixScalarFieldEnumSchema_default
-} from "../../chunk-Q4LGGI3V.js";
-export {
-  SettingsAppendixScalarFieldEnumSchema,
-  SettingsAppendixScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=SettingsAppendixScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const SettingsAppendixScalarFieldEnumSchema = z.enum(['id', 'data', 'createdAt', 'updatedAt']);
+export default SettingsAppendixScalarFieldEnumSchema;

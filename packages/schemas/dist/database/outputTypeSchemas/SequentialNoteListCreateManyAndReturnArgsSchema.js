@@ -1,10 +1,7 @@
-import {
-  SequentialNoteListCreateManyAndReturnArgsSchema,
-  SequentialNoteListCreateManyAndReturnArgsSchema_default
-} from "../../chunk-SVA53ZTU.js";
-import "../../chunk-TVT2MJLQ.js";
-export {
-  SequentialNoteListCreateManyAndReturnArgsSchema,
-  SequentialNoteListCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=SequentialNoteListCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { SequentialNoteListCreateManyInputSchema } from '../inputTypeSchemas/SequentialNoteListCreateManyInputSchema.js';
+export const SequentialNoteListCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([SequentialNoteListCreateManyInputSchema, SequentialNoteListCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default SequentialNoteListCreateManyAndReturnArgsSchema;

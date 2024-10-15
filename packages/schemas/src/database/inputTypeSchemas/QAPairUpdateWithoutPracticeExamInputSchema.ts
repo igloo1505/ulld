@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
-import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
-import { TagUpdateManyWithoutQAPairNestedInputSchema } from './TagUpdateManyWithoutQAPairNestedInputSchema';
-import { TopicUpdateManyWithoutQAPairNestedInputSchema } from './TopicUpdateManyWithoutQAPairNestedInputSchema';
-import { SubjectUpdateManyWithoutQaPairNestedInputSchema } from './SubjectUpdateManyWithoutQaPairNestedInputSchema';
-
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { TagUpdateManyWithoutQAPairNestedInputSchema } from './TagUpdateManyWithoutQAPairNestedInputSchema.js';
+import { TopicUpdateManyWithoutQAPairNestedInputSchema } from './TopicUpdateManyWithoutQAPairNestedInputSchema.js';
+import { SubjectUpdateManyWithoutQaPairNestedInputSchema } from './SubjectUpdateManyWithoutQaPairNestedInputSchema.js';
 export const QAPairUpdateWithoutPracticeExamInputSchema: z.ZodType<Prisma.QAPairUpdateWithoutPracticeExamInput> = z.object({
   id: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   question: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -20,5 +18,4 @@ export const QAPairUpdateWithoutPracticeExamInputSchema: z.ZodType<Prisma.QAPair
   topics: z.lazy(() => TopicUpdateManyWithoutQAPairNestedInputSchema).optional(),
   subjects: z.lazy(() => SubjectUpdateManyWithoutQaPairNestedInputSchema).optional()
 }).strict();
-
 export default QAPairUpdateWithoutPracticeExamInputSchema;

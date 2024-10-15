@@ -1,0 +1,1 @@
+{"version":3,"file":"BibEntryCountOutputTypeSelectSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/BibEntryCountOutputTypeSelectSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,eAAO,MAAM,mCAAmC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,6BAA6B,CAQrF,CAAC;AACZ,eAAe,mCAAmC,CAAC"}

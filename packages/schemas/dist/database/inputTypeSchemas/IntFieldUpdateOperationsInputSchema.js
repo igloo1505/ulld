@@ -1,9 +1,9 @@
-import {
-  IntFieldUpdateOperationsInputSchema,
-  IntFieldUpdateOperationsInputSchema_default
-} from "../../chunk-TKIJII67.js";
-export {
-  IntFieldUpdateOperationsInputSchema,
-  IntFieldUpdateOperationsInputSchema_default as default
-};
-//# sourceMappingURL=IntFieldUpdateOperationsInputSchema.js.map
+import { z } from 'zod';
+export const IntFieldUpdateOperationsInputSchema = z.object({
+    set: z.number().optional(),
+    increment: z.number().optional(),
+    decrement: z.number().optional(),
+    multiply: z.number().optional(),
+    divide: z.number().optional()
+}).strict();
+export default IntFieldUpdateOperationsInputSchema;

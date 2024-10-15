@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicCreateWithoutBibEntriesInputSchema } from './TopicCreateWithoutBibEntriesInputSchema';
-import { TopicUncheckedCreateWithoutBibEntriesInputSchema } from './TopicUncheckedCreateWithoutBibEntriesInputSchema';
-import { TopicCreateOrConnectWithoutBibEntriesInputSchema } from './TopicCreateOrConnectWithoutBibEntriesInputSchema';
-import { TopicUpsertWithWhereUniqueWithoutBibEntriesInputSchema } from './TopicUpsertWithWhereUniqueWithoutBibEntriesInputSchema';
-import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema';
-import { TopicUpdateWithWhereUniqueWithoutBibEntriesInputSchema } from './TopicUpdateWithWhereUniqueWithoutBibEntriesInputSchema';
-import { TopicUpdateManyWithWhereWithoutBibEntriesInputSchema } from './TopicUpdateManyWithWhereWithoutBibEntriesInputSchema';
-import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema';
-
+import { TopicCreateWithoutBibEntriesInputSchema } from './TopicCreateWithoutBibEntriesInputSchema.js';
+import { TopicUncheckedCreateWithoutBibEntriesInputSchema } from './TopicUncheckedCreateWithoutBibEntriesInputSchema.js';
+import { TopicCreateOrConnectWithoutBibEntriesInputSchema } from './TopicCreateOrConnectWithoutBibEntriesInputSchema.js';
+import { TopicUpsertWithWhereUniqueWithoutBibEntriesInputSchema } from './TopicUpsertWithWhereUniqueWithoutBibEntriesInputSchema.js';
+import { TopicWhereUniqueInputSchema } from './TopicWhereUniqueInputSchema.js';
+import { TopicUpdateWithWhereUniqueWithoutBibEntriesInputSchema } from './TopicUpdateWithWhereUniqueWithoutBibEntriesInputSchema.js';
+import { TopicUpdateManyWithWhereWithoutBibEntriesInputSchema } from './TopicUpdateManyWithWhereWithoutBibEntriesInputSchema.js';
+import { TopicScalarWhereInputSchema } from './TopicScalarWhereInputSchema.js';
 export const TopicUncheckedUpdateManyWithoutBibEntriesNestedInputSchema: z.ZodType<Prisma.TopicUncheckedUpdateManyWithoutBibEntriesNestedInput> = z.object({
   create: z.union([ z.lazy(() => TopicCreateWithoutBibEntriesInputSchema),z.lazy(() => TopicCreateWithoutBibEntriesInputSchema).array(),z.lazy(() => TopicUncheckedCreateWithoutBibEntriesInputSchema),z.lazy(() => TopicUncheckedCreateWithoutBibEntriesInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => TopicCreateOrConnectWithoutBibEntriesInputSchema),z.lazy(() => TopicCreateOrConnectWithoutBibEntriesInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const TopicUncheckedUpdateManyWithoutBibEntriesNestedInputSchema: z.ZodTy
   updateMany: z.union([ z.lazy(() => TopicUpdateManyWithWhereWithoutBibEntriesInputSchema),z.lazy(() => TopicUpdateManyWithWhereWithoutBibEntriesInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => TopicScalarWhereInputSchema),z.lazy(() => TopicScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default TopicUncheckedUpdateManyWithoutBibEntriesNestedInputSchema;

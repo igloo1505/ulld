@@ -1,11 +1,9 @@
-import {
-  BibOrderByRelevanceInputSchema,
-  BibOrderByRelevanceInputSchema_default
-} from "../../chunk-BVOQPGJM.js";
-import "../../chunk-OLNJKVDG.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  BibOrderByRelevanceInputSchema,
-  BibOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=BibOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { BibOrderByRelevanceFieldEnumSchema } from './BibOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const BibOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => BibOrderByRelevanceFieldEnumSchema), z.lazy(() => BibOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default BibOrderByRelevanceInputSchema;

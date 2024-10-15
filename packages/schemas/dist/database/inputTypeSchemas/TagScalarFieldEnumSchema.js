@@ -1,9 +1,3 @@
-import {
-  TagScalarFieldEnumSchema,
-  TagScalarFieldEnumSchema_default
-} from "../../chunk-TDH4ZK67.js";
-export {
-  TagScalarFieldEnumSchema,
-  TagScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=TagScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const TagScalarFieldEnumSchema = z.enum(['value', 'kanbanId', 'createdAt', 'lastAccess']);
+export default TagScalarFieldEnumSchema;

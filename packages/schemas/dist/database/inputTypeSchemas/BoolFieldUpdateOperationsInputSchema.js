@@ -1,9 +1,5 @@
-import {
-  BoolFieldUpdateOperationsInputSchema,
-  BoolFieldUpdateOperationsInputSchema_default
-} from "../../chunk-APCVB345.js";
-export {
-  BoolFieldUpdateOperationsInputSchema,
-  BoolFieldUpdateOperationsInputSchema_default as default
-};
-//# sourceMappingURL=BoolFieldUpdateOperationsInputSchema.js.map
+import { z } from 'zod';
+export const BoolFieldUpdateOperationsInputSchema = z.object({
+    set: z.boolean().optional()
+}).strict();
+export default BoolFieldUpdateOperationsInputSchema;

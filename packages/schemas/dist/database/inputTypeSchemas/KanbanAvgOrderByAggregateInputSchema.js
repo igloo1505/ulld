@@ -1,10 +1,6 @@
-import {
-  KanbanAvgOrderByAggregateInputSchema,
-  KanbanAvgOrderByAggregateInputSchema_default
-} from "../../chunk-JMFMGQ3G.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanbanAvgOrderByAggregateInputSchema,
-  KanbanAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=KanbanAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const KanbanAvgOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default KanbanAvgOrderByAggregateInputSchema;

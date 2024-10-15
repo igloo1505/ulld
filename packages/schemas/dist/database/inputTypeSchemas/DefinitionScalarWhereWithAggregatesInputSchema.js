@@ -1,24 +1,18 @@
-import {
-  DefinitionScalarWhereWithAggregatesInputSchema,
-  DefinitionScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-NDRNE74Y.js";
-import "../../chunk-BZ55PUI6.js";
-import "../../chunk-VFKLP7TG.js";
-import "../../chunk-VKTRMAGB.js";
-import "../../chunk-Y6KFO3UF.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-XCQN6FNH.js";
-import "../../chunk-7P2FYBUR.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-3OYDE7JL.js";
-import "../../chunk-JHSRNRH3.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DefinitionScalarWhereWithAggregatesInputSchema,
-  DefinitionScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=DefinitionScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+export const DefinitionScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => DefinitionScalarWhereWithAggregatesInputSchema), z.lazy(() => DefinitionScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => DefinitionScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => DefinitionScalarWhereWithAggregatesInputSchema), z.lazy(() => DefinitionScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    label: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    content: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    alphabeticalLabel: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    mdxNoteId: z.union([z.lazy(() => IntNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    createdAt: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+    lastAccess: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default DefinitionScalarWhereWithAggregatesInputSchema;

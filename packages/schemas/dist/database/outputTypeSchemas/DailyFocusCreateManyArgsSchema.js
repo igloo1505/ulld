@@ -1,10 +1,7 @@
-import {
-  DailyFocusCreateManyArgsSchema,
-  DailyFocusCreateManyArgsSchema_default
-} from "../../chunk-JZGZFHNI.js";
-import "../../chunk-HHOFUF36.js";
-export {
-  DailyFocusCreateManyArgsSchema,
-  DailyFocusCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=DailyFocusCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { DailyFocusCreateManyInputSchema } from '../inputTypeSchemas/DailyFocusCreateManyInputSchema.js';
+export const DailyFocusCreateManyArgsSchema = z.object({
+    data: z.union([DailyFocusCreateManyInputSchema, DailyFocusCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default DailyFocusCreateManyArgsSchema;

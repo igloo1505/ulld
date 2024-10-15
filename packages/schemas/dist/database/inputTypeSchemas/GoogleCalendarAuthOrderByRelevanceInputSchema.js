@@ -1,11 +1,9 @@
-import {
-  GoogleCalendarAuthOrderByRelevanceInputSchema,
-  GoogleCalendarAuthOrderByRelevanceInputSchema_default
-} from "../../chunk-GSEIDEY6.js";
-import "../../chunk-2OLYYZWL.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  GoogleCalendarAuthOrderByRelevanceInputSchema,
-  GoogleCalendarAuthOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { GoogleCalendarAuthOrderByRelevanceFieldEnumSchema } from './GoogleCalendarAuthOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const GoogleCalendarAuthOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => GoogleCalendarAuthOrderByRelevanceFieldEnumSchema), z.lazy(() => GoogleCalendarAuthOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default GoogleCalendarAuthOrderByRelevanceInputSchema;

@@ -1,11 +1,8 @@
-import {
-  CitationsGroupUpdateWithoutEntriesInputSchema,
-  CitationsGroupUpdateWithoutEntriesInputSchema_default
-} from "../../chunk-XI5GFN6E.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  CitationsGroupUpdateWithoutEntriesInputSchema,
-  CitationsGroupUpdateWithoutEntriesInputSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupUpdateWithoutEntriesInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+export const CitationsGroupUpdateWithoutEntriesInputSchema = z.object({
+    name: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    description: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default CitationsGroupUpdateWithoutEntriesInputSchema;

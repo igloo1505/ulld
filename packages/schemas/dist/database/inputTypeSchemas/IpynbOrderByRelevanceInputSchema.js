@@ -1,11 +1,9 @@
-import {
-  IpynbOrderByRelevanceInputSchema,
-  IpynbOrderByRelevanceInputSchema_default
-} from "../../chunk-DY7K4H5E.js";
-import "../../chunk-RVZOCS6Z.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  IpynbOrderByRelevanceInputSchema,
-  IpynbOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=IpynbOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { IpynbOrderByRelevanceFieldEnumSchema } from './IpynbOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const IpynbOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => IpynbOrderByRelevanceFieldEnumSchema), z.lazy(() => IpynbOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default IpynbOrderByRelevanceInputSchema;

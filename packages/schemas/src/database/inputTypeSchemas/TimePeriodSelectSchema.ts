@@ -1,7 +1,6 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
+import type { Prisma } from '@ulld/database/db';
 import { DietArgsSchema } from "../outputTypeSchemas/DietArgsSchema"
-
 export const TimePeriodSelectSchema: z.ZodType<Prisma.TimePeriodSelect> = z.object({
   id: z.boolean().optional(),
   start: z.boolean().optional(),
@@ -9,5 +8,4 @@ export const TimePeriodSelectSchema: z.ZodType<Prisma.TimePeriodSelect> = z.obje
   dietId: z.boolean().optional(),
   Diet: z.union([z.boolean(),z.lazy(() => DietArgsSchema)]).optional(),
 }).strict()
-
 export default TimePeriodSelectSchema;

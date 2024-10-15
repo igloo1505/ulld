@@ -1,9 +1,8 @@
-import {
-  KanBanListCreateManyInputSchema,
-  KanBanListCreateManyInputSchema_default
-} from "../../chunk-KGXKIKBX.js";
-export {
-  KanBanListCreateManyInputSchema,
-  KanBanListCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=KanBanListCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const KanBanListCreateManyInputSchema = z.object({
+    id: z.number().int().optional(),
+    indexWithinBoard: z.number().int(),
+    title: z.string().optional().nullable(),
+    boardId: z.number().int().optional().nullable()
+}).strict();
+export default KanBanListCreateManyInputSchema;

@@ -1,10 +1,9 @@
-import {
-  KanBanListMaxOrderByAggregateInputSchema,
-  KanBanListMaxOrderByAggregateInputSchema_default
-} from "../../chunk-3CMA5P4Y.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanBanListMaxOrderByAggregateInputSchema,
-  KanBanListMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=KanBanListMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const KanBanListMaxOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    indexWithinBoard: z.lazy(() => SortOrderSchema).optional(),
+    title: z.lazy(() => SortOrderSchema).optional(),
+    boardId: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default KanBanListMaxOrderByAggregateInputSchema;

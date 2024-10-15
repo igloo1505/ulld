@@ -1,10 +1,8 @@
-import {
-  DietSumOrderByAggregateInputSchema,
-  DietSumOrderByAggregateInputSchema_default
-} from "../../chunk-RXEFXJDR.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DietSumOrderByAggregateInputSchema,
-  DietSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=DietSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const DietSumOrderByAggregateInputSchema = z.object({
+    carb: z.lazy(() => SortOrderSchema).optional(),
+    pro: z.lazy(() => SortOrderSchema).optional(),
+    fat: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default DietSumOrderByAggregateInputSchema;

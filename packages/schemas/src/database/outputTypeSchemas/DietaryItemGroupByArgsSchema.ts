@@ -1,10 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { DietaryItemWhereInputSchema } from '../inputTypeSchemas/DietaryItemWhereInputSchema'
-import { DietaryItemOrderByWithAggregationInputSchema } from '../inputTypeSchemas/DietaryItemOrderByWithAggregationInputSchema'
-import { DietaryItemScalarFieldEnumSchema } from '../inputTypeSchemas/DietaryItemScalarFieldEnumSchema'
-import { DietaryItemScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/DietaryItemScalarWhereWithAggregatesInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+import { DietaryItemWhereInputSchema } from '../inputTypeSchemas/DietaryItemWhereInputSchema.js'
+import { DietaryItemOrderByWithAggregationInputSchema } from '../inputTypeSchemas/DietaryItemOrderByWithAggregationInputSchema.js'
+import { DietaryItemScalarFieldEnumSchema } from '../inputTypeSchemas/DietaryItemScalarFieldEnumSchema.js'
+import { DietaryItemScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/DietaryItemScalarWhereWithAggregatesInputSchema.js'
 export const DietaryItemGroupByArgsSchema: z.ZodType<Prisma.DietaryItemGroupByArgs> = z.object({
   where: DietaryItemWhereInputSchema.optional(),
   orderBy: z.union([ DietaryItemOrderByWithAggregationInputSchema.array(),DietaryItemOrderByWithAggregationInputSchema ]).optional(),
@@ -13,5 +12,4 @@ export const DietaryItemGroupByArgsSchema: z.ZodType<Prisma.DietaryItemGroupByAr
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default DietaryItemGroupByArgsSchema;

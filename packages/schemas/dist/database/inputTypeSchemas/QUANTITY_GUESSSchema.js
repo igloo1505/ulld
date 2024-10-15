@@ -1,9 +1,3 @@
-import {
-  QUANTITY_GUESSSchema,
-  QUANTITY_GUESSSchema_default
-} from "../../chunk-LUUG3TNG.js";
-export {
-  QUANTITY_GUESSSchema,
-  QUANTITY_GUESSSchema_default as default
-};
-//# sourceMappingURL=QUANTITY_GUESSSchema.js.map
+import { z } from 'zod';
+export const QUANTITY_GUESSSchema = z.enum(['nibble', 'fewBites', 'snack', 'smallMeal', 'fullMeal', 'largeMeal', 'multipleMeals', 'allMeals', 'completelyStuffed']);
+export default QUANTITY_GUESSSchema;

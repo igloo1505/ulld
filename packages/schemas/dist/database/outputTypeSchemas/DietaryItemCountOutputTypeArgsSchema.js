@@ -1,10 +1,6 @@
-import {
-  DietaryItemCountOutputTypeArgsSchema,
-  DietaryItemCountOutputTypeArgsSchema_default
-} from "../../chunk-HVBBYC7S.js";
-import "../../chunk-RNIPPCR5.js";
-export {
-  DietaryItemCountOutputTypeArgsSchema,
-  DietaryItemCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=DietaryItemCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { DietaryItemCountOutputTypeSelectSchema } from './DietaryItemCountOutputTypeSelectSchema.js';
+export const DietaryItemCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => DietaryItemCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default DietaryItemCountOutputTypeSelectSchema;

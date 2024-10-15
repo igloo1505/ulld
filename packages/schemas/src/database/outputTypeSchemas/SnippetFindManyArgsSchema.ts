@@ -1,12 +1,11 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { SnippetWhereInputSchema } from '../inputTypeSchemas/SnippetWhereInputSchema'
-import { SnippetOrderByWithRelationInputSchema } from '../inputTypeSchemas/SnippetOrderByWithRelationInputSchema'
-import { SnippetWhereUniqueInputSchema } from '../inputTypeSchemas/SnippetWhereUniqueInputSchema'
-import { SnippetScalarFieldEnumSchema } from '../inputTypeSchemas/SnippetScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+import { SnippetWhereInputSchema } from '../inputTypeSchemas/SnippetWhereInputSchema.js'
+import { SnippetOrderByWithRelationInputSchema } from '../inputTypeSchemas/SnippetOrderByWithRelationInputSchema.js'
+import { SnippetWhereUniqueInputSchema } from '../inputTypeSchemas/SnippetWhereUniqueInputSchema.js'
+import { SnippetScalarFieldEnumSchema } from '../inputTypeSchemas/SnippetScalarFieldEnumSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const SnippetSelectSchema: z.ZodType<Prisma.SnippetSelect> = z.object({
   id: z.boolean().optional(),
   content: z.boolean().optional(),
@@ -15,7 +14,6 @@ export const SnippetSelectSchema: z.ZodType<Prisma.SnippetSelect> = z.object({
   language: z.boolean().optional(),
   createdAt: z.boolean().optional(),
 }).strict()
-
 export const SnippetFindManyArgsSchema: z.ZodType<Prisma.SnippetFindManyArgs> = z.object({
   select: SnippetSelectSchema.optional(),
   where: SnippetWhereInputSchema.optional(),
@@ -25,5 +23,4 @@ export const SnippetFindManyArgsSchema: z.ZodType<Prisma.SnippetFindManyArgs> = 
   skip: z.number().optional(),
   distinct: z.union([ SnippetScalarFieldEnumSchema,SnippetScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default SnippetFindManyArgsSchema;

@@ -1,10 +1,8 @@
-import {
-  ServingCreateManyItemInputSchema,
-  ServingCreateManyItemInputSchema_default
-} from "../../chunk-RGEOUWDE.js";
-import "../../chunk-LUUG3TNG.js";
-export {
-  ServingCreateManyItemInputSchema,
-  ServingCreateManyItemInputSchema_default as default
-};
-//# sourceMappingURL=ServingCreateManyItemInputSchema.js.map
+import { z } from 'zod';
+import { QUANTITY_GUESSSchema } from './QUANTITY_GUESSSchema.js';
+export const ServingCreateManyItemInputSchema = z.object({
+    id: z.number().int().optional(),
+    quant_oz: z.number().optional().nullable(),
+    quant_guess: z.lazy(() => QUANTITY_GUESSSchema).optional().nullable()
+}).strict();
+export default ServingCreateManyItemInputSchema;

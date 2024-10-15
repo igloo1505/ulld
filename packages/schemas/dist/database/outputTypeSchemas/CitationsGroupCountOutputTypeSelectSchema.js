@@ -1,9 +1,5 @@
-import {
-  CitationsGroupCountOutputTypeSelectSchema,
-  CitationsGroupCountOutputTypeSelectSchema_default
-} from "../../chunk-47E6WPFB.js";
-export {
-  CitationsGroupCountOutputTypeSelectSchema,
-  CitationsGroupCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const CitationsGroupCountOutputTypeSelectSchema = z.object({
+    entries: z.boolean().optional(),
+}).strict();
+export default CitationsGroupCountOutputTypeSelectSchema;

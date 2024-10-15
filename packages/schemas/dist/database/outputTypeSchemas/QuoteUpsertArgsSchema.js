@@ -1,30 +1,22 @@
-import {
-  QuoteSelectSchema,
-  QuoteUpsertArgsSchema,
-  QuoteUpsertArgsSchema_default
-} from "../../chunk-PPLFARGL.js";
-import "../../chunk-DZY7IR5N.js";
-import "../../chunk-G4FY7B4N.js";
-import "../../chunk-QDRC663Z.js";
-import "../../chunk-U2324CQC.js";
-import "../../chunk-OQ4XMP32.js";
-import "../../chunk-BT6JUMEM.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  QuoteSelectSchema,
-  QuoteUpsertArgsSchema,
-  QuoteUpsertArgsSchema_default as default
-};
-//# sourceMappingURL=QuoteUpsertArgsSchema.js.map
+import { z } from 'zod';
+import { QuoteWhereUniqueInputSchema } from '../inputTypeSchemas/QuoteWhereUniqueInputSchema.js';
+import { QuoteCreateInputSchema } from '../inputTypeSchemas/QuoteCreateInputSchema.js';
+import { QuoteUncheckedCreateInputSchema } from '../inputTypeSchemas/QuoteUncheckedCreateInputSchema.js';
+import { QuoteUpdateInputSchema } from '../inputTypeSchemas/QuoteUpdateInputSchema.js';
+import { QuoteUncheckedUpdateInputSchema } from '../inputTypeSchemas/QuoteUncheckedUpdateInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const QuoteSelectSchema = z.object({
+    body: z.boolean().optional(),
+    author: z.boolean().optional(),
+    source: z.boolean().optional(),
+    pinned: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+}).strict();
+export const QuoteUpsertArgsSchema = z.object({
+    select: QuoteSelectSchema.optional(),
+    where: QuoteWhereUniqueInputSchema,
+    create: z.union([QuoteCreateInputSchema, QuoteUncheckedCreateInputSchema]),
+    update: z.union([QuoteUpdateInputSchema, QuoteUncheckedUpdateInputSchema]),
+}).strict();
+export default QuoteUpsertArgsSchema;

@@ -1,11 +1,13 @@
-import {
-  RandomImagePartialSchema,
-  RandomImageSchema,
-  RandomImageSchema_default
-} from "../../chunk-LGAOVMNM.js";
-export {
-  RandomImagePartialSchema,
-  RandomImageSchema,
-  RandomImageSchema_default as default
-};
-//# sourceMappingURL=RandomImageSchema.js.map
+import { z } from 'zod';
+/////////////////////////////////////////
+// RANDOM IMAGE SCHEMA
+/////////////////////////////////////////
+export const RandomImageSchema = z.object({
+    path: z.string(),
+    createdAt: z.coerce.date(),
+});
+/////////////////////////////////////////
+// RANDOM IMAGE PARTIAL SCHEMA
+/////////////////////////////////////////
+export const RandomImagePartialSchema = RandomImageSchema.partial();
+export default RandomImageSchema;

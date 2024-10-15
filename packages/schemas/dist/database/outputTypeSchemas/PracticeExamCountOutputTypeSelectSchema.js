@@ -1,9 +1,8 @@
-import {
-  PracticeExamCountOutputTypeSelectSchema,
-  PracticeExamCountOutputTypeSelectSchema_default
-} from "../../chunk-FR2KMCZK.js";
-export {
-  PracticeExamCountOutputTypeSelectSchema,
-  PracticeExamCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=PracticeExamCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const PracticeExamCountOutputTypeSelectSchema = z.object({
+    topics: z.boolean().optional(),
+    tags: z.boolean().optional(),
+    subjects: z.boolean().optional(),
+    questions: z.boolean().optional(),
+}).strict();
+export default PracticeExamCountOutputTypeSelectSchema;

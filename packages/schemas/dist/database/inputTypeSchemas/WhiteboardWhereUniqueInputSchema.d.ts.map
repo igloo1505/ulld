@@ -1,0 +1,1 @@
+{"version":3,"file":"WhiteboardWhereUniqueInputSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/WhiteboardWhereUniqueInputSchema.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AAGxB,eAAO,MAAM,gCAAgC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,0BAA0B,CAS9E,CAAC;AACb,eAAe,gCAAgC,CAAC"}

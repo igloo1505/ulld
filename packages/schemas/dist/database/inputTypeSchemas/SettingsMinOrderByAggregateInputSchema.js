@@ -1,10 +1,16 @@
-import {
-  SettingsMinOrderByAggregateInputSchema,
-  SettingsMinOrderByAggregateInputSchema_default
-} from "../../chunk-NBLG75QR.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SettingsMinOrderByAggregateInputSchema,
-  SettingsMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SettingsMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SettingsMinOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    tooltips: z.lazy(() => SortOrderSchema).optional(),
+    title: z.lazy(() => SortOrderSchema).optional(),
+    summary_showCitations: z.lazy(() => SortOrderSchema).optional(),
+    summary_showTags: z.lazy(() => SortOrderSchema).optional(),
+    landingImageAlign: z.lazy(() => SortOrderSchema).optional(),
+    lockedLandingImage: z.lazy(() => SortOrderSchema).optional(),
+    cleanOnSync: z.lazy(() => SortOrderSchema).optional(),
+    plotTheme: z.lazy(() => SortOrderSchema).optional(),
+    firstSync: z.lazy(() => SortOrderSchema).optional(),
+    lastSync: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SettingsMinOrderByAggregateInputSchema;

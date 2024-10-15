@@ -1,9 +1,5 @@
-import {
-  SnippetCreatekeywordsInputSchema,
-  SnippetCreatekeywordsInputSchema_default
-} from "../../chunk-JVQMU3BL.js";
-export {
-  SnippetCreatekeywordsInputSchema,
-  SnippetCreatekeywordsInputSchema_default as default
-};
-//# sourceMappingURL=SnippetCreatekeywordsInputSchema.js.map
+import { z } from 'zod';
+export const SnippetCreatekeywordsInputSchema = z.object({
+    set: z.string().array()
+}).strict();
+export default SnippetCreatekeywordsInputSchema;

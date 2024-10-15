@@ -1,10 +1,7 @@
-import {
-  DefinitionCreateManyMdxNoteInputEnvelopeSchema,
-  DefinitionCreateManyMdxNoteInputEnvelopeSchema_default
-} from "../../chunk-NI7GTVHO.js";
-import "../../chunk-WBF2Y67K.js";
-export {
-  DefinitionCreateManyMdxNoteInputEnvelopeSchema,
-  DefinitionCreateManyMdxNoteInputEnvelopeSchema_default as default
-};
-//# sourceMappingURL=DefinitionCreateManyMdxNoteInputEnvelopeSchema.js.map
+import { z } from 'zod';
+import { DefinitionCreateManyMdxNoteInputSchema } from './DefinitionCreateManyMdxNoteInputSchema.js';
+export const DefinitionCreateManyMdxNoteInputEnvelopeSchema = z.object({
+    data: z.union([z.lazy(() => DefinitionCreateManyMdxNoteInputSchema), z.lazy(() => DefinitionCreateManyMdxNoteInputSchema).array()]),
+    skipDuplicates: z.boolean().optional()
+}).strict();
+export default DefinitionCreateManyMdxNoteInputEnvelopeSchema;

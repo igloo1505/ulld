@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SequentialNoteListWhereInputSchema } from './SequentialNoteListWhereInputSchema';
-import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema';
-import { IpynbListRelationFilterSchema } from './IpynbListRelationFilterSchema';
-
+import { SequentialNoteListWhereInputSchema } from './SequentialNoteListWhereInputSchema.js';
+import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema.js';
+import { IpynbListRelationFilterSchema } from './IpynbListRelationFilterSchema.js';
 export const SequentialNoteListWhereUniqueInputSchema: z.ZodType<Prisma.SequentialNoteListWhereUniqueInput> = z.object({
   sequentialKey: z.string()
 })
@@ -16,5 +14,4 @@ export const SequentialNoteListWhereUniqueInputSchema: z.ZodType<Prisma.Sequenti
   MdxNote: z.lazy(() => MdxNoteListRelationFilterSchema).optional(),
   Ipynb: z.lazy(() => IpynbListRelationFilterSchema).optional()
 }).strict());
-
 export default SequentialNoteListWhereUniqueInputSchema;

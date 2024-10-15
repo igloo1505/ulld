@@ -1,10 +1,7 @@
-import {
-  KanBanCardCreateManyArgsSchema,
-  KanBanCardCreateManyArgsSchema_default
-} from "../../chunk-DZF4EDBH.js";
-import "../../chunk-TTRD7SFX.js";
-export {
-  KanBanCardCreateManyArgsSchema,
-  KanBanCardCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=KanBanCardCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { KanBanCardCreateManyInputSchema } from '../inputTypeSchemas/KanBanCardCreateManyInputSchema.js';
+export const KanBanCardCreateManyArgsSchema = z.object({
+    data: z.union([KanBanCardCreateManyInputSchema, KanBanCardCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default KanBanCardCreateManyArgsSchema;

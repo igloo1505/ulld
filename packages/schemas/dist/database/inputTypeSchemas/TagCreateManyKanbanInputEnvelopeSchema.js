@@ -1,10 +1,7 @@
-import {
-  TagCreateManyKanbanInputEnvelopeSchema,
-  TagCreateManyKanbanInputEnvelopeSchema_default
-} from "../../chunk-4JKJ5WJ3.js";
-import "../../chunk-722JK5OC.js";
-export {
-  TagCreateManyKanbanInputEnvelopeSchema,
-  TagCreateManyKanbanInputEnvelopeSchema_default as default
-};
-//# sourceMappingURL=TagCreateManyKanbanInputEnvelopeSchema.js.map
+import { z } from 'zod';
+import { TagCreateManyKanbanInputSchema } from './TagCreateManyKanbanInputSchema.js';
+export const TagCreateManyKanbanInputEnvelopeSchema = z.object({
+    data: z.union([z.lazy(() => TagCreateManyKanbanInputSchema), z.lazy(() => TagCreateManyKanbanInputSchema).array()]),
+    skipDuplicates: z.boolean().optional()
+}).strict();
+export default TagCreateManyKanbanInputEnvelopeSchema;

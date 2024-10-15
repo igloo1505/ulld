@@ -1,9 +1,7 @@
 import { z } from 'zod';
-
 /////////////////////////////////////////
 // BUSINESS CONTACT SCHEMA
 /////////////////////////////////////////
-
 export const BusinessContactSchema = z.object({
   id: z.number().int(),
   companyName: z.string(),
@@ -14,15 +12,10 @@ export const BusinessContactSchema = z.object({
   message: z.string(),
   purpose: z.string().nullable(),
 })
-
 export type BusinessContact = z.infer<typeof BusinessContactSchema>
-
 /////////////////////////////////////////
 // BUSINESS CONTACT PARTIAL SCHEMA
 /////////////////////////////////////////
-
 export const BusinessContactPartialSchema = BusinessContactSchema.partial()
-
 export type BusinessContactPartial = z.infer<typeof BusinessContactPartialSchema>
-
 export default BusinessContactSchema;

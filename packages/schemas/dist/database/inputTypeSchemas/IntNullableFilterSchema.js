@@ -1,10 +1,13 @@
-import {
-  IntNullableFilterSchema,
-  IntNullableFilterSchema_default
-} from "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-export {
-  IntNullableFilterSchema,
-  IntNullableFilterSchema_default as default
-};
-//# sourceMappingURL=IntNullableFilterSchema.js.map
+import { z } from 'zod';
+import { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema.js';
+export const IntNullableFilterSchema = z.object({
+    equals: z.number().optional().nullable(),
+    in: z.number().array().optional().nullable(),
+    notIn: z.number().array().optional().nullable(),
+    lt: z.number().optional(),
+    lte: z.number().optional(),
+    gt: z.number().optional(),
+    gte: z.number().optional(),
+    not: z.union([z.number(), z.lazy(() => NestedIntNullableFilterSchema)]).optional().nullable(),
+}).strict();
+export default IntNullableFilterSchema;

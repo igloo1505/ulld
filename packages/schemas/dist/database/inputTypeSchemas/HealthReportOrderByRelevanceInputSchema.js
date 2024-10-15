@@ -1,11 +1,9 @@
-import {
-  HealthReportOrderByRelevanceInputSchema,
-  HealthReportOrderByRelevanceInputSchema_default
-} from "../../chunk-GVRWVSTA.js";
-import "../../chunk-PFFRFP2G.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  HealthReportOrderByRelevanceInputSchema,
-  HealthReportOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=HealthReportOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { HealthReportOrderByRelevanceFieldEnumSchema } from './HealthReportOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const HealthReportOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => HealthReportOrderByRelevanceFieldEnumSchema), z.lazy(() => HealthReportOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default HealthReportOrderByRelevanceInputSchema;

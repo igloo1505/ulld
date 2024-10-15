@@ -1,10 +1,6 @@
-import {
-  TopicCountOutputTypeArgsSchema,
-  TopicCountOutputTypeArgsSchema_default
-} from "../../chunk-STIDOR6N.js";
-import "../../chunk-WOJFU6VA.js";
-export {
-  TopicCountOutputTypeArgsSchema,
-  TopicCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=TopicCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { TopicCountOutputTypeSelectSchema } from './TopicCountOutputTypeSelectSchema.js';
+export const TopicCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => TopicCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default TopicCountOutputTypeSelectSchema;

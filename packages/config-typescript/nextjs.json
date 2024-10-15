@@ -10,7 +10,7 @@
     "declarationMap": false,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
+    "module": "ESNEXT",
     "noEmit": true,
     "resolveJsonModule": true,
     "target": "ES2021"

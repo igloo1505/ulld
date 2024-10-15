@@ -1,12 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { MdxNoteUncheckedUpdateManyWithoutReadingListNestedInputSchema } from './MdxNoteUncheckedUpdateManyWithoutReadingListNestedInputSchema';
-import { IpynbUncheckedUpdateManyWithoutReadingListNestedInputSchema } from './IpynbUncheckedUpdateManyWithoutReadingListNestedInputSchema';
-
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { MdxNoteUncheckedUpdateManyWithoutReadingListNestedInputSchema } from './MdxNoteUncheckedUpdateManyWithoutReadingListNestedInputSchema.js';
+import { IpynbUncheckedUpdateManyWithoutReadingListNestedInputSchema } from './IpynbUncheckedUpdateManyWithoutReadingListNestedInputSchema.js';
 export const ReadingListUncheckedUpdateWithoutBibEntriesInputSchema: z.ZodType<Prisma.ReadingListUncheckedUpdateWithoutBibEntriesInput> = z.object({
   name: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   description: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
@@ -15,5 +13,4 @@ export const ReadingListUncheckedUpdateWithoutBibEntriesInputSchema: z.ZodType<P
   mdxNotes: z.lazy(() => MdxNoteUncheckedUpdateManyWithoutReadingListNestedInputSchema).optional(),
   ipynbNotes: z.lazy(() => IpynbUncheckedUpdateManyWithoutReadingListNestedInputSchema).optional()
 }).strict();
-
 export default ReadingListUncheckedUpdateWithoutBibEntriesInputSchema;

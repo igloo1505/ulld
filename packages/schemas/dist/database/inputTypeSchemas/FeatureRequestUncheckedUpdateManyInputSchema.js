@@ -1,14 +1,15 @@
-import {
-  FeatureRequestUncheckedUpdateManyInputSchema,
-  FeatureRequestUncheckedUpdateManyInputSchema_default
-} from "../../chunk-4L3U47KJ.js";
-import "../../chunk-O2N5IA22.js";
-import "../../chunk-E73MKCYZ.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  FeatureRequestUncheckedUpdateManyInputSchema,
-  FeatureRequestUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { FeatureRequestUpdatecategoryInputSchema } from './FeatureRequestUpdatecategoryInputSchema.js';
+import { FeatureRequestUpdateuserBaseInputSchema } from './FeatureRequestUpdateuserBaseInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const FeatureRequestUncheckedUpdateManyInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    email: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    message: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    category: z.union([z.lazy(() => FeatureRequestUpdatecategoryInputSchema), z.string().array()]).optional(),
+    userBase: z.union([z.lazy(() => FeatureRequestUpdateuserBaseInputSchema), z.string().array()]).optional(),
+    receivedOn: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default FeatureRequestUncheckedUpdateManyInputSchema;

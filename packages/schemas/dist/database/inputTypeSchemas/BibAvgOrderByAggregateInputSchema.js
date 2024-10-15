@@ -1,10 +1,6 @@
-import {
-  BibAvgOrderByAggregateInputSchema,
-  BibAvgOrderByAggregateInputSchema_default
-} from "../../chunk-47K2MUEW.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  BibAvgOrderByAggregateInputSchema,
-  BibAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=BibAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const BibAvgOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default BibAvgOrderByAggregateInputSchema;

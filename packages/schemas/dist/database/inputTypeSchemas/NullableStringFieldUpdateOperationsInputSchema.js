@@ -1,9 +1,5 @@
-import {
-  NullableStringFieldUpdateOperationsInputSchema,
-  NullableStringFieldUpdateOperationsInputSchema_default
-} from "../../chunk-EGW2GABF.js";
-export {
-  NullableStringFieldUpdateOperationsInputSchema,
-  NullableStringFieldUpdateOperationsInputSchema_default as default
-};
-//# sourceMappingURL=NullableStringFieldUpdateOperationsInputSchema.js.map
+import { z } from 'zod';
+export const NullableStringFieldUpdateOperationsInputSchema = z.object({
+    set: z.string().optional().nullable()
+}).strict();
+export default NullableStringFieldUpdateOperationsInputSchema;

@@ -1,9 +1,11 @@
-import {
-  BibEntryCountOutputTypeSelectSchema,
-  BibEntryCountOutputTypeSelectSchema_default
-} from "../../chunk-ZUUAOV4O.js";
-export {
-  BibEntryCountOutputTypeSelectSchema,
-  BibEntryCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=BibEntryCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const BibEntryCountOutputTypeSelectSchema = z.object({
+    citationGroups: z.boolean().optional(),
+    tags: z.boolean().optional(),
+    topics: z.boolean().optional(),
+    subjects: z.boolean().optional(),
+    MdxNotes: z.boolean().optional(),
+    ipynbNotes: z.boolean().optional(),
+    readingList: z.boolean().optional(),
+}).strict();
+export default BibEntryCountOutputTypeSelectSchema;

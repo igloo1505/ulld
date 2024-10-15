@@ -1,9 +1,5 @@
-import {
-  StringFieldUpdateOperationsInputSchema,
-  StringFieldUpdateOperationsInputSchema_default
-} from "../../chunk-BQIXGZB5.js";
-export {
-  StringFieldUpdateOperationsInputSchema,
-  StringFieldUpdateOperationsInputSchema_default as default
-};
-//# sourceMappingURL=StringFieldUpdateOperationsInputSchema.js.map
+import { z } from 'zod';
+export const StringFieldUpdateOperationsInputSchema = z.object({
+    set: z.string().optional()
+}).strict();
+export default StringFieldUpdateOperationsInputSchema;

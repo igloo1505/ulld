@@ -1,23 +1,21 @@
-import {
-  RandomImageFindFirstOrThrowArgsSchema,
-  RandomImageFindFirstOrThrowArgsSchema_default,
-  RandomImageSelectSchema
-} from "../../chunk-MUD3XW3W.js";
-import "../../chunk-5CVYGPNS.js";
-import "../../chunk-RUMOSXK6.js";
-import "../../chunk-35CHNW2P.js";
-import "../../chunk-JIHEBZY7.js";
-import "../../chunk-7CX6JICO.js";
-import "../../chunk-XSVMF53C.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-WVDZRY2Y.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  RandomImageFindFirstOrThrowArgsSchema,
-  RandomImageSelectSchema,
-  RandomImageFindFirstOrThrowArgsSchema_default as default
-};
-//# sourceMappingURL=RandomImageFindFirstOrThrowArgsSchema.js.map
+import { z } from 'zod';
+import { RandomImageWhereInputSchema } from '../inputTypeSchemas/RandomImageWhereInputSchema.js';
+import { RandomImageOrderByWithRelationInputSchema } from '../inputTypeSchemas/RandomImageOrderByWithRelationInputSchema.js';
+import { RandomImageWhereUniqueInputSchema } from '../inputTypeSchemas/RandomImageWhereUniqueInputSchema.js';
+import { RandomImageScalarFieldEnumSchema } from '../inputTypeSchemas/RandomImageScalarFieldEnumSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const RandomImageSelectSchema = z.object({
+    path: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+}).strict();
+export const RandomImageFindFirstOrThrowArgsSchema = z.object({
+    select: RandomImageSelectSchema.optional(),
+    where: RandomImageWhereInputSchema.optional(),
+    orderBy: z.union([RandomImageOrderByWithRelationInputSchema.array(), RandomImageOrderByWithRelationInputSchema]).optional(),
+    cursor: RandomImageWhereUniqueInputSchema.optional(),
+    take: z.number().optional(),
+    skip: z.number().optional(),
+    distinct: z.union([RandomImageScalarFieldEnumSchema, RandomImageScalarFieldEnumSchema.array()]).optional(),
+}).strict();
+export default RandomImageFindFirstOrThrowArgsSchema;

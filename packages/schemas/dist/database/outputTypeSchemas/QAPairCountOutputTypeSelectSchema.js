@@ -1,9 +1,8 @@
-import {
-  QAPairCountOutputTypeSelectSchema,
-  QAPairCountOutputTypeSelectSchema_default
-} from "../../chunk-F6BJQMWD.js";
-export {
-  QAPairCountOutputTypeSelectSchema,
-  QAPairCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=QAPairCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const QAPairCountOutputTypeSelectSchema = z.object({
+    tags: z.boolean().optional(),
+    topics: z.boolean().optional(),
+    subjects: z.boolean().optional(),
+    practiceExam: z.boolean().optional(),
+}).strict();
+export default QAPairCountOutputTypeSelectSchema;

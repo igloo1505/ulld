@@ -1,9 +1,3 @@
-import {
-  SubjectOrderByRelevanceFieldEnumSchema,
-  SubjectOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-SCJSABBV.js";
-export {
-  SubjectOrderByRelevanceFieldEnumSchema,
-  SubjectOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=SubjectOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const SubjectOrderByRelevanceFieldEnumSchema = z.enum(['value']);
+export default SubjectOrderByRelevanceFieldEnumSchema;

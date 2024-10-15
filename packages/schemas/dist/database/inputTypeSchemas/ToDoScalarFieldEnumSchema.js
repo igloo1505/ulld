@@ -1,9 +1,3 @@
-import {
-  ToDoScalarFieldEnumSchema,
-  ToDoScalarFieldEnumSchema_default
-} from "../../chunk-JWOPOQ43.js";
-export {
-  ToDoScalarFieldEnumSchema,
-  ToDoScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=ToDoScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const ToDoScalarFieldEnumSchema = z.enum(['id', 'createdAt', 'task', 'dueAt', 'details', 'parentId', 'category', 'bookmarked', 'status', 'priority', 'toDoListId', 'completedOn']);
+export default ToDoScalarFieldEnumSchema;

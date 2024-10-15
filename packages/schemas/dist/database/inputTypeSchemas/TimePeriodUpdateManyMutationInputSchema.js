@@ -1,11 +1,8 @@
-import {
-  TimePeriodUpdateManyMutationInputSchema,
-  TimePeriodUpdateManyMutationInputSchema_default
-} from "../../chunk-HDHROYTU.js";
-import "../../chunk-FYUHI5X3.js";
-import "../../chunk-VTROTMKZ.js";
-export {
-  TimePeriodUpdateManyMutationInputSchema,
-  TimePeriodUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { NullableDateTimeFieldUpdateOperationsInputSchema } from './NullableDateTimeFieldUpdateOperationsInputSchema.js';
+export const TimePeriodUpdateManyMutationInputSchema = z.object({
+    start: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    end: z.union([z.coerce.date(), z.lazy(() => NullableDateTimeFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default TimePeriodUpdateManyMutationInputSchema;

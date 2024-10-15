@@ -1,11 +1,10 @@
-import {
-  EnumautoSettingFilterSchema,
-  EnumautoSettingFilterSchema_default
-} from "../../chunk-SIPHN6ID.js";
-import "../../chunk-TJEHP7LG.js";
-import "../../chunk-76RQYGNI.js";
-export {
-  EnumautoSettingFilterSchema,
-  EnumautoSettingFilterSchema_default as default
-};
-//# sourceMappingURL=EnumautoSettingFilterSchema.js.map
+import { z } from 'zod';
+import { autoSettingSchema } from './autoSettingSchema.js';
+import { NestedEnumautoSettingFilterSchema } from './NestedEnumautoSettingFilterSchema.js';
+export const EnumautoSettingFilterSchema = z.object({
+    equals: z.lazy(() => autoSettingSchema).optional(),
+    in: z.lazy(() => autoSettingSchema).array().optional(),
+    notIn: z.lazy(() => autoSettingSchema).array().optional(),
+    not: z.union([z.lazy(() => autoSettingSchema), z.lazy(() => NestedEnumautoSettingFilterSchema)]).optional(),
+}).strict();
+export default EnumautoSettingFilterSchema;

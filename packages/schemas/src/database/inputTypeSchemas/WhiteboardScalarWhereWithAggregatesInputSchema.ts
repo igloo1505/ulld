@@ -1,9 +1,7 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
-import { BytesWithAggregatesFilterSchema } from './BytesWithAggregatesFilterSchema';
-
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { BytesWithAggregatesFilterSchema } from './BytesWithAggregatesFilterSchema.js';
 export const WhiteboardScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.WhiteboardScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => WhiteboardScalarWhereWithAggregatesInputSchema),z.lazy(() => WhiteboardScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => WhiteboardScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -11,5 +9,4 @@ export const WhiteboardScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Wh
   id: z.union([ z.lazy(() => StringWithAggregatesFilterSchema),z.string() ]).optional(),
   data: z.union([ z.lazy(() => BytesWithAggregatesFilterSchema),z.instanceof(Buffer) ]).optional(),
 }).strict();
-
 export default WhiteboardScalarWhereWithAggregatesInputSchema;

@@ -1,10 +1,6 @@
-import {
-  TimePeriodOrderByRelationAggregateInputSchema,
-  TimePeriodOrderByRelationAggregateInputSchema_default
-} from "../../chunk-YWQ2LKBQ.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TimePeriodOrderByRelationAggregateInputSchema,
-  TimePeriodOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const TimePeriodOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default TimePeriodOrderByRelationAggregateInputSchema;

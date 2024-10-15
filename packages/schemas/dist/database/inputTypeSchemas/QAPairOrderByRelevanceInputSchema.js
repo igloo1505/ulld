@@ -1,11 +1,9 @@
-import {
-  QAPairOrderByRelevanceInputSchema,
-  QAPairOrderByRelevanceInputSchema_default
-} from "../../chunk-FPWPA4T5.js";
-import "../../chunk-Q54L2SCG.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  QAPairOrderByRelevanceInputSchema,
-  QAPairOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=QAPairOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { QAPairOrderByRelevanceFieldEnumSchema } from './QAPairOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const QAPairOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => QAPairOrderByRelevanceFieldEnumSchema), z.lazy(() => QAPairOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default QAPairOrderByRelevanceInputSchema;

@@ -1,14 +1,12 @@
-import {
-  SequentialNoteListOrderByWithRelationInputSchema,
-  SequentialNoteListOrderByWithRelationInputSchema_default
-} from "../../chunk-PMLTVZ4P.js";
-import "../../chunk-BXHWLRTY.js";
-import "../../chunk-5QVEHY36.js";
-import "../../chunk-XY5DOPOB.js";
-import "../../chunk-FEI37AUG.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SequentialNoteListOrderByWithRelationInputSchema,
-  SequentialNoteListOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=SequentialNoteListOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { MdxNoteOrderByRelationAggregateInputSchema } from './MdxNoteOrderByRelationAggregateInputSchema.js';
+import { IpynbOrderByRelationAggregateInputSchema } from './IpynbOrderByRelationAggregateInputSchema.js';
+import { SequentialNoteListOrderByRelevanceInputSchema } from './SequentialNoteListOrderByRelevanceInputSchema.js';
+export const SequentialNoteListOrderByWithRelationInputSchema = z.object({
+    sequentialKey: z.lazy(() => SortOrderSchema).optional(),
+    MdxNote: z.lazy(() => MdxNoteOrderByRelationAggregateInputSchema).optional(),
+    Ipynb: z.lazy(() => IpynbOrderByRelationAggregateInputSchema).optional(),
+    _relevance: z.lazy(() => SequentialNoteListOrderByRelevanceInputSchema).optional()
+}).strict();
+export default SequentialNoteListOrderByWithRelationInputSchema;

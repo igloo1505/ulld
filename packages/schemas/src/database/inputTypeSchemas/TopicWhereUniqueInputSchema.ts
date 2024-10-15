@@ -1,20 +1,18 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TopicWhereInputSchema } from './TopicWhereInputSchema';
-import { IntNullableFilterSchema } from './IntNullableFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema';
-import { IpynbListRelationFilterSchema } from './IpynbListRelationFilterSchema';
-import { QAPairListRelationFilterSchema } from './QAPairListRelationFilterSchema';
-import { PracticeExamListRelationFilterSchema } from './PracticeExamListRelationFilterSchema';
-import { ToDoListRelationFilterSchema } from './ToDoListRelationFilterSchema';
-import { KanbanNullableRelationFilterSchema } from './KanbanNullableRelationFilterSchema';
-import { KanbanWhereInputSchema } from './KanbanWhereInputSchema';
-import { ToDoListListRelationFilterSchema } from './ToDoListListRelationFilterSchema';
-import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema';
-import { EquationListRelationFilterSchema } from './EquationListRelationFilterSchema';
-
+import { TopicWhereInputSchema } from './TopicWhereInputSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema.js';
+import { IpynbListRelationFilterSchema } from './IpynbListRelationFilterSchema.js';
+import { QAPairListRelationFilterSchema } from './QAPairListRelationFilterSchema.js';
+import { PracticeExamListRelationFilterSchema } from './PracticeExamListRelationFilterSchema.js';
+import { ToDoListRelationFilterSchema } from './ToDoListRelationFilterSchema.js';
+import { KanbanNullableRelationFilterSchema } from './KanbanNullableRelationFilterSchema.js';
+import { KanbanWhereInputSchema } from './KanbanWhereInputSchema.js';
+import { ToDoListListRelationFilterSchema } from './ToDoListListRelationFilterSchema.js';
+import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema.js';
+import { EquationListRelationFilterSchema } from './EquationListRelationFilterSchema.js';
 export const TopicWhereUniqueInputSchema: z.ZodType<Prisma.TopicWhereUniqueInput> = z.object({
   value: z.string()
 })
@@ -36,5 +34,4 @@ export const TopicWhereUniqueInputSchema: z.ZodType<Prisma.TopicWhereUniqueInput
   bibEntries: z.lazy(() => BibEntryListRelationFilterSchema).optional(),
   equations: z.lazy(() => EquationListRelationFilterSchema).optional()
 }).strict());
-
 export default TopicWhereUniqueInputSchema;

@@ -1,13 +1,7 @@
-import {
-  IpynbCreateManyArgsSchema,
-  IpynbCreateManyArgsSchema_default
-} from "../../chunk-QIO3QEZE.js";
-import "../../chunk-TEDZTXJU.js";
-import "../../chunk-UVQGJQS6.js";
-import "../../chunk-CJKS2C2I.js";
-import "../../chunk-5KU54GLW.js";
-export {
-  IpynbCreateManyArgsSchema,
-  IpynbCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=IpynbCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { IpynbCreateManyInputSchema } from '../inputTypeSchemas/IpynbCreateManyInputSchema.js';
+export const IpynbCreateManyArgsSchema = z.object({
+    data: z.union([IpynbCreateManyInputSchema, IpynbCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default IpynbCreateManyArgsSchema;

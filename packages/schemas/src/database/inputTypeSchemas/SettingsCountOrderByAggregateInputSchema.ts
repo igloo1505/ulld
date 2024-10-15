@@ -1,8 +1,6 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
 export const SettingsCountOrderByAggregateInputSchema: z.ZodType<Prisma.SettingsCountOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   tooltips: z.lazy(() => SortOrderSchema).optional(),
@@ -17,5 +15,4 @@ export const SettingsCountOrderByAggregateInputSchema: z.ZodType<Prisma.Settings
   firstSync: z.lazy(() => SortOrderSchema).optional(),
   lastSync: z.lazy(() => SortOrderSchema).optional()
 }).strict();
-
 export default SettingsCountOrderByAggregateInputSchema;

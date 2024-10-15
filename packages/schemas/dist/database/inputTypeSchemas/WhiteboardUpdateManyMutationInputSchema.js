@@ -1,11 +1,8 @@
-import {
-  WhiteboardUpdateManyMutationInputSchema,
-  WhiteboardUpdateManyMutationInputSchema_default
-} from "../../chunk-POLQRRKV.js";
-import "../../chunk-WKMKAR2K.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  WhiteboardUpdateManyMutationInputSchema,
-  WhiteboardUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=WhiteboardUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { BytesFieldUpdateOperationsInputSchema } from './BytesFieldUpdateOperationsInputSchema.js';
+export const WhiteboardUpdateManyMutationInputSchema = z.object({
+    id: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    data: z.union([z.instanceof(Buffer), z.lazy(() => BytesFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default WhiteboardUpdateManyMutationInputSchema;

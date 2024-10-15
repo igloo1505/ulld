@@ -1,10 +1,7 @@
-import {
-  CitationsGroupMinOrderByAggregateInputSchema,
-  CitationsGroupMinOrderByAggregateInputSchema_default
-} from "../../chunk-62ZW7XGQ.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  CitationsGroupMinOrderByAggregateInputSchema,
-  CitationsGroupMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const CitationsGroupMinOrderByAggregateInputSchema = z.object({
+    name: z.lazy(() => SortOrderSchema).optional(),
+    description: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default CitationsGroupMinOrderByAggregateInputSchema;

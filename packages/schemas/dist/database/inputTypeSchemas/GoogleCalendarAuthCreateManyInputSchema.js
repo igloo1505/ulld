@@ -1,9 +1,6 @@
-import {
-  GoogleCalendarAuthCreateManyInputSchema,
-  GoogleCalendarAuthCreateManyInputSchema_default
-} from "../../chunk-PAHAUMI4.js";
-export {
-  GoogleCalendarAuthCreateManyInputSchema,
-  GoogleCalendarAuthCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const GoogleCalendarAuthCreateManyInputSchema = z.object({
+    id: z.number().int().optional(),
+    auth: z.string().optional().nullable()
+}).strict();
+export default GoogleCalendarAuthCreateManyInputSchema;

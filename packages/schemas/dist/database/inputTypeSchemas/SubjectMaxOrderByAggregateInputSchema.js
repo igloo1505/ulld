@@ -1,10 +1,9 @@
-import {
-  SubjectMaxOrderByAggregateInputSchema,
-  SubjectMaxOrderByAggregateInputSchema_default
-} from "../../chunk-UI7L2CYC.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SubjectMaxOrderByAggregateInputSchema,
-  SubjectMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SubjectMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SubjectMaxOrderByAggregateInputSchema = z.object({
+    value: z.lazy(() => SortOrderSchema).optional(),
+    kanbanId: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SubjectMaxOrderByAggregateInputSchema;

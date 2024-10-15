@@ -1,20 +1,19 @@
-import {
-  BusinessContactFindUniqueOrThrowArgsSchema,
-  BusinessContactFindUniqueOrThrowArgsSchema_default,
-  BusinessContactSelectSchema
-} from "../../chunk-JFXM3PX5.js";
-import "../../chunk-F6RVJCDM.js";
-import "../../chunk-4TBUKZ6H.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  BusinessContactFindUniqueOrThrowArgsSchema,
-  BusinessContactSelectSchema,
-  BusinessContactFindUniqueOrThrowArgsSchema_default as default
-};
-//# sourceMappingURL=BusinessContactFindUniqueOrThrowArgsSchema.js.map
+import { z } from 'zod';
+import { BusinessContactWhereUniqueInputSchema } from '../inputTypeSchemas/BusinessContactWhereUniqueInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const BusinessContactSelectSchema = z.object({
+    id: z.boolean().optional(),
+    companyName: z.boolean().optional(),
+    contactName: z.boolean().optional(),
+    contactPreference: z.boolean().optional(),
+    email: z.boolean().optional(),
+    phone: z.boolean().optional(),
+    message: z.boolean().optional(),
+    purpose: z.boolean().optional(),
+}).strict();
+export const BusinessContactFindUniqueOrThrowArgsSchema = z.object({
+    select: BusinessContactSelectSchema.optional(),
+    where: BusinessContactWhereUniqueInputSchema,
+}).strict();
+export default BusinessContactFindUniqueOrThrowArgsSchema;

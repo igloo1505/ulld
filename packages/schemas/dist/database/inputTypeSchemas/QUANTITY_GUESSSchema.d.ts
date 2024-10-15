@@ -1,0 +1,5 @@
+import { z } from 'zod';
+export declare const QUANTITY_GUESSSchema: z.ZodEnum<["nibble", "fewBites", "snack", "smallMeal", "fullMeal", "largeMeal", "multipleMeals", "allMeals", "completelyStuffed"]>;
+export type QUANTITY_GUESSType = `${z.infer<typeof QUANTITY_GUESSSchema>}`;
+export default QUANTITY_GUESSSchema;
+//# sourceMappingURL=QUANTITY_GUESSSchema.d.ts.map

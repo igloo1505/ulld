@@ -1,10 +1,9 @@
-import {
-  ServingMinOrderByAggregateInputSchema,
-  ServingMinOrderByAggregateInputSchema_default
-} from "../../chunk-HDNABXZA.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ServingMinOrderByAggregateInputSchema,
-  ServingMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=ServingMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ServingMinOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    dietaryItemId: z.lazy(() => SortOrderSchema).optional(),
+    quant_oz: z.lazy(() => SortOrderSchema).optional(),
+    quant_guess: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default ServingMinOrderByAggregateInputSchema;

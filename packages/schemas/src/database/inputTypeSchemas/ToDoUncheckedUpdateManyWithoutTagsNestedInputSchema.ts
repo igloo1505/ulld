@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoCreateWithoutTagsInputSchema } from './ToDoCreateWithoutTagsInputSchema';
-import { ToDoUncheckedCreateWithoutTagsInputSchema } from './ToDoUncheckedCreateWithoutTagsInputSchema';
-import { ToDoCreateOrConnectWithoutTagsInputSchema } from './ToDoCreateOrConnectWithoutTagsInputSchema';
-import { ToDoUpsertWithWhereUniqueWithoutTagsInputSchema } from './ToDoUpsertWithWhereUniqueWithoutTagsInputSchema';
-import { ToDoWhereUniqueInputSchema } from './ToDoWhereUniqueInputSchema';
-import { ToDoUpdateWithWhereUniqueWithoutTagsInputSchema } from './ToDoUpdateWithWhereUniqueWithoutTagsInputSchema';
-import { ToDoUpdateManyWithWhereWithoutTagsInputSchema } from './ToDoUpdateManyWithWhereWithoutTagsInputSchema';
-import { ToDoScalarWhereInputSchema } from './ToDoScalarWhereInputSchema';
-
+import { ToDoCreateWithoutTagsInputSchema } from './ToDoCreateWithoutTagsInputSchema.js';
+import { ToDoUncheckedCreateWithoutTagsInputSchema } from './ToDoUncheckedCreateWithoutTagsInputSchema.js';
+import { ToDoCreateOrConnectWithoutTagsInputSchema } from './ToDoCreateOrConnectWithoutTagsInputSchema.js';
+import { ToDoUpsertWithWhereUniqueWithoutTagsInputSchema } from './ToDoUpsertWithWhereUniqueWithoutTagsInputSchema.js';
+import { ToDoWhereUniqueInputSchema } from './ToDoWhereUniqueInputSchema.js';
+import { ToDoUpdateWithWhereUniqueWithoutTagsInputSchema } from './ToDoUpdateWithWhereUniqueWithoutTagsInputSchema.js';
+import { ToDoUpdateManyWithWhereWithoutTagsInputSchema } from './ToDoUpdateManyWithWhereWithoutTagsInputSchema.js';
+import { ToDoScalarWhereInputSchema } from './ToDoScalarWhereInputSchema.js';
 export const ToDoUncheckedUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Prisma.ToDoUncheckedUpdateManyWithoutTagsNestedInput> = z.object({
   create: z.union([ z.lazy(() => ToDoCreateWithoutTagsInputSchema),z.lazy(() => ToDoCreateWithoutTagsInputSchema).array(),z.lazy(() => ToDoUncheckedCreateWithoutTagsInputSchema),z.lazy(() => ToDoUncheckedCreateWithoutTagsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ToDoCreateOrConnectWithoutTagsInputSchema),z.lazy(() => ToDoCreateOrConnectWithoutTagsInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const ToDoUncheckedUpdateManyWithoutTagsNestedInputSchema: z.ZodType<Pris
   updateMany: z.union([ z.lazy(() => ToDoUpdateManyWithWhereWithoutTagsInputSchema),z.lazy(() => ToDoUpdateManyWithWhereWithoutTagsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => ToDoScalarWhereInputSchema),z.lazy(() => ToDoScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default ToDoUncheckedUpdateManyWithoutTagsNestedInputSchema;

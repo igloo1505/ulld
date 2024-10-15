@@ -1,13 +1,15 @@
-import {
-  DJTCreateArgsSchema,
-  DJTCreateArgsSchema_default,
-  DJTSelectSchema
-} from "../../chunk-MCGOXT2A.js";
-import "../../chunk-PZVG43IM.js";
-import "../../chunk-W2V3G4OT.js";
-export {
-  DJTCreateArgsSchema,
-  DJTSelectSchema,
-  DJTCreateArgsSchema_default as default
-};
-//# sourceMappingURL=DJTCreateArgsSchema.js.map
+import { z } from 'zod';
+import { DJTCreateInputSchema } from '../inputTypeSchemas/DJTCreateInputSchema.js';
+import { DJTUncheckedCreateInputSchema } from '../inputTypeSchemas/DJTUncheckedCreateInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const DJTSelectSchema = z.object({
+    id: z.boolean().optional(),
+    type: z.boolean().optional(),
+    data: z.boolean().optional(),
+}).strict();
+export const DJTCreateArgsSchema = z.object({
+    select: DJTSelectSchema.optional(),
+    data: z.union([DJTCreateInputSchema, DJTUncheckedCreateInputSchema]),
+}).strict();
+export default DJTCreateArgsSchema;

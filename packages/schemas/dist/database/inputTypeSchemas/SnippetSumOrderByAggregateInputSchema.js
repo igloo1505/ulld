@@ -1,10 +1,6 @@
-import {
-  SnippetSumOrderByAggregateInputSchema,
-  SnippetSumOrderByAggregateInputSchema_default
-} from "../../chunk-JBHYNDR6.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SnippetSumOrderByAggregateInputSchema,
-  SnippetSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SnippetSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SnippetSumOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SnippetSumOrderByAggregateInputSchema;

@@ -1,10 +1,6 @@
-import {
-  SequentialNoteListUpdateManyMutationInputSchema,
-  SequentialNoteListUpdateManyMutationInputSchema_default
-} from "../../chunk-MKCHFW3T.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  SequentialNoteListUpdateManyMutationInputSchema,
-  SequentialNoteListUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=SequentialNoteListUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+export const SequentialNoteListUpdateManyMutationInputSchema = z.object({
+    sequentialKey: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default SequentialNoteListUpdateManyMutationInputSchema;

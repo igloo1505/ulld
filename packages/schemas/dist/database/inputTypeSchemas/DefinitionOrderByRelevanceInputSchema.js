@@ -1,11 +1,9 @@
-import {
-  DefinitionOrderByRelevanceInputSchema,
-  DefinitionOrderByRelevanceInputSchema_default
-} from "../../chunk-V4Y543WR.js";
-import "../../chunk-H7TDMSNR.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DefinitionOrderByRelevanceInputSchema,
-  DefinitionOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=DefinitionOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { DefinitionOrderByRelevanceFieldEnumSchema } from './DefinitionOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const DefinitionOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => DefinitionOrderByRelevanceFieldEnumSchema), z.lazy(() => DefinitionOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default DefinitionOrderByRelevanceInputSchema;

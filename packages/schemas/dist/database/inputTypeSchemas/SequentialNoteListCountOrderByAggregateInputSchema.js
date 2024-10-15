@@ -1,10 +1,6 @@
-import {
-  SequentialNoteListCountOrderByAggregateInputSchema,
-  SequentialNoteListCountOrderByAggregateInputSchema_default
-} from "../../chunk-IQFYUSUS.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SequentialNoteListCountOrderByAggregateInputSchema,
-  SequentialNoteListCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SequentialNoteListCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SequentialNoteListCountOrderByAggregateInputSchema = z.object({
+    sequentialKey: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SequentialNoteListCountOrderByAggregateInputSchema;

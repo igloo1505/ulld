@@ -1,0 +1,1 @@
+{"version":3,"file":"BibDeleteManyArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/BibDeleteManyArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAEhD,eAAO,MAAM,uBAAuB,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,iBAAiB,CAE7D,CAAE;AACb,eAAe,uBAAuB,CAAC"}

@@ -1,10 +1,6 @@
-import {
-  FeatureRequestAvgOrderByAggregateInputSchema,
-  FeatureRequestAvgOrderByAggregateInputSchema_default
-} from "../../chunk-IRHK37J3.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  FeatureRequestAvgOrderByAggregateInputSchema,
-  FeatureRequestAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const FeatureRequestAvgOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default FeatureRequestAvgOrderByAggregateInputSchema;

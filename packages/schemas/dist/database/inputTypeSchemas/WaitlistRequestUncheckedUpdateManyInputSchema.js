@@ -1,12 +1,11 @@
-import {
-  WaitlistRequestUncheckedUpdateManyInputSchema,
-  WaitlistRequestUncheckedUpdateManyInputSchema_default
-} from "../../chunk-2KT4OU6W.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  WaitlistRequestUncheckedUpdateManyInputSchema,
-  WaitlistRequestUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const WaitlistRequestUncheckedUpdateManyInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    email: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    receivedOn: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    emailsSent: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default WaitlistRequestUncheckedUpdateManyInputSchema;

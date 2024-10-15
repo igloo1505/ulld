@@ -1,9 +1,3 @@
-import {
-  TimePeriodOrderByRelevanceFieldEnumSchema,
-  TimePeriodOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-QFVMDCBU.js";
-export {
-  TimePeriodOrderByRelevanceFieldEnumSchema,
-  TimePeriodOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=TimePeriodOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const TimePeriodOrderByRelevanceFieldEnumSchema = z.enum(['dietId']);
+export default TimePeriodOrderByRelevanceFieldEnumSchema;

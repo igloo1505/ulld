@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFilterSchema } from './IntFilterSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const WaitlistRequestWhereInputSchema: z.ZodType<Prisma.WaitlistRequestWhereInput> = z.object({
   AND: z.union([ z.lazy(() => WaitlistRequestWhereInputSchema),z.lazy(() => WaitlistRequestWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => WaitlistRequestWhereInputSchema).array().optional(),
@@ -14,5 +12,4 @@ export const WaitlistRequestWhereInputSchema: z.ZodType<Prisma.WaitlistRequestWh
   receivedOn: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   emailsSent: z.union([ z.lazy(() => IntFilterSchema),z.number() ]).optional(),
 }).strict();
-
 export default WaitlistRequestWhereInputSchema;

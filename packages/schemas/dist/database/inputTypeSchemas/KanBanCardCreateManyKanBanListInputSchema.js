@@ -1,9 +1,8 @@
-import {
-  KanBanCardCreateManyKanBanListInputSchema,
-  KanBanCardCreateManyKanBanListInputSchema_default
-} from "../../chunk-CNPYJIAK.js";
-export {
-  KanBanCardCreateManyKanBanListInputSchema,
-  KanBanCardCreateManyKanBanListInputSchema_default as default
-};
-//# sourceMappingURL=KanBanCardCreateManyKanBanListInputSchema.js.map
+import { z } from 'zod';
+export const KanBanCardCreateManyKanBanListInputSchema = z.object({
+    id: z.number().int().optional(),
+    indexWithinList: z.number().int(),
+    label: z.string().optional().nullable(),
+    details: z.string().optional().nullable()
+}).strict();
+export default KanBanCardCreateManyKanBanListInputSchema;

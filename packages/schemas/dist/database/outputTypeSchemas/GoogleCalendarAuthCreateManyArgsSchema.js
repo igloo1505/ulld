@@ -1,10 +1,7 @@
-import {
-  GoogleCalendarAuthCreateManyArgsSchema,
-  GoogleCalendarAuthCreateManyArgsSchema_default
-} from "../../chunk-JN2JY5RK.js";
-import "../../chunk-PAHAUMI4.js";
-export {
-  GoogleCalendarAuthCreateManyArgsSchema,
-  GoogleCalendarAuthCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { GoogleCalendarAuthCreateManyInputSchema } from '../inputTypeSchemas/GoogleCalendarAuthCreateManyInputSchema.js';
+export const GoogleCalendarAuthCreateManyArgsSchema = z.object({
+    data: z.union([GoogleCalendarAuthCreateManyInputSchema, GoogleCalendarAuthCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default GoogleCalendarAuthCreateManyArgsSchema;

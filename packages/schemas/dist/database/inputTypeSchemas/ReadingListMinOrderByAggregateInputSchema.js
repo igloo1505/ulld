@@ -1,10 +1,9 @@
-import {
-  ReadingListMinOrderByAggregateInputSchema,
-  ReadingListMinOrderByAggregateInputSchema_default
-} from "../../chunk-MB7XJOYG.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ReadingListMinOrderByAggregateInputSchema,
-  ReadingListMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=ReadingListMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ReadingListMinOrderByAggregateInputSchema = z.object({
+    name: z.lazy(() => SortOrderSchema).optional(),
+    description: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastUpdate: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default ReadingListMinOrderByAggregateInputSchema;

@@ -1,9 +1,3 @@
-import {
-  TERTIARY_TOGGLESchema,
-  TERTIARY_TOGGLESchema_default
-} from "../../chunk-FGDZJV6T.js";
-export {
-  TERTIARY_TOGGLESchema,
-  TERTIARY_TOGGLESchema_default as default
-};
-//# sourceMappingURL=TERTIARY_TOGGLESchema.js.map
+import { z } from 'zod';
+export const TERTIARY_TOGGLESchema = z.enum(['on', 'off', 'partial']);
+export default TERTIARY_TOGGLESchema;

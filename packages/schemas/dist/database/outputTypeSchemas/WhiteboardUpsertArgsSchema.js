@@ -1,24 +1,19 @@
-import {
-  WhiteboardSelectSchema,
-  WhiteboardUpsertArgsSchema,
-  WhiteboardUpsertArgsSchema_default
-} from "../../chunk-3M6LCXGU.js";
-import "../../chunk-PJPJGWO5.js";
-import "../../chunk-AZ2NTCOQ.js";
-import "../../chunk-N7ALCZ2J.js";
-import "../../chunk-EKF6DLRY.js";
-import "../../chunk-WKMKAR2K.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-AJO3CL4P.js";
-import "../../chunk-ZAT5W63Y.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  WhiteboardSelectSchema,
-  WhiteboardUpsertArgsSchema,
-  WhiteboardUpsertArgsSchema_default as default
-};
-//# sourceMappingURL=WhiteboardUpsertArgsSchema.js.map
+import { z } from 'zod';
+import { WhiteboardWhereUniqueInputSchema } from '../inputTypeSchemas/WhiteboardWhereUniqueInputSchema.js';
+import { WhiteboardCreateInputSchema } from '../inputTypeSchemas/WhiteboardCreateInputSchema.js';
+import { WhiteboardUncheckedCreateInputSchema } from '../inputTypeSchemas/WhiteboardUncheckedCreateInputSchema.js';
+import { WhiteboardUpdateInputSchema } from '../inputTypeSchemas/WhiteboardUpdateInputSchema.js';
+import { WhiteboardUncheckedUpdateInputSchema } from '../inputTypeSchemas/WhiteboardUncheckedUpdateInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const WhiteboardSelectSchema = z.object({
+    id: z.boolean().optional(),
+    data: z.boolean().optional(),
+}).strict();
+export const WhiteboardUpsertArgsSchema = z.object({
+    select: WhiteboardSelectSchema.optional(),
+    where: WhiteboardWhereUniqueInputSchema,
+    create: z.union([WhiteboardCreateInputSchema, WhiteboardUncheckedCreateInputSchema]),
+    update: z.union([WhiteboardUpdateInputSchema, WhiteboardUncheckedUpdateInputSchema]),
+}).strict();
+export default WhiteboardUpsertArgsSchema;

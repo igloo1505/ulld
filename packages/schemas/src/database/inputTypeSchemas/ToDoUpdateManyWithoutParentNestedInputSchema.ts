@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoCreateWithoutParentInputSchema } from './ToDoCreateWithoutParentInputSchema';
-import { ToDoUncheckedCreateWithoutParentInputSchema } from './ToDoUncheckedCreateWithoutParentInputSchema';
-import { ToDoCreateOrConnectWithoutParentInputSchema } from './ToDoCreateOrConnectWithoutParentInputSchema';
-import { ToDoUpsertWithWhereUniqueWithoutParentInputSchema } from './ToDoUpsertWithWhereUniqueWithoutParentInputSchema';
-import { ToDoCreateManyParentInputEnvelopeSchema } from './ToDoCreateManyParentInputEnvelopeSchema';
-import { ToDoWhereUniqueInputSchema } from './ToDoWhereUniqueInputSchema';
-import { ToDoUpdateWithWhereUniqueWithoutParentInputSchema } from './ToDoUpdateWithWhereUniqueWithoutParentInputSchema';
-import { ToDoUpdateManyWithWhereWithoutParentInputSchema } from './ToDoUpdateManyWithWhereWithoutParentInputSchema';
-import { ToDoScalarWhereInputSchema } from './ToDoScalarWhereInputSchema';
-
+import { ToDoCreateWithoutParentInputSchema } from './ToDoCreateWithoutParentInputSchema.js';
+import { ToDoUncheckedCreateWithoutParentInputSchema } from './ToDoUncheckedCreateWithoutParentInputSchema.js';
+import { ToDoCreateOrConnectWithoutParentInputSchema } from './ToDoCreateOrConnectWithoutParentInputSchema.js';
+import { ToDoUpsertWithWhereUniqueWithoutParentInputSchema } from './ToDoUpsertWithWhereUniqueWithoutParentInputSchema.js';
+import { ToDoCreateManyParentInputEnvelopeSchema } from './ToDoCreateManyParentInputEnvelopeSchema.js';
+import { ToDoWhereUniqueInputSchema } from './ToDoWhereUniqueInputSchema.js';
+import { ToDoUpdateWithWhereUniqueWithoutParentInputSchema } from './ToDoUpdateWithWhereUniqueWithoutParentInputSchema.js';
+import { ToDoUpdateManyWithWhereWithoutParentInputSchema } from './ToDoUpdateManyWithWhereWithoutParentInputSchema.js';
+import { ToDoScalarWhereInputSchema } from './ToDoScalarWhereInputSchema.js';
 export const ToDoUpdateManyWithoutParentNestedInputSchema: z.ZodType<Prisma.ToDoUpdateManyWithoutParentNestedInput> = z.object({
   create: z.union([ z.lazy(() => ToDoCreateWithoutParentInputSchema),z.lazy(() => ToDoCreateWithoutParentInputSchema).array(),z.lazy(() => ToDoUncheckedCreateWithoutParentInputSchema),z.lazy(() => ToDoUncheckedCreateWithoutParentInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ToDoCreateOrConnectWithoutParentInputSchema),z.lazy(() => ToDoCreateOrConnectWithoutParentInputSchema).array() ]).optional(),
@@ -24,5 +22,4 @@ export const ToDoUpdateManyWithoutParentNestedInputSchema: z.ZodType<Prisma.ToDo
   updateMany: z.union([ z.lazy(() => ToDoUpdateManyWithWhereWithoutParentInputSchema),z.lazy(() => ToDoUpdateManyWithWhereWithoutParentInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => ToDoScalarWhereInputSchema),z.lazy(() => ToDoScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default ToDoUpdateManyWithoutParentNestedInputSchema;

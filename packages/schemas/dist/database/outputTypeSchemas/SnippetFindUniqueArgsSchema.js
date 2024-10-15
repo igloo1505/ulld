@@ -1,21 +1,17 @@
-import {
-  SnippetFindUniqueArgsSchema,
-  SnippetFindUniqueArgsSchema_default,
-  SnippetSelectSchema
-} from "../../chunk-RXVB27WE.js";
-import "../../chunk-R5PTJBPZ.js";
-import "../../chunk-26V4YAOJ.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  SnippetFindUniqueArgsSchema,
-  SnippetSelectSchema,
-  SnippetFindUniqueArgsSchema_default as default
-};
-//# sourceMappingURL=SnippetFindUniqueArgsSchema.js.map
+import { z } from 'zod';
+import { SnippetWhereUniqueInputSchema } from '../inputTypeSchemas/SnippetWhereUniqueInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const SnippetSelectSchema = z.object({
+    id: z.boolean().optional(),
+    content: z.boolean().optional(),
+    description: z.boolean().optional(),
+    keywords: z.boolean().optional(),
+    language: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+}).strict();
+export const SnippetFindUniqueArgsSchema = z.object({
+    select: SnippetSelectSchema.optional(),
+    where: SnippetWhereUniqueInputSchema,
+}).strict();
+export default SnippetFindUniqueArgsSchema;

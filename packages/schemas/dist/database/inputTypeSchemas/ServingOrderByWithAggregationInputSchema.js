@@ -1,17 +1,20 @@
-import {
-  ServingOrderByWithAggregationInputSchema,
-  ServingOrderByWithAggregationInputSchema_default
-} from "../../chunk-ATZ75PAL.js";
-import "../../chunk-NT4VUP4H.js";
-import "../../chunk-XPZJEDSZ.js";
-import "../../chunk-HDNABXZA.js";
-import "../../chunk-432TUKPI.js";
-import "../../chunk-JGKU56OJ.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ServingOrderByWithAggregationInputSchema,
-  ServingOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=ServingOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { ServingCountOrderByAggregateInputSchema } from './ServingCountOrderByAggregateInputSchema.js';
+import { ServingAvgOrderByAggregateInputSchema } from './ServingAvgOrderByAggregateInputSchema.js';
+import { ServingMaxOrderByAggregateInputSchema } from './ServingMaxOrderByAggregateInputSchema.js';
+import { ServingMinOrderByAggregateInputSchema } from './ServingMinOrderByAggregateInputSchema.js';
+import { ServingSumOrderByAggregateInputSchema } from './ServingSumOrderByAggregateInputSchema.js';
+export const ServingOrderByWithAggregationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    dietaryItemId: z.lazy(() => SortOrderSchema).optional(),
+    quant_oz: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    quant_guess: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    _count: z.lazy(() => ServingCountOrderByAggregateInputSchema).optional(),
+    _avg: z.lazy(() => ServingAvgOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => ServingMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => ServingMinOrderByAggregateInputSchema).optional(),
+    _sum: z.lazy(() => ServingSumOrderByAggregateInputSchema).optional()
+}).strict();
+export default ServingOrderByWithAggregationInputSchema;

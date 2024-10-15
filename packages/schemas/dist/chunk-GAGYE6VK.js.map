@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/BibScalarFieldEnumSchema.ts"],"sourcesContent":["import { z } from 'zod';\nexport const BibScalarFieldEnumSchema = z.enum(['id','filename','firstSync','lastSync']);\nexport default BibScalarFieldEnumSchema;"],"mappings":";AAAA,SAAS,SAAS;AACX,IAAM,2BAA2B,EAAE,KAAK,CAAC,MAAK,YAAW,aAAY,UAAU,CAAC;AACvF,IAAO,mCAAQ;","names":[]}

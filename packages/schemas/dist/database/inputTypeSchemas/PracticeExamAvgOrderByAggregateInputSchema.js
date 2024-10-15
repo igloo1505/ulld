@@ -1,10 +1,10 @@
-import {
-  PracticeExamAvgOrderByAggregateInputSchema,
-  PracticeExamAvgOrderByAggregateInputSchema_default
-} from "../../chunk-IHH7OPGD.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  PracticeExamAvgOrderByAggregateInputSchema,
-  PracticeExamAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=PracticeExamAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const PracticeExamAvgOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    correctCount: z.lazy(() => SortOrderSchema).optional(),
+    inCorrectCount: z.lazy(() => SortOrderSchema).optional(),
+    timeLimitInSeconds: z.lazy(() => SortOrderSchema).optional(),
+    timeCompletedInSeconds: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default PracticeExamAvgOrderByAggregateInputSchema;

@@ -1,9 +1,6 @@
-import {
-  SnippetUpdatekeywordsInputSchema,
-  SnippetUpdatekeywordsInputSchema_default
-} from "../../chunk-XUR3XQ7P.js";
-export {
-  SnippetUpdatekeywordsInputSchema,
-  SnippetUpdatekeywordsInputSchema_default as default
-};
-//# sourceMappingURL=SnippetUpdatekeywordsInputSchema.js.map
+import { z } from 'zod';
+export const SnippetUpdatekeywordsInputSchema = z.object({
+    set: z.string().array().optional(),
+    push: z.union([z.string(), z.string().array()]).optional(),
+}).strict();
+export default SnippetUpdatekeywordsInputSchema;

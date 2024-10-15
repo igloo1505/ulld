@@ -1,10 +1,6 @@
-import {
-  TagCountOutputTypeArgsSchema,
-  TagCountOutputTypeArgsSchema_default
-} from "../../chunk-5E7ZVFZI.js";
-import "../../chunk-V6BG62CV.js";
-export {
-  TagCountOutputTypeArgsSchema,
-  TagCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=TagCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { TagCountOutputTypeSelectSchema } from './TagCountOutputTypeSelectSchema.js';
+export const TagCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => TagCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default TagCountOutputTypeSelectSchema;

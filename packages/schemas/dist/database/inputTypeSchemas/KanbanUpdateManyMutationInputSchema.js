@@ -1,11 +1,9 @@
-import {
-  KanbanUpdateManyMutationInputSchema,
-  KanbanUpdateManyMutationInputSchema_default
-} from "../../chunk-ZSSYJDKH.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  KanbanUpdateManyMutationInputSchema,
-  KanbanUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=KanbanUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const KanbanUpdateManyMutationInputSchema = z.object({
+    title: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastUpdate: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default KanbanUpdateManyMutationInputSchema;

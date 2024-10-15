@@ -1,12 +1,11 @@
-import {
-  SubjectUncheckedUpdateManyWithoutBibEntriesInputSchema,
-  SubjectUncheckedUpdateManyWithoutBibEntriesInputSchema_default
-} from "../../chunk-HOATHKPE.js";
-import "../../chunk-7KFMTKWN.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  SubjectUncheckedUpdateManyWithoutBibEntriesInputSchema,
-  SubjectUncheckedUpdateManyWithoutBibEntriesInputSchema_default as default
-};
-//# sourceMappingURL=SubjectUncheckedUpdateManyWithoutBibEntriesInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const SubjectUncheckedUpdateManyWithoutBibEntriesInputSchema = z.object({
+    value: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    kanbanId: z.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastAccess: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default SubjectUncheckedUpdateManyWithoutBibEntriesInputSchema;

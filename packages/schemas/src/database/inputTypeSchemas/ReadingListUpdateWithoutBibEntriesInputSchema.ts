@@ -1,12 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { MdxNoteUpdateManyWithoutReadingListNestedInputSchema } from './MdxNoteUpdateManyWithoutReadingListNestedInputSchema';
-import { IpynbUpdateManyWithoutReadingListNestedInputSchema } from './IpynbUpdateManyWithoutReadingListNestedInputSchema';
-
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { MdxNoteUpdateManyWithoutReadingListNestedInputSchema } from './MdxNoteUpdateManyWithoutReadingListNestedInputSchema.js';
+import { IpynbUpdateManyWithoutReadingListNestedInputSchema } from './IpynbUpdateManyWithoutReadingListNestedInputSchema.js';
 export const ReadingListUpdateWithoutBibEntriesInputSchema: z.ZodType<Prisma.ReadingListUpdateWithoutBibEntriesInput> = z.object({
   name: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   description: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
@@ -15,5 +13,4 @@ export const ReadingListUpdateWithoutBibEntriesInputSchema: z.ZodType<Prisma.Rea
   mdxNotes: z.lazy(() => MdxNoteUpdateManyWithoutReadingListNestedInputSchema).optional(),
   ipynbNotes: z.lazy(() => IpynbUpdateManyWithoutReadingListNestedInputSchema).optional()
 }).strict();
-
 export default ReadingListUpdateWithoutBibEntriesInputSchema;

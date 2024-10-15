@@ -1,10 +1,11 @@
-import {
-  SnippetCountOrderByAggregateInputSchema,
-  SnippetCountOrderByAggregateInputSchema_default
-} from "../../chunk-YUFIZTVF.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SnippetCountOrderByAggregateInputSchema,
-  SnippetCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SnippetCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SnippetCountOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    content: z.lazy(() => SortOrderSchema).optional(),
+    description: z.lazy(() => SortOrderSchema).optional(),
+    keywords: z.lazy(() => SortOrderSchema).optional(),
+    language: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SnippetCountOrderByAggregateInputSchema;

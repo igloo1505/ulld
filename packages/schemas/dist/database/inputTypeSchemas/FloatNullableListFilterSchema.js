@@ -1,9 +1,9 @@
-import {
-  FloatNullableListFilterSchema,
-  FloatNullableListFilterSchema_default
-} from "../../chunk-KLW7VRYK.js";
-export {
-  FloatNullableListFilterSchema,
-  FloatNullableListFilterSchema_default as default
-};
-//# sourceMappingURL=FloatNullableListFilterSchema.js.map
+import { z } from 'zod';
+export const FloatNullableListFilterSchema = z.object({
+    equals: z.number().array().optional().nullable(),
+    has: z.number().optional().nullable(),
+    hasEvery: z.number().array().optional(),
+    hasSome: z.number().array().optional(),
+    isEmpty: z.boolean().optional()
+}).strict();
+export default FloatNullableListFilterSchema;

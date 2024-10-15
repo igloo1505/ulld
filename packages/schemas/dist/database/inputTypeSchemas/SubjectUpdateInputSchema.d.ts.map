@@ -1,0 +1,1 @@
+{"version":3,"file":"SubjectUpdateInputSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/SubjectUpdateInputSchema.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AAYxB,eAAO,MAAM,wBAAwB,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,kBAAkB,CAa/D,CAAC;AACZ,eAAe,wBAAwB,CAAC"}

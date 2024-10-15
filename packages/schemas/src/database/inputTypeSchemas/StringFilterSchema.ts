@@ -1,9 +1,7 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { QueryModeSchema } from './QueryModeSchema';
-import { NestedStringFilterSchema } from './NestedStringFilterSchema';
-
+import { QueryModeSchema } from './QueryModeSchema.js';
+import { NestedStringFilterSchema } from './NestedStringFilterSchema.js';
 export const StringFilterSchema: z.ZodType<Prisma.StringFilter> = z.object({
   equals: z.string().optional(),
   in: z.string().array().optional(),
@@ -19,5 +17,4 @@ export const StringFilterSchema: z.ZodType<Prisma.StringFilter> = z.object({
   mode: z.lazy(() => QueryModeSchema).optional(),
   not: z.union([ z.string(),z.lazy(() => NestedStringFilterSchema) ]).optional(),
 }).strict();
-
 export default StringFilterSchema;

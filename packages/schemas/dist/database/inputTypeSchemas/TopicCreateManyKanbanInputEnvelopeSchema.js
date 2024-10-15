@@ -1,10 +1,7 @@
-import {
-  TopicCreateManyKanbanInputEnvelopeSchema,
-  TopicCreateManyKanbanInputEnvelopeSchema_default
-} from "../../chunk-G4AFJMNS.js";
-import "../../chunk-SLWYHGXJ.js";
-export {
-  TopicCreateManyKanbanInputEnvelopeSchema,
-  TopicCreateManyKanbanInputEnvelopeSchema_default as default
-};
-//# sourceMappingURL=TopicCreateManyKanbanInputEnvelopeSchema.js.map
+import { z } from 'zod';
+import { TopicCreateManyKanbanInputSchema } from './TopicCreateManyKanbanInputSchema.js';
+export const TopicCreateManyKanbanInputEnvelopeSchema = z.object({
+    data: z.union([z.lazy(() => TopicCreateManyKanbanInputSchema), z.lazy(() => TopicCreateManyKanbanInputSchema).array()]),
+    skipDuplicates: z.boolean().optional()
+}).strict();
+export default TopicCreateManyKanbanInputEnvelopeSchema;

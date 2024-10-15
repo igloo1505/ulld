@@ -1,19 +1,17 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema';
-import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema';
-import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema';
-import { BibEntryOrderByRelationAggregateInputSchema } from './BibEntryOrderByRelationAggregateInputSchema';
-import { SequentialNoteListOrderByWithRelationInputSchema } from './SequentialNoteListOrderByWithRelationInputSchema';
-import { ReadingListOrderByRelationAggregateInputSchema } from './ReadingListOrderByRelationAggregateInputSchema';
-import { EquationOrderByRelationAggregateInputSchema } from './EquationOrderByRelationAggregateInputSchema';
-import { DefinitionOrderByRelationAggregateInputSchema } from './DefinitionOrderByRelationAggregateInputSchema';
-import { ToDoOrderByRelationAggregateInputSchema } from './ToDoOrderByRelationAggregateInputSchema';
-import { MdxNoteOrderByRelevanceInputSchema } from './MdxNoteOrderByRelevanceInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema.js';
+import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema.js';
+import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema.js';
+import { BibEntryOrderByRelationAggregateInputSchema } from './BibEntryOrderByRelationAggregateInputSchema.js';
+import { SequentialNoteListOrderByWithRelationInputSchema } from './SequentialNoteListOrderByWithRelationInputSchema.js';
+import { ReadingListOrderByRelationAggregateInputSchema } from './ReadingListOrderByRelationAggregateInputSchema.js';
+import { EquationOrderByRelationAggregateInputSchema } from './EquationOrderByRelationAggregateInputSchema.js';
+import { DefinitionOrderByRelationAggregateInputSchema } from './DefinitionOrderByRelationAggregateInputSchema.js';
+import { ToDoOrderByRelationAggregateInputSchema } from './ToDoOrderByRelationAggregateInputSchema.js';
+import { MdxNoteOrderByRelevanceInputSchema } from './MdxNoteOrderByRelevanceInputSchema.js';
 export const MdxNoteOrderByWithRelationInputSchema: z.ZodType<Prisma.MdxNoteOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   isProtected: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -51,5 +49,4 @@ export const MdxNoteOrderByWithRelationInputSchema: z.ZodType<Prisma.MdxNoteOrde
   toDo: z.lazy(() => ToDoOrderByRelationAggregateInputSchema).optional(),
   _relevance: z.lazy(() => MdxNoteOrderByRelevanceInputSchema).optional()
 }).strict();
-
 export default MdxNoteOrderByWithRelationInputSchema;

@@ -1,9 +1,3 @@
-import {
-  CitationsGroupOrderByRelevanceFieldEnumSchema,
-  CitationsGroupOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-UUJJHGRX.js";
-export {
-  CitationsGroupOrderByRelevanceFieldEnumSchema,
-  CitationsGroupOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const CitationsGroupOrderByRelevanceFieldEnumSchema = z.enum(['name', 'description']);
+export default CitationsGroupOrderByRelevanceFieldEnumSchema;

@@ -1,9 +1,3 @@
-import {
-  DietScalarFieldEnumSchema,
-  DietScalarFieldEnumSchema_default
-} from "../../chunk-VPDMFHNI.js";
-export {
-  DietScalarFieldEnumSchema,
-  DietScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=DietScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const DietScalarFieldEnumSchema = z.enum(['name', 'summary', 'activelyFollowing', 'gf', 'vegan', 'pescatarian', 'vegetarian', 'fasting', 'cardioTraining', 'weightTraining', 'carb', 'pro', 'fat', 'goals', 'created', 'lastUpdate']);
+export default DietScalarFieldEnumSchema;

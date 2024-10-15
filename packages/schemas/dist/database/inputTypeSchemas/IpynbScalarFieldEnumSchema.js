@@ -1,9 +1,3 @@
-import {
-  IpynbScalarFieldEnumSchema,
-  IpynbScalarFieldEnumSchema_default
-} from "../../chunk-WKKJ2TT7.js";
-export {
-  IpynbScalarFieldEnumSchema,
-  IpynbScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=IpynbScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const IpynbScalarFieldEnumSchema = z.enum(['id', 'rootRelativePath', 'isProtected', 'title', 'latexTitle', 'citationsListOrder', 'importantValues', 'href', 'outgoingQuickLinks', 'raw', 'sequentialKey', 'sequentialIndex', 'bookmarked', 'firstSync', 'lastSync', 'lastAccess']);
+export default IpynbScalarFieldEnumSchema;

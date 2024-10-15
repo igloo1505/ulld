@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { BibWhereInputSchema } from './BibWhereInputSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema';
-
+import { BibWhereInputSchema } from './BibWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema.js';
 export const BibWhereUniqueInputSchema: z.ZodType<Prisma.BibWhereUniqueInput> = z.object({
   id: z.number().int()
 })
@@ -19,5 +17,4 @@ export const BibWhereUniqueInputSchema: z.ZodType<Prisma.BibWhereUniqueInput> = 
   lastSync: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   entries: z.lazy(() => BibEntryListRelationFilterSchema).optional()
 }).strict());
-
 export default BibWhereUniqueInputSchema;

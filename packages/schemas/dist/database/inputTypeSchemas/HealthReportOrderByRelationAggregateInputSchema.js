@@ -1,10 +1,6 @@
-import {
-  HealthReportOrderByRelationAggregateInputSchema,
-  HealthReportOrderByRelationAggregateInputSchema_default
-} from "../../chunk-P3SYYFW6.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  HealthReportOrderByRelationAggregateInputSchema,
-  HealthReportOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=HealthReportOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const HealthReportOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default HealthReportOrderByRelationAggregateInputSchema;

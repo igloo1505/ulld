@@ -1,9 +1,6 @@
-import {
-  RandomImageCreateInputSchema,
-  RandomImageCreateInputSchema_default
-} from "../../chunk-TSFSCV2I.js";
-export {
-  RandomImageCreateInputSchema,
-  RandomImageCreateInputSchema_default as default
-};
-//# sourceMappingURL=RandomImageCreateInputSchema.js.map
+import { z } from 'zod';
+export const RandomImageCreateInputSchema = z.object({
+    path: z.string(),
+    createdAt: z.coerce.date().optional()
+}).strict();
+export default RandomImageCreateInputSchema;

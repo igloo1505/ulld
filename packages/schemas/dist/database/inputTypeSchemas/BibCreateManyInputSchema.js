@@ -1,9 +1,8 @@
-import {
-  BibCreateManyInputSchema,
-  BibCreateManyInputSchema_default
-} from "../../chunk-DVCXPZSM.js";
-export {
-  BibCreateManyInputSchema,
-  BibCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=BibCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const BibCreateManyInputSchema = z.object({
+    id: z.number().int().optional(),
+    filename: z.string(),
+    firstSync: z.coerce.date().optional(),
+    lastSync: z.coerce.date().optional()
+}).strict();
+export default BibCreateManyInputSchema;

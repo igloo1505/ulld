@@ -1,11 +1,9 @@
-import {
-  MdxNoteOrderByRelevanceInputSchema,
-  MdxNoteOrderByRelevanceInputSchema_default
-} from "../../chunk-PMIPNYIG.js";
-import "../../chunk-N4M6NZMI.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  MdxNoteOrderByRelevanceInputSchema,
-  MdxNoteOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=MdxNoteOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { MdxNoteOrderByRelevanceFieldEnumSchema } from './MdxNoteOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const MdxNoteOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => MdxNoteOrderByRelevanceFieldEnumSchema), z.lazy(() => MdxNoteOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default MdxNoteOrderByRelevanceInputSchema;

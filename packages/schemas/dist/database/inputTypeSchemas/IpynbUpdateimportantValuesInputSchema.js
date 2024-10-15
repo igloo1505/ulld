@@ -1,9 +1,6 @@
-import {
-  IpynbUpdateimportantValuesInputSchema,
-  IpynbUpdateimportantValuesInputSchema_default
-} from "../../chunk-CTRUNBRT.js";
-export {
-  IpynbUpdateimportantValuesInputSchema,
-  IpynbUpdateimportantValuesInputSchema_default as default
-};
-//# sourceMappingURL=IpynbUpdateimportantValuesInputSchema.js.map
+import { z } from 'zod';
+export const IpynbUpdateimportantValuesInputSchema = z.object({
+    set: z.number().array().optional(),
+    push: z.union([z.number(), z.number().array()]).optional(),
+}).strict();
+export default IpynbUpdateimportantValuesInputSchema;

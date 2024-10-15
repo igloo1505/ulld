@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { BusinessContactCountOrderByAggregateInputSchema } from './BusinessContactCountOrderByAggregateInputSchema';
-import { BusinessContactAvgOrderByAggregateInputSchema } from './BusinessContactAvgOrderByAggregateInputSchema';
-import { BusinessContactMaxOrderByAggregateInputSchema } from './BusinessContactMaxOrderByAggregateInputSchema';
-import { BusinessContactMinOrderByAggregateInputSchema } from './BusinessContactMinOrderByAggregateInputSchema';
-import { BusinessContactSumOrderByAggregateInputSchema } from './BusinessContactSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { BusinessContactCountOrderByAggregateInputSchema } from './BusinessContactCountOrderByAggregateInputSchema.js';
+import { BusinessContactAvgOrderByAggregateInputSchema } from './BusinessContactAvgOrderByAggregateInputSchema.js';
+import { BusinessContactMaxOrderByAggregateInputSchema } from './BusinessContactMaxOrderByAggregateInputSchema.js';
+import { BusinessContactMinOrderByAggregateInputSchema } from './BusinessContactMinOrderByAggregateInputSchema.js';
+import { BusinessContactSumOrderByAggregateInputSchema } from './BusinessContactSumOrderByAggregateInputSchema.js';
 export const BusinessContactOrderByWithAggregationInputSchema: z.ZodType<Prisma.BusinessContactOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   companyName: z.lazy(() => SortOrderSchema).optional(),
@@ -24,5 +22,4 @@ export const BusinessContactOrderByWithAggregationInputSchema: z.ZodType<Prisma.
   _min: z.lazy(() => BusinessContactMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => BusinessContactSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default BusinessContactOrderByWithAggregationInputSchema;

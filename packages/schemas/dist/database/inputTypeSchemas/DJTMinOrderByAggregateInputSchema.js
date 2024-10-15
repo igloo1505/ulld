@@ -1,10 +1,8 @@
-import {
-  DJTMinOrderByAggregateInputSchema,
-  DJTMinOrderByAggregateInputSchema_default
-} from "../../chunk-HTOM5DYC.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DJTMinOrderByAggregateInputSchema,
-  DJTMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=DJTMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const DJTMinOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    type: z.lazy(() => SortOrderSchema).optional(),
+    data: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default DJTMinOrderByAggregateInputSchema;

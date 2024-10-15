@@ -1,9 +1,3 @@
-import {
-  DIETARY_GOALSchema,
-  DIETARY_GOALSchema_default
-} from "../../chunk-LRTPFMPI.js";
-export {
-  DIETARY_GOALSchema,
-  DIETARY_GOALSchema_default as default
-};
-//# sourceMappingURL=DIETARY_GOALSchema.js.map
+import { z } from 'zod';
+export const DIETARY_GOALSchema = z.enum(['weightLoss', 'muscleGain', 'autoImmune', 'allergy', 'gsd', 'skin', 'sexDrive', 'anxiety', 'memory', 'energy', 'adhd', 'sleep', 'depression', 'mentalHealth']);
+export default DIETARY_GOALSchema;

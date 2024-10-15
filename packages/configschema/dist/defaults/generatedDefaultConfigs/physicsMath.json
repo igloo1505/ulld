@@ -47,6 +47,74 @@
         ".db",
         ".html"
     ],
+    "noteTypes": [
+        {
+            "id": "physics",
+            "matchWeight": 50,
+            "fs": "/physics",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Physics",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "physics",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "physics",
+            "url": "/physics"
+        },
+        {
+            "id": "math",
+            "matchWeight": 50,
+            "fs": "/math",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Math",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "math",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "math",
+            "url": "/math"
+        },
+        {
+            "id": "dailyNote",
+            "matchWeight": 50,
+            "fs": "/dailyNotes",
+            "urlQuery": {},
+            "keywords": [],
+            "label": "Daily Notes",
+            "autoTag": [],
+            "autoTopic": [],
+            "autoSubject": [],
+            "UI": {
+                "styles": {
+                    "dark": {},
+                    "light": {}
+                }
+            },
+            "icon": "ulld",
+            "inSidebar": false,
+            "inNavbar": false,
+            "docType": "dailyNote",
+            "url": "/dailyNote"
+        }
+    ],
     "bibPath": "/citations.bib",
     "dateHandling": {
         "enableAdvancedFormat": true,

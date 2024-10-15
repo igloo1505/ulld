@@ -1,21 +1,17 @@
-import {
-  FeatureRequestDeleteArgsSchema,
-  FeatureRequestDeleteArgsSchema_default,
-  FeatureRequestSelectSchema
-} from "../../chunk-23OK4M3R.js";
-import "../../chunk-RQECGBYQ.js";
-import "../../chunk-DVDRYS7P.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  FeatureRequestDeleteArgsSchema,
-  FeatureRequestSelectSchema,
-  FeatureRequestDeleteArgsSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestDeleteArgsSchema.js.map
+import { z } from 'zod';
+import { FeatureRequestWhereUniqueInputSchema } from '../inputTypeSchemas/FeatureRequestWhereUniqueInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const FeatureRequestSelectSchema = z.object({
+    id: z.boolean().optional(),
+    email: z.boolean().optional(),
+    message: z.boolean().optional(),
+    category: z.boolean().optional(),
+    userBase: z.boolean().optional(),
+    receivedOn: z.boolean().optional(),
+}).strict();
+export const FeatureRequestDeleteArgsSchema = z.object({
+    select: FeatureRequestSelectSchema.optional(),
+    where: FeatureRequestWhereUniqueInputSchema,
+}).strict();
+export default FeatureRequestDeleteArgsSchema;

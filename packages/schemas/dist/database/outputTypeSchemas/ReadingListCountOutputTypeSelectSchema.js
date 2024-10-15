@@ -1,9 +1,7 @@
-import {
-  ReadingListCountOutputTypeSelectSchema,
-  ReadingListCountOutputTypeSelectSchema_default
-} from "../../chunk-7HJWAZ6V.js";
-export {
-  ReadingListCountOutputTypeSelectSchema,
-  ReadingListCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=ReadingListCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const ReadingListCountOutputTypeSelectSchema = z.object({
+    bibEntries: z.boolean().optional(),
+    mdxNotes: z.boolean().optional(),
+    ipynbNotes: z.boolean().optional(),
+}).strict();
+export default ReadingListCountOutputTypeSelectSchema;

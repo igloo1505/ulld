@@ -1,9 +1,7 @@
-import {
-  WaitlistRequestCreateInputSchema,
-  WaitlistRequestCreateInputSchema_default
-} from "../../chunk-4DF373JJ.js";
-export {
-  WaitlistRequestCreateInputSchema,
-  WaitlistRequestCreateInputSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestCreateInputSchema.js.map
+import { z } from 'zod';
+export const WaitlistRequestCreateInputSchema = z.object({
+    email: z.string(),
+    receivedOn: z.coerce.date().optional(),
+    emailsSent: z.number().int().optional()
+}).strict();
+export default WaitlistRequestCreateInputSchema;

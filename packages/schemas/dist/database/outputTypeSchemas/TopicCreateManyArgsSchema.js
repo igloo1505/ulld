@@ -1,10 +1,7 @@
-import {
-  TopicCreateManyArgsSchema,
-  TopicCreateManyArgsSchema_default
-} from "../../chunk-KVD37BEJ.js";
-import "../../chunk-S2T7TSKN.js";
-export {
-  TopicCreateManyArgsSchema,
-  TopicCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=TopicCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { TopicCreateManyInputSchema } from '../inputTypeSchemas/TopicCreateManyInputSchema.js';
+export const TopicCreateManyArgsSchema = z.object({
+    data: z.union([TopicCreateManyInputSchema, TopicCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default TopicCreateManyArgsSchema;

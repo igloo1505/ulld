@@ -1,9 +1,5 @@
-import {
-  KanBanListCountOutputTypeSelectSchema,
-  KanBanListCountOutputTypeSelectSchema_default
-} from "../../chunk-Q7ZKWI2P.js";
-export {
-  KanBanListCountOutputTypeSelectSchema,
-  KanBanListCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=KanBanListCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const KanBanListCountOutputTypeSelectSchema = z.object({
+    cards: z.boolean().optional(),
+}).strict();
+export default KanBanListCountOutputTypeSelectSchema;

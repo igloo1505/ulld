@@ -1,9 +1,5 @@
-import {
-  MdxNoteCreateimportantValuesInputSchema,
-  MdxNoteCreateimportantValuesInputSchema_default
-} from "../../chunk-FDXW24EV.js";
-export {
-  MdxNoteCreateimportantValuesInputSchema,
-  MdxNoteCreateimportantValuesInputSchema_default as default
-};
-//# sourceMappingURL=MdxNoteCreateimportantValuesInputSchema.js.map
+import { z } from 'zod';
+export const MdxNoteCreateimportantValuesInputSchema = z.object({
+    set: z.number().array()
+}).strict();
+export default MdxNoteCreateimportantValuesInputSchema;

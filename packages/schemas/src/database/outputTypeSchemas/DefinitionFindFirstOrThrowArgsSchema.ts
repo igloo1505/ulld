@@ -1,14 +1,13 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { DefinitionIncludeSchema } from '../inputTypeSchemas/DefinitionIncludeSchema'
-import { DefinitionWhereInputSchema } from '../inputTypeSchemas/DefinitionWhereInputSchema'
-import { DefinitionOrderByWithRelationInputSchema } from '../inputTypeSchemas/DefinitionOrderByWithRelationInputSchema'
-import { DefinitionWhereUniqueInputSchema } from '../inputTypeSchemas/DefinitionWhereUniqueInputSchema'
-import { DefinitionScalarFieldEnumSchema } from '../inputTypeSchemas/DefinitionScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+import { DefinitionIncludeSchema } from '../inputTypeSchemas/DefinitionIncludeSchema.js'
+import { DefinitionWhereInputSchema } from '../inputTypeSchemas/DefinitionWhereInputSchema.js'
+import { DefinitionOrderByWithRelationInputSchema } from '../inputTypeSchemas/DefinitionOrderByWithRelationInputSchema.js'
+import { DefinitionWhereUniqueInputSchema } from '../inputTypeSchemas/DefinitionWhereUniqueInputSchema.js'
+import { DefinitionScalarFieldEnumSchema } from '../inputTypeSchemas/DefinitionScalarFieldEnumSchema.js'
 import { MdxNoteArgsSchema } from "../outputTypeSchemas/MdxNoteArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const DefinitionSelectSchema: z.ZodType<Prisma.DefinitionSelect> = z.object({
   id: z.boolean().optional(),
   label: z.boolean().optional(),
@@ -19,7 +18,6 @@ export const DefinitionSelectSchema: z.ZodType<Prisma.DefinitionSelect> = z.obje
   lastAccess: z.boolean().optional(),
   mdxNote: z.union([z.boolean(),z.lazy(() => MdxNoteArgsSchema)]).optional(),
 }).strict()
-
 export const DefinitionFindFirstOrThrowArgsSchema: z.ZodType<Prisma.DefinitionFindFirstOrThrowArgs> = z.object({
   select: DefinitionSelectSchema.optional(),
   include: DefinitionIncludeSchema.optional(),
@@ -30,5 +28,4 @@ export const DefinitionFindFirstOrThrowArgsSchema: z.ZodType<Prisma.DefinitionFi
   skip: z.number().optional(),
   distinct: z.union([ DefinitionScalarFieldEnumSchema,DefinitionScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default DefinitionFindFirstOrThrowArgsSchema;

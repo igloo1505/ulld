@@ -1,12 +1,7 @@
-import {
-  FeatureRequestCreateManyArgsSchema,
-  FeatureRequestCreateManyArgsSchema_default
-} from "../../chunk-MCFHHWTX.js";
-import "../../chunk-BMKT6KWO.js";
-import "../../chunk-RTE36G3H.js";
-import "../../chunk-YD4DWKTK.js";
-export {
-  FeatureRequestCreateManyArgsSchema,
-  FeatureRequestCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { FeatureRequestCreateManyInputSchema } from '../inputTypeSchemas/FeatureRequestCreateManyInputSchema.js';
+export const FeatureRequestCreateManyArgsSchema = z.object({
+    data: z.union([FeatureRequestCreateManyInputSchema, FeatureRequestCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default FeatureRequestCreateManyArgsSchema;

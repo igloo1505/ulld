@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { JsonNullValueInputSchema } from './JsonNullValueInputSchema';
-import { InputJsonValueSchema } from './InputJsonValueSchema';
-import { EquationCreatevariablesInputSchema } from './EquationCreatevariablesInputSchema';
-import { EquationCreatekeywordsInputSchema } from './EquationCreatekeywordsInputSchema';
-import { RelatedValuesCreateNestedManyWithoutEquationsInputSchema } from './RelatedValuesCreateNestedManyWithoutEquationsInputSchema';
-import { TagCreateNestedManyWithoutEquationsInputSchema } from './TagCreateNestedManyWithoutEquationsInputSchema';
-import { SubjectCreateNestedManyWithoutEquationsInputSchema } from './SubjectCreateNestedManyWithoutEquationsInputSchema';
-import { MdxNoteCreateNestedManyWithoutEquationsInputSchema } from './MdxNoteCreateNestedManyWithoutEquationsInputSchema';
-
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+import { EquationCreatevariablesInputSchema } from './EquationCreatevariablesInputSchema.js';
+import { EquationCreatekeywordsInputSchema } from './EquationCreatekeywordsInputSchema.js';
+import { RelatedValuesCreateNestedManyWithoutEquationsInputSchema } from './RelatedValuesCreateNestedManyWithoutEquationsInputSchema.js';
+import { TagCreateNestedManyWithoutEquationsInputSchema } from './TagCreateNestedManyWithoutEquationsInputSchema.js';
+import { SubjectCreateNestedManyWithoutEquationsInputSchema } from './SubjectCreateNestedManyWithoutEquationsInputSchema.js';
+import { MdxNoteCreateNestedManyWithoutEquationsInputSchema } from './MdxNoteCreateNestedManyWithoutEquationsInputSchema.js';
 export const EquationCreateWithoutTopicsInputSchema: z.ZodType<Prisma.EquationCreateWithoutTopicsInput> = z.object({
   equationId: z.string().optional().nullable(),
   title: z.string(),
@@ -26,5 +24,4 @@ export const EquationCreateWithoutTopicsInputSchema: z.ZodType<Prisma.EquationCr
   subjects: z.lazy(() => SubjectCreateNestedManyWithoutEquationsInputSchema).optional(),
   mdxNotes: z.lazy(() => MdxNoteCreateNestedManyWithoutEquationsInputSchema).optional()
 }).strict();
-
 export default EquationCreateWithoutTopicsInputSchema;

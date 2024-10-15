@@ -1,11 +1,9 @@
-import {
-  SnippetOrderByRelevanceInputSchema,
-  SnippetOrderByRelevanceInputSchema_default
-} from "../../chunk-GN5OA7TH.js";
-import "../../chunk-25CTNZX7.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SnippetOrderByRelevanceInputSchema,
-  SnippetOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=SnippetOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { SnippetOrderByRelevanceFieldEnumSchema } from './SnippetOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SnippetOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => SnippetOrderByRelevanceFieldEnumSchema), z.lazy(() => SnippetOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default SnippetOrderByRelevanceInputSchema;

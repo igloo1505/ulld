@@ -1,10 +1,9 @@
-import {
-  KanbanCountOrderByAggregateInputSchema,
-  KanbanCountOrderByAggregateInputSchema_default
-} from "../../chunk-W5WBKUK5.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanbanCountOrderByAggregateInputSchema,
-  KanbanCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=KanbanCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const KanbanCountOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    title: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastUpdate: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default KanbanCountOrderByAggregateInputSchema;

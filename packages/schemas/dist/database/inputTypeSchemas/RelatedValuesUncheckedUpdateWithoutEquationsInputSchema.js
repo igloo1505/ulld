@@ -1,14 +1,13 @@
-import {
-  RelatedValuesUncheckedUpdateWithoutEquationsInputSchema,
-  RelatedValuesUncheckedUpdateWithoutEquationsInputSchema_default
-} from "../../chunk-64OVNVSN.js";
-import "../../chunk-ZAB5GZST.js";
-import "../../chunk-IWZ75T2C.js";
-import "../../chunk-ZXTFXMHW.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-TKIJII67.js";
-export {
-  RelatedValuesUncheckedUpdateWithoutEquationsInputSchema,
-  RelatedValuesUncheckedUpdateWithoutEquationsInputSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesUncheckedUpdateWithoutEquationsInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+import { FloatFieldUpdateOperationsInputSchema } from './FloatFieldUpdateOperationsInputSchema.js';
+import { RelatedValuesUpdateequationIdInputSchema } from './RelatedValuesUpdateequationIdInputSchema.js';
+export const RelatedValuesUncheckedUpdateWithoutEquationsInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    input: z.union([z.lazy(() => JsonNullValueInputSchema), InputJsonValueSchema]).optional(),
+    output: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    equationId: z.union([z.lazy(() => RelatedValuesUpdateequationIdInputSchema), z.number().int().array()]).optional(),
+}).strict();
+export default RelatedValuesUncheckedUpdateWithoutEquationsInputSchema;

@@ -1,10 +1,6 @@
-import {
-  QAPairCountOutputTypeArgsSchema,
-  QAPairCountOutputTypeArgsSchema_default
-} from "../../chunk-ZKYK7NO7.js";
-import "../../chunk-F6BJQMWD.js";
-export {
-  QAPairCountOutputTypeArgsSchema,
-  QAPairCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=QAPairCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { QAPairCountOutputTypeSelectSchema } from './QAPairCountOutputTypeSelectSchema.js';
+export const QAPairCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => QAPairCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default QAPairCountOutputTypeSelectSchema;

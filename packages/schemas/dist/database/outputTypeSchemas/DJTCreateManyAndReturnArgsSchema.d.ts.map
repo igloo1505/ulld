@@ -1,0 +1,1 @@
+{"version":3,"file":"DJTCreateManyAndReturnArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/DJTCreateManyAndReturnArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAEhD,eAAO,MAAM,gCAAgC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,0BAA0B,CAG/E,CAAE;AACb,eAAe,gCAAgC,CAAC"}

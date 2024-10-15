@@ -1,11 +1,9 @@
-import {
-  CitationsGroupOrderByRelevanceInputSchema,
-  CitationsGroupOrderByRelevanceInputSchema_default
-} from "../../chunk-QNFCAZ2G.js";
-import "../../chunk-UUJJHGRX.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  CitationsGroupOrderByRelevanceInputSchema,
-  CitationsGroupOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { CitationsGroupOrderByRelevanceFieldEnumSchema } from './CitationsGroupOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const CitationsGroupOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => CitationsGroupOrderByRelevanceFieldEnumSchema), z.lazy(() => CitationsGroupOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default CitationsGroupOrderByRelevanceInputSchema;

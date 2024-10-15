@@ -1,21 +1,18 @@
-import {
-  NoteTypeSelectSchema,
-  NoteTypeUpsertArgsSchema,
-  NoteTypeUpsertArgsSchema_default
-} from "../../chunk-IRRV6VCJ.js";
-import "../../chunk-NWGUO223.js";
-import "../../chunk-DLR5FMAN.js";
-import "../../chunk-PI4FMAGF.js";
-import "../../chunk-LVAWJRYV.js";
-import "../../chunk-FW7442IX.js";
-import "../../chunk-4ES4YADX.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  NoteTypeSelectSchema,
-  NoteTypeUpsertArgsSchema,
-  NoteTypeUpsertArgsSchema_default as default
-};
-//# sourceMappingURL=NoteTypeUpsertArgsSchema.js.map
+import { z } from 'zod';
+import { NoteTypeWhereUniqueInputSchema } from '../inputTypeSchemas/NoteTypeWhereUniqueInputSchema.js';
+import { NoteTypeCreateInputSchema } from '../inputTypeSchemas/NoteTypeCreateInputSchema.js';
+import { NoteTypeUncheckedCreateInputSchema } from '../inputTypeSchemas/NoteTypeUncheckedCreateInputSchema.js';
+import { NoteTypeUpdateInputSchema } from '../inputTypeSchemas/NoteTypeUpdateInputSchema.js';
+import { NoteTypeUncheckedUpdateInputSchema } from '../inputTypeSchemas/NoteTypeUncheckedUpdateInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const NoteTypeSelectSchema = z.object({
+    name: z.boolean().optional(),
+}).strict();
+export const NoteTypeUpsertArgsSchema = z.object({
+    select: NoteTypeSelectSchema.optional(),
+    where: NoteTypeWhereUniqueInputSchema,
+    create: z.union([NoteTypeCreateInputSchema, NoteTypeUncheckedCreateInputSchema]),
+    update: z.union([NoteTypeUpdateInputSchema, NoteTypeUncheckedUpdateInputSchema]),
+}).strict();
+export default NoteTypeUpsertArgsSchema;

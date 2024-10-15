@@ -1,10 +1,6 @@
-import {
-  ToDoListCountOutputTypeArgsSchema,
-  ToDoListCountOutputTypeArgsSchema_default
-} from "../../chunk-MLGRIOAU.js";
-import "../../chunk-RVFQK375.js";
-export {
-  ToDoListCountOutputTypeArgsSchema,
-  ToDoListCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=ToDoListCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { ToDoListCountOutputTypeSelectSchema } from './ToDoListCountOutputTypeSelectSchema.js';
+export const ToDoListCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => ToDoListCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default ToDoListCountOutputTypeSelectSchema;

@@ -1,10 +1,6 @@
-import {
-  IpynbOrderByRelationAggregateInputSchema,
-  IpynbOrderByRelationAggregateInputSchema_default
-} from "../../chunk-XY5DOPOB.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  IpynbOrderByRelationAggregateInputSchema,
-  IpynbOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=IpynbOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const IpynbOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default IpynbOrderByRelationAggregateInputSchema;

@@ -1,10 +1,9 @@
-import {
-  ReadingListCountOrderByAggregateInputSchema,
-  ReadingListCountOrderByAggregateInputSchema_default
-} from "../../chunk-LZ5PB5QS.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ReadingListCountOrderByAggregateInputSchema,
-  ReadingListCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=ReadingListCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ReadingListCountOrderByAggregateInputSchema = z.object({
+    name: z.lazy(() => SortOrderSchema).optional(),
+    description: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastUpdate: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default ReadingListCountOrderByAggregateInputSchema;

@@ -1,9 +1,7 @@
-import {
-  DJTUncheckedCreateInputSchema,
-  DJTUncheckedCreateInputSchema_default
-} from "../../chunk-W2V3G4OT.js";
-export {
-  DJTUncheckedCreateInputSchema,
-  DJTUncheckedCreateInputSchema_default as default
-};
-//# sourceMappingURL=DJTUncheckedCreateInputSchema.js.map
+import { z } from 'zod';
+export const DJTUncheckedCreateInputSchema = z.object({
+    id: z.number().int().optional(),
+    type: z.string(),
+    data: z.instanceof(Buffer)
+}).strict();
+export default DJTUncheckedCreateInputSchema;

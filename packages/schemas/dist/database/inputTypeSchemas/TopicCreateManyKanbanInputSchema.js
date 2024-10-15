@@ -1,9 +1,7 @@
-import {
-  TopicCreateManyKanbanInputSchema,
-  TopicCreateManyKanbanInputSchema_default
-} from "../../chunk-SLWYHGXJ.js";
-export {
-  TopicCreateManyKanbanInputSchema,
-  TopicCreateManyKanbanInputSchema_default as default
-};
-//# sourceMappingURL=TopicCreateManyKanbanInputSchema.js.map
+import { z } from 'zod';
+export const TopicCreateManyKanbanInputSchema = z.object({
+    value: z.string(),
+    createdAt: z.coerce.date().optional(),
+    lastAccess: z.coerce.date().optional()
+}).strict();
+export default TopicCreateManyKanbanInputSchema;

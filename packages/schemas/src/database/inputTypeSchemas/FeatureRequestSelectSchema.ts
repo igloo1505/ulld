@@ -1,6 +1,5 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 export const FeatureRequestSelectSchema: z.ZodType<Prisma.FeatureRequestSelect> = z.object({
   id: z.boolean().optional(),
   email: z.boolean().optional(),
@@ -9,5 +8,4 @@ export const FeatureRequestSelectSchema: z.ZodType<Prisma.FeatureRequestSelect> 
   userBase: z.boolean().optional(),
   receivedOn: z.boolean().optional(),
 }).strict()
-
 export default FeatureRequestSelectSchema;

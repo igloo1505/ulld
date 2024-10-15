@@ -1,111 +1,42 @@
-import {
-  HealthReportUpdateInputSchema,
-  HealthReportUpdateInputSchema_default
-} from "../../chunk-VMHIVACT.js";
-import "../../chunk-VK2L35CR.js";
-import "../../chunk-BULTUPKI.js";
-import "../../chunk-5UAZUEH2.js";
-import "../../chunk-7WVD7GHK.js";
-import "../../chunk-YKXDQQO7.js";
-import "../../chunk-ABCV64GX.js";
-import "../../chunk-22MAFTM4.js";
-import "../../chunk-TC6DSP7C.js";
-import "../../chunk-OYE2G27T.js";
-import "../../chunk-5JQY6MFJ.js";
-import "../../chunk-AARXSVR4.js";
-import "../../chunk-JJQOCIOX.js";
-import "../../chunk-5YNSY6UX.js";
-import "../../chunk-SSSKNJRG.js";
-import "../../chunk-ZHC35BBX.js";
-import "../../chunk-WQZ3Q2QI.js";
-import "../../chunk-SZZ6ROCM.js";
-import "../../chunk-SSKMSTA6.js";
-import "../../chunk-OUBJDU5Y.js";
-import "../../chunk-ZWHELD3Z.js";
-import "../../chunk-4W4TUDSE.js";
-import "../../chunk-MX6ZMMPL.js";
-import "../../chunk-2BZL7FCW.js";
-import "../../chunk-CYJOV7OZ.js";
-import "../../chunk-HDHROYTU.js";
-import "../../chunk-I2GJ22CG.js";
-import "../../chunk-3TXP5DMF.js";
-import "../../chunk-W7HQFFNX.js";
-import "../../chunk-7YIVPRKS.js";
-import "../../chunk-VAFJKCVG.js";
-import "../../chunk-ILQXM6PX.js";
-import "../../chunk-25POSQDG.js";
-import "../../chunk-HK4UERLG.js";
-import "../../chunk-QQIGUFEQ.js";
-import "../../chunk-MOLTCIJR.js";
-import "../../chunk-2NTNEQGL.js";
-import "../../chunk-SGCYKW7T.js";
-import "../../chunk-WZVXK2VQ.js";
-import "../../chunk-ADXXXKPT.js";
-import "../../chunk-QX3GHUID.js";
-import "../../chunk-VFB5WXXW.js";
-import "../../chunk-U4ZAQM7N.js";
-import "../../chunk-LDU6EOA5.js";
-import "../../chunk-CKWHLXAV.js";
-import "../../chunk-JVQHRCWA.js";
-import "../../chunk-E3GOTFX5.js";
-import "../../chunk-LVS4FGLV.js";
-import "../../chunk-P5ZWTHAL.js";
-import "../../chunk-5QKKBBQO.js";
-import "../../chunk-DPS2VAKH.js";
-import "../../chunk-I4KTL3CT.js";
-import "../../chunk-DOUQ3YIS.js";
-import "../../chunk-FHWIZJB2.js";
-import "../../chunk-2OVCX575.js";
-import "../../chunk-XSIO7LDI.js";
-import "../../chunk-Q4TGFXPZ.js";
-import "../../chunk-RGEOUWDE.js";
-import "../../chunk-LVZPXU3C.js";
-import "../../chunk-O4KQDRJZ.js";
-import "../../chunk-IBJBBFSU.js";
-import "../../chunk-AYSFFIF5.js";
-import "../../chunk-XSFJADHG.js";
-import "../../chunk-UBAUXHRA.js";
-import "../../chunk-BRBARM24.js";
-import "../../chunk-7ISI4WFK.js";
-import "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-IWZ75T2C.js";
-import "../../chunk-GNOT4FVG.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-FYUHI5X3.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-7KFMTKWN.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  HealthReportUpdateInputSchema,
-  HealthReportUpdateInputSchema_default as default
-};
-//# sourceMappingURL=HealthReportUpdateInputSchema.js.map
+import { z } from 'zod';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { FloatFieldUpdateOperationsInputSchema } from './FloatFieldUpdateOperationsInputSchema.js';
+import { NullableFloatFieldUpdateOperationsInputSchema } from './NullableFloatFieldUpdateOperationsInputSchema.js';
+import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { DietUpdateOneWithoutHealthReportNestedInputSchema } from './DietUpdateOneWithoutHealthReportNestedInputSchema.js';
+export const HealthReportUpdateInputSchema = z.object({
+    title: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    summary: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    overall: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    skin: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    bloat: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    weight_feeling: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    fullness: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    weight: z.union([z.number(), z.lazy(() => NullableFloatFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    cardiacCapacity: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    jawLine: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    joints: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    flexibility: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    anxiety: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    anxiety_desc: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    mood_desc: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    mood: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    sexDrive: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    intruisiveThoughts: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    caffeineIntake: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    glutenIntake: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    sugarIntake: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    artificialSweetenerIntake: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    artificalDyes: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    sleepQuality: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    hydration: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    twitching: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    sleepHours: z.union([z.number(), z.lazy(() => NullableFloatFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    calorie_est: z.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    times_meals_more_than_gap_apart: z.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    estHoursInExcessFast: z.union([z.number(), z.lazy(() => NullableFloatFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    created: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    currentDiet: z.lazy(() => DietUpdateOneWithoutHealthReportNestedInputSchema).optional()
+}).strict();
+export default HealthReportUpdateInputSchema;

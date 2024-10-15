@@ -1,10 +1,7 @@
-import {
-  TimePeriodCreateManyAndReturnArgsSchema,
-  TimePeriodCreateManyAndReturnArgsSchema_default
-} from "../../chunk-TT37LEUA.js";
-import "../../chunk-7WNTIKTF.js";
-export {
-  TimePeriodCreateManyAndReturnArgsSchema,
-  TimePeriodCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=TimePeriodCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { TimePeriodCreateManyInputSchema } from '../inputTypeSchemas/TimePeriodCreateManyInputSchema.js';
+export const TimePeriodCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([TimePeriodCreateManyInputSchema, TimePeriodCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default TimePeriodCreateManyAndReturnArgsSchema;

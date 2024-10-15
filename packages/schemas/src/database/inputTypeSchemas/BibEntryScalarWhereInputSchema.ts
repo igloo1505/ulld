@@ -1,12 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from './StringFilterSchema';
-import { IntNullableFilterSchema } from './IntNullableFilterSchema';
-import { BoolFilterSchema } from './BoolFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const BibEntryScalarWhereInputSchema: z.ZodType<Prisma.BibEntryScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => BibEntryScalarWhereInputSchema),z.lazy(() => BibEntryScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => BibEntryScalarWhereInputSchema).array().optional(),
@@ -54,5 +52,4 @@ export const BibEntryScalarWhereInputSchema: z.ZodType<Prisma.BibEntryScalarWher
   createdAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default BibEntryScalarWhereInputSchema;

@@ -1,22 +1,33 @@
-import {
-  ToDoOrderByWithRelationInputSchema,
-  ToDoOrderByWithRelationInputSchema_default
-} from "../../chunk-YIMEHS54.js";
-import "../../chunk-6JV35KBD.js";
-import "../../chunk-MEVAFWQ5.js";
-import "../../chunk-BL3DWYYH.js";
-import "../../chunk-NGXRISKU.js";
-import "../../chunk-UHL7AF2T.js";
-import "../../chunk-FEI37AUG.js";
-import "../../chunk-2NEKL3JR.js";
-import "../../chunk-TYDF4OCO.js";
-import "../../chunk-YD6HBAOC.js";
-import "../../chunk-GGRFX4OU.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ToDoOrderByWithRelationInputSchema,
-  ToDoOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=ToDoOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { MdxNoteOrderByRelationAggregateInputSchema } from './MdxNoteOrderByRelationAggregateInputSchema.js';
+import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema.js';
+import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema.js';
+import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema.js';
+import { ToDoOrderByRelationAggregateInputSchema } from './ToDoOrderByRelationAggregateInputSchema.js';
+import { ToDoListOrderByWithRelationInputSchema } from './ToDoListOrderByWithRelationInputSchema.js';
+import { ToDoOrderByRelevanceInputSchema } from './ToDoOrderByRelevanceInputSchema.js';
+export const ToDoOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    task: z.lazy(() => SortOrderSchema).optional(),
+    dueAt: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    details: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    parentId: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    category: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    bookmarked: z.lazy(() => SortOrderSchema).optional(),
+    status: z.lazy(() => SortOrderSchema).optional(),
+    priority: z.lazy(() => SortOrderSchema).optional(),
+    toDoListId: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    completedOn: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    associatedNotes: z.lazy(() => MdxNoteOrderByRelationAggregateInputSchema).optional(),
+    tags: z.lazy(() => TagOrderByRelationAggregateInputSchema).optional(),
+    topics: z.lazy(() => TopicOrderByRelationAggregateInputSchema).optional(),
+    subjects: z.lazy(() => SubjectOrderByRelationAggregateInputSchema).optional(),
+    parent: z.lazy(() => ToDoOrderByWithRelationInputSchema).optional(),
+    child: z.lazy(() => ToDoOrderByRelationAggregateInputSchema).optional(),
+    ToDoList: z.lazy(() => ToDoListOrderByWithRelationInputSchema).optional(),
+    _relevance: z.lazy(() => ToDoOrderByRelevanceInputSchema).optional()
+}).strict();
+export default ToDoOrderByWithRelationInputSchema;

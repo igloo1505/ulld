@@ -1,10 +1,7 @@
-import {
-  HealthReportCreateManyAndReturnArgsSchema,
-  HealthReportCreateManyAndReturnArgsSchema_default
-} from "../../chunk-GL2UH4W2.js";
-import "../../chunk-32NZMHWH.js";
-export {
-  HealthReportCreateManyAndReturnArgsSchema,
-  HealthReportCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=HealthReportCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { HealthReportCreateManyInputSchema } from '../inputTypeSchemas/HealthReportCreateManyInputSchema.js';
+export const HealthReportCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([HealthReportCreateManyInputSchema, HealthReportCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default HealthReportCreateManyAndReturnArgsSchema;

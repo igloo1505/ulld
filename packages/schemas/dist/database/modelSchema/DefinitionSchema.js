@@ -1,19 +1,29 @@
-import {
-  DefinitionPartialSchema,
-  DefinitionPartialWithRelationsSchema,
-  DefinitionSchema,
-  DefinitionSchema_default,
-  DefinitionWithPartialRelationsSchema,
-  DefinitionWithRelationsSchema
-} from "../../chunk-VPR5VB7J.js";
-import "../../chunk-WWHEEPM6.js";
-import "../../chunk-T4CHWTHS.js";
-export {
-  DefinitionPartialSchema,
-  DefinitionPartialWithRelationsSchema,
-  DefinitionSchema,
-  DefinitionWithPartialRelationsSchema,
-  DefinitionWithRelationsSchema,
-  DefinitionSchema_default as default
-};
-//# sourceMappingURL=DefinitionSchema.js.map
+import { z } from 'zod';
+import { MdxNoteWithRelationsSchema } from './MdxNoteSchema.js';
+import { MdxNotePartialWithRelationsSchema } from './MdxNoteSchema.js';
+/////////////////////////////////////////
+// DEFINITION SCHEMA
+/////////////////////////////////////////
+export const DefinitionSchema = z.object({
+    id: z.string(),
+    label: z.string().nullable(),
+    content: z.string().nullable(),
+    alphabeticalLabel: z.string().nullable(),
+    mdxNoteId: z.number().int().nullable(),
+    createdAt: z.coerce.date(),
+    lastAccess: z.coerce.date(),
+});
+/////////////////////////////////////////
+// DEFINITION PARTIAL SCHEMA
+/////////////////////////////////////////
+export const DefinitionPartialSchema = DefinitionSchema.partial();
+export const DefinitionWithRelationsSchema = DefinitionSchema.merge(z.object({
+    mdxNote: z.lazy(() => MdxNoteWithRelationsSchema).nullable(),
+}));
+export const DefinitionPartialWithRelationsSchema = DefinitionPartialSchema.merge(z.object({
+    mdxNote: z.lazy(() => MdxNotePartialWithRelationsSchema).nullable(),
+})).partial();
+export const DefinitionWithPartialRelationsSchema = DefinitionSchema.merge(z.object({
+    mdxNote: z.lazy(() => MdxNotePartialWithRelationsSchema).nullable(),
+}).partial());
+export default DefinitionSchema;

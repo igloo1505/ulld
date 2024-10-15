@@ -1,13 +1,12 @@
-import {
-  NoteTypeWhereUniqueInputSchema,
-  NoteTypeWhereUniqueInputSchema_default
-} from "../../chunk-FW7442IX.js";
-import "../../chunk-4ES4YADX.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  NoteTypeWhereUniqueInputSchema,
-  NoteTypeWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=NoteTypeWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { NoteTypeWhereInputSchema } from './NoteTypeWhereInputSchema.js';
+export const NoteTypeWhereUniqueInputSchema = z.object({
+    name: z.string()
+})
+    .and(z.object({
+    name: z.string().optional(),
+    AND: z.union([z.lazy(() => NoteTypeWhereInputSchema), z.lazy(() => NoteTypeWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => NoteTypeWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => NoteTypeWhereInputSchema), z.lazy(() => NoteTypeWhereInputSchema).array()]).optional(),
+}).strict());
+export default NoteTypeWhereUniqueInputSchema;

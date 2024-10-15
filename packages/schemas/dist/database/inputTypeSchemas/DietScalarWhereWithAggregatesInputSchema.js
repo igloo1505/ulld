@@ -1,33 +1,31 @@
-import {
-  DietScalarWhereWithAggregatesInputSchema,
-  DietScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-U7YE55KC.js";
-import "../../chunk-HGNAAYVL.js";
-import "../../chunk-7HHFDTWU.js";
-import "../../chunk-DOHO4RJ2.js";
-import "../../chunk-VWMCQIY7.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-YDWZQXJY.js";
-import "../../chunk-TQ7L5ZAX.js";
-import "../../chunk-BZ55PUI6.js";
-import "../../chunk-VFKLP7TG.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-XCQN6FNH.js";
-import "../../chunk-7P2FYBUR.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-3OYDE7JL.js";
-import "../../chunk-JHSRNRH3.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DietScalarWhereWithAggregatesInputSchema,
-  DietScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=DietScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
+import { EnumTERTIARY_TOGGLEWithAggregatesFilterSchema } from './EnumTERTIARY_TOGGLEWithAggregatesFilterSchema.js';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
+import { EnumDIETARY_GOALNullableListFilterSchema } from './EnumDIETARY_GOALNullableListFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+export const DietScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => DietScalarWhereWithAggregatesInputSchema), z.lazy(() => DietScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => DietScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => DietScalarWhereWithAggregatesInputSchema), z.lazy(() => DietScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    name: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    summary: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    activelyFollowing: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    gf: z.union([z.lazy(() => EnumTERTIARY_TOGGLEWithAggregatesFilterSchema), z.lazy(() => TERTIARY_TOGGLESchema)]).optional(),
+    vegan: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    pescatarian: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    vegetarian: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    fasting: z.union([z.lazy(() => EnumTERTIARY_TOGGLEWithAggregatesFilterSchema), z.lazy(() => TERTIARY_TOGGLESchema)]).optional(),
+    cardioTraining: z.union([z.lazy(() => EnumTERTIARY_TOGGLEWithAggregatesFilterSchema), z.lazy(() => TERTIARY_TOGGLESchema)]).optional(),
+    weightTraining: z.union([z.lazy(() => EnumTERTIARY_TOGGLEWithAggregatesFilterSchema), z.lazy(() => TERTIARY_TOGGLESchema)]).optional(),
+    carb: z.union([z.lazy(() => FloatNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    pro: z.union([z.lazy(() => FloatNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    fat: z.union([z.lazy(() => FloatNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    goals: z.lazy(() => EnumDIETARY_GOALNullableListFilterSchema).optional(),
+    created: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+    lastUpdate: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default DietScalarWhereWithAggregatesInputSchema;

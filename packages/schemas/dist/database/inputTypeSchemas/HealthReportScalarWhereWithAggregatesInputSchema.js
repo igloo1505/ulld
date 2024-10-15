@@ -1,28 +1,46 @@
-import {
-  HealthReportScalarWhereWithAggregatesInputSchema,
-  HealthReportScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-2ZKUKHRE.js";
-import "../../chunk-4CX7VVNU.js";
-import "../../chunk-TPFUXMNG.js";
-import "../../chunk-DOHO4RJ2.js";
-import "../../chunk-VWMCQIY7.js";
-import "../../chunk-BZ55PUI6.js";
-import "../../chunk-VFKLP7TG.js";
-import "../../chunk-VKTRMAGB.js";
-import "../../chunk-Y6KFO3UF.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-S2WAI7QC.js";
-import "../../chunk-TPDRVVNK.js";
-import "../../chunk-XCQN6FNH.js";
-import "../../chunk-7P2FYBUR.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  HealthReportScalarWhereWithAggregatesInputSchema,
-  HealthReportScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=HealthReportScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { FloatWithAggregatesFilterSchema } from './FloatWithAggregatesFilterSchema.js';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+export const HealthReportScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema), z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema), z.lazy(() => HealthReportScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    title: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    summary: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    overall: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    skin: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    bloat: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    weight_feeling: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    fullness: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    weight: z.union([z.lazy(() => FloatNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    cardiacCapacity: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    jawLine: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    joints: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    flexibility: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    anxiety: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    anxiety_desc: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    mood_desc: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    mood: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    sexDrive: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    intruisiveThoughts: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    caffeineIntake: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    glutenIntake: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    sugarIntake: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    artificialSweetenerIntake: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    artificalDyes: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    sleepQuality: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    hydration: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    twitching: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    sleepHours: z.union([z.lazy(() => FloatNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    calorie_est: z.union([z.lazy(() => IntNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    times_meals_more_than_gap_apart: z.union([z.lazy(() => IntNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    estHoursInExcessFast: z.union([z.lazy(() => FloatNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    dietId: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    created: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default HealthReportScalarWhereWithAggregatesInputSchema;

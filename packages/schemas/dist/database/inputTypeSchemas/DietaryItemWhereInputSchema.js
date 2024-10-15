@@ -1,36 +1,28 @@
-import {
-  DietaryItemWhereInputSchema,
-  DietaryItemWhereInputSchema_default
-} from "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DietaryItemWhereInputSchema,
-  DietaryItemWhereInputSchema_default as default
-};
-//# sourceMappingURL=DietaryItemWhereInputSchema.js.map
+import { z } from 'zod';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { FloatNullableFilterSchema } from './FloatNullableFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { FloatFilterSchema } from './FloatFilterSchema.js';
+import { DietListRelationFilterSchema } from './DietListRelationFilterSchema.js';
+import { ServingListRelationFilterSchema } from './ServingListRelationFilterSchema.js';
+export const DietaryItemWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => DietaryItemWhereInputSchema), z.lazy(() => DietaryItemWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => DietaryItemWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => DietaryItemWhereInputSchema), z.lazy(() => DietaryItemWhereInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    name: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    barcode: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    gi: z.union([z.lazy(() => IntNullableFilterSchema), z.number()]).optional().nullable(),
+    calsPerOz: z.union([z.lazy(() => FloatNullableFilterSchema), z.number()]).optional().nullable(),
+    glutenFree: z.union([z.lazy(() => BoolFilterSchema), z.boolean()]).optional(),
+    minimalFructose: z.union([z.lazy(() => BoolFilterSchema), z.boolean()]).optional(),
+    natural: z.union([z.lazy(() => BoolFilterSchema), z.boolean()]).optional(),
+    organic: z.union([z.lazy(() => BoolFilterSchema), z.boolean()]).optional(),
+    impactScore: z.union([z.lazy(() => FloatFilterSchema), z.number()]).optional(),
+    Diet: z.lazy(() => DietListRelationFilterSchema).optional(),
+    Serving: z.lazy(() => ServingListRelationFilterSchema).optional()
+}).strict();
+export default DietaryItemWhereInputSchema;

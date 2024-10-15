@@ -1,0 +1,1 @@
+{"version":3,"file":"BibEntryCreateManyArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/BibEntryCreateManyArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAEhD,eAAO,MAAM,4BAA4B,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,sBAAsB,CAGvE,CAAE;AACb,eAAe,4BAA4B,CAAC"}

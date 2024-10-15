@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanBanCardCreateWithoutKanBanListInputSchema } from './KanBanCardCreateWithoutKanBanListInputSchema';
-import { KanBanCardUncheckedCreateWithoutKanBanListInputSchema } from './KanBanCardUncheckedCreateWithoutKanBanListInputSchema';
-import { KanBanCardCreateOrConnectWithoutKanBanListInputSchema } from './KanBanCardCreateOrConnectWithoutKanBanListInputSchema';
-import { KanBanCardUpsertWithWhereUniqueWithoutKanBanListInputSchema } from './KanBanCardUpsertWithWhereUniqueWithoutKanBanListInputSchema';
-import { KanBanCardCreateManyKanBanListInputEnvelopeSchema } from './KanBanCardCreateManyKanBanListInputEnvelopeSchema';
-import { KanBanCardWhereUniqueInputSchema } from './KanBanCardWhereUniqueInputSchema';
-import { KanBanCardUpdateWithWhereUniqueWithoutKanBanListInputSchema } from './KanBanCardUpdateWithWhereUniqueWithoutKanBanListInputSchema';
-import { KanBanCardUpdateManyWithWhereWithoutKanBanListInputSchema } from './KanBanCardUpdateManyWithWhereWithoutKanBanListInputSchema';
-import { KanBanCardScalarWhereInputSchema } from './KanBanCardScalarWhereInputSchema';
-
+import { KanBanCardCreateWithoutKanBanListInputSchema } from './KanBanCardCreateWithoutKanBanListInputSchema.js';
+import { KanBanCardUncheckedCreateWithoutKanBanListInputSchema } from './KanBanCardUncheckedCreateWithoutKanBanListInputSchema.js';
+import { KanBanCardCreateOrConnectWithoutKanBanListInputSchema } from './KanBanCardCreateOrConnectWithoutKanBanListInputSchema.js';
+import { KanBanCardUpsertWithWhereUniqueWithoutKanBanListInputSchema } from './KanBanCardUpsertWithWhereUniqueWithoutKanBanListInputSchema.js';
+import { KanBanCardCreateManyKanBanListInputEnvelopeSchema } from './KanBanCardCreateManyKanBanListInputEnvelopeSchema.js';
+import { KanBanCardWhereUniqueInputSchema } from './KanBanCardWhereUniqueInputSchema.js';
+import { KanBanCardUpdateWithWhereUniqueWithoutKanBanListInputSchema } from './KanBanCardUpdateWithWhereUniqueWithoutKanBanListInputSchema.js';
+import { KanBanCardUpdateManyWithWhereWithoutKanBanListInputSchema } from './KanBanCardUpdateManyWithWhereWithoutKanBanListInputSchema.js';
+import { KanBanCardScalarWhereInputSchema } from './KanBanCardScalarWhereInputSchema.js';
 export const KanBanCardUncheckedUpdateManyWithoutKanBanListNestedInputSchema: z.ZodType<Prisma.KanBanCardUncheckedUpdateManyWithoutKanBanListNestedInput> = z.object({
   create: z.union([ z.lazy(() => KanBanCardCreateWithoutKanBanListInputSchema),z.lazy(() => KanBanCardCreateWithoutKanBanListInputSchema).array(),z.lazy(() => KanBanCardUncheckedCreateWithoutKanBanListInputSchema),z.lazy(() => KanBanCardUncheckedCreateWithoutKanBanListInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => KanBanCardCreateOrConnectWithoutKanBanListInputSchema),z.lazy(() => KanBanCardCreateOrConnectWithoutKanBanListInputSchema).array() ]).optional(),
@@ -24,5 +22,4 @@ export const KanBanCardUncheckedUpdateManyWithoutKanBanListNestedInputSchema: z.
   updateMany: z.union([ z.lazy(() => KanBanCardUpdateManyWithWhereWithoutKanBanListInputSchema),z.lazy(() => KanBanCardUpdateManyWithWhereWithoutKanBanListInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => KanBanCardScalarWhereInputSchema),z.lazy(() => KanBanCardScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default KanBanCardUncheckedUpdateManyWithoutKanBanListNestedInputSchema;

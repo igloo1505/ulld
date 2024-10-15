@@ -1,10 +1,7 @@
-import {
-  QuoteCreateManyAndReturnArgsSchema,
-  QuoteCreateManyAndReturnArgsSchema_default
-} from "../../chunk-GHTB6AI4.js";
-import "../../chunk-ZT354ONR.js";
-export {
-  QuoteCreateManyAndReturnArgsSchema,
-  QuoteCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=QuoteCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { QuoteCreateManyInputSchema } from '../inputTypeSchemas/QuoteCreateManyInputSchema.js';
+export const QuoteCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([QuoteCreateManyInputSchema, QuoteCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default QuoteCreateManyAndReturnArgsSchema;

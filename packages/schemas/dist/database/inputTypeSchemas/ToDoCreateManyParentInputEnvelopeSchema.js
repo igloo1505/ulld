@@ -1,11 +1,7 @@
-import {
-  ToDoCreateManyParentInputEnvelopeSchema,
-  ToDoCreateManyParentInputEnvelopeSchema_default
-} from "../../chunk-PQTVBH2U.js";
-import "../../chunk-HA3XYYEO.js";
-import "../../chunk-T4CHWTHS.js";
-export {
-  ToDoCreateManyParentInputEnvelopeSchema,
-  ToDoCreateManyParentInputEnvelopeSchema_default as default
-};
-//# sourceMappingURL=ToDoCreateManyParentInputEnvelopeSchema.js.map
+import { z } from 'zod';
+import { ToDoCreateManyParentInputSchema } from './ToDoCreateManyParentInputSchema.js';
+export const ToDoCreateManyParentInputEnvelopeSchema = z.object({
+    data: z.union([z.lazy(() => ToDoCreateManyParentInputSchema), z.lazy(() => ToDoCreateManyParentInputSchema).array()]),
+    skipDuplicates: z.boolean().optional()
+}).strict();
+export default ToDoCreateManyParentInputEnvelopeSchema;

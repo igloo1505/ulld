@@ -1,10 +1,11 @@
-import {
-  SnippetCreateManyInputSchema,
-  SnippetCreateManyInputSchema_default
-} from "../../chunk-6P4LVRYL.js";
-import "../../chunk-JVQMU3BL.js";
-export {
-  SnippetCreateManyInputSchema,
-  SnippetCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=SnippetCreateManyInputSchema.js.map
+import { z } from 'zod';
+import { SnippetCreatekeywordsInputSchema } from './SnippetCreatekeywordsInputSchema.js';
+export const SnippetCreateManyInputSchema = z.object({
+    id: z.number().int().optional(),
+    content: z.string(),
+    description: z.string(),
+    keywords: z.union([z.lazy(() => SnippetCreatekeywordsInputSchema), z.string().array()]).optional(),
+    language: z.string(),
+    createdAt: z.coerce.date().optional()
+}).strict();
+export default SnippetCreateManyInputSchema;

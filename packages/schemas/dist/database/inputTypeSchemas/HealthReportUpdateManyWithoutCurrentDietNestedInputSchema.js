@@ -1,57 +1,24 @@
-import {
-  HealthReportUpdateManyWithoutCurrentDietNestedInputSchema,
-  HealthReportUpdateManyWithoutCurrentDietNestedInputSchema_default
-} from "../../chunk-FGZ2CSMN.js";
-import "../../chunk-QYYYGHQU.js";
-import "../../chunk-PHWATHLA.js";
-import "../../chunk-CDKSXKCJ.js";
-import "../../chunk-OAVEMSQ2.js";
-import "../../chunk-ZBAD2464.js";
-import "../../chunk-UJUD2OLY.js";
-import "../../chunk-IR3L7V4C.js";
-import "../../chunk-2NFPHPMS.js";
-import "../../chunk-TTSQK4GS.js";
-import "../../chunk-LMS6SAPK.js";
-import "../../chunk-NUJNZYIW.js";
-import "../../chunk-KYVFT7YD.js";
-import "../../chunk-ALI3VRL3.js";
-import "../../chunk-LZNACEQH.js";
-import "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-IWZ75T2C.js";
-import "../../chunk-GNOT4FVG.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-7KFMTKWN.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  HealthReportUpdateManyWithoutCurrentDietNestedInputSchema,
-  HealthReportUpdateManyWithoutCurrentDietNestedInputSchema_default as default
-};
-//# sourceMappingURL=HealthReportUpdateManyWithoutCurrentDietNestedInputSchema.js.map
+import { z } from 'zod';
+import { HealthReportCreateWithoutCurrentDietInputSchema } from './HealthReportCreateWithoutCurrentDietInputSchema.js';
+import { HealthReportUncheckedCreateWithoutCurrentDietInputSchema } from './HealthReportUncheckedCreateWithoutCurrentDietInputSchema.js';
+import { HealthReportCreateOrConnectWithoutCurrentDietInputSchema } from './HealthReportCreateOrConnectWithoutCurrentDietInputSchema.js';
+import { HealthReportUpsertWithWhereUniqueWithoutCurrentDietInputSchema } from './HealthReportUpsertWithWhereUniqueWithoutCurrentDietInputSchema.js';
+import { HealthReportCreateManyCurrentDietInputEnvelopeSchema } from './HealthReportCreateManyCurrentDietInputEnvelopeSchema.js';
+import { HealthReportWhereUniqueInputSchema } from './HealthReportWhereUniqueInputSchema.js';
+import { HealthReportUpdateWithWhereUniqueWithoutCurrentDietInputSchema } from './HealthReportUpdateWithWhereUniqueWithoutCurrentDietInputSchema.js';
+import { HealthReportUpdateManyWithWhereWithoutCurrentDietInputSchema } from './HealthReportUpdateManyWithWhereWithoutCurrentDietInputSchema.js';
+import { HealthReportScalarWhereInputSchema } from './HealthReportScalarWhereInputSchema.js';
+export const HealthReportUpdateManyWithoutCurrentDietNestedInputSchema = z.object({
+    create: z.union([z.lazy(() => HealthReportCreateWithoutCurrentDietInputSchema), z.lazy(() => HealthReportCreateWithoutCurrentDietInputSchema).array(), z.lazy(() => HealthReportUncheckedCreateWithoutCurrentDietInputSchema), z.lazy(() => HealthReportUncheckedCreateWithoutCurrentDietInputSchema).array()]).optional(),
+    connectOrCreate: z.union([z.lazy(() => HealthReportCreateOrConnectWithoutCurrentDietInputSchema), z.lazy(() => HealthReportCreateOrConnectWithoutCurrentDietInputSchema).array()]).optional(),
+    upsert: z.union([z.lazy(() => HealthReportUpsertWithWhereUniqueWithoutCurrentDietInputSchema), z.lazy(() => HealthReportUpsertWithWhereUniqueWithoutCurrentDietInputSchema).array()]).optional(),
+    createMany: z.lazy(() => HealthReportCreateManyCurrentDietInputEnvelopeSchema).optional(),
+    set: z.union([z.lazy(() => HealthReportWhereUniqueInputSchema), z.lazy(() => HealthReportWhereUniqueInputSchema).array()]).optional(),
+    disconnect: z.union([z.lazy(() => HealthReportWhereUniqueInputSchema), z.lazy(() => HealthReportWhereUniqueInputSchema).array()]).optional(),
+    delete: z.union([z.lazy(() => HealthReportWhereUniqueInputSchema), z.lazy(() => HealthReportWhereUniqueInputSchema).array()]).optional(),
+    connect: z.union([z.lazy(() => HealthReportWhereUniqueInputSchema), z.lazy(() => HealthReportWhereUniqueInputSchema).array()]).optional(),
+    update: z.union([z.lazy(() => HealthReportUpdateWithWhereUniqueWithoutCurrentDietInputSchema), z.lazy(() => HealthReportUpdateWithWhereUniqueWithoutCurrentDietInputSchema).array()]).optional(),
+    updateMany: z.union([z.lazy(() => HealthReportUpdateManyWithWhereWithoutCurrentDietInputSchema), z.lazy(() => HealthReportUpdateManyWithWhereWithoutCurrentDietInputSchema).array()]).optional(),
+    deleteMany: z.union([z.lazy(() => HealthReportScalarWhereInputSchema), z.lazy(() => HealthReportScalarWhereInputSchema).array()]).optional(),
+}).strict();
+export default HealthReportUpdateManyWithoutCurrentDietNestedInputSchema;

@@ -1,10 +1,6 @@
-import {
-  KanBanListOrderByRelationAggregateInputSchema,
-  KanBanListOrderByRelationAggregateInputSchema_default
-} from "../../chunk-5SYKAG7Z.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanBanListOrderByRelationAggregateInputSchema,
-  KanBanListOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=KanBanListOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const KanBanListOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default KanBanListOrderByRelationAggregateInputSchema;

@@ -1,0 +1,1 @@
+{"version":3,"file":"ToDoDeleteManyArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/ToDoDeleteManyArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAEhD,eAAO,MAAM,wBAAwB,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,kBAAkB,CAE/D,CAAE;AACb,eAAe,wBAAwB,CAAC"}

@@ -1,149 +1,40 @@
-import {
-  DietSelectSchema,
-  DietUpdateArgsSchema,
-  DietUpdateArgsSchema_default
-} from "../../chunk-PVNZSTO3.js";
-import "../../chunk-67LG3TNR.js";
-import "../../chunk-VU4WQ767.js";
-import "../../chunk-OYE2G27T.js";
-import "../../chunk-5JQY6MFJ.js";
-import "../../chunk-AARXSVR4.js";
-import "../../chunk-JJQOCIOX.js";
-import "../../chunk-5YNSY6UX.js";
-import "../../chunk-SSSKNJRG.js";
-import "../../chunk-ZHC35BBX.js";
-import "../../chunk-WQZ3Q2QI.js";
-import "../../chunk-SZZ6ROCM.js";
-import "../../chunk-ZWHELD3Z.js";
-import "../../chunk-4W4TUDSE.js";
-import "../../chunk-MX6ZMMPL.js";
-import "../../chunk-2BZL7FCW.js";
-import "../../chunk-CYJOV7OZ.js";
-import "../../chunk-HDHROYTU.js";
-import "../../chunk-I2GJ22CG.js";
-import "../../chunk-3TXP5DMF.js";
-import "../../chunk-W7HQFFNX.js";
-import "../../chunk-7YIVPRKS.js";
-import "../../chunk-VAFJKCVG.js";
-import "../../chunk-ILQXM6PX.js";
-import "../../chunk-25POSQDG.js";
-import "../../chunk-HK4UERLG.js";
-import "../../chunk-QQIGUFEQ.js";
-import "../../chunk-MOLTCIJR.js";
-import "../../chunk-2NTNEQGL.js";
-import "../../chunk-SGCYKW7T.js";
-import "../../chunk-WZVXK2VQ.js";
-import "../../chunk-ADXXXKPT.js";
-import "../../chunk-QX3GHUID.js";
-import "../../chunk-VFB5WXXW.js";
-import "../../chunk-U4ZAQM7N.js";
-import "../../chunk-LDU6EOA5.js";
-import "../../chunk-CKWHLXAV.js";
-import "../../chunk-JVQHRCWA.js";
-import "../../chunk-7PYZRV4B.js";
-import "../../chunk-FGZ2CSMN.js";
-import "../../chunk-QYYYGHQU.js";
-import "../../chunk-PHWATHLA.js";
-import "../../chunk-CDKSXKCJ.js";
-import "../../chunk-OAVEMSQ2.js";
-import "../../chunk-ZBAD2464.js";
-import "../../chunk-UJUD2OLY.js";
-import "../../chunk-IR3L7V4C.js";
-import "../../chunk-2NFPHPMS.js";
-import "../../chunk-E3GOTFX5.js";
-import "../../chunk-LVS4FGLV.js";
-import "../../chunk-P5ZWTHAL.js";
-import "../../chunk-I4KTL3CT.js";
-import "../../chunk-DOUQ3YIS.js";
-import "../../chunk-FHWIZJB2.js";
-import "../../chunk-2OVCX575.js";
-import "../../chunk-XSIO7LDI.js";
-import "../../chunk-Q4TGFXPZ.js";
-import "../../chunk-RGEOUWDE.js";
-import "../../chunk-LVZPXU3C.js";
-import "../../chunk-O4KQDRJZ.js";
-import "../../chunk-IBJBBFSU.js";
-import "../../chunk-TTSQK4GS.js";
-import "../../chunk-LMS6SAPK.js";
-import "../../chunk-NUJNZYIW.js";
-import "../../chunk-KYVFT7YD.js";
-import "../../chunk-ALI3VRL3.js";
-import "../../chunk-KDYZAD52.js";
-import "../../chunk-F7WREYKP.js";
-import "../../chunk-XSFJADHG.js";
-import "../../chunk-QLHQ3CC4.js";
-import "../../chunk-UBAUXHRA.js";
-import "../../chunk-VPDMFHNI.js";
-import "../../chunk-HVBBYC7S.js";
-import "../../chunk-RNIPPCR5.js";
-import "../../chunk-ZA3KL7IQ.js";
-import "../../chunk-H2SQHHJN.js";
-import "../../chunk-GVRWVSTA.js";
-import "../../chunk-PFFRFP2G.js";
-import "../../chunk-LZNACEQH.js";
-import "../../chunk-APXVAXDT.js";
-import "../../chunk-7YVP76GY.js";
-import "../../chunk-BRBARM24.js";
-import "../../chunk-33MCZ6AL.js";
-import "../../chunk-2YLYAKJ5.js";
-import "../../chunk-F7YUFWZ6.js";
-import "../../chunk-36CO6JRE.js";
-import "../../chunk-D3YENTEM.js";
-import "../../chunk-Q5LINEDD.js";
-import "../../chunk-J5RY4DJT.js";
-import "../../chunk-H4HFGUAJ.js";
-import "../../chunk-QFVMDCBU.js";
-import "../../chunk-7ISI4WFK.js";
-import "../../chunk-4TP62LJL.js";
-import "../../chunk-W4Q366B6.js";
-import "../../chunk-ZUIIQRAW.js";
-import "../../chunk-MTR5OF6P.js";
-import "../../chunk-P3SYYFW6.js";
-import "../../chunk-YWQ2LKBQ.js";
-import "../../chunk-4V7L2DVJ.js";
-import "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-IWZ75T2C.js";
-import "../../chunk-GNOT4FVG.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-FYUHI5X3.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-7KFMTKWN.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-WVDZRY2Y.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DietSelectSchema,
-  DietUpdateArgsSchema,
-  DietUpdateArgsSchema_default as default
-};
-//# sourceMappingURL=DietUpdateArgsSchema.js.map
+import { z } from 'zod';
+import { DietIncludeSchema } from '../inputTypeSchemas/DietIncludeSchema.js';
+import { DietUpdateInputSchema } from '../inputTypeSchemas/DietUpdateInputSchema.js';
+import { DietUncheckedUpdateInputSchema } from '../inputTypeSchemas/DietUncheckedUpdateInputSchema.js';
+import { DietWhereUniqueInputSchema } from '../inputTypeSchemas/DietWhereUniqueInputSchema.js';
+import { DietaryItemFindManyArgsSchema } from "../outputTypeSchemas/DietaryItemFindManyArgsSchema";
+import { TimePeriodFindManyArgsSchema } from "../outputTypeSchemas/TimePeriodFindManyArgsSchema";
+import { HealthReportFindManyArgsSchema } from "../outputTypeSchemas/HealthReportFindManyArgsSchema";
+import { DietCountOutputTypeArgsSchema } from "../outputTypeSchemas/DietCountOutputTypeArgsSchema";
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const DietSelectSchema = z.object({
+    name: z.boolean().optional(),
+    summary: z.boolean().optional(),
+    activelyFollowing: z.boolean().optional(),
+    gf: z.boolean().optional(),
+    vegan: z.boolean().optional(),
+    pescatarian: z.boolean().optional(),
+    vegetarian: z.boolean().optional(),
+    fasting: z.boolean().optional(),
+    cardioTraining: z.boolean().optional(),
+    weightTraining: z.boolean().optional(),
+    carb: z.boolean().optional(),
+    pro: z.boolean().optional(),
+    fat: z.boolean().optional(),
+    goals: z.boolean().optional(),
+    created: z.boolean().optional(),
+    lastUpdate: z.boolean().optional(),
+    items: z.union([z.boolean(), z.lazy(() => DietaryItemFindManyArgsSchema)]).optional(),
+    periodsFollowed: z.union([z.boolean(), z.lazy(() => TimePeriodFindManyArgsSchema)]).optional(),
+    HealthReport: z.union([z.boolean(), z.lazy(() => HealthReportFindManyArgsSchema)]).optional(),
+    _count: z.union([z.boolean(), z.lazy(() => DietCountOutputTypeArgsSchema)]).optional(),
+}).strict();
+export const DietUpdateArgsSchema = z.object({
+    select: DietSelectSchema.optional(),
+    include: DietIncludeSchema.optional(),
+    data: z.union([DietUpdateInputSchema, DietUncheckedUpdateInputSchema]),
+    where: DietWhereUniqueInputSchema,
+}).strict();
+export default DietUpdateArgsSchema;

@@ -1,11 +1,10 @@
-import {
-  EnumTaskCategoryNullableFilterSchema,
-  EnumTaskCategoryNullableFilterSchema_default
-} from "../../chunk-O7PIU7VL.js";
-import "../../chunk-4A6JCUBO.js";
-import "../../chunk-T4CHWTHS.js";
-export {
-  EnumTaskCategoryNullableFilterSchema,
-  EnumTaskCategoryNullableFilterSchema_default as default
-};
-//# sourceMappingURL=EnumTaskCategoryNullableFilterSchema.js.map
+import { z } from 'zod';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { NestedEnumTaskCategoryNullableFilterSchema } from './NestedEnumTaskCategoryNullableFilterSchema.js';
+export const EnumTaskCategoryNullableFilterSchema = z.object({
+    equals: z.lazy(() => TaskCategorySchema).optional().nullable(),
+    in: z.lazy(() => TaskCategorySchema).array().optional().nullable(),
+    notIn: z.lazy(() => TaskCategorySchema).array().optional().nullable(),
+    not: z.union([z.lazy(() => TaskCategorySchema), z.lazy(() => NestedEnumTaskCategoryNullableFilterSchema)]).optional().nullable(),
+}).strict();
+export default EnumTaskCategoryNullableFilterSchema;

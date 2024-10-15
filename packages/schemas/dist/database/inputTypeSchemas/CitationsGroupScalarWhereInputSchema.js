@@ -1,14 +1,11 @@
-import {
-  CitationsGroupScalarWhereInputSchema,
-  CitationsGroupScalarWhereInputSchema_default
-} from "../../chunk-KJWZWDNU.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  CitationsGroupScalarWhereInputSchema,
-  CitationsGroupScalarWhereInputSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupScalarWhereInputSchema.js.map
+import { z } from 'zod';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+export const CitationsGroupScalarWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => CitationsGroupScalarWhereInputSchema), z.lazy(() => CitationsGroupScalarWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => CitationsGroupScalarWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => CitationsGroupScalarWhereInputSchema), z.lazy(() => CitationsGroupScalarWhereInputSchema).array()]).optional(),
+    name: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    description: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+}).strict();
+export default CitationsGroupScalarWhereInputSchema;

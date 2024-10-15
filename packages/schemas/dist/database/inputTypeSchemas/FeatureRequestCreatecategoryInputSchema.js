@@ -1,9 +1,5 @@
-import {
-  FeatureRequestCreatecategoryInputSchema,
-  FeatureRequestCreatecategoryInputSchema_default
-} from "../../chunk-RTE36G3H.js";
-export {
-  FeatureRequestCreatecategoryInputSchema,
-  FeatureRequestCreatecategoryInputSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestCreatecategoryInputSchema.js.map
+import { z } from 'zod';
+export const FeatureRequestCreatecategoryInputSchema = z.object({
+    set: z.string().array()
+}).strict();
+export default FeatureRequestCreatecategoryInputSchema;

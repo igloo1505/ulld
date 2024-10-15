@@ -1,11 +1,7 @@
-import {
-  ToDoCreateManyAndReturnArgsSchema,
-  ToDoCreateManyAndReturnArgsSchema_default
-} from "../../chunk-7Q5KB6WR.js";
-import "../../chunk-445JDRJN.js";
-import "../../chunk-T4CHWTHS.js";
-export {
-  ToDoCreateManyAndReturnArgsSchema,
-  ToDoCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=ToDoCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { ToDoCreateManyInputSchema } from '../inputTypeSchemas/ToDoCreateManyInputSchema.js';
+export const ToDoCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([ToDoCreateManyInputSchema, ToDoCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default ToDoCreateManyAndReturnArgsSchema;

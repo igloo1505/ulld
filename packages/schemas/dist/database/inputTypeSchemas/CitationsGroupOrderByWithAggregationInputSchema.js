@@ -1,15 +1,14 @@
-import {
-  CitationsGroupOrderByWithAggregationInputSchema,
-  CitationsGroupOrderByWithAggregationInputSchema_default
-} from "../../chunk-CU3ZPZXL.js";
-import "../../chunk-D4AYWDYF.js";
-import "../../chunk-62ZW7XGQ.js";
-import "../../chunk-UT6VCJQO.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  CitationsGroupOrderByWithAggregationInputSchema,
-  CitationsGroupOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { CitationsGroupCountOrderByAggregateInputSchema } from './CitationsGroupCountOrderByAggregateInputSchema.js';
+import { CitationsGroupMaxOrderByAggregateInputSchema } from './CitationsGroupMaxOrderByAggregateInputSchema.js';
+import { CitationsGroupMinOrderByAggregateInputSchema } from './CitationsGroupMinOrderByAggregateInputSchema.js';
+export const CitationsGroupOrderByWithAggregationInputSchema = z.object({
+    name: z.lazy(() => SortOrderSchema).optional(),
+    description: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    _count: z.lazy(() => CitationsGroupCountOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => CitationsGroupMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => CitationsGroupMinOrderByAggregateInputSchema).optional()
+}).strict();
+export default CitationsGroupOrderByWithAggregationInputSchema;

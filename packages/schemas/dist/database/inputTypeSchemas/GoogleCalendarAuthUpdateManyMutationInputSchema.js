@@ -1,11 +1,8 @@
-import {
-  GoogleCalendarAuthUpdateManyMutationInputSchema,
-  GoogleCalendarAuthUpdateManyMutationInputSchema_default
-} from "../../chunk-AHJXWA5E.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-TKIJII67.js";
-export {
-  GoogleCalendarAuthUpdateManyMutationInputSchema,
-  GoogleCalendarAuthUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+export const GoogleCalendarAuthUpdateManyMutationInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    auth: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default GoogleCalendarAuthUpdateManyMutationInputSchema;

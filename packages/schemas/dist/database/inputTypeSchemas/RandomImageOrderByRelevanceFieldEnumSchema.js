@@ -1,9 +1,3 @@
-import {
-  RandomImageOrderByRelevanceFieldEnumSchema,
-  RandomImageOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-35CHNW2P.js";
-export {
-  RandomImageOrderByRelevanceFieldEnumSchema,
-  RandomImageOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=RandomImageOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const RandomImageOrderByRelevanceFieldEnumSchema = z.enum(['path']);
+export default RandomImageOrderByRelevanceFieldEnumSchema;

@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { KanBanListOrderByRelationAggregateInputSchema } from './KanBanListOrderByRelationAggregateInputSchema';
-import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema';
-import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema';
-import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema';
-import { KanbanOrderByRelevanceInputSchema } from './KanbanOrderByRelevanceInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { KanBanListOrderByRelationAggregateInputSchema } from './KanBanListOrderByRelationAggregateInputSchema.js';
+import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema.js';
+import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema.js';
+import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema.js';
+import { KanbanOrderByRelevanceInputSchema } from './KanbanOrderByRelevanceInputSchema.js';
 export const KanbanOrderByWithRelationInputSchema: z.ZodType<Prisma.KanbanOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   title: z.lazy(() => SortOrderSchema).optional(),
@@ -19,5 +17,4 @@ export const KanbanOrderByWithRelationInputSchema: z.ZodType<Prisma.KanbanOrderB
   topics: z.lazy(() => TopicOrderByRelationAggregateInputSchema).optional(),
   _relevance: z.lazy(() => KanbanOrderByRelevanceInputSchema).optional()
 }).strict();
-
 export default KanbanOrderByWithRelationInputSchema;

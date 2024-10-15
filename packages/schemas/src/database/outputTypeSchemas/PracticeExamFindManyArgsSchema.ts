@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { PracticeExamIncludeSchema } from '../inputTypeSchemas/PracticeExamIncludeSchema'
-import { PracticeExamWhereInputSchema } from '../inputTypeSchemas/PracticeExamWhereInputSchema'
-import { PracticeExamOrderByWithRelationInputSchema } from '../inputTypeSchemas/PracticeExamOrderByWithRelationInputSchema'
-import { PracticeExamWhereUniqueInputSchema } from '../inputTypeSchemas/PracticeExamWhereUniqueInputSchema'
-import { PracticeExamScalarFieldEnumSchema } from '../inputTypeSchemas/PracticeExamScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+import { PracticeExamIncludeSchema } from '../inputTypeSchemas/PracticeExamIncludeSchema.js'
+import { PracticeExamWhereInputSchema } from '../inputTypeSchemas/PracticeExamWhereInputSchema.js'
+import { PracticeExamOrderByWithRelationInputSchema } from '../inputTypeSchemas/PracticeExamOrderByWithRelationInputSchema.js'
+import { PracticeExamWhereUniqueInputSchema } from '../inputTypeSchemas/PracticeExamWhereUniqueInputSchema.js'
+import { PracticeExamScalarFieldEnumSchema } from '../inputTypeSchemas/PracticeExamScalarFieldEnumSchema.js'
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
@@ -12,7 +12,6 @@ import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArg
 import { PracticeExamCountOutputTypeArgsSchema } from "../outputTypeSchemas/PracticeExamCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const PracticeExamSelectSchema: z.ZodType<Prisma.PracticeExamSelect> = z.object({
   id: z.boolean().optional(),
   correctCount: z.boolean().optional(),
@@ -26,7 +25,6 @@ export const PracticeExamSelectSchema: z.ZodType<Prisma.PracticeExamSelect> = z.
   questions: z.union([z.boolean(),z.lazy(() => QAPairFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => PracticeExamCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const PracticeExamFindManyArgsSchema: z.ZodType<Prisma.PracticeExamFindManyArgs> = z.object({
   select: PracticeExamSelectSchema.optional(),
   include: PracticeExamIncludeSchema.optional(),
@@ -37,5 +35,4 @@ export const PracticeExamFindManyArgsSchema: z.ZodType<Prisma.PracticeExamFindMa
   skip: z.number().optional(),
   distinct: z.union([ PracticeExamScalarFieldEnumSchema,PracticeExamScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default PracticeExamFindManyArgsSchema;

@@ -1,14 +1,16 @@
-import {
-  BusinessContactOrderByWithRelationInputSchema,
-  BusinessContactOrderByWithRelationInputSchema_default
-} from "../../chunk-UMC2HT6W.js";
-import "../../chunk-IXBV5ZV4.js";
-import "../../chunk-TPXEAHL6.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  BusinessContactOrderByWithRelationInputSchema,
-  BusinessContactOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=BusinessContactOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { BusinessContactOrderByRelevanceInputSchema } from './BusinessContactOrderByRelevanceInputSchema.js';
+export const BusinessContactOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    companyName: z.lazy(() => SortOrderSchema).optional(),
+    contactName: z.lazy(() => SortOrderSchema).optional(),
+    contactPreference: z.lazy(() => SortOrderSchema).optional(),
+    email: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    phone: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    message: z.lazy(() => SortOrderSchema).optional(),
+    purpose: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    _relevance: z.lazy(() => BusinessContactOrderByRelevanceInputSchema).optional()
+}).strict();
+export default BusinessContactOrderByWithRelationInputSchema;

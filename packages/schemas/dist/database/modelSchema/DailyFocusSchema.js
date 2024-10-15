@@ -1,11 +1,13 @@
-import {
-  DailyFocusPartialSchema,
-  DailyFocusSchema,
-  DailyFocusSchema_default
-} from "../../chunk-O5K3KCGV.js";
-export {
-  DailyFocusPartialSchema,
-  DailyFocusSchema,
-  DailyFocusSchema_default as default
-};
-//# sourceMappingURL=DailyFocusSchema.js.map
+import { z } from 'zod';
+/////////////////////////////////////////
+// DAILY FOCUS SCHEMA
+/////////////////////////////////////////
+export const DailyFocusSchema = z.object({
+    value: z.string(),
+    createdAt: z.coerce.date(),
+});
+/////////////////////////////////////////
+// DAILY FOCUS PARTIAL SCHEMA
+/////////////////////////////////////////
+export const DailyFocusPartialSchema = DailyFocusSchema.partial();
+export default DailyFocusSchema;

@@ -1,21 +1,24 @@
-import {
-  EquationScalarWhereInputSchema,
-  EquationScalarWhereInputSchema_default
-} from "../../chunk-34ND25JL.js";
-import "../../chunk-V2TZ67XY.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  EquationScalarWhereInputSchema,
-  EquationScalarWhereInputSchema_default as default
-};
-//# sourceMappingURL=EquationScalarWhereInputSchema.js.map
+import { z } from 'zod';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { JsonFilterSchema } from './JsonFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+export const EquationScalarWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => EquationScalarWhereInputSchema), z.lazy(() => EquationScalarWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => EquationScalarWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => EquationScalarWhereInputSchema), z.lazy(() => EquationScalarWhereInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    equationId: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    title: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    desc: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    content: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    asPython: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    variableLegend: z.lazy(() => JsonFilterSchema).optional(),
+    variables: z.lazy(() => StringNullableListFilterSchema).optional(),
+    keywords: z.lazy(() => StringNullableListFilterSchema).optional(),
+    createdAt: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    lastAccess: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+}).strict();
+export default EquationScalarWhereInputSchema;

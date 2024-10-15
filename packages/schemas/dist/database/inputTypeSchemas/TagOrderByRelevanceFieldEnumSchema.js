@@ -1,9 +1,3 @@
-import {
-  TagOrderByRelevanceFieldEnumSchema,
-  TagOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-5TYBK7BO.js";
-export {
-  TagOrderByRelevanceFieldEnumSchema,
-  TagOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=TagOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const TagOrderByRelevanceFieldEnumSchema = z.enum(['value']);
+export default TagOrderByRelevanceFieldEnumSchema;

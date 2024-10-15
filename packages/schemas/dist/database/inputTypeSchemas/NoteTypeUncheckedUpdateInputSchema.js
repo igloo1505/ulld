@@ -1,10 +1,6 @@
-import {
-  NoteTypeUncheckedUpdateInputSchema,
-  NoteTypeUncheckedUpdateInputSchema_default
-} from "../../chunk-LVAWJRYV.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  NoteTypeUncheckedUpdateInputSchema,
-  NoteTypeUncheckedUpdateInputSchema_default as default
-};
-//# sourceMappingURL=NoteTypeUncheckedUpdateInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+export const NoteTypeUncheckedUpdateInputSchema = z.object({
+    name: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default NoteTypeUncheckedUpdateInputSchema;

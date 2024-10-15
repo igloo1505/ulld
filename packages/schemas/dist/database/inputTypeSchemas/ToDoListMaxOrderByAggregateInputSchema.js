@@ -1,10 +1,10 @@
-import {
-  ToDoListMaxOrderByAggregateInputSchema,
-  ToDoListMaxOrderByAggregateInputSchema_default
-} from "../../chunk-WTGJVMCA.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ToDoListMaxOrderByAggregateInputSchema,
-  ToDoListMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=ToDoListMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ToDoListMaxOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    label: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastUpdate: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default ToDoListMaxOrderByAggregateInputSchema;

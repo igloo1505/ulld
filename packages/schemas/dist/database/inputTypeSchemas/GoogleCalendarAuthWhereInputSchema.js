@@ -1,14 +1,11 @@
-import {
-  GoogleCalendarAuthWhereInputSchema,
-  GoogleCalendarAuthWhereInputSchema_default
-} from "../../chunk-L4VQ3HR7.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  GoogleCalendarAuthWhereInputSchema,
-  GoogleCalendarAuthWhereInputSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthWhereInputSchema.js.map
+import { z } from 'zod';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+export const GoogleCalendarAuthWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => GoogleCalendarAuthWhereInputSchema), z.lazy(() => GoogleCalendarAuthWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => GoogleCalendarAuthWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => GoogleCalendarAuthWhereInputSchema), z.lazy(() => GoogleCalendarAuthWhereInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    auth: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+}).strict();
+export default GoogleCalendarAuthWhereInputSchema;

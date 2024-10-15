@@ -1,188 +1,28 @@
-import {
-  TopicSelectSchema,
-  TopicSelectSchema_default
-} from "../../chunk-KZUHTSWW.js";
-import "../../chunk-JV52BDQC.js";
-import "../../chunk-VR7H2BAL.js";
-import "../../chunk-F77YACIB.js";
-import "../../chunk-UAZ7DCZJ.js";
-import "../../chunk-ZUUAOV4O.js";
-import "../../chunk-4YTFSGIX.js";
-import "../../chunk-FBVZ5QEO.js";
-import "../../chunk-UIKGYNXB.js";
-import "../../chunk-KWNC23UK.js";
-import "../../chunk-4EOX5ZBO.js";
-import "../../chunk-ECC75BHH.js";
-import "../../chunk-BVOQPGJM.js";
-import "../../chunk-OLNJKVDG.js";
-import "../../chunk-RYBL3VGK.js";
-import "../../chunk-LZDVJHQX.js";
-import "../../chunk-BGPJ5GX2.js";
-import "../../chunk-QNFCAZ2G.js";
-import "../../chunk-UUJJHGRX.js";
-import "../../chunk-GY5DALUC.js";
-import "../../chunk-47E6WPFB.js";
-import "../../chunk-NYWQP4PE.js";
-import "../../chunk-H6XJHUHH.js";
-import "../../chunk-V4Y543WR.js";
-import "../../chunk-H7TDMSNR.js";
-import "../../chunk-6Q2POV45.js";
-import "../../chunk-JNHEMUNF.js";
-import "../../chunk-MONL7CLA.js";
-import "../../chunk-3WHBANT2.js";
-import "../../chunk-V3JQFU2U.js";
-import "../../chunk-33KHBRDI.js";
-import "../../chunk-ONKSTASA.js";
-import "../../chunk-EOWS52EL.js";
-import "../../chunk-ZHPM3YVS.js";
-import "../../chunk-I7LBMM7X.js";
-import "../../chunk-Q4UR4XCO.js";
-import "../../chunk-3KP7KBW7.js";
-import "../../chunk-Y6EMIHNR.js";
-import "../../chunk-DY7K4H5E.js";
-import "../../chunk-RVZOCS6Z.js";
-import "../../chunk-NCWREB5M.js";
-import "../../chunk-WKKJ2TT7.js";
-import "../../chunk-DZXYR76P.js";
-import "../../chunk-KTSAAAVU.js";
-import "../../chunk-NI4B4KAK.js";
-import "../../chunk-H26KGHY7.js";
-import "../../chunk-FXL2P2MF.js";
-import "../../chunk-LTOOCLVR.js";
-import "../../chunk-Q7ZKWI2P.js";
-import "../../chunk-QD6ZFSZE.js";
-import "../../chunk-RZOHPPB5.js";
-import "../../chunk-DRXIMC6A.js";
-import "../../chunk-Y43QGVFU.js";
-import "../../chunk-3VQACKJX.js";
-import "../../chunk-7OMCZZIB.js";
-import "../../chunk-BENEIZWA.js";
-import "../../chunk-LQIEO6GP.js";
-import "../../chunk-F3RQWPPB.js";
-import "../../chunk-6CNBKVCR.js";
-import "../../chunk-573L5EXN.js";
-import "../../chunk-PMIPNYIG.js";
-import "../../chunk-N4M6NZMI.js";
-import "../../chunk-RFWHT4GW.js";
-import "../../chunk-CG6F6PGF.js";
-import "../../chunk-KBI4CQE5.js";
-import "../../chunk-C2DKK6P5.js";
-import "../../chunk-GRQLS3JL.js";
-import "../../chunk-FR2KMCZK.js";
-import "../../chunk-LW7N27TI.js";
-import "../../chunk-FZLXAQ4E.js";
-import "../../chunk-NO6FD3MG.js";
-import "../../chunk-ZKYK7NO7.js";
-import "../../chunk-F6BJQMWD.js";
-import "../../chunk-ULZ7G2UB.js";
-import "../../chunk-FPWPA4T5.js";
-import "../../chunk-Q54L2SCG.js";
-import "../../chunk-B2UXPVL4.js";
-import "../../chunk-DJFV4Z7H.js";
-import "../../chunk-AKWFQI63.js";
-import "../../chunk-7HJWAZ6V.js";
-import "../../chunk-XYII44FB.js";
-import "../../chunk-MZSZGCUA.js";
-import "../../chunk-QPRVPEZA.js";
-import "../../chunk-UDE55YSZ.js";
-import "../../chunk-37QIGEAZ.js";
-import "../../chunk-ZKOREBRP.js";
-import "../../chunk-G75HTSBH.js";
-import "../../chunk-U7B5SDOA.js";
-import "../../chunk-MZFNSGGS.js";
-import "../../chunk-PMLTVZ4P.js";
-import "../../chunk-BXHWLRTY.js";
-import "../../chunk-5QVEHY36.js";
-import "../../chunk-A5OL2AEL.js";
-import "../../chunk-EOPW33NX.js";
-import "../../chunk-7J2GDNQZ.js";
-import "../../chunk-5IJIZO25.js";
-import "../../chunk-UAYXEPCR.js";
-import "../../chunk-VJI46MJG.js";
-import "../../chunk-SCJSABBV.js";
-import "../../chunk-CMHE62EJ.js";
-import "../../chunk-FX6IAE5C.js";
-import "../../chunk-Y6LPFC2P.js";
-import "../../chunk-IRHVJU3N.js";
-import "../../chunk-5TYBK7BO.js";
-import "../../chunk-LMIV457O.js";
-import "../../chunk-N54A6FQI.js";
-import "../../chunk-5E7ZVFZI.js";
-import "../../chunk-V6BG62CV.js";
-import "../../chunk-TDH4ZK67.js";
-import "../../chunk-3TXDSUBT.js";
-import "../../chunk-DPNQU4G5.js";
-import "../../chunk-YIMEHS54.js";
-import "../../chunk-6JV35KBD.js";
-import "../../chunk-MEVAFWQ5.js";
-import "../../chunk-H7M4P6XR.js";
-import "../../chunk-JWOPOQ43.js";
-import "../../chunk-MLGRIOAU.js";
-import "../../chunk-RVFQK375.js";
-import "../../chunk-UYCDM7HT.js";
-import "../../chunk-BL3DWYYH.js";
-import "../../chunk-NGXRISKU.js";
-import "../../chunk-UHL7AF2T.js";
-import "../../chunk-3LVCD5XQ.js";
-import "../../chunk-STIDOR6N.js";
-import "../../chunk-JPB4LKY2.js";
-import "../../chunk-P6WSNMWA.js";
-import "../../chunk-FED4MTPO.js";
-import "../../chunk-NV4ZNW2S.js";
-import "../../chunk-I7SPNYR7.js";
-import "../../chunk-U2O53X3F.js";
-import "../../chunk-5SYKAG7Z.js";
-import "../../chunk-GDPE4PGJ.js";
-import "../../chunk-YKVMUT23.js";
-import "../../chunk-WZDZZT4M.js";
-import "../../chunk-3RAFLYCZ.js";
-import "../../chunk-DD4B26NX.js";
-import "../../chunk-UFL4PV4Z.js";
-import "../../chunk-XY5DOPOB.js";
-import "../../chunk-FEI37AUG.js";
-import "../../chunk-2NEKL3JR.js";
-import "../../chunk-TYDF4OCO.js";
-import "../../chunk-YD6HBAOC.js";
-import "../../chunk-GGRFX4OU.js";
-import "../../chunk-WOJFU6VA.js";
-import "../../chunk-WJMNUN3N.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-LSOXTUZL.js";
-import "../../chunk-O6F53QLE.js";
-import "../../chunk-KLW7VRYK.js";
-import "../../chunk-QRRELMSU.js";
-import "../../chunk-YSW3P2HE.js";
-import "../../chunk-O7PIU7VL.js";
-import "../../chunk-4A6JCUBO.js";
-import "../../chunk-V2TZ67XY.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-T4CHWTHS.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-WVDZRY2Y.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  TopicSelectSchema,
-  TopicSelectSchema_default as default
-};
-//# sourceMappingURL=TopicSelectSchema.js.map
+import { z } from 'zod';
+import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema";
+import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema";
+import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema";
+import { PracticeExamFindManyArgsSchema } from "../outputTypeSchemas/PracticeExamFindManyArgsSchema";
+import { ToDoFindManyArgsSchema } from "../outputTypeSchemas/ToDoFindManyArgsSchema";
+import { KanbanArgsSchema } from "../outputTypeSchemas/KanbanArgsSchema";
+import { ToDoListFindManyArgsSchema } from "../outputTypeSchemas/ToDoListFindManyArgsSchema";
+import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindManyArgsSchema";
+import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindManyArgsSchema";
+import { TopicCountOutputTypeArgsSchema } from "../outputTypeSchemas/TopicCountOutputTypeArgsSchema";
+export const TopicSelectSchema = z.object({
+    value: z.boolean().optional(),
+    kanbanId: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+    lastAccess: z.boolean().optional(),
+    MdxNotes: z.union([z.boolean(), z.lazy(() => MdxNoteFindManyArgsSchema)]).optional(),
+    ipynbNotes: z.union([z.boolean(), z.lazy(() => IpynbFindManyArgsSchema)]).optional(),
+    QAPair: z.union([z.boolean(), z.lazy(() => QAPairFindManyArgsSchema)]).optional(),
+    practiceExam: z.union([z.boolean(), z.lazy(() => PracticeExamFindManyArgsSchema)]).optional(),
+    toDo: z.union([z.boolean(), z.lazy(() => ToDoFindManyArgsSchema)]).optional(),
+    Kanban: z.union([z.boolean(), z.lazy(() => KanbanArgsSchema)]).optional(),
+    todoList: z.union([z.boolean(), z.lazy(() => ToDoListFindManyArgsSchema)]).optional(),
+    bibEntries: z.union([z.boolean(), z.lazy(() => BibEntryFindManyArgsSchema)]).optional(),
+    equations: z.union([z.boolean(), z.lazy(() => EquationFindManyArgsSchema)]).optional(),
+    _count: z.union([z.boolean(), z.lazy(() => TopicCountOutputTypeArgsSchema)]).optional(),
+}).strict();
+export default TopicSelectSchema;

@@ -1,10 +1,7 @@
-import {
-  KanbanCreateManyAndReturnArgsSchema,
-  KanbanCreateManyAndReturnArgsSchema_default
-} from "../../chunk-NKEIT2UU.js";
-import "../../chunk-IAM262TM.js";
-export {
-  KanbanCreateManyAndReturnArgsSchema,
-  KanbanCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=KanbanCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { KanbanCreateManyInputSchema } from '../inputTypeSchemas/KanbanCreateManyInputSchema.js';
+export const KanbanCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([KanbanCreateManyInputSchema, KanbanCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default KanbanCreateManyAndReturnArgsSchema;

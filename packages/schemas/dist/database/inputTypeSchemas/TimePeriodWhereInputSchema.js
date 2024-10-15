@@ -1,36 +1,18 @@
-import {
-  TimePeriodWhereInputSchema,
-  TimePeriodWhereInputSchema_default
-} from "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  TimePeriodWhereInputSchema,
-  TimePeriodWhereInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodWhereInputSchema.js.map
+import { z } from 'zod';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { DateTimeNullableFilterSchema } from './DateTimeNullableFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { DietNullableRelationFilterSchema } from './DietNullableRelationFilterSchema.js';
+import { DietWhereInputSchema } from './DietWhereInputSchema.js';
+export const TimePeriodWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => TimePeriodWhereInputSchema), z.lazy(() => TimePeriodWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => TimePeriodWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => TimePeriodWhereInputSchema), z.lazy(() => TimePeriodWhereInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    start: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    end: z.union([z.lazy(() => DateTimeNullableFilterSchema), z.coerce.date()]).optional().nullable(),
+    dietId: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    Diet: z.union([z.lazy(() => DietNullableRelationFilterSchema), z.lazy(() => DietWhereInputSchema)]).optional().nullable(),
+}).strict();
+export default TimePeriodWhereInputSchema;

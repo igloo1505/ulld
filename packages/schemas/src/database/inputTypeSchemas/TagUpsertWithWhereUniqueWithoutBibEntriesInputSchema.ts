@@ -1,16 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema';
-import { TagUpdateWithoutBibEntriesInputSchema } from './TagUpdateWithoutBibEntriesInputSchema';
-import { TagUncheckedUpdateWithoutBibEntriesInputSchema } from './TagUncheckedUpdateWithoutBibEntriesInputSchema';
-import { TagCreateWithoutBibEntriesInputSchema } from './TagCreateWithoutBibEntriesInputSchema';
-import { TagUncheckedCreateWithoutBibEntriesInputSchema } from './TagUncheckedCreateWithoutBibEntriesInputSchema';
-
+import { TagWhereUniqueInputSchema } from './TagWhereUniqueInputSchema.js';
+import { TagUpdateWithoutBibEntriesInputSchema } from './TagUpdateWithoutBibEntriesInputSchema.js';
+import { TagUncheckedUpdateWithoutBibEntriesInputSchema } from './TagUncheckedUpdateWithoutBibEntriesInputSchema.js';
+import { TagCreateWithoutBibEntriesInputSchema } from './TagCreateWithoutBibEntriesInputSchema.js';
+import { TagUncheckedCreateWithoutBibEntriesInputSchema } from './TagUncheckedCreateWithoutBibEntriesInputSchema.js';
 export const TagUpsertWithWhereUniqueWithoutBibEntriesInputSchema: z.ZodType<Prisma.TagUpsertWithWhereUniqueWithoutBibEntriesInput> = z.object({
   where: z.lazy(() => TagWhereUniqueInputSchema),
   update: z.union([ z.lazy(() => TagUpdateWithoutBibEntriesInputSchema),z.lazy(() => TagUncheckedUpdateWithoutBibEntriesInputSchema) ]),
   create: z.union([ z.lazy(() => TagCreateWithoutBibEntriesInputSchema),z.lazy(() => TagUncheckedCreateWithoutBibEntriesInputSchema) ]),
 }).strict();
-
 export default TagUpsertWithWhereUniqueWithoutBibEntriesInputSchema;

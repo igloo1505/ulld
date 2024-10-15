@@ -4,10 +4,6 @@ import { argument, option } from 'pastel';
 import InternalPackageSelect from '../../inputs/internalPackageSelect/main.js';
 import { InternalPackageItem } from '@ulld/utilities/internalDevTypes';
 
-export const args = z.tuple([
-    
-])
-
 
 export const options = z.object({
 	name: z

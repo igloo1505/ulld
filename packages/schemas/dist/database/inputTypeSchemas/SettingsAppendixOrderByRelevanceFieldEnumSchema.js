@@ -1,9 +1,3 @@
-import {
-  SettingsAppendixOrderByRelevanceFieldEnumSchema,
-  SettingsAppendixOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-NBZELKCK.js";
-export {
-  SettingsAppendixOrderByRelevanceFieldEnumSchema,
-  SettingsAppendixOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=SettingsAppendixOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const SettingsAppendixOrderByRelevanceFieldEnumSchema = z.enum(['id']);
+export default SettingsAppendixOrderByRelevanceFieldEnumSchema;

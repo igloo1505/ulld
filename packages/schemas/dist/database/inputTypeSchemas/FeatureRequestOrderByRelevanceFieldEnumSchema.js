@@ -1,9 +1,3 @@
-import {
-  FeatureRequestOrderByRelevanceFieldEnumSchema,
-  FeatureRequestOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-6CWMXDUN.js";
-export {
-  FeatureRequestOrderByRelevanceFieldEnumSchema,
-  FeatureRequestOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const FeatureRequestOrderByRelevanceFieldEnumSchema = z.enum(['email', 'message', 'category', 'userBase']);
+export default FeatureRequestOrderByRelevanceFieldEnumSchema;

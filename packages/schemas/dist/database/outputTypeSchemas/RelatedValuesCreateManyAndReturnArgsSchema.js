@@ -1,13 +1,7 @@
-import {
-  RelatedValuesCreateManyAndReturnArgsSchema,
-  RelatedValuesCreateManyAndReturnArgsSchema_default
-} from "../../chunk-NOGEHWKY.js";
-import "../../chunk-56TXXPIQ.js";
-import "../../chunk-M5WMX2EH.js";
-import "../../chunk-ZXTFXMHW.js";
-import "../../chunk-T77FYKUT.js";
-export {
-  RelatedValuesCreateManyAndReturnArgsSchema,
-  RelatedValuesCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { RelatedValuesCreateManyInputSchema } from '../inputTypeSchemas/RelatedValuesCreateManyInputSchema.js';
+export const RelatedValuesCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([RelatedValuesCreateManyInputSchema, RelatedValuesCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default RelatedValuesCreateManyAndReturnArgsSchema;

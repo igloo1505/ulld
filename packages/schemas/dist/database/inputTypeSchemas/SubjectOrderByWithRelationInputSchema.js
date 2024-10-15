@@ -1,29 +1,30 @@
-import {
-  SubjectOrderByWithRelationInputSchema,
-  SubjectOrderByWithRelationInputSchema_default
-} from "../../chunk-UAYXEPCR.js";
-import "../../chunk-VJI46MJG.js";
-import "../../chunk-SCJSABBV.js";
-import "../../chunk-I7SPNYR7.js";
-import "../../chunk-U2O53X3F.js";
-import "../../chunk-5SYKAG7Z.js";
-import "../../chunk-GDPE4PGJ.js";
-import "../../chunk-YKVMUT23.js";
-import "../../chunk-WZDZZT4M.js";
-import "../../chunk-3RAFLYCZ.js";
-import "../../chunk-DD4B26NX.js";
-import "../../chunk-UFL4PV4Z.js";
-import "../../chunk-XY5DOPOB.js";
-import "../../chunk-FEI37AUG.js";
-import "../../chunk-2NEKL3JR.js";
-import "../../chunk-TYDF4OCO.js";
-import "../../chunk-YD6HBAOC.js";
-import "../../chunk-GGRFX4OU.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SubjectOrderByWithRelationInputSchema,
-  SubjectOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=SubjectOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { MdxNoteOrderByRelationAggregateInputSchema } from './MdxNoteOrderByRelationAggregateInputSchema.js';
+import { IpynbOrderByRelationAggregateInputSchema } from './IpynbOrderByRelationAggregateInputSchema.js';
+import { QAPairOrderByRelationAggregateInputSchema } from './QAPairOrderByRelationAggregateInputSchema.js';
+import { PracticeExamOrderByRelationAggregateInputSchema } from './PracticeExamOrderByRelationAggregateInputSchema.js';
+import { KanbanOrderByWithRelationInputSchema } from './KanbanOrderByWithRelationInputSchema.js';
+import { ToDoListOrderByRelationAggregateInputSchema } from './ToDoListOrderByRelationAggregateInputSchema.js';
+import { ToDoOrderByRelationAggregateInputSchema } from './ToDoOrderByRelationAggregateInputSchema.js';
+import { BibEntryOrderByRelationAggregateInputSchema } from './BibEntryOrderByRelationAggregateInputSchema.js';
+import { EquationOrderByRelationAggregateInputSchema } from './EquationOrderByRelationAggregateInputSchema.js';
+import { SubjectOrderByRelevanceInputSchema } from './SubjectOrderByRelevanceInputSchema.js';
+export const SubjectOrderByWithRelationInputSchema = z.object({
+    value: z.lazy(() => SortOrderSchema).optional(),
+    kanbanId: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional(),
+    MdxNotes: z.lazy(() => MdxNoteOrderByRelationAggregateInputSchema).optional(),
+    IpynbNotes: z.lazy(() => IpynbOrderByRelationAggregateInputSchema).optional(),
+    QaPair: z.lazy(() => QAPairOrderByRelationAggregateInputSchema).optional(),
+    practiceExam: z.lazy(() => PracticeExamOrderByRelationAggregateInputSchema).optional(),
+    Kanban: z.lazy(() => KanbanOrderByWithRelationInputSchema).optional(),
+    todoList: z.lazy(() => ToDoListOrderByRelationAggregateInputSchema).optional(),
+    toDo: z.lazy(() => ToDoOrderByRelationAggregateInputSchema).optional(),
+    bibEntries: z.lazy(() => BibEntryOrderByRelationAggregateInputSchema).optional(),
+    equations: z.lazy(() => EquationOrderByRelationAggregateInputSchema).optional(),
+    _relevance: z.lazy(() => SubjectOrderByRelevanceInputSchema).optional()
+}).strict();
+export default SubjectOrderByWithRelationInputSchema;

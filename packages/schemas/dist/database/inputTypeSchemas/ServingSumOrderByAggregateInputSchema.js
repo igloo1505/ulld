@@ -1,10 +1,8 @@
-import {
-  ServingSumOrderByAggregateInputSchema,
-  ServingSumOrderByAggregateInputSchema_default
-} from "../../chunk-JGKU56OJ.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ServingSumOrderByAggregateInputSchema,
-  ServingSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=ServingSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ServingSumOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    dietaryItemId: z.lazy(() => SortOrderSchema).optional(),
+    quant_oz: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default ServingSumOrderByAggregateInputSchema;

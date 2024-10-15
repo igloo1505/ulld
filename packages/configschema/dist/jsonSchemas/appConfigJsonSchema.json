@@ -4183,12 +4183,12 @@
             {
               "name": "@ulld/api",
               "parserIndex": 0,
-              "version": "0.0.122"
+              "version": "0.0.124"
             },
             {
               "name": "@ulld/plot",
               "parserIndex": 0,
-              "version": "0.0.122"
+              "version": "0.0.124"
             }
           ]
         }

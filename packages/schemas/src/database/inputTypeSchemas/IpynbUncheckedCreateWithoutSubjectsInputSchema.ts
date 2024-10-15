@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IpynbCreatecitationsListOrderInputSchema } from './IpynbCreatecitationsListOrderInputSchema';
-import { IpynbCreateimportantValuesInputSchema } from './IpynbCreateimportantValuesInputSchema';
-import { IpynbCreateoutgoingQuickLinksInputSchema } from './IpynbCreateoutgoingQuickLinksInputSchema';
-import { TagUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './TagUncheckedCreateNestedManyWithoutIpynbNotesInputSchema';
-import { TopicUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './TopicUncheckedCreateNestedManyWithoutIpynbNotesInputSchema';
-import { BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInputSchema';
-import { ReadingListUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './ReadingListUncheckedCreateNestedManyWithoutIpynbNotesInputSchema';
-
+import { IpynbCreatecitationsListOrderInputSchema } from './IpynbCreatecitationsListOrderInputSchema.js';
+import { IpynbCreateimportantValuesInputSchema } from './IpynbCreateimportantValuesInputSchema.js';
+import { IpynbCreateoutgoingQuickLinksInputSchema } from './IpynbCreateoutgoingQuickLinksInputSchema.js';
+import { TagUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './TagUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { TopicUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './TopicUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
+import { ReadingListUncheckedCreateNestedManyWithoutIpynbNotesInputSchema } from './ReadingListUncheckedCreateNestedManyWithoutIpynbNotesInputSchema.js';
 export const IpynbUncheckedCreateWithoutSubjectsInputSchema: z.ZodType<Prisma.IpynbUncheckedCreateWithoutSubjectsInput> = z.object({
   id: z.number().int().optional(),
   rootRelativePath: z.string(),
@@ -31,5 +29,4 @@ export const IpynbUncheckedCreateWithoutSubjectsInputSchema: z.ZodType<Prisma.Ip
   citations: z.lazy(() => BibEntryUncheckedCreateNestedManyWithoutIpynbNotesInputSchema).optional(),
   readingList: z.lazy(() => ReadingListUncheckedCreateNestedManyWithoutIpynbNotesInputSchema).optional()
 }).strict();
-
 export default IpynbUncheckedCreateWithoutSubjectsInputSchema;

@@ -1,10 +1,7 @@
-import {
-  NoteTypeCreateManyAndReturnArgsSchema,
-  NoteTypeCreateManyAndReturnArgsSchema_default
-} from "../../chunk-PY4NSUY3.js";
-import "../../chunk-MU5C7PFG.js";
-export {
-  NoteTypeCreateManyAndReturnArgsSchema,
-  NoteTypeCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=NoteTypeCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { NoteTypeCreateManyInputSchema } from '../inputTypeSchemas/NoteTypeCreateManyInputSchema.js';
+export const NoteTypeCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([NoteTypeCreateManyInputSchema, NoteTypeCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default NoteTypeCreateManyAndReturnArgsSchema;

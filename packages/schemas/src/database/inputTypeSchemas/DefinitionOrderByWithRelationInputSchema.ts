@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { MdxNoteOrderByWithRelationInputSchema } from './MdxNoteOrderByWithRelationInputSchema';
-import { DefinitionOrderByRelevanceInputSchema } from './DefinitionOrderByRelevanceInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { MdxNoteOrderByWithRelationInputSchema } from './MdxNoteOrderByWithRelationInputSchema.js';
+import { DefinitionOrderByRelevanceInputSchema } from './DefinitionOrderByRelevanceInputSchema.js';
 export const DefinitionOrderByWithRelationInputSchema: z.ZodType<Prisma.DefinitionOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   label: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -17,5 +15,4 @@ export const DefinitionOrderByWithRelationInputSchema: z.ZodType<Prisma.Definiti
   mdxNote: z.lazy(() => MdxNoteOrderByWithRelationInputSchema).optional(),
   _relevance: z.lazy(() => DefinitionOrderByRelevanceInputSchema).optional()
 }).strict();
-
 export default DefinitionOrderByWithRelationInputSchema;

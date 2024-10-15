@@ -1,0 +1,1 @@
+{"version":3,"file":"TopicCreateManyInputSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/TopicCreateManyInputSchema.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,eAAO,MAAM,0BAA0B,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,oBAAoB,CAKnE,CAAC;AACZ,eAAe,0BAA0B,CAAC"}

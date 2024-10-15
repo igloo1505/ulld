@@ -2,7 +2,9 @@
   "name": "@ulld/cli",
   "version": "0.0.2",
   "type": "module",
-  "bin": "dist/cli.js",
+  "bin": {
+    "ulld": "dist/cli.js"
+  },
   "files": [
     "dist"
   ],

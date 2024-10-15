@@ -1,31 +1,24 @@
-import {
-  DietaryItemScalarWhereWithAggregatesInputSchema,
-  DietaryItemScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-QRPQ6ZFR.js";
-import "../../chunk-4CX7VVNU.js";
-import "../../chunk-TPFUXMNG.js";
-import "../../chunk-DOHO4RJ2.js";
-import "../../chunk-VWMCQIY7.js";
-import "../../chunk-YDWZQXJY.js";
-import "../../chunk-TQ7L5ZAX.js";
-import "../../chunk-BZ55PUI6.js";
-import "../../chunk-VFKLP7TG.js";
-import "../../chunk-VKTRMAGB.js";
-import "../../chunk-Y6KFO3UF.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-S2WAI7QC.js";
-import "../../chunk-TPDRVVNK.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-3OYDE7JL.js";
-import "../../chunk-JHSRNRH3.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DietaryItemScalarWhereWithAggregatesInputSchema,
-  DietaryItemScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=DietaryItemScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
+import { FloatNullableWithAggregatesFilterSchema } from './FloatNullableWithAggregatesFilterSchema.js';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
+import { FloatWithAggregatesFilterSchema } from './FloatWithAggregatesFilterSchema.js';
+export const DietaryItemScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema), z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema), z.lazy(() => DietaryItemScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    name: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    barcode: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    gi: z.union([z.lazy(() => IntNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    calsPerOz: z.union([z.lazy(() => FloatNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    glutenFree: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    minimalFructose: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    natural: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    organic: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    impactScore: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+}).strict();
+export default DietaryItemScalarWhereWithAggregatesInputSchema;

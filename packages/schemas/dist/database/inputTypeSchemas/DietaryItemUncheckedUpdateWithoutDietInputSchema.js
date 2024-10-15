@@ -1,60 +1,23 @@
-import {
-  DietaryItemUncheckedUpdateWithoutDietInputSchema,
-  DietaryItemUncheckedUpdateWithoutDietInputSchema_default
-} from "../../chunk-HK4UERLG.js";
-import "../../chunk-2NTNEQGL.js";
-import "../../chunk-WZVXK2VQ.js";
-import "../../chunk-ADXXXKPT.js";
-import "../../chunk-QX3GHUID.js";
-import "../../chunk-VFB5WXXW.js";
-import "../../chunk-U4ZAQM7N.js";
-import "../../chunk-LDU6EOA5.js";
-import "../../chunk-CKWHLXAV.js";
-import "../../chunk-JVQHRCWA.js";
-import "../../chunk-P5ZWTHAL.js";
-import "../../chunk-Q4TGFXPZ.js";
-import "../../chunk-RGEOUWDE.js";
-import "../../chunk-LVZPXU3C.js";
-import "../../chunk-O4KQDRJZ.js";
-import "../../chunk-IBJBBFSU.js";
-import "../../chunk-BRBARM24.js";
-import "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-IWZ75T2C.js";
-import "../../chunk-GNOT4FVG.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-7KFMTKWN.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DietaryItemUncheckedUpdateWithoutDietInputSchema,
-  DietaryItemUncheckedUpdateWithoutDietInputSchema_default as default
-};
-//# sourceMappingURL=DietaryItemUncheckedUpdateWithoutDietInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema.js';
+import { NullableFloatFieldUpdateOperationsInputSchema } from './NullableFloatFieldUpdateOperationsInputSchema.js';
+import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema.js';
+import { FloatFieldUpdateOperationsInputSchema } from './FloatFieldUpdateOperationsInputSchema.js';
+import { ServingUncheckedUpdateManyWithoutItemNestedInputSchema } from './ServingUncheckedUpdateManyWithoutItemNestedInputSchema.js';
+export const DietaryItemUncheckedUpdateWithoutDietInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    name: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    barcode: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    gi: z.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    calsPerOz: z.union([z.number(), z.lazy(() => NullableFloatFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    glutenFree: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)]).optional(),
+    minimalFructose: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)]).optional(),
+    natural: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)]).optional(),
+    organic: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)]).optional(),
+    impactScore: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+    Serving: z.lazy(() => ServingUncheckedUpdateManyWithoutItemNestedInputSchema).optional()
+}).strict();
+export default DietaryItemUncheckedUpdateWithoutDietInputSchema;

@@ -1,41 +1,74 @@
-import {
-  BibEntryWhereUniqueInputSchema,
-  BibEntryWhereUniqueInputSchema_default
-} from "../../chunk-4EOX5ZBO.js";
-import "../../chunk-LSOXTUZL.js";
-import "../../chunk-O6F53QLE.js";
-import "../../chunk-KLW7VRYK.js";
-import "../../chunk-QRRELMSU.js";
-import "../../chunk-YSW3P2HE.js";
-import "../../chunk-O7PIU7VL.js";
-import "../../chunk-4A6JCUBO.js";
-import "../../chunk-V2TZ67XY.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-T4CHWTHS.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  BibEntryWhereUniqueInputSchema,
-  BibEntryWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=BibEntryWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { BibEntryWhereInputSchema } from './BibEntryWhereInputSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { BibNullableRelationFilterSchema } from './BibNullableRelationFilterSchema.js';
+import { BibWhereInputSchema } from './BibWhereInputSchema.js';
+import { CitationsGroupListRelationFilterSchema } from './CitationsGroupListRelationFilterSchema.js';
+import { TagListRelationFilterSchema } from './TagListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema.js';
+import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema.js';
+import { IpynbListRelationFilterSchema } from './IpynbListRelationFilterSchema.js';
+import { ReadingListListRelationFilterSchema } from './ReadingListListRelationFilterSchema.js';
+export const BibEntryWhereUniqueInputSchema = z.object({
+    id: z.string()
+})
+    .and(z.object({
+    id: z.string().optional(),
+    AND: z.union([z.lazy(() => BibEntryWhereInputSchema), z.lazy(() => BibEntryWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => BibEntryWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => BibEntryWhereInputSchema), z.lazy(() => BibEntryWhereInputSchema).array()]).optional(),
+    BibId: z.union([z.lazy(() => IntNullableFilterSchema), z.number().int()]).optional().nullable(),
+    OwnWork: z.union([z.lazy(() => BoolFilterSchema), z.boolean()]).optional(),
+    ColleaguesWork: z.union([z.lazy(() => BoolFilterSchema), z.boolean()]).optional(),
+    read: z.union([z.lazy(() => BoolFilterSchema), z.boolean()]).optional(),
+    htmlCitation: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    PdfPath: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    address: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    annote: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    author: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    booktitle: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    chapter: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    crossref: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    doi: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    edition: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    editor: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    email: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    howpublished: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    institution: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    journal: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    month: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    note: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    number: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    organization: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    pages: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    publisher: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    school: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    series: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    title: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    volume: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    type: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    year: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    numpages: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    url: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    issue: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    issn: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    abstract: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    urldate: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    keywords: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    copyright: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    createdAt: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    lastAccess: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    Bib: z.union([z.lazy(() => BibNullableRelationFilterSchema), z.lazy(() => BibWhereInputSchema)]).optional().nullable(),
+    citationGroups: z.lazy(() => CitationsGroupListRelationFilterSchema).optional(),
+    tags: z.lazy(() => TagListRelationFilterSchema).optional(),
+    topics: z.lazy(() => TopicListRelationFilterSchema).optional(),
+    subjects: z.lazy(() => SubjectListRelationFilterSchema).optional(),
+    MdxNotes: z.lazy(() => MdxNoteListRelationFilterSchema).optional(),
+    ipynbNotes: z.lazy(() => IpynbListRelationFilterSchema).optional(),
+    readingList: z.lazy(() => ReadingListListRelationFilterSchema).optional()
+}).strict());
+export default BibEntryWhereUniqueInputSchema;

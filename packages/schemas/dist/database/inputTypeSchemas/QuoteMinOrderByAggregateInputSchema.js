@@ -1,10 +1,10 @@
-import {
-  QuoteMinOrderByAggregateInputSchema,
-  QuoteMinOrderByAggregateInputSchema_default
-} from "../../chunk-ROAR6PVN.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  QuoteMinOrderByAggregateInputSchema,
-  QuoteMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=QuoteMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const QuoteMinOrderByAggregateInputSchema = z.object({
+    body: z.lazy(() => SortOrderSchema).optional(),
+    author: z.lazy(() => SortOrderSchema).optional(),
+    source: z.lazy(() => SortOrderSchema).optional(),
+    pinned: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default QuoteMinOrderByAggregateInputSchema;

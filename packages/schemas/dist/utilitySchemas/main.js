@@ -1,9 +1,3 @@
-import {
-  zodOptNum,
-  zodOptStr
-} from "../chunk-HZ5UTSVD.js";
-export {
-  zodOptNum,
-  zodOptStr
-};
-//# sourceMappingURL=main.js.map
+import { z } from "zod";
+export const zodOptStr = z.string().nullish();
+export const zodOptNum = z.number().nullish();

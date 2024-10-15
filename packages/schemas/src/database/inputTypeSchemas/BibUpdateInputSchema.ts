@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-import { BibEntryUpdateManyWithoutBibNestedInputSchema } from './BibEntryUpdateManyWithoutBibNestedInputSchema';
-
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { BibEntryUpdateManyWithoutBibNestedInputSchema } from './BibEntryUpdateManyWithoutBibNestedInputSchema.js';
 export const BibUpdateInputSchema: z.ZodType<Prisma.BibUpdateInput> = z.object({
   id: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   filename: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -13,5 +11,4 @@ export const BibUpdateInputSchema: z.ZodType<Prisma.BibUpdateInput> = z.object({
   lastSync: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
   entries: z.lazy(() => BibEntryUpdateManyWithoutBibNestedInputSchema).optional()
 }).strict();
-
 export default BibUpdateInputSchema;

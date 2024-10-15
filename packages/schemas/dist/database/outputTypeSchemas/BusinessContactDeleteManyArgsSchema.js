@@ -1,17 +1,6 @@
-import {
-  BusinessContactDeleteManyArgsSchema,
-  BusinessContactDeleteManyArgsSchema_default
-} from "../../chunk-DPTWXCKL.js";
-import "../../chunk-4TBUKZ6H.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  BusinessContactDeleteManyArgsSchema,
-  BusinessContactDeleteManyArgsSchema_default as default
-};
-//# sourceMappingURL=BusinessContactDeleteManyArgsSchema.js.map
+import { z } from 'zod';
+import { BusinessContactWhereInputSchema } from '../inputTypeSchemas/BusinessContactWhereInputSchema.js';
+export const BusinessContactDeleteManyArgsSchema = z.object({
+    where: BusinessContactWhereInputSchema.optional(),
+}).strict();
+export default BusinessContactDeleteManyArgsSchema;

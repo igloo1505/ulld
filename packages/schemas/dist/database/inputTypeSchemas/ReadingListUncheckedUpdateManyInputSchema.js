@@ -1,12 +1,11 @@
-import {
-  ReadingListUncheckedUpdateManyInputSchema,
-  ReadingListUncheckedUpdateManyInputSchema_default
-} from "../../chunk-RIHFHOWU.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  ReadingListUncheckedUpdateManyInputSchema,
-  ReadingListUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=ReadingListUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const ReadingListUncheckedUpdateManyInputSchema = z.object({
+    name: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    description: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastUpdate: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default ReadingListUncheckedUpdateManyInputSchema;

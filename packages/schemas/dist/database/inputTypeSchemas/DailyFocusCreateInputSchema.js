@@ -1,9 +1,6 @@
-import {
-  DailyFocusCreateInputSchema,
-  DailyFocusCreateInputSchema_default
-} from "../../chunk-XEGH4DBV.js";
-export {
-  DailyFocusCreateInputSchema,
-  DailyFocusCreateInputSchema_default as default
-};
-//# sourceMappingURL=DailyFocusCreateInputSchema.js.map
+import { z } from 'zod';
+export const DailyFocusCreateInputSchema = z.object({
+    value: z.string(),
+    createdAt: z.coerce.date().optional()
+}).strict();
+export default DailyFocusCreateInputSchema;

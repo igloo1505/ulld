@@ -1,10 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
+import type { Prisma } from '@ulld/database/db';
 import { DietaryItemFindManyArgsSchema } from "../outputTypeSchemas/DietaryItemFindManyArgsSchema"
 import { TimePeriodFindManyArgsSchema } from "../outputTypeSchemas/TimePeriodFindManyArgsSchema"
 import { HealthReportFindManyArgsSchema } from "../outputTypeSchemas/HealthReportFindManyArgsSchema"
 import { DietCountOutputTypeArgsSchema } from "../outputTypeSchemas/DietCountOutputTypeArgsSchema"
-
 export const DietSelectSchema: z.ZodType<Prisma.DietSelect> = z.object({
   name: z.boolean().optional(),
   summary: z.boolean().optional(),
@@ -27,5 +26,4 @@ export const DietSelectSchema: z.ZodType<Prisma.DietSelect> = z.object({
   HealthReport: z.union([z.boolean(),z.lazy(() => HealthReportFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => DietCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export default DietSelectSchema;

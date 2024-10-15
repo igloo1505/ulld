@@ -1,17 +1,18 @@
-import {
-  WaitlistRequestWhereUniqueInputSchema,
-  WaitlistRequestWhereUniqueInputSchema_default
-} from "../../chunk-WBUZRDLR.js";
-import "../../chunk-7ELNXEAA.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  WaitlistRequestWhereUniqueInputSchema,
-  WaitlistRequestWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { WaitlistRequestWhereInputSchema } from './WaitlistRequestWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { IntFilterSchema } from './IntFilterSchema.js';
+export const WaitlistRequestWhereUniqueInputSchema = z.object({
+    id: z.number().int()
+})
+    .and(z.object({
+    id: z.number().int().optional(),
+    AND: z.union([z.lazy(() => WaitlistRequestWhereInputSchema), z.lazy(() => WaitlistRequestWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => WaitlistRequestWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => WaitlistRequestWhereInputSchema), z.lazy(() => WaitlistRequestWhereInputSchema).array()]).optional(),
+    email: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    receivedOn: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    emailsSent: z.union([z.lazy(() => IntFilterSchema), z.number().int()]).optional(),
+}).strict());
+export default WaitlistRequestWhereUniqueInputSchema;

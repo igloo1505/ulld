@@ -1,14 +1,13 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { DietIncludeSchema } from '../inputTypeSchemas/DietIncludeSchema'
-import { DietWhereUniqueInputSchema } from '../inputTypeSchemas/DietWhereUniqueInputSchema'
+import type { Prisma } from '@ulld/database/db';
+import { DietIncludeSchema } from '../inputTypeSchemas/DietIncludeSchema.js'
+import { DietWhereUniqueInputSchema } from '../inputTypeSchemas/DietWhereUniqueInputSchema.js'
 import { DietaryItemFindManyArgsSchema } from "../outputTypeSchemas/DietaryItemFindManyArgsSchema"
 import { TimePeriodFindManyArgsSchema } from "../outputTypeSchemas/TimePeriodFindManyArgsSchema"
 import { HealthReportFindManyArgsSchema } from "../outputTypeSchemas/HealthReportFindManyArgsSchema"
 import { DietCountOutputTypeArgsSchema } from "../outputTypeSchemas/DietCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const DietSelectSchema: z.ZodType<Prisma.DietSelect> = z.object({
   name: z.boolean().optional(),
   summary: z.boolean().optional(),
@@ -31,11 +30,9 @@ export const DietSelectSchema: z.ZodType<Prisma.DietSelect> = z.object({
   HealthReport: z.union([z.boolean(),z.lazy(() => HealthReportFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => DietCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const DietFindUniqueArgsSchema: z.ZodType<Prisma.DietFindUniqueArgs> = z.object({
   select: DietSelectSchema.optional(),
   include: DietIncludeSchema.optional(),
   where: DietWhereUniqueInputSchema,
 }).strict() ;
-
 export default DietFindUniqueArgsSchema;

@@ -1,10 +1,10 @@
-import {
-  KanBanCardCountOrderByAggregateInputSchema,
-  KanBanCardCountOrderByAggregateInputSchema_default
-} from "../../chunk-KRIFBRE4.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanBanCardCountOrderByAggregateInputSchema,
-  KanBanCardCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=KanBanCardCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const KanBanCardCountOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    listId: z.lazy(() => SortOrderSchema).optional(),
+    indexWithinList: z.lazy(() => SortOrderSchema).optional(),
+    label: z.lazy(() => SortOrderSchema).optional(),
+    details: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default KanBanCardCountOrderByAggregateInputSchema;

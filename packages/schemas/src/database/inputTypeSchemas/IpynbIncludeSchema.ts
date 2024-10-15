@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
+import type { Prisma } from '@ulld/database/db';
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
@@ -7,7 +7,6 @@ import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindMan
 import { SequentialNoteListArgsSchema } from "../outputTypeSchemas/SequentialNoteListArgsSchema"
 import { ReadingListFindManyArgsSchema } from "../outputTypeSchemas/ReadingListFindManyArgsSchema"
 import { IpynbCountOutputTypeArgsSchema } from "../outputTypeSchemas/IpynbCountOutputTypeArgsSchema"
-
 export const IpynbIncludeSchema: z.ZodType<Prisma.IpynbInclude> = z.object({
   tags: z.union([z.boolean(),z.lazy(() => TagFindManyArgsSchema)]).optional(),
   topics: z.union([z.boolean(),z.lazy(() => TopicFindManyArgsSchema)]).optional(),
@@ -17,5 +16,4 @@ export const IpynbIncludeSchema: z.ZodType<Prisma.IpynbInclude> = z.object({
   readingList: z.union([z.boolean(),z.lazy(() => ReadingListFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => IpynbCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export default IpynbIncludeSchema;

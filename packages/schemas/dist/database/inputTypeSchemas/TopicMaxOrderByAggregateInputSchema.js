@@ -1,10 +1,9 @@
-import {
-  TopicMaxOrderByAggregateInputSchema,
-  TopicMaxOrderByAggregateInputSchema_default
-} from "../../chunk-HK4W55RN.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TopicMaxOrderByAggregateInputSchema,
-  TopicMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=TopicMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const TopicMaxOrderByAggregateInputSchema = z.object({
+    value: z.lazy(() => SortOrderSchema).optional(),
+    kanbanId: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default TopicMaxOrderByAggregateInputSchema;

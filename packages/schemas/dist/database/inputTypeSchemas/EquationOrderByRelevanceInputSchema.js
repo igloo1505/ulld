@@ -1,11 +1,9 @@
-import {
-  EquationOrderByRelevanceInputSchema,
-  EquationOrderByRelevanceInputSchema_default
-} from "../../chunk-33KHBRDI.js";
-import "../../chunk-ONKSTASA.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  EquationOrderByRelevanceInputSchema,
-  EquationOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=EquationOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { EquationOrderByRelevanceFieldEnumSchema } from './EquationOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const EquationOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => EquationOrderByRelevanceFieldEnumSchema), z.lazy(() => EquationOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default EquationOrderByRelevanceInputSchema;

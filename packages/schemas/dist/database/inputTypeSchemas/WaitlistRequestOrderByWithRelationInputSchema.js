@@ -1,12 +1,11 @@
-import {
-  WaitlistRequestOrderByWithRelationInputSchema,
-  WaitlistRequestOrderByWithRelationInputSchema_default
-} from "../../chunk-XL7WEO6A.js";
-import "../../chunk-LQBO56AD.js";
-import "../../chunk-QDGOPKB3.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  WaitlistRequestOrderByWithRelationInputSchema,
-  WaitlistRequestOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { WaitlistRequestOrderByRelevanceInputSchema } from './WaitlistRequestOrderByRelevanceInputSchema.js';
+export const WaitlistRequestOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    email: z.lazy(() => SortOrderSchema).optional(),
+    receivedOn: z.lazy(() => SortOrderSchema).optional(),
+    emailsSent: z.lazy(() => SortOrderSchema).optional(),
+    _relevance: z.lazy(() => WaitlistRequestOrderByRelevanceInputSchema).optional()
+}).strict();
+export default WaitlistRequestOrderByWithRelationInputSchema;

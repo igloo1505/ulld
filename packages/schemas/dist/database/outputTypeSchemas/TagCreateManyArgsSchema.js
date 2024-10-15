@@ -1,10 +1,7 @@
-import {
-  TagCreateManyArgsSchema,
-  TagCreateManyArgsSchema_default
-} from "../../chunk-WUKYEA6K.js";
-import "../../chunk-KKCL5IYN.js";
-export {
-  TagCreateManyArgsSchema,
-  TagCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=TagCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { TagCreateManyInputSchema } from '../inputTypeSchemas/TagCreateManyInputSchema.js';
+export const TagCreateManyArgsSchema = z.object({
+    data: z.union([TagCreateManyInputSchema, TagCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default TagCreateManyArgsSchema;

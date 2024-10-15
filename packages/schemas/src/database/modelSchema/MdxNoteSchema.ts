@@ -1,45 +1,43 @@
 import { z } from 'zod';
-import type { TopicWithRelations } from './TopicSchema'
-import type { TopicPartialWithRelations } from './TopicSchema'
-import type { SubjectWithRelations } from './SubjectSchema'
-import type { SubjectPartialWithRelations } from './SubjectSchema'
-import type { TagWithRelations } from './TagSchema'
-import type { TagPartialWithRelations } from './TagSchema'
-import type { BibEntryWithRelations } from './BibEntrySchema'
-import type { BibEntryPartialWithRelations } from './BibEntrySchema'
-import type { SequentialNoteListWithRelations } from './SequentialNoteListSchema'
-import type { SequentialNoteListPartialWithRelations } from './SequentialNoteListSchema'
-import type { ReadingListWithRelations } from './ReadingListSchema'
-import type { ReadingListPartialWithRelations } from './ReadingListSchema'
-import type { EquationWithRelations } from './EquationSchema'
-import type { EquationPartialWithRelations } from './EquationSchema'
-import type { DefinitionWithRelations } from './DefinitionSchema'
-import type { DefinitionPartialWithRelations } from './DefinitionSchema'
-import type { ToDoWithRelations } from './ToDoSchema'
-import type { ToDoPartialWithRelations } from './ToDoSchema'
-import { TopicWithRelationsSchema } from './TopicSchema'
-import { TopicPartialWithRelationsSchema } from './TopicSchema'
-import { SubjectWithRelationsSchema } from './SubjectSchema'
-import { SubjectPartialWithRelationsSchema } from './SubjectSchema'
-import { TagWithRelationsSchema } from './TagSchema'
-import { TagPartialWithRelationsSchema } from './TagSchema'
-import { BibEntryWithRelationsSchema } from './BibEntrySchema'
-import { BibEntryPartialWithRelationsSchema } from './BibEntrySchema'
-import { SequentialNoteListWithRelationsSchema } from './SequentialNoteListSchema'
-import { SequentialNoteListPartialWithRelationsSchema } from './SequentialNoteListSchema'
-import { ReadingListWithRelationsSchema } from './ReadingListSchema'
-import { ReadingListPartialWithRelationsSchema } from './ReadingListSchema'
-import { EquationWithRelationsSchema } from './EquationSchema'
-import { EquationPartialWithRelationsSchema } from './EquationSchema'
-import { DefinitionWithRelationsSchema } from './DefinitionSchema'
-import { DefinitionPartialWithRelationsSchema } from './DefinitionSchema'
-import { ToDoWithRelationsSchema } from './ToDoSchema'
-import { ToDoPartialWithRelationsSchema } from './ToDoSchema'
-
+import type { TopicWithRelations } from './TopicSchema.js'
+import type { TopicPartialWithRelations } from './TopicSchema.js'
+import type { SubjectWithRelations } from './SubjectSchema.js'
+import type { SubjectPartialWithRelations } from './SubjectSchema.js'
+import type { TagWithRelations } from './TagSchema.js'
+import type { TagPartialWithRelations } from './TagSchema.js'
+import type { BibEntryWithRelations } from './BibEntrySchema.js'
+import type { BibEntryPartialWithRelations } from './BibEntrySchema.js'
+import type { SequentialNoteListWithRelations } from './SequentialNoteListSchema.js'
+import type { SequentialNoteListPartialWithRelations } from './SequentialNoteListSchema.js'
+import type { ReadingListWithRelations } from './ReadingListSchema.js'
+import type { ReadingListPartialWithRelations } from './ReadingListSchema.js'
+import type { EquationWithRelations } from './EquationSchema.js'
+import type { EquationPartialWithRelations } from './EquationSchema.js'
+import type { DefinitionWithRelations } from './DefinitionSchema.js'
+import type { DefinitionPartialWithRelations } from './DefinitionSchema.js'
+import type { ToDoWithRelations } from './ToDoSchema.js'
+import type { ToDoPartialWithRelations } from './ToDoSchema.js'
+import { TopicWithRelationsSchema } from './TopicSchema.js'
+import { TopicPartialWithRelationsSchema } from './TopicSchema.js'
+import { SubjectWithRelationsSchema } from './SubjectSchema.js'
+import { SubjectPartialWithRelationsSchema } from './SubjectSchema.js'
+import { TagWithRelationsSchema } from './TagSchema.js'
+import { TagPartialWithRelationsSchema } from './TagSchema.js'
+import { BibEntryWithRelationsSchema } from './BibEntrySchema.js'
+import { BibEntryPartialWithRelationsSchema } from './BibEntrySchema.js'
+import { SequentialNoteListWithRelationsSchema } from './SequentialNoteListSchema.js'
+import { SequentialNoteListPartialWithRelationsSchema } from './SequentialNoteListSchema.js'
+import { ReadingListWithRelationsSchema } from './ReadingListSchema.js'
+import { ReadingListPartialWithRelationsSchema } from './ReadingListSchema.js'
+import { EquationWithRelationsSchema } from './EquationSchema.js'
+import { EquationPartialWithRelationsSchema } from './EquationSchema.js'
+import { DefinitionWithRelationsSchema } from './DefinitionSchema.js'
+import { DefinitionPartialWithRelationsSchema } from './DefinitionSchema.js'
+import { ToDoWithRelationsSchema } from './ToDoSchema.js'
+import { ToDoPartialWithRelationsSchema } from './ToDoSchema.js'
 /////////////////////////////////////////
 // MDX NOTE SCHEMA
 /////////////////////////////////////////
-
 export const MdxNoteSchema = z.object({
   id: z.number().int(),
   isProtected: z.boolean().nullable(),
@@ -67,21 +65,15 @@ export const MdxNoteSchema = z.object({
   lastSync: z.coerce.date(),
   lastAccess: z.coerce.date(),
 })
-
 export type MdxNote = z.infer<typeof MdxNoteSchema>
-
 /////////////////////////////////////////
 // MDX NOTE PARTIAL SCHEMA
 /////////////////////////////////////////
-
 export const MdxNotePartialSchema = MdxNoteSchema.partial()
-
 export type MdxNotePartial = z.infer<typeof MdxNotePartialSchema>
-
 /////////////////////////////////////////
 // MDX NOTE RELATION SCHEMA
 /////////////////////////////////////////
-
 export type MdxNoteRelations = {
   topics: TopicWithRelations[];
   subjects: SubjectWithRelations[];
@@ -93,9 +85,7 @@ export type MdxNoteRelations = {
   definitions: DefinitionWithRelations[];
   toDo: ToDoWithRelations[];
 };
-
 export type MdxNoteWithRelations = z.infer<typeof MdxNoteSchema> & MdxNoteRelations
-
 export const MdxNoteWithRelationsSchema: z.ZodType<MdxNoteWithRelations> = MdxNoteSchema.merge(z.object({
   topics: z.lazy(() => TopicWithRelationsSchema).array(),
   subjects: z.lazy(() => SubjectWithRelationsSchema).array(),
@@ -107,11 +97,9 @@ export const MdxNoteWithRelationsSchema: z.ZodType<MdxNoteWithRelations> = MdxNo
   definitions: z.lazy(() => DefinitionWithRelationsSchema).array(),
   toDo: z.lazy(() => ToDoWithRelationsSchema).array(),
 }))
-
 /////////////////////////////////////////
 // MDX NOTE PARTIAL RELATION SCHEMA
 /////////////////////////////////////////
-
 export type MdxNotePartialRelations = {
   topics?: TopicPartialWithRelations[];
   subjects?: SubjectPartialWithRelations[];
@@ -123,9 +111,7 @@ export type MdxNotePartialRelations = {
   definitions?: DefinitionPartialWithRelations[];
   toDo?: ToDoPartialWithRelations[];
 };
-
 export type MdxNotePartialWithRelations = z.infer<typeof MdxNotePartialSchema> & MdxNotePartialRelations
-
 export const MdxNotePartialWithRelationsSchema: z.ZodType<MdxNotePartialWithRelations> = MdxNotePartialSchema.merge(z.object({
   topics: z.lazy(() => TopicPartialWithRelationsSchema).array(),
   subjects: z.lazy(() => SubjectPartialWithRelationsSchema).array(),
@@ -137,9 +123,7 @@ export const MdxNotePartialWithRelationsSchema: z.ZodType<MdxNotePartialWithRela
   definitions: z.lazy(() => DefinitionPartialWithRelationsSchema).array(),
   toDo: z.lazy(() => ToDoPartialWithRelationsSchema).array(),
 })).partial()
-
 export type MdxNoteWithPartialRelations = z.infer<typeof MdxNoteSchema> & MdxNotePartialRelations
-
 export const MdxNoteWithPartialRelationsSchema: z.ZodType<MdxNoteWithPartialRelations> = MdxNoteSchema.merge(z.object({
   topics: z.lazy(() => TopicPartialWithRelationsSchema).array(),
   subjects: z.lazy(() => SubjectPartialWithRelationsSchema).array(),
@@ -151,5 +135,4 @@ export const MdxNoteWithPartialRelationsSchema: z.ZodType<MdxNoteWithPartialRela
   definitions: z.lazy(() => DefinitionPartialWithRelationsSchema).array(),
   toDo: z.lazy(() => ToDoPartialWithRelationsSchema).array(),
 }).partial())
-
 export default MdxNoteSchema;

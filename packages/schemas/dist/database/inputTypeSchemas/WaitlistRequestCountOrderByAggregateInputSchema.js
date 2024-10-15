@@ -1,10 +1,9 @@
-import {
-  WaitlistRequestCountOrderByAggregateInputSchema,
-  WaitlistRequestCountOrderByAggregateInputSchema_default
-} from "../../chunk-ZCUNJWFY.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  WaitlistRequestCountOrderByAggregateInputSchema,
-  WaitlistRequestCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const WaitlistRequestCountOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    email: z.lazy(() => SortOrderSchema).optional(),
+    receivedOn: z.lazy(() => SortOrderSchema).optional(),
+    emailsSent: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default WaitlistRequestCountOrderByAggregateInputSchema;

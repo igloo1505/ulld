@@ -1,13 +1,7 @@
-import {
-  DietCreateManyAndReturnArgsSchema,
-  DietCreateManyAndReturnArgsSchema_default
-} from "../../chunk-TUTUL35N.js";
-import "../../chunk-EIDDVPJJ.js";
-import "../../chunk-AYSFFIF5.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-export {
-  DietCreateManyAndReturnArgsSchema,
-  DietCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=DietCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { DietCreateManyInputSchema } from '../inputTypeSchemas/DietCreateManyInputSchema.js';
+export const DietCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([DietCreateManyInputSchema, DietCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default DietCreateManyAndReturnArgsSchema;

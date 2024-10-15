@@ -1,14 +1,13 @@
-import {
-  QuoteOrderByWithRelationInputSchema,
-  QuoteOrderByWithRelationInputSchema_default
-} from "../../chunk-OMG37DQS.js";
-import "../../chunk-776SWEVY.js";
-import "../../chunk-MDC4V7ZL.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  QuoteOrderByWithRelationInputSchema,
-  QuoteOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=QuoteOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { QuoteOrderByRelevanceInputSchema } from './QuoteOrderByRelevanceInputSchema.js';
+export const QuoteOrderByWithRelationInputSchema = z.object({
+    body: z.lazy(() => SortOrderSchema).optional(),
+    author: z.lazy(() => SortOrderSchema).optional(),
+    source: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    pinned: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    _relevance: z.lazy(() => QuoteOrderByRelevanceInputSchema).optional()
+}).strict();
+export default QuoteOrderByWithRelationInputSchema;

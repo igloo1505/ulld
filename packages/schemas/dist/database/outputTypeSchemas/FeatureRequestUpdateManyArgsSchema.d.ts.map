@@ -1,0 +1,1 @@
+{"version":3,"file":"FeatureRequestUpdateManyArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/FeatureRequestUpdateManyArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAIhD,eAAO,MAAM,kCAAkC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,4BAA4B,CAGnF,CAAE;AACb,eAAe,kCAAkC,CAAC"}

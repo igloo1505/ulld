@@ -1,9 +1,8 @@
-import {
-  SettingsAppendixCreateManyInputSchema,
-  SettingsAppendixCreateManyInputSchema_default
-} from "../../chunk-7Q4SKIER.js";
-export {
-  SettingsAppendixCreateManyInputSchema,
-  SettingsAppendixCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=SettingsAppendixCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const SettingsAppendixCreateManyInputSchema = z.object({
+    id: z.string(),
+    data: z.instanceof(Buffer),
+    createdAt: z.coerce.date().optional(),
+    updatedAt: z.coerce.date().optional()
+}).strict();
+export default SettingsAppendixCreateManyInputSchema;

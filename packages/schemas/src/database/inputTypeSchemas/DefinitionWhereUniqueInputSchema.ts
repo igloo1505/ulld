@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { DefinitionWhereInputSchema } from './DefinitionWhereInputSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { IntNullableFilterSchema } from './IntNullableFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-import { MdxNoteNullableRelationFilterSchema } from './MdxNoteNullableRelationFilterSchema';
-import { MdxNoteWhereInputSchema } from './MdxNoteWhereInputSchema';
-
+import { DefinitionWhereInputSchema } from './DefinitionWhereInputSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { MdxNoteNullableRelationFilterSchema } from './MdxNoteNullableRelationFilterSchema.js';
+import { MdxNoteWhereInputSchema } from './MdxNoteWhereInputSchema.js';
 export const DefinitionWhereUniqueInputSchema: z.ZodType<Prisma.DefinitionWhereUniqueInput> = z.object({
   id: z.string()
 })
@@ -24,5 +22,4 @@ export const DefinitionWhereUniqueInputSchema: z.ZodType<Prisma.DefinitionWhereU
   lastAccess: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   mdxNote: z.union([ z.lazy(() => MdxNoteNullableRelationFilterSchema),z.lazy(() => MdxNoteWhereInputSchema) ]).optional().nullable(),
 }).strict());
-
 export default DefinitionWhereUniqueInputSchema;

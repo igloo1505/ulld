@@ -1,16 +1,20 @@
-import {
-  ToDoListOrderByWithRelationInputSchema,
-  ToDoListOrderByWithRelationInputSchema_default
-} from "../../chunk-BL3DWYYH.js";
-import "../../chunk-NGXRISKU.js";
-import "../../chunk-UHL7AF2T.js";
-import "../../chunk-2NEKL3JR.js";
-import "../../chunk-TYDF4OCO.js";
-import "../../chunk-YD6HBAOC.js";
-import "../../chunk-GGRFX4OU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ToDoListOrderByWithRelationInputSchema,
-  ToDoListOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=ToDoListOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { ToDoOrderByRelationAggregateInputSchema } from './ToDoOrderByRelationAggregateInputSchema.js';
+import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema.js';
+import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema.js';
+import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema.js';
+import { ToDoListOrderByRelevanceInputSchema } from './ToDoListOrderByRelevanceInputSchema.js';
+export const ToDoListOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    label: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastUpdate: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional(),
+    tasks: z.lazy(() => ToDoOrderByRelationAggregateInputSchema).optional(),
+    tags: z.lazy(() => TagOrderByRelationAggregateInputSchema).optional(),
+    topics: z.lazy(() => TopicOrderByRelationAggregateInputSchema).optional(),
+    subjects: z.lazy(() => SubjectOrderByRelationAggregateInputSchema).optional(),
+    _relevance: z.lazy(() => ToDoListOrderByRelevanceInputSchema).optional()
+}).strict();
+export default ToDoListOrderByWithRelationInputSchema;

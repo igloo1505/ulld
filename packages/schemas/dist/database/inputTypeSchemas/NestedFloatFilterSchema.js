@@ -1,9 +1,12 @@
-import {
-  NestedFloatFilterSchema,
-  NestedFloatFilterSchema_default
-} from "../../chunk-NTRL3LS5.js";
-export {
-  NestedFloatFilterSchema,
-  NestedFloatFilterSchema_default as default
-};
-//# sourceMappingURL=NestedFloatFilterSchema.js.map
+import { z } from 'zod';
+export const NestedFloatFilterSchema = z.object({
+    equals: z.number().optional(),
+    in: z.number().array().optional(),
+    notIn: z.number().array().optional(),
+    lt: z.number().optional(),
+    lte: z.number().optional(),
+    gt: z.number().optional(),
+    gte: z.number().optional(),
+    not: z.union([z.number(), z.lazy(() => NestedFloatFilterSchema)]).optional(),
+}).strict();
+export default NestedFloatFilterSchema;

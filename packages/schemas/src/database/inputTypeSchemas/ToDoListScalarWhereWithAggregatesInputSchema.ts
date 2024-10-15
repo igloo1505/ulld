@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
-
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const ToDoListScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.ToDoListScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => ToDoListScalarWhereWithAggregatesInputSchema),z.lazy(() => ToDoListScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => ToDoListScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -15,5 +13,4 @@ export const ToDoListScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.ToDo
   lastUpdate: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default ToDoListScalarWhereWithAggregatesInputSchema;

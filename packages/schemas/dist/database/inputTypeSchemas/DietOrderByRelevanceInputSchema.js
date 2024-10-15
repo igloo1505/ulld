@@ -1,11 +1,9 @@
-import {
-  DietOrderByRelevanceInputSchema,
-  DietOrderByRelevanceInputSchema_default
-} from "../../chunk-W4Q366B6.js";
-import "../../chunk-ZUIIQRAW.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DietOrderByRelevanceInputSchema,
-  DietOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=DietOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { DietOrderByRelevanceFieldEnumSchema } from './DietOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const DietOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => DietOrderByRelevanceFieldEnumSchema), z.lazy(() => DietOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default DietOrderByRelevanceInputSchema;

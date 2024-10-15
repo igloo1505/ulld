@@ -1,9 +1,8 @@
-import {
-  KanBanListUncheckedCreateWithoutCardsInputSchema,
-  KanBanListUncheckedCreateWithoutCardsInputSchema_default
-} from "../../chunk-7O3IDCBP.js";
-export {
-  KanBanListUncheckedCreateWithoutCardsInputSchema,
-  KanBanListUncheckedCreateWithoutCardsInputSchema_default as default
-};
-//# sourceMappingURL=KanBanListUncheckedCreateWithoutCardsInputSchema.js.map
+import { z } from 'zod';
+export const KanBanListUncheckedCreateWithoutCardsInputSchema = z.object({
+    id: z.number().int().optional(),
+    indexWithinBoard: z.number().int(),
+    title: z.string().optional().nullable(),
+    boardId: z.number().int().optional().nullable()
+}).strict();
+export default KanBanListUncheckedCreateWithoutCardsInputSchema;

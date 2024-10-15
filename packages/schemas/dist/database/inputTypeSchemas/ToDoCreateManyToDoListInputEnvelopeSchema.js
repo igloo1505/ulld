@@ -1,11 +1,7 @@
-import {
-  ToDoCreateManyToDoListInputEnvelopeSchema,
-  ToDoCreateManyToDoListInputEnvelopeSchema_default
-} from "../../chunk-R5Y7DX7L.js";
-import "../../chunk-VXVLSA4O.js";
-import "../../chunk-T4CHWTHS.js";
-export {
-  ToDoCreateManyToDoListInputEnvelopeSchema,
-  ToDoCreateManyToDoListInputEnvelopeSchema_default as default
-};
-//# sourceMappingURL=ToDoCreateManyToDoListInputEnvelopeSchema.js.map
+import { z } from 'zod';
+import { ToDoCreateManyToDoListInputSchema } from './ToDoCreateManyToDoListInputSchema.js';
+export const ToDoCreateManyToDoListInputEnvelopeSchema = z.object({
+    data: z.union([z.lazy(() => ToDoCreateManyToDoListInputSchema), z.lazy(() => ToDoCreateManyToDoListInputSchema).array()]),
+    skipDuplicates: z.boolean().optional()
+}).strict();
+export default ToDoCreateManyToDoListInputEnvelopeSchema;

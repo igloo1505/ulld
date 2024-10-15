@@ -1,9 +1,6 @@
-import {
-  RandomImageCreateManyInputSchema,
-  RandomImageCreateManyInputSchema_default
-} from "../../chunk-UYD7WSXB.js";
-export {
-  RandomImageCreateManyInputSchema,
-  RandomImageCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=RandomImageCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const RandomImageCreateManyInputSchema = z.object({
+    path: z.string(),
+    createdAt: z.coerce.date().optional()
+}).strict();
+export default RandomImageCreateManyInputSchema;

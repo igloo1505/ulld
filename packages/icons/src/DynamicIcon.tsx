@@ -3,7 +3,8 @@ import dynamic from "next/dynamic";
 import React, { useEffect, useMemo } from "react";
 import type { LucideProps } from "lucide-react";
 import dynamicIconImports from "lucide-react/dynamicIconImports";
-import { AdmonitionType } from "@ulld/utilities/admonition/types";
+import type { ValidIconNameDynamicallyGenerated } from "@ulld/utilities/validIconNameList"
+
 
 export type IconNameList =
     | "bibliography"
@@ -35,8 +36,7 @@ export type IconNameList =
     | "todolist"
     | "images"
     | "avatar"
-    | "darktoggle"
-    | AdmonitionType;
+    | "darktoggle";
 
 const logoIconNames = [
     "css",
@@ -52,7 +52,7 @@ const logoIconNames = [
     "vercel",
     "youtube",
     "ulld"
-] as const;
+] as const satisfies ValidIconNameDynamicallyGenerated[number][]
 
 export type LogoIconNames = (typeof logoIconNames)[number];
 
@@ -117,7 +117,7 @@ export enum AllDynamicIconNames {
 }
 
 const iconNameMap: {
-    [k in IconNameList]: keyof typeof dynamicIconImports | false;
+    [k in ValidIconNameDynamicallyGenerated]?: keyof typeof dynamicIconImports | false;
 } = {
     plain: false,
     bibliography: "library",
@@ -167,11 +167,7 @@ const iconNameMap: {
     practice: "chart-line",
 };
 
-export type ValidIconName =
-    | IconNameList
-    | AdmonitionType
-    | LogoIconNames
-    | keyof typeof dynamicIconImports;
+export type ValidIconName = ValidIconNameDynamicallyGenerated
 
 export const completeValidIconNameList = [
     ...Object.keys(iconNameMap),
@@ -183,7 +179,6 @@ export interface IconProps extends LucideProps {
     name: ValidIconName;
     onLoad?: () => void
 }
-
 
 export const DynamicIcon = (props: IconProps) => {
     const name = String(props.name)
@@ -213,6 +208,4 @@ export const DynamicIcon = (props: IconProps) => {
             return <LucideIcon {...props} />;
         }
     }, [name]);
-    console.log(`No icon found for ${name}`);
-    return null;
 };

@@ -1,9 +1,3 @@
-import {
-  SubjectScalarFieldEnumSchema,
-  SubjectScalarFieldEnumSchema_default
-} from "../../chunk-N54A6FQI.js";
-export {
-  SubjectScalarFieldEnumSchema,
-  SubjectScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=SubjectScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const SubjectScalarFieldEnumSchema = z.enum(['value', 'kanbanId', 'createdAt', 'lastAccess']);
+export default SubjectScalarFieldEnumSchema;

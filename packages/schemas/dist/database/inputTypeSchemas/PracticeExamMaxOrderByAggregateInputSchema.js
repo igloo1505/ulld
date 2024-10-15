@@ -1,10 +1,11 @@
-import {
-  PracticeExamMaxOrderByAggregateInputSchema,
-  PracticeExamMaxOrderByAggregateInputSchema_default
-} from "../../chunk-EYDPSCY3.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  PracticeExamMaxOrderByAggregateInputSchema,
-  PracticeExamMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=PracticeExamMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const PracticeExamMaxOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    correctCount: z.lazy(() => SortOrderSchema).optional(),
+    inCorrectCount: z.lazy(() => SortOrderSchema).optional(),
+    timeLimitInSeconds: z.lazy(() => SortOrderSchema).optional(),
+    timeCompletedInSeconds: z.lazy(() => SortOrderSchema).optional(),
+    date: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default PracticeExamMaxOrderByAggregateInputSchema;

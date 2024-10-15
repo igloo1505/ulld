@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringFilterSchema } from './StringFilterSchema';
-import { IntNullableFilterSchema } from './IntNullableFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const TopicScalarWhereInputSchema: z.ZodType<Prisma.TopicScalarWhereInput> = z.object({
   AND: z.union([ z.lazy(() => TopicScalarWhereInputSchema),z.lazy(() => TopicScalarWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => TopicScalarWhereInputSchema).array().optional(),
@@ -14,5 +12,4 @@ export const TopicScalarWhereInputSchema: z.ZodType<Prisma.TopicScalarWhereInput
   createdAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   lastAccess: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default TopicScalarWhereInputSchema;

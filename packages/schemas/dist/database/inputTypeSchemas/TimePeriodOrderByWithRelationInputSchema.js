@@ -1,20 +1,14 @@
-import {
-  TimePeriodOrderByWithRelationInputSchema,
-  TimePeriodOrderByWithRelationInputSchema_default
-} from "../../chunk-J5RY4DJT.js";
-import "../../chunk-H4HFGUAJ.js";
-import "../../chunk-QFVMDCBU.js";
-import "../../chunk-4TP62LJL.js";
-import "../../chunk-W4Q366B6.js";
-import "../../chunk-ZUIIQRAW.js";
-import "../../chunk-MTR5OF6P.js";
-import "../../chunk-P3SYYFW6.js";
-import "../../chunk-YWQ2LKBQ.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TimePeriodOrderByWithRelationInputSchema,
-  TimePeriodOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { DietOrderByWithRelationInputSchema } from './DietOrderByWithRelationInputSchema.js';
+import { TimePeriodOrderByRelevanceInputSchema } from './TimePeriodOrderByRelevanceInputSchema.js';
+export const TimePeriodOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    start: z.lazy(() => SortOrderSchema).optional(),
+    end: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    dietId: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    Diet: z.lazy(() => DietOrderByWithRelationInputSchema).optional(),
+    _relevance: z.lazy(() => TimePeriodOrderByRelevanceInputSchema).optional()
+}).strict();
+export default TimePeriodOrderByWithRelationInputSchema;

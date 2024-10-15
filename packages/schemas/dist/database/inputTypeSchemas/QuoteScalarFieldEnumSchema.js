@@ -1,9 +1,3 @@
-import {
-  QuoteScalarFieldEnumSchema,
-  QuoteScalarFieldEnumSchema_default
-} from "../../chunk-LGRUCKTG.js";
-export {
-  QuoteScalarFieldEnumSchema,
-  QuoteScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=QuoteScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const QuoteScalarFieldEnumSchema = z.enum(['body', 'author', 'source', 'pinned', 'createdAt']);
+export default QuoteScalarFieldEnumSchema;

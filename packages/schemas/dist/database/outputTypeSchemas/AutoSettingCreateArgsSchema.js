@@ -1,14 +1,16 @@
-import {
-  AutoSettingCreateArgsSchema,
-  AutoSettingCreateArgsSchema_default,
-  AutoSettingSelectSchema
-} from "../../chunk-RWCRRUQY.js";
-import "../../chunk-5QGKR5FV.js";
-import "../../chunk-7E3AGULH.js";
-import "../../chunk-76RQYGNI.js";
-export {
-  AutoSettingCreateArgsSchema,
-  AutoSettingSelectSchema,
-  AutoSettingCreateArgsSchema_default as default
-};
-//# sourceMappingURL=AutoSettingCreateArgsSchema.js.map
+import { z } from 'zod';
+import { AutoSettingCreateInputSchema } from '../inputTypeSchemas/AutoSettingCreateInputSchema.js';
+import { AutoSettingUncheckedCreateInputSchema } from '../inputTypeSchemas/AutoSettingUncheckedCreateInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const AutoSettingSelectSchema = z.object({
+    id: z.boolean().optional(),
+    type: z.boolean().optional(),
+    glob: z.boolean().optional(),
+    value: z.boolean().optional(),
+}).strict();
+export const AutoSettingCreateArgsSchema = z.object({
+    select: AutoSettingSelectSchema.optional(),
+    data: z.union([AutoSettingCreateInputSchema, AutoSettingUncheckedCreateInputSchema]),
+}).strict();
+export default AutoSettingCreateArgsSchema;

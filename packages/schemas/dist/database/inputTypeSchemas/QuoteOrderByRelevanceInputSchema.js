@@ -1,11 +1,9 @@
-import {
-  QuoteOrderByRelevanceInputSchema,
-  QuoteOrderByRelevanceInputSchema_default
-} from "../../chunk-776SWEVY.js";
-import "../../chunk-MDC4V7ZL.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  QuoteOrderByRelevanceInputSchema,
-  QuoteOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=QuoteOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { QuoteOrderByRelevanceFieldEnumSchema } from './QuoteOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const QuoteOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => QuoteOrderByRelevanceFieldEnumSchema), z.lazy(() => QuoteOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default QuoteOrderByRelevanceInputSchema;

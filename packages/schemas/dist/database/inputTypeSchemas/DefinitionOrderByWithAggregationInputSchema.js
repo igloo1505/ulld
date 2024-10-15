@@ -1,17 +1,23 @@
-import {
-  DefinitionOrderByWithAggregationInputSchema,
-  DefinitionOrderByWithAggregationInputSchema_default
-} from "../../chunk-7HQWY5OZ.js";
-import "../../chunk-L4N6HERR.js";
-import "../../chunk-NNGLDKI3.js";
-import "../../chunk-MVUHGOUL.js";
-import "../../chunk-W47HOKN2.js";
-import "../../chunk-RQWMCTYD.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DefinitionOrderByWithAggregationInputSchema,
-  DefinitionOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=DefinitionOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { DefinitionCountOrderByAggregateInputSchema } from './DefinitionCountOrderByAggregateInputSchema.js';
+import { DefinitionAvgOrderByAggregateInputSchema } from './DefinitionAvgOrderByAggregateInputSchema.js';
+import { DefinitionMaxOrderByAggregateInputSchema } from './DefinitionMaxOrderByAggregateInputSchema.js';
+import { DefinitionMinOrderByAggregateInputSchema } from './DefinitionMinOrderByAggregateInputSchema.js';
+import { DefinitionSumOrderByAggregateInputSchema } from './DefinitionSumOrderByAggregateInputSchema.js';
+export const DefinitionOrderByWithAggregationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    label: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    content: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    alphabeticalLabel: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    mdxNoteId: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional(),
+    _count: z.lazy(() => DefinitionCountOrderByAggregateInputSchema).optional(),
+    _avg: z.lazy(() => DefinitionAvgOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => DefinitionMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => DefinitionMinOrderByAggregateInputSchema).optional(),
+    _sum: z.lazy(() => DefinitionSumOrderByAggregateInputSchema).optional()
+}).strict();
+export default DefinitionOrderByWithAggregationInputSchema;

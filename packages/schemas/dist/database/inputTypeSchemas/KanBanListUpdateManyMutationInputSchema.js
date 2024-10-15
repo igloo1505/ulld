@@ -1,11 +1,8 @@
-import {
-  KanBanListUpdateManyMutationInputSchema,
-  KanBanListUpdateManyMutationInputSchema_default
-} from "../../chunk-R22CADQY.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-TKIJII67.js";
-export {
-  KanBanListUpdateManyMutationInputSchema,
-  KanBanListUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=KanBanListUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+export const KanBanListUpdateManyMutationInputSchema = z.object({
+    indexWithinBoard: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    title: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default KanBanListUpdateManyMutationInputSchema;

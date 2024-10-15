@@ -1,19 +1,15 @@
-import {
-  NoteTypeSelectSchema,
-  NoteTypeUpdateArgsSchema,
-  NoteTypeUpdateArgsSchema_default
-} from "../../chunk-JNO5EVDP.js";
-import "../../chunk-PI4FMAGF.js";
-import "../../chunk-LVAWJRYV.js";
-import "../../chunk-FW7442IX.js";
-import "../../chunk-4ES4YADX.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  NoteTypeSelectSchema,
-  NoteTypeUpdateArgsSchema,
-  NoteTypeUpdateArgsSchema_default as default
-};
-//# sourceMappingURL=NoteTypeUpdateArgsSchema.js.map
+import { z } from 'zod';
+import { NoteTypeUpdateInputSchema } from '../inputTypeSchemas/NoteTypeUpdateInputSchema.js';
+import { NoteTypeUncheckedUpdateInputSchema } from '../inputTypeSchemas/NoteTypeUncheckedUpdateInputSchema.js';
+import { NoteTypeWhereUniqueInputSchema } from '../inputTypeSchemas/NoteTypeWhereUniqueInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const NoteTypeSelectSchema = z.object({
+    name: z.boolean().optional(),
+}).strict();
+export const NoteTypeUpdateArgsSchema = z.object({
+    select: NoteTypeSelectSchema.optional(),
+    data: z.union([NoteTypeUpdateInputSchema, NoteTypeUncheckedUpdateInputSchema]),
+    where: NoteTypeWhereUniqueInputSchema,
+}).strict();
+export default NoteTypeUpdateArgsSchema;

@@ -1,10 +1,18 @@
-import {
-  NestedJsonFilterSchema,
-  NestedJsonFilterSchema_default
-} from "../../chunk-U3XMZABL.js";
-import "../../chunk-T77FYKUT.js";
-export {
-  NestedJsonFilterSchema,
-  NestedJsonFilterSchema_default as default
-};
-//# sourceMappingURL=NestedJsonFilterSchema.js.map
+import { z } from 'zod';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+export const NestedJsonFilterSchema = z.object({
+    equals: InputJsonValueSchema.optional(),
+    path: z.string().array().optional(),
+    string_contains: z.string().optional(),
+    string_starts_with: z.string().optional(),
+    string_ends_with: z.string().optional(),
+    array_contains: InputJsonValueSchema.optional().nullable(),
+    array_starts_with: InputJsonValueSchema.optional().nullable(),
+    array_ends_with: InputJsonValueSchema.optional().nullable(),
+    lt: InputJsonValueSchema.optional(),
+    lte: InputJsonValueSchema.optional(),
+    gt: InputJsonValueSchema.optional(),
+    gte: InputJsonValueSchema.optional(),
+    not: InputJsonValueSchema.optional()
+}).strict();
+export default NestedJsonFilterSchema;

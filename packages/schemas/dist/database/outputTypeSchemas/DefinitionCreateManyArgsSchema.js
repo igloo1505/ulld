@@ -1,10 +1,7 @@
-import {
-  DefinitionCreateManyArgsSchema,
-  DefinitionCreateManyArgsSchema_default
-} from "../../chunk-ZJV3WJWM.js";
-import "../../chunk-PICJJJY4.js";
-export {
-  DefinitionCreateManyArgsSchema,
-  DefinitionCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=DefinitionCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { DefinitionCreateManyInputSchema } from '../inputTypeSchemas/DefinitionCreateManyInputSchema.js';
+export const DefinitionCreateManyArgsSchema = z.object({
+    data: z.union([DefinitionCreateManyInputSchema, DefinitionCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default DefinitionCreateManyArgsSchema;

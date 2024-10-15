@@ -1,10 +1,6 @@
-import {
-  DietOrderByRelationAggregateInputSchema,
-  DietOrderByRelationAggregateInputSchema_default
-} from "../../chunk-2YLYAKJ5.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DietOrderByRelationAggregateInputSchema,
-  DietOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=DietOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const DietOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default DietOrderByRelationAggregateInputSchema;

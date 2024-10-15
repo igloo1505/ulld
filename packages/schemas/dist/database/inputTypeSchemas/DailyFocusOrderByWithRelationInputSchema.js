@@ -1,12 +1,9 @@
-import {
-  DailyFocusOrderByWithRelationInputSchema,
-  DailyFocusOrderByWithRelationInputSchema_default
-} from "../../chunk-GDXG4E7J.js";
-import "../../chunk-I5TSDRV3.js";
-import "../../chunk-XWZHXI62.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DailyFocusOrderByWithRelationInputSchema,
-  DailyFocusOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=DailyFocusOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { DailyFocusOrderByRelevanceInputSchema } from './DailyFocusOrderByRelevanceInputSchema.js';
+export const DailyFocusOrderByWithRelationInputSchema = z.object({
+    value: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    _relevance: z.lazy(() => DailyFocusOrderByRelevanceInputSchema).optional()
+}).strict();
+export default DailyFocusOrderByWithRelationInputSchema;

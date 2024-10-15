@@ -1,10 +1,7 @@
-import {
-  DietaryItemCreateManyArgsSchema,
-  DietaryItemCreateManyArgsSchema_default
-} from "../../chunk-W26Z6MEC.js";
-import "../../chunk-6GLNGD4W.js";
-export {
-  DietaryItemCreateManyArgsSchema,
-  DietaryItemCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=DietaryItemCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { DietaryItemCreateManyInputSchema } from '../inputTypeSchemas/DietaryItemCreateManyInputSchema.js';
+export const DietaryItemCreateManyArgsSchema = z.object({
+    data: z.union([DietaryItemCreateManyInputSchema, DietaryItemCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default DietaryItemCreateManyArgsSchema;

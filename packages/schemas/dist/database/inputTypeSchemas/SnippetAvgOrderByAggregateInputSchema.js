@@ -1,10 +1,6 @@
-import {
-  SnippetAvgOrderByAggregateInputSchema,
-  SnippetAvgOrderByAggregateInputSchema_default
-} from "../../chunk-I5NBYE37.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SnippetAvgOrderByAggregateInputSchema,
-  SnippetAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SnippetAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SnippetAvgOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SnippetAvgOrderByAggregateInputSchema;

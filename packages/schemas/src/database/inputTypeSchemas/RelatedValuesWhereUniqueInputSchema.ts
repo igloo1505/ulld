@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { RelatedValuesWhereInputSchema } from './RelatedValuesWhereInputSchema';
-import { JsonFilterSchema } from './JsonFilterSchema';
-import { FloatFilterSchema } from './FloatFilterSchema';
-import { EquationListRelationFilterSchema } from './EquationListRelationFilterSchema';
-
+import { RelatedValuesWhereInputSchema } from './RelatedValuesWhereInputSchema.js';
+import { JsonFilterSchema } from './JsonFilterSchema.js';
+import { FloatFilterSchema } from './FloatFilterSchema.js';
+import { EquationListRelationFilterSchema } from './EquationListRelationFilterSchema.js';
 export const RelatedValuesWhereUniqueInputSchema: z.ZodType<Prisma.RelatedValuesWhereUniqueInput> = z.union([
   z.object({
     id: z.number().int(),
@@ -28,5 +26,4 @@ export const RelatedValuesWhereUniqueInputSchema: z.ZodType<Prisma.RelatedValues
   output: z.union([ z.lazy(() => FloatFilterSchema),z.number() ]).optional(),
   equations: z.lazy(() => EquationListRelationFilterSchema).optional()
 }).strict());
-
 export default RelatedValuesWhereUniqueInputSchema;

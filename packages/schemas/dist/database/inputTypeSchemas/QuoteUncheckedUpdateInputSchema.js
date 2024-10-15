@@ -1,13 +1,13 @@
-import {
-  QuoteUncheckedUpdateInputSchema,
-  QuoteUncheckedUpdateInputSchema_default
-} from "../../chunk-QDRC663Z.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  QuoteUncheckedUpdateInputSchema,
-  QuoteUncheckedUpdateInputSchema_default as default
-};
-//# sourceMappingURL=QuoteUncheckedUpdateInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const QuoteUncheckedUpdateInputSchema = z.object({
+    body: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    author: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    source: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    pinned: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default QuoteUncheckedUpdateInputSchema;

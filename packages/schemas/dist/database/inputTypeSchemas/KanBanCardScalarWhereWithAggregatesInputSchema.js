@@ -1,21 +1,15 @@
-import {
-  KanBanCardScalarWhereWithAggregatesInputSchema,
-  KanBanCardScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-WBTTNOBS.js";
-import "../../chunk-BZ55PUI6.js";
-import "../../chunk-VFKLP7TG.js";
-import "../../chunk-VKTRMAGB.js";
-import "../../chunk-Y6KFO3UF.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-S2WAI7QC.js";
-import "../../chunk-TPDRVVNK.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  KanBanCardScalarWhereWithAggregatesInputSchema,
-  KanBanCardScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=KanBanCardScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+export const KanBanCardScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => KanBanCardScalarWhereWithAggregatesInputSchema), z.lazy(() => KanBanCardScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => KanBanCardScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => KanBanCardScalarWhereWithAggregatesInputSchema), z.lazy(() => KanBanCardScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    listId: z.union([z.lazy(() => IntNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    indexWithinList: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    label: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    details: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+}).strict();
+export default KanBanCardScalarWhereWithAggregatesInputSchema;

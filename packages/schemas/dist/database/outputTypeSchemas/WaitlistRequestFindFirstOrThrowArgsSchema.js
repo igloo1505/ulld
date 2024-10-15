@@ -1,25 +1,23 @@
-import {
-  WaitlistRequestFindFirstOrThrowArgsSchema,
-  WaitlistRequestFindFirstOrThrowArgsSchema_default,
-  WaitlistRequestSelectSchema
-} from "../../chunk-UM7YAUNH.js";
-import "../../chunk-XL7WEO6A.js";
-import "../../chunk-LQBO56AD.js";
-import "../../chunk-QDGOPKB3.js";
-import "../../chunk-IPGXNP7B.js";
-import "../../chunk-WBUZRDLR.js";
-import "../../chunk-7ELNXEAA.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-WVDZRY2Y.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  WaitlistRequestFindFirstOrThrowArgsSchema,
-  WaitlistRequestSelectSchema,
-  WaitlistRequestFindFirstOrThrowArgsSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestFindFirstOrThrowArgsSchema.js.map
+import { z } from 'zod';
+import { WaitlistRequestWhereInputSchema } from '../inputTypeSchemas/WaitlistRequestWhereInputSchema.js';
+import { WaitlistRequestOrderByWithRelationInputSchema } from '../inputTypeSchemas/WaitlistRequestOrderByWithRelationInputSchema.js';
+import { WaitlistRequestWhereUniqueInputSchema } from '../inputTypeSchemas/WaitlistRequestWhereUniqueInputSchema.js';
+import { WaitlistRequestScalarFieldEnumSchema } from '../inputTypeSchemas/WaitlistRequestScalarFieldEnumSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const WaitlistRequestSelectSchema = z.object({
+    id: z.boolean().optional(),
+    email: z.boolean().optional(),
+    receivedOn: z.boolean().optional(),
+    emailsSent: z.boolean().optional(),
+}).strict();
+export const WaitlistRequestFindFirstOrThrowArgsSchema = z.object({
+    select: WaitlistRequestSelectSchema.optional(),
+    where: WaitlistRequestWhereInputSchema.optional(),
+    orderBy: z.union([WaitlistRequestOrderByWithRelationInputSchema.array(), WaitlistRequestOrderByWithRelationInputSchema]).optional(),
+    cursor: WaitlistRequestWhereUniqueInputSchema.optional(),
+    take: z.number().optional(),
+    skip: z.number().optional(),
+    distinct: z.union([WaitlistRequestScalarFieldEnumSchema, WaitlistRequestScalarFieldEnumSchema.array()]).optional(),
+}).strict();
+export default WaitlistRequestFindFirstOrThrowArgsSchema;

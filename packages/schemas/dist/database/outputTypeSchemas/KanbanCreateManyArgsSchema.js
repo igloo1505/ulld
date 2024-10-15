@@ -1,10 +1,7 @@
-import {
-  KanbanCreateManyArgsSchema,
-  KanbanCreateManyArgsSchema_default
-} from "../../chunk-KQR7ECEV.js";
-import "../../chunk-IAM262TM.js";
-export {
-  KanbanCreateManyArgsSchema,
-  KanbanCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=KanbanCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { KanbanCreateManyInputSchema } from '../inputTypeSchemas/KanbanCreateManyInputSchema.js';
+export const KanbanCreateManyArgsSchema = z.object({
+    data: z.union([KanbanCreateManyInputSchema, KanbanCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default KanbanCreateManyArgsSchema;

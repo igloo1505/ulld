@@ -1,75 +1,22 @@
-import {
-  DietaryItemUpdateManyWithoutDietNestedInputSchema,
-  DietaryItemUpdateManyWithoutDietNestedInputSchema_default
-} from "../../chunk-3TXP5DMF.js";
-import "../../chunk-W7HQFFNX.js";
-import "../../chunk-7YIVPRKS.js";
-import "../../chunk-VAFJKCVG.js";
-import "../../chunk-ILQXM6PX.js";
-import "../../chunk-25POSQDG.js";
-import "../../chunk-HK4UERLG.js";
-import "../../chunk-QQIGUFEQ.js";
-import "../../chunk-MOLTCIJR.js";
-import "../../chunk-2NTNEQGL.js";
-import "../../chunk-SGCYKW7T.js";
-import "../../chunk-WZVXK2VQ.js";
-import "../../chunk-ADXXXKPT.js";
-import "../../chunk-QX3GHUID.js";
-import "../../chunk-VFB5WXXW.js";
-import "../../chunk-U4ZAQM7N.js";
-import "../../chunk-LDU6EOA5.js";
-import "../../chunk-CKWHLXAV.js";
-import "../../chunk-JVQHRCWA.js";
-import "../../chunk-P5ZWTHAL.js";
-import "../../chunk-I4KTL3CT.js";
-import "../../chunk-DOUQ3YIS.js";
-import "../../chunk-FHWIZJB2.js";
-import "../../chunk-2OVCX575.js";
-import "../../chunk-XSIO7LDI.js";
-import "../../chunk-Q4TGFXPZ.js";
-import "../../chunk-RGEOUWDE.js";
-import "../../chunk-LVZPXU3C.js";
-import "../../chunk-O4KQDRJZ.js";
-import "../../chunk-IBJBBFSU.js";
-import "../../chunk-UBAUXHRA.js";
-import "../../chunk-BRBARM24.js";
-import "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-IWZ75T2C.js";
-import "../../chunk-GNOT4FVG.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-7KFMTKWN.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DietaryItemUpdateManyWithoutDietNestedInputSchema,
-  DietaryItemUpdateManyWithoutDietNestedInputSchema_default as default
-};
-//# sourceMappingURL=DietaryItemUpdateManyWithoutDietNestedInputSchema.js.map
+import { z } from 'zod';
+import { DietaryItemCreateWithoutDietInputSchema } from './DietaryItemCreateWithoutDietInputSchema.js';
+import { DietaryItemUncheckedCreateWithoutDietInputSchema } from './DietaryItemUncheckedCreateWithoutDietInputSchema.js';
+import { DietaryItemCreateOrConnectWithoutDietInputSchema } from './DietaryItemCreateOrConnectWithoutDietInputSchema.js';
+import { DietaryItemUpsertWithWhereUniqueWithoutDietInputSchema } from './DietaryItemUpsertWithWhereUniqueWithoutDietInputSchema.js';
+import { DietaryItemWhereUniqueInputSchema } from './DietaryItemWhereUniqueInputSchema.js';
+import { DietaryItemUpdateWithWhereUniqueWithoutDietInputSchema } from './DietaryItemUpdateWithWhereUniqueWithoutDietInputSchema.js';
+import { DietaryItemUpdateManyWithWhereWithoutDietInputSchema } from './DietaryItemUpdateManyWithWhereWithoutDietInputSchema.js';
+import { DietaryItemScalarWhereInputSchema } from './DietaryItemScalarWhereInputSchema.js';
+export const DietaryItemUpdateManyWithoutDietNestedInputSchema = z.object({
+    create: z.union([z.lazy(() => DietaryItemCreateWithoutDietInputSchema), z.lazy(() => DietaryItemCreateWithoutDietInputSchema).array(), z.lazy(() => DietaryItemUncheckedCreateWithoutDietInputSchema), z.lazy(() => DietaryItemUncheckedCreateWithoutDietInputSchema).array()]).optional(),
+    connectOrCreate: z.union([z.lazy(() => DietaryItemCreateOrConnectWithoutDietInputSchema), z.lazy(() => DietaryItemCreateOrConnectWithoutDietInputSchema).array()]).optional(),
+    upsert: z.union([z.lazy(() => DietaryItemUpsertWithWhereUniqueWithoutDietInputSchema), z.lazy(() => DietaryItemUpsertWithWhereUniqueWithoutDietInputSchema).array()]).optional(),
+    set: z.union([z.lazy(() => DietaryItemWhereUniqueInputSchema), z.lazy(() => DietaryItemWhereUniqueInputSchema).array()]).optional(),
+    disconnect: z.union([z.lazy(() => DietaryItemWhereUniqueInputSchema), z.lazy(() => DietaryItemWhereUniqueInputSchema).array()]).optional(),
+    delete: z.union([z.lazy(() => DietaryItemWhereUniqueInputSchema), z.lazy(() => DietaryItemWhereUniqueInputSchema).array()]).optional(),
+    connect: z.union([z.lazy(() => DietaryItemWhereUniqueInputSchema), z.lazy(() => DietaryItemWhereUniqueInputSchema).array()]).optional(),
+    update: z.union([z.lazy(() => DietaryItemUpdateWithWhereUniqueWithoutDietInputSchema), z.lazy(() => DietaryItemUpdateWithWhereUniqueWithoutDietInputSchema).array()]).optional(),
+    updateMany: z.union([z.lazy(() => DietaryItemUpdateManyWithWhereWithoutDietInputSchema), z.lazy(() => DietaryItemUpdateManyWithWhereWithoutDietInputSchema).array()]).optional(),
+    deleteMany: z.union([z.lazy(() => DietaryItemScalarWhereInputSchema), z.lazy(() => DietaryItemScalarWhereInputSchema).array()]).optional(),
+}).strict();
+export default DietaryItemUpdateManyWithoutDietNestedInputSchema;

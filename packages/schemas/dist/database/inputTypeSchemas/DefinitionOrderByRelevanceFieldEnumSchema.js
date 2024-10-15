@@ -1,9 +1,3 @@
-import {
-  DefinitionOrderByRelevanceFieldEnumSchema,
-  DefinitionOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-H7TDMSNR.js";
-export {
-  DefinitionOrderByRelevanceFieldEnumSchema,
-  DefinitionOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=DefinitionOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const DefinitionOrderByRelevanceFieldEnumSchema = z.enum(['id', 'label', 'content', 'alphabeticalLabel']);
+export default DefinitionOrderByRelevanceFieldEnumSchema;

@@ -1,9 +1,8 @@
-import {
-  TagCreateManyInputSchema,
-  TagCreateManyInputSchema_default
-} from "../../chunk-KKCL5IYN.js";
-export {
-  TagCreateManyInputSchema,
-  TagCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=TagCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const TagCreateManyInputSchema = z.object({
+    value: z.string(),
+    kanbanId: z.number().int().optional().nullable(),
+    createdAt: z.coerce.date().optional(),
+    lastAccess: z.coerce.date().optional()
+}).strict();
+export default TagCreateManyInputSchema;

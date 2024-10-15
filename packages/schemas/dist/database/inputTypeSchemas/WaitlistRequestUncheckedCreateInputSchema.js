@@ -1,9 +1,8 @@
-import {
-  WaitlistRequestUncheckedCreateInputSchema,
-  WaitlistRequestUncheckedCreateInputSchema_default
-} from "../../chunk-SCT2FHZ2.js";
-export {
-  WaitlistRequestUncheckedCreateInputSchema,
-  WaitlistRequestUncheckedCreateInputSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestUncheckedCreateInputSchema.js.map
+import { z } from 'zod';
+export const WaitlistRequestUncheckedCreateInputSchema = z.object({
+    id: z.number().int().optional(),
+    email: z.string(),
+    receivedOn: z.coerce.date().optional(),
+    emailsSent: z.number().int().optional()
+}).strict();
+export default WaitlistRequestUncheckedCreateInputSchema;

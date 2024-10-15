@@ -1,16 +1,15 @@
-import {
-  KanBanCardScalarWhereInputSchema,
-  KanBanCardScalarWhereInputSchema_default
-} from "../../chunk-F4SW4UTX.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  KanBanCardScalarWhereInputSchema,
-  KanBanCardScalarWhereInputSchema_default as default
-};
-//# sourceMappingURL=KanBanCardScalarWhereInputSchema.js.map
+import { z } from 'zod';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { IntNullableFilterSchema } from './IntNullableFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+export const KanBanCardScalarWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => KanBanCardScalarWhereInputSchema), z.lazy(() => KanBanCardScalarWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => KanBanCardScalarWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => KanBanCardScalarWhereInputSchema), z.lazy(() => KanBanCardScalarWhereInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    listId: z.union([z.lazy(() => IntNullableFilterSchema), z.number()]).optional().nullable(),
+    indexWithinList: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    label: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    details: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+}).strict();
+export default KanBanCardScalarWhereInputSchema;

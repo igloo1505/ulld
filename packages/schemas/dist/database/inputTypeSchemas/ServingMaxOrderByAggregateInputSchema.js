@@ -1,10 +1,9 @@
-import {
-  ServingMaxOrderByAggregateInputSchema,
-  ServingMaxOrderByAggregateInputSchema_default
-} from "../../chunk-432TUKPI.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ServingMaxOrderByAggregateInputSchema,
-  ServingMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=ServingMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ServingMaxOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    dietaryItemId: z.lazy(() => SortOrderSchema).optional(),
+    quant_oz: z.lazy(() => SortOrderSchema).optional(),
+    quant_guess: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default ServingMaxOrderByAggregateInputSchema;

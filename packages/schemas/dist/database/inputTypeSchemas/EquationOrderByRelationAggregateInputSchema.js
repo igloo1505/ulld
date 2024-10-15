@@ -1,10 +1,6 @@
-import {
-  EquationOrderByRelationAggregateInputSchema,
-  EquationOrderByRelationAggregateInputSchema_default
-} from "../../chunk-UFL4PV4Z.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  EquationOrderByRelationAggregateInputSchema,
-  EquationOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=EquationOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const EquationOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default EquationOrderByRelationAggregateInputSchema;

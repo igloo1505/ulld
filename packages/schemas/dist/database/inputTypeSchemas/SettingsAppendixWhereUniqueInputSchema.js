@@ -1,17 +1,17 @@
-import {
-  SettingsAppendixWhereUniqueInputSchema,
-  SettingsAppendixWhereUniqueInputSchema_default
-} from "../../chunk-BGFFYPAT.js";
-import "../../chunk-KMSRH34U.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  SettingsAppendixWhereUniqueInputSchema,
-  SettingsAppendixWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=SettingsAppendixWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { SettingsAppendixWhereInputSchema } from './SettingsAppendixWhereInputSchema.js';
+import { BytesFilterSchema } from './BytesFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+export const SettingsAppendixWhereUniqueInputSchema = z.object({
+    id: z.string()
+})
+    .and(z.object({
+    id: z.string().optional(),
+    AND: z.union([z.lazy(() => SettingsAppendixWhereInputSchema), z.lazy(() => SettingsAppendixWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => SettingsAppendixWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => SettingsAppendixWhereInputSchema), z.lazy(() => SettingsAppendixWhereInputSchema).array()]).optional(),
+    data: z.union([z.lazy(() => BytesFilterSchema), z.instanceof(Buffer)]).optional(),
+    createdAt: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    updatedAt: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+}).strict());
+export default SettingsAppendixWhereUniqueInputSchema;

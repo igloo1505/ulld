@@ -1,9 +1,8 @@
-import {
-  ToDoListCountOutputTypeSelectSchema,
-  ToDoListCountOutputTypeSelectSchema_default
-} from "../../chunk-RVFQK375.js";
-export {
-  ToDoListCountOutputTypeSelectSchema,
-  ToDoListCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=ToDoListCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const ToDoListCountOutputTypeSelectSchema = z.object({
+    tasks: z.boolean().optional(),
+    tags: z.boolean().optional(),
+    topics: z.boolean().optional(),
+    subjects: z.boolean().optional(),
+}).strict();
+export default ToDoListCountOutputTypeSelectSchema;

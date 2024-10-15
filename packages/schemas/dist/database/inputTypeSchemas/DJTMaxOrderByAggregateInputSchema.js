@@ -1,10 +1,8 @@
-import {
-  DJTMaxOrderByAggregateInputSchema,
-  DJTMaxOrderByAggregateInputSchema_default
-} from "../../chunk-Q2GJGHF3.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DJTMaxOrderByAggregateInputSchema,
-  DJTMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=DJTMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const DJTMaxOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    type: z.lazy(() => SortOrderSchema).optional(),
+    data: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default DJTMaxOrderByAggregateInputSchema;

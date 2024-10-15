@@ -1,10 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { AutoSettingWhereInputSchema } from '../inputTypeSchemas/AutoSettingWhereInputSchema'
-import { AutoSettingOrderByWithAggregationInputSchema } from '../inputTypeSchemas/AutoSettingOrderByWithAggregationInputSchema'
-import { AutoSettingScalarFieldEnumSchema } from '../inputTypeSchemas/AutoSettingScalarFieldEnumSchema'
-import { AutoSettingScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/AutoSettingScalarWhereWithAggregatesInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+import { AutoSettingWhereInputSchema } from '../inputTypeSchemas/AutoSettingWhereInputSchema.js'
+import { AutoSettingOrderByWithAggregationInputSchema } from '../inputTypeSchemas/AutoSettingOrderByWithAggregationInputSchema.js'
+import { AutoSettingScalarFieldEnumSchema } from '../inputTypeSchemas/AutoSettingScalarFieldEnumSchema.js'
+import { AutoSettingScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/AutoSettingScalarWhereWithAggregatesInputSchema.js'
 export const AutoSettingGroupByArgsSchema: z.ZodType<Prisma.AutoSettingGroupByArgs> = z.object({
   where: AutoSettingWhereInputSchema.optional(),
   orderBy: z.union([ AutoSettingOrderByWithAggregationInputSchema.array(),AutoSettingOrderByWithAggregationInputSchema ]).optional(),
@@ -13,5 +12,4 @@ export const AutoSettingGroupByArgsSchema: z.ZodType<Prisma.AutoSettingGroupByAr
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default AutoSettingGroupByArgsSchema;

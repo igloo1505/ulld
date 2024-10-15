@@ -1,9 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { TopicIncludeSchema } from '../inputTypeSchemas/TopicIncludeSchema'
-import { TopicUpdateInputSchema } from '../inputTypeSchemas/TopicUpdateInputSchema'
-import { TopicUncheckedUpdateInputSchema } from '../inputTypeSchemas/TopicUncheckedUpdateInputSchema'
-import { TopicWhereUniqueInputSchema } from '../inputTypeSchemas/TopicWhereUniqueInputSchema'
+import type { Prisma } from '@ulld/database/db';
+import { TopicIncludeSchema } from '../inputTypeSchemas/TopicIncludeSchema.js'
+import { TopicUpdateInputSchema } from '../inputTypeSchemas/TopicUpdateInputSchema.js'
+import { TopicUncheckedUpdateInputSchema } from '../inputTypeSchemas/TopicUncheckedUpdateInputSchema.js'
+import { TopicWhereUniqueInputSchema } from '../inputTypeSchemas/TopicWhereUniqueInputSchema.js'
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema"
@@ -16,7 +16,6 @@ import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindMan
 import { TopicCountOutputTypeArgsSchema } from "../outputTypeSchemas/TopicCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const TopicSelectSchema: z.ZodType<Prisma.TopicSelect> = z.object({
   value: z.boolean().optional(),
   kanbanId: z.boolean().optional(),
@@ -33,12 +32,10 @@ export const TopicSelectSchema: z.ZodType<Prisma.TopicSelect> = z.object({
   equations: z.union([z.boolean(),z.lazy(() => EquationFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => TopicCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const TopicUpdateArgsSchema: z.ZodType<Prisma.TopicUpdateArgs> = z.object({
   select: TopicSelectSchema.optional(),
   include: TopicIncludeSchema.optional(),
   data: z.union([ TopicUpdateInputSchema,TopicUncheckedUpdateInputSchema ]),
   where: TopicWhereUniqueInputSchema,
 }).strict() ;
-
 export default TopicUpdateArgsSchema;

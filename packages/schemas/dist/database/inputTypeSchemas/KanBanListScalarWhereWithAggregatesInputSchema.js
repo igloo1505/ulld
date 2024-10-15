@@ -1,21 +1,14 @@
-import {
-  KanBanListScalarWhereWithAggregatesInputSchema,
-  KanBanListScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-R6PD7IB5.js";
-import "../../chunk-BZ55PUI6.js";
-import "../../chunk-VFKLP7TG.js";
-import "../../chunk-VKTRMAGB.js";
-import "../../chunk-Y6KFO3UF.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-S2WAI7QC.js";
-import "../../chunk-TPDRVVNK.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  KanBanListScalarWhereWithAggregatesInputSchema,
-  KanBanListScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=KanBanListScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
+export const KanBanListScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => KanBanListScalarWhereWithAggregatesInputSchema), z.lazy(() => KanBanListScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => KanBanListScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => KanBanListScalarWhereWithAggregatesInputSchema), z.lazy(() => KanBanListScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    indexWithinBoard: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    title: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    boardId: z.union([z.lazy(() => IntNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+}).strict();
+export default KanBanListScalarWhereWithAggregatesInputSchema;

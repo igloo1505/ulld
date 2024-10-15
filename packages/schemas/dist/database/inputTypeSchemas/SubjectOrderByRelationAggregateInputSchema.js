@@ -1,10 +1,6 @@
-import {
-  SubjectOrderByRelationAggregateInputSchema,
-  SubjectOrderByRelationAggregateInputSchema_default
-} from "../../chunk-TYDF4OCO.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SubjectOrderByRelationAggregateInputSchema,
-  SubjectOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SubjectOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SubjectOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SubjectOrderByRelationAggregateInputSchema;

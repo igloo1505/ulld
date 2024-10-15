@@ -1,9 +1,3 @@
-import {
-  PracticeExamScalarFieldEnumSchema,
-  PracticeExamScalarFieldEnumSchema_default
-} from "../../chunk-NO6FD3MG.js";
-export {
-  PracticeExamScalarFieldEnumSchema,
-  PracticeExamScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=PracticeExamScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const PracticeExamScalarFieldEnumSchema = z.enum(['id', 'correctCount', 'inCorrectCount', 'timeLimitInSeconds', 'timeCompletedInSeconds', 'date']);
+export default PracticeExamScalarFieldEnumSchema;

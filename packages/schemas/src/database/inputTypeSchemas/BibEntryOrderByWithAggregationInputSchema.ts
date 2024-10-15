@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { BibEntryCountOrderByAggregateInputSchema } from './BibEntryCountOrderByAggregateInputSchema';
-import { BibEntryAvgOrderByAggregateInputSchema } from './BibEntryAvgOrderByAggregateInputSchema';
-import { BibEntryMaxOrderByAggregateInputSchema } from './BibEntryMaxOrderByAggregateInputSchema';
-import { BibEntryMinOrderByAggregateInputSchema } from './BibEntryMinOrderByAggregateInputSchema';
-import { BibEntrySumOrderByAggregateInputSchema } from './BibEntrySumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { BibEntryCountOrderByAggregateInputSchema } from './BibEntryCountOrderByAggregateInputSchema.js';
+import { BibEntryAvgOrderByAggregateInputSchema } from './BibEntryAvgOrderByAggregateInputSchema.js';
+import { BibEntryMaxOrderByAggregateInputSchema } from './BibEntryMaxOrderByAggregateInputSchema.js';
+import { BibEntryMinOrderByAggregateInputSchema } from './BibEntryMinOrderByAggregateInputSchema.js';
+import { BibEntrySumOrderByAggregateInputSchema } from './BibEntrySumOrderByAggregateInputSchema.js';
 export const BibEntryOrderByWithAggregationInputSchema: z.ZodType<Prisma.BibEntryOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   BibId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -58,5 +56,4 @@ export const BibEntryOrderByWithAggregationInputSchema: z.ZodType<Prisma.BibEntr
   _min: z.lazy(() => BibEntryMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => BibEntrySumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default BibEntryOrderByWithAggregationInputSchema;

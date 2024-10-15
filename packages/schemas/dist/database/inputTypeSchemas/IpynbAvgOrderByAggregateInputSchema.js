@@ -1,10 +1,8 @@
-import {
-  IpynbAvgOrderByAggregateInputSchema,
-  IpynbAvgOrderByAggregateInputSchema_default
-} from "../../chunk-YPY3HX67.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  IpynbAvgOrderByAggregateInputSchema,
-  IpynbAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=IpynbAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const IpynbAvgOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    importantValues: z.lazy(() => SortOrderSchema).optional(),
+    sequentialIndex: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default IpynbAvgOrderByAggregateInputSchema;

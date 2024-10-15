@@ -1,13 +1,11 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { CitationsGroupUncheckedCreateNestedManyWithoutEntriesInputSchema } from './CitationsGroupUncheckedCreateNestedManyWithoutEntriesInputSchema';
-import { TagUncheckedCreateNestedManyWithoutBibEntriesInputSchema } from './TagUncheckedCreateNestedManyWithoutBibEntriesInputSchema';
-import { TopicUncheckedCreateNestedManyWithoutBibEntriesInputSchema } from './TopicUncheckedCreateNestedManyWithoutBibEntriesInputSchema';
-import { MdxNoteUncheckedCreateNestedManyWithoutCitationsInputSchema } from './MdxNoteUncheckedCreateNestedManyWithoutCitationsInputSchema';
-import { IpynbUncheckedCreateNestedManyWithoutCitationsInputSchema } from './IpynbUncheckedCreateNestedManyWithoutCitationsInputSchema';
-import { ReadingListUncheckedCreateNestedManyWithoutBibEntriesInputSchema } from './ReadingListUncheckedCreateNestedManyWithoutBibEntriesInputSchema';
-
+import { CitationsGroupUncheckedCreateNestedManyWithoutEntriesInputSchema } from './CitationsGroupUncheckedCreateNestedManyWithoutEntriesInputSchema.js';
+import { TagUncheckedCreateNestedManyWithoutBibEntriesInputSchema } from './TagUncheckedCreateNestedManyWithoutBibEntriesInputSchema.js';
+import { TopicUncheckedCreateNestedManyWithoutBibEntriesInputSchema } from './TopicUncheckedCreateNestedManyWithoutBibEntriesInputSchema.js';
+import { MdxNoteUncheckedCreateNestedManyWithoutCitationsInputSchema } from './MdxNoteUncheckedCreateNestedManyWithoutCitationsInputSchema.js';
+import { IpynbUncheckedCreateNestedManyWithoutCitationsInputSchema } from './IpynbUncheckedCreateNestedManyWithoutCitationsInputSchema.js';
+import { ReadingListUncheckedCreateNestedManyWithoutBibEntriesInputSchema } from './ReadingListUncheckedCreateNestedManyWithoutBibEntriesInputSchema.js';
 export const BibEntryUncheckedCreateWithoutSubjectsInputSchema: z.ZodType<Prisma.BibEntryUncheckedCreateWithoutSubjectsInput> = z.object({
   id: z.string(),
   BibId: z.number().int().optional().nullable(),
@@ -58,5 +56,4 @@ export const BibEntryUncheckedCreateWithoutSubjectsInputSchema: z.ZodType<Prisma
   ipynbNotes: z.lazy(() => IpynbUncheckedCreateNestedManyWithoutCitationsInputSchema).optional(),
   readingList: z.lazy(() => ReadingListUncheckedCreateNestedManyWithoutBibEntriesInputSchema).optional()
 }).strict();
-
 export default BibEntryUncheckedCreateWithoutSubjectsInputSchema;

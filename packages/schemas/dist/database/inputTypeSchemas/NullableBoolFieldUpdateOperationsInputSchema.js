@@ -1,9 +1,5 @@
-import {
-  NullableBoolFieldUpdateOperationsInputSchema,
-  NullableBoolFieldUpdateOperationsInputSchema_default
-} from "../../chunk-6QCMPPTM.js";
-export {
-  NullableBoolFieldUpdateOperationsInputSchema,
-  NullableBoolFieldUpdateOperationsInputSchema_default as default
-};
-//# sourceMappingURL=NullableBoolFieldUpdateOperationsInputSchema.js.map
+import { z } from 'zod';
+export const NullableBoolFieldUpdateOperationsInputSchema = z.object({
+    set: z.boolean().optional().nullable()
+}).strict();
+export default NullableBoolFieldUpdateOperationsInputSchema;

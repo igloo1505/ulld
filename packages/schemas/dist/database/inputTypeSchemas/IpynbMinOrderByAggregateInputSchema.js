@@ -1,10 +1,18 @@
-import {
-  IpynbMinOrderByAggregateInputSchema,
-  IpynbMinOrderByAggregateInputSchema_default
-} from "../../chunk-RGMC7UBG.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  IpynbMinOrderByAggregateInputSchema,
-  IpynbMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=IpynbMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const IpynbMinOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    rootRelativePath: z.lazy(() => SortOrderSchema).optional(),
+    isProtected: z.lazy(() => SortOrderSchema).optional(),
+    title: z.lazy(() => SortOrderSchema).optional(),
+    latexTitle: z.lazy(() => SortOrderSchema).optional(),
+    href: z.lazy(() => SortOrderSchema).optional(),
+    raw: z.lazy(() => SortOrderSchema).optional(),
+    sequentialKey: z.lazy(() => SortOrderSchema).optional(),
+    sequentialIndex: z.lazy(() => SortOrderSchema).optional(),
+    bookmarked: z.lazy(() => SortOrderSchema).optional(),
+    firstSync: z.lazy(() => SortOrderSchema).optional(),
+    lastSync: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default IpynbMinOrderByAggregateInputSchema;

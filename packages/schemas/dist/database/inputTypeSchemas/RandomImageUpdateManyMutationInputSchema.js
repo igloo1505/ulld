@@ -1,11 +1,8 @@
-import {
-  RandomImageUpdateManyMutationInputSchema,
-  RandomImageUpdateManyMutationInputSchema_default
-} from "../../chunk-XM6VNDQ4.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  RandomImageUpdateManyMutationInputSchema,
-  RandomImageUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=RandomImageUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const RandomImageUpdateManyMutationInputSchema = z.object({
+    path: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default RandomImageUpdateManyMutationInputSchema;

@@ -1,12 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { ReadingListCountOrderByAggregateInputSchema } from './ReadingListCountOrderByAggregateInputSchema';
-import { ReadingListMaxOrderByAggregateInputSchema } from './ReadingListMaxOrderByAggregateInputSchema';
-import { ReadingListMinOrderByAggregateInputSchema } from './ReadingListMinOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { ReadingListCountOrderByAggregateInputSchema } from './ReadingListCountOrderByAggregateInputSchema.js';
+import { ReadingListMaxOrderByAggregateInputSchema } from './ReadingListMaxOrderByAggregateInputSchema.js';
+import { ReadingListMinOrderByAggregateInputSchema } from './ReadingListMinOrderByAggregateInputSchema.js';
 export const ReadingListOrderByWithAggregationInputSchema: z.ZodType<Prisma.ReadingListOrderByWithAggregationInput> = z.object({
   name: z.lazy(() => SortOrderSchema).optional(),
   description: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -16,5 +14,4 @@ export const ReadingListOrderByWithAggregationInputSchema: z.ZodType<Prisma.Read
   _max: z.lazy(() => ReadingListMaxOrderByAggregateInputSchema).optional(),
   _min: z.lazy(() => ReadingListMinOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default ReadingListOrderByWithAggregationInputSchema;

@@ -1,28 +1,21 @@
-import {
-  AutoSettingSelectSchema,
-  AutoSettingUpsertArgsSchema,
-  AutoSettingUpsertArgsSchema_default
-} from "../../chunk-WYY5HXFY.js";
-import "../../chunk-5QGKR5FV.js";
-import "../../chunk-7E3AGULH.js";
-import "../../chunk-3MCATGK5.js";
-import "../../chunk-JJ7CIOGP.js";
-import "../../chunk-6BDYKCTD.js";
-import "../../chunk-GFG2PSHJ.js";
-import "../../chunk-ZZLVU5LM.js";
-import "../../chunk-SIPHN6ID.js";
-import "../../chunk-TJEHP7LG.js";
-import "../../chunk-76RQYGNI.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  AutoSettingSelectSchema,
-  AutoSettingUpsertArgsSchema,
-  AutoSettingUpsertArgsSchema_default as default
-};
-//# sourceMappingURL=AutoSettingUpsertArgsSchema.js.map
+import { z } from 'zod';
+import { AutoSettingWhereUniqueInputSchema } from '../inputTypeSchemas/AutoSettingWhereUniqueInputSchema.js';
+import { AutoSettingCreateInputSchema } from '../inputTypeSchemas/AutoSettingCreateInputSchema.js';
+import { AutoSettingUncheckedCreateInputSchema } from '../inputTypeSchemas/AutoSettingUncheckedCreateInputSchema.js';
+import { AutoSettingUpdateInputSchema } from '../inputTypeSchemas/AutoSettingUpdateInputSchema.js';
+import { AutoSettingUncheckedUpdateInputSchema } from '../inputTypeSchemas/AutoSettingUncheckedUpdateInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const AutoSettingSelectSchema = z.object({
+    id: z.boolean().optional(),
+    type: z.boolean().optional(),
+    glob: z.boolean().optional(),
+    value: z.boolean().optional(),
+}).strict();
+export const AutoSettingUpsertArgsSchema = z.object({
+    select: AutoSettingSelectSchema.optional(),
+    where: AutoSettingWhereUniqueInputSchema,
+    create: z.union([AutoSettingCreateInputSchema, AutoSettingUncheckedCreateInputSchema]),
+    update: z.union([AutoSettingUpdateInputSchema, AutoSettingUncheckedUpdateInputSchema]),
+}).strict();
+export default AutoSettingUpsertArgsSchema;

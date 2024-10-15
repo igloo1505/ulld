@@ -1,9 +1,16 @@
-import {
-  NestedStringFilterSchema,
-  NestedStringFilterSchema_default
-} from "../../chunk-Y2UWH4QY.js";
-export {
-  NestedStringFilterSchema,
-  NestedStringFilterSchema_default as default
-};
-//# sourceMappingURL=NestedStringFilterSchema.js.map
+import { z } from 'zod';
+export const NestedStringFilterSchema = z.object({
+    equals: z.string().optional(),
+    in: z.string().array().optional(),
+    notIn: z.string().array().optional(),
+    lt: z.string().optional(),
+    lte: z.string().optional(),
+    gt: z.string().optional(),
+    gte: z.string().optional(),
+    contains: z.string().optional(),
+    startsWith: z.string().optional(),
+    endsWith: z.string().optional(),
+    search: z.string().optional(),
+    not: z.union([z.string(), z.lazy(() => NestedStringFilterSchema)]).optional(),
+}).strict();
+export default NestedStringFilterSchema;

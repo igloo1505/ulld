@@ -18,7 +18,7 @@
   "exports": {
     "./types": {
       "types": "./dist/types/main.d.ts",
-      "import": "./dist/types/main.d.ts",
+      "import": "./dist/types/main.js",
       "require": "./dist/types/main.cjs"
     },
     "./buildUtils": {
@@ -141,7 +141,11 @@
       "import": "./dist/utils/sortUtils.js",
       "require": "./dist/utils/sortUtils.cjs"
     },
-    "./admonition/types": "./dist/types/admonition.d.ts",
+    "./admonition/types": {
+      "types": "./dist/types/admonition.d.ts",
+      "import": "./dist/types/admonition.js",
+      "require": "./dist/types/admonition.cjs"
+    },
     "./components/copyContextMenu": {
       "types": "./dist/components/copyContextMenu.d.ts",
       "import": "./dist/components/copyContextMenu.js",
@@ -550,7 +554,11 @@
       "import": "./dist/styleUtilities/ulldDefaultColorThemes.js",
       "require": "./dist/styleUtilities/ulldDefaultColorThemes.cjs"
     },
-    "./themeColorGradients": "./dist/styleUtilities/themeColorGradients.json",
+    "./themeColorGradients": {
+      "import": "./dist/styleUtilities/themeColorGradients.js",
+      "require": "./dist/styleUtilities/themeColorGradients.cjs"
+    },
+    "./themeColorGradients.json": "./dist/styleUtilities/themeColorGradients.json",
     "./themeColorSchemes": {
       "import": "./dist/styleUtilities/generatedThemeColorSchemes.js",
       "require": "./dist/styleUtilities/generatedThemeColorSchemes.cjs"

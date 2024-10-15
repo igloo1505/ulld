@@ -1,10 +1,6 @@
-import {
-  KanbanCountOutputTypeArgsSchema,
-  KanbanCountOutputTypeArgsSchema_default
-} from "../../chunk-7OMCZZIB.js";
-import "../../chunk-LQIEO6GP.js";
-export {
-  KanbanCountOutputTypeArgsSchema,
-  KanbanCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=KanbanCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { KanbanCountOutputTypeSelectSchema } from './KanbanCountOutputTypeSelectSchema.js';
+export const KanbanCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => KanbanCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default KanbanCountOutputTypeSelectSchema;

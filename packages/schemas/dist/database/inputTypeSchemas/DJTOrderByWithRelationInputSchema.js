@@ -1,12 +1,10 @@
-import {
-  DJTOrderByWithRelationInputSchema,
-  DJTOrderByWithRelationInputSchema_default
-} from "../../chunk-E2HOW4GC.js";
-import "../../chunk-KITUSP3F.js";
-import "../../chunk-7LAOMPDZ.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DJTOrderByWithRelationInputSchema,
-  DJTOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=DJTOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { DJTOrderByRelevanceInputSchema } from './DJTOrderByRelevanceInputSchema.js';
+export const DJTOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    type: z.lazy(() => SortOrderSchema).optional(),
+    data: z.lazy(() => SortOrderSchema).optional(),
+    _relevance: z.lazy(() => DJTOrderByRelevanceInputSchema).optional()
+}).strict();
+export default DJTOrderByWithRelationInputSchema;

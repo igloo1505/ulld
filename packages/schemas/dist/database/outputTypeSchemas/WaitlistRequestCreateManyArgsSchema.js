@@ -1,10 +1,7 @@
-import {
-  WaitlistRequestCreateManyArgsSchema,
-  WaitlistRequestCreateManyArgsSchema_default
-} from "../../chunk-AOS54DG5.js";
-import "../../chunk-RZLACC2A.js";
-export {
-  WaitlistRequestCreateManyArgsSchema,
-  WaitlistRequestCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { WaitlistRequestCreateManyInputSchema } from '../inputTypeSchemas/WaitlistRequestCreateManyInputSchema.js';
+export const WaitlistRequestCreateManyArgsSchema = z.object({
+    data: z.union([WaitlistRequestCreateManyInputSchema, WaitlistRequestCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default WaitlistRequestCreateManyArgsSchema;

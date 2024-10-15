@@ -1,9 +1,6 @@
-import {
-  CitationsGroupCreateWithoutEntriesInputSchema,
-  CitationsGroupCreateWithoutEntriesInputSchema_default
-} from "../../chunk-FP3F2CVP.js";
-export {
-  CitationsGroupCreateWithoutEntriesInputSchema,
-  CitationsGroupCreateWithoutEntriesInputSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupCreateWithoutEntriesInputSchema.js.map
+import { z } from 'zod';
+export const CitationsGroupCreateWithoutEntriesInputSchema = z.object({
+    name: z.string(),
+    description: z.string().optional().nullable()
+}).strict();
+export default CitationsGroupCreateWithoutEntriesInputSchema;

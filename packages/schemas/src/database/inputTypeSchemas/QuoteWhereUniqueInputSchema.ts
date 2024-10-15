@@ -1,12 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { QuoteWhereInputSchema } from './QuoteWhereInputSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { BoolFilterSchema } from './BoolFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-
+import { QuoteWhereInputSchema } from './QuoteWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { BoolFilterSchema } from './BoolFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
 export const QuoteWhereUniqueInputSchema: z.ZodType<Prisma.QuoteWhereUniqueInput> = z.object({
   body: z.string()
 })
@@ -20,5 +18,4 @@ export const QuoteWhereUniqueInputSchema: z.ZodType<Prisma.QuoteWhereUniqueInput
   pinned: z.union([ z.lazy(() => BoolFilterSchema),z.boolean() ]).optional(),
   createdAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
 }).strict());
-
 export default QuoteWhereUniqueInputSchema;

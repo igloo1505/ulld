@@ -1,10 +1,9 @@
-import {
-  SettingsAppendixMinOrderByAggregateInputSchema,
-  SettingsAppendixMinOrderByAggregateInputSchema_default
-} from "../../chunk-QOF5WKKZ.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SettingsAppendixMinOrderByAggregateInputSchema,
-  SettingsAppendixMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SettingsAppendixMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SettingsAppendixMinOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    data: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    updatedAt: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SettingsAppendixMinOrderByAggregateInputSchema;

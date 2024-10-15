@@ -1,19 +1,15 @@
-import {
-  RelatedValuesScalarWhereWithAggregatesInputSchema,
-  RelatedValuesScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-WZTHW4BQ.js";
-import "../../chunk-4CX7VVNU.js";
-import "../../chunk-TPFUXMNG.js";
-import "../../chunk-OSEN3URL.js";
-import "../../chunk-U3XMZABL.js";
-import "../../chunk-YSW3P2HE.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-S2WAI7QC.js";
-import "../../chunk-TPDRVVNK.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-IIKKCTNR.js";
-export {
-  RelatedValuesScalarWhereWithAggregatesInputSchema,
-  RelatedValuesScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { JsonWithAggregatesFilterSchema } from './JsonWithAggregatesFilterSchema.js';
+import { FloatWithAggregatesFilterSchema } from './FloatWithAggregatesFilterSchema.js';
+import { IntNullableListFilterSchema } from './IntNullableListFilterSchema.js';
+export const RelatedValuesScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => RelatedValuesScalarWhereWithAggregatesInputSchema), z.lazy(() => RelatedValuesScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => RelatedValuesScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => RelatedValuesScalarWhereWithAggregatesInputSchema), z.lazy(() => RelatedValuesScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    input: z.lazy(() => JsonWithAggregatesFilterSchema).optional(),
+    output: z.union([z.lazy(() => FloatWithAggregatesFilterSchema), z.number()]).optional(),
+    equationId: z.lazy(() => IntNullableListFilterSchema).optional()
+}).strict();
+export default RelatedValuesScalarWhereWithAggregatesInputSchema;

@@ -1,12 +1,11 @@
-import {
-  KanBanListUncheckedUpdateManyInputSchema,
-  KanBanListUncheckedUpdateManyInputSchema_default
-} from "../../chunk-7UGZKQSH.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-7KFMTKWN.js";
-import "../../chunk-TKIJII67.js";
-export {
-  KanBanListUncheckedUpdateManyInputSchema,
-  KanBanListUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=KanBanListUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema.js';
+export const KanBanListUncheckedUpdateManyInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    indexWithinBoard: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    title: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    boardId: z.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default KanBanListUncheckedUpdateManyInputSchema;

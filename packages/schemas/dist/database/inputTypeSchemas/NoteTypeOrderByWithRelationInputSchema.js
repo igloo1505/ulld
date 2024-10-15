@@ -1,12 +1,8 @@
-import {
-  NoteTypeOrderByWithRelationInputSchema,
-  NoteTypeOrderByWithRelationInputSchema_default
-} from "../../chunk-UBYVQS7W.js";
-import "../../chunk-X5NH7ISN.js";
-import "../../chunk-CCAV3APO.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  NoteTypeOrderByWithRelationInputSchema,
-  NoteTypeOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=NoteTypeOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { NoteTypeOrderByRelevanceInputSchema } from './NoteTypeOrderByRelevanceInputSchema.js';
+export const NoteTypeOrderByWithRelationInputSchema = z.object({
+    name: z.lazy(() => SortOrderSchema).optional(),
+    _relevance: z.lazy(() => NoteTypeOrderByRelevanceInputSchema).optional()
+}).strict();
+export default NoteTypeOrderByWithRelationInputSchema;

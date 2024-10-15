@@ -1,9 +1,5 @@
-import {
-  NoteTypeUncheckedCreateInputSchema,
-  NoteTypeUncheckedCreateInputSchema_default
-} from "../../chunk-DLR5FMAN.js";
-export {
-  NoteTypeUncheckedCreateInputSchema,
-  NoteTypeUncheckedCreateInputSchema_default as default
-};
-//# sourceMappingURL=NoteTypeUncheckedCreateInputSchema.js.map
+import { z } from 'zod';
+export const NoteTypeUncheckedCreateInputSchema = z.object({
+    name: z.string()
+}).strict();
+export default NoteTypeUncheckedCreateInputSchema;

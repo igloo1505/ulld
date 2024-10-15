@@ -1,13 +1,13 @@
 import {z} from 'zod'
 import { bibEntryPropsSchema } from '../bib/bibEntry/classProps.js';
 import { withForwardSlash } from '@ulld/utilities/fsUtils';
-import { sequentialListPropsSchema } from '@ulld/api/generalPrismaSchemas';
 import {
     makeValidIdOnlyLetters,
 } from "@ulld/utilities/utils/identity";
 import { todoTaskZodObject } from '../taskList/todo/classProps.js';
 import { taggableFields } from '../taggables/taggableFields.js';
 import { dateTimeStringTransform } from '../../../transforms/index.js';
+import { sequentialListPropsSchema } from './mdxNoteFieldSchemas.js';
 
 // WARN:You need to handle all of these transformations outside of this object now that the api classes are no longer available in the schemas package.
 export const mdxNotePropsSchema = z

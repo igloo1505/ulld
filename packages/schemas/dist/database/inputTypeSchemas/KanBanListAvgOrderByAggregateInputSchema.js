@@ -1,10 +1,8 @@
-import {
-  KanBanListAvgOrderByAggregateInputSchema,
-  KanBanListAvgOrderByAggregateInputSchema_default
-} from "../../chunk-G6MPEBS2.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanBanListAvgOrderByAggregateInputSchema,
-  KanBanListAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=KanBanListAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const KanBanListAvgOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    indexWithinBoard: z.lazy(() => SortOrderSchema).optional(),
+    boardId: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default KanBanListAvgOrderByAggregateInputSchema;

@@ -1,10 +1,7 @@
-import {
-  RandomImageCreateManyAndReturnArgsSchema,
-  RandomImageCreateManyAndReturnArgsSchema_default
-} from "../../chunk-OPEH6XMQ.js";
-import "../../chunk-UYD7WSXB.js";
-export {
-  RandomImageCreateManyAndReturnArgsSchema,
-  RandomImageCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=RandomImageCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { RandomImageCreateManyInputSchema } from '../inputTypeSchemas/RandomImageCreateManyInputSchema.js';
+export const RandomImageCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([RandomImageCreateManyInputSchema, RandomImageCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default RandomImageCreateManyAndReturnArgsSchema;

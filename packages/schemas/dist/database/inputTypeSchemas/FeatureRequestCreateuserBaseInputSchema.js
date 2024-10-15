@@ -1,9 +1,5 @@
-import {
-  FeatureRequestCreateuserBaseInputSchema,
-  FeatureRequestCreateuserBaseInputSchema_default
-} from "../../chunk-YD4DWKTK.js";
-export {
-  FeatureRequestCreateuserBaseInputSchema,
-  FeatureRequestCreateuserBaseInputSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestCreateuserBaseInputSchema.js.map
+import { z } from 'zod';
+export const FeatureRequestCreateuserBaseInputSchema = z.object({
+    set: z.string().array()
+}).strict();
+export default FeatureRequestCreateuserBaseInputSchema;

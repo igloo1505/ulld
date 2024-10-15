@@ -1,12 +1,12 @@
-import {
-  SnippetUpdateManyMutationInputSchema,
-  SnippetUpdateManyMutationInputSchema_default
-} from "../../chunk-DHENCDTD.js";
-import "../../chunk-XUR3XQ7P.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  SnippetUpdateManyMutationInputSchema,
-  SnippetUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=SnippetUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { SnippetUpdatekeywordsInputSchema } from './SnippetUpdatekeywordsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const SnippetUpdateManyMutationInputSchema = z.object({
+    content: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    description: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    keywords: z.union([z.lazy(() => SnippetUpdatekeywordsInputSchema), z.string().array()]).optional(),
+    language: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default SnippetUpdateManyMutationInputSchema;

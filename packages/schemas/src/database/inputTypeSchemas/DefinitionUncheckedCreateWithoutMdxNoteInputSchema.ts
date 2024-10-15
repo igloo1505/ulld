@@ -1,7 +1,5 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-
 export const DefinitionUncheckedCreateWithoutMdxNoteInputSchema: z.ZodType<Prisma.DefinitionUncheckedCreateWithoutMdxNoteInput> = z.object({
   id: z.string(),
   label: z.string().optional().nullable(),
@@ -10,5 +8,4 @@ export const DefinitionUncheckedCreateWithoutMdxNoteInputSchema: z.ZodType<Prism
   createdAt: z.coerce.date().optional(),
   lastAccess: z.coerce.date().optional()
 }).strict();
-
 export default DefinitionUncheckedCreateWithoutMdxNoteInputSchema;

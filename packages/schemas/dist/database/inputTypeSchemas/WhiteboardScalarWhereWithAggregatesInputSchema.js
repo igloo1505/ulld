@@ -1,17 +1,11 @@
-import {
-  WhiteboardScalarWhereWithAggregatesInputSchema,
-  WhiteboardScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-7OYOOWEX.js";
-import "../../chunk-WNFCNG2A.js";
-import "../../chunk-OUBZLTWG.js";
-import "../../chunk-3OYDE7JL.js";
-import "../../chunk-JHSRNRH3.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  WhiteboardScalarWhereWithAggregatesInputSchema,
-  WhiteboardScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=WhiteboardScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { BytesWithAggregatesFilterSchema } from './BytesWithAggregatesFilterSchema.js';
+export const WhiteboardScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => WhiteboardScalarWhereWithAggregatesInputSchema), z.lazy(() => WhiteboardScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => WhiteboardScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => WhiteboardScalarWhereWithAggregatesInputSchema), z.lazy(() => WhiteboardScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    data: z.union([z.lazy(() => BytesWithAggregatesFilterSchema), z.instanceof(Buffer)]).optional(),
+}).strict();
+export default WhiteboardScalarWhereWithAggregatesInputSchema;

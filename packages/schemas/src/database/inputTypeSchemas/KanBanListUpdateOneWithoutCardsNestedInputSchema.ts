@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanBanListCreateWithoutCardsInputSchema } from './KanBanListCreateWithoutCardsInputSchema';
-import { KanBanListUncheckedCreateWithoutCardsInputSchema } from './KanBanListUncheckedCreateWithoutCardsInputSchema';
-import { KanBanListCreateOrConnectWithoutCardsInputSchema } from './KanBanListCreateOrConnectWithoutCardsInputSchema';
-import { KanBanListUpsertWithoutCardsInputSchema } from './KanBanListUpsertWithoutCardsInputSchema';
-import { KanBanListWhereInputSchema } from './KanBanListWhereInputSchema';
-import { KanBanListWhereUniqueInputSchema } from './KanBanListWhereUniqueInputSchema';
-import { KanBanListUpdateToOneWithWhereWithoutCardsInputSchema } from './KanBanListUpdateToOneWithWhereWithoutCardsInputSchema';
-import { KanBanListUpdateWithoutCardsInputSchema } from './KanBanListUpdateWithoutCardsInputSchema';
-import { KanBanListUncheckedUpdateWithoutCardsInputSchema } from './KanBanListUncheckedUpdateWithoutCardsInputSchema';
-
+import { KanBanListCreateWithoutCardsInputSchema } from './KanBanListCreateWithoutCardsInputSchema.js';
+import { KanBanListUncheckedCreateWithoutCardsInputSchema } from './KanBanListUncheckedCreateWithoutCardsInputSchema.js';
+import { KanBanListCreateOrConnectWithoutCardsInputSchema } from './KanBanListCreateOrConnectWithoutCardsInputSchema.js';
+import { KanBanListUpsertWithoutCardsInputSchema } from './KanBanListUpsertWithoutCardsInputSchema.js';
+import { KanBanListWhereInputSchema } from './KanBanListWhereInputSchema.js';
+import { KanBanListWhereUniqueInputSchema } from './KanBanListWhereUniqueInputSchema.js';
+import { KanBanListUpdateToOneWithWhereWithoutCardsInputSchema } from './KanBanListUpdateToOneWithWhereWithoutCardsInputSchema.js';
+import { KanBanListUpdateWithoutCardsInputSchema } from './KanBanListUpdateWithoutCardsInputSchema.js';
+import { KanBanListUncheckedUpdateWithoutCardsInputSchema } from './KanBanListUncheckedUpdateWithoutCardsInputSchema.js';
 export const KanBanListUpdateOneWithoutCardsNestedInputSchema: z.ZodType<Prisma.KanBanListUpdateOneWithoutCardsNestedInput> = z.object({
   create: z.union([ z.lazy(() => KanBanListCreateWithoutCardsInputSchema),z.lazy(() => KanBanListUncheckedCreateWithoutCardsInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => KanBanListCreateOrConnectWithoutCardsInputSchema).optional(),
@@ -20,5 +18,4 @@ export const KanBanListUpdateOneWithoutCardsNestedInputSchema: z.ZodType<Prisma.
   connect: z.lazy(() => KanBanListWhereUniqueInputSchema).optional(),
   update: z.union([ z.lazy(() => KanBanListUpdateToOneWithWhereWithoutCardsInputSchema),z.lazy(() => KanBanListUpdateWithoutCardsInputSchema),z.lazy(() => KanBanListUncheckedUpdateWithoutCardsInputSchema) ]).optional(),
 }).strict();
-
 export default KanBanListUpdateOneWithoutCardsNestedInputSchema;

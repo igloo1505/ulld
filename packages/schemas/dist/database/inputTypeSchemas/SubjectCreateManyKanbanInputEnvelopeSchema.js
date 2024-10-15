@@ -1,10 +1,7 @@
-import {
-  SubjectCreateManyKanbanInputEnvelopeSchema,
-  SubjectCreateManyKanbanInputEnvelopeSchema_default
-} from "../../chunk-U65Z563A.js";
-import "../../chunk-JWBKN6ZD.js";
-export {
-  SubjectCreateManyKanbanInputEnvelopeSchema,
-  SubjectCreateManyKanbanInputEnvelopeSchema_default as default
-};
-//# sourceMappingURL=SubjectCreateManyKanbanInputEnvelopeSchema.js.map
+import { z } from 'zod';
+import { SubjectCreateManyKanbanInputSchema } from './SubjectCreateManyKanbanInputSchema.js';
+export const SubjectCreateManyKanbanInputEnvelopeSchema = z.object({
+    data: z.union([z.lazy(() => SubjectCreateManyKanbanInputSchema), z.lazy(() => SubjectCreateManyKanbanInputSchema).array()]),
+    skipDuplicates: z.boolean().optional()
+}).strict();
+export default SubjectCreateManyKanbanInputEnvelopeSchema;

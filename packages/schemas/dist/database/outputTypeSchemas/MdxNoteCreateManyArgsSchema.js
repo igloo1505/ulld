@@ -1,13 +1,7 @@
-import {
-  MdxNoteCreateManyArgsSchema,
-  MdxNoteCreateManyArgsSchema_default
-} from "../../chunk-BOXE5QGP.js";
-import "../../chunk-3PNL7WXZ.js";
-import "../../chunk-HAVVN653.js";
-import "../../chunk-FDXW24EV.js";
-import "../../chunk-D6LM45E3.js";
-export {
-  MdxNoteCreateManyArgsSchema,
-  MdxNoteCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=MdxNoteCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { MdxNoteCreateManyInputSchema } from '../inputTypeSchemas/MdxNoteCreateManyInputSchema.js';
+export const MdxNoteCreateManyArgsSchema = z.object({
+    data: z.union([MdxNoteCreateManyInputSchema, MdxNoteCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default MdxNoteCreateManyArgsSchema;

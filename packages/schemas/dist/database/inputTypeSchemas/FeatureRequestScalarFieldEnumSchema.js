@@ -1,9 +1,3 @@
-import {
-  FeatureRequestScalarFieldEnumSchema,
-  FeatureRequestScalarFieldEnumSchema_default
-} from "../../chunk-OUYI6IKH.js";
-export {
-  FeatureRequestScalarFieldEnumSchema,
-  FeatureRequestScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const FeatureRequestScalarFieldEnumSchema = z.enum(['id', 'email', 'message', 'category', 'userBase', 'receivedOn']);
+export default FeatureRequestScalarFieldEnumSchema;

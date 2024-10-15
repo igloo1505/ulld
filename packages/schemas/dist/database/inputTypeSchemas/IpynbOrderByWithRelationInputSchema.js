@@ -1,24 +1,36 @@
-import {
-  IpynbOrderByWithRelationInputSchema,
-  IpynbOrderByWithRelationInputSchema_default
-} from "../../chunk-Y6EMIHNR.js";
-import "../../chunk-DY7K4H5E.js";
-import "../../chunk-RVZOCS6Z.js";
-import "../../chunk-RFWHT4GW.js";
-import "../../chunk-PMLTVZ4P.js";
-import "../../chunk-BXHWLRTY.js";
-import "../../chunk-5QVEHY36.js";
-import "../../chunk-DD4B26NX.js";
-import "../../chunk-XY5DOPOB.js";
-import "../../chunk-FEI37AUG.js";
-import "../../chunk-TYDF4OCO.js";
-import "../../chunk-YD6HBAOC.js";
-import "../../chunk-GGRFX4OU.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  IpynbOrderByWithRelationInputSchema,
-  IpynbOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=IpynbOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema.js';
+import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema.js';
+import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema.js';
+import { BibEntryOrderByRelationAggregateInputSchema } from './BibEntryOrderByRelationAggregateInputSchema.js';
+import { SequentialNoteListOrderByWithRelationInputSchema } from './SequentialNoteListOrderByWithRelationInputSchema.js';
+import { ReadingListOrderByRelationAggregateInputSchema } from './ReadingListOrderByRelationAggregateInputSchema.js';
+import { IpynbOrderByRelevanceInputSchema } from './IpynbOrderByRelevanceInputSchema.js';
+export const IpynbOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    rootRelativePath: z.lazy(() => SortOrderSchema).optional(),
+    isProtected: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    title: z.lazy(() => SortOrderSchema).optional(),
+    latexTitle: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    citationsListOrder: z.lazy(() => SortOrderSchema).optional(),
+    importantValues: z.lazy(() => SortOrderSchema).optional(),
+    href: z.lazy(() => SortOrderSchema).optional(),
+    outgoingQuickLinks: z.lazy(() => SortOrderSchema).optional(),
+    raw: z.lazy(() => SortOrderSchema).optional(),
+    sequentialKey: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    sequentialIndex: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    bookmarked: z.lazy(() => SortOrderSchema).optional(),
+    firstSync: z.lazy(() => SortOrderSchema).optional(),
+    lastSync: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional(),
+    tags: z.lazy(() => TagOrderByRelationAggregateInputSchema).optional(),
+    topics: z.lazy(() => TopicOrderByRelationAggregateInputSchema).optional(),
+    subjects: z.lazy(() => SubjectOrderByRelationAggregateInputSchema).optional(),
+    citations: z.lazy(() => BibEntryOrderByRelationAggregateInputSchema).optional(),
+    sequentialList: z.lazy(() => SequentialNoteListOrderByWithRelationInputSchema).optional(),
+    readingList: z.lazy(() => ReadingListOrderByRelationAggregateInputSchema).optional(),
+    _relevance: z.lazy(() => IpynbOrderByRelevanceInputSchema).optional()
+}).strict();
+export default IpynbOrderByWithRelationInputSchema;

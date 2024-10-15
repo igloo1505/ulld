@@ -1,12 +1,10 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { CitationsGroupCountOrderByAggregateInputSchema } from './CitationsGroupCountOrderByAggregateInputSchema';
-import { CitationsGroupMaxOrderByAggregateInputSchema } from './CitationsGroupMaxOrderByAggregateInputSchema';
-import { CitationsGroupMinOrderByAggregateInputSchema } from './CitationsGroupMinOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { CitationsGroupCountOrderByAggregateInputSchema } from './CitationsGroupCountOrderByAggregateInputSchema.js';
+import { CitationsGroupMaxOrderByAggregateInputSchema } from './CitationsGroupMaxOrderByAggregateInputSchema.js';
+import { CitationsGroupMinOrderByAggregateInputSchema } from './CitationsGroupMinOrderByAggregateInputSchema.js';
 export const CitationsGroupOrderByWithAggregationInputSchema: z.ZodType<Prisma.CitationsGroupOrderByWithAggregationInput> = z.object({
   name: z.lazy(() => SortOrderSchema).optional(),
   description: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
@@ -14,5 +12,4 @@ export const CitationsGroupOrderByWithAggregationInputSchema: z.ZodType<Prisma.C
   _max: z.lazy(() => CitationsGroupMaxOrderByAggregateInputSchema).optional(),
   _min: z.lazy(() => CitationsGroupMinOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default CitationsGroupOrderByWithAggregationInputSchema;

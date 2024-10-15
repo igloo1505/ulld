@@ -1,15 +1,19 @@
-import {
-  BibOrderByWithAggregationInputSchema,
-  BibOrderByWithAggregationInputSchema_default
-} from "../../chunk-HVWRAQPZ.js";
-import "../../chunk-BLVZZFMQ.js";
-import "../../chunk-47K2MUEW.js";
-import "../../chunk-OCTO4XGA.js";
-import "../../chunk-DVRWZRZR.js";
-import "../../chunk-7VSSONYG.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  BibOrderByWithAggregationInputSchema,
-  BibOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=BibOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { BibCountOrderByAggregateInputSchema } from './BibCountOrderByAggregateInputSchema.js';
+import { BibAvgOrderByAggregateInputSchema } from './BibAvgOrderByAggregateInputSchema.js';
+import { BibMaxOrderByAggregateInputSchema } from './BibMaxOrderByAggregateInputSchema.js';
+import { BibMinOrderByAggregateInputSchema } from './BibMinOrderByAggregateInputSchema.js';
+import { BibSumOrderByAggregateInputSchema } from './BibSumOrderByAggregateInputSchema.js';
+export const BibOrderByWithAggregationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    filename: z.lazy(() => SortOrderSchema).optional(),
+    firstSync: z.lazy(() => SortOrderSchema).optional(),
+    lastSync: z.lazy(() => SortOrderSchema).optional(),
+    _count: z.lazy(() => BibCountOrderByAggregateInputSchema).optional(),
+    _avg: z.lazy(() => BibAvgOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => BibMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => BibMinOrderByAggregateInputSchema).optional(),
+    _sum: z.lazy(() => BibSumOrderByAggregateInputSchema).optional()
+}).strict();
+export default BibOrderByWithAggregationInputSchema;

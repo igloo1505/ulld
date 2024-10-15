@@ -1,10 +1,6 @@
-import {
-  TopicOrderByRelationAggregateInputSchema,
-  TopicOrderByRelationAggregateInputSchema_default
-} from "../../chunk-GGRFX4OU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TopicOrderByRelationAggregateInputSchema,
-  TopicOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=TopicOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const TopicOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default TopicOrderByRelationAggregateInputSchema;

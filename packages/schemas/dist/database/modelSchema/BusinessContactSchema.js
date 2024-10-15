@@ -1,11 +1,19 @@
-import {
-  BusinessContactPartialSchema,
-  BusinessContactSchema,
-  BusinessContactSchema_default
-} from "../../chunk-WSFJB6XX.js";
-export {
-  BusinessContactPartialSchema,
-  BusinessContactSchema,
-  BusinessContactSchema_default as default
-};
-//# sourceMappingURL=BusinessContactSchema.js.map
+import { z } from 'zod';
+/////////////////////////////////////////
+// BUSINESS CONTACT SCHEMA
+/////////////////////////////////////////
+export const BusinessContactSchema = z.object({
+    id: z.number().int(),
+    companyName: z.string(),
+    contactName: z.string(),
+    contactPreference: z.string(),
+    email: z.string().nullable(),
+    phone: z.string().nullable(),
+    message: z.string(),
+    purpose: z.string().nullable(),
+});
+/////////////////////////////////////////
+// BUSINESS CONTACT PARTIAL SCHEMA
+/////////////////////////////////////////
+export const BusinessContactPartialSchema = BusinessContactSchema.partial();
+export default BusinessContactSchema;

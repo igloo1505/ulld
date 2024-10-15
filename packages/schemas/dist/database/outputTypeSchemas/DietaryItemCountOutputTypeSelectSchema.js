@@ -1,9 +1,6 @@
-import {
-  DietaryItemCountOutputTypeSelectSchema,
-  DietaryItemCountOutputTypeSelectSchema_default
-} from "../../chunk-RNIPPCR5.js";
-export {
-  DietaryItemCountOutputTypeSelectSchema,
-  DietaryItemCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=DietaryItemCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const DietaryItemCountOutputTypeSelectSchema = z.object({
+    Diet: z.boolean().optional(),
+    Serving: z.boolean().optional(),
+}).strict();
+export default DietaryItemCountOutputTypeSelectSchema;

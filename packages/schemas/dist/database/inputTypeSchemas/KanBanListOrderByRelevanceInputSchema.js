@@ -1,11 +1,9 @@
-import {
-  KanBanListOrderByRelevanceInputSchema,
-  KanBanListOrderByRelevanceInputSchema_default
-} from "../../chunk-Y43QGVFU.js";
-import "../../chunk-3VQACKJX.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanBanListOrderByRelevanceInputSchema,
-  KanBanListOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=KanBanListOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { KanBanListOrderByRelevanceFieldEnumSchema } from './KanBanListOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const KanBanListOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => KanBanListOrderByRelevanceFieldEnumSchema), z.lazy(() => KanBanListOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default KanBanListOrderByRelevanceInputSchema;

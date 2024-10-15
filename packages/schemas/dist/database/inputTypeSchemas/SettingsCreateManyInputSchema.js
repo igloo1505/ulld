@@ -1,12 +1,19 @@
-import {
-  SettingsCreateManyInputSchema,
-  SettingsCreateManyInputSchema_default
-} from "../../chunk-YVELXHHQ.js";
-import "../../chunk-XOBHDDTF.js";
-import "../../chunk-ZXTFXMHW.js";
-import "../../chunk-T77FYKUT.js";
-export {
-  SettingsCreateManyInputSchema,
-  SettingsCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=SettingsCreateManyInputSchema.js.map
+import { z } from 'zod';
+import { ImageAlignmentSchema } from './ImageAlignmentSchema.js';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+export const SettingsCreateManyInputSchema = z.object({
+    id: z.number().int().optional(),
+    tooltips: z.boolean().optional(),
+    title: z.string().optional(),
+    summary_showCitations: z.boolean().optional(),
+    summary_showTags: z.boolean().optional(),
+    landingImageAlign: z.lazy(() => ImageAlignmentSchema).optional(),
+    lockedLandingImage: z.string().optional().nullable(),
+    cleanOnSync: z.boolean().optional(),
+    plotTheme: z.string().optional().nullable(),
+    pluginSettings: z.union([z.lazy(() => JsonNullValueInputSchema), InputJsonValueSchema]).optional(),
+    firstSync: z.coerce.date().optional(),
+    lastSync: z.coerce.date().optional()
+}).strict();
+export default SettingsCreateManyInputSchema;

@@ -1,9 +1,6 @@
-import {
-  FeatureRequestUpdatecategoryInputSchema,
-  FeatureRequestUpdatecategoryInputSchema_default
-} from "../../chunk-E73MKCYZ.js";
-export {
-  FeatureRequestUpdatecategoryInputSchema,
-  FeatureRequestUpdatecategoryInputSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestUpdatecategoryInputSchema.js.map
+import { z } from 'zod';
+export const FeatureRequestUpdatecategoryInputSchema = z.object({
+    set: z.string().array().optional(),
+    push: z.union([z.string(), z.string().array()]).optional(),
+}).strict();
+export default FeatureRequestUpdatecategoryInputSchema;

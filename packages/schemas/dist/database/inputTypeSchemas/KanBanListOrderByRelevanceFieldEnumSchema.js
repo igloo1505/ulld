@@ -1,9 +1,3 @@
-import {
-  KanBanListOrderByRelevanceFieldEnumSchema,
-  KanBanListOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-3VQACKJX.js";
-export {
-  KanBanListOrderByRelevanceFieldEnumSchema,
-  KanBanListOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=KanBanListOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const KanBanListOrderByRelevanceFieldEnumSchema = z.enum(['title']);
+export default KanBanListOrderByRelevanceFieldEnumSchema;

@@ -1,10 +1,16 @@
-import {
-  ToDoCreateManyToDoListInputSchema,
-  ToDoCreateManyToDoListInputSchema_default
-} from "../../chunk-VXVLSA4O.js";
-import "../../chunk-T4CHWTHS.js";
-export {
-  ToDoCreateManyToDoListInputSchema,
-  ToDoCreateManyToDoListInputSchema_default as default
-};
-//# sourceMappingURL=ToDoCreateManyToDoListInputSchema.js.map
+import { z } from 'zod';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+export const ToDoCreateManyToDoListInputSchema = z.object({
+    id: z.number().int().optional(),
+    createdAt: z.coerce.date().optional(),
+    task: z.string(),
+    dueAt: z.coerce.date().optional().nullable(),
+    details: z.string().optional().nullable(),
+    parentId: z.number().int().optional().nullable(),
+    category: z.lazy(() => TaskCategorySchema).optional().nullable(),
+    bookmarked: z.boolean().optional(),
+    status: z.string().optional(),
+    priority: z.number().int().optional(),
+    completedOn: z.coerce.date().optional().nullable()
+}).strict();
+export default ToDoCreateManyToDoListInputSchema;

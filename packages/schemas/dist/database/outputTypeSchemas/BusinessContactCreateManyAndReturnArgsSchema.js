@@ -1,10 +1,7 @@
-import {
-  BusinessContactCreateManyAndReturnArgsSchema,
-  BusinessContactCreateManyAndReturnArgsSchema_default
-} from "../../chunk-TMQNEKN2.js";
-import "../../chunk-SONJ7NB4.js";
-export {
-  BusinessContactCreateManyAndReturnArgsSchema,
-  BusinessContactCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=BusinessContactCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { BusinessContactCreateManyInputSchema } from '../inputTypeSchemas/BusinessContactCreateManyInputSchema.js';
+export const BusinessContactCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([BusinessContactCreateManyInputSchema, BusinessContactCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default BusinessContactCreateManyAndReturnArgsSchema;

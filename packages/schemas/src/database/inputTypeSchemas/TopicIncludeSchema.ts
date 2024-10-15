@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
+import type { Prisma } from '@ulld/database/db';
 import { MdxNoteFindManyArgsSchema } from "../outputTypeSchemas/MdxNoteFindManyArgsSchema"
 import { IpynbFindManyArgsSchema } from "../outputTypeSchemas/IpynbFindManyArgsSchema"
 import { QAPairFindManyArgsSchema } from "../outputTypeSchemas/QAPairFindManyArgsSchema"
@@ -10,7 +10,6 @@ import { ToDoListFindManyArgsSchema } from "../outputTypeSchemas/ToDoListFindMan
 import { BibEntryFindManyArgsSchema } from "../outputTypeSchemas/BibEntryFindManyArgsSchema"
 import { EquationFindManyArgsSchema } from "../outputTypeSchemas/EquationFindManyArgsSchema"
 import { TopicCountOutputTypeArgsSchema } from "../outputTypeSchemas/TopicCountOutputTypeArgsSchema"
-
 export const TopicIncludeSchema: z.ZodType<Prisma.TopicInclude> = z.object({
   MdxNotes: z.union([z.boolean(),z.lazy(() => MdxNoteFindManyArgsSchema)]).optional(),
   ipynbNotes: z.union([z.boolean(),z.lazy(() => IpynbFindManyArgsSchema)]).optional(),
@@ -23,5 +22,4 @@ export const TopicIncludeSchema: z.ZodType<Prisma.TopicInclude> = z.object({
   equations: z.union([z.boolean(),z.lazy(() => EquationFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => TopicCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export default TopicIncludeSchema;

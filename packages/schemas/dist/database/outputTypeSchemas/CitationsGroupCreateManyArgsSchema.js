@@ -1,10 +1,7 @@
-import {
-  CitationsGroupCreateManyArgsSchema,
-  CitationsGroupCreateManyArgsSchema_default
-} from "../../chunk-DPXJTHMM.js";
-import "../../chunk-LFFSHALU.js";
-export {
-  CitationsGroupCreateManyArgsSchema,
-  CitationsGroupCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { CitationsGroupCreateManyInputSchema } from '../inputTypeSchemas/CitationsGroupCreateManyInputSchema.js';
+export const CitationsGroupCreateManyArgsSchema = z.object({
+    data: z.union([CitationsGroupCreateManyInputSchema, CitationsGroupCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default CitationsGroupCreateManyArgsSchema;

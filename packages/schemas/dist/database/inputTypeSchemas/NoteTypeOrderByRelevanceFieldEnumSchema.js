@@ -1,9 +1,3 @@
-import {
-  NoteTypeOrderByRelevanceFieldEnumSchema,
-  NoteTypeOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-CCAV3APO.js";
-export {
-  NoteTypeOrderByRelevanceFieldEnumSchema,
-  NoteTypeOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=NoteTypeOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const NoteTypeOrderByRelevanceFieldEnumSchema = z.enum(['name']);
+export default NoteTypeOrderByRelevanceFieldEnumSchema;

@@ -1,9 +1,5 @@
-import {
-  RelatedValuesCountOutputTypeSelectSchema,
-  RelatedValuesCountOutputTypeSelectSchema_default
-} from "../../chunk-ZKOREBRP.js";
-export {
-  RelatedValuesCountOutputTypeSelectSchema,
-  RelatedValuesCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const RelatedValuesCountOutputTypeSelectSchema = z.object({
+    equations: z.boolean().optional(),
+}).strict();
+export default RelatedValuesCountOutputTypeSelectSchema;

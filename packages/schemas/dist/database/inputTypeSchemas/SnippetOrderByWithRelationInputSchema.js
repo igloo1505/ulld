@@ -1,12 +1,13 @@
-import {
-  SnippetOrderByWithRelationInputSchema,
-  SnippetOrderByWithRelationInputSchema_default
-} from "../../chunk-KTLG6RXV.js";
-import "../../chunk-GN5OA7TH.js";
-import "../../chunk-25CTNZX7.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SnippetOrderByWithRelationInputSchema,
-  SnippetOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=SnippetOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SnippetOrderByRelevanceInputSchema } from './SnippetOrderByRelevanceInputSchema.js';
+export const SnippetOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    content: z.lazy(() => SortOrderSchema).optional(),
+    description: z.lazy(() => SortOrderSchema).optional(),
+    keywords: z.lazy(() => SortOrderSchema).optional(),
+    language: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    _relevance: z.lazy(() => SnippetOrderByRelevanceInputSchema).optional()
+}).strict();
+export default SnippetOrderByWithRelationInputSchema;

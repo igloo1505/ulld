@@ -1,37 +1,28 @@
-import {
-  ToDoScalarWhereWithAggregatesInputSchema,
-  ToDoScalarWhereWithAggregatesInputSchema_default
-} from "../../chunk-FBEPLOUP.js";
-import "../../chunk-TJD45Q2I.js";
-import "../../chunk-A3WXRJIM.js";
-import "../../chunk-YDWZQXJY.js";
-import "../../chunk-TQ7L5ZAX.js";
-import "../../chunk-CRFLRRUS.js";
-import "../../chunk-QGQG76J7.js";
-import "../../chunk-BZ55PUI6.js";
-import "../../chunk-VFKLP7TG.js";
-import "../../chunk-VKTRMAGB.js";
-import "../../chunk-Y6KFO3UF.js";
-import "../../chunk-4A6JCUBO.js";
-import "../../chunk-T4CHWTHS.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-S2WAI7QC.js";
-import "../../chunk-TPDRVVNK.js";
-import "../../chunk-XCQN6FNH.js";
-import "../../chunk-7P2FYBUR.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-3OYDE7JL.js";
-import "../../chunk-JHSRNRH3.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  ToDoScalarWhereWithAggregatesInputSchema,
-  ToDoScalarWhereWithAggregatesInputSchema_default as default
-};
-//# sourceMappingURL=ToDoScalarWhereWithAggregatesInputSchema.js.map
+import { z } from 'zod';
+import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { DateTimeNullableWithAggregatesFilterSchema } from './DateTimeNullableWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema.js';
+import { EnumTaskCategoryNullableWithAggregatesFilterSchema } from './EnumTaskCategoryNullableWithAggregatesFilterSchema.js';
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
+export const ToDoScalarWhereWithAggregatesInputSchema = z.object({
+    AND: z.union([z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema), z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    OR: z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema), z.lazy(() => ToDoScalarWhereWithAggregatesInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    createdAt: z.union([z.lazy(() => DateTimeWithAggregatesFilterSchema), z.coerce.date()]).optional(),
+    task: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    dueAt: z.union([z.lazy(() => DateTimeNullableWithAggregatesFilterSchema), z.coerce.date()]).optional().nullable(),
+    details: z.union([z.lazy(() => StringNullableWithAggregatesFilterSchema), z.string()]).optional().nullable(),
+    parentId: z.union([z.lazy(() => IntNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    category: z.union([z.lazy(() => EnumTaskCategoryNullableWithAggregatesFilterSchema), z.lazy(() => TaskCategorySchema)]).optional().nullable(),
+    bookmarked: z.union([z.lazy(() => BoolWithAggregatesFilterSchema), z.boolean()]).optional(),
+    status: z.union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()]).optional(),
+    priority: z.union([z.lazy(() => IntWithAggregatesFilterSchema), z.number()]).optional(),
+    toDoListId: z.union([z.lazy(() => IntNullableWithAggregatesFilterSchema), z.number()]).optional().nullable(),
+    completedOn: z.union([z.lazy(() => DateTimeNullableWithAggregatesFilterSchema), z.coerce.date()]).optional().nullable(),
+}).strict();
+export default ToDoScalarWhereWithAggregatesInputSchema;

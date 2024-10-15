@@ -1,12 +1,11 @@
-import {
-  TagUncheckedUpdateManyWithoutMdxNotesInputSchema,
-  TagUncheckedUpdateManyWithoutMdxNotesInputSchema_default
-} from "../../chunk-RKM6K5VW.js";
-import "../../chunk-7KFMTKWN.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  TagUncheckedUpdateManyWithoutMdxNotesInputSchema,
-  TagUncheckedUpdateManyWithoutMdxNotesInputSchema_default as default
-};
-//# sourceMappingURL=TagUncheckedUpdateManyWithoutMdxNotesInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const TagUncheckedUpdateManyWithoutMdxNotesInputSchema = z.object({
+    value: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    kanbanId: z.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastAccess: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default TagUncheckedUpdateManyWithoutMdxNotesInputSchema;

@@ -1,12 +1,10 @@
-import {
-  TimePeriodUncheckedUpdateWithoutDietInputSchema,
-  TimePeriodUncheckedUpdateWithoutDietInputSchema_default
-} from "../../chunk-5YNSY6UX.js";
-import "../../chunk-FYUHI5X3.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-export {
-  TimePeriodUncheckedUpdateWithoutDietInputSchema,
-  TimePeriodUncheckedUpdateWithoutDietInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodUncheckedUpdateWithoutDietInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+import { NullableDateTimeFieldUpdateOperationsInputSchema } from './NullableDateTimeFieldUpdateOperationsInputSchema.js';
+export const TimePeriodUncheckedUpdateWithoutDietInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    start: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    end: z.union([z.coerce.date(), z.lazy(() => NullableDateTimeFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default TimePeriodUncheckedUpdateWithoutDietInputSchema;

@@ -1,10 +1,9 @@
-import {
-  TimePeriodCountOrderByAggregateInputSchema,
-  TimePeriodCountOrderByAggregateInputSchema_default
-} from "../../chunk-O7DVKYKQ.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TimePeriodCountOrderByAggregateInputSchema,
-  TimePeriodCountOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodCountOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const TimePeriodCountOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    start: z.lazy(() => SortOrderSchema).optional(),
+    end: z.lazy(() => SortOrderSchema).optional(),
+    dietId: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default TimePeriodCountOrderByAggregateInputSchema;

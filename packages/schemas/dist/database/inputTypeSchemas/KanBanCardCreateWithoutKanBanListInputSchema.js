@@ -1,9 +1,7 @@
-import {
-  KanBanCardCreateWithoutKanBanListInputSchema,
-  KanBanCardCreateWithoutKanBanListInputSchema_default
-} from "../../chunk-5Z5OUN6K.js";
-export {
-  KanBanCardCreateWithoutKanBanListInputSchema,
-  KanBanCardCreateWithoutKanBanListInputSchema_default as default
-};
-//# sourceMappingURL=KanBanCardCreateWithoutKanBanListInputSchema.js.map
+import { z } from 'zod';
+export const KanBanCardCreateWithoutKanBanListInputSchema = z.object({
+    indexWithinList: z.number().int(),
+    label: z.string().optional().nullable(),
+    details: z.string().optional().nullable()
+}).strict();
+export default KanBanCardCreateWithoutKanBanListInputSchema;

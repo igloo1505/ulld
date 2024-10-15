@@ -1,20 +1,15 @@
-import {
-  WaitlistRequestFindUniqueArgsSchema,
-  WaitlistRequestFindUniqueArgsSchema_default,
-  WaitlistRequestSelectSchema
-} from "../../chunk-EFAEP6VI.js";
-import "../../chunk-WBUZRDLR.js";
-import "../../chunk-7ELNXEAA.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  WaitlistRequestFindUniqueArgsSchema,
-  WaitlistRequestSelectSchema,
-  WaitlistRequestFindUniqueArgsSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestFindUniqueArgsSchema.js.map
+import { z } from 'zod';
+import { WaitlistRequestWhereUniqueInputSchema } from '../inputTypeSchemas/WaitlistRequestWhereUniqueInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const WaitlistRequestSelectSchema = z.object({
+    id: z.boolean().optional(),
+    email: z.boolean().optional(),
+    receivedOn: z.boolean().optional(),
+    emailsSent: z.boolean().optional(),
+}).strict();
+export const WaitlistRequestFindUniqueArgsSchema = z.object({
+    select: WaitlistRequestSelectSchema.optional(),
+    where: WaitlistRequestWhereUniqueInputSchema,
+}).strict();
+export default WaitlistRequestFindUniqueArgsSchema;

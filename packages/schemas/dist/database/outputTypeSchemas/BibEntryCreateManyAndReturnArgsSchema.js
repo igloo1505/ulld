@@ -1,10 +1,7 @@
-import {
-  BibEntryCreateManyAndReturnArgsSchema,
-  BibEntryCreateManyAndReturnArgsSchema_default
-} from "../../chunk-KHDDBJIR.js";
-import "../../chunk-IFO6IHMV.js";
-export {
-  BibEntryCreateManyAndReturnArgsSchema,
-  BibEntryCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=BibEntryCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { BibEntryCreateManyInputSchema } from '../inputTypeSchemas/BibEntryCreateManyInputSchema.js';
+export const BibEntryCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([BibEntryCreateManyInputSchema, BibEntryCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default BibEntryCreateManyAndReturnArgsSchema;

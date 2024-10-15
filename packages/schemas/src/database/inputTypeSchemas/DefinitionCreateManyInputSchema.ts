@@ -1,7 +1,5 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-
 export const DefinitionCreateManyInputSchema: z.ZodType<Prisma.DefinitionCreateManyInput> = z.object({
   id: z.string(),
   label: z.string().optional().nullable(),
@@ -11,5 +9,4 @@ export const DefinitionCreateManyInputSchema: z.ZodType<Prisma.DefinitionCreateM
   createdAt: z.coerce.date().optional(),
   lastAccess: z.coerce.date().optional()
 }).strict();
-
 export default DefinitionCreateManyInputSchema;

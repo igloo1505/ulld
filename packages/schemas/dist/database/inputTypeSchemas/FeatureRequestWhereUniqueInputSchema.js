@@ -1,18 +1,20 @@
-import {
-  FeatureRequestWhereUniqueInputSchema,
-  FeatureRequestWhereUniqueInputSchema_default
-} from "../../chunk-RQECGBYQ.js";
-import "../../chunk-DVDRYS7P.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  FeatureRequestWhereUniqueInputSchema,
-  FeatureRequestWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { FeatureRequestWhereInputSchema } from './FeatureRequestWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableListFilterSchema } from './StringNullableListFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+export const FeatureRequestWhereUniqueInputSchema = z.object({
+    id: z.number().int()
+})
+    .and(z.object({
+    id: z.number().int().optional(),
+    AND: z.union([z.lazy(() => FeatureRequestWhereInputSchema), z.lazy(() => FeatureRequestWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => FeatureRequestWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => FeatureRequestWhereInputSchema), z.lazy(() => FeatureRequestWhereInputSchema).array()]).optional(),
+    email: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    message: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    category: z.lazy(() => StringNullableListFilterSchema).optional(),
+    userBase: z.lazy(() => StringNullableListFilterSchema).optional(),
+    receivedOn: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+}).strict());
+export default FeatureRequestWhereUniqueInputSchema;

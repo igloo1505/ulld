@@ -1,18 +1,9 @@
-import {
-  PracticeExamUpdateManyWithWhereWithoutTagsInputSchema,
-  PracticeExamUpdateManyWithWhereWithoutTagsInputSchema_default
-} from "../../chunk-6LCN5MBO.js";
-import "../../chunk-TV3CC3FD.js";
-import "../../chunk-G5T6CKCO.js";
-import "../../chunk-ATBEKMFT.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-export {
-  PracticeExamUpdateManyWithWhereWithoutTagsInputSchema,
-  PracticeExamUpdateManyWithWhereWithoutTagsInputSchema_default as default
-};
-//# sourceMappingURL=PracticeExamUpdateManyWithWhereWithoutTagsInputSchema.js.map
+import { z } from 'zod';
+import { PracticeExamScalarWhereInputSchema } from './PracticeExamScalarWhereInputSchema.js';
+import { PracticeExamUpdateManyMutationInputSchema } from './PracticeExamUpdateManyMutationInputSchema.js';
+import { PracticeExamUncheckedUpdateManyWithoutTagsInputSchema } from './PracticeExamUncheckedUpdateManyWithoutTagsInputSchema.js';
+export const PracticeExamUpdateManyWithWhereWithoutTagsInputSchema = z.object({
+    where: z.lazy(() => PracticeExamScalarWhereInputSchema),
+    data: z.union([z.lazy(() => PracticeExamUpdateManyMutationInputSchema), z.lazy(() => PracticeExamUncheckedUpdateManyWithoutTagsInputSchema)]),
+}).strict();
+export default PracticeExamUpdateManyWithWhereWithoutTagsInputSchema;

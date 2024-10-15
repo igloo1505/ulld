@@ -1,9 +1,6 @@
-import {
-  DailyFocusUncheckedCreateInputSchema,
-  DailyFocusUncheckedCreateInputSchema_default
-} from "../../chunk-APECMFWK.js";
-export {
-  DailyFocusUncheckedCreateInputSchema,
-  DailyFocusUncheckedCreateInputSchema_default as default
-};
-//# sourceMappingURL=DailyFocusUncheckedCreateInputSchema.js.map
+import { z } from 'zod';
+export const DailyFocusUncheckedCreateInputSchema = z.object({
+    value: z.string(),
+    createdAt: z.coerce.date().optional()
+}).strict();
+export default DailyFocusUncheckedCreateInputSchema;

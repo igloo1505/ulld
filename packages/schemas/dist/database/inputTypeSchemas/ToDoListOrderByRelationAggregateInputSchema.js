@@ -1,10 +1,6 @@
-import {
-  ToDoListOrderByRelationAggregateInputSchema,
-  ToDoListOrderByRelationAggregateInputSchema_default
-} from "../../chunk-I7SPNYR7.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ToDoListOrderByRelationAggregateInputSchema,
-  ToDoListOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=ToDoListOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ToDoListOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default ToDoListOrderByRelationAggregateInputSchema;

@@ -1,9 +1,5 @@
-import {
-  IpynbCreatecitationsListOrderInputSchema,
-  IpynbCreatecitationsListOrderInputSchema_default
-} from "../../chunk-UVQGJQS6.js";
-export {
-  IpynbCreatecitationsListOrderInputSchema,
-  IpynbCreatecitationsListOrderInputSchema_default as default
-};
-//# sourceMappingURL=IpynbCreatecitationsListOrderInputSchema.js.map
+import { z } from 'zod';
+export const IpynbCreatecitationsListOrderInputSchema = z.object({
+    set: z.string().array()
+}).strict();
+export default IpynbCreatecitationsListOrderInputSchema;

@@ -1,9 +1,9 @@
-import {
-  IpynbCountOutputTypeSelectSchema,
-  IpynbCountOutputTypeSelectSchema_default
-} from "../../chunk-3KP7KBW7.js";
-export {
-  IpynbCountOutputTypeSelectSchema,
-  IpynbCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=IpynbCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const IpynbCountOutputTypeSelectSchema = z.object({
+    tags: z.boolean().optional(),
+    topics: z.boolean().optional(),
+    subjects: z.boolean().optional(),
+    citations: z.boolean().optional(),
+    readingList: z.boolean().optional(),
+}).strict();
+export default IpynbCountOutputTypeSelectSchema;

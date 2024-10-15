@@ -1,10 +1,7 @@
-import {
-  HealthReportCreateManyCurrentDietInputEnvelopeSchema,
-  HealthReportCreateManyCurrentDietInputEnvelopeSchema_default
-} from "../../chunk-LMS6SAPK.js";
-import "../../chunk-NUJNZYIW.js";
-export {
-  HealthReportCreateManyCurrentDietInputEnvelopeSchema,
-  HealthReportCreateManyCurrentDietInputEnvelopeSchema_default as default
-};
-//# sourceMappingURL=HealthReportCreateManyCurrentDietInputEnvelopeSchema.js.map
+import { z } from 'zod';
+import { HealthReportCreateManyCurrentDietInputSchema } from './HealthReportCreateManyCurrentDietInputSchema.js';
+export const HealthReportCreateManyCurrentDietInputEnvelopeSchema = z.object({
+    data: z.union([z.lazy(() => HealthReportCreateManyCurrentDietInputSchema), z.lazy(() => HealthReportCreateManyCurrentDietInputSchema).array()]),
+    skipDuplicates: z.boolean().optional()
+}).strict();
+export default HealthReportCreateManyCurrentDietInputEnvelopeSchema;

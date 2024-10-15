@@ -1,32 +1,23 @@
-import {
-  FeatureRequestSelectSchema,
-  FeatureRequestUpsertArgsSchema,
-  FeatureRequestUpsertArgsSchema_default
-} from "../../chunk-GDDJE722.js";
-import "../../chunk-KSU4POIE.js";
-import "../../chunk-AQ7EKWED.js";
-import "../../chunk-RTE36G3H.js";
-import "../../chunk-YD4DWKTK.js";
-import "../../chunk-I7KOWP6W.js";
-import "../../chunk-MU4IHSZR.js";
-import "../../chunk-RQECGBYQ.js";
-import "../../chunk-O2N5IA22.js";
-import "../../chunk-E73MKCYZ.js";
-import "../../chunk-DVDRYS7P.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  FeatureRequestSelectSchema,
-  FeatureRequestUpsertArgsSchema,
-  FeatureRequestUpsertArgsSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestUpsertArgsSchema.js.map
+import { z } from 'zod';
+import { FeatureRequestWhereUniqueInputSchema } from '../inputTypeSchemas/FeatureRequestWhereUniqueInputSchema.js';
+import { FeatureRequestCreateInputSchema } from '../inputTypeSchemas/FeatureRequestCreateInputSchema.js';
+import { FeatureRequestUncheckedCreateInputSchema } from '../inputTypeSchemas/FeatureRequestUncheckedCreateInputSchema.js';
+import { FeatureRequestUpdateInputSchema } from '../inputTypeSchemas/FeatureRequestUpdateInputSchema.js';
+import { FeatureRequestUncheckedUpdateInputSchema } from '../inputTypeSchemas/FeatureRequestUncheckedUpdateInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const FeatureRequestSelectSchema = z.object({
+    id: z.boolean().optional(),
+    email: z.boolean().optional(),
+    message: z.boolean().optional(),
+    category: z.boolean().optional(),
+    userBase: z.boolean().optional(),
+    receivedOn: z.boolean().optional(),
+}).strict();
+export const FeatureRequestUpsertArgsSchema = z.object({
+    select: FeatureRequestSelectSchema.optional(),
+    where: FeatureRequestWhereUniqueInputSchema,
+    create: z.union([FeatureRequestCreateInputSchema, FeatureRequestUncheckedCreateInputSchema]),
+    update: z.union([FeatureRequestUpdateInputSchema, FeatureRequestUncheckedUpdateInputSchema]),
+}).strict();
+export default FeatureRequestUpsertArgsSchema;

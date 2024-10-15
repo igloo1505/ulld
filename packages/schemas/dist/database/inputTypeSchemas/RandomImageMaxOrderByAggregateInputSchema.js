@@ -1,10 +1,7 @@
-import {
-  RandomImageMaxOrderByAggregateInputSchema,
-  RandomImageMaxOrderByAggregateInputSchema_default
-} from "../../chunk-DGDNKKQN.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  RandomImageMaxOrderByAggregateInputSchema,
-  RandomImageMaxOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=RandomImageMaxOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const RandomImageMaxOrderByAggregateInputSchema = z.object({
+    path: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default RandomImageMaxOrderByAggregateInputSchema;

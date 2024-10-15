@@ -1,10 +1,7 @@
-import {
-  SettingsAppendixCreateManyArgsSchema,
-  SettingsAppendixCreateManyArgsSchema_default
-} from "../../chunk-SUH5S5OG.js";
-import "../../chunk-7Q4SKIER.js";
-export {
-  SettingsAppendixCreateManyArgsSchema,
-  SettingsAppendixCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=SettingsAppendixCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { SettingsAppendixCreateManyInputSchema } from '../inputTypeSchemas/SettingsAppendixCreateManyInputSchema.js';
+export const SettingsAppendixCreateManyArgsSchema = z.object({
+    data: z.union([SettingsAppendixCreateManyInputSchema, SettingsAppendixCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default SettingsAppendixCreateManyArgsSchema;

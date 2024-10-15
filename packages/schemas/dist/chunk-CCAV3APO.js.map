@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/NoteTypeOrderByRelevanceFieldEnumSchema.ts"],"sourcesContent":["import { z } from 'zod';\nexport const NoteTypeOrderByRelevanceFieldEnumSchema = z.enum(['name']);\nexport default NoteTypeOrderByRelevanceFieldEnumSchema;"],"mappings":";AAAA,SAAS,SAAS;AACX,IAAM,0CAA0C,EAAE,KAAK,CAAC,MAAM,CAAC;AACtE,IAAO,kDAAQ;","names":[]}

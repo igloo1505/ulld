@@ -1,9 +1,9 @@
-import {
-  NullableIntFieldUpdateOperationsInputSchema,
-  NullableIntFieldUpdateOperationsInputSchema_default
-} from "../../chunk-7KFMTKWN.js";
-export {
-  NullableIntFieldUpdateOperationsInputSchema,
-  NullableIntFieldUpdateOperationsInputSchema_default as default
-};
-//# sourceMappingURL=NullableIntFieldUpdateOperationsInputSchema.js.map
+import { z } from 'zod';
+export const NullableIntFieldUpdateOperationsInputSchema = z.object({
+    set: z.number().optional().nullable(),
+    increment: z.number().optional(),
+    decrement: z.number().optional(),
+    multiply: z.number().optional(),
+    divide: z.number().optional()
+}).strict();
+export default NullableIntFieldUpdateOperationsInputSchema;

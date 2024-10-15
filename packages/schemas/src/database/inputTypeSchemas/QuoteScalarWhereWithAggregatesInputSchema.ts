@@ -1,11 +1,9 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
-import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
-import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema';
-import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
-
+import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema.js';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema.js';
+import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema.js';
+import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema.js';
 export const QuoteScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.QuoteScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => QuoteScalarWhereWithAggregatesInputSchema),z.lazy(() => QuoteScalarWhereWithAggregatesInputSchema).array() ]).optional(),
   OR: z.lazy(() => QuoteScalarWhereWithAggregatesInputSchema).array().optional(),
@@ -16,5 +14,4 @@ export const QuoteScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.QuoteSc
   pinned: z.union([ z.lazy(() => BoolWithAggregatesFilterSchema),z.boolean() ]).optional(),
   createdAt: z.union([ z.lazy(() => DateTimeWithAggregatesFilterSchema),z.coerce.date() ]).optional(),
 }).strict();
-
 export default QuoteScalarWhereWithAggregatesInputSchema;

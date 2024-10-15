@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { KanBanListCreateWithoutKanbanInputSchema } from './KanBanListCreateWithoutKanbanInputSchema';
-import { KanBanListUncheckedCreateWithoutKanbanInputSchema } from './KanBanListUncheckedCreateWithoutKanbanInputSchema';
-import { KanBanListCreateOrConnectWithoutKanbanInputSchema } from './KanBanListCreateOrConnectWithoutKanbanInputSchema';
-import { KanBanListUpsertWithWhereUniqueWithoutKanbanInputSchema } from './KanBanListUpsertWithWhereUniqueWithoutKanbanInputSchema';
-import { KanBanListCreateManyKanbanInputEnvelopeSchema } from './KanBanListCreateManyKanbanInputEnvelopeSchema';
-import { KanBanListWhereUniqueInputSchema } from './KanBanListWhereUniqueInputSchema';
-import { KanBanListUpdateWithWhereUniqueWithoutKanbanInputSchema } from './KanBanListUpdateWithWhereUniqueWithoutKanbanInputSchema';
-import { KanBanListUpdateManyWithWhereWithoutKanbanInputSchema } from './KanBanListUpdateManyWithWhereWithoutKanbanInputSchema';
-import { KanBanListScalarWhereInputSchema } from './KanBanListScalarWhereInputSchema';
-
+import { KanBanListCreateWithoutKanbanInputSchema } from './KanBanListCreateWithoutKanbanInputSchema.js';
+import { KanBanListUncheckedCreateWithoutKanbanInputSchema } from './KanBanListUncheckedCreateWithoutKanbanInputSchema.js';
+import { KanBanListCreateOrConnectWithoutKanbanInputSchema } from './KanBanListCreateOrConnectWithoutKanbanInputSchema.js';
+import { KanBanListUpsertWithWhereUniqueWithoutKanbanInputSchema } from './KanBanListUpsertWithWhereUniqueWithoutKanbanInputSchema.js';
+import { KanBanListCreateManyKanbanInputEnvelopeSchema } from './KanBanListCreateManyKanbanInputEnvelopeSchema.js';
+import { KanBanListWhereUniqueInputSchema } from './KanBanListWhereUniqueInputSchema.js';
+import { KanBanListUpdateWithWhereUniqueWithoutKanbanInputSchema } from './KanBanListUpdateWithWhereUniqueWithoutKanbanInputSchema.js';
+import { KanBanListUpdateManyWithWhereWithoutKanbanInputSchema } from './KanBanListUpdateManyWithWhereWithoutKanbanInputSchema.js';
+import { KanBanListScalarWhereInputSchema } from './KanBanListScalarWhereInputSchema.js';
 export const KanBanListUncheckedUpdateManyWithoutKanbanNestedInputSchema: z.ZodType<Prisma.KanBanListUncheckedUpdateManyWithoutKanbanNestedInput> = z.object({
   create: z.union([ z.lazy(() => KanBanListCreateWithoutKanbanInputSchema),z.lazy(() => KanBanListCreateWithoutKanbanInputSchema).array(),z.lazy(() => KanBanListUncheckedCreateWithoutKanbanInputSchema),z.lazy(() => KanBanListUncheckedCreateWithoutKanbanInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => KanBanListCreateOrConnectWithoutKanbanInputSchema),z.lazy(() => KanBanListCreateOrConnectWithoutKanbanInputSchema).array() ]).optional(),
@@ -24,5 +22,4 @@ export const KanBanListUncheckedUpdateManyWithoutKanbanNestedInputSchema: z.ZodT
   updateMany: z.union([ z.lazy(() => KanBanListUpdateManyWithWhereWithoutKanbanInputSchema),z.lazy(() => KanBanListUpdateManyWithWhereWithoutKanbanInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => KanBanListScalarWhereInputSchema),z.lazy(() => KanBanListScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default KanBanListUncheckedUpdateManyWithoutKanbanNestedInputSchema;

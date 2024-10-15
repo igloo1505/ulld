@@ -1,13 +1,14 @@
-import {
-  RandomImageCreateArgsSchema,
-  RandomImageCreateArgsSchema_default,
-  RandomImageSelectSchema
-} from "../../chunk-SMJEK3IP.js";
-import "../../chunk-TSFSCV2I.js";
-import "../../chunk-4ZXR3LEC.js";
-export {
-  RandomImageCreateArgsSchema,
-  RandomImageSelectSchema,
-  RandomImageCreateArgsSchema_default as default
-};
-//# sourceMappingURL=RandomImageCreateArgsSchema.js.map
+import { z } from 'zod';
+import { RandomImageCreateInputSchema } from '../inputTypeSchemas/RandomImageCreateInputSchema.js';
+import { RandomImageUncheckedCreateInputSchema } from '../inputTypeSchemas/RandomImageUncheckedCreateInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const RandomImageSelectSchema = z.object({
+    path: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+}).strict();
+export const RandomImageCreateArgsSchema = z.object({
+    select: RandomImageSelectSchema.optional(),
+    data: z.union([RandomImageCreateInputSchema, RandomImageUncheckedCreateInputSchema]),
+}).strict();
+export default RandomImageCreateArgsSchema;

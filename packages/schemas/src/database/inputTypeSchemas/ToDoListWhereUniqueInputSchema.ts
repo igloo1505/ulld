@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoListWhereInputSchema } from './ToDoListWhereInputSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { DateTimeFilterSchema } from './DateTimeFilterSchema';
-import { ToDoListRelationFilterSchema } from './ToDoListRelationFilterSchema';
-import { TagListRelationFilterSchema } from './TagListRelationFilterSchema';
-import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema';
-import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema';
-
+import { ToDoListWhereInputSchema } from './ToDoListWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { ToDoListRelationFilterSchema } from './ToDoListRelationFilterSchema.js';
+import { TagListRelationFilterSchema } from './TagListRelationFilterSchema.js';
+import { TopicListRelationFilterSchema } from './TopicListRelationFilterSchema.js';
+import { SubjectListRelationFilterSchema } from './SubjectListRelationFilterSchema.js';
 export const ToDoListWhereUniqueInputSchema: z.ZodType<Prisma.ToDoListWhereUniqueInput> = z.object({
   id: z.number().int()
 })
@@ -26,5 +24,4 @@ export const ToDoListWhereUniqueInputSchema: z.ZodType<Prisma.ToDoListWhereUniqu
   topics: z.lazy(() => TopicListRelationFilterSchema).optional(),
   subjects: z.lazy(() => SubjectListRelationFilterSchema).optional()
 }).strict());
-
 export default ToDoListWhereUniqueInputSchema;

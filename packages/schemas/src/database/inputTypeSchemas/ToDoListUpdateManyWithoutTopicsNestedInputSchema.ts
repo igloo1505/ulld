@@ -1,15 +1,13 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { ToDoListCreateWithoutTopicsInputSchema } from './ToDoListCreateWithoutTopicsInputSchema';
-import { ToDoListUncheckedCreateWithoutTopicsInputSchema } from './ToDoListUncheckedCreateWithoutTopicsInputSchema';
-import { ToDoListCreateOrConnectWithoutTopicsInputSchema } from './ToDoListCreateOrConnectWithoutTopicsInputSchema';
-import { ToDoListUpsertWithWhereUniqueWithoutTopicsInputSchema } from './ToDoListUpsertWithWhereUniqueWithoutTopicsInputSchema';
-import { ToDoListWhereUniqueInputSchema } from './ToDoListWhereUniqueInputSchema';
-import { ToDoListUpdateWithWhereUniqueWithoutTopicsInputSchema } from './ToDoListUpdateWithWhereUniqueWithoutTopicsInputSchema';
-import { ToDoListUpdateManyWithWhereWithoutTopicsInputSchema } from './ToDoListUpdateManyWithWhereWithoutTopicsInputSchema';
-import { ToDoListScalarWhereInputSchema } from './ToDoListScalarWhereInputSchema';
-
+import { ToDoListCreateWithoutTopicsInputSchema } from './ToDoListCreateWithoutTopicsInputSchema.js';
+import { ToDoListUncheckedCreateWithoutTopicsInputSchema } from './ToDoListUncheckedCreateWithoutTopicsInputSchema.js';
+import { ToDoListCreateOrConnectWithoutTopicsInputSchema } from './ToDoListCreateOrConnectWithoutTopicsInputSchema.js';
+import { ToDoListUpsertWithWhereUniqueWithoutTopicsInputSchema } from './ToDoListUpsertWithWhereUniqueWithoutTopicsInputSchema.js';
+import { ToDoListWhereUniqueInputSchema } from './ToDoListWhereUniqueInputSchema.js';
+import { ToDoListUpdateWithWhereUniqueWithoutTopicsInputSchema } from './ToDoListUpdateWithWhereUniqueWithoutTopicsInputSchema.js';
+import { ToDoListUpdateManyWithWhereWithoutTopicsInputSchema } from './ToDoListUpdateManyWithWhereWithoutTopicsInputSchema.js';
+import { ToDoListScalarWhereInputSchema } from './ToDoListScalarWhereInputSchema.js';
 export const ToDoListUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.ToDoListUpdateManyWithoutTopicsNestedInput> = z.object({
   create: z.union([ z.lazy(() => ToDoListCreateWithoutTopicsInputSchema),z.lazy(() => ToDoListCreateWithoutTopicsInputSchema).array(),z.lazy(() => ToDoListUncheckedCreateWithoutTopicsInputSchema),z.lazy(() => ToDoListUncheckedCreateWithoutTopicsInputSchema).array() ]).optional(),
   connectOrCreate: z.union([ z.lazy(() => ToDoListCreateOrConnectWithoutTopicsInputSchema),z.lazy(() => ToDoListCreateOrConnectWithoutTopicsInputSchema).array() ]).optional(),
@@ -22,5 +20,4 @@ export const ToDoListUpdateManyWithoutTopicsNestedInputSchema: z.ZodType<Prisma.
   updateMany: z.union([ z.lazy(() => ToDoListUpdateManyWithWhereWithoutTopicsInputSchema),z.lazy(() => ToDoListUpdateManyWithWhereWithoutTopicsInputSchema).array() ]).optional(),
   deleteMany: z.union([ z.lazy(() => ToDoListScalarWhereInputSchema),z.lazy(() => ToDoListScalarWhereInputSchema).array() ]).optional(),
 }).strict();
-
 export default ToDoListUpdateManyWithoutTopicsNestedInputSchema;

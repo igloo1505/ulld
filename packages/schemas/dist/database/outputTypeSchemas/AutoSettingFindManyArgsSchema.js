@@ -1,26 +1,23 @@
-import {
-  AutoSettingFindManyArgsSchema,
-  AutoSettingFindManyArgsSchema_default,
-  AutoSettingSelectSchema
-} from "../../chunk-FDLRZTMG.js";
-import "../../chunk-DBH6HSXO.js";
-import "../../chunk-Q6QXW4MG.js";
-import "../../chunk-EP4FEKMS.js";
-import "../../chunk-JCUVCERX.js";
-import "../../chunk-6BDYKCTD.js";
-import "../../chunk-ZZLVU5LM.js";
-import "../../chunk-SIPHN6ID.js";
-import "../../chunk-TJEHP7LG.js";
-import "../../chunk-76RQYGNI.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-WVDZRY2Y.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  AutoSettingFindManyArgsSchema,
-  AutoSettingSelectSchema,
-  AutoSettingFindManyArgsSchema_default as default
-};
-//# sourceMappingURL=AutoSettingFindManyArgsSchema.js.map
+import { z } from 'zod';
+import { AutoSettingWhereInputSchema } from '../inputTypeSchemas/AutoSettingWhereInputSchema.js';
+import { AutoSettingOrderByWithRelationInputSchema } from '../inputTypeSchemas/AutoSettingOrderByWithRelationInputSchema.js';
+import { AutoSettingWhereUniqueInputSchema } from '../inputTypeSchemas/AutoSettingWhereUniqueInputSchema.js';
+import { AutoSettingScalarFieldEnumSchema } from '../inputTypeSchemas/AutoSettingScalarFieldEnumSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const AutoSettingSelectSchema = z.object({
+    id: z.boolean().optional(),
+    type: z.boolean().optional(),
+    glob: z.boolean().optional(),
+    value: z.boolean().optional(),
+}).strict();
+export const AutoSettingFindManyArgsSchema = z.object({
+    select: AutoSettingSelectSchema.optional(),
+    where: AutoSettingWhereInputSchema.optional(),
+    orderBy: z.union([AutoSettingOrderByWithRelationInputSchema.array(), AutoSettingOrderByWithRelationInputSchema]).optional(),
+    cursor: AutoSettingWhereUniqueInputSchema.optional(),
+    take: z.number().optional(),
+    skip: z.number().optional(),
+    distinct: z.union([AutoSettingScalarFieldEnumSchema, AutoSettingScalarFieldEnumSchema.array()]).optional(),
+}).strict();
+export default AutoSettingFindManyArgsSchema;

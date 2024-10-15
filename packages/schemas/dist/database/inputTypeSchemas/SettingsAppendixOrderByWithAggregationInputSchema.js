@@ -1,13 +1,15 @@
-import {
-  SettingsAppendixOrderByWithAggregationInputSchema,
-  SettingsAppendixOrderByWithAggregationInputSchema_default
-} from "../../chunk-CZI4HRXJ.js";
-import "../../chunk-QOF5WKKZ.js";
-import "../../chunk-GB6GMCA4.js";
-import "../../chunk-KSN45ZHF.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SettingsAppendixOrderByWithAggregationInputSchema,
-  SettingsAppendixOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=SettingsAppendixOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SettingsAppendixCountOrderByAggregateInputSchema } from './SettingsAppendixCountOrderByAggregateInputSchema.js';
+import { SettingsAppendixMaxOrderByAggregateInputSchema } from './SettingsAppendixMaxOrderByAggregateInputSchema.js';
+import { SettingsAppendixMinOrderByAggregateInputSchema } from './SettingsAppendixMinOrderByAggregateInputSchema.js';
+export const SettingsAppendixOrderByWithAggregationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    data: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    updatedAt: z.lazy(() => SortOrderSchema).optional(),
+    _count: z.lazy(() => SettingsAppendixCountOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => SettingsAppendixMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => SettingsAppendixMinOrderByAggregateInputSchema).optional()
+}).strict();
+export default SettingsAppendixOrderByWithAggregationInputSchema;

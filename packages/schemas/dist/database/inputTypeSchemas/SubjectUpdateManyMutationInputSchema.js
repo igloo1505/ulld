@@ -1,11 +1,9 @@
-import {
-  SubjectUpdateManyMutationInputSchema,
-  SubjectUpdateManyMutationInputSchema_default
-} from "../../chunk-V3R3XKVB.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  SubjectUpdateManyMutationInputSchema,
-  SubjectUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=SubjectUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const SubjectUpdateManyMutationInputSchema = z.object({
+    value: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastAccess: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default SubjectUpdateManyMutationInputSchema;

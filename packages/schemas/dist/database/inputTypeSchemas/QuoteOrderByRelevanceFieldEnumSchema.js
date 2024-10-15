@@ -1,9 +1,3 @@
-import {
-  QuoteOrderByRelevanceFieldEnumSchema,
-  QuoteOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-MDC4V7ZL.js";
-export {
-  QuoteOrderByRelevanceFieldEnumSchema,
-  QuoteOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=QuoteOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const QuoteOrderByRelevanceFieldEnumSchema = z.enum(['body', 'author', 'source']);
+export default QuoteOrderByRelevanceFieldEnumSchema;

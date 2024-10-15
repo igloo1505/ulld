@@ -1,9 +1,5 @@
-import {
-  BytesFieldUpdateOperationsInputSchema,
-  BytesFieldUpdateOperationsInputSchema_default
-} from "../../chunk-WKMKAR2K.js";
-export {
-  BytesFieldUpdateOperationsInputSchema,
-  BytesFieldUpdateOperationsInputSchema_default as default
-};
-//# sourceMappingURL=BytesFieldUpdateOperationsInputSchema.js.map
+import { z } from 'zod';
+export const BytesFieldUpdateOperationsInputSchema = z.object({
+    set: z.instanceof(Buffer).optional()
+}).strict();
+export default BytesFieldUpdateOperationsInputSchema;

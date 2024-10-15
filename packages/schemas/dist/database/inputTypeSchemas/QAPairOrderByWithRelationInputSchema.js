@@ -1,18 +1,23 @@
-import {
-  QAPairOrderByWithRelationInputSchema,
-  QAPairOrderByWithRelationInputSchema_default
-} from "../../chunk-ULZ7G2UB.js";
-import "../../chunk-FPWPA4T5.js";
-import "../../chunk-Q54L2SCG.js";
-import "../../chunk-3RAFLYCZ.js";
-import "../../chunk-TYDF4OCO.js";
-import "../../chunk-YD6HBAOC.js";
-import "../../chunk-GGRFX4OU.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  QAPairOrderByWithRelationInputSchema,
-  QAPairOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=QAPairOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { TagOrderByRelationAggregateInputSchema } from './TagOrderByRelationAggregateInputSchema.js';
+import { TopicOrderByRelationAggregateInputSchema } from './TopicOrderByRelationAggregateInputSchema.js';
+import { SubjectOrderByRelationAggregateInputSchema } from './SubjectOrderByRelationAggregateInputSchema.js';
+import { PracticeExamOrderByRelationAggregateInputSchema } from './PracticeExamOrderByRelationAggregateInputSchema.js';
+import { QAPairOrderByRelevanceInputSchema } from './QAPairOrderByRelevanceInputSchema.js';
+export const QAPairOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    question: z.lazy(() => SortOrderSchema).optional(),
+    answer: z.lazy(() => SortOrderSchema).optional(),
+    description: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    secondaryLabel: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    correctCount: z.lazy(() => SortOrderSchema).optional(),
+    inCorrectCount: z.lazy(() => SortOrderSchema).optional(),
+    tags: z.lazy(() => TagOrderByRelationAggregateInputSchema).optional(),
+    topics: z.lazy(() => TopicOrderByRelationAggregateInputSchema).optional(),
+    subjects: z.lazy(() => SubjectOrderByRelationAggregateInputSchema).optional(),
+    practiceExam: z.lazy(() => PracticeExamOrderByRelationAggregateInputSchema).optional(),
+    _relevance: z.lazy(() => QAPairOrderByRelevanceInputSchema).optional()
+}).strict();
+export default QAPairOrderByWithRelationInputSchema;

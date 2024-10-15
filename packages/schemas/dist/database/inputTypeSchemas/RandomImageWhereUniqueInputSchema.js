@@ -1,15 +1,14 @@
-import {
-  RandomImageWhereUniqueInputSchema,
-  RandomImageWhereUniqueInputSchema_default
-} from "../../chunk-7CX6JICO.js";
-import "../../chunk-XSVMF53C.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  RandomImageWhereUniqueInputSchema,
-  RandomImageWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=RandomImageWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { RandomImageWhereInputSchema } from './RandomImageWhereInputSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+export const RandomImageWhereUniqueInputSchema = z.object({
+    path: z.string()
+})
+    .and(z.object({
+    path: z.string().optional(),
+    AND: z.union([z.lazy(() => RandomImageWhereInputSchema), z.lazy(() => RandomImageWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => RandomImageWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => RandomImageWhereInputSchema), z.lazy(() => RandomImageWhereInputSchema).array()]).optional(),
+    createdAt: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+}).strict());
+export default RandomImageWhereUniqueInputSchema;

@@ -1,9 +1,5 @@
-import {
-  IpynbCreateoutgoingQuickLinksInputSchema,
-  IpynbCreateoutgoingQuickLinksInputSchema_default
-} from "../../chunk-CJKS2C2I.js";
-export {
-  IpynbCreateoutgoingQuickLinksInputSchema,
-  IpynbCreateoutgoingQuickLinksInputSchema_default as default
-};
-//# sourceMappingURL=IpynbCreateoutgoingQuickLinksInputSchema.js.map
+import { z } from 'zod';
+export const IpynbCreateoutgoingQuickLinksInputSchema = z.object({
+    set: z.string().array()
+}).strict();
+export default IpynbCreateoutgoingQuickLinksInputSchema;

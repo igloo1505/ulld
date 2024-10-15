@@ -1,11 +1,13 @@
-import {
-  BusinessContactUpdateManyMutationInputSchema,
-  BusinessContactUpdateManyMutationInputSchema_default
-} from "../../chunk-CRY2Z7AJ.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  BusinessContactUpdateManyMutationInputSchema,
-  BusinessContactUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=BusinessContactUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+export const BusinessContactUpdateManyMutationInputSchema = z.object({
+    companyName: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    contactName: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    contactPreference: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    email: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    phone: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    message: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    purpose: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default BusinessContactUpdateManyMutationInputSchema;

@@ -1,10 +1,7 @@
-import {
-  DailyFocusMinOrderByAggregateInputSchema,
-  DailyFocusMinOrderByAggregateInputSchema_default
-} from "../../chunk-NQO72F5H.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DailyFocusMinOrderByAggregateInputSchema,
-  DailyFocusMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=DailyFocusMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const DailyFocusMinOrderByAggregateInputSchema = z.object({
+    value: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default DailyFocusMinOrderByAggregateInputSchema;

@@ -1,17 +1,20 @@
-import {
-  TimePeriodOrderByWithAggregationInputSchema,
-  TimePeriodOrderByWithAggregationInputSchema_default
-} from "../../chunk-ZUNZUDUY.js";
-import "../../chunk-O7DVKYKQ.js";
-import "../../chunk-4QW2UY7H.js";
-import "../../chunk-ZABFI5VM.js";
-import "../../chunk-U6WOA3WM.js";
-import "../../chunk-N5NW7XLM.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TimePeriodOrderByWithAggregationInputSchema,
-  TimePeriodOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { TimePeriodCountOrderByAggregateInputSchema } from './TimePeriodCountOrderByAggregateInputSchema.js';
+import { TimePeriodAvgOrderByAggregateInputSchema } from './TimePeriodAvgOrderByAggregateInputSchema.js';
+import { TimePeriodMaxOrderByAggregateInputSchema } from './TimePeriodMaxOrderByAggregateInputSchema.js';
+import { TimePeriodMinOrderByAggregateInputSchema } from './TimePeriodMinOrderByAggregateInputSchema.js';
+import { TimePeriodSumOrderByAggregateInputSchema } from './TimePeriodSumOrderByAggregateInputSchema.js';
+export const TimePeriodOrderByWithAggregationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    start: z.lazy(() => SortOrderSchema).optional(),
+    end: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    dietId: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    _count: z.lazy(() => TimePeriodCountOrderByAggregateInputSchema).optional(),
+    _avg: z.lazy(() => TimePeriodAvgOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => TimePeriodMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => TimePeriodMinOrderByAggregateInputSchema).optional(),
+    _sum: z.lazy(() => TimePeriodSumOrderByAggregateInputSchema).optional()
+}).strict();
+export default TimePeriodOrderByWithAggregationInputSchema;

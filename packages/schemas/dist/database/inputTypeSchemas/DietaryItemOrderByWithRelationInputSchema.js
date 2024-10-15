@@ -1,16 +1,22 @@
-import {
-  DietaryItemOrderByWithRelationInputSchema,
-  DietaryItemOrderByWithRelationInputSchema_default
-} from "../../chunk-33MCZ6AL.js";
-import "../../chunk-2YLYAKJ5.js";
-import "../../chunk-F7YUFWZ6.js";
-import "../../chunk-36CO6JRE.js";
-import "../../chunk-D3YENTEM.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DietaryItemOrderByWithRelationInputSchema,
-  DietaryItemOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=DietaryItemOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { DietOrderByRelationAggregateInputSchema } from './DietOrderByRelationAggregateInputSchema.js';
+import { ServingOrderByRelationAggregateInputSchema } from './ServingOrderByRelationAggregateInputSchema.js';
+import { DietaryItemOrderByRelevanceInputSchema } from './DietaryItemOrderByRelevanceInputSchema.js';
+export const DietaryItemOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    name: z.lazy(() => SortOrderSchema).optional(),
+    barcode: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    gi: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    calsPerOz: z.union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)]).optional(),
+    glutenFree: z.lazy(() => SortOrderSchema).optional(),
+    minimalFructose: z.lazy(() => SortOrderSchema).optional(),
+    natural: z.lazy(() => SortOrderSchema).optional(),
+    organic: z.lazy(() => SortOrderSchema).optional(),
+    impactScore: z.lazy(() => SortOrderSchema).optional(),
+    Diet: z.lazy(() => DietOrderByRelationAggregateInputSchema).optional(),
+    Serving: z.lazy(() => ServingOrderByRelationAggregateInputSchema).optional(),
+    _relevance: z.lazy(() => DietaryItemOrderByRelevanceInputSchema).optional()
+}).strict();
+export default DietaryItemOrderByWithRelationInputSchema;

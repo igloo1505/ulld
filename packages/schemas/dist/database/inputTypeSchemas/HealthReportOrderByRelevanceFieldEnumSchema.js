@@ -1,9 +1,3 @@
-import {
-  HealthReportOrderByRelevanceFieldEnumSchema,
-  HealthReportOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-PFFRFP2G.js";
-export {
-  HealthReportOrderByRelevanceFieldEnumSchema,
-  HealthReportOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=HealthReportOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const HealthReportOrderByRelevanceFieldEnumSchema = z.enum(['title', 'summary', 'anxiety_desc', 'mood_desc', 'dietId']);
+export default HealthReportOrderByRelevanceFieldEnumSchema;

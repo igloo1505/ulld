@@ -4,11 +4,20 @@
   "compilerOptions": {
     "noEmitOnError": false,
     "declaration": true,
-    "noEmit": true,
     "outDir": "dist",
     "rootDir": "src",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "baseUrl": "."
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".turbo",
+    "src/**/*.test.ts",
+    "jest**",
+    "src/__scripts__/**",
+    "tsup.config.ts"
+  ],
+  "ignore": ["src/__scripts__", "src/database"]
 }

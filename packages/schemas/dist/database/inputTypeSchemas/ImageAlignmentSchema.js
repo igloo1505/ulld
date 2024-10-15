@@ -1,9 +1,3 @@
-import {
-  ImageAlignmentSchema,
-  ImageAlignmentSchema_default
-} from "../../chunk-XOBHDDTF.js";
-export {
-  ImageAlignmentSchema,
-  ImageAlignmentSchema_default as default
-};
-//# sourceMappingURL=ImageAlignmentSchema.js.map
+import { z } from 'zod';
+export const ImageAlignmentSchema = z.enum(['bottom', 'center', 'top', 'left', 'right']);
+export default ImageAlignmentSchema;

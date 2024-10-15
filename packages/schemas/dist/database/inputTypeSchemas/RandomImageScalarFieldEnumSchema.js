@@ -1,9 +1,3 @@
-import {
-  RandomImageScalarFieldEnumSchema,
-  RandomImageScalarFieldEnumSchema_default
-} from "../../chunk-JIHEBZY7.js";
-export {
-  RandomImageScalarFieldEnumSchema,
-  RandomImageScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=RandomImageScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const RandomImageScalarFieldEnumSchema = z.enum(['path', 'createdAt']);
+export default RandomImageScalarFieldEnumSchema;

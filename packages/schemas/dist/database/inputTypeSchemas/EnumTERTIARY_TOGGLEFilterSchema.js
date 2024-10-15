@@ -1,11 +1,10 @@
-import {
-  EnumTERTIARY_TOGGLEFilterSchema,
-  EnumTERTIARY_TOGGLEFilterSchema_default
-} from "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-FGDZJV6T.js";
-export {
-  EnumTERTIARY_TOGGLEFilterSchema,
-  EnumTERTIARY_TOGGLEFilterSchema_default as default
-};
-//# sourceMappingURL=EnumTERTIARY_TOGGLEFilterSchema.js.map
+import { z } from 'zod';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
+import { NestedEnumTERTIARY_TOGGLEFilterSchema } from './NestedEnumTERTIARY_TOGGLEFilterSchema.js';
+export const EnumTERTIARY_TOGGLEFilterSchema = z.object({
+    equals: z.lazy(() => TERTIARY_TOGGLESchema).optional(),
+    in: z.lazy(() => TERTIARY_TOGGLESchema).array().optional(),
+    notIn: z.lazy(() => TERTIARY_TOGGLESchema).array().optional(),
+    not: z.union([z.lazy(() => TERTIARY_TOGGLESchema), z.lazy(() => NestedEnumTERTIARY_TOGGLEFilterSchema)]).optional(),
+}).strict();
+export default EnumTERTIARY_TOGGLEFilterSchema;

@@ -1,10 +1,9 @@
-import {
-  TimePeriodMinOrderByAggregateInputSchema,
-  TimePeriodMinOrderByAggregateInputSchema_default
-} from "../../chunk-ZABFI5VM.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TimePeriodMinOrderByAggregateInputSchema,
-  TimePeriodMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const TimePeriodMinOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    start: z.lazy(() => SortOrderSchema).optional(),
+    end: z.lazy(() => SortOrderSchema).optional(),
+    dietId: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default TimePeriodMinOrderByAggregateInputSchema;

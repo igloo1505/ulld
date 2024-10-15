@@ -1,9 +1,12 @@
-import {
-  BusinessContactUncheckedCreateInputSchema,
-  BusinessContactUncheckedCreateInputSchema_default
-} from "../../chunk-7CXV7GQ2.js";
-export {
-  BusinessContactUncheckedCreateInputSchema,
-  BusinessContactUncheckedCreateInputSchema_default as default
-};
-//# sourceMappingURL=BusinessContactUncheckedCreateInputSchema.js.map
+import { z } from 'zod';
+export const BusinessContactUncheckedCreateInputSchema = z.object({
+    id: z.number().int().optional(),
+    companyName: z.string(),
+    contactName: z.string(),
+    contactPreference: z.string(),
+    email: z.string().optional().nullable(),
+    phone: z.string().optional().nullable(),
+    message: z.string(),
+    purpose: z.string().optional().nullable()
+}).strict();
+export default BusinessContactUncheckedCreateInputSchema;

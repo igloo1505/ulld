@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/QueryModeSchema.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AACX,IAAM,kBAAkB,EAAE,KAAK,CAAC,WAAU,aAAa,CAAC;AAC/D,IAAO,0BAAQ","sourcesContent":["import { z } from 'zod';\nexport const QueryModeSchema = z.enum(['default','insensitive']);\nexport default QueryModeSchema;"]}

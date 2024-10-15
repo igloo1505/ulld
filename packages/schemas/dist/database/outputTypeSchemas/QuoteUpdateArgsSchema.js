@@ -1,28 +1,19 @@
-import {
-  QuoteSelectSchema,
-  QuoteUpdateArgsSchema,
-  QuoteUpdateArgsSchema_default
-} from "../../chunk-WUAWK6JS.js";
-import "../../chunk-QDRC663Z.js";
-import "../../chunk-U2324CQC.js";
-import "../../chunk-OQ4XMP32.js";
-import "../../chunk-BT6JUMEM.js";
-import "../../chunk-APCVB345.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  QuoteSelectSchema,
-  QuoteUpdateArgsSchema,
-  QuoteUpdateArgsSchema_default as default
-};
-//# sourceMappingURL=QuoteUpdateArgsSchema.js.map
+import { z } from 'zod';
+import { QuoteUpdateInputSchema } from '../inputTypeSchemas/QuoteUpdateInputSchema.js';
+import { QuoteUncheckedUpdateInputSchema } from '../inputTypeSchemas/QuoteUncheckedUpdateInputSchema.js';
+import { QuoteWhereUniqueInputSchema } from '../inputTypeSchemas/QuoteWhereUniqueInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const QuoteSelectSchema = z.object({
+    body: z.boolean().optional(),
+    author: z.boolean().optional(),
+    source: z.boolean().optional(),
+    pinned: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+}).strict();
+export const QuoteUpdateArgsSchema = z.object({
+    select: QuoteSelectSchema.optional(),
+    data: z.union([QuoteUpdateInputSchema, QuoteUncheckedUpdateInputSchema]),
+    where: QuoteWhereUniqueInputSchema,
+}).strict();
+export default QuoteUpdateArgsSchema;

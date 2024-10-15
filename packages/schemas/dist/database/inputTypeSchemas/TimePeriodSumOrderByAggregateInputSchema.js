@@ -1,10 +1,6 @@
-import {
-  TimePeriodSumOrderByAggregateInputSchema,
-  TimePeriodSumOrderByAggregateInputSchema_default
-} from "../../chunk-N5NW7XLM.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TimePeriodSumOrderByAggregateInputSchema,
-  TimePeriodSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const TimePeriodSumOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default TimePeriodSumOrderByAggregateInputSchema;

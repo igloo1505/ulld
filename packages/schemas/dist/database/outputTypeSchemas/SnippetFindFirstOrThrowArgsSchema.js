@@ -1,26 +1,25 @@
-import {
-  SnippetFindFirstOrThrowArgsSchema,
-  SnippetFindFirstOrThrowArgsSchema_default,
-  SnippetSelectSchema
-} from "../../chunk-TUSEEHVH.js";
-import "../../chunk-KTLG6RXV.js";
-import "../../chunk-GN5OA7TH.js";
-import "../../chunk-25CTNZX7.js";
-import "../../chunk-YZWJQLOS.js";
-import "../../chunk-R5PTJBPZ.js";
-import "../../chunk-26V4YAOJ.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-WVDZRY2Y.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  SnippetFindFirstOrThrowArgsSchema,
-  SnippetSelectSchema,
-  SnippetFindFirstOrThrowArgsSchema_default as default
-};
-//# sourceMappingURL=SnippetFindFirstOrThrowArgsSchema.js.map
+import { z } from 'zod';
+import { SnippetWhereInputSchema } from '../inputTypeSchemas/SnippetWhereInputSchema.js';
+import { SnippetOrderByWithRelationInputSchema } from '../inputTypeSchemas/SnippetOrderByWithRelationInputSchema.js';
+import { SnippetWhereUniqueInputSchema } from '../inputTypeSchemas/SnippetWhereUniqueInputSchema.js';
+import { SnippetScalarFieldEnumSchema } from '../inputTypeSchemas/SnippetScalarFieldEnumSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const SnippetSelectSchema = z.object({
+    id: z.boolean().optional(),
+    content: z.boolean().optional(),
+    description: z.boolean().optional(),
+    keywords: z.boolean().optional(),
+    language: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+}).strict();
+export const SnippetFindFirstOrThrowArgsSchema = z.object({
+    select: SnippetSelectSchema.optional(),
+    where: SnippetWhereInputSchema.optional(),
+    orderBy: z.union([SnippetOrderByWithRelationInputSchema.array(), SnippetOrderByWithRelationInputSchema]).optional(),
+    cursor: SnippetWhereUniqueInputSchema.optional(),
+    take: z.number().optional(),
+    skip: z.number().optional(),
+    distinct: z.union([SnippetScalarFieldEnumSchema, SnippetScalarFieldEnumSchema.array()]).optional(),
+}).strict();
+export default SnippetFindFirstOrThrowArgsSchema;

@@ -1,9 +1,12 @@
-import {
-  NestedIntNullableFilterSchema,
-  NestedIntNullableFilterSchema_default
-} from "../../chunk-45PPNBUK.js";
-export {
-  NestedIntNullableFilterSchema,
-  NestedIntNullableFilterSchema_default as default
-};
-//# sourceMappingURL=NestedIntNullableFilterSchema.js.map
+import { z } from 'zod';
+export const NestedIntNullableFilterSchema = z.object({
+    equals: z.number().optional().nullable(),
+    in: z.number().array().optional().nullable(),
+    notIn: z.number().array().optional().nullable(),
+    lt: z.number().optional(),
+    lte: z.number().optional(),
+    gt: z.number().optional(),
+    gte: z.number().optional(),
+    not: z.union([z.number(), z.lazy(() => NestedIntNullableFilterSchema)]).optional().nullable(),
+}).strict();
+export default NestedIntNullableFilterSchema;

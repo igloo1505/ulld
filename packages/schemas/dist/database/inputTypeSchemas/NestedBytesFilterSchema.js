@@ -1,9 +1,8 @@
-import {
-  NestedBytesFilterSchema,
-  NestedBytesFilterSchema_default
-} from "../../chunk-KZADD6H2.js";
-export {
-  NestedBytesFilterSchema,
-  NestedBytesFilterSchema_default as default
-};
-//# sourceMappingURL=NestedBytesFilterSchema.js.map
+import { z } from 'zod';
+export const NestedBytesFilterSchema = z.object({
+    equals: z.instanceof(Buffer).optional(),
+    in: z.instanceof(Buffer).array().optional(),
+    notIn: z.instanceof(Buffer).array().optional(),
+    not: z.union([z.instanceof(Buffer), z.lazy(() => NestedBytesFilterSchema)]).optional(),
+}).strict();
+export default NestedBytesFilterSchema;

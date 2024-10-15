@@ -1,9 +1,9 @@
-import {
-  StringNullableListFilterSchema,
-  StringNullableListFilterSchema_default
-} from "../../chunk-7OQ35RBX.js";
-export {
-  StringNullableListFilterSchema,
-  StringNullableListFilterSchema_default as default
-};
-//# sourceMappingURL=StringNullableListFilterSchema.js.map
+import { z } from 'zod';
+export const StringNullableListFilterSchema = z.object({
+    equals: z.string().array().optional().nullable(),
+    has: z.string().optional().nullable(),
+    hasEvery: z.string().array().optional(),
+    hasSome: z.string().array().optional(),
+    isEmpty: z.boolean().optional()
+}).strict();
+export default StringNullableListFilterSchema;

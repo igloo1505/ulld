@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { ServingCountOrderByAggregateInputSchema } from './ServingCountOrderByAggregateInputSchema';
-import { ServingAvgOrderByAggregateInputSchema } from './ServingAvgOrderByAggregateInputSchema';
-import { ServingMaxOrderByAggregateInputSchema } from './ServingMaxOrderByAggregateInputSchema';
-import { ServingMinOrderByAggregateInputSchema } from './ServingMinOrderByAggregateInputSchema';
-import { ServingSumOrderByAggregateInputSchema } from './ServingSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { ServingCountOrderByAggregateInputSchema } from './ServingCountOrderByAggregateInputSchema.js';
+import { ServingAvgOrderByAggregateInputSchema } from './ServingAvgOrderByAggregateInputSchema.js';
+import { ServingMaxOrderByAggregateInputSchema } from './ServingMaxOrderByAggregateInputSchema.js';
+import { ServingMinOrderByAggregateInputSchema } from './ServingMinOrderByAggregateInputSchema.js';
+import { ServingSumOrderByAggregateInputSchema } from './ServingSumOrderByAggregateInputSchema.js';
 export const ServingOrderByWithAggregationInputSchema: z.ZodType<Prisma.ServingOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   dietaryItemId: z.lazy(() => SortOrderSchema).optional(),
@@ -20,5 +18,4 @@ export const ServingOrderByWithAggregationInputSchema: z.ZodType<Prisma.ServingO
   _min: z.lazy(() => ServingMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => ServingSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default ServingOrderByWithAggregationInputSchema;

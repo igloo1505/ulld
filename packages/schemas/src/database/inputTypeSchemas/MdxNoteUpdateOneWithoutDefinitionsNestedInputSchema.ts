@@ -1,16 +1,14 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { MdxNoteCreateWithoutDefinitionsInputSchema } from './MdxNoteCreateWithoutDefinitionsInputSchema';
-import { MdxNoteUncheckedCreateWithoutDefinitionsInputSchema } from './MdxNoteUncheckedCreateWithoutDefinitionsInputSchema';
-import { MdxNoteCreateOrConnectWithoutDefinitionsInputSchema } from './MdxNoteCreateOrConnectWithoutDefinitionsInputSchema';
-import { MdxNoteUpsertWithoutDefinitionsInputSchema } from './MdxNoteUpsertWithoutDefinitionsInputSchema';
-import { MdxNoteWhereInputSchema } from './MdxNoteWhereInputSchema';
-import { MdxNoteWhereUniqueInputSchema } from './MdxNoteWhereUniqueInputSchema';
-import { MdxNoteUpdateToOneWithWhereWithoutDefinitionsInputSchema } from './MdxNoteUpdateToOneWithWhereWithoutDefinitionsInputSchema';
-import { MdxNoteUpdateWithoutDefinitionsInputSchema } from './MdxNoteUpdateWithoutDefinitionsInputSchema';
-import { MdxNoteUncheckedUpdateWithoutDefinitionsInputSchema } from './MdxNoteUncheckedUpdateWithoutDefinitionsInputSchema';
-
+import { MdxNoteCreateWithoutDefinitionsInputSchema } from './MdxNoteCreateWithoutDefinitionsInputSchema.js';
+import { MdxNoteUncheckedCreateWithoutDefinitionsInputSchema } from './MdxNoteUncheckedCreateWithoutDefinitionsInputSchema.js';
+import { MdxNoteCreateOrConnectWithoutDefinitionsInputSchema } from './MdxNoteCreateOrConnectWithoutDefinitionsInputSchema.js';
+import { MdxNoteUpsertWithoutDefinitionsInputSchema } from './MdxNoteUpsertWithoutDefinitionsInputSchema.js';
+import { MdxNoteWhereInputSchema } from './MdxNoteWhereInputSchema.js';
+import { MdxNoteWhereUniqueInputSchema } from './MdxNoteWhereUniqueInputSchema.js';
+import { MdxNoteUpdateToOneWithWhereWithoutDefinitionsInputSchema } from './MdxNoteUpdateToOneWithWhereWithoutDefinitionsInputSchema.js';
+import { MdxNoteUpdateWithoutDefinitionsInputSchema } from './MdxNoteUpdateWithoutDefinitionsInputSchema.js';
+import { MdxNoteUncheckedUpdateWithoutDefinitionsInputSchema } from './MdxNoteUncheckedUpdateWithoutDefinitionsInputSchema.js';
 export const MdxNoteUpdateOneWithoutDefinitionsNestedInputSchema: z.ZodType<Prisma.MdxNoteUpdateOneWithoutDefinitionsNestedInput> = z.object({
   create: z.union([ z.lazy(() => MdxNoteCreateWithoutDefinitionsInputSchema),z.lazy(() => MdxNoteUncheckedCreateWithoutDefinitionsInputSchema) ]).optional(),
   connectOrCreate: z.lazy(() => MdxNoteCreateOrConnectWithoutDefinitionsInputSchema).optional(),
@@ -20,5 +18,4 @@ export const MdxNoteUpdateOneWithoutDefinitionsNestedInputSchema: z.ZodType<Pris
   connect: z.lazy(() => MdxNoteWhereUniqueInputSchema).optional(),
   update: z.union([ z.lazy(() => MdxNoteUpdateToOneWithWhereWithoutDefinitionsInputSchema),z.lazy(() => MdxNoteUpdateWithoutDefinitionsInputSchema),z.lazy(() => MdxNoteUncheckedUpdateWithoutDefinitionsInputSchema) ]).optional(),
 }).strict();
-
 export default MdxNoteUpdateOneWithoutDefinitionsNestedInputSchema;

@@ -1,9 +1,6 @@
-import {
-  WhiteboardCreateInputSchema,
-  WhiteboardCreateInputSchema_default
-} from "../../chunk-PJPJGWO5.js";
-export {
-  WhiteboardCreateInputSchema,
-  WhiteboardCreateInputSchema_default as default
-};
-//# sourceMappingURL=WhiteboardCreateInputSchema.js.map
+import { z } from 'zod';
+export const WhiteboardCreateInputSchema = z.object({
+    id: z.string(),
+    data: z.instanceof(Buffer)
+}).strict();
+export default WhiteboardCreateInputSchema;

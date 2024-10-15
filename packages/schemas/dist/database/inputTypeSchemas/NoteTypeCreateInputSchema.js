@@ -1,9 +1,5 @@
-import {
-  NoteTypeCreateInputSchema,
-  NoteTypeCreateInputSchema_default
-} from "../../chunk-NWGUO223.js";
-export {
-  NoteTypeCreateInputSchema,
-  NoteTypeCreateInputSchema_default as default
-};
-//# sourceMappingURL=NoteTypeCreateInputSchema.js.map
+import { z } from 'zod';
+export const NoteTypeCreateInputSchema = z.object({
+    name: z.string()
+}).strict();
+export default NoteTypeCreateInputSchema;

@@ -1,10 +1,9 @@
-import {
-  NestedEnumTERTIARY_TOGGLEFilterSchema,
-  NestedEnumTERTIARY_TOGGLEFilterSchema_default
-} from "../../chunk-3LP5T6ZV.js";
-import "../../chunk-FGDZJV6T.js";
-export {
-  NestedEnumTERTIARY_TOGGLEFilterSchema,
-  NestedEnumTERTIARY_TOGGLEFilterSchema_default as default
-};
-//# sourceMappingURL=NestedEnumTERTIARY_TOGGLEFilterSchema.js.map
+import { z } from 'zod';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
+export const NestedEnumTERTIARY_TOGGLEFilterSchema = z.object({
+    equals: z.lazy(() => TERTIARY_TOGGLESchema).optional(),
+    in: z.lazy(() => TERTIARY_TOGGLESchema).array().optional(),
+    notIn: z.lazy(() => TERTIARY_TOGGLESchema).array().optional(),
+    not: z.union([z.lazy(() => TERTIARY_TOGGLESchema), z.lazy(() => NestedEnumTERTIARY_TOGGLEFilterSchema)]).optional(),
+}).strict();
+export default NestedEnumTERTIARY_TOGGLEFilterSchema;

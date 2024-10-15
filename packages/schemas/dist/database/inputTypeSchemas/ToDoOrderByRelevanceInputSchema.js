@@ -1,11 +1,9 @@
-import {
-  ToDoOrderByRelevanceInputSchema,
-  ToDoOrderByRelevanceInputSchema_default
-} from "../../chunk-6JV35KBD.js";
-import "../../chunk-MEVAFWQ5.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ToDoOrderByRelevanceInputSchema,
-  ToDoOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=ToDoOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { ToDoOrderByRelevanceFieldEnumSchema } from './ToDoOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ToDoOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => ToDoOrderByRelevanceFieldEnumSchema), z.lazy(() => ToDoOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default ToDoOrderByRelevanceInputSchema;

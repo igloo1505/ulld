@@ -1,9 +1,9 @@
-import {
-  IntNullableListFilterSchema,
-  IntNullableListFilterSchema_default
-} from "../../chunk-YSW3P2HE.js";
-export {
-  IntNullableListFilterSchema,
-  IntNullableListFilterSchema_default as default
-};
-//# sourceMappingURL=IntNullableListFilterSchema.js.map
+import { z } from 'zod';
+export const IntNullableListFilterSchema = z.object({
+    equals: z.number().array().optional().nullable(),
+    has: z.number().optional().nullable(),
+    hasEvery: z.number().array().optional(),
+    hasSome: z.number().array().optional(),
+    isEmpty: z.boolean().optional()
+}).strict();
+export default IntNullableListFilterSchema;

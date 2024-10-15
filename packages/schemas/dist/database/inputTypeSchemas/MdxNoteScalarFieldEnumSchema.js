@@ -1,9 +1,3 @@
-import {
-  MdxNoteScalarFieldEnumSchema,
-  MdxNoteScalarFieldEnumSchema_default
-} from "../../chunk-C2DKK6P5.js";
-export {
-  MdxNoteScalarFieldEnumSchema,
-  MdxNoteScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=MdxNoteScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const MdxNoteScalarFieldEnumSchema = z.enum(['id', 'isProtected', 'dietSummaryKey', 'title', 'latexTitle', 'rootRelativePath', 'noteType', 'content', 'formatted', 'summary', 'citationsListOrder', 'importantValues', 'imageSrc', 'href', 'sequentialKey', 'sequentialIndex', 'floatImages', 'remoteUrl', 'trackRemote', 'outgoingQuickLinks', 'quickLink', 'bookmarked', 'firstSync', 'lastSync', 'lastAccess']);
+export default MdxNoteScalarFieldEnumSchema;

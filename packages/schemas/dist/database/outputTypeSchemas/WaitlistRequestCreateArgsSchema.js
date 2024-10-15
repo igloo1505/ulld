@@ -1,13 +1,16 @@
-import {
-  WaitlistRequestCreateArgsSchema,
-  WaitlistRequestCreateArgsSchema_default,
-  WaitlistRequestSelectSchema
-} from "../../chunk-PXR5BYON.js";
-import "../../chunk-4DF373JJ.js";
-import "../../chunk-SCT2FHZ2.js";
-export {
-  WaitlistRequestCreateArgsSchema,
-  WaitlistRequestSelectSchema,
-  WaitlistRequestCreateArgsSchema_default as default
-};
-//# sourceMappingURL=WaitlistRequestCreateArgsSchema.js.map
+import { z } from 'zod';
+import { WaitlistRequestCreateInputSchema } from '../inputTypeSchemas/WaitlistRequestCreateInputSchema.js';
+import { WaitlistRequestUncheckedCreateInputSchema } from '../inputTypeSchemas/WaitlistRequestUncheckedCreateInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const WaitlistRequestSelectSchema = z.object({
+    id: z.boolean().optional(),
+    email: z.boolean().optional(),
+    receivedOn: z.boolean().optional(),
+    emailsSent: z.boolean().optional(),
+}).strict();
+export const WaitlistRequestCreateArgsSchema = z.object({
+    select: WaitlistRequestSelectSchema.optional(),
+    data: z.union([WaitlistRequestCreateInputSchema, WaitlistRequestUncheckedCreateInputSchema]),
+}).strict();
+export default WaitlistRequestCreateArgsSchema;

@@ -1,9 +1,5 @@
-import {
-  IpynbCreateimportantValuesInputSchema,
-  IpynbCreateimportantValuesInputSchema_default
-} from "../../chunk-5KU54GLW.js";
-export {
-  IpynbCreateimportantValuesInputSchema,
-  IpynbCreateimportantValuesInputSchema_default as default
-};
-//# sourceMappingURL=IpynbCreateimportantValuesInputSchema.js.map
+import { z } from 'zod';
+export const IpynbCreateimportantValuesInputSchema = z.object({
+    set: z.number().array()
+}).strict();
+export default IpynbCreateimportantValuesInputSchema;

@@ -1,75 +1,27 @@
-import {
-  TimePeriodFindFirstOrThrowArgsSchema,
-  TimePeriodFindFirstOrThrowArgsSchema_default,
-  TimePeriodSelectSchema
-} from "../../chunk-YHPL3G2B.js";
-import "../../chunk-KDYZAD52.js";
-import "../../chunk-F7WREYKP.js";
-import "../../chunk-XSFJADHG.js";
-import "../../chunk-QLHQ3CC4.js";
-import "../../chunk-UBAUXHRA.js";
-import "../../chunk-VPDMFHNI.js";
-import "../../chunk-HVBBYC7S.js";
-import "../../chunk-RNIPPCR5.js";
-import "../../chunk-ZA3KL7IQ.js";
-import "../../chunk-H2SQHHJN.js";
-import "../../chunk-GVRWVSTA.js";
-import "../../chunk-PFFRFP2G.js";
-import "../../chunk-LZNACEQH.js";
-import "../../chunk-APXVAXDT.js";
-import "../../chunk-7YVP76GY.js";
-import "../../chunk-BRBARM24.js";
-import "../../chunk-33MCZ6AL.js";
-import "../../chunk-2YLYAKJ5.js";
-import "../../chunk-F7YUFWZ6.js";
-import "../../chunk-36CO6JRE.js";
-import "../../chunk-D3YENTEM.js";
-import "../../chunk-Q5LINEDD.js";
-import "../../chunk-J5RY4DJT.js";
-import "../../chunk-H4HFGUAJ.js";
-import "../../chunk-QFVMDCBU.js";
-import "../../chunk-7ISI4WFK.js";
-import "../../chunk-4TP62LJL.js";
-import "../../chunk-W4Q366B6.js";
-import "../../chunk-ZUIIQRAW.js";
-import "../../chunk-MTR5OF6P.js";
-import "../../chunk-P3SYYFW6.js";
-import "../../chunk-YWQ2LKBQ.js";
-import "../../chunk-4V7L2DVJ.js";
-import "../../chunk-MDAJAPVT.js";
-import "../../chunk-CWSHQA3B.js";
-import "../../chunk-ZOOTEKRM.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-W3S4HR64.js";
-import "../../chunk-FXL5EPFC.js";
-import "../../chunk-LRTPFMPI.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-IXTUTJ7O.js";
-import "../../chunk-WAVH2TQU.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-WVDZRY2Y.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  TimePeriodFindFirstOrThrowArgsSchema,
-  TimePeriodSelectSchema,
-  TimePeriodFindFirstOrThrowArgsSchema_default as default
-};
-//# sourceMappingURL=TimePeriodFindFirstOrThrowArgsSchema.js.map
+import { z } from 'zod';
+import { TimePeriodIncludeSchema } from '../inputTypeSchemas/TimePeriodIncludeSchema.js';
+import { TimePeriodWhereInputSchema } from '../inputTypeSchemas/TimePeriodWhereInputSchema.js';
+import { TimePeriodOrderByWithRelationInputSchema } from '../inputTypeSchemas/TimePeriodOrderByWithRelationInputSchema.js';
+import { TimePeriodWhereUniqueInputSchema } from '../inputTypeSchemas/TimePeriodWhereUniqueInputSchema.js';
+import { TimePeriodScalarFieldEnumSchema } from '../inputTypeSchemas/TimePeriodScalarFieldEnumSchema.js';
+import { DietArgsSchema } from "../outputTypeSchemas/DietArgsSchema";
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const TimePeriodSelectSchema = z.object({
+    id: z.boolean().optional(),
+    start: z.boolean().optional(),
+    end: z.boolean().optional(),
+    dietId: z.boolean().optional(),
+    Diet: z.union([z.boolean(), z.lazy(() => DietArgsSchema)]).optional(),
+}).strict();
+export const TimePeriodFindFirstOrThrowArgsSchema = z.object({
+    select: TimePeriodSelectSchema.optional(),
+    include: TimePeriodIncludeSchema.optional(),
+    where: TimePeriodWhereInputSchema.optional(),
+    orderBy: z.union([TimePeriodOrderByWithRelationInputSchema.array(), TimePeriodOrderByWithRelationInputSchema]).optional(),
+    cursor: TimePeriodWhereUniqueInputSchema.optional(),
+    take: z.number().optional(),
+    skip: z.number().optional(),
+    distinct: z.union([TimePeriodScalarFieldEnumSchema, TimePeriodScalarFieldEnumSchema.array()]).optional(),
+}).strict();
+export default TimePeriodFindFirstOrThrowArgsSchema;

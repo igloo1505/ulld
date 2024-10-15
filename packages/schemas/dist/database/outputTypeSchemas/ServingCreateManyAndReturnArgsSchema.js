@@ -1,11 +1,7 @@
-import {
-  ServingCreateManyAndReturnArgsSchema,
-  ServingCreateManyAndReturnArgsSchema_default
-} from "../../chunk-QFTQEZHQ.js";
-import "../../chunk-6NEWLXQS.js";
-import "../../chunk-LUUG3TNG.js";
-export {
-  ServingCreateManyAndReturnArgsSchema,
-  ServingCreateManyAndReturnArgsSchema_default as default
-};
-//# sourceMappingURL=ServingCreateManyAndReturnArgsSchema.js.map
+import { z } from 'zod';
+import { ServingCreateManyInputSchema } from '../inputTypeSchemas/ServingCreateManyInputSchema.js';
+export const ServingCreateManyAndReturnArgsSchema = z.object({
+    data: z.union([ServingCreateManyInputSchema, ServingCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default ServingCreateManyAndReturnArgsSchema;

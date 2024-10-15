@@ -1,11 +1,11 @@
-import {
-  FeatureRequestCreateInputSchema,
-  FeatureRequestCreateInputSchema_default
-} from "../../chunk-KSU4POIE.js";
-import "../../chunk-RTE36G3H.js";
-import "../../chunk-YD4DWKTK.js";
-export {
-  FeatureRequestCreateInputSchema,
-  FeatureRequestCreateInputSchema_default as default
-};
-//# sourceMappingURL=FeatureRequestCreateInputSchema.js.map
+import { z } from 'zod';
+import { FeatureRequestCreatecategoryInputSchema } from './FeatureRequestCreatecategoryInputSchema.js';
+import { FeatureRequestCreateuserBaseInputSchema } from './FeatureRequestCreateuserBaseInputSchema.js';
+export const FeatureRequestCreateInputSchema = z.object({
+    email: z.string(),
+    message: z.string(),
+    category: z.union([z.lazy(() => FeatureRequestCreatecategoryInputSchema), z.string().array()]).optional(),
+    userBase: z.union([z.lazy(() => FeatureRequestCreateuserBaseInputSchema), z.string().array()]).optional(),
+    receivedOn: z.coerce.date().optional()
+}).strict();
+export default FeatureRequestCreateInputSchema;

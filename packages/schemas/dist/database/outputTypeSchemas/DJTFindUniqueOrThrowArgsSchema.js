@@ -1,20 +1,14 @@
-import {
-  DJTFindUniqueOrThrowArgsSchema,
-  DJTFindUniqueOrThrowArgsSchema_default,
-  DJTSelectSchema
-} from "../../chunk-LSPS4KN4.js";
-import "../../chunk-ZKHP557W.js";
-import "../../chunk-AMDBRTLV.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DJTFindUniqueOrThrowArgsSchema,
-  DJTSelectSchema,
-  DJTFindUniqueOrThrowArgsSchema_default as default
-};
-//# sourceMappingURL=DJTFindUniqueOrThrowArgsSchema.js.map
+import { z } from 'zod';
+import { DJTWhereUniqueInputSchema } from '../inputTypeSchemas/DJTWhereUniqueInputSchema.js';
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+export const DJTSelectSchema = z.object({
+    id: z.boolean().optional(),
+    type: z.boolean().optional(),
+    data: z.boolean().optional(),
+}).strict();
+export const DJTFindUniqueOrThrowArgsSchema = z.object({
+    select: DJTSelectSchema.optional(),
+    where: DJTWhereUniqueInputSchema,
+}).strict();
+export default DJTFindUniqueOrThrowArgsSchema;

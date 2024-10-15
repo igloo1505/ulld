@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/database/inputTypeSchemas/RandomImageScalarFieldEnumSchema.ts"],"sourcesContent":["import { z } from 'zod';\nexport const RandomImageScalarFieldEnumSchema = z.enum(['path','createdAt']);\nexport default RandomImageScalarFieldEnumSchema;"],"mappings":";AAAA,SAAS,SAAS;AACX,IAAM,mCAAmC,EAAE,KAAK,CAAC,QAAO,WAAW,CAAC;AAC3E,IAAO,2CAAQ;","names":[]}

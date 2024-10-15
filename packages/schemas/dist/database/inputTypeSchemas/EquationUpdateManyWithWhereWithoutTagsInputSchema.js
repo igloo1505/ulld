@@ -1,31 +1,9 @@
-import {
-  EquationUpdateManyWithWhereWithoutTagsInputSchema,
-  EquationUpdateManyWithWhereWithoutTagsInputSchema_default
-} from "../../chunk-GR7QYUAO.js";
-import "../../chunk-KKD6UAFV.js";
-import "../../chunk-34ND25JL.js";
-import "../../chunk-XCBYVXYO.js";
-import "../../chunk-TJ6LKQUQ.js";
-import "../../chunk-C4BQGMUK.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-ZXTFXMHW.js";
-import "../../chunk-V2TZ67XY.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-BQIXGZB5.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  EquationUpdateManyWithWhereWithoutTagsInputSchema,
-  EquationUpdateManyWithWhereWithoutTagsInputSchema_default as default
-};
-//# sourceMappingURL=EquationUpdateManyWithWhereWithoutTagsInputSchema.js.map
+import { z } from 'zod';
+import { EquationScalarWhereInputSchema } from './EquationScalarWhereInputSchema.js';
+import { EquationUpdateManyMutationInputSchema } from './EquationUpdateManyMutationInputSchema.js';
+import { EquationUncheckedUpdateManyWithoutTagsInputSchema } from './EquationUncheckedUpdateManyWithoutTagsInputSchema.js';
+export const EquationUpdateManyWithWhereWithoutTagsInputSchema = z.object({
+    where: z.lazy(() => EquationScalarWhereInputSchema),
+    data: z.union([z.lazy(() => EquationUpdateManyMutationInputSchema), z.lazy(() => EquationUncheckedUpdateManyWithoutTagsInputSchema)]),
+}).strict();
+export default EquationUpdateManyWithWhereWithoutTagsInputSchema;

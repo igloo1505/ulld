@@ -1,9 +1,16 @@
-import {
-  NestedStringNullableFilterSchema,
-  NestedStringNullableFilterSchema_default
-} from "../../chunk-RQEVSJX3.js";
-export {
-  NestedStringNullableFilterSchema,
-  NestedStringNullableFilterSchema_default as default
-};
-//# sourceMappingURL=NestedStringNullableFilterSchema.js.map
+import { z } from 'zod';
+export const NestedStringNullableFilterSchema = z.object({
+    equals: z.string().optional().nullable(),
+    in: z.string().array().optional().nullable(),
+    notIn: z.string().array().optional().nullable(),
+    lt: z.string().optional(),
+    lte: z.string().optional(),
+    gt: z.string().optional(),
+    gte: z.string().optional(),
+    contains: z.string().optional(),
+    startsWith: z.string().optional(),
+    endsWith: z.string().optional(),
+    search: z.string().optional(),
+    not: z.union([z.string(), z.lazy(() => NestedStringNullableFilterSchema)]).optional().nullable(),
+}).strict();
+export default NestedStringNullableFilterSchema;

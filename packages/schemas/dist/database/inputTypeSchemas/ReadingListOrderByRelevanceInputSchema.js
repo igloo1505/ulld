@@ -1,11 +1,9 @@
-import {
-  ReadingListOrderByRelevanceInputSchema,
-  ReadingListOrderByRelevanceInputSchema_default
-} from "../../chunk-MZSZGCUA.js";
-import "../../chunk-QPRVPEZA.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  ReadingListOrderByRelevanceInputSchema,
-  ReadingListOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=ReadingListOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { ReadingListOrderByRelevanceFieldEnumSchema } from './ReadingListOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const ReadingListOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => ReadingListOrderByRelevanceFieldEnumSchema), z.lazy(() => ReadingListOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default ReadingListOrderByRelevanceInputSchema;

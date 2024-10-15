@@ -1,8 +1,25 @@
-import {
-  taggableFields
-} from "../../../chunk-5XGYGHAO.js";
-import "../../../chunk-M5VWJQBY.js";
-export {
-  taggableFields
-};
-//# sourceMappingURL=taggableFields.js.map
+import { z } from "zod";
+import { subjectZodObject, tagZodObject, topicZodObject } from "./classProps.js";
+export const taggableFields = z.object({
+    topics: topicZodObject
+        .array()
+        .default([])
+    // .transform((a) => {
+    //     return a.map((b) => new Topic(b));
+    // })
+    ,
+    subjects: subjectZodObject
+        .array()
+        .default([])
+    // .transform((a) => {
+    //     return a.map((b) => new Subject(b));
+    // })
+    ,
+    tags: tagZodObject
+        .array()
+        .default([])
+    // .transform((a) => {
+    //     return a.map((b) => new Tag(b));
+    // })
+    ,
+});

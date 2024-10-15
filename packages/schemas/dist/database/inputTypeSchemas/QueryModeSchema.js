@@ -1,9 +1,3 @@
-import {
-  QueryModeSchema,
-  QueryModeSchema_default
-} from "../../chunk-5V6JEXGU.js";
-export {
-  QueryModeSchema,
-  QueryModeSchema_default as default
-};
-//# sourceMappingURL=QueryModeSchema.js.map
+import { z } from 'zod';
+export const QueryModeSchema = z.enum(['default', 'insensitive']);
+export default QueryModeSchema;

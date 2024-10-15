@@ -1,10 +1,7 @@
-import {
-  ToDoListCreateManyArgsSchema,
-  ToDoListCreateManyArgsSchema_default
-} from "../../chunk-J7MR44YY.js";
-import "../../chunk-WI7JTGLO.js";
-export {
-  ToDoListCreateManyArgsSchema,
-  ToDoListCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=ToDoListCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { ToDoListCreateManyInputSchema } from '../inputTypeSchemas/ToDoListCreateManyInputSchema.js';
+export const ToDoListCreateManyArgsSchema = z.object({
+    data: z.union([ToDoListCreateManyInputSchema, ToDoListCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default ToDoListCreateManyArgsSchema;

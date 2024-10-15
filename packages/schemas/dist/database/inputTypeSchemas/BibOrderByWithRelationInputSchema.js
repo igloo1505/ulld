@@ -1,13 +1,13 @@
-import {
-  BibOrderByWithRelationInputSchema,
-  BibOrderByWithRelationInputSchema_default
-} from "../../chunk-ECC75BHH.js";
-import "../../chunk-BVOQPGJM.js";
-import "../../chunk-OLNJKVDG.js";
-import "../../chunk-DD4B26NX.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  BibOrderByWithRelationInputSchema,
-  BibOrderByWithRelationInputSchema_default as default
-};
-//# sourceMappingURL=BibOrderByWithRelationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { BibEntryOrderByRelationAggregateInputSchema } from './BibEntryOrderByRelationAggregateInputSchema.js';
+import { BibOrderByRelevanceInputSchema } from './BibOrderByRelevanceInputSchema.js';
+export const BibOrderByWithRelationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    filename: z.lazy(() => SortOrderSchema).optional(),
+    firstSync: z.lazy(() => SortOrderSchema).optional(),
+    lastSync: z.lazy(() => SortOrderSchema).optional(),
+    entries: z.lazy(() => BibEntryOrderByRelationAggregateInputSchema).optional(),
+    _relevance: z.lazy(() => BibOrderByRelevanceInputSchema).optional()
+}).strict();
+export default BibOrderByWithRelationInputSchema;

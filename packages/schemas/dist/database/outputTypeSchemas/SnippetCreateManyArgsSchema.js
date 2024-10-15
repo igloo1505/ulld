@@ -1,11 +1,7 @@
-import {
-  SnippetCreateManyArgsSchema,
-  SnippetCreateManyArgsSchema_default
-} from "../../chunk-KHJGASAB.js";
-import "../../chunk-6P4LVRYL.js";
-import "../../chunk-JVQMU3BL.js";
-export {
-  SnippetCreateManyArgsSchema,
-  SnippetCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=SnippetCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { SnippetCreateManyInputSchema } from '../inputTypeSchemas/SnippetCreateManyInputSchema.js';
+export const SnippetCreateManyArgsSchema = z.object({
+    data: z.union([SnippetCreateManyInputSchema, SnippetCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default SnippetCreateManyArgsSchema;

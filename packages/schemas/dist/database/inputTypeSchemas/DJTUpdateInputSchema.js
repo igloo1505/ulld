@@ -1,11 +1,8 @@
-import {
-  DJTUpdateInputSchema,
-  DJTUpdateInputSchema_default
-} from "../../chunk-E2SWQ56E.js";
-import "../../chunk-WKMKAR2K.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  DJTUpdateInputSchema,
-  DJTUpdateInputSchema_default as default
-};
-//# sourceMappingURL=DJTUpdateInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { BytesFieldUpdateOperationsInputSchema } from './BytesFieldUpdateOperationsInputSchema.js';
+export const DJTUpdateInputSchema = z.object({
+    type: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    data: z.union([z.instanceof(Buffer), z.lazy(() => BytesFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default DJTUpdateInputSchema;

@@ -1,13 +1,13 @@
-import {
-  RandomImageOrderByWithAggregationInputSchema,
-  RandomImageOrderByWithAggregationInputSchema_default
-} from "../../chunk-UPCOX25P.js";
-import "../../chunk-DGDNKKQN.js";
-import "../../chunk-OUVHBM4H.js";
-import "../../chunk-VANKR7CD.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  RandomImageOrderByWithAggregationInputSchema,
-  RandomImageOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=RandomImageOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { RandomImageCountOrderByAggregateInputSchema } from './RandomImageCountOrderByAggregateInputSchema.js';
+import { RandomImageMaxOrderByAggregateInputSchema } from './RandomImageMaxOrderByAggregateInputSchema.js';
+import { RandomImageMinOrderByAggregateInputSchema } from './RandomImageMinOrderByAggregateInputSchema.js';
+export const RandomImageOrderByWithAggregationInputSchema = z.object({
+    path: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    _count: z.lazy(() => RandomImageCountOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => RandomImageMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => RandomImageMinOrderByAggregateInputSchema).optional()
+}).strict();
+export default RandomImageOrderByWithAggregationInputSchema;

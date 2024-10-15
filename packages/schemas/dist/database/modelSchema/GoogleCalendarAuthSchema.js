@@ -1,11 +1,13 @@
-import {
-  GoogleCalendarAuthPartialSchema,
-  GoogleCalendarAuthSchema,
-  GoogleCalendarAuthSchema_default
-} from "../../chunk-TELYPIT5.js";
-export {
-  GoogleCalendarAuthPartialSchema,
-  GoogleCalendarAuthSchema,
-  GoogleCalendarAuthSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthSchema.js.map
+import { z } from 'zod';
+/////////////////////////////////////////
+// GOOGLE CALENDAR AUTH SCHEMA
+/////////////////////////////////////////
+export const GoogleCalendarAuthSchema = z.object({
+    id: z.number().int(),
+    auth: z.string().nullable(),
+});
+/////////////////////////////////////////
+// GOOGLE CALENDAR AUTH PARTIAL SCHEMA
+/////////////////////////////////////////
+export const GoogleCalendarAuthPartialSchema = GoogleCalendarAuthSchema.partial();
+export default GoogleCalendarAuthSchema;

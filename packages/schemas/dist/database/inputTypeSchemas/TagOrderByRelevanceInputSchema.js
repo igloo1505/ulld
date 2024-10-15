@@ -1,11 +1,9 @@
-import {
-  TagOrderByRelevanceInputSchema,
-  TagOrderByRelevanceInputSchema_default
-} from "../../chunk-IRHVJU3N.js";
-import "../../chunk-5TYBK7BO.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TagOrderByRelevanceInputSchema,
-  TagOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=TagOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { TagOrderByRelevanceFieldEnumSchema } from './TagOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const TagOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => TagOrderByRelevanceFieldEnumSchema), z.lazy(() => TagOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default TagOrderByRelevanceInputSchema;

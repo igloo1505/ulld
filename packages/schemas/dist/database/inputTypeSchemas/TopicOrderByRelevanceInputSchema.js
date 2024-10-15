@@ -1,11 +1,9 @@
-import {
-  TopicOrderByRelevanceInputSchema,
-  TopicOrderByRelevanceInputSchema_default
-} from "../../chunk-P6WSNMWA.js";
-import "../../chunk-FED4MTPO.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TopicOrderByRelevanceInputSchema,
-  TopicOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=TopicOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { TopicOrderByRelevanceFieldEnumSchema } from './TopicOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const TopicOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => TopicOrderByRelevanceFieldEnumSchema), z.lazy(() => TopicOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default TopicOrderByRelevanceInputSchema;

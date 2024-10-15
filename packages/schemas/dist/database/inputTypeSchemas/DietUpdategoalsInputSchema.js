@@ -1,10 +1,7 @@
-import {
-  DietUpdategoalsInputSchema,
-  DietUpdategoalsInputSchema_default
-} from "../../chunk-E3GOTFX5.js";
-import "../../chunk-LRTPFMPI.js";
-export {
-  DietUpdategoalsInputSchema,
-  DietUpdategoalsInputSchema_default as default
-};
-//# sourceMappingURL=DietUpdategoalsInputSchema.js.map
+import { z } from 'zod';
+import { DIETARY_GOALSchema } from './DIETARY_GOALSchema.js';
+export const DietUpdategoalsInputSchema = z.object({
+    set: z.lazy(() => DIETARY_GOALSchema).array().optional(),
+    push: z.union([z.lazy(() => DIETARY_GOALSchema), z.lazy(() => DIETARY_GOALSchema).array()]).optional(),
+}).strict();
+export default DietUpdategoalsInputSchema;

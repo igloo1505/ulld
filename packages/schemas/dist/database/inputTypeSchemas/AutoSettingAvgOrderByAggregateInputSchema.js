@@ -1,10 +1,6 @@
-import {
-  AutoSettingAvgOrderByAggregateInputSchema,
-  AutoSettingAvgOrderByAggregateInputSchema_default
-} from "../../chunk-YLXEIML2.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  AutoSettingAvgOrderByAggregateInputSchema,
-  AutoSettingAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=AutoSettingAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const AutoSettingAvgOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default AutoSettingAvgOrderByAggregateInputSchema;

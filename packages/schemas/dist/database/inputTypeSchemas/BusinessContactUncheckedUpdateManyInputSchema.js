@@ -1,12 +1,15 @@
-import {
-  BusinessContactUncheckedUpdateManyInputSchema,
-  BusinessContactUncheckedUpdateManyInputSchema_default
-} from "../../chunk-C4Y6DFWW.js";
-import "../../chunk-EGW2GABF.js";
-import "../../chunk-TKIJII67.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  BusinessContactUncheckedUpdateManyInputSchema,
-  BusinessContactUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=BusinessContactUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+export const BusinessContactUncheckedUpdateManyInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    companyName: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    contactName: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    contactPreference: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    email: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    phone: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    message: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    purpose: z.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default BusinessContactUncheckedUpdateManyInputSchema;

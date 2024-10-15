@@ -1,9 +1,7 @@
-import {
-  DJTCreateManyInputSchema,
-  DJTCreateManyInputSchema_default
-} from "../../chunk-VBDH3DP4.js";
-export {
-  DJTCreateManyInputSchema,
-  DJTCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=DJTCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const DJTCreateManyInputSchema = z.object({
+    id: z.number().int().optional(),
+    type: z.string(),
+    data: z.instanceof(Buffer)
+}).strict();
+export default DJTCreateManyInputSchema;

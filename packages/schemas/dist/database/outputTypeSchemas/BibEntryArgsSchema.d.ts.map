@@ -1,0 +1,1 @@
+{"version":3,"file":"BibEntryArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/BibEntryArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAGhD,eAAO,MAAM,kBAAkB,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,mBAAmB,CAG1D,CAAC;AACZ,eAAe,kBAAkB,CAAC"}

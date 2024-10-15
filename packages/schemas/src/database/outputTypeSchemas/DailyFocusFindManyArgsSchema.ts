@@ -1,17 +1,15 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { DailyFocusWhereInputSchema } from '../inputTypeSchemas/DailyFocusWhereInputSchema'
-import { DailyFocusOrderByWithRelationInputSchema } from '../inputTypeSchemas/DailyFocusOrderByWithRelationInputSchema'
-import { DailyFocusWhereUniqueInputSchema } from '../inputTypeSchemas/DailyFocusWhereUniqueInputSchema'
-import { DailyFocusScalarFieldEnumSchema } from '../inputTypeSchemas/DailyFocusScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+import { DailyFocusWhereInputSchema } from '../inputTypeSchemas/DailyFocusWhereInputSchema.js'
+import { DailyFocusOrderByWithRelationInputSchema } from '../inputTypeSchemas/DailyFocusOrderByWithRelationInputSchema.js'
+import { DailyFocusWhereUniqueInputSchema } from '../inputTypeSchemas/DailyFocusWhereUniqueInputSchema.js'
+import { DailyFocusScalarFieldEnumSchema } from '../inputTypeSchemas/DailyFocusScalarFieldEnumSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const DailyFocusSelectSchema: z.ZodType<Prisma.DailyFocusSelect> = z.object({
   value: z.boolean().optional(),
   createdAt: z.boolean().optional(),
 }).strict()
-
 export const DailyFocusFindManyArgsSchema: z.ZodType<Prisma.DailyFocusFindManyArgs> = z.object({
   select: DailyFocusSelectSchema.optional(),
   where: DailyFocusWhereInputSchema.optional(),
@@ -21,5 +19,4 @@ export const DailyFocusFindManyArgsSchema: z.ZodType<Prisma.DailyFocusFindManyAr
   skip: z.number().optional(),
   distinct: z.union([ DailyFocusScalarFieldEnumSchema,DailyFocusScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default DailyFocusFindManyArgsSchema;

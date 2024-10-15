@@ -1,11 +1,9 @@
-import {
-  WhiteboardOrderByRelevanceInputSchema,
-  WhiteboardOrderByRelevanceInputSchema_default
-} from "../../chunk-XPS76D5U.js";
-import "../../chunk-5ET4KGPN.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  WhiteboardOrderByRelevanceInputSchema,
-  WhiteboardOrderByRelevanceInputSchema_default as default
-};
-//# sourceMappingURL=WhiteboardOrderByRelevanceInputSchema.js.map
+import { z } from 'zod';
+import { WhiteboardOrderByRelevanceFieldEnumSchema } from './WhiteboardOrderByRelevanceFieldEnumSchema.js';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const WhiteboardOrderByRelevanceInputSchema = z.object({
+    fields: z.union([z.lazy(() => WhiteboardOrderByRelevanceFieldEnumSchema), z.lazy(() => WhiteboardOrderByRelevanceFieldEnumSchema).array()]),
+    sort: z.lazy(() => SortOrderSchema),
+    search: z.string()
+}).strict();
+export default WhiteboardOrderByRelevanceInputSchema;

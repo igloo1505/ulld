@@ -1,9 +1,12 @@
-import {
-  SubjectCountOutputTypeSelectSchema,
-  SubjectCountOutputTypeSelectSchema_default
-} from "../../chunk-FX6IAE5C.js";
-export {
-  SubjectCountOutputTypeSelectSchema,
-  SubjectCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=SubjectCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const SubjectCountOutputTypeSelectSchema = z.object({
+    MdxNotes: z.boolean().optional(),
+    IpynbNotes: z.boolean().optional(),
+    QaPair: z.boolean().optional(),
+    practiceExam: z.boolean().optional(),
+    todoList: z.boolean().optional(),
+    toDo: z.boolean().optional(),
+    bibEntries: z.boolean().optional(),
+    equations: z.boolean().optional(),
+}).strict();
+export default SubjectCountOutputTypeSelectSchema;

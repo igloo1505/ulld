@@ -1,10 +1,6 @@
-import {
-  IpynbCountOutputTypeArgsSchema,
-  IpynbCountOutputTypeArgsSchema_default
-} from "../../chunk-Q4UR4XCO.js";
-import "../../chunk-3KP7KBW7.js";
-export {
-  IpynbCountOutputTypeArgsSchema,
-  IpynbCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=IpynbCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { IpynbCountOutputTypeSelectSchema } from './IpynbCountOutputTypeSelectSchema.js';
+export const IpynbCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => IpynbCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default IpynbCountOutputTypeSelectSchema;

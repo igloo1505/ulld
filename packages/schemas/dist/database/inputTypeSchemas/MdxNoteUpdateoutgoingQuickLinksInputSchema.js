@@ -1,9 +1,6 @@
-import {
-  MdxNoteUpdateoutgoingQuickLinksInputSchema,
-  MdxNoteUpdateoutgoingQuickLinksInputSchema_default
-} from "../../chunk-RNPMLM3R.js";
-export {
-  MdxNoteUpdateoutgoingQuickLinksInputSchema,
-  MdxNoteUpdateoutgoingQuickLinksInputSchema_default as default
-};
-//# sourceMappingURL=MdxNoteUpdateoutgoingQuickLinksInputSchema.js.map
+import { z } from 'zod';
+export const MdxNoteUpdateoutgoingQuickLinksInputSchema = z.object({
+    set: z.string().array().optional(),
+    push: z.union([z.string(), z.string().array()]).optional(),
+}).strict();
+export default MdxNoteUpdateoutgoingQuickLinksInputSchema;

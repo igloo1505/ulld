@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { BibEntryIncludeSchema } from '../inputTypeSchemas/BibEntryIncludeSchema'
-import { BibEntryWhereInputSchema } from '../inputTypeSchemas/BibEntryWhereInputSchema'
-import { BibEntryOrderByWithRelationInputSchema } from '../inputTypeSchemas/BibEntryOrderByWithRelationInputSchema'
-import { BibEntryWhereUniqueInputSchema } from '../inputTypeSchemas/BibEntryWhereUniqueInputSchema'
-import { BibEntryScalarFieldEnumSchema } from '../inputTypeSchemas/BibEntryScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+import { BibEntryIncludeSchema } from '../inputTypeSchemas/BibEntryIncludeSchema.js'
+import { BibEntryWhereInputSchema } from '../inputTypeSchemas/BibEntryWhereInputSchema.js'
+import { BibEntryOrderByWithRelationInputSchema } from '../inputTypeSchemas/BibEntryOrderByWithRelationInputSchema.js'
+import { BibEntryWhereUniqueInputSchema } from '../inputTypeSchemas/BibEntryWhereUniqueInputSchema.js'
+import { BibEntryScalarFieldEnumSchema } from '../inputTypeSchemas/BibEntryScalarFieldEnumSchema.js'
 import { BibArgsSchema } from "../outputTypeSchemas/BibArgsSchema"
 import { CitationsGroupFindManyArgsSchema } from "../outputTypeSchemas/CitationsGroupFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
@@ -16,7 +16,6 @@ import { ReadingListFindManyArgsSchema } from "../outputTypeSchemas/ReadingListF
 import { BibEntryCountOutputTypeArgsSchema } from "../outputTypeSchemas/BibEntryCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const BibEntrySelectSchema: z.ZodType<Prisma.BibEntrySelect> = z.object({
   id: z.boolean().optional(),
   BibId: z.boolean().optional(),
@@ -70,7 +69,6 @@ export const BibEntrySelectSchema: z.ZodType<Prisma.BibEntrySelect> = z.object({
   readingList: z.union([z.boolean(),z.lazy(() => ReadingListFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => BibEntryCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const BibEntryFindFirstOrThrowArgsSchema: z.ZodType<Prisma.BibEntryFindFirstOrThrowArgs> = z.object({
   select: BibEntrySelectSchema.optional(),
   include: BibEntryIncludeSchema.optional(),
@@ -81,5 +79,4 @@ export const BibEntryFindFirstOrThrowArgsSchema: z.ZodType<Prisma.BibEntryFindFi
   skip: z.number().optional(),
   distinct: z.union([ BibEntryScalarFieldEnumSchema,BibEntryScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default BibEntryFindFirstOrThrowArgsSchema;

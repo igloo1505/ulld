@@ -1,13 +1,12 @@
-import {
-  NoteTypeOrderByWithAggregationInputSchema,
-  NoteTypeOrderByWithAggregationInputSchema_default
-} from "../../chunk-3PYAYR3O.js";
-import "../../chunk-6SOS5PO6.js";
-import "../../chunk-TCJ4BP2P.js";
-import "../../chunk-7ECQ7S5P.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  NoteTypeOrderByWithAggregationInputSchema,
-  NoteTypeOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=NoteTypeOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { NoteTypeCountOrderByAggregateInputSchema } from './NoteTypeCountOrderByAggregateInputSchema.js';
+import { NoteTypeMaxOrderByAggregateInputSchema } from './NoteTypeMaxOrderByAggregateInputSchema.js';
+import { NoteTypeMinOrderByAggregateInputSchema } from './NoteTypeMinOrderByAggregateInputSchema.js';
+export const NoteTypeOrderByWithAggregationInputSchema = z.object({
+    name: z.lazy(() => SortOrderSchema).optional(),
+    _count: z.lazy(() => NoteTypeCountOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => NoteTypeMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => NoteTypeMinOrderByAggregateInputSchema).optional()
+}).strict();
+export default NoteTypeOrderByWithAggregationInputSchema;

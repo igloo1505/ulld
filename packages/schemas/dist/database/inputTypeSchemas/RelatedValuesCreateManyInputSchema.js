@@ -1,12 +1,11 @@
-import {
-  RelatedValuesCreateManyInputSchema,
-  RelatedValuesCreateManyInputSchema_default
-} from "../../chunk-56TXXPIQ.js";
-import "../../chunk-M5WMX2EH.js";
-import "../../chunk-ZXTFXMHW.js";
-import "../../chunk-T77FYKUT.js";
-export {
-  RelatedValuesCreateManyInputSchema,
-  RelatedValuesCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=RelatedValuesCreateManyInputSchema.js.map
+import { z } from 'zod';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+import { RelatedValuesCreateequationIdInputSchema } from './RelatedValuesCreateequationIdInputSchema.js';
+export const RelatedValuesCreateManyInputSchema = z.object({
+    id: z.number().int().optional(),
+    input: z.union([z.lazy(() => JsonNullValueInputSchema), InputJsonValueSchema]).optional(),
+    output: z.number(),
+    equationId: z.union([z.lazy(() => RelatedValuesCreateequationIdInputSchema), z.number().int().array()]).optional(),
+}).strict();
+export default RelatedValuesCreateManyInputSchema;

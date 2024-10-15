@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { KanbanIncludeSchema } from '../inputTypeSchemas/KanbanIncludeSchema'
-import { KanbanWhereInputSchema } from '../inputTypeSchemas/KanbanWhereInputSchema'
-import { KanbanOrderByWithRelationInputSchema } from '../inputTypeSchemas/KanbanOrderByWithRelationInputSchema'
-import { KanbanWhereUniqueInputSchema } from '../inputTypeSchemas/KanbanWhereUniqueInputSchema'
-import { KanbanScalarFieldEnumSchema } from '../inputTypeSchemas/KanbanScalarFieldEnumSchema'
+import type { Prisma } from '@ulld/database/db';
+import { KanbanIncludeSchema } from '../inputTypeSchemas/KanbanIncludeSchema.js'
+import { KanbanWhereInputSchema } from '../inputTypeSchemas/KanbanWhereInputSchema.js'
+import { KanbanOrderByWithRelationInputSchema } from '../inputTypeSchemas/KanbanOrderByWithRelationInputSchema.js'
+import { KanbanWhereUniqueInputSchema } from '../inputTypeSchemas/KanbanWhereUniqueInputSchema.js'
+import { KanbanScalarFieldEnumSchema } from '../inputTypeSchemas/KanbanScalarFieldEnumSchema.js'
 import { KanBanListFindManyArgsSchema } from "../outputTypeSchemas/KanBanListFindManyArgsSchema"
 import { TagFindManyArgsSchema } from "../outputTypeSchemas/TagFindManyArgsSchema"
 import { SubjectFindManyArgsSchema } from "../outputTypeSchemas/SubjectFindManyArgsSchema"
@@ -12,7 +12,6 @@ import { TopicFindManyArgsSchema } from "../outputTypeSchemas/TopicFindManyArgsS
 import { KanbanCountOutputTypeArgsSchema } from "../outputTypeSchemas/KanbanCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const KanbanSelectSchema: z.ZodType<Prisma.KanbanSelect> = z.object({
   id: z.boolean().optional(),
   title: z.boolean().optional(),
@@ -24,7 +23,6 @@ export const KanbanSelectSchema: z.ZodType<Prisma.KanbanSelect> = z.object({
   topics: z.union([z.boolean(),z.lazy(() => TopicFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => KanbanCountOutputTypeArgsSchema)]).optional(),
 }).strict()
-
 export const KanbanFindFirstArgsSchema: z.ZodType<Prisma.KanbanFindFirstArgs> = z.object({
   select: KanbanSelectSchema.optional(),
   include: KanbanIncludeSchema.optional(),
@@ -35,5 +33,4 @@ export const KanbanFindFirstArgsSchema: z.ZodType<Prisma.KanbanFindFirstArgs> = 
   skip: z.number().optional(),
   distinct: z.union([ KanbanScalarFieldEnumSchema,KanbanScalarFieldEnumSchema.array() ]).optional(),
 }).strict() ;
-
 export default KanbanFindFirstArgsSchema;

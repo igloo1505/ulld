@@ -1,40 +1,20 @@
-import {
-  ReadingListWhereInputSchema,
-  ReadingListWhereInputSchema_default
-} from "../../chunk-LSOXTUZL.js";
-import "../../chunk-O6F53QLE.js";
-import "../../chunk-KLW7VRYK.js";
-import "../../chunk-QRRELMSU.js";
-import "../../chunk-YSW3P2HE.js";
-import "../../chunk-O7PIU7VL.js";
-import "../../chunk-4A6JCUBO.js";
-import "../../chunk-V2TZ67XY.js";
-import "../../chunk-T77FYKUT.js";
-import "../../chunk-7OQ35RBX.js";
-import "../../chunk-T4CHWTHS.js";
-import "../../chunk-KRPE75Q3.js";
-import "../../chunk-MDL32JOO.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-PPWE4A32.js";
-import "../../chunk-25XMO7OH.js";
-import "../../chunk-45PPNBUK.js";
-import "../../chunk-K637VO4C.js";
-import "../../chunk-FAJNE46X.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-NTRL3LS5.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  ReadingListWhereInputSchema,
-  ReadingListWhereInputSchema_default as default
-};
-//# sourceMappingURL=ReadingListWhereInputSchema.js.map
+import { z } from 'zod';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { BibEntryListRelationFilterSchema } from './BibEntryListRelationFilterSchema.js';
+import { MdxNoteListRelationFilterSchema } from './MdxNoteListRelationFilterSchema.js';
+import { IpynbListRelationFilterSchema } from './IpynbListRelationFilterSchema.js';
+export const ReadingListWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => ReadingListWhereInputSchema), z.lazy(() => ReadingListWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => ReadingListWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => ReadingListWhereInputSchema), z.lazy(() => ReadingListWhereInputSchema).array()]).optional(),
+    name: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    description: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    createdAt: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    lastUpdate: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    bibEntries: z.lazy(() => BibEntryListRelationFilterSchema).optional(),
+    mdxNotes: z.lazy(() => MdxNoteListRelationFilterSchema).optional(),
+    ipynbNotes: z.lazy(() => IpynbListRelationFilterSchema).optional()
+}).strict();
+export default ReadingListWhereInputSchema;

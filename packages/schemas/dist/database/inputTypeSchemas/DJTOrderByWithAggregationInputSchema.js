@@ -1,15 +1,18 @@
-import {
-  DJTOrderByWithAggregationInputSchema,
-  DJTOrderByWithAggregationInputSchema_default
-} from "../../chunk-AMQ4SFAL.js";
-import "../../chunk-5UVPKK3O.js";
-import "../../chunk-HTOM5DYC.js";
-import "../../chunk-Q2GJGHF3.js";
-import "../../chunk-NORY5TDU.js";
-import "../../chunk-I3TP2IZR.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  DJTOrderByWithAggregationInputSchema,
-  DJTOrderByWithAggregationInputSchema_default as default
-};
-//# sourceMappingURL=DJTOrderByWithAggregationInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { DJTCountOrderByAggregateInputSchema } from './DJTCountOrderByAggregateInputSchema.js';
+import { DJTAvgOrderByAggregateInputSchema } from './DJTAvgOrderByAggregateInputSchema.js';
+import { DJTMaxOrderByAggregateInputSchema } from './DJTMaxOrderByAggregateInputSchema.js';
+import { DJTMinOrderByAggregateInputSchema } from './DJTMinOrderByAggregateInputSchema.js';
+import { DJTSumOrderByAggregateInputSchema } from './DJTSumOrderByAggregateInputSchema.js';
+export const DJTOrderByWithAggregationInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    type: z.lazy(() => SortOrderSchema).optional(),
+    data: z.lazy(() => SortOrderSchema).optional(),
+    _count: z.lazy(() => DJTCountOrderByAggregateInputSchema).optional(),
+    _avg: z.lazy(() => DJTAvgOrderByAggregateInputSchema).optional(),
+    _max: z.lazy(() => DJTMaxOrderByAggregateInputSchema).optional(),
+    _min: z.lazy(() => DJTMinOrderByAggregateInputSchema).optional(),
+    _sum: z.lazy(() => DJTSumOrderByAggregateInputSchema).optional()
+}).strict();
+export default DJTOrderByWithAggregationInputSchema;

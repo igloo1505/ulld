@@ -1,9 +1,3 @@
-import {
-  AutoSettingScalarFieldEnumSchema,
-  AutoSettingScalarFieldEnumSchema_default
-} from "../../chunk-JCUVCERX.js";
-export {
-  AutoSettingScalarFieldEnumSchema,
-  AutoSettingScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=AutoSettingScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const AutoSettingScalarFieldEnumSchema = z.enum(['id', 'type', 'glob', 'value']);
+export default AutoSettingScalarFieldEnumSchema;

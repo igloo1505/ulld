@@ -1,9 +1,11 @@
-import {
-  DefinitionCreateManyInputSchema,
-  DefinitionCreateManyInputSchema_default
-} from "../../chunk-PICJJJY4.js";
-export {
-  DefinitionCreateManyInputSchema,
-  DefinitionCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=DefinitionCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const DefinitionCreateManyInputSchema = z.object({
+    id: z.string(),
+    label: z.string().optional().nullable(),
+    content: z.string().optional().nullable(),
+    alphabeticalLabel: z.string().optional().nullable(),
+    mdxNoteId: z.number().int().optional().nullable(),
+    createdAt: z.coerce.date().optional(),
+    lastAccess: z.coerce.date().optional()
+}).strict();
+export default DefinitionCreateManyInputSchema;

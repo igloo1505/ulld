@@ -1,10 +1,6 @@
-import {
-  CitationsGroupCountOutputTypeArgsSchema,
-  CitationsGroupCountOutputTypeArgsSchema_default
-} from "../../chunk-LZDVJHQX.js";
-import "../../chunk-47E6WPFB.js";
-export {
-  CitationsGroupCountOutputTypeArgsSchema,
-  CitationsGroupCountOutputTypeArgsSchema_default as default
-};
-//# sourceMappingURL=CitationsGroupCountOutputTypeArgsSchema.js.map
+import { z } from 'zod';
+import { CitationsGroupCountOutputTypeSelectSchema } from './CitationsGroupCountOutputTypeSelectSchema.js';
+export const CitationsGroupCountOutputTypeArgsSchema = z.object({
+    select: z.lazy(() => CitationsGroupCountOutputTypeSelectSchema).nullish(),
+}).strict();
+export default CitationsGroupCountOutputTypeSelectSchema;

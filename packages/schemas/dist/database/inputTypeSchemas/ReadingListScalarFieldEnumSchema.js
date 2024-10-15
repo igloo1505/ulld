@@ -1,9 +1,3 @@
-import {
-  ReadingListScalarFieldEnumSchema,
-  ReadingListScalarFieldEnumSchema_default
-} from "../../chunk-MZFNSGGS.js";
-export {
-  ReadingListScalarFieldEnumSchema,
-  ReadingListScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=ReadingListScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const ReadingListScalarFieldEnumSchema = z.enum(['name', 'description', 'createdAt', 'lastUpdate']);
+export default ReadingListScalarFieldEnumSchema;

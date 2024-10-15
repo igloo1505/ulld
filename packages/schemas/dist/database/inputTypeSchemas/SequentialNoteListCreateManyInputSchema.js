@@ -1,9 +1,5 @@
-import {
-  SequentialNoteListCreateManyInputSchema,
-  SequentialNoteListCreateManyInputSchema_default
-} from "../../chunk-TVT2MJLQ.js";
-export {
-  SequentialNoteListCreateManyInputSchema,
-  SequentialNoteListCreateManyInputSchema_default as default
-};
-//# sourceMappingURL=SequentialNoteListCreateManyInputSchema.js.map
+import { z } from 'zod';
+export const SequentialNoteListCreateManyInputSchema = z.object({
+    sequentialKey: z.string()
+}).strict();
+export default SequentialNoteListCreateManyInputSchema;

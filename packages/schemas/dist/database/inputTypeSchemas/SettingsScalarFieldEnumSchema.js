@@ -1,9 +1,3 @@
-import {
-  SettingsScalarFieldEnumSchema,
-  SettingsScalarFieldEnumSchema_default
-} from "../../chunk-F7P3K44D.js";
-export {
-  SettingsScalarFieldEnumSchema,
-  SettingsScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=SettingsScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const SettingsScalarFieldEnumSchema = z.enum(['id', 'tooltips', 'title', 'summary_showCitations', 'summary_showTags', 'landingImageAlign', 'lockedLandingImage', 'cleanOnSync', 'plotTheme', 'pluginSettings', 'firstSync', 'lastSync']);
+export default SettingsScalarFieldEnumSchema;

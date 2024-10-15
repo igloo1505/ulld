@@ -1,9 +1,6 @@
-import {
-  MdxNoteUpdateimportantValuesInputSchema,
-  MdxNoteUpdateimportantValuesInputSchema_default
-} from "../../chunk-PQC7BMWQ.js";
-export {
-  MdxNoteUpdateimportantValuesInputSchema,
-  MdxNoteUpdateimportantValuesInputSchema_default as default
-};
-//# sourceMappingURL=MdxNoteUpdateimportantValuesInputSchema.js.map
+import { z } from 'zod';
+export const MdxNoteUpdateimportantValuesInputSchema = z.object({
+    set: z.number().array().optional(),
+    push: z.union([z.number(), z.number().array()]).optional(),
+}).strict();
+export default MdxNoteUpdateimportantValuesInputSchema;

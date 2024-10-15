@@ -1,9 +1,8 @@
-import {
-  KanBanCardUncheckedCreateWithoutKanBanListInputSchema,
-  KanBanCardUncheckedCreateWithoutKanBanListInputSchema_default
-} from "../../chunk-GGTAOTRC.js";
-export {
-  KanBanCardUncheckedCreateWithoutKanBanListInputSchema,
-  KanBanCardUncheckedCreateWithoutKanBanListInputSchema_default as default
-};
-//# sourceMappingURL=KanBanCardUncheckedCreateWithoutKanBanListInputSchema.js.map
+import { z } from 'zod';
+export const KanBanCardUncheckedCreateWithoutKanBanListInputSchema = z.object({
+    id: z.number().int().optional(),
+    indexWithinList: z.number().int(),
+    label: z.string().optional().nullable(),
+    details: z.string().optional().nullable()
+}).strict();
+export default KanBanCardUncheckedCreateWithoutKanBanListInputSchema;

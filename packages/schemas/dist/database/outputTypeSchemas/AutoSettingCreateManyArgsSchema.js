@@ -1,11 +1,7 @@
-import {
-  AutoSettingCreateManyArgsSchema,
-  AutoSettingCreateManyArgsSchema_default
-} from "../../chunk-QL3H2E3I.js";
-import "../../chunk-DIBRFY26.js";
-import "../../chunk-76RQYGNI.js";
-export {
-  AutoSettingCreateManyArgsSchema,
-  AutoSettingCreateManyArgsSchema_default as default
-};
-//# sourceMappingURL=AutoSettingCreateManyArgsSchema.js.map
+import { z } from 'zod';
+import { AutoSettingCreateManyInputSchema } from '../inputTypeSchemas/AutoSettingCreateManyInputSchema.js';
+export const AutoSettingCreateManyArgsSchema = z.object({
+    data: z.union([AutoSettingCreateManyInputSchema, AutoSettingCreateManyInputSchema.array()]),
+    skipDuplicates: z.boolean().optional(),
+}).strict();
+export default AutoSettingCreateManyArgsSchema;

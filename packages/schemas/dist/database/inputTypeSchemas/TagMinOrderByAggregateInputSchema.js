@@ -1,10 +1,9 @@
-import {
-  TagMinOrderByAggregateInputSchema,
-  TagMinOrderByAggregateInputSchema_default
-} from "../../chunk-AORROVEF.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  TagMinOrderByAggregateInputSchema,
-  TagMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=TagMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const TagMinOrderByAggregateInputSchema = z.object({
+    value: z.lazy(() => SortOrderSchema).optional(),
+    kanbanId: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional(),
+    lastAccess: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default TagMinOrderByAggregateInputSchema;

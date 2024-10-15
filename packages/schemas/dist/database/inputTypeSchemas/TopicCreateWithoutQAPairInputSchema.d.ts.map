@@ -1,0 +1,1 @@
+{"version":3,"file":"TopicCreateWithoutQAPairInputSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/TopicCreateWithoutQAPairInputSchema.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AASxB,eAAO,MAAM,mCAAmC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,6BAA6B,CAYrF,CAAC;AACZ,eAAe,mCAAmC,CAAC"}

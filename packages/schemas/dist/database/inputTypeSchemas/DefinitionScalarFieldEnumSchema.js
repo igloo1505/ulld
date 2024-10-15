@@ -1,9 +1,3 @@
-import {
-  DefinitionScalarFieldEnumSchema,
-  DefinitionScalarFieldEnumSchema_default
-} from "../../chunk-JNHEMUNF.js";
-export {
-  DefinitionScalarFieldEnumSchema,
-  DefinitionScalarFieldEnumSchema_default as default
-};
-//# sourceMappingURL=DefinitionScalarFieldEnumSchema.js.map
+import { z } from 'zod';
+export const DefinitionScalarFieldEnumSchema = z.enum(['id', 'label', 'content', 'alphabeticalLabel', 'mdxNoteId', 'createdAt', 'lastAccess']);
+export default DefinitionScalarFieldEnumSchema;

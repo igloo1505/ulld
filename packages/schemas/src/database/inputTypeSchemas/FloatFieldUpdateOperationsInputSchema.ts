@@ -1,7 +1,5 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-
 export const FloatFieldUpdateOperationsInputSchema: z.ZodType<Prisma.FloatFieldUpdateOperationsInput> = z.object({
   set: z.number().optional(),
   increment: z.number().optional(),
@@ -9,5 +7,4 @@ export const FloatFieldUpdateOperationsInputSchema: z.ZodType<Prisma.FloatFieldU
   multiply: z.number().optional(),
   divide: z.number().optional()
 }).strict();
-
 export default FloatFieldUpdateOperationsInputSchema;

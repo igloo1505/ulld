@@ -1,15 +1,14 @@
-import {
-  DailyFocusWhereUniqueInputSchema,
-  DailyFocusWhereUniqueInputSchema_default
-} from "../../chunk-OFZ4JWLS.js";
-import "../../chunk-COZ5TAGF.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  DailyFocusWhereUniqueInputSchema,
-  DailyFocusWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=DailyFocusWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { DailyFocusWhereInputSchema } from './DailyFocusWhereInputSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+export const DailyFocusWhereUniqueInputSchema = z.object({
+    value: z.string()
+})
+    .and(z.object({
+    value: z.string().optional(),
+    AND: z.union([z.lazy(() => DailyFocusWhereInputSchema), z.lazy(() => DailyFocusWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => DailyFocusWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => DailyFocusWhereInputSchema), z.lazy(() => DailyFocusWhereInputSchema).array()]).optional(),
+    createdAt: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+}).strict());
+export default DailyFocusWhereUniqueInputSchema;

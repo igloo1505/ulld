@@ -1,18 +1,15 @@
-import {
-  TimePeriodScalarWhereInputSchema,
-  TimePeriodScalarWhereInputSchema_default
-} from "../../chunk-WQZ3Q2QI.js";
-import "../../chunk-QHEDWAK6.js";
-import "../../chunk-XSZJGJZO.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-3ZHCKO62.js";
-import "../../chunk-7AIW2QWG.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  TimePeriodScalarWhereInputSchema,
-  TimePeriodScalarWhereInputSchema_default as default
-};
-//# sourceMappingURL=TimePeriodScalarWhereInputSchema.js.map
+import { z } from 'zod';
+import { IntFilterSchema } from './IntFilterSchema.js';
+import { DateTimeFilterSchema } from './DateTimeFilterSchema.js';
+import { DateTimeNullableFilterSchema } from './DateTimeNullableFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+export const TimePeriodScalarWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => TimePeriodScalarWhereInputSchema), z.lazy(() => TimePeriodScalarWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => TimePeriodScalarWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => TimePeriodScalarWhereInputSchema), z.lazy(() => TimePeriodScalarWhereInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => IntFilterSchema), z.number()]).optional(),
+    start: z.union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()]).optional(),
+    end: z.union([z.lazy(() => DateTimeNullableFilterSchema), z.coerce.date()]).optional().nullable(),
+    dietId: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+}).strict();
+export default TimePeriodScalarWhereInputSchema;

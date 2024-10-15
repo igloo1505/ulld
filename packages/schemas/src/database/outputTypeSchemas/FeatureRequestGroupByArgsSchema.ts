@@ -1,10 +1,9 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { FeatureRequestWhereInputSchema } from '../inputTypeSchemas/FeatureRequestWhereInputSchema'
-import { FeatureRequestOrderByWithAggregationInputSchema } from '../inputTypeSchemas/FeatureRequestOrderByWithAggregationInputSchema'
-import { FeatureRequestScalarFieldEnumSchema } from '../inputTypeSchemas/FeatureRequestScalarFieldEnumSchema'
-import { FeatureRequestScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/FeatureRequestScalarWhereWithAggregatesInputSchema'
-
+import type { Prisma } from '@ulld/database/db';
+import { FeatureRequestWhereInputSchema } from '../inputTypeSchemas/FeatureRequestWhereInputSchema.js'
+import { FeatureRequestOrderByWithAggregationInputSchema } from '../inputTypeSchemas/FeatureRequestOrderByWithAggregationInputSchema.js'
+import { FeatureRequestScalarFieldEnumSchema } from '../inputTypeSchemas/FeatureRequestScalarFieldEnumSchema.js'
+import { FeatureRequestScalarWhereWithAggregatesInputSchema } from '../inputTypeSchemas/FeatureRequestScalarWhereWithAggregatesInputSchema.js'
 export const FeatureRequestGroupByArgsSchema: z.ZodType<Prisma.FeatureRequestGroupByArgs> = z.object({
   where: FeatureRequestWhereInputSchema.optional(),
   orderBy: z.union([ FeatureRequestOrderByWithAggregationInputSchema.array(),FeatureRequestOrderByWithAggregationInputSchema ]).optional(),
@@ -13,5 +12,4 @@ export const FeatureRequestGroupByArgsSchema: z.ZodType<Prisma.FeatureRequestGro
   take: z.number().optional(),
   skip: z.number().optional(),
 }).strict() ;
-
 export default FeatureRequestGroupByArgsSchema;

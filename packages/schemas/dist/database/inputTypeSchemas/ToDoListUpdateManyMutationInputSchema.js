@@ -1,11 +1,10 @@
-import {
-  ToDoListUpdateManyMutationInputSchema,
-  ToDoListUpdateManyMutationInputSchema_default
-} from "../../chunk-WWKNDWP7.js";
-import "../../chunk-VTROTMKZ.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  ToDoListUpdateManyMutationInputSchema,
-  ToDoListUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=ToDoListUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
+export const ToDoListUpdateManyMutationInputSchema = z.object({
+    label: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+    createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastUpdate: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+    lastAccess: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default ToDoListUpdateManyMutationInputSchema;

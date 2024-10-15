@@ -1,0 +1,1 @@
+{"version":3,"file":"DietCreateManyArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/DietCreateManyArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAEhD,eAAO,MAAM,wBAAwB,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,kBAAkB,CAG/D,CAAE;AACb,eAAe,wBAAwB,CAAC"}

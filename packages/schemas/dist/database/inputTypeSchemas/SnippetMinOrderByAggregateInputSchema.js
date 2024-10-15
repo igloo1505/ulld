@@ -1,10 +1,10 @@
-import {
-  SnippetMinOrderByAggregateInputSchema,
-  SnippetMinOrderByAggregateInputSchema_default
-} from "../../chunk-WCYYV7FO.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  SnippetMinOrderByAggregateInputSchema,
-  SnippetMinOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=SnippetMinOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const SnippetMinOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    content: z.lazy(() => SortOrderSchema).optional(),
+    description: z.lazy(() => SortOrderSchema).optional(),
+    language: z.lazy(() => SortOrderSchema).optional(),
+    createdAt: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default SnippetMinOrderByAggregateInputSchema;

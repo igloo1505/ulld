@@ -1,17 +1,21 @@
-import {
-  BusinessContactWhereUniqueInputSchema,
-  BusinessContactWhereUniqueInputSchema_default
-} from "../../chunk-F6RVJCDM.js";
-import "../../chunk-4TBUKZ6H.js";
-import "../../chunk-2AUFJPNJ.js";
-import "../../chunk-RQEVSJX3.js";
-import "../../chunk-EMYNQWE7.js";
-import "../../chunk-IIKKCTNR.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  BusinessContactWhereUniqueInputSchema,
-  BusinessContactWhereUniqueInputSchema_default as default
-};
-//# sourceMappingURL=BusinessContactWhereUniqueInputSchema.js.map
+import { z } from 'zod';
+import { BusinessContactWhereInputSchema } from './BusinessContactWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
+export const BusinessContactWhereUniqueInputSchema = z.object({
+    id: z.number().int()
+})
+    .and(z.object({
+    id: z.number().int().optional(),
+    AND: z.union([z.lazy(() => BusinessContactWhereInputSchema), z.lazy(() => BusinessContactWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => BusinessContactWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => BusinessContactWhereInputSchema), z.lazy(() => BusinessContactWhereInputSchema).array()]).optional(),
+    companyName: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    contactName: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    contactPreference: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    email: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    phone: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+    message: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    purpose: z.union([z.lazy(() => StringNullableFilterSchema), z.string()]).optional().nullable(),
+}).strict());
+export default BusinessContactWhereUniqueInputSchema;

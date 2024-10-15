@@ -1,9 +1,7 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { FeatureRequestCreatecategoryInputSchema } from './FeatureRequestCreatecategoryInputSchema';
-import { FeatureRequestCreateuserBaseInputSchema } from './FeatureRequestCreateuserBaseInputSchema';
-
+import { FeatureRequestCreatecategoryInputSchema } from './FeatureRequestCreatecategoryInputSchema.js';
+import { FeatureRequestCreateuserBaseInputSchema } from './FeatureRequestCreateuserBaseInputSchema.js';
 export const FeatureRequestCreateManyInputSchema: z.ZodType<Prisma.FeatureRequestCreateManyInput> = z.object({
   id: z.number().int().optional(),
   email: z.string(),
@@ -12,5 +10,4 @@ export const FeatureRequestCreateManyInputSchema: z.ZodType<Prisma.FeatureReques
   userBase: z.union([ z.lazy(() => FeatureRequestCreateuserBaseInputSchema),z.string().array() ]).optional(),
   receivedOn: z.coerce.date().optional()
 }).strict();
-
 export default FeatureRequestCreateManyInputSchema;

@@ -1,10 +1,6 @@
-import {
-  NoteTypeUpdateManyMutationInputSchema,
-  NoteTypeUpdateManyMutationInputSchema_default
-} from "../../chunk-3OKPL3V3.js";
-import "../../chunk-BQIXGZB5.js";
-export {
-  NoteTypeUpdateManyMutationInputSchema,
-  NoteTypeUpdateManyMutationInputSchema_default as default
-};
-//# sourceMappingURL=NoteTypeUpdateManyMutationInputSchema.js.map
+import { z } from 'zod';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+export const NoteTypeUpdateManyMutationInputSchema = z.object({
+    name: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)]).optional(),
+}).strict();
+export default NoteTypeUpdateManyMutationInputSchema;

@@ -1,9 +1,6 @@
-import {
-  GoogleCalendarAuthCreateInputSchema,
-  GoogleCalendarAuthCreateInputSchema_default
-} from "../../chunk-GKWFDQDS.js";
-export {
-  GoogleCalendarAuthCreateInputSchema,
-  GoogleCalendarAuthCreateInputSchema_default as default
-};
-//# sourceMappingURL=GoogleCalendarAuthCreateInputSchema.js.map
+import { z } from 'zod';
+export const GoogleCalendarAuthCreateInputSchema = z.object({
+    id: z.number().int().optional(),
+    auth: z.string().optional().nullable()
+}).strict();
+export default GoogleCalendarAuthCreateInputSchema;

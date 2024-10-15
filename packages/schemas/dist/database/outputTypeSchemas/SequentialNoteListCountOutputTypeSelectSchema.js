@@ -1,9 +1,6 @@
-import {
-  SequentialNoteListCountOutputTypeSelectSchema,
-  SequentialNoteListCountOutputTypeSelectSchema_default
-} from "../../chunk-7J2GDNQZ.js";
-export {
-  SequentialNoteListCountOutputTypeSelectSchema,
-  SequentialNoteListCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=SequentialNoteListCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const SequentialNoteListCountOutputTypeSelectSchema = z.object({
+    MdxNote: z.boolean().optional(),
+    Ipynb: z.boolean().optional(),
+}).strict();
+export default SequentialNoteListCountOutputTypeSelectSchema;

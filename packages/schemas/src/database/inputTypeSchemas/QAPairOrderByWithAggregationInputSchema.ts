@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-import { SortOrderInputSchema } from './SortOrderInputSchema';
-import { QAPairCountOrderByAggregateInputSchema } from './QAPairCountOrderByAggregateInputSchema';
-import { QAPairAvgOrderByAggregateInputSchema } from './QAPairAvgOrderByAggregateInputSchema';
-import { QAPairMaxOrderByAggregateInputSchema } from './QAPairMaxOrderByAggregateInputSchema';
-import { QAPairMinOrderByAggregateInputSchema } from './QAPairMinOrderByAggregateInputSchema';
-import { QAPairSumOrderByAggregateInputSchema } from './QAPairSumOrderByAggregateInputSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
+import { SortOrderInputSchema } from './SortOrderInputSchema.js';
+import { QAPairCountOrderByAggregateInputSchema } from './QAPairCountOrderByAggregateInputSchema.js';
+import { QAPairAvgOrderByAggregateInputSchema } from './QAPairAvgOrderByAggregateInputSchema.js';
+import { QAPairMaxOrderByAggregateInputSchema } from './QAPairMaxOrderByAggregateInputSchema.js';
+import { QAPairMinOrderByAggregateInputSchema } from './QAPairMinOrderByAggregateInputSchema.js';
+import { QAPairSumOrderByAggregateInputSchema } from './QAPairSumOrderByAggregateInputSchema.js';
 export const QAPairOrderByWithAggregationInputSchema: z.ZodType<Prisma.QAPairOrderByWithAggregationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   question: z.lazy(() => SortOrderSchema).optional(),
@@ -23,5 +21,4 @@ export const QAPairOrderByWithAggregationInputSchema: z.ZodType<Prisma.QAPairOrd
   _min: z.lazy(() => QAPairMinOrderByAggregateInputSchema).optional(),
   _sum: z.lazy(() => QAPairSumOrderByAggregateInputSchema).optional()
 }).strict();
-
 export default QAPairOrderByWithAggregationInputSchema;

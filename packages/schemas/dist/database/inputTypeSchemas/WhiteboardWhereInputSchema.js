@@ -1,14 +1,11 @@
-import {
-  WhiteboardWhereInputSchema,
-  WhiteboardWhereInputSchema_default
-} from "../../chunk-ZAT5W63Y.js";
-import "../../chunk-CGUG7AXK.js";
-import "../../chunk-KZADD6H2.js";
-import "../../chunk-IQLIYD6K.js";
-import "../../chunk-Y2UWH4QY.js";
-import "../../chunk-5V6JEXGU.js";
-export {
-  WhiteboardWhereInputSchema,
-  WhiteboardWhereInputSchema_default as default
-};
-//# sourceMappingURL=WhiteboardWhereInputSchema.js.map
+import { z } from 'zod';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { BytesFilterSchema } from './BytesFilterSchema.js';
+export const WhiteboardWhereInputSchema = z.object({
+    AND: z.union([z.lazy(() => WhiteboardWhereInputSchema), z.lazy(() => WhiteboardWhereInputSchema).array()]).optional(),
+    OR: z.lazy(() => WhiteboardWhereInputSchema).array().optional(),
+    NOT: z.union([z.lazy(() => WhiteboardWhereInputSchema), z.lazy(() => WhiteboardWhereInputSchema).array()]).optional(),
+    id: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
+    data: z.union([z.lazy(() => BytesFilterSchema), z.instanceof(Buffer)]).optional(),
+}).strict();
+export default WhiteboardWhereInputSchema;

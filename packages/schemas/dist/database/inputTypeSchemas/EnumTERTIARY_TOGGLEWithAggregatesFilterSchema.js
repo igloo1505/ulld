@@ -1,13 +1,15 @@
-import {
-  EnumTERTIARY_TOGGLEWithAggregatesFilterSchema,
-  EnumTERTIARY_TOGGLEWithAggregatesFilterSchema_default
-} from "../../chunk-HGNAAYVL.js";
-import "../../chunk-7HHFDTWU.js";
-import "../../chunk-3LP5T6ZV.js";
-import "../../chunk-FGDZJV6T.js";
-import "../../chunk-IIKKCTNR.js";
-export {
-  EnumTERTIARY_TOGGLEWithAggregatesFilterSchema,
-  EnumTERTIARY_TOGGLEWithAggregatesFilterSchema_default as default
-};
-//# sourceMappingURL=EnumTERTIARY_TOGGLEWithAggregatesFilterSchema.js.map
+import { z } from 'zod';
+import { TERTIARY_TOGGLESchema } from './TERTIARY_TOGGLESchema.js';
+import { NestedEnumTERTIARY_TOGGLEWithAggregatesFilterSchema } from './NestedEnumTERTIARY_TOGGLEWithAggregatesFilterSchema.js';
+import { NestedIntFilterSchema } from './NestedIntFilterSchema.js';
+import { NestedEnumTERTIARY_TOGGLEFilterSchema } from './NestedEnumTERTIARY_TOGGLEFilterSchema.js';
+export const EnumTERTIARY_TOGGLEWithAggregatesFilterSchema = z.object({
+    equals: z.lazy(() => TERTIARY_TOGGLESchema).optional(),
+    in: z.lazy(() => TERTIARY_TOGGLESchema).array().optional(),
+    notIn: z.lazy(() => TERTIARY_TOGGLESchema).array().optional(),
+    not: z.union([z.lazy(() => TERTIARY_TOGGLESchema), z.lazy(() => NestedEnumTERTIARY_TOGGLEWithAggregatesFilterSchema)]).optional(),
+    _count: z.lazy(() => NestedIntFilterSchema).optional(),
+    _min: z.lazy(() => NestedEnumTERTIARY_TOGGLEFilterSchema).optional(),
+    _max: z.lazy(() => NestedEnumTERTIARY_TOGGLEFilterSchema).optional()
+}).strict();
+export default EnumTERTIARY_TOGGLEWithAggregatesFilterSchema;

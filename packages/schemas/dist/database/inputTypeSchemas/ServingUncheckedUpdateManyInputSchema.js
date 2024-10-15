@@ -1,13 +1,12 @@
-import {
-  ServingUncheckedUpdateManyInputSchema,
-  ServingUncheckedUpdateManyInputSchema_default
-} from "../../chunk-TIRWV5UO.js";
-import "../../chunk-P5ZWTHAL.js";
-import "../../chunk-LUUG3TNG.js";
-import "../../chunk-GNOT4FVG.js";
-import "../../chunk-TKIJII67.js";
-export {
-  ServingUncheckedUpdateManyInputSchema,
-  ServingUncheckedUpdateManyInputSchema_default as default
-};
-//# sourceMappingURL=ServingUncheckedUpdateManyInputSchema.js.map
+import { z } from 'zod';
+import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema.js';
+import { NullableFloatFieldUpdateOperationsInputSchema } from './NullableFloatFieldUpdateOperationsInputSchema.js';
+import { QUANTITY_GUESSSchema } from './QUANTITY_GUESSSchema.js';
+import { NullableEnumQUANTITY_GUESSFieldUpdateOperationsInputSchema } from './NullableEnumQUANTITY_GUESSFieldUpdateOperationsInputSchema.js';
+export const ServingUncheckedUpdateManyInputSchema = z.object({
+    id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    dietaryItemId: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)]).optional(),
+    quant_oz: z.union([z.number(), z.lazy(() => NullableFloatFieldUpdateOperationsInputSchema)]).optional().nullable(),
+    quant_guess: z.union([z.lazy(() => QUANTITY_GUESSSchema), z.lazy(() => NullableEnumQUANTITY_GUESSFieldUpdateOperationsInputSchema)]).optional().nullable(),
+}).strict();
+export default ServingUncheckedUpdateManyInputSchema;

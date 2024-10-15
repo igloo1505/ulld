@@ -1,9 +1,3 @@
-import {
-  QAPairOrderByRelevanceFieldEnumSchema,
-  QAPairOrderByRelevanceFieldEnumSchema_default
-} from "../../chunk-Q54L2SCG.js";
-export {
-  QAPairOrderByRelevanceFieldEnumSchema,
-  QAPairOrderByRelevanceFieldEnumSchema_default as default
-};
-//# sourceMappingURL=QAPairOrderByRelevanceFieldEnumSchema.js.map
+import { z } from 'zod';
+export const QAPairOrderByRelevanceFieldEnumSchema = z.enum(['id', 'question', 'answer', 'description', 'secondaryLabel']);
+export default QAPairOrderByRelevanceFieldEnumSchema;

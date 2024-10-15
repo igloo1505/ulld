@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { TaskCategorySchema } from './TaskCategorySchema';
-import { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema';
-import { NestedEnumTaskCategoryNullableFilterSchema } from './NestedEnumTaskCategoryNullableFilterSchema';
-
+import { TaskCategorySchema } from './TaskCategorySchema.js';
+import { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema.js';
+import { NestedEnumTaskCategoryNullableFilterSchema } from './NestedEnumTaskCategoryNullableFilterSchema.js';
 export const NestedEnumTaskCategoryNullableWithAggregatesFilterSchema: z.ZodType<Prisma.NestedEnumTaskCategoryNullableWithAggregatesFilter> = z.object({
   equals: z.lazy(() => TaskCategorySchema).optional().nullable(),
   in: z.lazy(() => TaskCategorySchema).array().optional().nullable(),
@@ -14,5 +12,4 @@ export const NestedEnumTaskCategoryNullableWithAggregatesFilterSchema: z.ZodType
   _min: z.lazy(() => NestedEnumTaskCategoryNullableFilterSchema).optional(),
   _max: z.lazy(() => NestedEnumTaskCategoryNullableFilterSchema).optional()
 }).strict();
-
 export default NestedEnumTaskCategoryNullableWithAggregatesFilterSchema;

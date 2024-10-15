@@ -1,10 +1,8 @@
-import {
-  MdxNoteSumOrderByAggregateInputSchema,
-  MdxNoteSumOrderByAggregateInputSchema_default
-} from "../../chunk-MYFAFH3Y.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  MdxNoteSumOrderByAggregateInputSchema,
-  MdxNoteSumOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=MdxNoteSumOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const MdxNoteSumOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional(),
+    importantValues: z.lazy(() => SortOrderSchema).optional(),
+    sequentialIndex: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default MdxNoteSumOrderByAggregateInputSchema;

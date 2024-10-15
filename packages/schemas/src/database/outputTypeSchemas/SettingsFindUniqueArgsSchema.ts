@@ -1,9 +1,8 @@
 import { z } from 'zod';
-import type { Prisma } from '@prisma/client';
-import { SettingsWhereUniqueInputSchema } from '../inputTypeSchemas/SettingsWhereUniqueInputSchema'
+import type { Prisma } from '@ulld/database/db';
+import { SettingsWhereUniqueInputSchema } from '../inputTypeSchemas/SettingsWhereUniqueInputSchema.js'
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
-
 export const SettingsSelectSchema: z.ZodType<Prisma.SettingsSelect> = z.object({
   id: z.boolean().optional(),
   tooltips: z.boolean().optional(),
@@ -18,10 +17,8 @@ export const SettingsSelectSchema: z.ZodType<Prisma.SettingsSelect> = z.object({
   firstSync: z.boolean().optional(),
   lastSync: z.boolean().optional(),
 }).strict()
-
 export const SettingsFindUniqueArgsSchema: z.ZodType<Prisma.SettingsFindUniqueArgs> = z.object({
   select: SettingsSelectSchema.optional(),
   where: SettingsWhereUniqueInputSchema,
 }).strict() ;
-
 export default SettingsFindUniqueArgsSchema;

@@ -1,10 +1,6 @@
-import {
-  EquationAvgOrderByAggregateInputSchema,
-  EquationAvgOrderByAggregateInputSchema_default
-} from "../../chunk-CUECTXWX.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  EquationAvgOrderByAggregateInputSchema,
-  EquationAvgOrderByAggregateInputSchema_default as default
-};
-//# sourceMappingURL=EquationAvgOrderByAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const EquationAvgOrderByAggregateInputSchema = z.object({
+    id: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default EquationAvgOrderByAggregateInputSchema;

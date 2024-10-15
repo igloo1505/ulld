@@ -1,8 +1,6 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { SortOrderSchema } from './SortOrderSchema';
-
+import { SortOrderSchema } from './SortOrderSchema.js';
 export const BusinessContactMinOrderByAggregateInputSchema: z.ZodType<Prisma.BusinessContactMinOrderByAggregateInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
   companyName: z.lazy(() => SortOrderSchema).optional(),
@@ -13,5 +11,4 @@ export const BusinessContactMinOrderByAggregateInputSchema: z.ZodType<Prisma.Bus
   message: z.lazy(() => SortOrderSchema).optional(),
   purpose: z.lazy(() => SortOrderSchema).optional()
 }).strict();
-
 export default BusinessContactMinOrderByAggregateInputSchema;

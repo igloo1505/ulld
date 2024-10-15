@@ -1,10 +1,6 @@
-import {
-  KanBanCardOrderByRelationAggregateInputSchema,
-  KanBanCardOrderByRelationAggregateInputSchema_default
-} from "../../chunk-DRXIMC6A.js";
-import "../../chunk-WVDZRY2Y.js";
-export {
-  KanBanCardOrderByRelationAggregateInputSchema,
-  KanBanCardOrderByRelationAggregateInputSchema_default as default
-};
-//# sourceMappingURL=KanBanCardOrderByRelationAggregateInputSchema.js.map
+import { z } from 'zod';
+import { SortOrderSchema } from './SortOrderSchema.js';
+export const KanBanCardOrderByRelationAggregateInputSchema = z.object({
+    _count: z.lazy(() => SortOrderSchema).optional()
+}).strict();
+export default KanBanCardOrderByRelationAggregateInputSchema;

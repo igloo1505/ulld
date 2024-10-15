@@ -1,10 +1,8 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { BusinessContactWhereInputSchema } from './BusinessContactWhereInputSchema';
-import { StringFilterSchema } from './StringFilterSchema';
-import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-
+import { BusinessContactWhereInputSchema } from './BusinessContactWhereInputSchema.js';
+import { StringFilterSchema } from './StringFilterSchema.js';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema.js';
 export const BusinessContactWhereUniqueInputSchema: z.ZodType<Prisma.BusinessContactWhereUniqueInput> = z.object({
   id: z.number().int()
 })
@@ -21,5 +19,4 @@ export const BusinessContactWhereUniqueInputSchema: z.ZodType<Prisma.BusinessCon
   message: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
   purpose: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
 }).strict());
-
 export default BusinessContactWhereUniqueInputSchema;

@@ -1,14 +1,12 @@
-import type { Prisma } from '@prisma/client';
-
+import type { Prisma } from '@ulld/database/db';
 import { z } from 'zod';
-import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
-import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
-import { JsonNullValueInputSchema } from './JsonNullValueInputSchema';
-import { InputJsonValueSchema } from './InputJsonValueSchema';
-import { EquationUpdatevariablesInputSchema } from './EquationUpdatevariablesInputSchema';
-import { EquationUpdatekeywordsInputSchema } from './EquationUpdatekeywordsInputSchema';
-import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
-
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema.js';
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema.js';
+import { JsonNullValueInputSchema } from './JsonNullValueInputSchema.js';
+import { InputJsonValueSchema } from './InputJsonValueSchema.js';
+import { EquationUpdatevariablesInputSchema } from './EquationUpdatevariablesInputSchema.js';
+import { EquationUpdatekeywordsInputSchema } from './EquationUpdatekeywordsInputSchema.js';
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema.js';
 export const EquationUpdateManyMutationInputSchema: z.ZodType<Prisma.EquationUpdateManyMutationInput> = z.object({
   equationId: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
   title: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -21,5 +19,4 @@ export const EquationUpdateManyMutationInputSchema: z.ZodType<Prisma.EquationUpd
   createdAt: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
   lastAccess: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
 }).strict();
-
 export default EquationUpdateManyMutationInputSchema;

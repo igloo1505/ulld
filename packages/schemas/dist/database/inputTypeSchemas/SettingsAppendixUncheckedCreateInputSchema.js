@@ -1,9 +1,8 @@
-import {
-  SettingsAppendixUncheckedCreateInputSchema,
-  SettingsAppendixUncheckedCreateInputSchema_default
-} from "../../chunk-72LJBI4D.js";
-export {
-  SettingsAppendixUncheckedCreateInputSchema,
-  SettingsAppendixUncheckedCreateInputSchema_default as default
-};
-//# sourceMappingURL=SettingsAppendixUncheckedCreateInputSchema.js.map
+import { z } from 'zod';
+export const SettingsAppendixUncheckedCreateInputSchema = z.object({
+    id: z.string(),
+    data: z.instanceof(Buffer),
+    createdAt: z.coerce.date().optional(),
+    updatedAt: z.coerce.date().optional()
+}).strict();
+export default SettingsAppendixUncheckedCreateInputSchema;

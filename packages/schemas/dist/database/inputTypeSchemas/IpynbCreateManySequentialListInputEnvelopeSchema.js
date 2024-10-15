@@ -1,13 +1,7 @@
-import {
-  IpynbCreateManySequentialListInputEnvelopeSchema,
-  IpynbCreateManySequentialListInputEnvelopeSchema_default
-} from "../../chunk-TGTYYPDL.js";
-import "../../chunk-F6JWZR4H.js";
-import "../../chunk-UVQGJQS6.js";
-import "../../chunk-CJKS2C2I.js";
-import "../../chunk-5KU54GLW.js";
-export {
-  IpynbCreateManySequentialListInputEnvelopeSchema,
-  IpynbCreateManySequentialListInputEnvelopeSchema_default as default
-};
-//# sourceMappingURL=IpynbCreateManySequentialListInputEnvelopeSchema.js.map
+import { z } from 'zod';
+import { IpynbCreateManySequentialListInputSchema } from './IpynbCreateManySequentialListInputSchema.js';
+export const IpynbCreateManySequentialListInputEnvelopeSchema = z.object({
+    data: z.union([z.lazy(() => IpynbCreateManySequentialListInputSchema), z.lazy(() => IpynbCreateManySequentialListInputSchema).array()]),
+    skipDuplicates: z.boolean().optional()
+}).strict();
+export default IpynbCreateManySequentialListInputEnvelopeSchema;

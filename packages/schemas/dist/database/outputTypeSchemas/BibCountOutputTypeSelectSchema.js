@@ -1,9 +1,5 @@
-import {
-  BibCountOutputTypeSelectSchema,
-  BibCountOutputTypeSelectSchema_default
-} from "../../chunk-F77YACIB.js";
-export {
-  BibCountOutputTypeSelectSchema,
-  BibCountOutputTypeSelectSchema_default as default
-};
-//# sourceMappingURL=BibCountOutputTypeSelectSchema.js.map
+import { z } from 'zod';
+export const BibCountOutputTypeSelectSchema = z.object({
+    entries: z.boolean().optional(),
+}).strict();
+export default BibCountOutputTypeSelectSchema;
