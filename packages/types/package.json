@@ -15,6 +15,7 @@
     "test": "echo 'Add test script here'"
   },
   "types": "src/index.ts",
+  "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
     "./": "./src/index.ts",
@@ -22,10 +23,6 @@
     "./db": "./src/database.d.ts",
     "./enums": "./src/enums/index.ts"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {},
   "packageManager": "pnpm@9.0.4",
-  "license": "MIT",
-  "main": "src/index.ts"
+  "license": "MIT"
 }

@@ -113,7 +113,7 @@
     "chai": "5.1.1",
     "cli-table3": "0.6.4",
     "deepmerge": "4.3.1",
-    "eslint": "9.0.0",
+    "eslint": "8.57.1",
     "eslint-config-oclif": "5.1.1",
     "eslint-config-oclif-typescript": "3.1.4",
     "eslint-config-prettier": "9.1.0",
@@ -142,6 +142,7 @@
   "peerDependencies": {
     "@ulld/developer": "workspace:*",
     "@ulld/developer-schemas": "workspace:*",
+    "@ulld/eslint-config": "workspace:*",
     "@ulld/types": "workspace:*",
     "@ulld/utilities": "workspace:*"
   },

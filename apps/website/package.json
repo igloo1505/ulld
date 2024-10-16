@@ -156,6 +156,7 @@
     "clsx": "2.1.1",
     "dayjs": "1.11.11",
     "dotenv": "16.4.5",
+    "eslint-plugin-markdown": "5.1.0",
     "file-loader": "6.2.0",
     "fumadocs-core": "13.4.1",
     "fumadocs-docgen": "1.1.0",

@@ -18,6 +18,7 @@
     "test": "echo 'Add test script here'"
   },
   "types": "./src/types.ts",
+  "main": "./src/monaco.tsx",
   "exports": {
     ".": "./src/monaco.tsx",
     "./ide": "./src/monaco.tsx",
@@ -126,7 +127,6 @@
     "tailwind": {},
     "styles": {}
   },
-  "main": "./src/monaco.tsx",
   "typesVersions": {
     "*": {
       "ide": [

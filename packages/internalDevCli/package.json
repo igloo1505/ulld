@@ -22,6 +22,7 @@
     "test": "jest"
   },
   "types": "dist/index.d.ts",
+  "main": "./bin/run.js",
   "exports": "./lib/index.js",
   "engines": {
     "node": ">=18.0.0"
@@ -45,7 +46,9 @@
     "gray-matter": "*",
     "handlebars": "4.7.8",
     "json-schema-to-ts": "3.0.1",
+    "marked-terminal": "7.1.0",
     "next": "14.2.3",
+    "node-pager": "0.3.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "shx": "0.3.4",
@@ -68,13 +71,15 @@
     "@oclif/test": "3.2.8",
     "@types/chai": "4.3.14",
     "@types/jest": "29.5.11",
+    "@types/marked": "^6.0.0",
+    "@types/marked-terminal": "^6.1.1",
     "@types/mocha": "10.0.6",
     "@types/node": "20.14.13",
     "bibtex": "0.9.0",
     "chai": "5.1.1",
     "cli-table3": "0.6.4",
     "deepmerge": "4.3.1",
-    "eslint": "9.0.0",
+    "eslint": "8.57.1",
     "eslint-config-oclif": "5.1.1",
     "eslint-config-oclif-typescript": "3.1.4",
     "eslint-config-prettier": "9.1.0",
@@ -100,7 +105,6 @@
     "@ulld/types": "workspace:*"
   },
   "packageManager": "pnpm@9.0.4",
-  "main": "./bin/run.js",
   "oclif": {
     "bin": "mr",
     "dirname": "mr",

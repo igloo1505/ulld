@@ -30,7 +30,6 @@
     "./onRestore": "./src/events/onRestore/hook.ts",
     "./embeddableEquation": "./src/components/embeddable/equation/main.tsx"
   },
-  "dependencies": {},
   "devDependencies": {
     "@tailwindcss/container-queries": "0.1.1",
     "@tailwindcss/forms": "0.5.7",

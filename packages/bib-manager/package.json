@@ -30,7 +30,6 @@
     "@citation-js/plugin-csl": "0.7.14",
     "citation-js": "0.7.15"
   },
-  "devDependencies": {},
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",

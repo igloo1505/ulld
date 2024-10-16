@@ -15,6 +15,7 @@
     "test": "echo 'Add test script here'"
   },
   "types": "./src/index.ts",
+  "main": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
     "./beta": "./src/validConfig.ts"
@@ -32,6 +33,5 @@
   "peerDependencies": {
     "@ulld/types": "workspace:*"
   },
-  "packageManager": "pnpm@9.0.4",
-  "main": "./src/index.ts"
+  "packageManager": "pnpm@9.0.4"
 }

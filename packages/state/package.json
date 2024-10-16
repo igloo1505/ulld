@@ -16,6 +16,7 @@
     "test": "echo 'Add test script here'"
   },
   "types": "./src/types.ts",
+  "main": "./src/config.ts",
   "exports": {
     "./config": "./src/config.ts",
     "./getUI": "./src/retrievers/getTheme.ts",
@@ -143,6 +144,5 @@
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
-  "packageManager": "pnpm@9.0.4",
-  "main": "./src/config.ts"
+  "packageManager": "pnpm@9.0.4"
 }

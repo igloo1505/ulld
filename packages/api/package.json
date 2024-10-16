@@ -15,9 +15,10 @@
     "build": "echo 'Add dev build here'",
     "dev": "echo 'Add dev script here'",
     "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "lint": "eslint -c=./.eslintrc.cjs .",
     "test": "jest --experimental-vm-modules",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "typecheck": "tsc --watch --noEmit -p ./tsconfigLint.json"
   },
   "types": "./src/moduleTypes.d.ts",
   "exports": {

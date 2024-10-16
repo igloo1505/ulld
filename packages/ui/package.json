@@ -23,6 +23,7 @@
     "typecheck": "tsc --noEmit"
   },
   "types": "src/types/general.ts",
+  "main": "dist/index.js",
   "exports": {
     "./individualNoteSwitch": "./src/components/noteContent/IndividualNoteSwitch.tsx",
     "./modalPage": "./src/components/modals/modalPage/main.ts",
@@ -379,7 +380,6 @@
     "tailwind": {},
     "styles": {}
   },
-  "main": "dist/index.js",
   "module": "dist/index.mjs",
   "ulld-plugin-id": "1a734b52-6ee0-4bd2-81a4-984e67cd8d4a"
 }

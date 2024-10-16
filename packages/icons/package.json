@@ -1,42 +1,132 @@
 {
   "name": "@ulld/icons",
   "version": "0.0.126",
+  "type": "module",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
   "files": [
+    "dist",
     "src"
   ],
   "scripts": {
-    "build": "echo 'Add build script here'",
+    "build": "wireit",
     "buildLocal": "tsx ./src/scripts/gatherNames.ts",
     "dev": "echo 'Add dev script here'",
     "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
     "test": "echo 'Add test script here'"
   },
+  "wireit": {
+    "build": {
+      "command": "trash ./dist && pnpm tsc --project ./tsconfig.json && tsup-node",
+      "output": [
+        "dist"
+      ],
+      "files": [
+        "src/**"
+      ]
+    }
+  },
   "types": "./src/types.ts",
+  "main": "./src/DynamicIcon.tsx",
   "exports": {
     ".": "./src/DynamicIcon.tsx",
-    "./dynamic": "./src/DynamicIcon.tsx",
-    "./css": "./src/logoIcons/css.tsx",
-    "./github": "./src/logoIcons/github.tsx",
-    "./jupyter": "./src/logoIcons/jupyter.tsx",
-    "./kotlin": "./src/logoIcons/kotlin.tsx",
-    "./markdown": "./src/logoIcons/markdown.tsx",
-    "./node": "./src/logoIcons/node.tsx",
-    "./npm": "./src/logoIcons/npm.tsx",
-    "./python": "./src/logoIcons/python.tsx",
-    "./react": "./src/logoIcons/react.tsx",
-    "./swift": "./src/logoIcons/swift.tsx",
-    "./vercel": "./src/logoIcons/vercel.tsx",
-    "./youtube": "./src/logoIcons/youtube.tsx",
-    "./paypal": "./src/logoIcons/paypal.tsx",
-    "./patreon": "./src/logoIcons/patreon.tsx",
-    "./ulld": "./src/logo/ulldLogo.tsx",
-    "./ulld-animated": "./src/logo/animatedLogo.tsx",
-    "./clientX": "./src/clientSideUtilityComponents/xIcon.tsx",
-    "./names": "./src/allIconNames.ts"
+    "./dynamic": {
+      "types": "./dist/DynamicIcon.d.ts",
+      "import": "./dist/DynamicIcon.mjs",
+      "require": "./dist/DynamicIcon.cjs"
+    },
+    "./css": {
+      "types": "./dist/logoIcons/css.d.ts",
+      "import": "./dist/logoIcons/css.mjs",
+      "require": "./dist/logoIcons/css.cjs"
+    },
+    "./github": {
+      "types": "./dist/logoIcons/github.d.ts",
+      "import": "./dist/logoIcons/github.mjs",
+      "require": "./dist/logoIcons/github.cjs"
+    },
+    "./jupyter": {
+      "types": "./dist/logoIcons/jupyter.d.ts",
+      "import": "./dist/logoIcons/jupyter.mjs",
+      "require": "./dist/logoIcons/jupyter.cjs"
+    },
+    "./kotlin": {
+      "types": "./dist/logoIcons/kotlin.d.ts",
+      "import": "./dist/logoIcons/kotlin.mjs",
+      "require": "./dist/logoIcons/kotlin.cjs"
+    },
+    "./markdown": {
+      "types": "./dist/logoIcons/markdown.d.ts",
+      "import": "./dist/logoIcons/markdown.mjs",
+      "require": "./dist/logoIcons/markdown.cjs"
+    },
+    "./node": {
+      "types": "./dist/logoIcons/node.d.ts",
+      "import": "./dist/logoIcons/node.mjs",
+      "require": "./dist/logoIcons/node.cjs"
+    },
+    "./npm": {
+      "types": "./dist/logoIcons/npm.d.ts",
+      "import": "./dist/logoIcons/npm.mjs",
+      "require": "./dist/logoIcons/npm.cjs"
+    },
+    "./python": {
+      "types": "./dist/logoIcons/python.d.ts",
+      "import": "./dist/logoIcons/python.mjs",
+      "require": "./dist/logoIcons/python.cjs"
+    },
+    "./react": {
+      "types": "./dist/logoIcons/react.d.ts",
+      "import": "./dist/logoIcons/react.mjs",
+      "require": "./dist/logoIcons/react.cjs"
+    },
+    "./swift": {
+      "types": "./dist/logoIcons/swift.d.ts",
+      "import": "./dist/logoIcons/swift.mjs",
+      "require": "./dist/logoIcons/swift.cjs"
+    },
+    "./vercel": {
+      "types": "./dist/logoIcons/vercel.d.ts",
+      "import": "./dist/logoIcons/vercel.mjs",
+      "require": "./dist/logoIcons/vercel.cjs"
+    },
+    "./youtube": {
+      "types": "./dist/logoIcons/youtube.d.ts",
+      "import": "./dist/logoIcons/youtube.mjs",
+      "require": "./dist/logoIcons/youtube.cjs"
+    },
+    "./paypal": {
+      "types": "./dist/logoIcons/paypal.d.ts",
+      "import": "./dist/logoIcons/paypal.mjs",
+      "require": "./dist/logoIcons/paypal.cjs"
+    },
+    "./patreon": {
+      "types": "./dist/logoIcons/patreon.d.ts",
+      "import": "./dist/logoIcons/patreon.mjs",
+      "require": "./dist/logoIcons/patreon.cjs"
+    },
+    "./ulld": {
+      "types": "./dist/logo/ulldLogo.d.ts",
+      "import": "./dist/logo/ulldLogo.mjs",
+      "require": "./dist/logo/ulldLogo.cjs"
+    },
+    "./ulld-animated": {
+      "types": "./dist/logo/animatedLogo.d.ts",
+      "import": "./dist/logo/animatedLogo.mjs",
+      "require": "./dist/logo/animatedLogo.cjs"
+    },
+    "./clientX": {
+      "types": "./dist/clientSideUtilityComponents/xIcon.d.ts",
+      "import": "./dist/clientSideUtilityComponents/xIcon.mjs",
+      "require": "./dist/clientSideUtilityComponents/xIcon.cjs"
+    },
+    "./names": {
+      "types": "./dist/allIconNames.d.ts",
+      "import": "./dist/allIconNames.mjs",
+      "require": "./dist/allIconNames.cjs"
+    }
   },
   "dependencies": {
     "@tabler/icons-react": "3.5.0",
@@ -46,7 +136,6 @@
     "react-icons": "5.0.1",
     "zod": "3.23.8"
   },
-  "devDependencies": {},
   "peerDependencies": {
     "@ulld/hooks": "workspace:*",
     "@ulld/tailwind": "workspace:*",
@@ -58,6 +147,5 @@
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
-  "packageManager": "pnpm@9.0.4",
-  "main": "./src/DynamicIcon.tsx"
+  "packageManager": "pnpm@9.0.4"
 }

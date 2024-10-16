@@ -12,6 +12,7 @@
   "scripts": {
     "lint": "tsc --watch --noEmit -p ./tsconfigLint.json"
   },
+  "main": "./src/tailwind.config.ts",
   "exports": {
     ".": "./src/tailwind.config.ts",
     "./themeUtils": "./src/shad/lib/themeUtils.ts",
@@ -200,6 +201,5 @@
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
-  "packageManager": "pnpm@9.0.4",
-  "main": "./src/tailwind.config.ts"
+  "packageManager": "pnpm@9.0.4"
 }

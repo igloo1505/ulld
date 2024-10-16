@@ -24,8 +24,6 @@
     "./addSnippetPage": "./src/ulldPages/addSnippet.tsx",
     "./snippetsPage": "./src/ulldPages/snippetsPage/main.tsx"
   },
-  "dependencies": {},
-  "devDependencies": {},
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",

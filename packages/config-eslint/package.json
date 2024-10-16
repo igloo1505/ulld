@@ -35,7 +35,6 @@
     "eslint-plugin-storybook": "0.6.15",
     "eslint-plugin-tsdoc": "0.2.17"
   },
-  "peerDependencies": {},
   "packageManager": "pnpm@9.4.0",
   "license": "MIT"
 }

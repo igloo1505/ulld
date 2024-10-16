@@ -86,7 +86,9 @@
     "glob": "10.3.15",
     "zod": "3.23.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "zod2md": "0.1.3"
+  },
   "peerDependencies": {
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
