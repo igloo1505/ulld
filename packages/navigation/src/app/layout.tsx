@@ -1,6 +1,6 @@
 import "@ulld/tailwind/defaultStyles.scss";
 import "../styles/globals.scss";
-import React, { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 import { fontSans } from "@ulld/tailwind/defaultFont";
 import localFont from "next/font/local";
 import clsx from "@ulld/utilities/cn";
