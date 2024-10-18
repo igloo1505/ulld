@@ -1,1 +1,0 @@
-{"version":3,"file":"BibCreateWithoutEntriesInputSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/BibCreateWithoutEntriesInputSchema.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,eAAO,MAAM,kCAAkC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,4BAA4B,CAKnF,CAAC;AACZ,eAAe,kCAAkC,CAAC"}

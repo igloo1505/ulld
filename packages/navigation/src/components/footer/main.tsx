@@ -1,9 +1,10 @@
 "use client";
-import { QuickLinkType } from "@ulld/utilities/types";
+import type { QuickLinkType } from "@ulld/utilities/types";
 import Link from "next/link";
+import type { ReactNode} from "react";
 import React, { useMemo } from "react";
-import { FooterLogoLink, FooterProps } from "../../types";
 import { DynamicIcon } from "@ulld/icons";
+import type { FooterLogoLink, FooterProps } from "../../types";
 import FooterCategory from "./footerCategory";
 
 
@@ -13,40 +14,37 @@ const quickLinks: QuickLinkType[] = [
 
 const footerLogoLinks: FooterLogoLink[] = [];
 
-/* TODO: Make sure to limit the form to 3 logo links, and three categories or no more than 4 items each. */
 
-const Footer = ({ logo: Logo }: FooterProps) => {
-    const quickLinkLabel = undefined // Get this along with other properties from settings.
+const Footer = ({ logo: Logo }: FooterProps): ReactNode => {
+    const quickLinkLabel: string | undefined = undefined // Get this along with other properties from settings.
     const groupedQuickLinks = useMemo(() => {
         const groupedLinks: Record<
             string,
             { label: string; items: QuickLinkType[] }
         > = {};
         quickLinks.forEach((l) => {
-            if (!groupedLinks[l.category]) {
+            if (!(l.category in groupedLinks)) {
                 groupedLinks[l.category] = {
                     label: l.label,
                     items: [],
                 };
             }
-            groupedLinks[l.category]?.items.push(l);
+            groupedLinks[l.category].items.push(l);
         });
         return groupedLinks;
     }, []);
 
     return (
         <footer
-            className={
-                "bg-gray-50 dark:bg-gray-950 mt-4 border-t dark:border-t-gray-800 dark:bg-opacity-50 z-[10] relative sidebarAdjust group-[.no-nav-transparent]/html:dark:bg-opacity-100"
-            }
+            className="bg-gray-50 dark:bg-gray-950 mt-4 border-t dark:border-t-gray-800 dark:bg-opacity-50 z-[10] relative sidebarAdjust group-[.no-nav-transparent]/html:dark:bg-opacity-100"
             id="footer-panel"
         >
             <div className="container p-6 mx-auto">
                 <div className="lg:flex">
                     <div className="w-full -mx-6 lg:w-2/5">
                         <div className="px-6">
-                            <Link href="/" className={"h-12 w-auto"}>
-                                <Logo className={"w-auto h-7 fill-black"} />
+                            <Link className="h-12 w-auto" href="/">
+                                <Logo className="w-auto h-7 fill-black" />
                             </Link>
                             <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
                                 {quickLinkLabel || "Quick Links"}
@@ -57,14 +55,14 @@ const Footer = ({ logo: Logo }: FooterProps) => {
                                     .map((l) => {
                                         return (
                                             <Link
-                                                key={`${l.label}-${l.icon}`}
-                                                href={l.href}
-                                                className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-primary"
                                                 aria-label={l.label}
+                                                className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-primary"
+                                                href={l.href}
+                                                key={`${l.label}-${l.icon}`}
                                             >
                                                 <DynamicIcon
+                                                    className="w-5 h-5 fill-current"
                                                     name={l.icon}
-                                                    className={"w-5 h-5 fill-current"}
                                                 />
                                             </Link>
                                         );
@@ -77,11 +75,11 @@ const Footer = ({ logo: Logo }: FooterProps) => {
                             {Object.keys(groupedQuickLinks).map((k) => {
                                 return (
                                     <FooterCategory
-                                        key={`footer-cat-${groupedQuickLinks[k].label}`}
                                         items={
-                                            groupedQuickLinks[k as keyof typeof groupedQuickLinks]
+                                            groupedQuickLinks[k]
                                                 .items
                                         }
+                                        key={`footer-cat-${groupedQuickLinks[k].label}`}
                                         title={groupedQuickLinks[k].label}
                                     />
                                 );

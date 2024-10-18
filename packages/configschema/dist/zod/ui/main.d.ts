@@ -14,27 +14,27 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
             weight: z.ZodUnion<[z.ZodLiteral<"100">, z.ZodLiteral<"200">, z.ZodLiteral<"300">, z.ZodLiteral<"400">, z.ZodLiteral<"500">, z.ZodLiteral<"600">, z.ZodLiteral<"700">, z.ZodLiteral<"800">, z.ZodLiteral<"900">]>;
             style: z.ZodUnion<[z.ZodLiteral<"italic">, z.ZodLiteral<"bold">, z.ZodLiteral<"normal">]>;
         }, "strip", z.ZodTypeAny, {
+            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
-            path: string;
         }, {
+            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
-            path: string;
         }>, "many">, z.ZodLiteral<"default">]>>;
     }, "strip", z.ZodTypeAny, {
         blockQuoteItalic: boolean;
         fontPaths: {
+            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
-            path: string;
         }[] | "default";
     }, {
         blockQuoteItalic?: boolean | undefined;
         fontPaths?: {
+            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
-            path: string;
         }[] | "default" | undefined;
     }>>;
     media: z.ZodDefault<z.ZodObject<{
@@ -75,17 +75,17 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     text: {
         blockQuoteItalic: boolean;
         fontPaths: {
+            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
-            path: string;
         }[] | "default";
     };
+    theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
     media: {
         imageMap: Record<string, string | undefined>;
         includeDefaultImageMap: boolean;
         imageRemoteTest: RegExp[];
     };
-    theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
     colors: Record<string, {
         dark?: string | undefined;
         light?: string | undefined;
@@ -98,17 +98,17 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     text?: {
         blockQuoteItalic?: boolean | undefined;
         fontPaths?: {
+            path: string;
             weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
             style: "bold" | "italic" | "normal";
-            path: string;
         }[] | "default" | undefined;
     } | undefined;
+    theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
     media?: {
         imageMap?: Record<string, string | undefined> | undefined;
         includeDefaultImageMap?: boolean | undefined;
         imageRemoteTest?: RegExp[] | undefined;
     } | undefined;
-    theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
     colors?: Record<string, string | {
         dark?: string | undefined;
         light?: string | undefined;

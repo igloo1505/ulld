@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import type { z } from 'zod'
 
 
@@ -29,6 +29,8 @@ export interface WithChildren {
 
 export type RemoveValuesOfType<T, U> = { [P in keyof T as T[P] extends U ? never : P]: T[P] }
 
+// Disable to remove all functions, regardless of type.
+/* eslint-disable @typescript-eslint/ban-types */
 export type WithoutFunctions<T> = RemoveValuesOfType<{
     [key in keyof T]: T[key] extends Function ? never : T[key];
 }, never>
@@ -39,8 +41,8 @@ export type ZodFriendly<T extends object> = { [key in keyof T]: T[key] extends n
 export type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>
 
 
-export type PickPageParams<T> = {
-    searchParams: "searchParams" extends keyof T ? T["searchParams"] : {},
-    params: "params" extends keyof T ? T["params"] : {},
+export interface PickPageParams<T> {
+    searchParams: "searchParams" extends keyof T ? T["searchParams"] : object,
+    params: "params" extends keyof T ? T["params"] : object,
 };
 

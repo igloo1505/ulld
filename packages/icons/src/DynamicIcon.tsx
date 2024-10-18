@@ -1,10 +1,9 @@
-"use client"
-import dynamic from "next/dynamic";
+"use client";
+import dynamic, { DynamicOptions } from "next/dynamic";
 import React, { useEffect, useMemo } from "react";
 import type { LucideProps } from "lucide-react";
 import dynamicIconImports from "lucide-react/dynamicIconImports";
-import type { ValidIconNameDynamicallyGenerated } from "@ulld/utilities/validIconNameList"
-
+import type { ValidIconNameDynamicallyGenerated } from "@ulld/utilities/validIconNameList";
 
 export type IconNameList =
     | "bibliography"
@@ -51,8 +50,8 @@ const logoIconNames = [
     "swift",
     "vercel",
     "youtube",
-    "ulld"
-] as const satisfies ValidIconNameDynamicallyGenerated[number][]
+    "ulld",
+] as const satisfies ValidIconNameDynamicallyGenerated[number][];
 
 export type LogoIconNames = (typeof logoIconNames)[number];
 
@@ -117,7 +116,9 @@ export enum AllDynamicIconNames {
 }
 
 const iconNameMap: {
-    [k in ValidIconNameDynamicallyGenerated]?: keyof typeof dynamicIconImports | false;
+    [k in ValidIconNameDynamicallyGenerated]?:
+    | keyof typeof dynamicIconImports
+    | false;
 } = {
     plain: false,
     bibliography: "library",
@@ -167,7 +168,7 @@ const iconNameMap: {
     practice: "chart-line",
 };
 
-export type ValidIconName = ValidIconNameDynamicallyGenerated
+export type ValidIconName = ValidIconNameDynamicallyGenerated;
 
 export const completeValidIconNameList = [
     ...Object.keys(iconNameMap),
@@ -177,11 +178,11 @@ export const completeValidIconNameList = [
 
 export interface IconProps extends LucideProps {
     name: ValidIconName;
-    onLoad?: () => void
+    onLoad?: () => void;
 }
 
 export const DynamicIcon = (props: IconProps) => {
-    const name = String(props.name)
+    const name = String(props.name);
     let iconType: "logo" | "lucide" | null = null;
     if (logoIconNames.includes(name as (typeof logoIconNames)[number])) {
         iconType = "logo";
@@ -192,14 +193,16 @@ export const DynamicIcon = (props: IconProps) => {
         iconType = "lucide";
     }
     useEffect(() => {
-       if(props.onLoad){
-            props.onLoad()
-        } 
-    }, [])
+        if (props.onLoad) {
+            props.onLoad();
+        }
+    }, []);
     return useMemo(() => {
         if (!iconType) return null;
         if (iconType === "logo") {
-            let Icon = dynamic(() => import(`./logoIcons/${name}`));
+            // Have to use the file extension .tsx even after build, as those paths are generated as part of the dynamic import when the build is generated.
+            let _name = name.endsWith(".tsx") ? name : `${name}.tsx`;
+            let Icon = dynamic(() => import(`./logoIcons/${_name}`));
             return <Icon {...props} />;
         } else {
             const LucideIcon = dynamic(

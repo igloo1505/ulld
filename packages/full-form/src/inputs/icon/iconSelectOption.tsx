@@ -2,7 +2,6 @@
 import React, { CSSProperties, ForwardedRef, forwardRef, useMemo } from "react";
 import { DynamicIcon, ValidIconName } from "@ulld/icons";
 import clsx from "clsx";
-import allIcons from "@ulld/icons/names";
 import cn from "@ulld/utilities/cn";
 import type { validIconNameList } from "@ulld/utilities/validIconNameList";
 
@@ -10,7 +9,6 @@ interface IconSelectOptionProps {
     item: (typeof validIconNameList)[number];
     className?: string;
     iconClasses?: string;
-    /* index: number; */
     setValue: (newVal: (typeof validIconNameList)[number]) => void;
     setOpen: (newOpen: boolean) => void;
     style: CSSProperties

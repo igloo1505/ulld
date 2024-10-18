@@ -17,7 +17,7 @@
     "src/**/*.test.ts",
     "jest**",
     "src/__scripts__/**",
-    "tsup.config.ts"
-  ],
-  "ignore": ["src/__scripts__", "src/database"]
+    "tsup.config.ts",
+    "src/database"
+  ]
 }

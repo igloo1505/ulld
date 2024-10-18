@@ -1,1 +1,0 @@
-{"version":3,"file":"IpynbCreateManyAndReturnArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/IpynbCreateManyAndReturnArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAEhD,eAAO,MAAM,kCAAkC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,4BAA4B,CAGnF,CAAE;AACb,eAAe,kCAAkC,CAAC"}

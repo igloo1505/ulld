@@ -83,10 +83,16 @@ export const InternalLocationsCombobox = <T extends FieldValues>({
                     let foundVal = options.find((f) => f.value === val);
                     if (foundVal) {
                         props.onChange(foundVal);
+                        return;
                     }
-                    return;
+                    return props.onChange({
+                        label: "",
+                        value: val,
+                        type: "url"
+                    })
+                } else {
+                    return props.onChange(val);
                 }
-                return props.onChange(val);
             }}
             options={options}
             allowOtherInput={

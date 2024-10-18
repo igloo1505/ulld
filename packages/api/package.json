@@ -7,7 +7,6 @@
   },
   "files": [
     "src",
-    "dist",
     "pluginConfig.ulld.json"
   ],
   "scripts": {
@@ -29,6 +28,8 @@
     "./toBytes": "./src/bytes/toBytes.ts",
     "./fromBytes": "./src/bytes/fromBytes.ts",
     "./applyRecursiveMdxParser": "./src/utils/applyRecursiveParser.ts",
+    "./pluginSettings-server": "./src/classes/data/pluginUtils/pluginSettings/server.ts",
+    "./pluginSettings-client": "./src/classes/data/pluginUtils/pluginSettings/client.ts",
     "./generalPrismaSchemas": "./src/classes/prismaMdxRelations/schemas/general.ts",
     "./classes/prismaHealthRelations/Diet": "./src/classes/prismaHealthRelations/Diet.ts",
     "./classes/specificNoteQuery/specificNoteQueryManager": "./src/classes/specificNoteQuery/specificNoteQueryManager.ts",
@@ -216,6 +217,7 @@
     "@trpc/client": "10.38.0",
     "@trpc/react-query": "10.45.2",
     "@trpc/server": "10.38.0",
+    "@types/deep-eql": "4.0.2",
     "@types/glob-to-regexp": "0.4.4",
     "@types/jest": "29.5.11",
     "@types/three": "0.162.0",

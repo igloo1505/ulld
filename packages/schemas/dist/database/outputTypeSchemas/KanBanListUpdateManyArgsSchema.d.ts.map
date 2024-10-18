@@ -1,1 +1,0 @@
-{"version":3,"file":"KanBanListUpdateManyArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/KanBanListUpdateManyArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAIhD,eAAO,MAAM,8BAA8B,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,wBAAwB,CAG3E,CAAE;AACb,eAAe,8BAA8B,CAAC"}

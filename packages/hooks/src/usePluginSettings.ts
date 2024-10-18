@@ -1,22 +1,22 @@
 import { client } from "@ulld/api/client";
+import { JsonParsableRecord } from "@ulld/types";
 import { useEffect, useState } from "react";
 
-export const usePluginSettings = <T extends object>(
-  pluginName: string,
-): T | null => {
+export const usePluginSettings = <T extends JsonParsableRecord>(
+    pluginName: string,
+): [T | null, () => Promise<void>] => {
+    const [data, setData] = useState<T | null>(null);
 
-  const [data, setData] = useState<T | null>(null);
+    const gatherPluginSettings = async () => {
+        let res = await client.pluginSettings.getPluginSettings.query({
+            pluginName,
+        }) as T | undefined | null
+        setData(res || null);
+    };
 
-  const gatherData = async () => {
-    let res = await client.settings.getPluginSettings({
-      pluginName,
-    });
-    setData(res || null);
-  };
+    useEffect(() => {
+        gatherPluginSettings();
+    }, []);
 
-  useEffect(() => {
-    gatherData();
-  }, []);
-
-  return data;
+    return [data, gatherPluginSettings]
 };

@@ -1,1 +1,0 @@
-{"version":3,"file":"ImageAlignmentSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/ImageAlignmentSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,eAAO,MAAM,oBAAoB,yDAAmD,CAAC;AACrF,MAAM,MAAM,kBAAkB,GAAG,GAAG,CAAC,CAAC,KAAK,CAAC,OAAO,oBAAoB,CAAC,EAAE,CAAA;AAC1E,eAAe,oBAAoB,CAAC"}

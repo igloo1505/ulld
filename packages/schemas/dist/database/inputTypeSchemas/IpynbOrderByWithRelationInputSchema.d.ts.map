@@ -1,1 +1,0 @@
-{"version":3,"file":"IpynbOrderByWithRelationInputSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/IpynbOrderByWithRelationInputSchema.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AAUxB,eAAO,MAAM,mCAAmC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,6BAA6B,CAwBrF,CAAC;AACZ,eAAe,mCAAmC,CAAC"}

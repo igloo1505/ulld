@@ -31,7 +31,11 @@
   "types": "./src/types.ts",
   "main": "./src/DynamicIcon.tsx",
   "exports": {
-    ".": "./src/DynamicIcon.tsx",
+    ".": {
+      "types": "./dist/DynamicIcon.d.ts",
+      "import": "./dist/DynamicIcon.mjs",
+      "require": "./dist/DynamicIcon.cjs"
+    },
     "./dynamic": {
       "types": "./dist/DynamicIcon.d.ts",
       "import": "./dist/DynamicIcon.mjs",

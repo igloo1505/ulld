@@ -1,7 +1,0 @@
-import { z } from 'zod';
-import { DietaryItemWhereInputSchema } from './DietaryItemWhereInputSchema.js';
-export const DietaryItemRelationFilterSchema = z.object({
-    is: z.lazy(() => DietaryItemWhereInputSchema).optional(),
-    isNot: z.lazy(() => DietaryItemWhereInputSchema).optional()
-}).strict();
-export default DietaryItemRelationFilterSchema;

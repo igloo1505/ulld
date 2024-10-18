@@ -18,7 +18,7 @@
         "noEmit": false,
         "moduleResolution": "NodeNext",
         "module": "NodeNext",
-        "jsx": "react-jsx",
+        "jsx": "react",
         "allowImportingTsExtensions": false,
         "declaration": true,
         "declarationMap": true,

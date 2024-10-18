@@ -1,21 +1,38 @@
-import { NavigationFormSettingSchema } from "./schema"
+import type { NavbarLink, SidebarLink } from "./schema";
 
-type NavLinkType = NavigationFormSettingSchema["navbarLinks"][number] | NavigationFormSettingSchema["sidebarLinks"][number]
+export type NavLinkType = NavbarLink | SidebarLink;
 
 export const linkItemIsEqual = (a: NavLinkType, b: NavLinkType): boolean => {
-    if(a.label !== b.label){
+    if (a.label !== b.label) {
+        return false;
+    }
+    if(a.value !== b.value){
         return false
     }
-    const urlInA = "url" in a
-    if(urlInA !== "url" in b){
-        return false
-    }
-    if(urlInA){
-        return a.url === (b as any).url
-    } else {
-        return (a as any).action === (b as any).action
-    }
+    return true;
+};
+
+export const superTruthy = (s: string | undefined | null): s is string =>
+    Boolean(s?.length);
+
+
+export const isValidUrl = (val: string): boolean => {
+    return [
+        "https://",
+        "http://",
+        "www.",
+        "/",
+        "#"
+    ].some((s) => val.startsWith(s))
 }
 
-export const superTruthy = (s: string | undefined | null) => Boolean(s && s.length);
 
+
+// TODO: Implement an enum here and check for actual validity of action tring.
+export const isValidAction = (val: string): boolean => {
+   return val.length > 3        
+}
+
+export const isValidUrlAction = (val: string, type: "url" | "action"): boolean => {
+       return type === "url" ? isValidUrl(val) : isValidAction(val) 
+}

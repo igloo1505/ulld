@@ -1,15 +1,24 @@
-import React from "react";
+import React, { type FC } from "react";
+import { useNavSettingsForm } from "../../state/useForm";
+import { maxNavbarLinks } from "../../staticSettingData";
+import AddNavbarLinkFormContext from "./addNavbarLink/formContext";
 import AddNavbarLinkSection from "./addNavbarLink/main";
 import NavbarLinkList from "./navbarLinksList/main";
-import AddNavbarLinkFormContext from "./addNavbarLink/formContext";
 
-interface NavbarSectionProps { }
-
-const NavbarSection = (props: NavbarSectionProps) => {
+const NavbarSection: FC = () => {
+    const form = useNavSettingsForm();
+    const existingVals = form.watch("navbarLinks");
     return (
-        <div className={"w-full"}>
+        <div className="w-full">
             <AddNavbarLinkFormContext>
-                <AddNavbarLinkSection />
+                <AddNavbarLinkSection
+                    onAddItem={(data) => {
+                        if (existingVals.length < maxNavbarLinks) {
+                            form.setValue("navbarLinks", [...existingVals, data]);
+                        }
+                    }}
+                    totalItems={existingVals.length}
+                />
             </AddNavbarLinkFormContext>
             <NavbarLinkList />
         </div>

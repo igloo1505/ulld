@@ -1,17 +1,21 @@
-import { useForm, zodResolver } from "@ulld/full-form/form";
-import React, { ReactNode } from "react";
-import { navbarLinkSchema } from "../../../form/schema";
+import React, { type FC, type ReactNode } from "react";
 import { Form } from "@ulld/tailwind/form";
+import { useForm, zodResolver } from "@ulld/full-form/form";
+import { navbarLinkSchema } from "../../../form/schema";
 
 interface AddNavbarLinkFormContextProps {
     children: ReactNode;
 }
 
-const AddNavbarLinkFormContext = ({
+const AddNavbarLinkFormContext: FC<AddNavbarLinkFormContextProps> = ({
     children,
-}: AddNavbarLinkFormContextProps) => {
+}) => {
     const form = useForm({
         resolver: zodResolver(navbarLinkSchema),
+        defaultValues: {
+            label: "",
+            value: ""
+        }
     });
 
     return <Form {...form}>{children}</Form>;

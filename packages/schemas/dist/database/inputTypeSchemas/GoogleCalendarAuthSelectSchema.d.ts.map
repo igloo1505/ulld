@@ -1,1 +1,0 @@
-{"version":3,"file":"GoogleCalendarAuthSelectSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/GoogleCalendarAuthSelectSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,eAAO,MAAM,8BAA8B,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,wBAAwB,CAG3E,CAAA;AACX,eAAe,8BAA8B,CAAC"}

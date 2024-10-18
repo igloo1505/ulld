@@ -11,7 +11,7 @@ const project = resolve(process.cwd(), "tsconfig.json");
  *
  */
 
-// WITH_WIFI: Figure out issue with eslint-config-turbo
+// WITH_WIFI: Need to resolve this still. Find eslint related packages and versions used in turborepo demos and install those versions.
 module.exports = {
     extends: [
         "@vercel/style-guide/eslint/node",
@@ -19,7 +19,7 @@ module.exports = {
         "@vercel/style-guide/eslint/browser",
         "@vercel/style-guide/eslint/react",
         "@vercel/style-guide/eslint/next",
-        "eslint-config-turbo",
+        // "eslint-config-turbo",
     ].map(require.resolve),
     parserOptions: {
         project,
@@ -41,5 +41,7 @@ module.exports = {
     rules: {
         "import/no-default-export": "off",
         "unicorn/prefer-node-protocol": "off",
+        "unicorn/filename-case": "off",
+        "react/function-component-definition": "off" // Enforces declaring function components using the function keyword, which I don't think I've done once in my life.
     },
 };

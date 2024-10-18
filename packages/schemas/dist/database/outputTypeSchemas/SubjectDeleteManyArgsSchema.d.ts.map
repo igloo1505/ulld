@@ -1,1 +1,0 @@
-{"version":3,"file":"SubjectDeleteManyArgsSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/SubjectDeleteManyArgsSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAEhD,eAAO,MAAM,2BAA2B,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,qBAAqB,CAErE,CAAE;AACb,eAAe,2BAA2B,CAAC"}

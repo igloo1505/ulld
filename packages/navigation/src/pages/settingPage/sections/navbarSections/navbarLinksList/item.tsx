@@ -1,9 +1,9 @@
 "use client";
+import { motion, Reorder, useDragControls } from "framer-motion";
+import { GripIcon as _GripIcon, XIcon } from "lucide-react";
 import React, { PointerEvent } from "react";
 import { NavigationFormSettingSchema } from "../../../form/schema";
-import { GripIcon as _GripIcon, XIcon } from "lucide-react";
-import { motion, Reorder, useDragControls } from "framer-motion";
-import { actionLabelMap } from "../../../staticSettingData";
+import { ItemValueLabel } from "../../sidebarSections/sidebarLinkListItem";
 const GripIcon = motion(_GripIcon);
 
 interface NavbarLinkListItemProps {
@@ -11,10 +11,10 @@ interface NavbarLinkListItemProps {
     removeItem: () => void;
 }
 
-const NavbarLinkListItem = ({ item, removeItem }: NavbarLinkListItemProps) => {
+const NavbarLinkListItem = ({ item, removeItem }: NavbarLinkListItemProps): ReactNode => {
     const controls = useDragControls();
 
-    function startDrag(event: PointerEvent<Element> | PointerEvent) {
+    function startDrag(event: PointerEvent) {
         controls.start(event, { snapToCursor: false });
     }
 
@@ -39,13 +39,9 @@ const NavbarLinkListItem = ({ item, removeItem }: NavbarLinkListItemProps) => {
                 }
             >
                 <div>{item.label}</div>
-                <div className={"text-muted-foreground"}>
-                    {"url" in item
-                        ? item.url
-                        : item.action in actionLabelMap
-                            ? actionLabelMap[item.action]
-                            : item.action}
-                </div>
+                <ItemValueLabel 
+                    item={item}
+                />
             </div>
             <GripIcon
                 className={"cursor-grab text-muted-foreground size-4 place-self-center"}

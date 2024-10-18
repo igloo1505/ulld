@@ -121,17 +121,17 @@ export declare const _developerConfigSchema: z.ZodObject<{
         pluginName: z.ZodOptional<z.ZodString>;
         category: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"math">, z.ZodLiteral<"snippets">, z.ZodLiteral<"code">, z.ZodLiteral<"AI">, z.ZodLiteral<"ML">, z.ZodLiteral<"writing">, z.ZodLiteral<"search">, z.ZodLiteral<"notebooks">, z.ZodLiteral<"database">, z.ZodLiteral<"work">, z.ZodLiteral<"school">, z.ZodLiteral<"organization">, z.ZodLiteral<"task-management">, z.ZodLiteral<"academic">, z.ZodLiteral<"research">, z.ZodLiteral<"project-planning">, z.ZodLiteral<"calendar">, z.ZodLiteral<"general">]>>;
     }, "strip", z.ZodTypeAny, {
-        href: string;
         label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+        href: string;
+        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     }, {
-        href: string;
         label: string;
+        href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
+        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
     }>, "many">>;
     commandPalette: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
@@ -152,12 +152,12 @@ export declare const _developerConfigSchema: z.ZodObject<{
     }, {
         href: z.ZodUnion<[z.ZodString, z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodString>]>;
     }>, "strip", z.ZodTypeAny, {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     }, {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     }>]>, "many">>;
     tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
@@ -196,9 +196,9 @@ export declare const _developerConfigSchema: z.ZodObject<{
         targetUrl?: string | undefined;
     }[];
     navigationLinks: {
-        href: string;
         label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+        href: string;
+        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     }[];
@@ -211,8 +211,8 @@ export declare const _developerConfigSchema: z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
         action: (...args: unknown[]) => unknown;
     } | {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
@@ -222,7 +222,7 @@ export declare const _developerConfigSchema: z.ZodObject<{
     pluginId: string;
     events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
     settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
+    slot?: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form" | undefined;
     additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
     documentation?: string | undefined;
@@ -254,11 +254,11 @@ export declare const _developerConfigSchema: z.ZodObject<{
         exportsPageProps?: boolean | undefined;
     }[] | undefined;
     navigationLinks?: {
-        href: string;
         label: string;
+        href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
+        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
     }[] | undefined;
     styles?: {
         mdx?: string | undefined;
@@ -269,15 +269,15 @@ export declare const _developerConfigSchema: z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
         action: (...args: unknown[]) => unknown;
     } | {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     })[] | undefined;
     tailwind?: {} | undefined;
     parsers?: {
         mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
+    slot?: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form" | undefined;
     pluginId?: string | undefined;
     additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
@@ -402,17 +402,17 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         pluginName: z.ZodOptional<z.ZodString>;
         category: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"math">, z.ZodLiteral<"snippets">, z.ZodLiteral<"code">, z.ZodLiteral<"AI">, z.ZodLiteral<"ML">, z.ZodLiteral<"writing">, z.ZodLiteral<"search">, z.ZodLiteral<"notebooks">, z.ZodLiteral<"database">, z.ZodLiteral<"work">, z.ZodLiteral<"school">, z.ZodLiteral<"organization">, z.ZodLiteral<"task-management">, z.ZodLiteral<"academic">, z.ZodLiteral<"research">, z.ZodLiteral<"project-planning">, z.ZodLiteral<"calendar">, z.ZodLiteral<"general">]>>;
     }, "strip", z.ZodTypeAny, {
-        href: string;
         label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+        href: string;
+        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     }, {
-        href: string;
         label: string;
+        href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
+        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
     }>, "many">>;
     commandPalette: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
@@ -433,12 +433,12 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     }, {
         href: z.ZodUnion<[z.ZodString, z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodString>]>;
     }>, "strip", z.ZodTypeAny, {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     }, {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     }>]>, "many">>;
     tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
@@ -477,9 +477,9 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         targetUrl?: string | undefined;
     }[];
     navigationLinks: {
-        href: string;
         label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+        href: string;
+        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     }[];
@@ -492,8 +492,8 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
         action: (...args: unknown[]) => unknown;
     } | {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
@@ -503,7 +503,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     pluginId: string;
     events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
     settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
+    slot?: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form" | undefined;
     additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
     documentation?: string | undefined;
@@ -535,11 +535,11 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         exportsPageProps?: boolean | undefined;
     }[] | undefined;
     navigationLinks?: {
-        href: string;
         label: string;
+        href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
+        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
     }[] | undefined;
     styles?: {
         mdx?: string | undefined;
@@ -550,15 +550,15 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
         action: (...args: unknown[]) => unknown;
     } | {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     })[] | undefined;
     tailwind?: {} | undefined;
     parsers?: {
         mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
+    slot?: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form" | undefined;
     pluginId?: string | undefined;
     additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
@@ -588,9 +588,9 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         targetUrl?: string | undefined;
     }[];
     navigationLinks: {
-        href: string;
         label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+        href: string;
+        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     }[];
@@ -603,8 +603,8 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
         action: (...args: unknown[]) => unknown;
     } | {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
@@ -614,7 +614,7 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     pluginId: string;
     events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
     settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
+    slot?: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form" | undefined;
     additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
     documentation?: string | undefined;
@@ -646,11 +646,11 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         exportsPageProps?: boolean | undefined;
     }[] | undefined;
     navigationLinks?: {
-        href: string;
         label: string;
+        href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
+        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
     }[] | undefined;
     styles?: {
         mdx?: string | undefined;
@@ -661,15 +661,15 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         isAvailable: (...args: unknown[]) => boolean;
         action: (...args: unknown[]) => unknown;
     } | {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     })[] | undefined;
     tailwind?: {} | undefined;
     parsers?: {
         mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
+    slot?: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form" | undefined;
     pluginId?: string | undefined;
     additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
@@ -794,17 +794,17 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
         pluginName: z.ZodOptional<z.ZodString>;
         category: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"math">, z.ZodLiteral<"snippets">, z.ZodLiteral<"code">, z.ZodLiteral<"AI">, z.ZodLiteral<"ML">, z.ZodLiteral<"writing">, z.ZodLiteral<"search">, z.ZodLiteral<"notebooks">, z.ZodLiteral<"database">, z.ZodLiteral<"work">, z.ZodLiteral<"school">, z.ZodLiteral<"organization">, z.ZodLiteral<"task-management">, z.ZodLiteral<"academic">, z.ZodLiteral<"research">, z.ZodLiteral<"project-planning">, z.ZodLiteral<"calendar">, z.ZodLiteral<"general">]>>;
     }, "strip", z.ZodTypeAny, {
-        href: string;
         label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+        href: string;
+        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     }, {
-        href: string;
         label: string;
+        href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
+        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
     }>, "many">>;
     commandPalette: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
@@ -825,12 +825,12 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
     }, {
         href: z.ZodUnion<[z.ZodString, z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodString>]>;
     }>, "strip", z.ZodTypeAny, {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     }, {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     }>]>, "many">>;
     tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
@@ -871,9 +871,9 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
         targetUrl?: string | undefined;
     }[];
     navigationLinks: {
-        href: string;
         label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+        href: string;
+        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     }[];
@@ -886,8 +886,8 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
         isAvailable: (...args: unknown[]) => boolean;
         action: (...args: unknown[]) => unknown;
     } | {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     })[];
     tailwind: {};
@@ -897,7 +897,7 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
     pluginId: string;
     events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
     settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
+    slot?: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form" | undefined;
     additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
     documentation?: string | undefined;
@@ -930,11 +930,11 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
         exportsPageProps?: boolean | undefined;
     }[] | undefined;
     navigationLinks?: {
-        href: string;
         label: string;
+        href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
+        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
     }[] | undefined;
     styles?: {
         mdx?: string | undefined;
@@ -945,15 +945,15 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
         isAvailable: (...args: unknown[]) => boolean;
         action: (...args: unknown[]) => unknown;
     } | {
-        href: string | ((...args: unknown[]) => string);
         label: string;
+        href: string | ((...args: unknown[]) => string);
         isAvailable: (...args: unknown[]) => boolean;
     })[] | undefined;
     tailwind?: {} | undefined;
     parsers?: {
         mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
-    slot?: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | undefined;
+    slot?: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form" | undefined;
     additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
     trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
     events?: import("./types/pluginEventsConfig.js").PluginEventsConfig | undefined;

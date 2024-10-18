@@ -1,15 +1,16 @@
+import type { ReactNode } from "react";
 import React from "react";
-import { useNavSettingsForm } from "../../state/useForm";
-import SidebarLinkListItem from "./sidebarLinkListItem";
 import { Reorder } from "framer-motion";
-import { NavigationFormSettingSchema } from "../../form/schema";
+import { useNavSettingsForm } from "../../state/useForm";
+import type { NavigationFormSettingSchema } from "../../form/schema";
+import { linkItemIsEqual } from "../../form/utils";
+import SidebarLinkListItem from "./sidebarLinkListItem";
 import AddSidebarLinkForm from "./addSidebarLinkForm/main";
 import AddSidebarLinkFormContext from "./addSidebarLinkForm/formContext";
-import { linkItemIsEqual } from "../../form/utils";
 
 
 const NavigationSidebarSettingsSection = (
-) => {
+): ReactNode => {
     const formKey = "sidebarLinks";
     const form = useNavSettingsForm();
 
@@ -17,7 +18,7 @@ const NavigationSidebarSettingsSection = (
 
     const removeItem = (
         item: NavigationFormSettingSchema["sidebarLinks"][number],
-    ) => {
+    ): void => {
         form.setValue(
             formKey,
             existingItems.filter((f) =>
@@ -27,7 +28,7 @@ const NavigationSidebarSettingsSection = (
     };
 
     return (
-        <div className={"w-full"}>
+        <div className="w-full">
             <AddSidebarLinkFormContext>
                 <AddSidebarLinkForm
                     onAddItem={(newItem) => {
@@ -37,20 +38,21 @@ const NavigationSidebarSettingsSection = (
                 />
             </AddSidebarLinkFormContext>
             <Reorder.Group
-                className={
-                    "not-prose w-full flex flex-col justify-center items-start"
-                }
-                axis={"y"}
-                values={existingItems}
+                axis="y"
+                
+                className="not-prose w-full flex flex-col justify-center items-start"
                 onReorder={(newValues) => {
                     form.setValue(formKey, newValues);
                 }}
+                values={existingItems}
             >
                 {existingItems.map((item) => (
                     <SidebarLinkListItem
                         item={item}
-                        removeItem={() => removeItem(item)}
                         key={`sidebarlink-${item.label}`}
+                        removeItem={() => {
+                            removeItem(item)
+                        }}
                     />
                 ))}
             </Reorder.Group>

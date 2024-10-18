@@ -1,9 +1,0 @@
-import { z } from 'zod';
-import { DietUpdateManyMutationInputSchema } from '../inputTypeSchemas/DietUpdateManyMutationInputSchema.js';
-import { DietUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/DietUncheckedUpdateManyInputSchema.js';
-import { DietWhereInputSchema } from '../inputTypeSchemas/DietWhereInputSchema.js';
-export const DietUpdateManyArgsSchema = z.object({
-    data: z.union([DietUpdateManyMutationInputSchema, DietUncheckedUpdateManyInputSchema]),
-    where: DietWhereInputSchema.optional(),
-}).strict();
-export default DietUpdateManyArgsSchema;

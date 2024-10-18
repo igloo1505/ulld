@@ -1,6 +1,9 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-    // extends: ["@ulld/eslint-config/next.js"],
+    root: true,
+    extends: [
+        "xo-react"
+    ],
     // parser: "@typescript-eslint/parser",
     parserOptions: {
         project: true,

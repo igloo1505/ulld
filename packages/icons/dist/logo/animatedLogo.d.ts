@@ -17,6 +17,6 @@ export type AnimatedUlldLogoProps = (BaseProps & {
     show?: never;
 });
 export declare const AnimatedUlldLogo: {
-    (props: AnimatedUlldLogoProps): import("react/jsx-runtime").JSX.Element;
+    (props: AnimatedUlldLogoProps): React.JSX.Element;
     displayName: string;
 };

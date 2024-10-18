@@ -291,7 +291,14 @@ export function fakeSettingsComplete() {
     lockedLandingImage: undefined,
     cleanOnSync: false,
     plotTheme: undefined,
-    pluginSettings: {},
+    firstSync: new Date(),
+    lastSync: new Date(),
+  };
+}
+export function fakePluginSettingsComplete() {
+  return {
+    pluginName: faker.string.uuid(),
+    data: {},
     firstSync: new Date(),
     lastSync: new Date(),
   };

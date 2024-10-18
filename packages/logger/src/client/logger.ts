@@ -1,32 +1,38 @@
-import { z } from "zod"
-import { highlight } from "cli-highlight"
-
-const optionsSchema = z.object({
-     showDate: z.boolean().default(true),
-     label: z.string().optional(),
-    color: z.string().optional()
-}).optional()
+import { BaseUlldLogger } from "../base/main";
+import { LogLevel } from "../base/sharedTypes";
+import { LoggerOptionsSchema, optionsSchema } from "./types";
+import { UlldLoggerImplementation } from "../base/implementation";
 
 
 // TODO: Come back and make the output actually presentable
-export class logger {
-    constructor(){}
-    static info(value: any, opts?: z.input<typeof optionsSchema>){
-        console.log(value)
+export class logger
+    extends BaseUlldLogger
+    implements UlldLoggerImplementation<"client"> {
+    constructor() {
+        super();
     }
-    static verbose(value: any, opts?: z.input<typeof optionsSchema>){
-        console.log(value)
+    getOptions(opts: LoggerOptionsSchema) {
+        return optionsSchema.parse(opts)
     }
-    static debug(value: any, opts?: z.input<typeof optionsSchema>){
-        console.log(value)
+    log(value: any, opts: LoggerOptionsSchema = {}) {
+        let _opts = this.getOptions(opts)
+        this.logOfTypeIfPermitted(value, "normal", _opts.type)
     }
-    static logSyntax(value: any, language: string){
-        console.log(highlight(value, {language, ignoreIllegals: true }))
+    info(value: any, opts: LoggerOptionsSchema = {}) {
+        const _opts = this.getOptions(opts)
+        this.logOfTypeIfPermitted(value, "info", _opts.type)
     }
-    static logJson(value: string | object){
-        let v = typeof value === "string" ? value : JSON.stringify(value, null, 4)
-        return this.logSyntax(v, "json")
+    verbose(value: any, opts: LoggerOptionsSchema = {}) {
+        const _opts = this.getOptions(opts)
+        this.logOfTypeIfPermitted(value, "verbose", _opts.type)
+    }
+    debug(value: any, opts: LoggerOptionsSchema = {}) {
+        const _opts = this.getOptions(opts)
+        this.logOfTypeIfPermitted(value, "debug", _opts.type)
+    }
+    logJson(value: string | object, logLevel: LogLevel) {
+        return this[logLevel === "normal" ? "log" : logLevel](value);
     }
 }
 
-export default logger
+export default logger;

@@ -1,1 +1,1 @@
-{"version":3,"file":"copyJsonFilesToDist.d.ts","sourceRoot":"","sources":["../../../src/utils/build/copyJsonFilesToDist.ts"],"names":[],"mappings":"AAKA,eAAO,MAAM,mBAAmB,QAAS,MAAM,SAAQ,MAAM,UAA4B,MAAM,EAAE,SAUhG,CAAA"}
+{"version":3,"file":"copyJsonFilesToDist.d.ts","sourceRoot":"","sources":["../../../src/utils/build/copyJsonFilesToDist.ts"],"names":[],"mappings":"AAKA,eAAO,MAAM,mBAAmB,QAAS,MAAM,SAAQ,MAAM,UAA4B,MAAM,EAAE,SAUhG,CAAA;AAkBD,eAAO,MAAM,iBAAiB,YAAmB,MAAM,WAAW,MAAM,EAAE,kBAgCzE,CAAC"}

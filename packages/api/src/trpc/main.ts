@@ -3,9 +3,9 @@ import { syncRouter } from "./routers/sync";
 import { autoSettingRouter } from "./routers/autoSettings";
 import { advancedSearchRouter } from "./routers/search";
 // import { healthRouter } from "./routers/health/healthRouter";
-import { notebookRouter } from "./routers/notebook/main.tsx"
+import { notebookRouter } from "./routers/notebook/main"
 import { settingsRouter } from "./routers/settings";
-import { mdxNoteActionsRouter } from "./routers/mdxNote.tsx";
+import { mdxNoteActionsRouter } from "./routers/mdxNote";
 import { fsUtilRouter } from "./routers/fsUtil";
 import { readingListRouter } from "./routers/readingList";
 import { universalNoteRouter } from "./routers/universalNotes";
@@ -19,6 +19,7 @@ import { commandPaletteRouter } from "./routers/commandPalette/commandPaletteRou
 import { snippetRouter } from "./routers/snippets/snippetRouter";
 import { whiteboardRouter } from "./routers/whiteboard/whiteboardRouter";
 import bibliographyRouter from "./routers/bibliography/bibliographyRouter";
+import { pluginSettingsRouter } from "./routers/pluginSettings";
 
 
 
@@ -32,6 +33,7 @@ export const _appRouter = {
     boards: kanBanBoardsRouter,
     // health: healthRouter,
     settings: settingsRouter,
+    pluginSettings: pluginSettingsRouter,
     mdx: mdxNoteActionsRouter,
     notebook: notebookRouter,
     snippets: snippetRouter,

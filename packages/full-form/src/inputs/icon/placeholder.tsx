@@ -15,13 +15,13 @@ interface PlaceHolderProps {
 
 const ValuePlaceholder = ({ value, iconClasses }: Pick<PlaceHolderProps, "value" | "iconClasses">) => {
     const icon = useMemo(
-        () => <DynamicIcon className={cn("place-self-center w-3 h-3", iconClasses)} name={value as ValidIconName} />,
+        () => <DynamicIcon className={cn("place-self-center w-3 h-3 stroke-foreground", iconClasses)} name={value as ValidIconName} />,
         [value],
     );
     return (
         <span
             className={
-                "not-prose h-12 text-sm grid grid-cols-[32px_1fr] w-full cursor-pointer hover:bg-secondary/50"
+                "not-prose h-12 text-sm grid grid-cols-[32px_1fr] w-full cursor-pointer"
             }
         >
             {icon}

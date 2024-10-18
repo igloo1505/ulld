@@ -80,11 +80,14 @@
     "./useConfirmation": "./src/useConfirmation.ts",
     "./useMultipleBreakpoints": "./src/useMultipleBreakpoints.ts",
     "./useElementWidthByRef": "./src/useElementWidthByRef.ts",
-    "./useElementWidthById": "./src/useElementWidthById.ts"
+    "./useElementWidthById": "./src/useElementWidthById.ts",
+    "./usePluginSettingsForm": "./src/usePluginSettingsForm.ts"
   },
   "dependencies": {
+    "@hookform/resolvers": "3.6.0",
     "@mdx-js/mdx": "3.0.1",
     "@mdx-js/react": "3.0.1",
+    "deepmerge": "4.3.1",
     "lodash.debounce": "4.0.8",
     "next": "14.2.3",
     "react": "18.2.0",
@@ -92,7 +95,8 @@
     "react-hook-form": "7.51.3",
     "rtl-simple-queries": "1.0.1",
     "shiki": "1.1.7",
-    "tinykeys": "2.1.0"
+    "tinykeys": "2.1.0",
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@testing-library/cypress": "10.0.1",
@@ -119,10 +123,12 @@
     "@ulld/component-map": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
+    "@ulld/eslint-config": "workspace:*",
     "@ulld/parsers": "workspace:*",
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/tailwind": "workspace:*",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",

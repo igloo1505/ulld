@@ -1,1 +1,0 @@
-{"version":3,"file":"SubjectCountOutputTypeSelectSchema.d.ts","sourceRoot":"","sources":["../../../src/database/outputTypeSchemas/SubjectCountOutputTypeSelectSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,eAAO,MAAM,kCAAkC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,4BAA4B,CASnF,CAAC;AACZ,eAAe,kCAAkC,CAAC"}

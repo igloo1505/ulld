@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/staticAppProperties/main.ts"],"names":["noteContainerPrefix"],"mappings":"6BAAO,IAAMA,EAAsB","sourcesContent":["export const noteContainerPrefix = \"note-container-\"\n\n"]}

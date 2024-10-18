@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/schemas/transforms.ts"],"names":["makeArrayTransform","b"],"mappings":"8BAAO,IAAMA,EAAsBC,GACxB,MAAM,QAAQA,CAAC,EAAIA,EAAI,CAACA,CAAC","sourcesContent":["export const makeArrayTransform = (b: any) => {\n    return Array.isArray(b) ? b : [b]\n}\n"]}

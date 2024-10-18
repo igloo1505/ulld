@@ -15,3 +15,7 @@ export type JsonParsableRecord<T extends _JsonParsableField | _SuperJsonParsable
 export type JsonParsableData = JsonParsableRecord | Record<string, JsonParsableField<_JsonParsableField>>[] | Record<string, Record<string, JsonParsableField<_JsonParsableField>>>
 
 export type SuperJsonParsableData = JsonParsableRecord | Record<string, JsonParsableField<_SuperJsonParsableField>>[] | Record<string, Record<string, JsonParsableField<_SuperJsonParsableField>>>
+
+
+// TODO: Leaving this for now to later implement the superjson parsing.
+export type PluginSettingsRecord = JsonParsableRecord

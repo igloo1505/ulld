@@ -1,1 +1,0 @@
-{"version":3,"file":"DJTAvgOrderByAggregateInputSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/DJTAvgOrderByAggregateInputSchema.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AAExB,eAAO,MAAM,iCAAiC,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,2BAA2B,CAEjF,CAAC;AACZ,eAAe,iCAAiC,CAAC"}

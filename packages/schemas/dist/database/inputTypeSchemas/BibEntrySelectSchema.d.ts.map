@@ -1,1 +1,0 @@
-{"version":3,"file":"BibEntrySelectSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/BibEntrySelectSchema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAUhD,eAAO,MAAM,oBAAoB,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,cAAc,CAoDvD,CAAA;AACX,eAAe,oBAAoB,CAAC"}

@@ -32,7 +32,7 @@ const prependDirectives = async (ignore?: RegExp[]) => {
     files.forEach((f) => {
         let distPaths = {
             cjs: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".cjs"),
-            esm: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".js"),
+            esm: f.replace("/src/", "/dist/").replace(/\.tsx?/, ".mjs"),
         };
         if (!fs.existsSync(distPaths.cjs)) {
             console.error(`Could not find dist path ${distPaths.cjs}`);
@@ -84,7 +84,7 @@ export default defineConfig((options) => {
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
         outExtension: ({ format }) => {
             return {
-                js: `.${format === "esm" ? "js" : "cjs"}`,
+                js: `.${format === "esm" ? "mjs" : "cjs"}`,
             };
         },
         loader: {

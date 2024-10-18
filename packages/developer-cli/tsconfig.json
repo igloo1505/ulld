@@ -6,7 +6,8 @@
         "sourceMap": true,
         "noEmitOnError": false,
         "noUnusedLocals": false,
-        "noUnusedParameters": false
+        "noUnusedParameters": false,
+        "allowImportingTsExtensions": false
 	},
 	"include": ["src"]
 }

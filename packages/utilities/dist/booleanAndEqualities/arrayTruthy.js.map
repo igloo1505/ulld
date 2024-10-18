@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/booleanAndEqualities/arrayTruthy.ts"],"names":["arrayTruthy","a","trueIfEmpty"],"mappings":"6BAAO,IAAMA,EAAc,CAACC,EAAQC,EAAuB,KAAU,GAAQ,MAAM,QAAQD,CAAC,GAAKC,GAAqBD,EAAE,OAAS","sourcesContent":["export const arrayTruthy = (a: any, trueIfEmpty: boolean = false) => Boolean(Array.isArray(a) && trueIfEmpty ? true : a.length > 0)\n"]}

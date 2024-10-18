@@ -26,8 +26,10 @@
     "./noteDetailPopover": "./src/components/toc/main.tsx"
   },
   "dependencies": {
+    "deepmerge": "4.3.1",
     "framer-motion": "11.5.4",
     "fuse.js": "7.0.0",
+    "lucide-react": "0.428.0",
     "sass": "1.77.8",
     "tinykeys": "2.1.0",
     "zod": "3.23.8"
@@ -58,6 +60,7 @@
     "@ulld/hooks": "workspace:*",
     "@ulld/icons": "workspace:*",
     "@ulld/jest-presets": "workspace:*",
+    "@ulld/logger": "workspace:*",
     "@ulld/render": "workspace:*",
     "@ulld/state": "workspace:*",
     "@ulld/tailwind": "workspace:*",

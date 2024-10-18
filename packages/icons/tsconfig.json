@@ -2,23 +2,25 @@
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "extends": "@ulld/typescript-config/nextjs.json",
     "include": [
-        "./**/*.ts",
-        "./**/*.tsx"
+        "src/**/*.ts",
+        "src/**/*.tsx"
     ],
     "exclude": [
         "dist",
         "build",
-        "node_modules"
+        "node_modules",
+        "tsup.config.ts"
     ],
     "compilerOptions": {
         "rootDir": "src",
         "outDir": "dist",
         "moduleResolution": "Bundler",
-        "module": "",
+        "module": "ES2022",
         "jsx": "react",
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "noEmit": false,
-        "emitDeclarationOnly": true
+        "emitDeclarationOnly": true,
+        "declaration": true
     }
 }

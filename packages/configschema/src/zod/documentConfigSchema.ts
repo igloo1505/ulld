@@ -6,6 +6,7 @@ import {
     makeValidIdOnlyLetters,
 } from "@ulld/utilities/utils/identity";
 import { iconNameField } from "./navigationConfig.js";
+import { ValidIconNameEnumDynamicallyGenerated } from "@ulld/utilities/validIconNameEnum";
 
 const parsableSearchParam = z.union([
     z.string(),
@@ -57,7 +58,7 @@ export const docTypeUISchema = z
 
 export const zodDocTypeInput = z.string().transform(makeValidIdOnlyLetters);
 
-export const documentTypeConfigSchemaBase = z.object({
+const documentTypeConfigSchemaFields = {
     id: z
         .string()
         .optional()
@@ -145,10 +146,12 @@ export const documentTypeConfigSchemaBase = z.object({
             "Automatically append these subjects to all notes of this document type. This can also be done interactively through the app's UI after it is built.",
         ),
     UI: docTypeUISchema.default({}),
-    icon: iconNameField.default("ulld"),
+    icon: iconNameField.default("ulld" as ValidIconNameEnumDynamicallyGenerated),
     inSidebar: z.boolean().default(false),
     inNavbar: z.boolean().default(false),
-});
+}
+
+export const documentTypeConfigSchemaBase = z.object(documentTypeConfigSchemaFields);
 
 export const documentTypeConfigSchemaInner = documentTypeConfigSchemaBase.partial({
         url: true,

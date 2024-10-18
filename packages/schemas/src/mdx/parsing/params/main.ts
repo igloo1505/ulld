@@ -13,6 +13,7 @@ import {
   extendedFrontMatterSchema,
   frontMatterSchema,
 } from "../../frontMatter/main.js";
+import { unifiedMdxParserParamSchema } from "./unifiedMdxParserParams.js";
 
 export const mdxNoteFromStringPropsSchema = mdxNotePropsSchema
   .pick({
@@ -26,61 +27,6 @@ export const mdxNoteFromStringPropsSchema = mdxNotePropsSchema
     }),
   );
 
-export const mdxNoteIntriguingValSummaryPropsSchema = mdxNotePropsSchema
-  .omit({
-    latexTitle: true,
-    raw: true,
-    floatImages: true,
-    formatted: true,
-    citations: true,
-    quickLinkId: true,
-    citationsListOrder: true,
-    outgoingQuickLinks: true,
-    equationIds: true,
-    isProtected: true,
-    sequentialKey: true,
-    sequentialIndex: true,
-    remoteUrl: true,
-    noLog: true,
-    saveFormatted: true,
-    trackRemote: true,
-    topics: true,
-    tags: true,
-    subjects: true,
-  });
-
-const noteDetailsReturn = z.object({
-  id: z.number().int(),
-  quickLink: z.string().nullish(),
-  bookmarked: z.boolean(),
-  sequentialKey: z.string().nullish(),
-  sequentialIndex: z.number().nullish(),
-  firstSync: z.date().or(z.string()),
-  lastSync: z.date().or(z.string()),
-});
-
-export const unifiedMdxParserParamSchema = z.object({
-  content: z.string(),
-  docTypeData: documentTypeConfigSchemaInner.required({
-        docType: true,
-        id: true,
-        url: true,
-      }),
-  // docTypeData: z
-  //   .union([
-  //     documentTypeConfigSchemaInner.required({
-  //       docType: true,
-  //       id: true,
-  //       url: true,
-  //     }),
-  //     z.object({}),
-  //   ])
-  //   .default({}),
-  data: frontMatterSchema.deepPartial(),
-  appConfig: appConfigSchema,
-  serverClient: z.any(),
-  db: noteDetailsReturn.optional(),
-});
 
 export const unifiedMdxParserSchema = z
   .function()

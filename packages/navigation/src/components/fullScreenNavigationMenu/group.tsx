@@ -1,5 +1,7 @@
+import type { ReactNode } from "react";
 import React from "react";
-import FullScreenNavigationItem, { NavItem } from "./item";
+import type { NavItem } from "./item";
+import FullScreenNavigationItem from "./item";
 import FullScreenGroupHeading from "./heading";
 
 interface FullScreenNavigationGroupProps {
@@ -12,28 +14,24 @@ const FullScreenNavigationGroup = ({
     links,
     label,
     backOnClick,
-}: FullScreenNavigationGroupProps) => {
+}: FullScreenNavigationGroupProps): ReactNode => {
     const hideIcons = !links.some((x) => x.icon);
     return (
         <div
-            className={
-                "w-full h-fit mt-6 md:mt-0 flex flex-col justify-start items-start @container/navigationGroup"
-            }
+            className="w-full h-fit mt-6 md:mt-0 flex flex-col justify-start items-start @container/navigationGroup"
         >
             <FullScreenGroupHeading>{label}</FullScreenGroupHeading>
-            <hr className={"w-full my-2 bg-primary"} />
+            <hr className="w-full my-2 bg-primary" />
             <div
-                className={
-                    "w-full grid grid-cols-1 @[400px]/navigationGroup:grid-cols-2 gap-x-2"
-                }
+                className="w-full grid grid-cols-1 @[400px]/navigationGroup:grid-cols-2 gap-x-2"
             >
-                {links.map((d, i) => {
+                {links.map((d) => {
                     return (
                         <FullScreenNavigationItem
                             backOnClick={backOnClick}
-                            key={`utility-link-${i}`}
-                            item={d}
                             hideIcons={hideIcons}
+                            item={d}
+                            key={`utility-link-${d.label}-${d.url}`}
                         />
                     );
                 })}

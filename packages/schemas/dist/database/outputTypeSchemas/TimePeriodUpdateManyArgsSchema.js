@@ -1,9 +1,0 @@
-import { z } from 'zod';
-import { TimePeriodUpdateManyMutationInputSchema } from '../inputTypeSchemas/TimePeriodUpdateManyMutationInputSchema.js';
-import { TimePeriodUncheckedUpdateManyInputSchema } from '../inputTypeSchemas/TimePeriodUncheckedUpdateManyInputSchema.js';
-import { TimePeriodWhereInputSchema } from '../inputTypeSchemas/TimePeriodWhereInputSchema.js';
-export const TimePeriodUpdateManyArgsSchema = z.object({
-    data: z.union([TimePeriodUpdateManyMutationInputSchema, TimePeriodUncheckedUpdateManyInputSchema]),
-    where: TimePeriodWhereInputSchema.optional(),
-}).strict();
-export default TimePeriodUpdateManyArgsSchema;

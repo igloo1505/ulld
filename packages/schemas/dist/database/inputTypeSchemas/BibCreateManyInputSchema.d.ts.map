@@ -1,1 +1,0 @@
-{"version":3,"file":"BibCreateManyInputSchema.d.ts","sourceRoot":"","sources":["../../../src/database/inputTypeSchemas/BibCreateManyInputSchema.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAChD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAC;AACxB,eAAO,MAAM,wBAAwB,EAAE,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,kBAAkB,CAK/D,CAAC;AACZ,eAAe,wBAAwB,CAAC"}

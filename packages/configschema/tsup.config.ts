@@ -33,7 +33,7 @@ export default defineConfig((options) => {
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
         outExtension: ({ format }) => {
             return {
-                js: `.${format === "esm" ? "js" : "cjs"}`,
+                js: `.${format === "esm" ? "mjs" : "cjs"}`,
             };
         },
         esbuildOptions(options, context) {

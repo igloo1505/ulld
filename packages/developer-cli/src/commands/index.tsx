@@ -1,6 +1,7 @@
 import React from 'react';
 /* import zod from 'zod'; */
 import MainBanner from '../components/text/mainBanner.js';
+import InkMarkdown from "../components/text/markdown.js"
 
 /* export const options = zod.object({ */
 /*     name: zod.string().default('Stranger').describe('Name'), */
@@ -21,6 +22,9 @@ export default function Index(props: Props) {
             >
                 Uh Little Less Dum
             </MainBanner>
+            <InkMarkdown
+                filePath="mainHelp.md"
+            />
         </>
     );
 }

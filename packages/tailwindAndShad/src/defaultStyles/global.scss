@@ -35,6 +35,12 @@ body {
   --ulld-important: #ffff00;
 }
 
+.ulldBlueImportant {
+  color: hsl(var(--brand)) !important;
+  stroke: hsl(var(--brand)) !important;
+  fill: hsl(var(--brand)) !important;
+}
+
 .truncateWidth {
   padding: 20px;
   white-space: nowrap;

@@ -1,15 +1,14 @@
 "use client";
-import React from "react";
-import { NavigationFormSettingSchema } from "../../form/schema";
-import FooterSection from "./footerSectionItem";
+import React, { type ReactNode } from "react";
 import { useFormContext } from "@ulld/full-form/form";
 import { Reorder } from "framer-motion";
 import { useElementBreakpoint } from "@ulld/hooks/useMeasure"
-import cn from "@ulld/utilities/cn";
+import { cn } from "@ulld/utilities/cn";
+import type { NavigationFormSettingSchema } from "../../form/schema";
+import FooterSection from "./footerSectionItem";
 
-interface FooterSectionListProps { }
 
-export const FooterSectionList = (props: FooterSectionListProps) => {
+export const FooterSectionList = (): ReactNode => {
     const form = useFormContext<NavigationFormSettingSchema>();
     const sections = form.watch("footerSections");
 
@@ -24,20 +23,20 @@ export const FooterSectionList = (props: FooterSectionListProps) => {
 
     return (
         <Reorder.Group
+            axis={isRow ? "x" : "y"}
             className={cn(
                 "not-prose w-full min-h-[200px] gap-4",
                 isRow
                     ? "grid grid-cols-3 items-start"
                     : "flex flex-col justify-center items-center",
             )}
-            axis={isRow ? "x" : "y"}
-            values={sections}
             onReorder={(newValues) => {
                 form.setValue("footerSections", newValues);
             }}
+            values={sections}
         >
-            {isRow !== null && sections?.map((x, i) => {
-                return <FooterSection key={x.label} isRow={isRow} idx={i} item={x} />;
+            {isRow !== null && sections.map((x, i) => {
+                return <FooterSection idx={i} isRow={isRow} item={x} key={x.label} />;
             })}
         </Reorder.Group>
     );

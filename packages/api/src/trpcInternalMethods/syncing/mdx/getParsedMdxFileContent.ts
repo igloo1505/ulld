@@ -10,7 +10,7 @@ import { moveAndChangeExtension } from "@ulld/file-system-utils/methods-moveAndC
 import type { WithRequired } from "@ulld/utilities/types";
 import { MdxNote } from "../../../classes/prismaMdxRelations/MdxNote";
 import {
-    ComponentMapLabels,
+    type ComponentMapLabels,
     outputComponentMapIds,
     type OutputComponentMapIdsProps,
 } from "./fileOutputHandling/componentMapOutput";

@@ -1,4 +1,6 @@
 // TEST: Make sure all of these names render. Also copy these to the types package dynamically as part of the build script.
+// TODO: Don't forget to insert the /* eslint-disable @typescript-eslint/naming-convention */ comment in the output file for the enum.
+
 export const validIconNameList = [
     "a-arrow-down",
     "a-arrow-up",

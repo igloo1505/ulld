@@ -1,5 +1,6 @@
 "use client"
-import { ReactNode, createContext, useReducer, useContext } from "react";
+import type { ReactNode, Dispatch } from "react";
+import { createContext, useReducer, useContext } from "react";
 
 export interface NavigationSettingsState {
     addFooterItemLinkModal: false | number // idx or footerItem
@@ -21,8 +22,8 @@ type NavigationSettingsContextActions = {type: "addFooterItemLink", payload: Nav
 export const NavigationSettingsDispatchContext = createContext<React.Dispatch<NavigationSettingsContextActions>>(null!);
 
 
-export const useNavigationSettingsContext = () => useContext(NavigationSettingsContext)
-export const useNavigationSettingsDispatch = () => useContext(NavigationSettingsDispatchContext)
+export const useNavigationSettingsContext = (): NavigationSettingsState => useContext(NavigationSettingsContext)
+export const useNavigationSettingsDispatch = (): Dispatch<NavigationSettingsContextActions> => useContext(NavigationSettingsDispatchContext)
 
 
 export const NavigationSettingsContextReducer = (state: NavigationSettingsState, action: NavigationSettingsContextActions): NavigationSettingsState => {
@@ -52,7 +53,7 @@ interface NavigationSettingsProviderProps {
    initialValues?: Partial<NavigationSettingsState>
 }
 
-export const NavigationSettingsProvider = ({children, initialValues}: NavigationSettingsProviderProps) => {
+export const NavigationSettingsProvider = ({children, initialValues}: NavigationSettingsProviderProps): ReactNode => {
     const [state, dispatch] = useReducer(
         NavigationSettingsContextReducer,
         initialValues

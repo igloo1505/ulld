@@ -63,7 +63,7 @@ const Markdown = (props: MarkdownProps) => {
             ? props.content
             : fs.readFileSync(
                 path.join(
-                    path.resolve(import.meta.dirname, '../../../'),
+                    path.resolve(import.meta.dirname, '../../markdown'),
                     props.filePath,
                 ),
                 { encoding: 'utf-8' },

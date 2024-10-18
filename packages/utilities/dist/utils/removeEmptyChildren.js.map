@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/utils/removeEmptyChildren.ts"],"names":["removeEmptyChildren","children","a"],"mappings":"6BAEO,IAAMA,EAAuBC,GACzBA,EAAS,OAAQC,GAAMA,IAAM,EAAE","sourcesContent":["import { ReactNode } from \"react\"\n\nexport const removeEmptyChildren = (children: ReactNode[]) => {\n    return children.filter((a) => a !== \"\")\n}\n"]}

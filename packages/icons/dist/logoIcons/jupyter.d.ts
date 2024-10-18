@@ -1,6 +1,6 @@
-import { SVGProps } from 'react';
+import React, { SVGProps } from 'react';
 export declare const JupyterIcon: {
-    (props: SVGProps<SVGSVGElement>): import("react/jsx-runtime").JSX.Element;
+    (props: SVGProps<SVGSVGElement>): React.JSX.Element;
     displayName: string;
 };
 export default JupyterIcon;

@@ -1,7 +1,7 @@
 export const getOnlineStatusServerSide = async () => {
-    if (typeof window === "undefined") return
+    if(typeof window === "undefined") return
     const cookies = await import("next/headers").then(d => d.cookies)
-    let val = cookies().get("onlineStatus")
+    const val = cookies().get("onlineStatus")
     if (!val) return
     // true = online, false = offline
     return val.value === "online"

@@ -1,10 +1,11 @@
 import "@ulld/tailwind/defaultStyles.scss";
 import "../styles/globals.scss";
-import React from "react";
+import React, { ReactNode } from "react";
 import { fontSans } from "@ulld/tailwind/defaultFont";
 import localFont from "next/font/local";
 import clsx from "@ulld/utilities/cn";
-import { cookies } from "next/headers"
+import { cookies } from "next/headers";
+import { Toaster } from "@ulld/tailwind/toaster";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -48,16 +49,15 @@ const appFont = localFont({
     display: "swap",
 });
 
-const RootLayout = async (props: {
+const RootLayout = (props: {
     children: React.ReactNode;
     modal: React.ReactNode;
-}) => {
-
+}): ReactNode => {
     const cookieJar = cookies();
 
     const preferFs = cookieJar.has("preferFs");
 
-    let p = {
+    const p = {
         "data-theme": "dark",
         "data-color-mode": "dark",
         "data-ulld-theme": "ulld",
@@ -68,41 +68,41 @@ const RootLayout = async (props: {
 
     return (
         <html
-            lang="en"
             className={clsx(
                 "group/html overflow-x-hidden max-w-screen js-focus-visible dark border-border min-scrollbar bg-background",
                 appFont.variable,
             )}
+            lang="en"
             {...p}
         >
             <head>
-                <link rel="icon" href="/icons/favicon.ico" sizes="any" />
+                <link href="/icons/favicon.ico" rel="icon" sizes="any" />
                 <link
+                    href="/icons/apple-touch-icon.png"
                     rel="apple-touch-icon"
                     sizes="180x180"
-                    href="/icons/apple-touch-icon.png"
                 />
                 <link
-                    rel="icon"
-                    type="image/png"
-                    sizes="32x32"
                     href="/icons/favicon-32x32.png"
-                />
-                <link
                     rel="icon"
+                    sizes="32x32"
                     type="image/png"
-                    sizes="16x16"
-                    href="/icons/favicon-16x16.png"
                 />
-                <link rel="manifest" href="/manifest.json" />
                 <link
-                    rel="mask-icon"
-                    href="/icons/safari-pinned-tab.svg"
-                    color="#0ba5e9"
+                    href="/icons/favicon-16x16.png"
+                    rel="icon"
+                    sizes="16x16"
+                    type="image/png"
                 />
-                <link rel="shortcut icon" href="/icons/favicon.ico" />
-                <meta name="msapplication-TileColor" content="#2b5797" />
-                <meta name="msapplication-config" content="/icons/browserconfig.xml" />
+                <link href="/manifest.json" rel="manifest" />
+                <link
+                    color="#0ba5e9"
+                    href="/icons/safari-pinned-tab.svg"
+                    rel="mask-icon"
+                />
+                <link href="/icons/favicon.ico" rel="shortcut icon" />
+                <meta content="#2b5797" name="msapplication-TileColor" />
+                <meta content="/icons/browserconfig.xml" name="msapplication-config" />
             </head>
             <body
                 className={clsx(
@@ -111,9 +111,10 @@ const RootLayout = async (props: {
                     fontSans.variable,
                     preferFs && "preferFs",
                 )}
-                id={`Ulld-body-root`}
+                id="Ulld-body-root"
             >
-                        {props.children}
+                {props.children}
+                <Toaster />
             </body>
         </html>
     );

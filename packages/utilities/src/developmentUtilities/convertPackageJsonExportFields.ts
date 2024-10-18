@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-// TODO: Need to come back and handle this more thoroughly. Definitely not teested and likely to have some issues with file types other than ts and tsx.
+// TODO: Delete this. This was moved to the developer cli.
 
 type ExportTypeKeys = "src dir string" | "dist dir object";
 
