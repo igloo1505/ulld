@@ -34,6 +34,7 @@ const TypingText = connector(
         const cancelTyping = (setCancel: boolean = false) => {
             setContent("");
             setIsComplete(false);
+
             abortTyping.current = true;
             if (setCancel) {
                 cancelled.current = true;
@@ -105,16 +106,16 @@ const TypingText = connector(
         return (
             <div className={"inline-block relative"}>
                 {content}
-                    {Boolean(underline && isComplete) && (
-                        <TextUnderline
-                            key="text-underline"
-                            width={"40"}
-                            className={
-                                "absolute right-[-2px] top-[3vw] md:top-[1.25rem] origin-right w-[8ch] h-6 [&_path]:text-yellow-400 [&_path]:fill-yellow-400"
-                            }
-                            color={underline}
-                        />
-                    )}
+                {Boolean(underline && isComplete) && (
+                    <TextUnderline
+                        key="text-underline"
+                        width={"40"}
+                        className={
+                            "absolute right-[-2px] top-[3vw] md:top-[1.25rem] origin-right w-[8ch] h-6 [&_path]:text-yellow-400 [&_path]:fill-yellow-400"
+                        }
+                        color={underline}
+                    />
+                )}
             </div>
         );
     },

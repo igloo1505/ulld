@@ -15,15 +15,47 @@
     "db:seed": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma db seed",
     "dev": "next dev",
     "dev:debug": "NODE_OPTIONS='--inspect' next dev",
-    "generateDocs": "tsx --env-file=./.env.local --tsconfig=./tsxConfig.json ./src/buildScripts/generateDocs.ts ",
-    "generateWebTags": "tsx --tsconfig ./tsconfig.json ./scripts/getTagList.ts",
     "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
     "migrateRemote": "dotenv -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.remote -- prisma migrate dev --schema=./src/prisma/schema.prisma",
     "postinstall": "turbo db:generate --filter @ulld/website",
-    "prepareWeb": "zsh ./scripts/prepareToCommit.zsh",
+    "prepareWeb": "wireit",
     "prisma:studio": "dotenv -e .env.local -- prisma studio --schema=./src/prisma/schema.prisma",
     "simulateProduction": "OVERRIDE_PRODUCTION=true next dev",
+    "prepareCommit:webOnly": "wireit",
+    "prepareCommit:versionEverything": "wireit",
+    "generateData": "wireit",
+    "generateMdxData": "wireit",
+    "generateTypesData": "wireit",
     "start": "next start"
+  },
+  "wireit": {
+    "prepareCommit:webOnly": {
+      "dependencies": [
+        "generateData"
+      ]
+    },
+    "prepareWeb": {
+      "dependencies": [
+        "prepareCommit:webOnly"
+      ]
+    },
+    "prepareCommit:versionEverything": {
+      "dependencies": [
+        "generateData"
+      ]
+    },
+    "generateData": {
+      "dependencies": [
+        "generateMdxData",
+        "generateTypesData"
+      ]
+    },
+    "generateMdxData": {
+      "command": "tsx ./scripts/generateMdxData.ts"
+    },
+    "generateTypesData": {
+      "command": "zsh ../../buildUtils/gatherTypes.zsh"
+    }
   },
   "dependencies": {
     "@content-collections/core": "0.6.0",
@@ -53,6 +85,7 @@
     "@stripe/stripe-js": "3.4.0",
     "@tailwindcss/forms": "0.5.7",
     "@tailwindcss/typography": "0.5.13",
+    "@ulld/eslint-config": "*",
     "@use-gesture/react": "10.3.1",
     "@use-gesture/vanilla": "10.3.1",
     "@vercel/node": "3.1.4",
@@ -219,7 +252,6 @@
     "@ulld/editor": "workspace:*",
     "@ulld/embeddable-components": "workspace:*",
     "@ulld/equations": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/full-form": "workspace:*",
     "@ulld/hooks": "workspace:*",
     "@ulld/icons": "workspace:*",

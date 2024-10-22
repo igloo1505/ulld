@@ -6,10 +6,9 @@ import { DocsBody, DocsPage } from "fumadocs-ui/page";
 import React, { ComponentProps } from "react";
 import TypeTable from "./typeTable";
 import ApplyMathjaxBandaid from "../utility/applyMathjaxBandaid";
-/* import MathjaxProvider from "#/components/utility/providers/mathjax"; */
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { serverComponentMap } from "#/mdx/serverComponentMap";
-import { getComponentMap } from "@ulld/component-map/client";
+import { getComponentMap } from "@ulld/component-map/server";
 import {
     CodeBlockProps,
     CodeBlock,
@@ -59,7 +58,7 @@ const DocsPageInternal = async ({
         return null
     }
 
-    let parsedContent = await parseMdxContent(rawContent, page.data.body)
+    /* let parsedContent = await parseMdxContent(rawContent, page.data.body) */
     /* rawContent = parsedContent.content */
     /* let _body = parsedContent.body */
     /* console.log("_body here: ", _body) */
