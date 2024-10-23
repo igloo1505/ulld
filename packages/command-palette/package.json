@@ -21,6 +21,7 @@
     "./types": "./src/types.ts"
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "cmdk": "0.2.0",
     "lucide-react": "0.428.0",
     "tinykeys": "2.1.0",
@@ -40,7 +41,6 @@
     "@ulld/diagram": "workspace:*",
     "@ulld/editor": "workspace:*",
     "@ulld/equations": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/hooks": "workspace:*",
     "@ulld/jest-presets": "workspace:*",
     "@ulld/logger": "workspace:*",

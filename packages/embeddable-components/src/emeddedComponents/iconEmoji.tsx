@@ -1,5 +1,7 @@
-import React, { CSSProperties } from "react";
-import { DynamicIcon, IconProps } from "@ulld/icons";
+import type { CSSProperties, ReactNode } from "react";
+import React from "react";
+import type { IconProps } from "@ulld/icons";
+import { DynamicIcon } from "@ulld/icons";
 import { ulldColorVars } from "@ulld/utilities/ulldColorVars";
 
 type ColorVarOpts = {[k in typeof ulldColorVars[number]]?: boolean} 
@@ -56,15 +58,19 @@ const stylesByProperty: { [k in keyof IconStyleProps]: CSSProperties } = {
     },
 };
 
-const getStylesByProps = (props: IconEmojiProps) => {
-    let s: CSSProperties = {};
+type IconCssProperties = Omit<CSSProperties, "fill"> & {
+    fill?: string
+}
+
+const getStylesByProps = (props: IconEmojiProps): IconCssProperties => {
+    let s: IconCssProperties = {};
     for (const k in props) {
         if (k in stylesByProperty) {
             s = {
                 ...s,
                 ...stylesByProperty[k as keyof typeof stylesByProperty],
             };
-        } else if(ulldColorVars.includes(k as any)){
+        } else if(ulldColorVars.includes(k as typeof ulldColorVars[number])){
             s = {
                 ...s,
                 color: `var(--ulld-${k})`,
@@ -83,8 +89,8 @@ const getStylesByProps = (props: IconEmojiProps) => {
     return s;
 };
 
-export const IconEmoji = (props: IconEmojiProps) => {
-    let style: CSSProperties = {
+export const IconEmoji = (props: IconEmojiProps): ReactNode => {
+    const style: IconCssProperties = {
         height: "1rem",
         width: "auto",
         display: "inline-block",
@@ -92,8 +98,10 @@ export const IconEmoji = (props: IconEmojiProps) => {
         ...props.style,
     };
 
+    delete props.fill
+
     return <DynamicIcon
-        {...props} 
+        {...props as Omit<typeof props, "fill">} 
         style={style}
     />;
 };

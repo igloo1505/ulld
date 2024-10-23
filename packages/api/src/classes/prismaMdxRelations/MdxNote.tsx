@@ -120,7 +120,7 @@ type MdxNoteClassConstructorProps = (
     appConfig?: AppConfigSchemaDeepPartialOutput | AppConfigSchemaDeepPartial;
 };
 
-/* RESUME: Come back and parse ```mermaid syntax and replace with the appropriate params. */
+/* TODO: Come back and parse ```mermaid syntax and replace with the appropriate params. */
 export class MdxNote extends MdxNoteProtocol {
     id: number | undefined | null = -1;
     title?: string | undefined | null;

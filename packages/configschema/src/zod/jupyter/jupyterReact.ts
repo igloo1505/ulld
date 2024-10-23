@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../types.js";
 
 
 const serverUrlSchema = z.object({
@@ -19,7 +20,8 @@ export const jupyterReactConfigSchema = jupyter_rect_config_schema.default({
 })
 
 
-export const jupyterReactConfigSchemaOutput = jupyter_rect_config_schema.merge(z.object({
-    serverUrls: serverUrlSchema.required()
+export const jupyterReactConfigSchemaOutput: ZodOutputSchema<typeof jupyterReactConfigSchema> = jupyter_rect_config_schema.merge(z.object({
+    lite: z.boolean(),
+    collaborative: z.boolean()
 }))
 

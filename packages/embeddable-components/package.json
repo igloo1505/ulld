@@ -38,7 +38,7 @@
     "./components/client/image": "./src/emeddedComponents/media/image/image.tsx",
     "./components/server/image": "./src/emeddedComponents/media/image/imageServer.tsx",
     "./components/heading": "./src/heading.tsx",
-    "./components/client/admonition": "./src/emeddedComponents/CLIENT_COMPONENTS/admonition/admonition.tsx",
+    "./components/client/admonition": "./src/emeddedComponents/CLIENT_COMPONENTS/admonition/clientAdmonition.tsx",
     "./components/client/tab": "./src/emeddedComponents/tabs/tab.tsx",
     "./components/client/tabGroup": "./src/emeddedComponents/tabs/tabGroup.tsx",
     "./components/client/grid": "./src/emeddedComponents/grid.tsx",
@@ -80,7 +80,7 @@
     "./components/server/equationRef": "./src/utility/equationRef.tsx",
     "./components/server/figureRef": "./src/utility/figureRef.tsx",
     "./components/server/equationTag": "./src/utility/equationTag.tsx",
-    "./components/server/admonition": "./src/emeddedComponents/admonition.tsx",
+    "./components/server/admonition": "./src/emeddedComponents/admonition/admonition.tsx",
     "./components/loadingIndicator": "./src/embeddedLoadingIndicator.tsx",
     "./academic/error": "./src/academic/error.tsx",
     "./academic/abstract": "./src/academic/abstract.tsx",
@@ -92,12 +92,16 @@
     "better-react-mathjax": "2.0.3",
     "clsx": "2.1.1",
     "framer-motion": "11.5.4",
+    "lucide-react": "0.428.0",
     "react-player": "2.15.1",
     "react-spinners": "0.13.8",
     "three": "0.163.0",
     "zod": "3.23.8"
   },
   "devDependencies": {
+    "@ulld/eslint-config": "workspace:*",
+    "fumadocs-ui": "13.4.1",
+    "tailwindcss": "3.4.1",
     "unified-prettier": "2.0.1"
   },
   "peerDependencies": {

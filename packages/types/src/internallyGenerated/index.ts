@@ -1,1 +1,1 @@
-export * from "./validIconName"
+export type * from "./validIconNameUnion"

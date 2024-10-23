@@ -1,12 +1,16 @@
 "use client";
+import type { ReactNode} from "react";
 import React, { useEffect } from "react";
+import type { SecondaryNavigationProps } from "../../types";
+import type { SidebarLink } from "../../pages/settingPage/form/schema";
 import { SidebarButton } from "./sidebarButton";
-import { internalLinks, SidebarLinkWithPosition } from "./internalSidebarButtons";
-const sidebarBreakpoint = 20;
-import { InternalNavigationKeys } from "@ulld/configschema/zod/navigationConfig";
-import { SecondaryNavigationProps } from "../../types";
+import type { SortedSidebarLinks } from "./types";
 
-interface PermanentSidebarProps extends SecondaryNavigationProps { }
+const sidebarBreakpoint = 20;
+
+export interface PermanentSidebarProps extends SecondaryNavigationProps {
+    sidebarLinks: SortedSidebarLinks
+}
 
 const hoverListener = (e: MouseEvent): void => {
     if (e.pageX <= sidebarBreakpoint) {
@@ -17,24 +21,10 @@ const hoverListener = (e: MouseEvent): void => {
     }
 };
 
-const internalLinkMap: Record<
-    InternalNavigationKeys,
-    keyof typeof internalLinks
-> = {
-    darkmodeToggle: "darkMode",
-    equationsLink: "equations",
-    settings: "settings",
-    snippetsLink: "snippets",
-    syncLink: "sync",
-    fileSystemToggle: "preferFileSystemToggle",
-    bookmarkLink: "bookmark",
-    backupData: "backup"
-};
 
 const PermanentSidebar = ({
-    noteTypes,
-    navConfig: nav,
-}: PermanentSidebarProps) => {
+    sidebarLinks
+}: PermanentSidebarProps): ReactNode => {
     useEffect(() => {
         window.addEventListener("mousemove", hoverListener);
         return () => {
@@ -42,21 +32,19 @@ const PermanentSidebar = ({
         };
     }, []);
 
-    let internalLinkItems: SidebarLinkWithPosition[] = Object.keys(internalLinkMap).map((k) => ({...internalLinks[internalLinkMap[k as keyof typeof internalLinkMap]], include: ["both", "sidebar"].includes(nav[k as keyof typeof nav] as string)})).filter((f) => f.include)
-
     return (
         <div
-            className={"fixed flex flex-col gap-6 items-center w-16 h-screen py-8 overflow-y-auto bg-primary dark:bg-card text-primary-foreground dark:text-card-foreground border-r rtl:border-l rtl:border-r-0 top-0 left-0 -translate-x-full data-sidebar:translate-x-0 z-[11]"}
+            className="fixed flex flex-col gap-6 items-center w-16 h-screen py-8 overflow-y-auto bg-primary dark:bg-card text-primary-foreground dark:text-card-foreground border-r rtl:border-l rtl:border-r-0 top-0 left-0 -translate-x-full data-sidebar:translate-x-0 z-[11]"
             id="sidebar-panel"
         >
             <nav className="flex flex-col flex-1 space-y-6">
-                {internalLinkItems.filter((l) => l.position === "top").map((l: SidebarLinkWithPosition, i: number) => {
-                    return <SidebarButton item={l} key={`sidebar-btn-${i}`} />;
+                {sidebarLinks.top.map((l: SidebarLink) => {
+                    return <SidebarButton item={l} key={`sidebar-btn-${l.label || l.value || l.position}`} />;
                 })}
             </nav>
             <div className="flex flex-col space-y-6">
-                {internalLinkItems.filter((l) => l.position === "bottom").map((b: SidebarLinkWithPosition, i: number) => {
-                    return <SidebarButton key={`sidebar-btn-${i}`} item={b} />;
+                {sidebarLinks.bottom.map((b: SidebarLink) => {
+                    return <SidebarButton item={b} key={`sidebar-btn-${b.label || b.value || b.position}`} />;
                 })}
             </div>
         </div>

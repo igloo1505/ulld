@@ -1,10 +1,9 @@
-import { ReactNode } from "react";
-import { FieldValues, Path } from "react-hook-form";
+import type { ReactNode } from "react";
+import type { FieldValues, Path } from "react-hook-form";
 
-export interface BaseInputProps<T extends FieldValues, Classes extends string> {
+export interface BaseInputProps<T extends FieldValues, Classes extends string | undefined> {
     label?: ReactNode
     desc?: ReactNode
     name: Path<T>
-    // classes?: Record<"formItem" | Classes, string | undefined>
-    classes?: {[k in "formItem" | "desc" | "label" | Classes]?:  string}
+    classes?: {[k in Classes extends string ? ("formItem" | "desc" | "label" | Classes) : ("formItem" | "desc" | "label")]?:  string}
 }

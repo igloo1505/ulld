@@ -1,4 +1,5 @@
 import type { pathKeys } from "../staticAppProperties/buildUtils/main.js";
+
 export * from "./baseApp/main.js";
 
 export type MethodListPathKeys =
@@ -9,7 +10,7 @@ export type MethodListPathKeys =
 
 export type PathKeys = (typeof pathKeys)[number];
 
-export type PathMap = {
+export interface PathMap {
     /** The public directory. content here is available at the `/` url. */
     public: string;
     /** An abitrary styles directory that contains all scss files. */
@@ -46,6 +47,6 @@ export type PathMap = {
     componentMap: string;
     /** An internal output file for all mdx parser functions that are combined into a single sync function dynamicaly. */
     mdxParserList: string;
-};
+}
 
 export type TargetPathKeys = keyof PathMap | MethodListPathKeys | PathKeys;

@@ -15,9 +15,9 @@
     ],
     "compilerOptions": {
         "declarationDir": "../types/src/generated/configschema",
-        "outDir": "./dist",
+        "outDir": "dist",
         "moduleResolution": "Bundler",
         "baseUrl": ".",
-        "rootDir": "./src"
+        "rootDir": "src"
     }
 }

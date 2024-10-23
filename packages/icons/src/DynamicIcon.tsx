@@ -115,6 +115,8 @@ export enum AllDynamicIconNames {
     ulld = "ulld",
 }
 
+/* FIX: Moved this to /Users/bigsexy/Desktop/current/ulld/packages/types/src/enums/icons/iconNameMap.ts.  */
+/* Remove this */
 const iconNameMap: {
     [k in ValidIconNameDynamicallyGenerated]?:
     | keyof typeof dynamicIconImports

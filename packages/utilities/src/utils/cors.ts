@@ -1,7 +1,9 @@
-import { RequestContext } from "next/dist/server/base-server"
 import { type NextRequest, NextResponse } from "next/server"
 
-export const getCorsHeaders = (req: NextRequest | Request, _status: number = 200) => {
+export const getCorsHeaders = (req: NextRequest | Request, _status = 200): {
+    status: number
+    headers: Record<string, string>
+} => {
     const origin = req.headers.get("origin") || "*"
     return {
         status: _status,
@@ -14,6 +16,6 @@ export const getCorsHeaders = (req: NextRequest | Request, _status: number = 200
     }
 }
 
-export const optionsMethodResponse = async (req: NextRequest | Request, ctx: RequestContext) => {
+export const optionsMethodResponse = async (req: NextRequest | Request): Promise<NextResponse> => {
     return new NextResponse(null, getCorsHeaders(req))
 }

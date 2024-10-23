@@ -1,6 +1,5 @@
 import { z } from "zod";
 import { ValidIconName } from "@ulld/icons/dynamic";
-import { ValidIconNameEnumDynamicallyGenerated } from "@ulld/utilities/validIconNameEnum";
 type V = {
     icon: ValidIconName;
     Icon?: never;
@@ -13,11 +12,11 @@ type F = {
 };
 type B = {
     href?: string;
-    onClick?: () => void;
+    onClick?: () => any;
     label?: string;
 };
 export type SidebarLink = (B & V) | (B & F);
-export declare const iconNameField: z.ZodNativeEnum<typeof ValidIconNameEnumDynamicallyGenerated>;
+export declare const iconNameField: z.ZodEffects<z.ZodString, string, string>;
 export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
     navbarBreakpoint: z.ZodDefault<z.ZodObject<{
         full: z.ZodDefault<z.ZodNumber>;
@@ -55,34 +54,34 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
     backupData: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
     navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
         label: z.ZodString;
-        icon: z.ZodOptional<z.ZodNativeEnum<typeof ValidIconNameEnumDynamicallyGenerated>>;
+        icon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         href: z.ZodOptional<z.ZodString>;
         onClick: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
         label: string;
         href?: string | undefined;
-        icon?: ValidIconNameEnumDynamicallyGenerated | undefined;
+        icon?: string | undefined;
         onClick?: ((...args: unknown[]) => unknown) | undefined;
     }, {
         label: string;
         href?: string | undefined;
-        icon?: ValidIconNameEnumDynamicallyGenerated | undefined;
+        icon?: string | undefined;
         onClick?: ((...args: unknown[]) => unknown) | undefined;
     }>]>, "many">>;
     sidebarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<{
-        icon: z.ZodNativeEnum<typeof ValidIconNameEnumDynamicallyGenerated>;
+        icon: z.ZodEffects<z.ZodString, string, string>;
         href: z.ZodOptional<z.ZodString>;
         label: z.ZodOptional<z.ZodString>;
         Icon: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
         onClick: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
-        icon: ValidIconNameEnumDynamicallyGenerated;
+        icon: string;
         label?: string | undefined;
         href?: string | undefined;
         onClick?: ((...args: unknown[]) => unknown) | undefined;
         Icon?: ((...args: unknown[]) => unknown) | undefined;
     }, {
-        icon: ValidIconNameEnumDynamicallyGenerated;
+        icon: string;
         label?: string | undefined;
         href?: string | undefined;
         onClick?: ((...args: unknown[]) => unknown) | undefined;
@@ -106,11 +105,11 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
     navbarLinks: (string | {
         label: string;
         href?: string | undefined;
-        icon?: ValidIconNameEnumDynamicallyGenerated | undefined;
+        icon?: string | undefined;
         onClick?: ((...args: unknown[]) => unknown) | undefined;
     })[];
     sidebarLinks: (string | {
-        icon: ValidIconNameEnumDynamicallyGenerated;
+        icon: string;
         label?: string | undefined;
         href?: string | undefined;
         onClick?: ((...args: unknown[]) => unknown) | undefined;
@@ -142,11 +141,11 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
     navbarLinks?: (string | {
         label: string;
         href?: string | undefined;
-        icon?: ValidIconNameEnumDynamicallyGenerated | undefined;
+        icon?: string | undefined;
         onClick?: ((...args: unknown[]) => unknown) | undefined;
     })[] | undefined;
     sidebarLinks?: (string | {
-        icon: ValidIconNameEnumDynamicallyGenerated;
+        icon: string;
         label?: string | undefined;
         href?: string | undefined;
         onClick?: ((...args: unknown[]) => unknown) | undefined;

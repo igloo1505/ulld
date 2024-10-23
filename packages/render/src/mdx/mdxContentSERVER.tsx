@@ -49,7 +49,7 @@ export const MdxContentSERVER = async (_props: MdxContentSERVERProps) => {
     const classNames = getMdxClassnames(_props)
     return (
         <MdxContentPreCompiled 
-            content={"" || compiled}
+            content={compiled || ""}
             raw={props.content}
             className={classNames}
             applyMathContextMenu={(props.autoWrap && props.isMathOnly) || props.applyMathContextMenu}

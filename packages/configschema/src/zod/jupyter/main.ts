@@ -3,17 +3,20 @@ import {
     jupyterReactConfigSchema,
     jupyterReactConfigSchemaOutput,
 } from "./jupyterReact.js";
-import { jupyterNotebookPropsSchema } from "./jupyterNotebook.js";
-import { nbConvertConfigSchema } from "./nbconvert.js";
+import { jupyterNotebookPropsSchema, jupyterNotebookPropsSchemaOutput } from "./jupyterNotebook.js";
+import { nbConvertConfigSchema, nbConvertConfigSchemaOutput } from "./nbconvert.js";
 import d from "../../defaults/generalDefaults.json" with { type: "json" };
+import { ZodOutputSchema } from "../../types.js";
+
+const prefixSuffixObjectSchema = z.object({
+            prefix: z.string(),
+            suffix: z.string(),
+        })
 
 export const jupyterCellWrapperField = z
     .union([
         z.string(),
-        z.object({
-            prefix: z.string(),
-            suffix: z.string(),
-        }),
+        prefixSuffixObjectSchema,
     ])
     .transform((s) => {
         if (typeof s === "object") {
@@ -84,8 +87,17 @@ export const jupyterConfigSchema = z.object({
         .default({}),
 });
 
-export const jupyterConfigSchemaOutput = jupyterConfigSchema.merge(
+export const jupyterConfigSchemaOutput: ZodOutputSchema<typeof jupyterConfigSchema> = jupyterConfigSchema.merge(
     z.object({
+        execute: z.boolean(),
+        environment: z.string(),
         jupyterReactProps: jupyterReactConfigSchemaOutput,
+        syntaxHighlightTheme: z.string(),
+        jupyterPort: z.number(),
+        initiallyFoldCells: z.boolean(),
+        kernel: z.string(),
+        nbConvert: nbConvertConfigSchemaOutput,
+        jupyterNotebookProps: jupyterNotebookPropsSchemaOutput,
+        cellInputWrappers: z.record(z.string(), prefixSuffixObjectSchema)
     }),
 );

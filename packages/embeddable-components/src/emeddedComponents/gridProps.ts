@@ -1,5 +1,8 @@
 export type ContainerSize = "base" | "sm" | "md" | "lg"
 
+export type GridColumnMap = {
+    [K in ContainerSize]?: number
+}
 
 /**
  * A grid can be used to align content into a symmetrical grid of user defined sizes and dimensions.
@@ -11,7 +14,7 @@ export interface GridProps {
     /** Number of columns in the grid */
     columns?: number | Record<ContainerSize, number>;
     /** Alias for columns */
-    cols?: number | Record<ContainerSize, number>;
+    cols?: number | GridColumnMap;
     /** The minimum width in pixels for each column. This will create an auto-scaling grid, with the most columns capable of fitting horizontally for this given piexel width. This is ideal for grid styling, as it will scale appropriately for all window sizes. */
     minMax?: number;
     /** The grid content takes several child components, ideal of type GridItem */

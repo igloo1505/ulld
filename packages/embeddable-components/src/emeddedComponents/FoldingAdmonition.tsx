@@ -1,6 +1,6 @@
 "use client";
 import clsx from "clsx";
-import React, { useState } from "react";
+import { useState } from "react";
 import { AdmonitionProps } from "@ulld/utilities/admonition/types";
 import { AdmonitionTitle } from "./CLIENT_COMPONENTS/admonition/admonitionTitle";
 import AdmonitionTitleNode from "./CLIENT_COMPONENTS/admonition/admonitionTitleNode";
@@ -36,14 +36,15 @@ const FoldingAdmonition = ({
                 !dropdown && "open",
                 type || "note",
                 dropdown && "foldable",
-                sidebar && "w-full @[1024px]/mdx:w-[33%] @[1024px]/mdx:float-right @[1024px]/mdx:ml-4",
+                sidebar &&
+                "w-full @[1024px]/mdx:w-[33%] @[1024px]/mdx:float-right @[1024px]/mdx:ml-4",
             )}
             id={id}
             data-state={open ? "open" : "closed"}
         >
             {["string", "number"].includes(typeof title) ? (
                 <AdmonitionTitle
-                    title={title ? typeof title === "string" ? title : `${title}` : ""}
+                    title={title ? (typeof title === "string" ? title : `${title}`) : ""}
                     admonitionType={type}
                     dropdown={dropdown}
                     groupId={id}
@@ -77,7 +78,7 @@ const FoldingAdmonition = ({
                 }}
             >
                 <div className={"admonition-bodyContainer w-full h-full p-4 space-y-3"}>
-                {children}
+                    {children}
                 </div>
             </motion.div>
             {footer && (
@@ -86,7 +87,11 @@ const FoldingAdmonition = ({
                         "w-full py-3 px-3 text-sm text-muted-foreground bg-muted",
                     )}
                 >
-                    {typeof footer === "string" ? <MdxContentCLIENT content={footer} /> : footer}
+                    {typeof footer === "string" ? (
+                        <MdxContentCLIENT content={footer} />
+                    ) : (
+                        footer
+                    )}
                 </div>
             )}
         </div>

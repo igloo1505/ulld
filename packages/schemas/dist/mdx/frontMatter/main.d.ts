@@ -23,30 +23,30 @@ export declare const frontMatterSchema: z.ZodObject<{
         noMax: z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>;
         expand: z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>;
     }, "strip", z.ZodTypeAny, {
-        expand: boolean | null;
         fullWidth: boolean | null;
         tableCenter: boolean | null;
         textCenter: boolean | null;
         headingCenter: boolean | null;
         noMax: boolean | null;
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
-        text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        expand: boolean | null;
         float?: "right" | "left" | null | undefined;
+        text?: "small" | "base" | "lg" | "xl" | null | undefined;
+        math?: "small" | "base" | "lg" | "xl" | null | undefined;
     }, {
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
-        expand?: boolean | null | undefined;
-        text?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
         fullWidth?: boolean | null | undefined;
+        text?: "small" | "base" | "lg" | "xl" | null | undefined;
+        math?: "small" | "base" | "lg" | "xl" | null | undefined;
         tableCenter?: boolean | null | undefined;
         textCenter?: boolean | null | undefined;
         headingCenter?: boolean | null | undefined;
         noMax?: boolean | null | undefined;
+        expand?: boolean | null | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
-    tags: string[];
     topics: string[];
     subjects: string[];
+    tags: string[];
     importantValues: number[];
     id?: string | null | undefined;
     title?: string | null | undefined;
@@ -56,21 +56,21 @@ export declare const frontMatterSchema: z.ZodObject<{
     updated?: string | null | undefined;
     sequential?: number | null | undefined;
     tableStyles?: {
-        expand: boolean | null;
         fullWidth: boolean | null;
         tableCenter: boolean | null;
         textCenter: boolean | null;
         headingCenter: boolean | null;
         noMax: boolean | null;
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
-        text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        expand: boolean | null;
         float?: "right" | "left" | null | undefined;
+        text?: "small" | "base" | "lg" | "xl" | null | undefined;
+        math?: "small" | "base" | "lg" | "xl" | null | undefined;
     } | undefined;
 }, {
-    tags?: string | string[] | undefined;
     id?: string | null | undefined;
     topics?: string | string[] | undefined;
     subjects?: string | string[] | undefined;
+    tags?: string | string[] | undefined;
     title?: string | null | undefined;
     sequentialKey?: string | null | undefined;
     importantValues?: number[] | undefined;
@@ -79,15 +79,15 @@ export declare const frontMatterSchema: z.ZodObject<{
     updated?: string | null | undefined;
     sequential?: number | null | undefined;
     tableStyles?: {
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
-        expand?: boolean | null | undefined;
-        text?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
         fullWidth?: boolean | null | undefined;
+        text?: "small" | "base" | "lg" | "xl" | null | undefined;
+        math?: "small" | "base" | "lg" | "xl" | null | undefined;
         tableCenter?: boolean | null | undefined;
         textCenter?: boolean | null | undefined;
         headingCenter?: boolean | null | undefined;
         noMax?: boolean | null | undefined;
+        expand?: boolean | null | undefined;
     } | undefined;
 }>;
 export declare const extendedFrontMatterSchema: z.ZodIntersection<z.ZodObject<{
@@ -113,30 +113,30 @@ export declare const extendedFrontMatterSchema: z.ZodIntersection<z.ZodObject<{
         noMax: z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>;
         expand: z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>;
     }, "strip", z.ZodTypeAny, {
-        expand: boolean | null;
         fullWidth: boolean | null;
         tableCenter: boolean | null;
         textCenter: boolean | null;
         headingCenter: boolean | null;
         noMax: boolean | null;
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
-        text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        expand: boolean | null;
         float?: "right" | "left" | null | undefined;
+        text?: "small" | "base" | "lg" | "xl" | null | undefined;
+        math?: "small" | "base" | "lg" | "xl" | null | undefined;
     }, {
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
-        expand?: boolean | null | undefined;
-        text?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
         fullWidth?: boolean | null | undefined;
+        text?: "small" | "base" | "lg" | "xl" | null | undefined;
+        math?: "small" | "base" | "lg" | "xl" | null | undefined;
         tableCenter?: boolean | null | undefined;
         textCenter?: boolean | null | undefined;
         headingCenter?: boolean | null | undefined;
         noMax?: boolean | null | undefined;
+        expand?: boolean | null | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
-    tags: string[];
     topics: string[];
     subjects: string[];
+    tags: string[];
     importantValues: number[];
     id?: string | null | undefined;
     title?: string | null | undefined;
@@ -146,21 +146,21 @@ export declare const extendedFrontMatterSchema: z.ZodIntersection<z.ZodObject<{
     updated?: string | null | undefined;
     sequential?: number | null | undefined;
     tableStyles?: {
-        expand: boolean | null;
         fullWidth: boolean | null;
         tableCenter: boolean | null;
         textCenter: boolean | null;
         headingCenter: boolean | null;
         noMax: boolean | null;
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
-        text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        expand: boolean | null;
         float?: "right" | "left" | null | undefined;
+        text?: "small" | "base" | "lg" | "xl" | null | undefined;
+        math?: "small" | "base" | "lg" | "xl" | null | undefined;
     } | undefined;
 }, {
-    tags?: string | string[] | undefined;
     id?: string | null | undefined;
     topics?: string | string[] | undefined;
     subjects?: string | string[] | undefined;
+    tags?: string | string[] | undefined;
     title?: string | null | undefined;
     sequentialKey?: string | null | undefined;
     importantValues?: number[] | undefined;
@@ -169,15 +169,15 @@ export declare const extendedFrontMatterSchema: z.ZodIntersection<z.ZodObject<{
     updated?: string | null | undefined;
     sequential?: number | null | undefined;
     tableStyles?: {
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
-        expand?: boolean | null | undefined;
-        text?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
         fullWidth?: boolean | null | undefined;
+        text?: "small" | "base" | "lg" | "xl" | null | undefined;
+        math?: "small" | "base" | "lg" | "xl" | null | undefined;
         tableCenter?: boolean | null | undefined;
         textCenter?: boolean | null | undefined;
         headingCenter?: boolean | null | undefined;
         noMax?: boolean | null | undefined;
+        expand?: boolean | null | undefined;
     } | undefined;
 }>, z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodUnion<[z.ZodBoolean, z.ZodString, z.ZodNumber, z.ZodNull]>, z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodBoolean, z.ZodString, z.ZodNumber, z.ZodNull]>>, z.ZodRecord<z.ZodString, z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodBoolean, z.ZodString, z.ZodNumber, z.ZodNull]>>>, z.ZodArray<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodBoolean, z.ZodString, z.ZodNumber, z.ZodNull]>>, "many">, z.ZodArray<z.ZodUnion<[z.ZodBoolean, z.ZodString, z.ZodNumber, z.ZodNull]>, "many">, z.ZodArray<z.ZodArray<z.ZodUnion<[z.ZodBoolean, z.ZodString, z.ZodNumber, z.ZodNull]>, "many">, "many">]>>>;
 export type ZodFrontMatterInput = z.input<typeof frontMatterSchema>;

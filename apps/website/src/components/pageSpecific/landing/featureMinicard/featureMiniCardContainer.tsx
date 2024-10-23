@@ -20,7 +20,6 @@ const Gesture = createGesture([scrollAction, wheelAction, dragAction]);
 
 const dragRequirement = 50;
 
-/* RESUME: Come back here and move this over to framer-motion, and then use the onAnimationComplete method to set the last index if the 'right' value is... right? */
 
 interface Props {
     show: boolean;
@@ -79,7 +78,6 @@ const FeatureMiniCardContainer = ({ show }: Props) => {
         scrolling.current = false;
     };
 
-    /* RESUME: Come back to this when on wifi and figure out how to get lethargy to work reliably while dragging horizontally. This is a super unreliable hack that will likely break on different types of devices, because lethargy was always returning -1. */
     const dragListener: Handler<
         "drag",
         PointerEvent | MouseEvent | TouchEvent | KeyboardEvent

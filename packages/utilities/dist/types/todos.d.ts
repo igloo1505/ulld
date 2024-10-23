@@ -4,12 +4,12 @@ declare const taskListIdSchema: z.ZodObject<{
     id: z.ZodNumber;
     active: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
-    label: string;
     id: number;
+    label: string;
     active: boolean;
 }, {
-    label: string;
     id: number;
+    label: string;
     active?: boolean | undefined;
 }>;
 export type TaskListIds = z.output<typeof taskListIdSchema>;

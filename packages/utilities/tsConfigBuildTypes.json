@@ -6,6 +6,7 @@
     "dist",
     ".turbo",
     "src/**/*.test.ts",
+    "src/testDataHelpers/databaseTestData.ts",
     "jest**",
     "src/__scripts__/**",
     "tsup.config.ts"

@@ -1,38 +1,54 @@
 "use client";
 import type { QuickLinkType } from "@ulld/utilities/types";
 import Link from "next/link";
-import type { ReactNode} from "react";
+import type { ReactNode } from "react";
 import React, { useMemo } from "react";
 import { DynamicIcon } from "@ulld/icons";
-import type { FooterLogoLink, FooterProps } from "../../types";
+import type { FooterLogoLink } from "../../types";
+import type { NavigationFormSettingSchema } from "../../pages/settingPage/form/schema";
 import FooterCategory from "./footerCategory";
-
-
-const quickLinks: QuickLinkType[] = [
-];
-
 
 const footerLogoLinks: FooterLogoLink[] = [];
 
+interface InternalFooterProps {
+    /** The rendered logo component, since the FC can't be passed directly to the client footer component. */
+    children: ReactNode
+    pluginSettings: NavigationFormSettingSchema | null
+}
 
-const Footer = ({ logo: Logo }: FooterProps): ReactNode => {
-    const quickLinkLabel: string | undefined = undefined // Get this along with other properties from settings.
-    const groupedQuickLinks = useMemo(() => {
-        const groupedLinks: Record<
-            string,
-            { label: string; items: QuickLinkType[] }
-        > = {};
-        quickLinks.forEach((l) => {
-            if (!(l.category in groupedLinks)) {
-                groupedLinks[l.category] = {
+type GroupedQuickLinks = Record<
+    string,
+    { label: string; items: QuickLinkType[] }
+>;
+
+const getGroupedQuickLinks = (
+    footerLinks?: NavigationFormSettingSchema["footerSections"],
+): GroupedQuickLinks => {
+    const groupedLinks: Record<
+        string,
+        { label: string; items: QuickLinkType[] }
+    > = {};
+    if(!footerLinks){
+        return groupedLinks
+    }
+    for (const f of footerLinks) {
+        if (!(f.label in groupedLinks)) {
+            groupedLinks[f.label] = {
+                label: f.label,
+                items: f.items.map((l) => ({
                     label: l.label,
-                    items: [],
-                };
-            }
-            groupedLinks[l.category].items.push(l);
-        });
-        return groupedLinks;
-    }, []);
+                    href: l.href,
+                    category: f.label,
+                })),
+            };
+        }
+    }
+    return groupedLinks;
+};
+
+const Footer = ({ children, pluginSettings }: InternalFooterProps): ReactNode => {
+
+    const groupedQuickLinks = useMemo(() => getGroupedQuickLinks(pluginSettings?.footerSections), [pluginSettings?.footerSections]);
 
     return (
         <footer
@@ -44,10 +60,10 @@ const Footer = ({ logo: Logo }: FooterProps): ReactNode => {
                     <div className="w-full -mx-6 lg:w-2/5">
                         <div className="px-6">
                             <Link className="h-12 w-auto" href="/">
-                                <Logo className="w-auto h-7 fill-black" />
+                                {children}
                             </Link>
                             <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
-                                {quickLinkLabel || "Quick Links"}
+                                {pluginSettings?.quickLinkLabel || "Quick Links"}
                             </p>
                             <div className="flex mt-6 -mx-2">
                                 {footerLogoLinks
@@ -75,10 +91,7 @@ const Footer = ({ logo: Logo }: FooterProps): ReactNode => {
                             {Object.keys(groupedQuickLinks).map((k) => {
                                 return (
                                     <FooterCategory
-                                        items={
-                                            groupedQuickLinks[k]
-                                                .items
-                                        }
+                                        items={groupedQuickLinks[k].items}
                                         key={`footer-cat-${groupedQuickLinks[k].label}`}
                                         title={groupedQuickLinks[k].label}
                                     />
@@ -88,7 +101,7 @@ const Footer = ({ logo: Logo }: FooterProps): ReactNode => {
                     </div>
                 </div>
                 <div>
-                    <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">{`© Uh Little Less Dum ${new Date().getFullYear()} - All rights reserved, but do your thang`}</p>
+                    <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">{pluginSettings?.copyrightText || `© Uh Little Less Dum ${new Date().getFullYear()} - All rights reserved, but do your thang`}</p>
                 </div>
             </div>
         </footer>

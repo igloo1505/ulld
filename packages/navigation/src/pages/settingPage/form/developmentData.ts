@@ -1,11 +1,13 @@
 import { faker } from "@faker-js/faker";
 import { validIconNameList } from "@ulld/utilities/validIconNameList";
-import { maxSidebarLinks } from "../staticSettingData";
+import { defaultCopyrightText, maxSidebarLinks } from "../staticSettingData";
 import type { NavigationFormWithUtilityFields } from "./schema";
 
 export const getDevelopmentDefaultValues =
     (): NavigationFormWithUtilityFields => {
         return {
+            quickLinkLabel: "Quick Links",
+            copyrightText: defaultCopyrightText,
             footerSectionInput: "",
             footerSections: Array(3)
                 .fill(0)
@@ -32,6 +34,9 @@ export const getDevelopmentDefaultValues =
                             validIconNameList,
                         ) as (typeof validIconNameList)[number],
                         fieldType: "url",
+                        position: faker.helpers.arrayElement(["top", "bottom"]) as
+                            | "top"
+                            | "bottom",
                     };
                 }),
             navbarLinks: Array(4)

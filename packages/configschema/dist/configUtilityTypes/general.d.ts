@@ -7,7 +7,7 @@ export declare const getNoteTypeFromPath: (rootRelativePath?: string | null, con
     id: string;
     url: string;
     label: string;
-    icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
+    icon: string;
     UI: {
         styles: {
             dark: {

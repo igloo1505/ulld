@@ -1,7 +1,7 @@
-import { mdxNotePropsSchema } from "../../../api/prismaMdxRelations/mdxNote/classProps.js";
 import { minimalParsableAppConfig } from "@ulld/configschema/zod-refinedAppConfigs";
 import { documentTypeConfigSchema, } from "@ulld/configschema/zod/documentConfigSchema";
 import { z } from "zod";
+import { mdxNotePropsSchema } from "../../../api/prismaMdxRelations/mdxNote/classProps.js";
 import { extendedFrontMatterSchema, } from "../../frontMatter/main.js";
 import { unifiedMdxParserParamSchema } from "./unifiedMdxParserParams.js";
 export const mdxNoteFromStringPropsSchema = mdxNotePropsSchema

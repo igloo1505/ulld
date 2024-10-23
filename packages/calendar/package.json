@@ -18,6 +18,7 @@
     "./types": "./src/types.ts"
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "dayjs": "1.11.11",
     "googleapis": "140.0.1",
     "ical.js": "2.0.0",

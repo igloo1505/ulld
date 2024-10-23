@@ -10,7 +10,36 @@
     "src"
   ],
   "exports": {
-    "./vitestConfig-basic": "./vitestConfigs/base.ts"
+    "./getVitestConfig": "./src/config/getVitestConfig.ts",
+    "./vitestConfig-basic": "./vitestConfigs/base.ts",
+    "./vitestConfig-cli": "./vitestConfigs/cli.ts",
+    "./vitestConfig-api": "./vitestConfigs/api.ts"
+  },
+  "dependencies": {
+    "@faker-js/faker": "9.0.3",
+    "@playwright/test": "1.47.0",
+    "@react-mock/fetch": "0.3.0",
+    "@react-mock/localstorage": "0.1.2",
+    "@react-mock/state": "0.1.8",
+    "@testing-library/dom": "9.3.4",
+    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/react": "16.0.1",
+    "@testing-library/react-hooks": "8.0.1",
+    "@testing-library/user-event": "14.5.2",
+    "@ulld/eslint-config": "*",
+    "@vitejs/plugin-react": "4.3.1",
+    "@vitest/browser": "2.1.3",
+    "@vitest/coverage-v8": "2.1.3",
+    "@vitest/ui": "2.0.5",
+    "axios-test-instance": "8.0.0",
+    "jsdom": "25.0.0",
+    "memfs": "4.14.0",
+    "mock-fs": "5.4.0",
+    "moxios": "0.4.0",
+    "msw": "2.4.11",
+    "node-mocks-http": "1.15.1",
+    "sinon": "18.0.0",
+    "zod-fixture": "2.5.2"
   },
   "peerDependencies": {
     "@ulld/typescript-config": "workspace:*",

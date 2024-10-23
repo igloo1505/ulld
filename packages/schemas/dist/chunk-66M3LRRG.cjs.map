@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/utilitySchemas/main.ts"],"names":[],"mappings":";AAAA,SAAS,SAAS;AAEX,IAAM,YAAY,EAAE,OAAO,EAAE,QAAQ;AACrC,IAAM,YAAY,EAAE,OAAO,EAAE,QAAQ","sourcesContent":["import { z } from \"zod\"\n\nexport const zodOptStr = z.string().nullish()\nexport const zodOptNum = z.number().nullish()\n\n"]}

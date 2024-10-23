@@ -1,11 +1,10 @@
-import React from "react";
-import NavigationSettingsPage from "../../pages/settingPage/main";
+import React, { type ReactNode } from "react";
 import { Separator } from "@ulld/tailwind/separator";
+import NavigationSettingsPage from "../../pages/settingPage/main";
 import MultipageSidebar from "../../components/multipageSidebar/main";
 
-interface SettingsPageProps { }
 
-const TestSettingsWrapper = ({ children }: any) => {
+const TestSettingsWrapper = ({ children }: {children: ReactNode}): ReactNode => {
     return (
         <div className="space-y-6 p-10 pb-16 min-h-screen-noNav">
             <div className="space-y-0.5">
@@ -27,7 +26,7 @@ const TestSettingsWrapper = ({ children }: any) => {
     );
 };
 
-const SettingsPage = (props: SettingsPageProps) => {
+const SettingsPage = (): ReactNode => {
     return (
         <TestSettingsWrapper>
             <NavigationSettingsPage />

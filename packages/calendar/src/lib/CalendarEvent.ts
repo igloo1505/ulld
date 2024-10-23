@@ -2,7 +2,7 @@
 import type { EventInput } from "../types";
 import type { calendar_v3 } from "googleapis";
 
-// RESUME: Come back here and implement this.
+// TODO: Come back here and implement this.
 export class CalendarEvent implements calendar_v3.Schema$Event {
     anyoneCanAddSelf?: boolean | null;
     attachments?: calendar_v3.Schema$EventAttachment[];

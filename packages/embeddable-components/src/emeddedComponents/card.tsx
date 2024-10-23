@@ -1,6 +1,5 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import {
-    BaseEmbeddableComponentProps,
     getBaseEmbeddableProps,
 } from "./baseEmbeddableComponentTypes";
 import {
@@ -11,9 +10,8 @@ import {
     CardTitle,
 } from "@ulld/tailwind/card";
 import { stringToConsistentId } from "@ulld/state/formatting/general";
-import { MdxContentCLIENT } from "@ulld/render/mdx/client";
 import { EmbeddableCardProps } from "./CLIENT_COMPONENTS/card/props";
-import clsx from "clsx";
+import { MdxContentSERVER } from "@ulld/render/mdx/server";
 
 
 
@@ -41,7 +39,7 @@ export const EmbeddableCard = async ({
                     {title && (
                         <CardTitle className={"not-prose"}>
                             {typeof title === "string" ? (
-                                <MdxContentCLIENT content={title as string} inline />
+                                <MdxContentSERVER content={title as string} inline />
                             ) : (
                                 title
                             )}
@@ -49,7 +47,7 @@ export const EmbeddableCard = async ({
                     )}
                     {(desc || description) && (
                         <CardDescription className={"not-prose"}>
-                            <MdxContentCLIENT
+                            <MdxContentSERVER
                                 content={desc || (description as string)}
                                 display
                             />
@@ -59,7 +57,7 @@ export const EmbeddableCard = async ({
             )}
             <CardContent className={"not-prose"}>
                 {typeof c === "string" ? (
-                    <MdxContentCLIENT content={c || ""} display />
+                    <MdxContentSERVER content={c || ""} display />
                 ) : (
                     (c as React.ReactNode)
                 )}

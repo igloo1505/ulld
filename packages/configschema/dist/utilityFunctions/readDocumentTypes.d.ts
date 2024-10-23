@@ -3,7 +3,7 @@ export declare const readDocumentTypes: () => {
     id: string;
     url: string;
     label: string;
-    icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
+    icon: string;
     UI: {
         styles: {
             dark: {

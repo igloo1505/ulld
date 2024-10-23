@@ -92,6 +92,17 @@ export const toggleEquationSelectMode = (val?: boolean) => {
     }
 };
 
+/**
+ * @returns 
+ * boolean indicating success or failure.
+ */
+export const toggleBookmarkedById = async (id: number): Promise<boolean> => {
+      const res = await axios.post("/utils/toggles/bookmarked", {
+        id
+    })
+    return Boolean(res?.data?.success as boolean | undefined)
+}
+
 export const toggleAllJupyterFolds = (fold?: boolean) => {
     let ems = document.querySelectorAll<HTMLDivElement>("div.jupyter-foldable");
     if (ems && ems.length > 0) {

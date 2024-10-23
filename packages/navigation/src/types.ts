@@ -1,8 +1,8 @@
-import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
-import { NavigationLink } from "@ulld/configschema/buildTypes";
-import { FC, HTMLProps, ReactNode } from "react";
-import { ValidIconName } from "@ulld/icons";
-import { NotePropertiesOutput } from "@ulld/types";
+import type { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
+import type { NavigationLink } from "@ulld/configschema/buildTypes";
+import type { FC, HTMLProps, ReactNode } from "react";
+import type { ValidIconName } from "@ulld/icons";
+import type { NotePropertiesOutput, PassedLogoProps } from "@ulld/types";
 
 export interface NoteDetailSheetProps {
     // headings: ContentHeading[];
@@ -28,15 +28,18 @@ export interface FullScreenNavProps
     items: NavigationLink[];
 }
 
-export type SidebarItem = { label: string; href: string; id: string };
+export interface SidebarItem { 
+    label: string;
+    href: string;
+    id: string
+}
 
 export interface MultipageSidebarProps extends HTMLProps<HTMLElement> {
     className?: string;
     items: SidebarItem[];
 }
 
-export interface SecondaryNavigationProps
-    extends Pick<NavbarComponentProps, "noteTypes" | "navConfig"> { }
+export type SecondaryNavigationProps = Pick<NavbarComponentProps, "noteTypes" | "navConfig">
 
 export interface FooterLogoLink {
     href: string;
@@ -45,5 +48,5 @@ export interface FooterLogoLink {
 }
 
 export interface FooterProps {
-    logo: FC<HTMLProps<HTMLOrSVGElement>>;
+    logo: FC<PassedLogoProps>;
 }

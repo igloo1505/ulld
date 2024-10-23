@@ -19,6 +19,7 @@
         "jsx": "react",
         "esModuleInterop": true,
         "resolveJsonModule": true,
+        "sourceMap": true,
         "noEmit": false,
         "emitDeclarationOnly": true,
         "declaration": true

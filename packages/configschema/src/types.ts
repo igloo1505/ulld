@@ -1,3 +1,4 @@
+import { z } from "zod"
 import { BuildStaticDataOutput } from "./buildStaticData/types.js"
 import { DocumentTypeConfig } from "./zod/documentConfigSchema.js"
 import { AppConfigSchemaOutput } from "./zod/main.js"
@@ -25,3 +26,5 @@ export type AppConfigGroup = {
 export type DefaultColorKey = keyof AppConfigSchemaOutput["UI"]["colors"]
 
 export type ColorBooleanRecord = Record<DefaultColorKey, boolean>
+
+export type ZodOutputSchema<T extends z.ZodTypeAny> = z.ZodType<z.output<T>>

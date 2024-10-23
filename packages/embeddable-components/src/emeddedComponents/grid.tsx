@@ -1,6 +1,7 @@
+import type { ReactNode } from "react";
 import React from "react";
-import clsx from "clsx";
-import { ContainerSize, GridItemProps, GridProps } from "./gridProps";
+import { cn } from "@ulld/utilities/cn";
+import type { ContainerSize, GridItemProps, GridProps } from "./gridProps";
 
 const columnMap = {
     "1": "grid-cols-1",
@@ -61,10 +62,10 @@ const lgColumnMap = {
     "12": "@[1240px]/mdx:grid-cols-12",
 };
 
-export const GridItem = ({ children, background, center }: GridItemProps) => {
+export const GridItem = ({ children, background, center }: GridItemProps): ReactNode => {
     return (
         <div
-            className={clsx(
+            className={cn(
                 "w-full min-h-full p-4 rounded-lg",
                 center && " flex flex-col justify-center items-center",
                 background && "bg-gray-100 dark:bg-gray-800",
@@ -75,23 +76,24 @@ export const GridItem = ({ children, background, center }: GridItemProps) => {
     );
 };
 
-const getColumnClasses = (cols: Record<ContainerSize, number>) => {
-    let s: string[] = [];
+const getColumnClasses = (cols: Record<ContainerSize, number>): string => {
+    const s: string[] = [];
 
     if (`${cols.sm}` in smallColumnMap) {
-        s.push(smallColumnMap[`${cols.sm}` as keyof typeof smallColumnMap])
+        s.push(smallColumnMap[`${cols.sm}` as keyof typeof smallColumnMap]);
     }
     if (`${cols.base}` in columnMap) {
-        s.push(columnMap[`${cols.base}` as keyof typeof columnMap])
+        s.push(columnMap[`${cols.base}` as keyof typeof columnMap]);
     }
     if (`${cols.md}` in mediumColumnMap) {
-        s.push(mediumColumnMap[`${cols.md}` as keyof typeof mediumColumnMap])
+        s.push(mediumColumnMap[`${cols.md}` as keyof typeof mediumColumnMap]);
     }
     if (`${cols.lg}` in lgColumnMap) {
-        s.push(lgColumnMap[`${cols.lg}` as keyof typeof lgColumnMap])
+        s.push(lgColumnMap[`${cols.lg}` as keyof typeof lgColumnMap]);
     }
-    return s.join(" ")
+    return s.join(" ");
 };
+
 
 /* TODO: Consider adding an auto class based on number of children. It might not be reliably stylable (probably not a word) but could be useful for a default case instead of just blowing up entirely. */
 export const Grid = ({
@@ -100,10 +102,10 @@ export const Grid = ({
     minMax,
     children,
     autoFit,
-}: GridProps) => {
+}: GridProps): ReactNode => {
     let cols = _cols || columns;
     if (typeof cols === "number") {
-        (cols as any) = {
+        cols = {
             base: cols,
         };
     }
@@ -116,9 +118,10 @@ export const Grid = ({
     }
     return (
         <div
-            className={clsx(
+            className={cn(
                 "grid gap-2 md:gap-4 place-items-center w-full",
-                Boolean(cols && !minMax) && getColumnClasses(cols as Record<ContainerSize, number>),
+                !minMax &&
+                getColumnClasses(cols as Record<ContainerSize, number>),
             )}
             style={{
                 ...(minMax && {

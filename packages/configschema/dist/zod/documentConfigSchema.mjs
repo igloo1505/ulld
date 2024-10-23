@@ -4,9 +4,9 @@ import {
   documentTypeConfigSchemaBase,
   documentTypeConfigSchemaInner,
   zodDocTypeInput
-} from "../chunk-VXYDCNFY.mjs";
+} from "../chunk-GTMMKAJV.mjs";
 import "../chunk-XHBPEY36.mjs";
-import "../chunk-P5DB76KQ.mjs";
+import "../chunk-GSLEBKWB.mjs";
 export {
   docTypeUISchema,
   documentTypeConfigSchema,

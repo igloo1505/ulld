@@ -134,6 +134,7 @@
   },
   "dependencies": {
     "@tabler/icons-react": "3.5.0",
+    "@ulld/eslint-config": "*",
     "clsx": "2.1.1",
     "framer-motion": "11.5.4",
     "lucide-react": "0.428.0",

@@ -1,24 +1,26 @@
 "use client";
+import type { ReactNode} from "react";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import NavbarSearchInput from "./navbarSearchInput";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 import { SearchIcon, BookmarkIcon } from "lucide-react";
-import { toggleBookmark } from "@ulld/api/actions/clientOnly/bookmarking";
-import { NavbarComponentProps } from "../../types";
 import { useActiveNoteIdValue } from "@ulld/hooks/useActiveNoteId";
+import { cn } from "@ulld/utilities/cn";
+import { runActionById } from "@ulld/state/runActionById";
+import type { NavbarComponentProps } from "../../types";
+import type { NavbarLink } from "../../pages/settingPage/form/schema";
+import { IsomorphicNavLink } from "../utilityComponents/isomorphicNavLink";
+import NavbarSearchInput from "./navbarSearchInput";
+
 
 const NavShowBreakpoint = 20;
 
-interface NavbarProps extends NavbarComponentProps { }
+export interface NavbarProps extends NavbarComponentProps { 
+    buttons?: NavbarLink[]
+}
 
-const showButtonTypes: NavbarComponentProps["navConfig"]["bookmarkLink"][] = [
-    "both",
-    "navbar",
-];
 
-const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
+const Navbar = ({ buttons = [], noteTypes, logo: Logo }: NavbarProps): ReactNode => {
     const pathname = usePathname();
     const [show, setShow] = useState(pathname !== "/");
     const activeNoteId  = useActiveNoteIdValue();
@@ -28,7 +30,9 @@ const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
         setIsAbsolute(pathname === "/");
     }, [pathname]);
 
-    const hoverListener = (e: MouseEvent) => {
+
+    useEffect(() => {
+    const hoverListener = (e: MouseEvent): void => {
         if (pathname !== "/") {
             setShow(true);
             return;
@@ -40,21 +44,15 @@ const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
             setShow(false);
         }
     };
-
-    useEffect(() => {
         window.addEventListener("mousemove", hoverListener);
-        return () => window.removeEventListener("mousemove", hoverListener);
+        return () => {
+            window.removeEventListener("mousemove", hoverListener)
+        }
     }, [pathname]);
-
-    const btns = noteTypes.filter((a) => a.inNavbar);
-    const btns2 = noteTypes
-        .sort((a, b) => a.matchWeight - b.matchWeight)
-        .slice(0, 3 - btns.length);
-    const buttons = [...btns, ...btns2];
 
     return (
         <nav
-            className={clsx(
+            className={cn(
                 "z-10 bg-gray-50 shadow dark:bg-gray-950 h-[--nav-height] flex justify-center items-center border-b dark:border-b-gray-800 w-screen sidebarAdjust border-opacity-50 focus-within:translate-y-[0px]",
                 show ? "translate-y-[0px]" : "translate-y-[-100%]",
                 isAbsolute ? "absolute" : "relative",
@@ -67,69 +65,60 @@ const Navbar = ({ navConfig: nav, noteTypes, logo: Logo }: NavbarProps) => {
                         href="/"
                         /* width={300} */
                         /* height={300} */
-                        className={"h-[calc(var(--nav-height)*0.7)] w-[80px]"}
+                        className="h-[calc(var(--nav-height)*0.7)] w-[80px]"
                     >
                         {Logo}
                     </Link>
                 </div>
                 <div
-                    className={
-                        "inset-x-0 z-20 w-full py-4 transition-all duration-300 ease-in-out mt-0 p-0 top-0 relative translate-x-0 flex items-center justify-end lg:justify-between"
-                    }
+                    className="inset-x-0 z-20 w-full py-4 transition-all duration-300 ease-in-out mt-0 p-0 top-0 relative translate-x-0 flex items-center justify-end lg:justify-between"
                 >
                     <div className="px-2  flex-row mx-10 py-0 hidden lg:flex">
-                        {buttons?.map((b, i) => {
-                            if ("href" in b && b.href) {
+                        {buttons.map((a): ReactNode => {
                                 return (
-                                    <Link
-                                        href={b.href}
-                                        className={
-                                            "px-2.5 py-2 navbtn transform mx-2 hidden lg:flex"
-                                        }
-                                        key={`navbar-button-${i}`}
+                                   <IsomorphicNavLink
+                                        className="px-2.5 py-2 navbtn transform mx-2 hidden lg:flex"
+                                        item={a}
+                                        key={`navbar-button-${a.value}-${a.label}`}
                                     >
-                                        {b.label}
-                                    </Link>
+                                        {a.label}
+                                    </IsomorphicNavLink>
                                 );
-                            }
                         })}
                     </div>
                     <div
-                        className={"flex flex-row gap-2 justify-center items-center w-fit"}
+                        className="flex flex-row gap-2 justify-center items-center w-fit"
                     >
-                        {showButtonTypes.includes(nav.bookmarkLink) && (
                             <Link
+                                className="px-2.5 py-2 navbtn transform mx-2 hidden sm:flex lg:hidden"
                                 href="/bookmarks"
-                                className={
-                                    "px-2.5 py-2 navbtn transform mx-2 hidden sm:flex lg:hidden"
-                                }
                             >
                                 Bookmarks
                             </Link>
-                        )}
                         <div className="relative mt-0 w-[225px]">
                             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                                <SearchIcon className={"w-5 h-5 text-gray-400"} />
+                                <SearchIcon className="w-5 h-5 text-gray-400" />
                             </span>
                             <NavbarSearchInput />
                         </div>
-                        <a
-                            role="button"
-                            onClick={() => toggleBookmark(activeNoteId.current)}
-                            className={
-                                "bookmark-indicator ml-4 group-[.isBookmarked]/body:bg-primary text-primary-foreground rounded-lg p-1"
-                            }
+                        <button
+                            className="bookmark-indicator ml-4 group-[.isBookmarked]/body:bg-primary text-primary-foreground rounded-lg p-1"
+                            onClick={() => {
+                                if(activeNoteId.current){
+                                    runActionById("toggleBookmarked", activeNoteId.current).catch(() => {
+                                        // eslint-disable-next-line no-console -- Need to log error. #MoveToLoggerPackage
+                                        console.error(`Could not toggle bookmarked state for note with id ${activeNoteId.current}`)
+                                    })
+                                }
+                            }}
+                            type="button"
                         >
                             <BookmarkIcon
-                                className={
-                                    "text-gray-800 dark:text-gray-200 group-[.isBookmarked]/body:text-primary-foreground"
-                                }
+                                className="text-gray-800 dark:text-gray-200 group-[.isBookmarked]/body:text-primary-foreground"
                             />
-                        </a>
+                        </button>
                         <div
-                            className={
-                                "text-red-500 dark:text-red-400 text-sm hidden group-[.preferFs]/body:inline-block"
-                            }
+                            className="text-red-500 dark:text-red-400 text-sm hidden group-[.preferFs]/body:inline-block"
                         >
                             fs
                         </div>

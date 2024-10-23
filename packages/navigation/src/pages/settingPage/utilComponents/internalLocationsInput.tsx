@@ -6,10 +6,11 @@ import { useFormContext } from "@ulld/full-form/form";
 import { useAppConfig } from "@ulld/hooks/useAppConfig";
 import { useElementWidthByRef } from "@ulld/hooks/useElementWidthByRef";
 import { internalGlobalActionMap } from "@ulld/state/globalActionsMap";
-import { internalAppLocations } from "@ulld/utilities/appData";
+import { internalAppLocations } from "@ulld/utilities/internalAppLocations";
 import React, { type ReactNode, type RefObject, useMemo } from "react";
 import type { SidebarLink } from "../form/schema";
 import { type NavLinkType, superTruthy } from "../form/utils";
+import { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
 
 interface InternalLocationsInputWrapperProps<T extends NavLinkType>
     extends Partial<InternalLocationsComboboxProps<T>> {
@@ -30,7 +31,7 @@ const InternalLocationsInputWrapper = <T extends NavLinkType>({
             obj[x.url] = x.defaultIcon;
         }
         for (const l in internalGlobalActionMap) {
-            const _icon = internalGlobalActionMap[l].defaultIcon;
+            const _icon = internalGlobalActionMap[l as InternalGlobalActionIds].defaultIcon;
             if (_icon) {
                 obj[l] = _icon;
             }

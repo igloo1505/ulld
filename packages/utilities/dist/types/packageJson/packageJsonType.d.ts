@@ -66,15 +66,15 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
     }>]>>;
     description: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    files: string[];
     name: string;
+    files: string[];
     version: string;
     keywords: string[];
     dependencies: Record<string, string>;
     packageManager: string;
     license: string;
-    cpu?: string[] | undefined;
     type?: string | undefined;
+    cpu?: string[] | undefined;
     main?: string | undefined;
     description?: string | undefined;
     scripts?: Record<string, string> | undefined;
@@ -108,9 +108,9 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
 }, {
     name: string;
     dependencies: Record<string, string>;
+    type?: string | undefined;
     cpu?: string[] | undefined;
     files?: string[] | undefined;
-    type?: string | undefined;
     main?: string | undefined;
     version?: string | undefined;
     description?: string | undefined;

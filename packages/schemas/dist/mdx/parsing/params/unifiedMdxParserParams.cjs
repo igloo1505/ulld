@@ -1,13 +1,13 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk2FVTGWERcjs = require('../../../chunk-2FVTGWER.cjs');
-require('../../../chunk-NYX3ITR4.cjs');
+var _chunkIDRK4CXRcjs = require('../../../chunk-IDRK4CXR.cjs');
+require('../../../chunk-E2INLS7K.cjs');
 require('../../../chunk-YJNLTULQ.cjs');
-require('../../../chunk-66M3LRRG.cjs');
+require('../../../chunk-3DSSYCJG.cjs');
 require('../../../chunk-WOP6I6SM.cjs');
 
 
 
-exports.noteDetailsReturn = _chunk2FVTGWERcjs.noteDetailsReturn; exports.unifiedMdxParserParamSchema = _chunk2FVTGWERcjs.unifiedMdxParserParamSchema;
+exports.noteDetailsReturn = _chunkIDRK4CXRcjs.noteDetailsReturn; exports.unifiedMdxParserParamSchema = _chunkIDRK4CXRcjs.unifiedMdxParserParamSchema;
 //# sourceMappingURL=unifiedMdxParserParams.cjs.map

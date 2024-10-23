@@ -11,7 +11,7 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
     }, "strip", z.ZodTypeAny, {
         label: string;
         href: string;
-        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
+        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     }, {
@@ -19,11 +19,11 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }>, "many">>, ({
         label: string;
         href: string;
-        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
+        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     } | {
@@ -35,7 +35,7 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }[] | undefined>;
     settingPages: z.ZodDefault<z.ZodArray<z.ZodObject<{
         title: z.ZodOptional<z.ZodString>;
@@ -115,7 +115,7 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
     navigationLinks: ({
         label: string;
         href: string;
-        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
+        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     } | {
@@ -153,7 +153,7 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }[] | undefined;
     settingPages?: {
         href: string;
@@ -231,7 +231,7 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
     navigationLinks: ({
         label: string;
         href: string;
-        category: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general";
+        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     } | {
@@ -269,7 +269,7 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         href: string;
         icon?: string | undefined;
         pluginName?: string | undefined;
-        category?: "code" | "math" | "snippets" | "AI" | "ML" | "writing" | "search" | "notebooks" | "database" | "work" | "school" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "calendar" | "general" | undefined;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }[] | undefined;
     settingPages?: {
         href: string;

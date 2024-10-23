@@ -284,6 +284,7 @@
     "./autumn": "./src/imageMap/autumn.tsx"
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -295,7 +296,6 @@
   },
   "peerDependencies": {
     "@ulld/configschema": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/logger": "workspace:*",
     "@ulld/tailwind": "workspace:*",
     "@ulld/types": "workspace:*",

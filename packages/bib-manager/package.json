@@ -28,6 +28,7 @@
   "dependencies": {
     "@citation-js/plugin-bibtex": "0.7.14",
     "@citation-js/plugin-csl": "0.7.14",
+    "@ulld/eslint-config": "*",
     "citation-js": "0.7.15"
   },
   "peerDependencies": {
@@ -36,7 +37,6 @@
     "@ulld/database": "workspace:*",
     "@ulld/developer": "workspace:*",
     "@ulld/editor": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/full-form": "workspace:*",
     "@ulld/hooks": "workspace:*",
     "@ulld/icons": "workspace:*",

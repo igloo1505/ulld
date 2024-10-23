@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../types.js";
 
 export const nbConvertTemplateOptions = z.union([
     z.literal("lab"),
@@ -16,4 +17,17 @@ export const nbConvertConfigSchema = z.object({
     execute: z.boolean().default(false).describe("Whether or not to execute notebooks before converting via nbConvert. Can be overriden with the ?nbConvertExec=true of ?nbConvertExec=false search param."),
     nbConvertTemplate: nbConvertTemplateOptions.default("classic").describe("The template option that is passed to nbConvert. Can be overridden by the search param ?nbConvertTemp=lab or ?nbConvertTemp=classic"),
     notebookOutputDir: z.string().default("/generated").describe("The fsRoot relative file path where converted notebooks should be saved.")
+})
+
+
+
+export const nbConvertConfigSchemaOutput: ZodOutputSchema<typeof nbConvertConfigSchema> = z.object({
+    nbconvertPath: z.string().optional(),
+    conversionTimeout: z.number(),
+    customConversionFunction: z.object({
+        pdf: z.function().args(z.string(), z.string()).returns(z.string())
+    }).partial().optional(),
+    execute: z.boolean(),
+    nbConvertTemplate: nbConvertTemplateOptions,
+    notebookOutputDir: z.string()
 })

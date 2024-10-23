@@ -24,6 +24,7 @@
     "./single/line": "./src/components/shad/singleComponentPlots/linePlot/main.tsx"
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "colormap": "2.3.2",
     "echarts": "5.5.0",
     "jsxgraph": "1.8.0",
@@ -39,7 +40,6 @@
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/developer": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/full-form": "workspace:*",
     "@ulld/hooks": "workspace:*",
     "@ulld/jest-presets": "workspace:*",

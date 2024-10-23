@@ -6,6 +6,13 @@ import localFont from "next/font/local";
 import clsx from "@ulld/utilities/cn";
 import { cookies } from "next/headers";
 import { Toaster } from "@ulld/tailwind/toaster";
+import { DynamicIcon } from "@ulld/icons";
+import type { PassedLogoProps } from "@ulld/types";
+import { readDevelopmentAppConfig } from "@ulld/utilities/devUtils";
+import Footer from "../components/footer/ssr";
+import SecondaryNav from "../components/sidebar/sidebarSSR";
+import Navbar from "../components/navbar/navbar";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -49,11 +56,22 @@ const appFont = localFont({
     display: "swap",
 });
 
+const DemoLogo = (props: PassedLogoProps): ReactNode => {
+    return <DynamicIcon {...props} name="ulld" />;
+};
+
 const RootLayout = (props: {
     children: React.ReactNode;
     modal: React.ReactNode;
 }): ReactNode => {
     const cookieJar = cookies();
+    const appConfig = readDevelopmentAppConfig(__dirname);
+
+    if (!appConfig) {
+        throw new Error(
+            `Cannot find a valid appConfig.ulld.json file. Cannot reliably run the ULLD app.`,
+        );
+    }
 
     const preferFs = cookieJar.has("preferFs");
 
@@ -113,8 +131,22 @@ const RootLayout = (props: {
                 )}
                 id="Ulld-body-root"
             >
+                <Navbar
+                    logo={<DemoLogo />}
+                    navConfig={
+                        appConfig.navigation as AppConfigSchemaOutput["navigation"]
+                    }
+                    noteTypes={appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]}
+                />
+                <SecondaryNav
+                    navConfig={
+                        appConfig.navigation as AppConfigSchemaOutput["navigation"]
+                    }
+                    noteTypes={appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]}
+                />
                 {props.children}
                 <Toaster />
+                <Footer logo={DemoLogo} />
             </body>
         </html>
     );

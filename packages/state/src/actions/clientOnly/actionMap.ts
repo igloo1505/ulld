@@ -1,56 +1,45 @@
 import { ValidIconNameDynamicallyGenerated } from "@ulld/types";
-import {
-    enterIdSelectMode,
-    setPreferFs,
-    toggleAllJupyterFolds,
-    toggleDarkMode,
-    toggleEquationSelectMode,
-} from "./general";
-import { toggleToolTips } from "./dom";
-import { syncRootDirectory } from "@ulld/utilities/actions-syncDirectory";
+import { GlobalActionIds } from "./actionMapTypes";
+import { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
 
 interface InternalActionItem {
-    onSelect: (() => void) | (() => Promise<void>);
     label: string;
     defaultIcon?: ValidIconNameDynamicallyGenerated;
 }
 
-export const internalGlobalActionMap: Record<string, InternalActionItem> = {
-    togglepreferfilesystem: {
+export const internalGlobalActionMap: Record<InternalGlobalActionIds, InternalActionItem> = {
+    togglePreferFileSystem: {
         label: "Toggle Prefer File System",
-        onSelect: async () => await setPreferFs("toggle"),
         defaultIcon: "database-zap"
     },
-    toggletooltips: {
+    toggleTooltips: {
         label: "Toggle Tooltips",
-        onSelect: () => toggleToolTips(),
         defaultIcon: "popcorn"
     },
-    syncnotes: {
+    syncRootDirectory: {
         label: "Sync Notes",
-        onSelect: async () => await syncRootDirectory(),
         defaultIcon: "folder-sync"
     },
-    toggledarkmode: {
+    toggleDarkMode: {
         label: "Toggle Dark Mode",
-        onSelect: () => toggleDarkMode(),
         defaultIcon: "moon-star"
     },
-    togglejupyterfolds: {
+    toggleAllJupyterFolds: {
         label: "Toggle Jupyter Folds",
-        onSelect: () => toggleAllJupyterFolds(),
         defaultIcon: "origami"
     },
-    toggleidselect: {
+    toggleIdSelectMode: {
         label: "ID Select Mode",
-        onSelect: enterIdSelectMode,
         defaultIcon: "box-select"
     },
-    showequationids: {
+    showEquationIds: {
         label: "Show Equation Id's",
-        onSelect: () => toggleEquationSelectMode(),
         defaultIcon: "glasses"
     },
+    toggleBookmarked: {
+            label: "Toggle Bookmarked",
+            defaultIcon: "bookmark"
+    }
     // backupdbonly: {
     //     label: "Backup Non-Filesystem",
     //     onSelect: async () => {

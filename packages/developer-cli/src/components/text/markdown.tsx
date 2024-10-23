@@ -30,7 +30,7 @@ interface InkMarkdownProps {
 
 const defaultTerminalMdOptions: TerminalRendererOptions = {
     firstHeading: chalk.hex(ulldBlue),
-    emoji: true
+    emoji: true,
 };
 
 const InkMarkdown = ({
@@ -47,6 +47,7 @@ const InkMarkdown = ({
         /* }), */
         gfm: true,
     });
+    /* @ts-ignore */
     marked.use(markedTerminal(options, highlightOptions));
     const parsedContent = marked.parse(content);
 
@@ -57,24 +58,27 @@ const InkMarkdown = ({
     );
 };
 
+const getPath = (filePath: string): string => {
+    console.log(import.meta.dirname);
+    return path.join(
+        import.meta.dirname.endsWith('dist')
+            ? path.join(import.meta.dirname, 'markdown')
+            : path.resolve(import.meta.dirname, '../../markdown'),
+        filePath,
+    );
+};
+
 const Markdown = (props: MarkdownProps) => {
+    console.log('import.meta.dirname: ', import.meta.dirname);
     let content =
         'content' in props
             ? props.content
-            : fs.readFileSync(
-                path.join(
-                    path.resolve(import.meta.dirname, '../../markdown'),
-                    props.filePath,
-                ),
-                { encoding: 'utf-8' },
-            );
+            : fs.readFileSync(getPath(props.filePath), { encoding: 'utf-8' });
 
     let mdProps: InkMarkdownProps = {
         content,
     };
-    return (
-        <InkMarkdown {...mdProps} />
-    );
+    return <InkMarkdown {...mdProps} />;
 };
 
 Markdown.displayName = 'Markdown';

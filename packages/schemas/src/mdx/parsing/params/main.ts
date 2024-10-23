@@ -1,17 +1,15 @@
-import { mdxNotePropsSchema } from "../../../api/prismaMdxRelations/mdxNote/classProps.js";
 // import type { UnifiedMdxParser } from "@ulld/api/types";
 import type { AppConfigSchemaDeepPartial } from "@ulld/configschema/types";
 import { minimalParsableAppConfig } from "@ulld/configschema/zod-refinedAppConfigs";
 import {
   documentTypeConfigSchema,
-  documentTypeConfigSchemaInner,
 } from "@ulld/configschema/zod/documentConfigSchema";
-import { appConfigSchema, type AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
+import { type AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import type { WithRequired } from "@ulld/utilities/types";
 import { z, type ZodTypeAny } from "zod";
+import { mdxNotePropsSchema } from "../../../api/prismaMdxRelations/mdxNote/classProps.js";
 import {
   extendedFrontMatterSchema,
-  frontMatterSchema,
 } from "../../frontMatter/main.js";
 import { unifiedMdxParserParamSchema } from "./unifiedMdxParserParams.js";
 

@@ -19,6 +19,10 @@ export const args = z.tuple([
                 defaultValueDescription: 'cwd',
             }),
         ),
+    z.string().default(".js").describe(argument({
+        name: "file extension",
+        description: "File extension to append to imported file paths."
+    }))
 ]);
 
 export const options = z.object({
@@ -71,11 +75,12 @@ const ExportedPath = ({ exportedPath }: ExportedPathProps) => {
 const getExportString = (
     filePath: string,
     sourceFile: string,
+    fileExt: string,
     exportType?: boolean,
 ) => {
     if (!exportType) {
         let fpData = path.parse(filePath);
-        filePath = path.join(fpData.dir, `${fpData.name}.js`);
+        filePath = path.join(fpData.dir, `${fpData.name}${fileExt}`);
     }
     let fp = path.relative(path.dirname(sourceFile), filePath);
     if (!fp.startsWith('.')) {
@@ -101,7 +106,7 @@ const GenerateTunnelFile = ({ args, options }: GenerateTunnelFileProps) => {
     let tunnelPath = path.join(_cwd, 'index.ts');
 
     let fileContent = filePaths
-        .map(fp => getExportString(fp, tunnelPath, options.asType))
+        .map(fp => getExportString(fp, tunnelPath, args[1], options.asType))
         .join('\n');
 
     fs.writeFileSync(tunnelPath, fileContent, { encoding: 'utf-8' });

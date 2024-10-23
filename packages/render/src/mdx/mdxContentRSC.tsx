@@ -42,6 +42,8 @@ const parseProps = (p: Omit<MdxContentRSCProps, "MdxContentRenderer">) => {
     };
 };
 
+
+/* TODO: Need to remove references to the appConfig to be able to use this in the web app. */
 export const MdxContentRSC = async ({
     components = [],
     id: _id,

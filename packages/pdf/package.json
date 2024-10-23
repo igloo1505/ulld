@@ -25,13 +25,13 @@
   "dependencies": {
     "@react-pdf/renderer": "3.3.8",
     "@recogito/recogito-react-pdf": "0.8.8",
+    "@ulld/eslint-config": "*",
     "react-pdf": "7.7.1"
   },
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/developer": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/hooks": "workspace:*",
     "@ulld/icons": "workspace:*",
     "@ulld/jest-presets": "workspace:*",

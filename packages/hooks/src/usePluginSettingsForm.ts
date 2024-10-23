@@ -1,6 +1,6 @@
 import type { PluginSettingsRecord } from "@ulld/types";
 import type { ToastConfigType } from "@ulld/utilities/types";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { PluginSettings } from "@ulld/api/pluginSettings-client";
 import type { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -10,27 +10,6 @@ import type { UpdatePluginSettingOptionsSchema } from "@ulld/api/types";
 import { toast } from "@ulld/tailwind/use-toast";
 import { useIsomorphicLayoutEffect } from "./useIsomorphicEffect";
 
-export const usePluginSettingsData = <T extends PluginSettingsRecord>(
-    pluginName: string,
-    initialData?: T,
-    onSync?: (newData: Partial<T>) => void,
-): [Partial<T> | null, (newData: Partial<T>, sync?: boolean) => void] => {
-    const [data, setData] = useState<Partial<T> | null>(initialData || null);
-    const pluginSettings = new PluginSettings<T>({ pluginName });
-
-    const updateData = (newData: Partial<T>, sync = false): void => {
-        if (sync) {
-            pluginSettings.updateSettings(newData, {
-                syncOnUpdate: true,
-                callback: onSync,
-            });
-        } else {
-            setData(newData);
-        }
-    };
-
-    return [data, updateData];
-};
 
 export interface UsePluginSettingsFormProps<
     T extends z.ZodType,

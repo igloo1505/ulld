@@ -14,7 +14,7 @@ import {
     maxNavbarLinks,
 } from "../staticSettingData";
 import NavbarSection from "../sections/navbarSections/navbarSection";
-import { navigationFormSchemaWithUtilities } from "./schema";
+import { defaultFormValues, navigationFormSchemaWithUtilities } from "./schema";
 
 
 const pluginName = "@ulld/navigation";
@@ -24,12 +24,7 @@ const NavigationSettingsForm = (): ReactNode => {
     const [form, syncForm] = usePluginSettingsForm({
         pluginName,
         schema: navigationFormSchemaWithUtilities,
-        defaultValues: {
-            footerSections: [],
-            footerSectionInput: "",
-            sidebarLinks: [],
-            navbarLinks: [],
-        },
+        defaultValues: defaultFormValues
     });
 
     const saveNavigationSettings = (): void => {

@@ -24,6 +24,7 @@
   "dependencies": {
     "@datalayer/jupyter-react": "0.18.3",
     "@jupyterlab/services": "7.2.4",
+    "@ulld/eslint-config": "*",
     "monaco-editor": "0.49.0",
     "next": "14.2.3",
     "react": "18.2.0",
@@ -41,7 +42,6 @@
     "@ulld/configschema": "workspace:*",
     "@ulld/developer": "workspace:*",
     "@ulld/editor": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/hooks": "workspace:*",
     "@ulld/icons": "workspace:*",
     "@ulld/jest-presets": "workspace:*",

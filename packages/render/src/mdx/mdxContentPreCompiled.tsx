@@ -1,19 +1,18 @@
 "use client";
 import { run } from "@mdx-js/mdx";
-import React, {
-    useState,
-    Fragment,
-    useRef,
-    useCallback,
-} from "react";
+import React, { useState, Fragment, useRef, useCallback } from "react";
+import { clsx } from "clsx";
 import * as runtime from "react/jsx-runtime";
 import * as devRuntime from "react/jsx-dev-runtime";
 import { getComponentMap } from "@ulld/component-map/client";
 import { useMathjaxBandaid } from "@ulld/hooks/useMathjaxBandaid";
 import { useIsomorphicLayoutEffect } from "@ulld/hooks/useIsomorphicEffect";
-import { CopyContextMenu } from "@ulld/utilities/components/copyContextMenu"
+import { CopyContextMenu } from "@ulld/utilities/components/copyContextMenu";
 import type { MDXModule } from "mdx/types";
-import { AdditionalComponents, ConditionalComponentProps } from "@ulld/component-map/types";
+import {
+    AdditionalComponents,
+    ConditionalComponentProps,
+} from "@ulld/component-map/types";
 import { useAppConfig } from "@ulld/hooks/useAppConfig";
 
 export interface MdxContentPreCompiledProps {
@@ -21,9 +20,9 @@ export interface MdxContentPreCompiledProps {
     content: string;
     raw: string;
     applyMathContextMenu?: boolean;
-    components?: AdditionalComponents
-    options?: ConditionalComponentProps
-    id?: string
+    components?: AdditionalComponents;
+    options?: ConditionalComponentProps;
+    id?: string;
 }
 
 export const MdxContentPreCompiled = ({
@@ -32,8 +31,8 @@ export const MdxContentPreCompiled = ({
     raw,
     applyMathContextMenu,
     components,
-    options={},
-    id
+    options = {},
+    id,
 }: MdxContentPreCompiledProps) => {
     /* const [appConfig] = useAppConfig() */
     const [mdxModule, setMdxModule] = useState<MDXModule | null>(null);
@@ -62,17 +61,13 @@ export const MdxContentPreCompiled = ({
 
     useMathjaxBandaid(ref);
 
-    /* if(!appConfig){ */
-    /*     return null */
-    /* } */
-
     const Component =
         mdxModule && "default" in mdxModule ? mdxModule.default : Fragment;
 
     const _components = getComponentMap(raw, options, components);
 
     return (
-        <div className={`mdx ${className}`} ref={ref}>
+        <div className={clsx("mdx", className)} ref={ref}>
             {mdxModule ? (
                 applyMathContextMenu ? (
                     <CopyContextMenu

@@ -1,18 +1,17 @@
 "use client";
-import React, { HTMLProps } from "react";
+import type { HTMLProps, ReactNode } from "react";
 import { cn } from "@ulld/utilities/cn";
-import { AdmonitionType } from "@ulld/utilities/admonition/types";
-import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
-import { useMemoizedIcon } from "../../../hooks/useMemoizedIcon";
+import type { AdmonitionType } from "@ulld/utilities/admonition/types";
 import { ChevronDown } from "lucide-react";
-import { ValidIconName } from "@ulld/icons";
+import type { ValidIconName } from "@ulld/types";
 import { MdxContentCLIENT } from "@ulld/render/mdx";
+import { DynamicIcon } from "@ulld/icons";
+import { getIconName } from "./utils";
 
 export interface AdmonitionTitleProps extends HTMLProps<HTMLDivElement> {
   title: string;
   admonitionType?: AdmonitionType;
   dropdown?: boolean;
-  groupId: string;
   titleBold?: boolean;
   icon?: ValidIconName;
 }
@@ -22,13 +21,15 @@ export const AdmonitionTitle = ({
   admonitionType = "plain",
   dropdown,
   titleBold,
-  groupId,
   ...props
-}: AdmonitionTitleProps) => {
+}: AdmonitionTitleProps): ReactNode => {
     /* NOTE: Don't need this with internal mdx components as they already handle state change automatically. Shouldn't need this with MDX from better-mdx-react either. */
   /* useMathjaxDynamicParse(title); */
 
-  const icon = useMemoizedIcon(props.icon || admonitionType, "w-4 h-4");
+  const iconName = getIconName({
+        admonitionType,
+        icon: props.icon
+    })
 
   return (
     <div
@@ -40,11 +41,9 @@ export const AdmonitionTitle = ({
       )}
     >
       <div
-        className={
-          "w-full flex flex-row flex-nowrap gap-2 justify-start items-center"
-        }
+        className="w-full flex flex-row flex-nowrap gap-2 justify-start items-center"
       >
-        {Boolean(admonitionType && admonitionType !== "plain") && icon}
+        {iconName ? <DynamicIcon className="w-4 h-4" name={iconName}/> : null}
         <div
           className={cn(
             "admonition-title flex flex-row flex-wrap flex-grow font-bold tracking-wide inlineMath relative",
@@ -52,15 +51,11 @@ export const AdmonitionTitle = ({
             dropdown && "mr-8",
           )}
         >
-          <MdxContentCLIENT inline content={title} />
+          <MdxContentCLIENT content={title} inline />
         </div>
-        {dropdown && (
-          <ChevronDown
-            className={
-              "absolute right-4 top-[50%] translate-y-[-50%] group-data-[state=open]/fold:rotate-180 transition-transform duration-300"
-            }
-          />
-        )}
+        {dropdown ? <ChevronDown
+            className="absolute right-4 top-[50%] translate-y-[-50%] group-data-[state=open]/fold:rotate-180 transition-transform duration-300"
+          /> : null}
       </div>
     </div>
   );

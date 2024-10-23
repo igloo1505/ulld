@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "@prisma/client": "5.17.0",
+    "@ulld/eslint-config": "*",
     "next": "14.2.3",
     "prisma": "5.17.0",
     "prisma-generator-fake-data": "0.14.2",
@@ -49,6 +50,7 @@
     "zod-prisma-types": "3.1.8"
   },
   "devDependencies": {
+    "@faker-js/faker": "9.0.3",
     "@prisma/client": "5.17.0",
     "next": "14.2.3",
     "prisma": "5.17.0",

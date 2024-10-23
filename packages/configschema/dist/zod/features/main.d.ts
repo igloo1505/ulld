@@ -17,23 +17,23 @@ export declare const featuresConfigSchema: z.ZodOptional<z.ZodObject<{
         bibliography: z.ZodDefault<z.ZodBoolean>;
         taskManager: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
-        snippets: boolean;
         calendar: boolean;
         bibliography: boolean;
+        snippets: boolean;
         taskManager: boolean;
         equations: boolean;
     }, {
-        snippets?: boolean | undefined;
         calendar?: boolean | undefined;
         bibliography?: boolean | undefined;
+        snippets?: boolean | undefined;
         taskManager?: boolean | undefined;
         equations?: boolean | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     pages: {
-        snippets: boolean;
         calendar: boolean;
         bibliography: boolean;
+        snippets: boolean;
         taskManager: boolean;
         equations: boolean;
     };
@@ -43,9 +43,9 @@ export declare const featuresConfigSchema: z.ZodOptional<z.ZodObject<{
     };
 }, {
     pages: {
-        snippets?: boolean | undefined;
         calendar?: boolean | undefined;
         bibliography?: boolean | undefined;
+        snippets?: boolean | undefined;
         taskManager?: boolean | undefined;
         equations?: boolean | undefined;
     };

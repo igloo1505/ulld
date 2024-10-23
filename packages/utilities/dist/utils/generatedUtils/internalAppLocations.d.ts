@@ -1,0 +1,3 @@
+export type InternalAppLocationIds = "bookmarks" | "internalBibLink" | "internalNavMenuLink" | "internalTaskManagerLink" | "internalCreateToDoLink" | "internalSnippetsLink" | "internalAddSnippetLink" | "internalEquationsLink" | "internalAddEquationLink" | "internalDocsLink" | "internalComponentDocsLink" | "internalDictionaryLink" | "internalSettingsLink" | "internalAutoSettingsLink";
+export declare const internalAppLocationsLabelMap: Record<InternalAppLocationIds, string>;
+//# sourceMappingURL=internalAppLocations.d.ts.map

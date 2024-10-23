@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode } from "react";
+import React from "react";
 import {
     Card,
     CardContent,
@@ -11,10 +11,9 @@ import { stringToConsistentId } from "@ulld/state/formatting/general";
 import {
     getBaseEmbeddableProps,
 } from "../../baseEmbeddableComponentTypes";
-import { useMathjaxDynamicParse } from "@ulld/hooks/useMathjaxDynamicParse";
 import cn from "@ulld/utilities/cn";
-import { MathJax } from "better-react-mathjax";
 import { EmbeddableCardProps } from "./props";
+import { MdxContentCLIENT } from "@ulld/render/mdx";
 
 
 export const EmbeddableCard = ({
@@ -32,23 +31,37 @@ export const EmbeddableCard = ({
             ? stringToConsistentId(title)
             : `card-${new Date().valueOf() * Math.random()}`;
 
-    useMathjaxDynamicParse([title, desc, c]);
     let newProps = getBaseEmbeddableProps<HTMLDivElement>(_props);
     return (
         <Card {...newProps} className={cn(newProps.className, "mb-6")} id={id}>
-            <MathJax inline>
-                {(title || desc || description) && (
-                    <CardHeader className={"not-prose"}>
-                        {title && <CardTitle>{title}</CardTitle>}
-                        {(desc || description) && (
-                            <CardDescription>{desc || description}</CardDescription>
-                        )}
-                    </CardHeader>
+            {(title || desc || description) && (
+                <CardHeader className={"not-prose"}>
+                    {title && (
+                        <CardTitle className={"not-prose"}>
+                            {typeof title === "string" ? (
+                                <MdxContentCLIENT content={title as string} inline />
+                            ) : (
+                                title
+                            )}
+                        </CardTitle>
+                    )}
+                    {(desc || description) && (
+                        <CardDescription className={"not-prose"}>
+                            <MdxContentCLIENT
+                                content={desc || (description as string)}
+                                display
+                            />
+                        </CardDescription>
+                    )}
+                </CardHeader>
+            )}
+            <CardContent className={"not-prose"}>
+                {typeof c === "string" ? (
+                    <MdxContentCLIENT content={c || ""} display />
+                ) : (
+                    (c as React.ReactNode)
                 )}
-            </MathJax>
-            <MathJax inline={false}>
-                <CardContent className={"not-prose"}>{c}</CardContent>
-            </MathJax>
+            </CardContent>
         </Card>
     );
 };

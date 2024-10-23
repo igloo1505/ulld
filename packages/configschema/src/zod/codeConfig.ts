@@ -1,7 +1,8 @@
-import { z } from "zod";
-import { monacoEditorConfigSchema } from "./codeEditorConfig.js";
+import { transformer, z } from "zod";
+import { monacoEditorConfigSchema, monacoEditorConfigSchemaOutput } from "./codeEditorConfig.js";
 import { shikiThemeValidator } from "./codeThemeSchemas.js";
 import shikiLanguages from "@ulld/utilities/shikiLanguages";
+import { ZodOutputSchema } from "../types.js";
 
 export const defaultThemes: {
     dark: z.output<typeof shikiThemeValidator>;
@@ -11,8 +12,8 @@ export const defaultThemes: {
     light: "material-theme-lighter",
 };
 
-const code_config_schema = z.object({
-    theme: z
+
+const codeThemeField = z
         .object({
             dark: shikiThemeValidator
                 .default(defaultThemes.dark)
@@ -25,14 +26,13 @@ const code_config_schema = z.object({
                     "Syntax highlighting theme to be used when in light mode. Can be overriden with the ?shikiHlLight=nord search param.",
                 ),
         })
-        .default({
-            dark: "dracula",
-            light: "material-theme-lighter",
-        }),
-    editor: monacoEditorConfigSchema,
-    syntaxHighlighting: z
-        .object({
-            transformers: z
+
+const codeThemeFieldOutput = z.object({
+    dark: shikiThemeValidator,
+    light: shikiThemeValidator
+})
+
+const shikiTransformersField = z
                 .object({
                     regexHighlight: z
                         .boolean()
@@ -55,14 +55,33 @@ const code_config_schema = z.object({
                         .describe("shiki#transformerNotationDiff")
                         .default(false),
                 })
-                .default({}),
+
+const shikiTransformersFieldOutput: ZodOutputSchema<typeof shikiTransformersField> = z.object({
+                    regexHighlight: z
+                        .boolean(),
+                    lineHighlight: z
+                        .boolean(),
+                    lineFocus: z
+                        .boolean(),
+                    lineErrorLevel: z
+                        .boolean(),
+                    lineDiff: z
+                        .boolean()
+})
+
+const defaultLanguageOutputField =  z.object({
+                        inline: z.enum(shikiLanguages),
+                        block: z.enum(shikiLanguages),
+                    })
+
+
+const syntaxHighlightingField = z
+        .object({
+            transformers: shikiTransformersField.default({}),
             defaultLanguage: z
                 .enum(shikiLanguages)
                 .or(
-                    z.object({
-                        inline: z.enum(shikiLanguages),
-                        block: z.enum(shikiLanguages),
-                    }),
+                   defaultLanguageOutputField,
                 )
                 .default({
                     inline: "zsh",
@@ -77,14 +96,30 @@ const code_config_schema = z.object({
                         : x;
                 }),
         })
+
+const syntaxHighlightingFieldOutput: ZodOutputSchema<typeof syntaxHighlightingField> = z.object({
+    transformers: shikiTransformersFieldOutput,
+    defaultLanguage: defaultLanguageOutputField
+})
+
+export const code_config_schema = z.object({
+    theme: codeThemeField
+        .default({
+            dark: "dracula",
+            light: "material-theme-lighter",
+        }),
+    editor: monacoEditorConfigSchema,
+    syntaxHighlighting: syntaxHighlightingField 
         .default({}),
 });
 
 export const codeConfigSchema = code_config_schema.default({});
 
-export const codeConfigSchemaOutput = code_config_schema.required({
-    editor: true,
-});
+export const codeConfigSchemaOutput: ZodOutputSchema<typeof codeConfigSchema> = code_config_schema.merge(z.object({
+    theme: codeThemeFieldOutput,
+    editor: monacoEditorConfigSchemaOutput,
+    syntaxHighlighting: syntaxHighlightingFieldOutput
+}));
 
 export type CodeConfigSchema = z.infer<typeof codeConfigSchema>;
 export type CodeConfigSchemaInput = z.input<typeof codeConfigSchema>;

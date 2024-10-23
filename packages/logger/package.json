@@ -20,6 +20,7 @@
     "./client": "./src/client/logger.ts"
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "chalk": "5.3.0",
     "cli-highlight": "2.1.11",
     "colors": "1.4.0",

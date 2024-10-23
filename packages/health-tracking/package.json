@@ -15,6 +15,7 @@
     "test": "echo 'Add test script here'"
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -28,7 +29,6 @@
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/developer": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/hooks": "workspace:*",
     "@ulld/jest-presets": "workspace:*",
     "@ulld/logger": "workspace:*",

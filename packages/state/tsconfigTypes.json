@@ -7,11 +7,11 @@
         ".turbo",
         "src/**/*.test.ts",
         "jest**",
-        "src/__scripts__/**"
+        "__scripts__/**"
     ],
     "include": [
-        "**/*.ts",
-        "**/*.tsx"
+        "src/**/*.ts",
+        "src/**/*.tsx"
     ],
     "compilerOptions": {
         "declarationDir": "../types/src/generated/configschema",

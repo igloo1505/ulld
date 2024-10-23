@@ -18,29 +18,29 @@ export declare const configPluginSchema: z.ZodEffects<z.ZodObject<{
 }>;
 export declare const slotFields: Record<keyof SlotMap, ZodTypeAny>;
 export declare const pluginSlotSchema: z.ZodObject<Record<keyof SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
+    navigation?: any;
+    bibliography?: any;
     math?: any;
     snippets?: any;
-    bibliography?: any;
-    navigation?: any;
     dashboard?: any;
     taskManager?: any;
     UI?: any;
     pdf?: any;
     editor?: any;
-    commandPalette?: any;
     form?: any;
+    commandPalette?: any;
 }, {
+    navigation?: any;
+    bibliography?: any;
     math?: any;
     snippets?: any;
-    bibliography?: any;
-    navigation?: any;
     dashboard?: any;
     taskManager?: any;
     UI?: any;
     pdf?: any;
     editor?: any;
-    commandPalette?: any;
     form?: any;
+    commandPalette?: any;
 }>;
 export declare const ulldSlots: string[];
 //# sourceMappingURL=slotsSchema.d.ts.map

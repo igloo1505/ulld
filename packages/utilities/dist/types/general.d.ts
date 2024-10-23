@@ -1,5 +1,5 @@
-import { autoSetting } from "@ulld/database/internalDatabaseTypes";
-import { ReactNode } from "react";
+import type { autoSetting } from "@ulld/database/internalDatabaseTypes";
+import type { ReactNode } from "react";
 export interface AutoSettingType {
     id?: number;
     glob: string;
@@ -25,8 +25,8 @@ export interface ConfirmationModalConfig {
     showDenyButton?: boolean;
 }
 export type SearchAllSearchType = "searchAll" | "byTag" | "byEquation" | "bySequentialId" | "bookmarked" | "byNoteType";
-export type OnlyChildren = {
+export interface OnlyChildren {
     children: ReactNode;
-};
+}
 export type DeviceType = "mobile" | "tablet" | "mobileOnly" | "macOS" | "smartTv" | "iOS" | "android" | "desktop";
 //# sourceMappingURL=general.d.ts.map

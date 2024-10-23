@@ -10,9 +10,40 @@
     "dist"
   ],
   "scripts": {
-    "build": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
+    "build": "wireit",
     "dev": "next dev",
     "test": "echo 'Add test script here'"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "generateValidIconNameData",
+        "generateInternalLocationsData",
+        "generateGlobalActionsData",
+        "clearBuild",
+        "genTypes",
+        "genBuild"
+      ]
+    },
+    "genTypes": {
+      "command": "pnpm tsc --project ./tsConfigBuildTypes.json"
+    },
+    "clearBuild": {
+      "command": "trash ./dist"
+    },
+    "genBuild": {
+      "command": "tsup-node",
+      "clean": false
+    },
+    "generateInternalLocationsData": {
+      "command": "tsx ./src/__scripts__/generateInternalAppLocations/main.ts"
+    },
+    "generateGlobalActionsData": {
+      "command": "tsx ../state/__scripts__/generateGlobalActionsData.ts"
+    },
+    "generateValidIconNameData": {
+      "command": "tsx ./src/__scripts__/generateValidIconNameData/main.ts"
+    }
   },
   "types": "./dist/types/main.d.ts",
   "exports": {
@@ -80,6 +111,11 @@
       "types": "./dist/components/localDevelopment/localDevelopmentPageWrapper.d.ts",
       "import": "./dist/components/localDevelopment/localDevelopmentPageWrapper.mjs",
       "require": "./dist/components/localDevelopment/localDevelopmentPageWrapper.cjs"
+    },
+    "./devUtils": {
+      "types": "./dist/developmentUtilities/index.d.ts",
+      "import": "./dist/developmentUtilities/index.mjs",
+      "require": "./dist/developmentUtilities/index.cjs"
     },
     "./utilNavLinks": {
       "types": "./dist/navigation/utilityNavLinks.d.ts",
@@ -445,6 +481,26 @@
       "import": "./dist/appData.mjs",
       "require": "./dist/appData.cjs"
     },
+    "./internalAppLocationsGeneratedData": {
+      "types": "./dist/utils/generatedUtils/internalAppLocations.d.ts",
+      "import": "./dist/utils/generatedUtils/internalAppLocations.mjs",
+      "require": "./dist/utils/generatedUtils/internalAppLocations.cjs"
+    },
+    "./internalGLobalActionsGeneratedData": {
+      "types": "./dist/utils/generatedUtils/internalGlobalActions.d.ts",
+      "import": "./dist/utils/generatedUtils/internalGlobalActions.mjs",
+      "require": "./dist/utils/generatedUtils/internalGlobalActions.cjs"
+    },
+    "./internalAppLocations": {
+      "types": "./dist/staticAppProperties/internalLocationsAndActions/main.d.ts",
+      "import": "./dist/staticAppProperties/internalLocationsAndActions/main.mjs",
+      "require": "./dist/staticAppProperties/internalLocationsAndActions/main.cjs"
+    },
+    "./getInternalLocationsAndActions": {
+      "types": "./dist/utils/generatedUtils/getInternalLocationsAndActions.d.ts",
+      "import": "./dist/utils/generatedUtils/getInternalLocationsAndActions.mjs",
+      "require": "./dist/utils/generatedUtils/getInternalLocationsAndActions.cjs"
+    },
     "./listUtils": {
       "types": "./dist/utils/listUtils.d.ts",
       "import": "./dist/utils/listUtils.mjs",
@@ -620,6 +676,7 @@
     }
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "axios-endpoints": "1.0.3",
     "better-react-mathjax": "2.0.3",
     "dayjs": "1.11.11",
@@ -627,12 +684,14 @@
     "glob": "10.3.15",
     "gray-matter": "*",
     "jaro-winkler": "0.2.8",
+    "lucide-react": "0.428.0",
     "react-responsive": "10.0.0",
     "shiki": "1.1.7",
     "tinycolor2": "1.6.0",
     "zod": "3.23.8"
   },
   "devDependencies": {
+    "@faker-js/faker": "9.0.3",
     "@tanstack/react-table": "8.13.2",
     "@testing-library/cypress": "10.0.1",
     "@testing-library/dom": "9.3.4",
@@ -640,6 +699,7 @@
     "@testing-library/react": "16.0.1",
     "@testing-library/user-event": "14.5.2",
     "@types/jaro-winkler": "0.2.3",
+    "@ulld/test-utils": "*",
     "chai": "5.1.1",
     "cypress": "13.7.1",
     "eslint-plugin-jest-dom": "5.2.0",
@@ -647,6 +707,7 @@
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "mocha": "10.3.0",
+    "mock-fs": "5.4.0",
     "react-test-renderer": "18.3.1",
     "supertest": "6.3.4",
     "supertest-session": "5.0.1",
@@ -654,10 +715,8 @@
   },
   "peerDependencies": {
     "@ulld/database": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/math": "workspace:*",
     "@ulld/tailwind": "workspace:*",
-    "@ulld/test-utils": "workspace:*",
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:*",
     "next": "14.2.3",

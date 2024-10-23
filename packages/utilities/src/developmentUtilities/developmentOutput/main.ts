@@ -1,32 +1,69 @@
-import type { ArrayToEnumStringProps, DevelopmentOutputFunctionPropMap, GenFileContentItem } from "./types"
+import type {
+    DevelopmentOutputConstructorProps,
+    GenFileContentItem,
+    OutputToFileOpts,
+    SeparatedInputTypes,
+} from "./types";
+import { DevelopmentTypescriptOutputs } from "./typescriptOutputs";
+import { functionPlacementMap } from "./staticData";
 
-export class DevelopmentOutput implements DevelopmentOutputFunctionPropMap {
-    constructor(public initialContent = "") {
+export class DevelopmentOutput extends DevelopmentTypescriptOutputs {
 
+    constructor(props?: DevelopmentOutputConstructorProps) { 
+        super(props)
     }
 
-    getInitialBody(body: string, opts: {prefixFirstLine?: string}): string {
-        if(opts.prefixFirstLine){
-            return `${opts.prefixFirstLine}\n${body}`
+    clear(): void {
+        this.initialContent = ""
+    }
+
+    getSeperatedInputs(items: GenFileContentItem[]): SeparatedInputTypes<GenFileContentItem>{
+        const data: SeparatedInputTypes<GenFileContentItem> = {
+            prefix: [],
+            body: [],
+            suffix: [],
+            locationComments: []
         }
-        return body
-    }
-    arrayToEnum<T extends object>(props: ArrayToEnumStringProps<T>): string {
-        let body = this.getInitialBody(`export enum ${props.enumName} {\n`, props)
-
-        for (const _s of props.arr) {
-            const s = typeof _s === "string" ? _s : props.getKey(_s)
-            body += `    "${s}" = "${s}",\n`
-        }
-        body += "}"
-        return body
-    }
-
-    genFileContent(items: GenFileContentItem[]): string {
         for (const item of items) {
-            const res = this[item.fnc](...item.props)
-            this.initialContent += `\n\n${res}`
+            if(functionPlacementMap.prefix.includes(item.fnc)){
+                data.prefix.push(item)
+            } else if(functionPlacementMap.suffix.includes(item.fnc)){
+data.suffix.push(item)
+            } else if (functionPlacementMap.locationComments.includes(item.fnc)) {
+                data.locationComments.push(item)
+            } else {
+                data.body.push(item)
+            }
         }
-        return this.initialContent
+        return data
+    }
+
+    genFileContent(
+        items: GenFileContentItem[],
+        outputToFile?: OutputToFileOpts,
+    ): string {
+        const inputs = this.getSeperatedInputs(items)
+        for (const item of inputs.body) {
+            /* @ts-expect-error -- Half assing the types here, as this is only used during development. */
+            const res = this[item.fnc](item.props);
+            this.initialContent += `\n\n${res}`;
+        }
+        for (const item of inputs.prefix) {
+            /* @ts-expect-error -- Half assing the types here, as this is only used during development. */
+            const res = this[item.fnc](item.props);
+            this.initialContent = `${res}\n${this.initialContent}`;
+        }
+        for (const item of inputs.suffix) {
+            /* @ts-expect-error -- Half assing the types here, as this is only used during development. */
+            const res = this[item.fnc](item.props);
+            this.initialContent += `\n\n${res}`;
+        }
+        for (const item of inputs.locationComments) {
+            /* @ts-expect-error -- Half assing the types here, as this is only used during development. */
+            const res = this[item.fnc](item.props);
+            this.initialContent = `${res}\n\n${this.initialContent}`;
+        }
+        this.outputToFile(this.initialContent, outputToFile);
+        return this.initialContent;
     }
 }

@@ -1,13 +1,19 @@
 {
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
-	"extends": "@sindresorhus/tsconfig",
-	"compilerOptions": {
-		"outDir": "dist",
+    "extends": "@sindresorhus/tsconfig",
+    "compilerOptions": {
+        "outDir": "dist",
+        "module": "NodeNext",
+        "esModuleInterop": true,
+        "moduleResolution": "NodeNext",
+        "target": "ES2022",
         "sourceMap": true,
         "noEmitOnError": false,
         "noUnusedLocals": false,
         "noUnusedParameters": false,
         "allowImportingTsExtensions": false
-	},
-	"include": ["src"]
+    },
+    "include": [
+        "src"
+    ]
 }

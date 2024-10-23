@@ -8,23 +8,30 @@ interface FooterCategoryProps {
     title: string;
 }
 
-
 const FooterLinkItem = ({ item }: { item: QuickLinkType }): ReactNode => {
     return (
-        <Link className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline" href={item.href}>{item.label}</Link>
-    )
-}
+        <Link
+            className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+            href={item.href}
+        >
+            {item.label}
+        </Link>
+    );
+};
 
-const FooterCategory = ({ items = [], title }: FooterCategoryProps): ReactNode => {
+const FooterCategory = ({
+    items = [],
+    title,
+}: FooterCategoryProps): ReactNode => {
     return (
         <div>
-            <h3 className="text-gray-700 uppercase dark:text-white">{title}</h3>
+            <h3 className="text-gray-700 dark:text-foreground">{title}</h3>
             {items.map((item) => (
-                    <FooterLinkItem
-                        item={item}
-                        key={`quick-link-${item.category}-${item.label}`}
-                    />
-                ))}
+                <FooterLinkItem
+                    item={item}
+                    key={`quick-link-${item.category}-${item.label}`}
+                />
+            ))}
         </div>
     );
 };

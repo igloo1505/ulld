@@ -24,7 +24,6 @@ import { highlightTransformerMap } from "../utils/highlightTransformerMap";
 import { ParseMdxStringOptions, ParseMdxStringParams } from "./types";
 
 
-
 export const mermaidConfig: MermaidConfigType = {
     output: "svg",
     /* theme: { light: 'dark', dark: 'dark' }, */
@@ -148,3 +147,5 @@ export const parseMdxString = async ({
     return String(res).replaceAll(/classname/g, "className")
 };
 
+
+export type { ParseMdxStringOptions, ParseMdxStringParams }

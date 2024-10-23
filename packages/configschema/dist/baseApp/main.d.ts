@@ -48,9 +48,9 @@ export declare const baseAppBuildData: z.ZodObject<{
             label?: string | undefined;
         }[]>;
     }, "strip", z.ZodTypeAny, {
-        path: string;
         type: "component" | "embeddable" | "page";
-        parentSlot: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form";
+        path: string;
+        parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
         subSlot: string;
         clientOnly: boolean;
         embeddables: {
@@ -59,9 +59,9 @@ export declare const baseAppBuildData: z.ZodObject<{
         }[];
         propsExtends?: string | undefined;
     }, {
-        path: string;
         type: "component" | "embeddable" | "page";
-        parentSlot: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form";
+        path: string;
+        parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
         subSlot: string;
         embeddables: {
             regexToInclude: string;
@@ -75,9 +75,9 @@ export declare const baseAppBuildData: z.ZodObject<{
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     slots: {
-        path: string;
         type: "component" | "embeddable" | "page";
-        parentSlot: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form";
+        path: string;
+        parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
         subSlot: string;
         clientOnly: boolean;
         embeddables: {
@@ -88,9 +88,9 @@ export declare const baseAppBuildData: z.ZodObject<{
     }[];
 }, {
     slots: {
-        path: string;
         type: "component" | "embeddable" | "page";
-        parentSlot: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form";
+        path: string;
+        parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
         subSlot: string;
         embeddables: {
             regexToInclude: string;

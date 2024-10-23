@@ -28,26 +28,26 @@ export declare const taggableFields: z.ZodObject<{
         kanbanId?: number | null | undefined;
     }, string>]>, "many">>;
 }, "strip", z.ZodTypeAny, {
-    tags: {
-        value: string;
-        kanbanId?: number | null | undefined;
-    }[];
     topics: {
         value: string;
     }[];
     subjects: {
         value: string;
     }[];
-}, {
-    tags?: (string | {
+    tags: {
         value: string;
         kanbanId?: number | null | undefined;
-    })[] | undefined;
+    }[];
+}, {
     topics?: {
         value: string;
     }[] | undefined;
     subjects?: {
         value: string;
     }[] | undefined;
+    tags?: (string | {
+        value: string;
+        kanbanId?: number | null | undefined;
+    })[] | undefined;
 }>;
 //# sourceMappingURL=taggableFields.d.ts.map

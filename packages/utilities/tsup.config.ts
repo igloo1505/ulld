@@ -23,6 +23,9 @@ const prependDirectives = async (ignore?: RegExp[]) => {
         cwd: path.join(__dirname, "src"),
         nodir: true,
         absolute: true,
+        ignore: [
+            "src/testDataHelpers/databaseTestData.ts"
+        ]
     });
     if(ignore){
         files = files.filter((x) => {

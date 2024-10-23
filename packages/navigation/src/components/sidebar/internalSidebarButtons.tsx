@@ -1,77 +1,84 @@
-import { Route } from "next";
-import { SidebarLink } from "@ulld/configschema/types";
-import {
-    toggleDarkMode,
-    setPreferFs,
-} from "@ulld/state/actions/clientOnly/general";
-import { backupData, syncRootDirectory } from "@ulld/api/actions/syncing";
-import { toggleBookmark } from "@ulld/api/actions/clientOnly/bookmarking";
-import { ValidIconName } from "@ulld/icons";
+import type { SidebarLink } from "../../pages/settingPage/form/schema";
 
-export type SidebarLinkWithPosition = {
-    position: "top" | "bottom"
-} & SidebarLink
 
+export type InternalLinks = {
+    [K in string]: SidebarLink & {
+        status?: "beta" | "experimental" | "internal"
+    }
+}
+
+/* RESUME: Come back here and remove this object, and use only the object that's being dynamically generated now. */
 /* TODO: Add more useful icons here. Consider making this dynamic in the settings object to make this variable without the need to rebuild. */
-export const internalLinks = {
+export const internalLinks: InternalLinks = {
     darkMode: {
         icon: "darktoggle",
-        onClick: toggleDarkMode,
+        fieldType: "action",
+        value: "toggleDarkMode",
         label: "Dark Mode",
         position: "bottom"
-    } satisfies SidebarLinkWithPosition,
+    },
     equations: {
         icon: "math",
-        href: "/equations" as Route,
+        fieldType: "url",
+        value: "/equations",
         label: "Equations",
         position: "top"
-    } satisfies SidebarLinkWithPosition,
+    },
     jupyter: {
         icon: "jupyter",
-        href: "/notebooks" as Route,
+        fieldType: "url",
+        value: "/notebooks",
         label: "Jupyter",
         position: "top"
-    } satisfies SidebarLinkWithPosition,
+    },
     snippets: {
-        icon: "code-2",
-        href: "/snippets" as Route,
+        icon: "square-code",
+        fieldType: "url",
+        value: "/snippets",
         label: "Snippets",
         position: "top"
-    } satisfies SidebarLinkWithPosition,
+    },
     calendar: {
         icon: "calendar",
-        href: "/calendar?past=true" as Route,
+        fieldType: "url",
+        status: "experimental",
+        value: "/calendar?past=true",
         label: "Calendar",
         position: "top"
-    } satisfies SidebarLinkWithPosition,
+    },
     sync: {
         icon: "folder-sync",
-        onClick: syncRootDirectory,
+        fieldType: "action",
+        value: "syncRootDirectory",
         label: "Sync",
         position: "bottom"
-    } satisfies SidebarLinkWithPosition,
+    },
     settings: {
         icon: "settings",
-        href: "/settings" as Route,
+        fieldType: "url",
+        value: "/settings",
         label: "Settings",
         position: "bottom"
-    } satisfies SidebarLinkWithPosition,
+    },
     preferFileSystemToggle: {
         icon: "file-stack",
-        onClick: () => setPreferFs("toggle"),
+        fieldType: "action",
+        value: "togglePreferFileSystem",
         label: "File System",
         position: "bottom"
-    } satisfies SidebarLinkWithPosition,
+    },
     bookmark: {
         icon: "bookmark",
-        onClick: () => toggleBookmark(),
+        fieldType: "action",
+        value: "toggleBookmarked",
         label: "Bookmark",
         position: "top"
-    } satisfies SidebarLinkWithPosition,
-    backup: {
-        icon: "database-backup",
-        onClick: backupData,
-        label: "Backup",
-        position: "bottom"
-    } satisfies SidebarLinkWithPosition
+    },
+    /* backup: { */
+    /*     icon: "database-backup", */
+    /*     fieldType: "action", */
+    /*     label: "Backup", */
+    /*     position: "bottom" */
+    /* } */
 };
+

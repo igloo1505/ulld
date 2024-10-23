@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 import Pastel from 'pastel';
-const app = new Pastel({
+const appOptions = {
     importMeta: import.meta,
-    "name": "ulld",
-    "description": "The native ULLD cli tool for working with the ULLD academic note taking framework."
-});
+    name: 'ulldDev',
+    description: 'Internal development utilities for the ULLD academic note taking framework.',
+};
+const app = new Pastel(appOptions);
 await app.run();
 //# sourceMappingURL=cli.js.map

@@ -24,13 +24,15 @@
     "./addSnippetPage": "./src/ulldPages/addSnippet.tsx",
     "./snippetsPage": "./src/ulldPages/snippetsPage/main.tsx"
   },
+  "dependencies": {
+    "@ulld/eslint-config": "*"
+  },
   "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
     "@ulld/developer": "workspace:*",
     "@ulld/editor": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/full-form": "workspace:*",
     "@ulld/hooks": "workspace:*",
     "@ulld/jest-presets": "workspace:*",

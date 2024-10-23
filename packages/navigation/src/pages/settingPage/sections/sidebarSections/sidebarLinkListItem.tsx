@@ -13,9 +13,14 @@ interface SidebarLinkListItemProps {
     removeItem: () => void;
 }
 
+
+interface ItemValueLabelProps {
+    item: NavigationFormSettingSchema["navbarLinks" | "sidebarLinks"][number]
+}
+
 export const ItemValueLabel = ({
     item,
-}: Pick<SidebarLinkListItemProps, "item">): ReactNode => {
+}: ItemValueLabelProps): ReactNode => {
     return (
         <div className="text-muted-foreground">
             {item.fieldType === "action" && item.value in actionLabelMap

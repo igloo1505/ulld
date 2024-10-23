@@ -14,7 +14,8 @@ const AddSidebarLinkFormContext: FC<AddSidebarLinkFormProps> = ({ children }) =>
         defaultValues: {
             icon: validIconNameList[0],
             label: "",
-            value: ""
+            value: "",
+            position: "top"
         }
     });
     return <Form {...form}>{children}</Form>;

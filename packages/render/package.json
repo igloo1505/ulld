@@ -27,6 +27,7 @@
     "./mdx-fileSystemServer": "./src/mdx/mdxFileSystemSERVER.tsx",
     "./mdx/rsc": "./src/mdx/mdxContentRSC.tsx",
     "./mdx-rsc": "./src/mdx/mdxContentRSC.tsx",
+    "./mdx-isomorphic": "./src/mdx/isomorphicMdxContent.tsx",
     "./mdxPreviewPanel": "./src/mdx/mdxPreviewPanel.tsx",
     "./3d/threeJsCanvas": "./src/3d/ThreeCanvas.tsx"
   },
@@ -35,6 +36,7 @@
     "@mdx-js/react": "3.0.1",
     "@react-three/drei": "9.105.6",
     "@react-three/fiber": "8.16.3",
+    "@ulld/eslint-config": "workspace:*",
     "gray-matter": "*",
     "three": "0.163.0"
   },
@@ -60,7 +62,9 @@
     "@ulld/parsers": "workspace:*",
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:*",
+    "@ulld/eslint-config": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/developer": "workspace:*",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"

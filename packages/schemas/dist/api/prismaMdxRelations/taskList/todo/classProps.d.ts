@@ -67,10 +67,6 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
             kanbanId?: number | null | undefined;
         }, string>]>, "many">>;
     }>, "strip", z.ZodTypeAny, {
-        tags: {
-            value: string;
-            kanbanId?: number | null | undefined;
-        }[];
         id: number;
         createdAt: Date;
         lastUpdate: Date;
@@ -80,15 +76,15 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
         subjects: {
             value: string;
         }[];
+        tags: {
+            value: string;
+            kanbanId?: number | null | undefined;
+        }[];
         label: string;
         tasks: any[];
     }, {
         id: number;
         label: string;
-        tags?: (string | {
-            value: string;
-            kanbanId?: number | null | undefined;
-        })[] | undefined;
         createdAt?: string | Date | null | undefined;
         lastUpdate?: string | Date | null | undefined;
         topics?: {
@@ -97,6 +93,10 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
         subjects?: {
             value: string;
         }[] | undefined;
+        tags?: (string | {
+            value: string;
+            kanbanId?: number | null | undefined;
+        })[] | undefined;
         tasks?: any[] | undefined;
     }>;
     toDoListId: z.ZodNumber;
@@ -129,10 +129,6 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
         kanbanId?: number | null | undefined;
     }, string>]>, "many">>;
 }>, "strip", z.ZodTypeAny, {
-    tags: {
-        value: string;
-        kanbanId?: number | null | undefined;
-    }[];
     status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
     id: number;
     createdAt: Date;
@@ -142,11 +138,11 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
     subjects: {
         value: string;
     }[];
+    tags: {
+        value: string;
+        kanbanId?: number | null | undefined;
+    }[];
     ToDoList: {
-        tags: {
-            value: string;
-            kanbanId?: number | null | undefined;
-        }[];
         id: number;
         createdAt: Date;
         lastUpdate: Date;
@@ -155,6 +151,10 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
         }[];
         subjects: {
             value: string;
+        }[];
+        tags: {
+            value: string;
+            kanbanId?: number | null | undefined;
         }[];
         label: string;
         tasks: any[];
@@ -176,10 +176,6 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
     ToDoList: {
         id: number;
         label: string;
-        tags?: (string | {
-            value: string;
-            kanbanId?: number | null | undefined;
-        })[] | undefined;
         createdAt?: string | Date | null | undefined;
         lastUpdate?: string | Date | null | undefined;
         topics?: {
@@ -188,16 +184,16 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
         subjects?: {
             value: string;
         }[] | undefined;
+        tags?: (string | {
+            value: string;
+            kanbanId?: number | null | undefined;
+        })[] | undefined;
         tasks?: any[] | undefined;
     };
     task: string;
     category: "bug" | "feature" | "documentation" | "online" | "priority" | "urgent" | "work" | "gym" | "freetime" | "study" | "research" | "paper";
     priority: number;
     toDoListId: number;
-    tags?: (string | {
-        value: string;
-        kanbanId?: number | null | undefined;
-    })[] | undefined;
     createdAt?: string | Date | null | undefined;
     topics?: {
         value: string;
@@ -205,6 +201,10 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
     subjects?: {
         value: string;
     }[] | undefined;
+    tags?: (string | {
+        value: string;
+        kanbanId?: number | null | undefined;
+    })[] | undefined;
     dueAt?: string | Date | null | undefined;
     details?: string | null | undefined;
     associatedNotes?: any[] | undefined;

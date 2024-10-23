@@ -47,7 +47,7 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName: string;
             connectionURI?: undefined;
         };
-        prioritize: "speed" | "size";
+        prioritize: "size" | "speed";
     }, {
         type?: "postgres" | "sqlite" | undefined;
         postgres?: {
@@ -55,7 +55,7 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName?: string | undefined;
             connectionURI?: string | undefined;
         } | undefined;
-        prioritize?: "speed" | "size" | undefined;
+        prioritize?: "size" | "speed" | undefined;
     }>>, {
         type: "postgres" | "sqlite";
         postgres: {
@@ -67,7 +67,7 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName: string;
             connectionURI?: undefined;
         };
-        prioritize: "speed" | "size";
+        prioritize: "size" | "speed";
     }, {
         type?: "postgres" | "sqlite" | undefined;
         postgres?: {
@@ -75,7 +75,7 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName?: string | undefined;
             connectionURI?: string | undefined;
         } | undefined;
-        prioritize?: "speed" | "size" | undefined;
+        prioritize?: "size" | "speed" | undefined;
     } | undefined>>;
     additionalUserContent: z.ZodDefault<z.ZodObject<{
         css: z.ZodOptional<z.ZodString>;
@@ -102,7 +102,7 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName: string;
             connectionURI?: undefined;
         };
-        prioritize: "speed" | "size";
+        prioritize: "size" | "speed";
     };
     additionalUserContent: {
         css?: string | undefined;
@@ -117,7 +117,7 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName?: string | undefined;
             connectionURI?: string | undefined;
         } | undefined;
-        prioritize?: "speed" | "size" | undefined;
+        prioritize?: "size" | "speed" | undefined;
     } | undefined;
     additionalUserContent?: {
         css?: string | undefined;

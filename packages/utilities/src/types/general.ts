@@ -1,5 +1,5 @@
-import { autoSetting } from "@ulld/database/internalDatabaseTypes"
-import { ReactNode } from "react";
+import type { autoSetting } from "@ulld/database/internalDatabaseTypes"
+import type { ReactNode } from "react";
 
 export interface AutoSettingType {
     id?: number
@@ -34,7 +34,7 @@ export interface ConfirmationModalConfig {
 
 export type SearchAllSearchType = "searchAll" | "byTag" | "byEquation" | "bySequentialId" | "bookmarked" | "byNoteType"
 
-export type OnlyChildren = {
+export interface OnlyChildren {
     children: ReactNode
 }
 

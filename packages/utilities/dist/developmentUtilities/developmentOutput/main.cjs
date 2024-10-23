@@ -1,13 +1,17 @@
 'use strict';
 
+var chunkZ5UTU4AK_cjs = require('../../chunk-Z5UTU4AK.cjs');
+require('../../chunk-MKLOZCQ4.cjs');
+require('../../chunk-OPQVKD2X.cjs');
+require('../../chunk-AYRH4GFY.cjs');
+require('../../chunk-T5AYEUMB.cjs');
 require('../../chunk-7ARU3YXQ.cjs');
 
-var r=class{constructor(t=""){this.initialContent=t;}arrayToEnum(t){let n=`export enum ${t.enumName} {
-`;for(let e of t.arr){let o=typeof e=="string"?e:t.getKey(e);n+=`    "${o}" = "${o}",
-`;}return n+="}",n}genFileContent(t){for(let n of t){let e=this[n.fnc](...n.props);this.initialContent+=`
 
-${e}`;}return this.initialContent}};
 
-exports.DevelopmentOutput = r;
+Object.defineProperty(exports, "DevelopmentOutput", {
+	enumerable: true,
+	get: function () { return chunkZ5UTU4AK_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=main.cjs.map

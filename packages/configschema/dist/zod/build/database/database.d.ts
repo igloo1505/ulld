@@ -47,7 +47,7 @@ export declare const databaseBuildSchema: z.ZodEffects<z.ZodDefault<z.ZodObject<
         dbName: string;
         connectionURI?: undefined;
     };
-    prioritize: "speed" | "size";
+    prioritize: "size" | "speed";
 }, {
     type?: "postgres" | "sqlite" | undefined;
     postgres?: {
@@ -55,7 +55,7 @@ export declare const databaseBuildSchema: z.ZodEffects<z.ZodDefault<z.ZodObject<
         dbName?: string | undefined;
         connectionURI?: string | undefined;
     } | undefined;
-    prioritize?: "speed" | "size" | undefined;
+    prioritize?: "size" | "speed" | undefined;
 }>>, {
     type: "postgres" | "sqlite";
     postgres: {
@@ -67,7 +67,7 @@ export declare const databaseBuildSchema: z.ZodEffects<z.ZodDefault<z.ZodObject<
         dbName: string;
         connectionURI?: undefined;
     };
-    prioritize: "speed" | "size";
+    prioritize: "size" | "speed";
 }, {
     type?: "postgres" | "sqlite" | undefined;
     postgres?: {
@@ -75,6 +75,6 @@ export declare const databaseBuildSchema: z.ZodEffects<z.ZodDefault<z.ZodObject<
         dbName?: string | undefined;
         connectionURI?: string | undefined;
     } | undefined;
-    prioritize?: "speed" | "size" | undefined;
+    prioritize?: "size" | "speed" | undefined;
 } | undefined>;
 //# sourceMappingURL=database.d.ts.map

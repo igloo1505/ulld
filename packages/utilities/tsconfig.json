@@ -25,6 +25,7 @@
         "./dist/**",
         "__scripts__",
         "rollup.config.mjs",
+        "src/testDataHelpers/databaseTestData.ts",
         "next.config.mjs",
         "jest.config.js",
         "tsup.config.ts"

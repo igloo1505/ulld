@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ValidIconNameEnumDynamicallyGenerated } from "@ulld/utilities/validIconNameEnum";
+import { ValidIconName } from "@ulld/types";
 export declare const docTypeUISchema: z.ZodDefault<z.ZodObject<{
     styles: z.ZodDefault<z.ZodObject<{
         dark: z.ZodDefault<z.ZodObject<{
@@ -144,12 +144,12 @@ export declare const documentTypeConfigSchemaBase: z.ZodObject<{
             } | undefined;
         } | undefined;
     }>>>;
-    icon: z.ZodDefault<z.ZodNativeEnum<typeof ValidIconNameEnumDynamicallyGenerated>>;
+    icon: z.ZodDefault<z.ZodEffects<z.ZodString, string, string>>;
     inSidebar: z.ZodDefault<z.ZodBoolean>;
     inNavbar: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     label: string;
-    icon: ValidIconNameEnumDynamicallyGenerated;
+    icon: string;
     UI: {
         styles: {
             dark: {
@@ -181,7 +181,7 @@ export declare const documentTypeConfigSchemaBase: z.ZodObject<{
     label: string;
     fs: string;
     url: string;
-    icon?: ValidIconNameEnumDynamicallyGenerated | undefined;
+    icon?: string | undefined;
     UI?: {
         styles?: {
             dark?: {
@@ -210,7 +210,7 @@ export declare const documentTypeConfigSchemaBase: z.ZodObject<{
 }>;
 export declare const documentTypeConfigSchemaInner: z.ZodObject<{
     label: z.ZodString;
-    icon: z.ZodDefault<z.ZodNativeEnum<typeof ValidIconNameEnumDynamicallyGenerated>>;
+    icon: z.ZodDefault<z.ZodEffects<z.ZodString, string, string>>;
     UI: z.ZodDefault<z.ZodDefault<z.ZodObject<{
         styles: z.ZodDefault<z.ZodObject<{
             dark: z.ZodDefault<z.ZodObject<{
@@ -292,7 +292,7 @@ export declare const documentTypeConfigSchemaInner: z.ZodObject<{
     inNavbar: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     label: string;
-    icon: ValidIconNameEnumDynamicallyGenerated;
+    icon: string;
     UI: {
         styles: {
             dark: {
@@ -323,7 +323,7 @@ export declare const documentTypeConfigSchemaInner: z.ZodObject<{
 }, {
     label: string;
     fs: string;
-    icon?: ValidIconNameEnumDynamicallyGenerated | undefined;
+    icon?: string | undefined;
     UI?: {
         styles?: {
             dark?: {
@@ -353,7 +353,7 @@ export declare const documentTypeConfigSchemaInner: z.ZodObject<{
 }>;
 export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     label: z.ZodString;
-    icon: z.ZodDefault<z.ZodNativeEnum<typeof ValidIconNameEnumDynamicallyGenerated>>;
+    icon: z.ZodDefault<z.ZodEffects<z.ZodString, string, string>>;
     UI: z.ZodDefault<z.ZodDefault<z.ZodObject<{
         styles: z.ZodDefault<z.ZodObject<{
             dark: z.ZodDefault<z.ZodObject<{
@@ -435,7 +435,7 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     inNavbar: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     label: string;
-    icon: ValidIconNameEnumDynamicallyGenerated;
+    icon: string;
     UI: {
         styles: {
             dark: {
@@ -466,7 +466,7 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
 }, {
     label: string;
     fs: string;
-    icon?: ValidIconNameEnumDynamicallyGenerated | undefined;
+    icon?: string | undefined;
     UI?: {
         styles?: {
             dark?: {
@@ -498,7 +498,7 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     id: string;
     url: string;
     label: string;
-    icon: ValidIconNameEnumDynamicallyGenerated;
+    icon: string;
     UI: {
         styles: {
             dark: {
@@ -526,7 +526,7 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
 }, {
     label: string;
     fs: string;
-    icon?: ValidIconNameEnumDynamicallyGenerated | undefined;
+    icon?: string | undefined;
     UI?: {
         styles?: {
             dark?: {
@@ -554,6 +554,11 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     inSidebar?: boolean | undefined;
     inNavbar?: boolean | undefined;
 }>;
+export type DocumentTypeConfigAsDocTypeDataField = {
+    docTypeData: Omit<z.infer<typeof documentTypeConfigSchema>, "icon"> & {
+        icon: ValidIconName;
+    };
+};
 export type DocumentTypeConfig = z.output<typeof documentTypeConfigSchema>;
 export type DocumentTypeConfigInput = z.input<typeof documentTypeConfigSchema>;
 //# sourceMappingURL=documentConfigSchema.d.ts.map

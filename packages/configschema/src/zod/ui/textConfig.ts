@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../types.js";
 
 
 const fontWeightSchema = z.union([
@@ -28,10 +29,20 @@ export const fontConfigSchema = z.object({
 })
 
 
-export const textConfigSchema = z.object({
-    blockQuoteItalic: z.boolean().default(false).describe("Whether or not to italicize block quote text."),
-    fontPaths: z.union([
+const fontPathFieldSchema = z.union([
         fontConfigSchema.array(),
         z.literal("default") // change this to accept multiple fonts as a string and automate the layout file write accordingly.
-    ]).default("default").describe("An array of font config objects to be bundled during the build.")
+    ])
+
+
+export const textConfigSchema = z.object({
+    blockQuoteItalic: z.boolean().default(false).describe("Whether or not to italicize block quote text."),
+    fontPaths: fontPathFieldSchema.default("default").describe("An array of font config objects to be bundled during the build.")
 }).default({})
+
+
+
+export const textConfigSchemaOutput: ZodOutputSchema<typeof textConfigSchema> = z.object({
+    blockQuoteItalic: z.boolean(),
+    fontPaths: fontPathFieldSchema
+})

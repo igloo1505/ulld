@@ -6,7 +6,9 @@ import {
     makeValidIdOnlyLetters,
 } from "@ulld/utilities/utils/identity";
 import { iconNameField } from "./navigationConfig.js";
-import { ValidIconNameEnumDynamicallyGenerated } from "@ulld/utilities/validIconNameEnum";
+import { ValidIconNameEnumDynamicallyGenerated } from "@ulld/types/validIconNameEnum";
+import { ValidIconName } from "@ulld/types";
+import { ZodOutputSchema } from "../types.js";
 
 const parsableSearchParam = z.union([
     z.string(),
@@ -30,35 +32,52 @@ const docTypeColorGroup = z.object({
         ),
 });
 
-export const docTypeUISchema = z
-    .object({
-        styles: z
-            .object({
-                dark: docTypeColorGroup.default({}),
-                light: docTypeColorGroup.default({}),
-                // combined_classes: z
-                //     .string()
-                //     .optional()
-                //     .describe(
-                //         "Css classes to be applied to elements related to this specific document type.",
-                //     ),
-            })
-            .default({}),
-        // .transform((a) => {
-        //     return {
-        //         dark: a.dark,
-        //         light: a.light,
-        //         // combined_classes:
-        //         //     a.combined_classes ||
-        //         //     `${a.dark.bg || ""} ${a.dark.fg || ""} ${a.light.bg || ""} ${a.light.fg || ""}`,
-        //     };
-        // }),
-    })
-    .default({});
+const docTypeStylesField = z.object({
+    dark: docTypeColorGroup.default({}),
+    light: docTypeColorGroup.default({}),
+    // combined_classes: z
+    //     .string()
+    //     .optional()
+    //     .describe(
+    //         "Css classes to be applied to elements related to this specific document type.",
+    //     ),
+});
+
+const docTypeStylesFieldOutput: ZodOutputSchema<typeof docTypeStylesField> =
+    z.object({
+        dark: docTypeColorGroup,
+        light: docTypeColorGroup,
+    });
+
+const _docTypeUISchemaInner = z.object({
+    styles: docTypeStylesField.default({}),
+    // .transform((a) => {
+    //     return {
+    //         dark: a.dark,
+    //         light: a.light,
+    //         // combined_classes:
+    //         //     a.combined_classes ||
+    //         //     `${a.dark.bg || ""} ${a.dark.fg || ""} ${a.light.bg || ""} ${a.light.fg || ""}`,
+    //     };
+    // }),
+});
+
+export const docTypeUISchema = _docTypeUISchemaInner.default({});
+
+export const docTypeUISchemaOutput: ZodOutputSchema<typeof docTypeUISchema> =
+    _docTypeUISchemaInner.merge(
+        z.object({
+            styles: docTypeStylesFieldOutput,
+        }),
+    );
 
 export const zodDocTypeInput = z.string().transform(makeValidIdOnlyLetters);
 
-const documentTypeConfigSchemaFields = {
+const urlQueryField = z.record(z.string(), parsableSearchParam);
+
+const matchWeightField = z.number().min(0).max(100);
+
+export const documentTypeConfigSchemaBase = z.object({
     id: z
         .string()
         .optional()
@@ -74,10 +93,7 @@ const documentTypeConfigSchemaFields = {
         .describe(
             "A glob style string to test a file path for this note type. Should return true if a given file is of this note type.",
         ),
-    matchWeight: z
-        .number()
-        .min(0)
-        .max(100)
+    matchWeight: matchWeightField
         .default(50)
         .describe(
             "An extra weight between 0 and 100 to apply to matches. This can be very important when the location of one document type exists as a child of another, in which case an increased weight should be applied to the child document type. Default: 50",
@@ -93,8 +109,7 @@ const documentTypeConfigSchemaFields = {
         .string()
         .describe("The url at which this note should be displayed.")
         .transform(zodWithForwardSlashTransform),
-    urlQuery: z
-        .record(z.string(), parsableSearchParam)
+    urlQuery: urlQueryField
         .optional()
         .describe(
             "Url search paramters to be appended to generated buttons and links for this doc type in some cases. Useful for things like populating an initial list or opening with certain default override-able settings.",
@@ -149,17 +164,15 @@ const documentTypeConfigSchemaFields = {
     icon: iconNameField.default("ulld" as ValidIconNameEnumDynamicallyGenerated),
     inSidebar: z.boolean().default(false),
     inNavbar: z.boolean().default(false),
-}
+});
 
-export const documentTypeConfigSchemaBase = z.object(documentTypeConfigSchemaFields);
-
-export const documentTypeConfigSchemaInner = documentTypeConfigSchemaBase.partial({
+export const documentTypeConfigSchemaInner =
+    documentTypeConfigSchemaBase.partial({
         url: true,
     });
 
-
 export const documentTypeConfigSchema = documentTypeConfigSchemaInner.transform(
-    (a) => {
+    (a: z.infer<typeof documentTypeConfigSchemaInner>) => {
         const _id = makeValidId(a.id || a.label);
         return {
             ...a,
@@ -169,6 +182,32 @@ export const documentTypeConfigSchema = documentTypeConfigSchemaInner.transform(
         };
     },
 );
+
+export const documentTypeConfigSchemaOutputSchema: z.ZodType<
+    z.output<typeof documentTypeConfigSchema>
+> = documentTypeConfigSchemaInner.merge(
+    z.object({
+        id: z.string(),
+        docType: z.string(),
+        matchWeight: matchWeightField,
+        urlQuery: urlQueryField,
+        url: z.string(),
+        keywords: z.string().array(),
+        autoTag: z.string().array(),
+        autoTopic: z.string().array(),
+        autoSubject: z.string().array(),
+        UI: docTypeUISchemaOutput,
+        icon: iconNameField,
+        inSidebar: z.boolean(),
+        inNavbar: z.boolean(),
+    }),
+);
+
+export type DocumentTypeConfigAsDocTypeDataField = {
+    docTypeData: Omit<z.infer<typeof documentTypeConfigSchema>, "icon"> & {
+        icon: ValidIconName;
+    };
+};
 
 export type DocumentTypeConfig = z.output<typeof documentTypeConfigSchema>;
 export type DocumentTypeConfigInput = z.input<typeof documentTypeConfigSchema>;

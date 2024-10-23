@@ -1,6 +1,7 @@
-import { FieldValues, UseFormReturn } from "@ulld/full-form/form";
-import cn from "@ulld/utilities/cn";
-import React, { HTMLProps, ReactNode } from "react";
+import type { FieldValues, UseFormReturn } from "@ulld/full-form/form";
+import { cn } from "@ulld/utilities/cn";
+import type { HTMLProps, ReactNode } from "react";
+import React from "react";
 
 interface EmbeddedFormCardProps<T extends FieldValues> extends Omit<HTMLProps<HTMLFormElement>, "form" | "onSubmit">{
     form: UseFormReturn<T>;
@@ -10,14 +11,14 @@ interface EmbeddedFormCardProps<T extends FieldValues> extends Omit<HTMLProps<HT
 
 const EmbeddedFormCard = <T extends FieldValues>(
     { form, children, onSubmit, className, ...props }: EmbeddedFormCardProps<T>,
-) => {
+): ReactNode => {
     return (
         <form
             {...props}
             className={
                 cn("w-full flex flex-col justify-center items-start bg-secondary/20 border rounded p-4 mb-4", className)
             }
-            onSubmit={form.handleSubmit(onSubmit)}
+            onSubmit={form.handleSubmit(onSubmit) as () => void}
         >
             {children}
         </form>

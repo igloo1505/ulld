@@ -93,12 +93,12 @@ export declare const jupyterConfigSchema: z.ZodObject<{
             name: z.ZodString;
             version: z.ZodString;
         }, "strip", z.ZodTypeAny, {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }, {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }>, "many">>;
         externalIPyWidgets: z.ZodDefault<z.ZodArray<z.ZodObject<Omit<{
@@ -115,11 +115,12 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         nbgrader: z.ZodDefault<z.ZodBoolean>;
         readOnly: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
+        readOnly: boolean;
         cellMetadataPanel: boolean;
         cellSidebarMargin: number;
         bundledIPyWidgets: {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }[];
         externalIPyWidgets: {
@@ -127,17 +128,17 @@ export declare const jupyterConfigSchema: z.ZodObject<{
             version: string;
         }[];
         nbgrader: boolean;
-        readOnly: boolean;
-        maxHeight?: string | undefined;
         height?: string | undefined;
+        maxHeight?: string | undefined;
     }, {
+        height?: string | undefined;
+        readOnly?: boolean | undefined;
         maxHeight?: string | undefined;
         cellMetadataPanel?: boolean | undefined;
         cellSidebarMargin?: number | undefined;
-        height?: string | undefined;
         bundledIPyWidgets?: {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }[] | undefined;
         externalIPyWidgets?: {
@@ -145,7 +146,6 @@ export declare const jupyterConfigSchema: z.ZodObject<{
             version: string;
         }[] | undefined;
         nbgrader?: boolean | undefined;
-        readOnly?: boolean | undefined;
     }>>;
     cellInputWrappers: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodObject<{
         prefix: z.ZodString;
@@ -189,11 +189,12 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         } | undefined;
     };
     jupyterNotebookProps: {
+        readOnly: boolean;
         cellMetadataPanel: boolean;
         cellSidebarMargin: number;
         bundledIPyWidgets: {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }[];
         externalIPyWidgets: {
@@ -201,9 +202,8 @@ export declare const jupyterConfigSchema: z.ZodObject<{
             version: string;
         }[];
         nbgrader: boolean;
-        readOnly: boolean;
-        maxHeight?: string | undefined;
         height?: string | undefined;
+        maxHeight?: string | undefined;
     };
     cellInputWrappers: Record<string, {
         prefix: string;
@@ -237,13 +237,14 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         notebookOutputDir?: string | undefined;
     } | undefined;
     jupyterNotebookProps?: {
+        height?: string | undefined;
+        readOnly?: boolean | undefined;
         maxHeight?: string | undefined;
         cellMetadataPanel?: boolean | undefined;
         cellSidebarMargin?: number | undefined;
-        height?: string | undefined;
         bundledIPyWidgets?: {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }[] | undefined;
         externalIPyWidgets?: {
@@ -251,7 +252,6 @@ export declare const jupyterConfigSchema: z.ZodObject<{
             version: string;
         }[] | undefined;
         nbgrader?: boolean | undefined;
-        readOnly?: boolean | undefined;
     } | undefined;
     cellInputWrappers?: Record<string, string | {
         prefix: string;
@@ -336,12 +336,12 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendS
             name: z.ZodString;
             version: z.ZodString;
         }, "strip", z.ZodTypeAny, {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }, {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }>, "many">>;
         externalIPyWidgets: z.ZodDefault<z.ZodArray<z.ZodObject<Omit<{
@@ -358,11 +358,12 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendS
         nbgrader: z.ZodDefault<z.ZodBoolean>;
         readOnly: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
+        readOnly: boolean;
         cellMetadataPanel: boolean;
         cellSidebarMargin: number;
         bundledIPyWidgets: {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }[];
         externalIPyWidgets: {
@@ -370,17 +371,17 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendS
             version: string;
         }[];
         nbgrader: boolean;
-        readOnly: boolean;
-        maxHeight?: string | undefined;
         height?: string | undefined;
+        maxHeight?: string | undefined;
     }, {
+        height?: string | undefined;
+        readOnly?: boolean | undefined;
         maxHeight?: string | undefined;
         cellMetadataPanel?: boolean | undefined;
         cellSidebarMargin?: number | undefined;
-        height?: string | undefined;
         bundledIPyWidgets?: {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }[] | undefined;
         externalIPyWidgets?: {
@@ -388,7 +389,6 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendS
             version: string;
         }[] | undefined;
         nbgrader?: boolean | undefined;
-        readOnly?: boolean | undefined;
     }>>;
     cellInputWrappers: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodObject<{
         prefix: z.ZodString;
@@ -472,11 +472,12 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendS
         } | undefined;
     };
     jupyterNotebookProps: {
+        readOnly: boolean;
         cellMetadataPanel: boolean;
         cellSidebarMargin: number;
         bundledIPyWidgets: {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }[];
         externalIPyWidgets: {
@@ -484,9 +485,8 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendS
             version: string;
         }[];
         nbgrader: boolean;
-        readOnly: boolean;
-        maxHeight?: string | undefined;
         height?: string | undefined;
+        maxHeight?: string | undefined;
     };
     cellInputWrappers: Record<string, {
         prefix: string;
@@ -520,13 +520,14 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendS
         notebookOutputDir?: string | undefined;
     } | undefined;
     jupyterNotebookProps?: {
+        height?: string | undefined;
+        readOnly?: boolean | undefined;
         maxHeight?: string | undefined;
         cellMetadataPanel?: boolean | undefined;
         cellSidebarMargin?: number | undefined;
-        height?: string | undefined;
         bundledIPyWidgets?: {
-            module: string | Record<string, string>;
             name: string;
+            module: string | Record<string, string>;
             version: string;
         }[] | undefined;
         externalIPyWidgets?: {
@@ -534,7 +535,6 @@ export declare const jupyterConfigSchemaOutput: z.ZodObject<z.objectUtil.extendS
             version: string;
         }[] | undefined;
         nbgrader?: boolean | undefined;
-        readOnly?: boolean | undefined;
     } | undefined;
     cellInputWrappers?: Record<string, string | {
         prefix: string;

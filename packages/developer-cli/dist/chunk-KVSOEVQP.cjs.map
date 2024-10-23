@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/staticData/main.ts"],"names":["ulldBlue"],"mappings":"AAAO,IAAMA,EAAW","sourcesContent":["export const ulldBlue = \"#0ba5e9\"\n"]}

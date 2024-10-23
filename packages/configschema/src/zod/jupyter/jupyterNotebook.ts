@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../types.js";
 
 const ipyWidgetSchema = z.object({
     module: z.union([z.string(), z.record(z.string(), z.string())]),
@@ -24,4 +25,16 @@ export const jupyterNotebookPropsSchema = z.object({
     maxHeight: undefined,
     bundledIPyWidgets: [],
     externalIPyWidgets: []
+})
+
+
+export const jupyterNotebookPropsSchemaOutput: ZodOutputSchema<typeof jupyterNotebookPropsSchema> = z.object({
+    cellMetadataPanel: z.boolean(),
+    cellSidebarMargin: z.number(),
+    height: z.string().optional(),
+    maxHeight: z.string().optional(),
+    bundledIPyWidgets: ipyWidgetSchema.array(),
+    externalIPyWidgets: ipyWidgetSchema.omit({ module: true }).array(),
+    nbgrader: z.boolean(),
+    readOnly: z.boolean(),
 })

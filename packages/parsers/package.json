@@ -49,6 +49,7 @@
     "@mdx-js/mdx": "3.0.1",
     "@mdx-js/react": "3.0.1",
     "@shikijs/transformers": "1.6.4",
+    "@ulld/eslint-config": "*",
     "citation-js": "0.7.15",
     "mathjax-full": "3.2.2",
     "node-latex": "3.1.0",

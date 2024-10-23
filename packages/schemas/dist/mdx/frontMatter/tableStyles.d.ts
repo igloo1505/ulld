@@ -10,24 +10,24 @@ export declare const zodFrontMatterTableStylesObject: z.ZodObject<{
     noMax: z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>;
     expand: z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>;
 }, "strip", z.ZodTypeAny, {
-    expand: boolean | null;
     fullWidth: boolean | null;
     tableCenter: boolean | null;
     textCenter: boolean | null;
     headingCenter: boolean | null;
     noMax: boolean | null;
-    math?: "base" | "lg" | "xl" | "small" | null | undefined;
-    text?: "base" | "lg" | "xl" | "small" | null | undefined;
+    expand: boolean | null;
     float?: "right" | "left" | null | undefined;
+    text?: "small" | "base" | "lg" | "xl" | null | undefined;
+    math?: "small" | "base" | "lg" | "xl" | null | undefined;
 }, {
-    math?: "base" | "lg" | "xl" | "small" | null | undefined;
-    expand?: boolean | null | undefined;
-    text?: "base" | "lg" | "xl" | "small" | null | undefined;
     float?: "right" | "left" | null | undefined;
     fullWidth?: boolean | null | undefined;
+    text?: "small" | "base" | "lg" | "xl" | null | undefined;
+    math?: "small" | "base" | "lg" | "xl" | null | undefined;
     tableCenter?: boolean | null | undefined;
     textCenter?: boolean | null | undefined;
     headingCenter?: boolean | null | undefined;
     noMax?: boolean | null | undefined;
+    expand?: boolean | null | undefined;
 }>;
 //# sourceMappingURL=tableStyles.d.ts.map

@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 export declare const noteDetailsReturn: z.ZodObject<{
     id: z.ZodNumber;
     quickLink: z.ZodOptional<z.ZodNullable<z.ZodString>>;
@@ -26,9 +26,21 @@ export declare const noteDetailsReturn: z.ZodObject<{
 }>;
 export declare const unifiedMdxParserParamSchema: z.ZodObject<{
     content: z.ZodString;
-    docTypeData: z.ZodObject<{
+    docTypeData: z.ZodDefault<z.ZodUnion<[z.ZodObject<{
+        id: z.ZodString;
+        url: z.ZodEffects<z.ZodString, string, string>;
+        keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
         label: z.ZodString;
-        icon: z.ZodDefault<z.ZodNativeEnum<typeof import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated>>;
+        docType: z.ZodEffects<z.ZodString, string, string>;
+        filePathPattern: z.ZodOptional<z.ZodString>;
+        matchWeight: z.ZodDefault<z.ZodNumber>;
+        fs: z.ZodEffects<z.ZodString, string, string>;
+        urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
+        topicLabel: z.ZodOptional<z.ZodString>;
+        subjectLabel: z.ZodOptional<z.ZodString>;
+        autoTag: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
+        autoTopic: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
+        autoSubject: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
         UI: z.ZodDefault<z.ZodDefault<z.ZodObject<{
             styles: z.ZodDefault<z.ZodObject<{
                 dark: z.ZodDefault<z.ZodObject<{
@@ -93,24 +105,21 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 } | undefined;
             } | undefined;
         }>>>;
-        fs: z.ZodEffects<z.ZodString, string, string>;
-        id: z.ZodOptional<z.ZodString>;
-        docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-        filePathPattern: z.ZodOptional<z.ZodString>;
-        matchWeight: z.ZodDefault<z.ZodNumber>;
-        url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-        urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
-        keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        topicLabel: z.ZodOptional<z.ZodString>;
-        subjectLabel: z.ZodOptional<z.ZodString>;
-        autoTag: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        autoTopic: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        autoSubject: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
+        icon: z.ZodDefault<z.ZodEffects<z.ZodString, string, string>>;
         inSidebar: z.ZodDefault<z.ZodBoolean>;
         inNavbar: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
+        id: string;
+        url: string;
+        keywords: string[];
         label: string;
-        icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
+        docType: string;
+        matchWeight: number;
+        fs: string;
+        urlQuery: Record<string, string | number | string[] | number[]>;
+        autoTag: string[];
+        autoTopic: string[];
+        autoSubject: string[];
         UI: {
             styles: {
                 dark: {
@@ -123,25 +132,27 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 };
             };
         };
-        fs: string;
-        matchWeight: number;
-        urlQuery: Record<string, string | number | string[] | number[]>;
-        keywords: string[];
-        autoTag: string[];
-        autoTopic: string[];
-        autoSubject: string[];
+        icon: string;
         inSidebar: boolean;
         inNavbar: boolean;
-        id?: string | undefined;
-        docType?: string | undefined;
         filePathPattern?: string | undefined;
-        url?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
     }, {
+        id: string;
+        url: string;
         label: string;
+        docType: string;
         fs: string;
-        icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
+        keywords?: string[] | undefined;
+        filePathPattern?: string | undefined;
+        matchWeight?: number | undefined;
+        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
+        topicLabel?: string | undefined;
+        subjectLabel?: string | undefined;
+        autoTag?: string[] | undefined;
+        autoTopic?: string[] | undefined;
+        autoSubject?: string[] | undefined;
         UI?: {
             styles?: {
                 dark?: {
@@ -154,21 +165,10 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 } | undefined;
             } | undefined;
         } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
+        icon?: string | undefined;
         inSidebar?: boolean | undefined;
         inNavbar?: boolean | undefined;
-    }>;
+    }>, z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>]>>;
     data: z.ZodObject<{
         title: z.ZodOptional<z.ZodOptional<z.ZodNullable<z.ZodString>>>;
         created: z.ZodOptional<z.ZodOptional<z.ZodNullable<z.ZodString>>>;
@@ -192,31 +192,31 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             noMax: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
             expand: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
         }, "strip", z.ZodTypeAny, {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
-            expand?: boolean | null | undefined;
-            text?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
+            text?: "small" | "base" | "lg" | "xl" | null | undefined;
+            math?: "small" | "base" | "lg" | "xl" | null | undefined;
             tableCenter?: boolean | null | undefined;
             textCenter?: boolean | null | undefined;
             headingCenter?: boolean | null | undefined;
             noMax?: boolean | null | undefined;
+            expand?: boolean | null | undefined;
         }, {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
-            expand?: boolean | null | undefined;
-            text?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
+            text?: "small" | "base" | "lg" | "xl" | null | undefined;
+            math?: "small" | "base" | "lg" | "xl" | null | undefined;
             tableCenter?: boolean | null | undefined;
             textCenter?: boolean | null | undefined;
             headingCenter?: boolean | null | undefined;
             noMax?: boolean | null | undefined;
+            expand?: boolean | null | undefined;
         }>>>;
     }, "strip", z.ZodTypeAny, {
-        tags?: string[] | undefined;
         id?: string | null | undefined;
         topics?: string[] | undefined;
         subjects?: string[] | undefined;
+        tags?: string[] | undefined;
         title?: string | null | undefined;
         sequentialKey?: string | null | undefined;
         importantValues?: number[] | undefined;
@@ -225,21 +225,21 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
-            expand?: boolean | null | undefined;
-            text?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
+            text?: "small" | "base" | "lg" | "xl" | null | undefined;
+            math?: "small" | "base" | "lg" | "xl" | null | undefined;
             tableCenter?: boolean | null | undefined;
             textCenter?: boolean | null | undefined;
             headingCenter?: boolean | null | undefined;
             noMax?: boolean | null | undefined;
+            expand?: boolean | null | undefined;
         } | undefined;
     }, {
-        tags?: string | string[] | undefined;
         id?: string | null | undefined;
         topics?: string | string[] | undefined;
         subjects?: string | string[] | undefined;
+        tags?: string | string[] | undefined;
         title?: string | null | undefined;
         sequentialKey?: string | null | undefined;
         importantValues?: number[] | undefined;
@@ -248,15 +248,15 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
-            expand?: boolean | null | undefined;
-            text?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
+            text?: "small" | "base" | "lg" | "xl" | null | undefined;
+            math?: "small" | "base" | "lg" | "xl" | null | undefined;
             tableCenter?: boolean | null | undefined;
             textCenter?: boolean | null | undefined;
             headingCenter?: boolean | null | undefined;
             noMax?: boolean | null | undefined;
+            expand?: boolean | null | undefined;
         } | undefined;
     }>;
     appConfig: z.ZodObject<{
@@ -305,17 +305,17 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     inline: z.ZodEnum<["abap", "actionscript-3", "ada", "angular-html", "angular-ts", "apache", "apex", "apl", "applescript", "ara", "asm", "astro", "awk", "ballerina", "bat", "beancount", "berry", "bibtex", "bicep", "blade", "c", "cadence", "clarity", "clojure", "cmake", "cobol", "codeql", "coffee", "cpp", "crystal", "csharp", "css", "csv", "cue", "cypher", "d", "dart", "dax", "diff", "docker", "dream-maker", "elixir", "elm", "erb", "erlang", "fish", "fortran-fixed-form", "fortran-free-form", "fsharp", "gdresource", "gdscript", "gdshader", "gherkin", "git-commit", "git-rebase", "glimmer-js", "glimmer-ts", "glsl", "gnuplot", "go", "graphql", "groovy", "hack", "haml", "handlebars", "haskell", "hcl", "hjson", "hlsl", "html", "html-derivative", "http", "imba", "ini", "java", "javascript", "jinja", "jison", "json", "json5", "jsonc", "jsonl", "jsonnet", "jssm", "jsx", "julia", "kotlin", "kusto", "latex", "less", "liquid", "lisp", "logo", "lua", "make", "markdown", "marko", "matlab", "mdc", "mdx", "mermaid", "mojo", "move", "narrat", "nextflow", "nginx", "nim", "nix", "nushell", "objective-c", "objective-cpp", "ocaml", "pascal", "perl", "php", "plsql", "postcss", "powerquery", "powershell", "prisma", "prolog", "proto", "pug", "puppet", "purescript", "python", "r", "raku", "razor", "reg", "rel", "riscv", "rst", "ruby", "rust", "sas", "sass", "scala", "scheme", "scss", "shaderlab", "shellscript", "shellsession", "smalltalk", "solidity", "sparql", "splunk", "sql", "ssh-config", "stata", "stylus", "svelte", "swift", "system-verilog", "tasl", "tcl", "terraform", "tex", "toml", "tsx", "turtle", "twig", "typescript", "typst", "v", "vb", "verilog", "vhdl", "viml", "vue", "vue-html", "vyper", "wasm", "wenyan", "wgsl", "wolfram", "xml", "xsl", "yaml", "zenscript", "zig", "batch", "be", "cdc", "clj", "ql", "coffeescript", "c++", "c#", "cs", "cql", "dockerfile", "erl", "f", "for", "f77", "f90", "f95", "f03", "f08", "f18", "f#", "fs", "gjs", "gts", "gql", "hbs", "hs", "properties", "js", "fsl", "kt", "kts", "kql", "makefile", "md", "nar", "nf", "nu", "objc", "ps", "ps1", "jade", "py", "perl6", "rb", "rs", "shader", "bash", "sh", "shell", "zsh", "console", "spl", "styl", "tf", "tfvars", "ts", "typ", "cmd", "vim", "vimscript", "vy", "\u6587\u8A00", "wl", "yml"]>;
                     block: z.ZodEnum<["abap", "actionscript-3", "ada", "angular-html", "angular-ts", "apache", "apex", "apl", "applescript", "ara", "asm", "astro", "awk", "ballerina", "bat", "beancount", "berry", "bibtex", "bicep", "blade", "c", "cadence", "clarity", "clojure", "cmake", "cobol", "codeql", "coffee", "cpp", "crystal", "csharp", "css", "csv", "cue", "cypher", "d", "dart", "dax", "diff", "docker", "dream-maker", "elixir", "elm", "erb", "erlang", "fish", "fortran-fixed-form", "fortran-free-form", "fsharp", "gdresource", "gdscript", "gdshader", "gherkin", "git-commit", "git-rebase", "glimmer-js", "glimmer-ts", "glsl", "gnuplot", "go", "graphql", "groovy", "hack", "haml", "handlebars", "haskell", "hcl", "hjson", "hlsl", "html", "html-derivative", "http", "imba", "ini", "java", "javascript", "jinja", "jison", "json", "json5", "jsonc", "jsonl", "jsonnet", "jssm", "jsx", "julia", "kotlin", "kusto", "latex", "less", "liquid", "lisp", "logo", "lua", "make", "markdown", "marko", "matlab", "mdc", "mdx", "mermaid", "mojo", "move", "narrat", "nextflow", "nginx", "nim", "nix", "nushell", "objective-c", "objective-cpp", "ocaml", "pascal", "perl", "php", "plsql", "postcss", "powerquery", "powershell", "prisma", "prolog", "proto", "pug", "puppet", "purescript", "python", "r", "raku", "razor", "reg", "rel", "riscv", "rst", "ruby", "rust", "sas", "sass", "scala", "scheme", "scss", "shaderlab", "shellscript", "shellsession", "smalltalk", "solidity", "sparql", "splunk", "sql", "ssh-config", "stata", "stylus", "svelte", "swift", "system-verilog", "tasl", "tcl", "terraform", "tex", "toml", "tsx", "turtle", "twig", "typescript", "typst", "v", "vb", "verilog", "vhdl", "viml", "vue", "vue-html", "vyper", "wasm", "wenyan", "wgsl", "wolfram", "xml", "xsl", "yaml", "zenscript", "zig", "batch", "be", "cdc", "clj", "ql", "coffeescript", "c++", "c#", "cs", "cql", "dockerfile", "erl", "f", "for", "f77", "f90", "f95", "f03", "f08", "f18", "f#", "fs", "gjs", "gts", "gql", "hbs", "hs", "properties", "js", "fsl", "kt", "kts", "kql", "makefile", "md", "nar", "nf", "nu", "objc", "ps", "ps1", "jade", "py", "perl6", "rb", "rs", "shader", "bash", "sh", "shell", "zsh", "console", "spl", "styl", "tf", "tfvars", "ts", "typ", "cmd", "vim", "vimscript", "vy", "\u6587\u8A00", "wl", "yml"]>;
                 }, "strip", z.ZodTypeAny, {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 }, {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 }>]>>, {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                }, "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml" | {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                }, "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml" | {
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 } | undefined>;
             }, "strip", z.ZodTypeAny, {
                 transformers: {
@@ -326,8 +326,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     lineDiff: boolean;
                 };
                 defaultLanguage: {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 };
             }, {
                 transformers?: {
@@ -337,9 +337,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     lineErrorLevel?: boolean | undefined;
                     lineDiff?: boolean | undefined;
                 } | undefined;
-                defaultLanguage?: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml" | {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                defaultLanguage?: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml" | {
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 } | undefined;
             }>>;
         }, "strip", z.ZodTypeAny, {
@@ -360,8 +360,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     lineDiff: boolean;
                 };
                 defaultLanguage: {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 };
             };
         }, {
@@ -381,9 +381,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     lineErrorLevel?: boolean | undefined;
                     lineDiff?: boolean | undefined;
                 } | undefined;
-                defaultLanguage?: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml" | {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                defaultLanguage?: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml" | {
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 } | undefined;
             } | undefined;
         }>>>;
@@ -409,6 +409,290 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         }, {
             storeFormatted?: boolean | undefined;
             removeIfNotPresentInFs?: boolean | undefined;
+        }>>>;
+        UI: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+            table: z.ZodDefault<z.ZodObject<{
+                maxHeight: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, string, string | number | undefined>;
+            }, "strip", z.ZodTypeAny, {
+                maxHeight: string;
+            }, {
+                maxHeight?: string | number | undefined;
+            }>>;
+            text: z.ZodDefault<z.ZodObject<{
+                blockQuoteItalic: z.ZodDefault<z.ZodBoolean>;
+                fontPaths: z.ZodDefault<z.ZodUnion<[z.ZodArray<z.ZodObject<{
+                    path: z.ZodString;
+                    weight: z.ZodUnion<[z.ZodLiteral<"100">, z.ZodLiteral<"200">, z.ZodLiteral<"300">, z.ZodLiteral<"400">, z.ZodLiteral<"500">, z.ZodLiteral<"600">, z.ZodLiteral<"700">, z.ZodLiteral<"800">, z.ZodLiteral<"900">]>;
+                    style: z.ZodUnion<[z.ZodLiteral<"italic">, z.ZodLiteral<"bold">, z.ZodLiteral<"normal">]>;
+                }, "strip", z.ZodTypeAny, {
+                    path: string;
+                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+                    style: "bold" | "italic" | "normal";
+                }, {
+                    path: string;
+                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+                    style: "bold" | "italic" | "normal";
+                }>, "many">, z.ZodLiteral<"default">]>>;
+            }, "strip", z.ZodTypeAny, {
+                blockQuoteItalic: boolean;
+                fontPaths: "default" | {
+                    path: string;
+                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+                    style: "bold" | "italic" | "normal";
+                }[];
+            }, {
+                blockQuoteItalic?: boolean | undefined;
+                fontPaths?: "default" | {
+                    path: string;
+                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+                    style: "bold" | "italic" | "normal";
+                }[] | undefined;
+            }>>;
+            media: z.ZodDefault<z.ZodObject<{
+                imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
+                includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
+                imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
+            }, "strip", z.ZodTypeAny, {
+                imageMap: Record<string, string | undefined>;
+                includeDefaultImageMap: boolean;
+                imageRemoteTest: RegExp[];
+            }, {
+                imageMap?: Record<string, string | undefined> | undefined;
+                includeDefaultImageMap?: boolean | undefined;
+                imageRemoteTest?: RegExp[] | undefined;
+            }>>;
+            colors: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodObject<{
+                dark: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
+                light: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
+            }, "strip", z.ZodTypeAny, {
+                dark?: string | undefined;
+                light?: string | undefined;
+            }, {
+                dark?: string | undefined;
+                light?: string | undefined;
+            }>, z.ZodEffects<z.ZodString, string | undefined, string>]>>>, {
+                dark?: string | undefined;
+                light?: string | undefined;
+            } | undefined, string | {
+                dark?: string | undefined;
+                light?: string | undefined;
+            } | null | undefined>>>;
+            theme: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"blue">, z.ZodLiteral<"gray">, z.ZodLiteral<"green">, z.ZodLiteral<"neutral">, z.ZodLiteral<"orange">, z.ZodLiteral<"red">, z.ZodLiteral<"rose">, z.ZodLiteral<"slate">, z.ZodLiteral<"stone">, z.ZodLiteral<"violet">, z.ZodLiteral<"yellow">, z.ZodLiteral<"zinc">, z.ZodLiteral<"ulld">]>>;
+            autoApplyMdxTitles: z.ZodDefault<z.ZodBoolean>;
+        }, "strip", z.ZodTypeAny, {
+            table: {
+                maxHeight: string;
+            };
+            text: {
+                blockQuoteItalic: boolean;
+                fontPaths: "default" | {
+                    path: string;
+                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+                    style: "bold" | "italic" | "normal";
+                }[];
+            };
+            media: {
+                imageMap: Record<string, string | undefined>;
+                includeDefaultImageMap: boolean;
+                imageRemoteTest: RegExp[];
+            };
+            theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
+            colors: Record<string, {
+                dark?: string | undefined;
+                light?: string | undefined;
+            } | undefined>;
+            autoApplyMdxTitles: boolean;
+        }, {
+            table?: {
+                maxHeight?: string | number | undefined;
+            } | undefined;
+            text?: {
+                blockQuoteItalic?: boolean | undefined;
+                fontPaths?: "default" | {
+                    path: string;
+                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+                    style: "bold" | "italic" | "normal";
+                }[] | undefined;
+            } | undefined;
+            media?: {
+                imageMap?: Record<string, string | undefined> | undefined;
+                includeDefaultImageMap?: boolean | undefined;
+                imageRemoteTest?: RegExp[] | undefined;
+            } | undefined;
+            theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
+            colors?: Record<string, string | {
+                dark?: string | undefined;
+                light?: string | undefined;
+            } | null | undefined> | undefined;
+            autoApplyMdxTitles?: boolean | undefined;
+        }>>>;
+        navigation: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+            navbarBreakpoint: z.ZodDefault<z.ZodObject<{
+                full: z.ZodDefault<z.ZodNumber>;
+                minimal: z.ZodDefault<z.ZodNumber>;
+            }, "strip", z.ZodTypeAny, {
+                full: number;
+                minimal: number;
+            }, {
+                full?: number | undefined;
+                minimal?: number | undefined;
+            }>>;
+            maxResultLength: z.ZodDefault<z.ZodObject<{
+                categories: z.ZodDefault<z.ZodNumber>;
+                equations: z.ZodDefault<z.ZodNumber>;
+                snippets: z.ZodDefault<z.ZodNumber>;
+                searchAll: z.ZodDefault<z.ZodNumber>;
+            }, "strip", z.ZodTypeAny, {
+                snippets: number;
+                searchAll: number;
+                equations: number;
+                categories: number;
+            }, {
+                snippets?: number | undefined;
+                searchAll?: number | undefined;
+                equations?: number | undefined;
+                categories?: number | undefined;
+            }>>;
+            bookmarkLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
+            syncLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
+            fileSystemToggle: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
+            darkmodeToggle: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
+            settings: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
+            equationsLink: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
+            snippetsLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
+            backupData: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
+            navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
+                label: z.ZodString;
+                icon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
+                href: z.ZodOptional<z.ZodString>;
+                onClick: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
+            }, "strip", z.ZodTypeAny, {
+                label: string;
+                href?: string | undefined;
+                icon?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+            }, {
+                label: string;
+                href?: string | undefined;
+                icon?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+            }>]>, "many">>;
+            sidebarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<{
+                icon: z.ZodEffects<z.ZodString, string, string>;
+                href: z.ZodOptional<z.ZodString>;
+                label: z.ZodOptional<z.ZodString>;
+                Icon: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
+                onClick: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
+            }, "strip", z.ZodTypeAny, {
+                icon: string;
+                label?: string | undefined;
+                href?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+                Icon?: ((...args: unknown[]) => unknown) | undefined;
+            }, {
+                icon: string;
+                label?: string | undefined;
+                href?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+                Icon?: ((...args: unknown[]) => unknown) | undefined;
+            }>, z.ZodString]>, "many">>;
+        }, "strip", z.ZodTypeAny, {
+            navbarBreakpoint: {
+                full: number;
+                minimal: number;
+            };
+            maxResultLength: {
+                snippets: number;
+                searchAll: number;
+                equations: number;
+                categories: number;
+            };
+            bookmarkLink: "none" | "sidebar" | "navbar" | "both";
+            syncLink: "none" | "sidebar" | "navbar" | "both";
+            darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
+            snippetsLink: "none" | "sidebar" | "navbar" | "both";
+            navbarLinks: (string | {
+                label: string;
+                href?: string | undefined;
+                icon?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+            })[];
+            sidebarLinks: (string | {
+                icon: string;
+                label?: string | undefined;
+                href?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+                Icon?: ((...args: unknown[]) => unknown) | undefined;
+            })[];
+            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
+        }, {
+            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            navbarBreakpoint?: {
+                full?: number | undefined;
+                minimal?: number | undefined;
+            } | undefined;
+            maxResultLength?: {
+                snippets?: number | undefined;
+                searchAll?: number | undefined;
+                equations?: number | undefined;
+                categories?: number | undefined;
+            } | undefined;
+            bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            navbarLinks?: (string | {
+                label: string;
+                href?: string | undefined;
+                icon?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+            })[] | undefined;
+            sidebarLinks?: (string | {
+                icon: string;
+                label?: string | undefined;
+                href?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+                Icon?: ((...args: unknown[]) => unknown) | undefined;
+            })[] | undefined;
+        }>>>;
+        slots: z.ZodOptional<z.ZodDefault<z.ZodObject<Record<keyof import("@ulld/configschema/slotMapRootType").SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
+            math?: any;
+            snippets?: any;
+            dashboard?: any;
+            taskManager?: any;
+            UI?: any;
+            pdf?: any;
+            navigation?: any;
+            editor?: any;
+            bibliography?: any;
+            form?: any;
+            commandPalette?: any;
+        }, {
+            math?: any;
+            snippets?: any;
+            dashboard?: any;
+            taskManager?: any;
+            UI?: any;
+            pdf?: any;
+            navigation?: any;
+            editor?: any;
+            bibliography?: any;
+            form?: any;
+            commandPalette?: any;
+        }>>>;
+        fsRoot: z.ZodEffects<z.ZodString, string, string>;
+        terminal: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+            logLevel: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"debug">, z.ZodLiteral<"verbose">, z.ZodLiteral<"info">, z.ZodLiteral<"none">]>>;
+        }, "strip", z.ZodTypeAny, {
+            logLevel: "none" | "debug" | "verbose" | "info";
+        }, {
+            logLevel?: "none" | "debug" | "verbose" | "info" | undefined;
         }>>>;
         jupyter: z.ZodOptional<z.ZodDefault<z.ZodObject<{
             execute: z.ZodDefault<z.ZodBoolean>;
@@ -488,12 +772,12 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     name: z.ZodString;
                     version: z.ZodString;
                 }, "strip", z.ZodTypeAny, {
-                    module: string | Record<string, string>;
                     name: string;
+                    module: string | Record<string, string>;
                     version: string;
                 }, {
-                    module: string | Record<string, string>;
                     name: string;
+                    module: string | Record<string, string>;
                     version: string;
                 }>, "many">>;
                 externalIPyWidgets: z.ZodDefault<z.ZodArray<z.ZodObject<Omit<{
@@ -510,11 +794,12 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 nbgrader: z.ZodDefault<z.ZodBoolean>;
                 readOnly: z.ZodDefault<z.ZodBoolean>;
             }, "strip", z.ZodTypeAny, {
+                readOnly: boolean;
                 cellMetadataPanel: boolean;
                 cellSidebarMargin: number;
                 bundledIPyWidgets: {
-                    module: string | Record<string, string>;
                     name: string;
+                    module: string | Record<string, string>;
                     version: string;
                 }[];
                 externalIPyWidgets: {
@@ -522,17 +807,17 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     version: string;
                 }[];
                 nbgrader: boolean;
-                readOnly: boolean;
-                maxHeight?: string | undefined;
                 height?: string | undefined;
+                maxHeight?: string | undefined;
             }, {
+                height?: string | undefined;
+                readOnly?: boolean | undefined;
                 maxHeight?: string | undefined;
                 cellMetadataPanel?: boolean | undefined;
                 cellSidebarMargin?: number | undefined;
-                height?: string | undefined;
                 bundledIPyWidgets?: {
-                    module: string | Record<string, string>;
                     name: string;
+                    module: string | Record<string, string>;
                     version: string;
                 }[] | undefined;
                 externalIPyWidgets?: {
@@ -540,7 +825,6 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     version: string;
                 }[] | undefined;
                 nbgrader?: boolean | undefined;
-                readOnly?: boolean | undefined;
             }>>;
             cellInputWrappers: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodObject<{
                 prefix: z.ZodString;
@@ -584,11 +868,12 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 } | undefined;
             };
             jupyterNotebookProps: {
+                readOnly: boolean;
                 cellMetadataPanel: boolean;
                 cellSidebarMargin: number;
                 bundledIPyWidgets: {
-                    module: string | Record<string, string>;
                     name: string;
+                    module: string | Record<string, string>;
                     version: string;
                 }[];
                 externalIPyWidgets: {
@@ -596,9 +881,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     version: string;
                 }[];
                 nbgrader: boolean;
-                readOnly: boolean;
-                maxHeight?: string | undefined;
                 height?: string | undefined;
+                maxHeight?: string | undefined;
             };
             cellInputWrappers: Record<string, {
                 prefix: string;
@@ -632,13 +916,14 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 notebookOutputDir?: string | undefined;
             } | undefined;
             jupyterNotebookProps?: {
+                height?: string | undefined;
+                readOnly?: boolean | undefined;
                 maxHeight?: string | undefined;
                 cellMetadataPanel?: boolean | undefined;
                 cellSidebarMargin?: number | undefined;
-                height?: string | undefined;
                 bundledIPyWidgets?: {
-                    module: string | Record<string, string>;
                     name: string;
+                    module: string | Record<string, string>;
                     version: string;
                 }[] | undefined;
                 externalIPyWidgets?: {
@@ -646,297 +931,138 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     version: string;
                 }[] | undefined;
                 nbgrader?: boolean | undefined;
-                readOnly?: boolean | undefined;
             } | undefined;
             cellInputWrappers?: Record<string, string | {
                 prefix: string;
                 suffix: string;
             }> | undefined;
         }>>>;
-        navigation: z.ZodOptional<z.ZodDefault<z.ZodObject<{
-            navbarBreakpoint: z.ZodDefault<z.ZodObject<{
-                full: z.ZodDefault<z.ZodNumber>;
-                minimal: z.ZodDefault<z.ZodNumber>;
-            }, "strip", z.ZodTypeAny, {
-                full: number;
-                minimal: number;
-            }, {
-                full?: number | undefined;
-                minimal?: number | undefined;
-            }>>;
-            maxResultLength: z.ZodDefault<z.ZodObject<{
-                categories: z.ZodDefault<z.ZodNumber>;
-                equations: z.ZodDefault<z.ZodNumber>;
-                snippets: z.ZodDefault<z.ZodNumber>;
-                searchAll: z.ZodDefault<z.ZodNumber>;
-            }, "strip", z.ZodTypeAny, {
-                snippets: number;
-                searchAll: number;
-                equations: number;
-                categories: number;
-            }, {
-                snippets?: number | undefined;
-                searchAll?: number | undefined;
-                equations?: number | undefined;
-                categories?: number | undefined;
-            }>>;
-            bookmarkLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-            syncLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-            fileSystemToggle: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-            darkmodeToggle: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-            settings: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-            equationsLink: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-            snippetsLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-            backupData: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-            navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
-                label: z.ZodString;
-                icon: z.ZodOptional<z.ZodNativeEnum<typeof import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated>>;
-                href: z.ZodOptional<z.ZodString>;
-                onClick: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
-            }, "strip", z.ZodTypeAny, {
-                label: string;
-                href?: string | undefined;
-                icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-            }, {
-                label: string;
-                href?: string | undefined;
-                icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-            }>]>, "many">>;
-            sidebarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<{
-                icon: z.ZodNativeEnum<typeof import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated>;
-                href: z.ZodOptional<z.ZodString>;
-                label: z.ZodOptional<z.ZodString>;
-                Icon: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
-                onClick: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
-            }, "strip", z.ZodTypeAny, {
-                icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
-                label?: string | undefined;
-                href?: string | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-                Icon?: ((...args: unknown[]) => unknown) | undefined;
-            }, {
-                icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
-                label?: string | undefined;
-                href?: string | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-                Icon?: ((...args: unknown[]) => unknown) | undefined;
-            }>, z.ZodString]>, "many">>;
-        }, "strip", z.ZodTypeAny, {
-            navbarBreakpoint: {
-                full: number;
-                minimal: number;
-            };
-            maxResultLength: {
-                snippets: number;
-                searchAll: number;
-                equations: number;
-                categories: number;
-            };
-            bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-            syncLink: "none" | "sidebar" | "navbar" | "both";
-            darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-            snippetsLink: "none" | "sidebar" | "navbar" | "both";
-            navbarLinks: (string | {
-                label: string;
-                href?: string | undefined;
-                icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-            })[];
-            sidebarLinks: (string | {
-                icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
-                label?: string | undefined;
-                href?: string | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-                Icon?: ((...args: unknown[]) => unknown) | undefined;
-            })[];
-            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        }, {
-            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            navbarBreakpoint?: {
-                full?: number | undefined;
-                minimal?: number | undefined;
-            } | undefined;
-            maxResultLength?: {
-                snippets?: number | undefined;
-                searchAll?: number | undefined;
-                equations?: number | undefined;
-                categories?: number | undefined;
-            } | undefined;
-            bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            navbarLinks?: (string | {
-                label: string;
-                href?: string | undefined;
-                icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-            })[] | undefined;
-            sidebarLinks?: (string | {
-                icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
-                label?: string | undefined;
-                href?: string | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-                Icon?: ((...args: unknown[]) => unknown) | undefined;
-            })[] | undefined;
-        }>>>;
-        terminal: z.ZodOptional<z.ZodDefault<z.ZodObject<{
-            logLevel: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"debug">, z.ZodLiteral<"verbose">, z.ZodLiteral<"info">, z.ZodLiteral<"none">]>>;
-        }, "strip", z.ZodTypeAny, {
-            logLevel: "info" | "none" | "debug" | "verbose";
-        }, {
-            logLevel?: "info" | "none" | "debug" | "verbose" | undefined;
-        }>>>;
-        UI: z.ZodOptional<z.ZodDefault<z.ZodObject<{
-            table: z.ZodDefault<z.ZodObject<{
-                maxHeight: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, string, string | number | undefined>;
-            }, "strip", z.ZodTypeAny, {
-                maxHeight: string;
-            }, {
-                maxHeight?: string | number | undefined;
-            }>>;
-            text: z.ZodDefault<z.ZodObject<{
-                blockQuoteItalic: z.ZodDefault<z.ZodBoolean>;
-                fontPaths: z.ZodDefault<z.ZodUnion<[z.ZodArray<z.ZodObject<{
-                    path: z.ZodString;
-                    weight: z.ZodUnion<[z.ZodLiteral<"100">, z.ZodLiteral<"200">, z.ZodLiteral<"300">, z.ZodLiteral<"400">, z.ZodLiteral<"500">, z.ZodLiteral<"600">, z.ZodLiteral<"700">, z.ZodLiteral<"800">, z.ZodLiteral<"900">]>;
-                    style: z.ZodUnion<[z.ZodLiteral<"italic">, z.ZodLiteral<"bold">, z.ZodLiteral<"normal">]>;
+        build: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+            database: z.ZodDefault<z.ZodEffects<z.ZodDefault<z.ZodObject<{
+                type: z.ZodDefault<z.ZodEnum<["postgres", "sqlite"]>>;
+                postgres: z.ZodEffects<z.ZodEffects<z.ZodDefault<z.ZodObject<{
+                    port: z.ZodDefault<z.ZodNumber>;
+                    dbName: z.ZodDefault<z.ZodString>;
+                    connectionURI: z.ZodDefault<z.ZodString>;
                 }, "strip", z.ZodTypeAny, {
-                    path: string;
-                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-                    style: "bold" | "italic" | "normal";
+                    port: number;
+                    dbName: string;
+                    connectionURI: string;
                 }, {
-                    path: string;
-                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-                    style: "bold" | "italic" | "normal";
-                }>, "many">, z.ZodLiteral<"default">]>>;
+                    port?: number | undefined;
+                    dbName?: string | undefined;
+                    connectionURI?: string | undefined;
+                }>>, {
+                    port: number;
+                    dbName: string;
+                    connectionURI: string;
+                }, {
+                    port?: number | undefined;
+                    dbName?: string | undefined;
+                    connectionURI?: string | undefined;
+                } | undefined>, {
+                    connectionURI: string;
+                    port?: undefined;
+                    dbName?: undefined;
+                } | {
+                    port: number;
+                    dbName: string;
+                    connectionURI?: undefined;
+                }, {
+                    port?: number | undefined;
+                    dbName?: string | undefined;
+                    connectionURI?: string | undefined;
+                } | undefined>;
+                prioritize: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"speed">, z.ZodLiteral<"size">]>>;
             }, "strip", z.ZodTypeAny, {
-                blockQuoteItalic: boolean;
-                fontPaths: {
-                    path: string;
-                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-                    style: "bold" | "italic" | "normal";
-                }[] | "default";
+                type: "postgres" | "sqlite";
+                postgres: {
+                    connectionURI: string;
+                    port?: undefined;
+                    dbName?: undefined;
+                } | {
+                    port: number;
+                    dbName: string;
+                    connectionURI?: undefined;
+                };
+                prioritize: "size" | "speed";
             }, {
-                blockQuoteItalic?: boolean | undefined;
-                fontPaths?: {
-                    path: string;
-                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-                    style: "bold" | "italic" | "normal";
-                }[] | "default" | undefined;
+                type?: "postgres" | "sqlite" | undefined;
+                postgres?: {
+                    port?: number | undefined;
+                    dbName?: string | undefined;
+                    connectionURI?: string | undefined;
+                } | undefined;
+                prioritize?: "size" | "speed" | undefined;
+            }>>, {
+                type: "postgres" | "sqlite";
+                postgres: {
+                    connectionURI: string;
+                    port?: undefined;
+                    dbName?: undefined;
+                } | {
+                    port: number;
+                    dbName: string;
+                    connectionURI?: undefined;
+                };
+                prioritize: "size" | "speed";
+            }, {
+                type?: "postgres" | "sqlite" | undefined;
+                postgres?: {
+                    port?: number | undefined;
+                    dbName?: string | undefined;
+                    connectionURI?: string | undefined;
+                } | undefined;
+                prioritize?: "size" | "speed" | undefined;
+            } | undefined>>;
+            additionalUserContent: z.ZodDefault<z.ZodObject<{
+                css: z.ZodOptional<z.ZodString>;
+                favicon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
+                logo: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
+            }, "strip", z.ZodTypeAny, {
+                css?: string | undefined;
+                logo?: string | undefined;
+                favicon?: string | undefined;
+            }, {
+                css?: string | undefined;
+                logo?: string | undefined;
+                favicon?: string | undefined;
             }>>;
-            media: z.ZodDefault<z.ZodObject<{
-                imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
-                includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
-                imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
-            }, "strip", z.ZodTypeAny, {
-                imageMap: Record<string, string | undefined>;
-                includeDefaultImageMap: boolean;
-                imageRemoteTest: RegExp[];
-            }, {
-                imageMap?: Record<string, string | undefined> | undefined;
-                includeDefaultImageMap?: boolean | undefined;
-                imageRemoteTest?: RegExp[] | undefined;
-            }>>;
-            colors: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodObject<{
-                dark: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
-                light: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
-            }, "strip", z.ZodTypeAny, {
-                dark?: string | undefined;
-                light?: string | undefined;
-            }, {
-                dark?: string | undefined;
-                light?: string | undefined;
-            }>, z.ZodEffects<z.ZodString, string | undefined, string>]>>>, {
-                dark?: string | undefined;
-                light?: string | undefined;
-            } | undefined, string | {
-                dark?: string | undefined;
-                light?: string | undefined;
-            } | null | undefined>>>;
-            theme: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"blue">, z.ZodLiteral<"gray">, z.ZodLiteral<"green">, z.ZodLiteral<"neutral">, z.ZodLiteral<"orange">, z.ZodLiteral<"red">, z.ZodLiteral<"rose">, z.ZodLiteral<"slate">, z.ZodLiteral<"stone">, z.ZodLiteral<"violet">, z.ZodLiteral<"yellow">, z.ZodLiteral<"zinc">, z.ZodLiteral<"ulld">]>>;
-            autoApplyMdxTitles: z.ZodDefault<z.ZodBoolean>;
         }, "strip", z.ZodTypeAny, {
-            table: {
-                maxHeight: string;
+            database: {
+                type: "postgres" | "sqlite";
+                postgres: {
+                    connectionURI: string;
+                    port?: undefined;
+                    dbName?: undefined;
+                } | {
+                    port: number;
+                    dbName: string;
+                    connectionURI?: undefined;
+                };
+                prioritize: "size" | "speed";
             };
-            text: {
-                blockQuoteItalic: boolean;
-                fontPaths: {
-                    path: string;
-                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-                    style: "bold" | "italic" | "normal";
-                }[] | "default";
+            additionalUserContent: {
+                css?: string | undefined;
+                logo?: string | undefined;
+                favicon?: string | undefined;
             };
-            theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
-            media: {
-                imageMap: Record<string, string | undefined>;
-                includeDefaultImageMap: boolean;
-                imageRemoteTest: RegExp[];
-            };
-            colors: Record<string, {
-                dark?: string | undefined;
-                light?: string | undefined;
-            } | undefined>;
-            autoApplyMdxTitles: boolean;
         }, {
-            table?: {
-                maxHeight?: string | number | undefined;
+            database?: {
+                type?: "postgres" | "sqlite" | undefined;
+                postgres?: {
+                    port?: number | undefined;
+                    dbName?: string | undefined;
+                    connectionURI?: string | undefined;
+                } | undefined;
+                prioritize?: "size" | "speed" | undefined;
             } | undefined;
-            text?: {
-                blockQuoteItalic?: boolean | undefined;
-                fontPaths?: {
-                    path: string;
-                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-                    style: "bold" | "italic" | "normal";
-                }[] | "default" | undefined;
+            additionalUserContent?: {
+                css?: string | undefined;
+                logo?: string | undefined;
+                favicon?: string | undefined;
             } | undefined;
-            theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
-            media?: {
-                imageMap?: Record<string, string | undefined> | undefined;
-                includeDefaultImageMap?: boolean | undefined;
-                imageRemoteTest?: RegExp[] | undefined;
-            } | undefined;
-            colors?: Record<string, string | {
-                dark?: string | undefined;
-                light?: string | undefined;
-            } | null | undefined> | undefined;
-            autoApplyMdxTitles?: boolean | undefined;
         }>>>;
-        slots: z.ZodOptional<z.ZodDefault<z.ZodObject<Record<keyof import("@ulld/configschema/slotMapRootType").SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
-            math?: any;
-            snippets?: any;
-            bibliography?: any;
-            navigation?: any;
-            dashboard?: any;
-            taskManager?: any;
-            UI?: any;
-            pdf?: any;
-            editor?: any;
-            commandPalette?: any;
-            form?: any;
-        }, {
-            math?: any;
-            snippets?: any;
-            bibliography?: any;
-            navigation?: any;
-            dashboard?: any;
-            taskManager?: any;
-            UI?: any;
-            pdf?: any;
-            editor?: any;
-            commandPalette?: any;
-            form?: any;
-        }>>>;
-        fsRoot: z.ZodEffects<z.ZodString, string, string>;
         autoTag: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodObject<{
             path: z.ZodString;
             tag: z.ZodString;
@@ -972,17 +1098,17 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             original: z.ZodString;
             regex: z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>]>, RegExp, string | RegExp>;
         }, "strip", z.ZodTypeAny, {
+            original: string;
             regex: RegExp;
-            original: string;
         }, {
-            regex: string | RegExp;
             original: string;
+            regex: string | RegExp;
         }>]>, "many">>, {
-            regex: string | RegExp;
             original: string;
+            regex: string | RegExp;
         }[], (string | RegExp | {
-            regex: string | RegExp;
             original: string;
+            regex: string | RegExp;
         })[] | undefined>>;
         tempDir: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
         generatedDir: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
@@ -990,19 +1116,19 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             original: z.ZodString;
             regex: z.ZodType<RegExp, z.ZodTypeDef, RegExp>;
         }, "strip", z.ZodTypeAny, {
-            regex: RegExp;
             original: string;
+            regex: RegExp;
         }, {
-            regex: RegExp;
             original: string;
+            regex: RegExp;
         }>]>, import("@ulld/configschema/zod/configUtilitySchemas").ParsedRegExpField, string | RegExp | {
-            regex: RegExp;
             original: string;
+            regex: RegExp;
         }>, "many">>>;
         fileTypePriority: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>, z.ZodUnion<[z.ZodLiteral<".csv">, z.ZodLiteral<".tsv">, z.ZodLiteral<".excel">, z.ZodLiteral<".numpy">, z.ZodLiteral<".html">, z.ZodLiteral<".pickle">, z.ZodLiteral<".db">, z.ZodLiteral<".sql">, z.ZodLiteral<".pdf">, z.ZodLiteral<".json">, z.ZodLiteral<".tex">, z.ZodLiteral<".hdf5">]>]>, "many">>>;
         noteTypes: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodObject<{
             label: z.ZodString;
-            icon: z.ZodDefault<z.ZodNativeEnum<typeof import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated>>;
+            icon: z.ZodDefault<z.ZodEffects<z.ZodString, string, string>>;
             UI: z.ZodDefault<z.ZodDefault<z.ZodObject<{
                 styles: z.ZodDefault<z.ZodObject<{
                     dark: z.ZodDefault<z.ZodObject<{
@@ -1084,7 +1210,7 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             inNavbar: z.ZodDefault<z.ZodBoolean>;
         }, "strip", z.ZodTypeAny, {
             label: string;
-            icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
+            icon: string;
             UI: {
                 styles: {
                     dark: {
@@ -1115,7 +1241,7 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         }, {
             label: string;
             fs: string;
-            icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
+            icon?: string | undefined;
             UI?: {
                 styles?: {
                     dark?: {
@@ -1147,7 +1273,7 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             id: string;
             url: string;
             label: string;
-            icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
+            icon: string;
             UI: {
                 styles: {
                     dark: {
@@ -1175,7 +1301,7 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         }, {
             label: string;
             fs: string;
-            icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
+            icon?: string | undefined;
             UI?: {
                 styles?: {
                     dark?: {
@@ -1207,7 +1333,7 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             id: string;
             url: string;
             label: string;
-            icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
+            icon: string;
             UI: {
                 styles: {
                     dark: {
@@ -1235,7 +1361,7 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         }[], {
             label: string;
             fs: string;
-            icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
+            icon?: string | undefined;
             UI?: {
                 styles?: {
                     dark?: {
@@ -1327,23 +1453,23 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             }, "strip", z.ZodTypeAny, {
                 snippets?: boolean | undefined;
                 calendar?: boolean | undefined;
-                bibliography?: boolean | undefined;
                 taskManager?: boolean | undefined;
                 equations?: boolean | undefined;
+                bibliography?: boolean | undefined;
             }, {
                 snippets?: boolean | undefined;
                 calendar?: boolean | undefined;
-                bibliography?: boolean | undefined;
                 taskManager?: boolean | undefined;
                 equations?: boolean | undefined;
+                bibliography?: boolean | undefined;
             }>>;
         }, "strip", z.ZodTypeAny, {
             pages?: {
                 snippets?: boolean | undefined;
                 calendar?: boolean | undefined;
-                bibliography?: boolean | undefined;
                 taskManager?: boolean | undefined;
                 equations?: boolean | undefined;
+                bibliography?: boolean | undefined;
             } | undefined;
             enabled?: {
                 commandPalette: boolean;
@@ -1353,9 +1479,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             pages?: {
                 snippets?: boolean | undefined;
                 calendar?: boolean | undefined;
-                bibliography?: boolean | undefined;
                 taskManager?: boolean | undefined;
                 equations?: boolean | undefined;
+                bibliography?: boolean | undefined;
             } | undefined;
             enabled?: {
                 commandPalette?: boolean | undefined;
@@ -1403,132 +1529,6 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         }, {
             latexParsingDebounceTimeout?: number | undefined;
             mdxParsingDebounceTimeout?: number | undefined;
-        }>>>;
-        build: z.ZodOptional<z.ZodDefault<z.ZodObject<{
-            database: z.ZodDefault<z.ZodEffects<z.ZodDefault<z.ZodObject<{
-                type: z.ZodDefault<z.ZodEnum<["postgres", "sqlite"]>>;
-                postgres: z.ZodEffects<z.ZodEffects<z.ZodDefault<z.ZodObject<{
-                    port: z.ZodDefault<z.ZodNumber>;
-                    dbName: z.ZodDefault<z.ZodString>;
-                    connectionURI: z.ZodDefault<z.ZodString>;
-                }, "strip", z.ZodTypeAny, {
-                    port: number;
-                    dbName: string;
-                    connectionURI: string;
-                }, {
-                    port?: number | undefined;
-                    dbName?: string | undefined;
-                    connectionURI?: string | undefined;
-                }>>, {
-                    port: number;
-                    dbName: string;
-                    connectionURI: string;
-                }, {
-                    port?: number | undefined;
-                    dbName?: string | undefined;
-                    connectionURI?: string | undefined;
-                } | undefined>, {
-                    connectionURI: string;
-                    port?: undefined;
-                    dbName?: undefined;
-                } | {
-                    port: number;
-                    dbName: string;
-                    connectionURI?: undefined;
-                }, {
-                    port?: number | undefined;
-                    dbName?: string | undefined;
-                    connectionURI?: string | undefined;
-                } | undefined>;
-                prioritize: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"speed">, z.ZodLiteral<"size">]>>;
-            }, "strip", z.ZodTypeAny, {
-                type: "postgres" | "sqlite";
-                postgres: {
-                    connectionURI: string;
-                    port?: undefined;
-                    dbName?: undefined;
-                } | {
-                    port: number;
-                    dbName: string;
-                    connectionURI?: undefined;
-                };
-                prioritize: "speed" | "size";
-            }, {
-                type?: "postgres" | "sqlite" | undefined;
-                postgres?: {
-                    port?: number | undefined;
-                    dbName?: string | undefined;
-                    connectionURI?: string | undefined;
-                } | undefined;
-                prioritize?: "speed" | "size" | undefined;
-            }>>, {
-                type: "postgres" | "sqlite";
-                postgres: {
-                    connectionURI: string;
-                    port?: undefined;
-                    dbName?: undefined;
-                } | {
-                    port: number;
-                    dbName: string;
-                    connectionURI?: undefined;
-                };
-                prioritize: "speed" | "size";
-            }, {
-                type?: "postgres" | "sqlite" | undefined;
-                postgres?: {
-                    port?: number | undefined;
-                    dbName?: string | undefined;
-                    connectionURI?: string | undefined;
-                } | undefined;
-                prioritize?: "speed" | "size" | undefined;
-            } | undefined>>;
-            additionalUserContent: z.ZodDefault<z.ZodObject<{
-                css: z.ZodOptional<z.ZodString>;
-                favicon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-                logo: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-            }, "strip", z.ZodTypeAny, {
-                css?: string | undefined;
-                logo?: string | undefined;
-                favicon?: string | undefined;
-            }, {
-                css?: string | undefined;
-                logo?: string | undefined;
-                favicon?: string | undefined;
-            }>>;
-        }, "strip", z.ZodTypeAny, {
-            database: {
-                type: "postgres" | "sqlite";
-                postgres: {
-                    connectionURI: string;
-                    port?: undefined;
-                    dbName?: undefined;
-                } | {
-                    port: number;
-                    dbName: string;
-                    connectionURI?: undefined;
-                };
-                prioritize: "speed" | "size";
-            };
-            additionalUserContent: {
-                css?: string | undefined;
-                logo?: string | undefined;
-                favicon?: string | undefined;
-            };
-        }, {
-            database?: {
-                type?: "postgres" | "sqlite" | undefined;
-                postgres?: {
-                    port?: number | undefined;
-                    dbName?: string | undefined;
-                    connectionURI?: string | undefined;
-                } | undefined;
-                prioritize?: "speed" | "size" | undefined;
-            } | undefined;
-            additionalUserContent?: {
-                css?: string | undefined;
-                logo?: string | undefined;
-                favicon?: string | undefined;
-            } | undefined;
         }>>>;
         meta: z.ZodOptional<z.ZodDefault<z.ZodObject<{
             title: z.ZodDefault<z.ZodString>;
@@ -1587,7 +1587,7 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             id: string;
             url: string;
             label: string;
-            icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
+            icon: string;
             UI: {
                 styles: {
                     dark: {
@@ -1631,8 +1631,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     lineDiff: boolean;
                 };
                 defaultLanguage: {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 };
             };
         } | undefined;
@@ -1644,6 +1644,79 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         database?: {
             storeFormatted: boolean;
             removeIfNotPresentInFs: boolean;
+        } | undefined;
+        UI?: {
+            table: {
+                maxHeight: string;
+            };
+            text: {
+                blockQuoteItalic: boolean;
+                fontPaths: "default" | {
+                    path: string;
+                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+                    style: "bold" | "italic" | "normal";
+                }[];
+            };
+            media: {
+                imageMap: Record<string, string | undefined>;
+                includeDefaultImageMap: boolean;
+                imageRemoteTest: RegExp[];
+            };
+            theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
+            colors: Record<string, {
+                dark?: string | undefined;
+                light?: string | undefined;
+            } | undefined>;
+            autoApplyMdxTitles: boolean;
+        } | undefined;
+        navigation?: {
+            navbarBreakpoint: {
+                full: number;
+                minimal: number;
+            };
+            maxResultLength: {
+                snippets: number;
+                searchAll: number;
+                equations: number;
+                categories: number;
+            };
+            bookmarkLink: "none" | "sidebar" | "navbar" | "both";
+            syncLink: "none" | "sidebar" | "navbar" | "both";
+            darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
+            snippetsLink: "none" | "sidebar" | "navbar" | "both";
+            navbarLinks: (string | {
+                label: string;
+                href?: string | undefined;
+                icon?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+            })[];
+            sidebarLinks: (string | {
+                icon: string;
+                label?: string | undefined;
+                href?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+                Icon?: ((...args: unknown[]) => unknown) | undefined;
+            })[];
+            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
+        } | undefined;
+        slots?: {
+            math?: any;
+            snippets?: any;
+            dashboard?: any;
+            taskManager?: any;
+            UI?: any;
+            pdf?: any;
+            navigation?: any;
+            editor?: any;
+            bibliography?: any;
+            form?: any;
+            commandPalette?: any;
+        } | undefined;
+        terminal?: {
+            logLevel: "none" | "debug" | "verbose" | "info";
         } | undefined;
         jupyter?: {
             execute: boolean;
@@ -1671,11 +1744,12 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 } | undefined;
             };
             jupyterNotebookProps: {
+                readOnly: boolean;
                 cellMetadataPanel: boolean;
                 cellSidebarMargin: number;
                 bundledIPyWidgets: {
-                    module: string | Record<string, string>;
                     name: string;
+                    module: string | Record<string, string>;
                     version: string;
                 }[];
                 externalIPyWidgets: {
@@ -1683,9 +1757,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     version: string;
                 }[];
                 nbgrader: boolean;
-                readOnly: boolean;
-                maxHeight?: string | undefined;
                 height?: string | undefined;
+                maxHeight?: string | undefined;
             };
             cellInputWrappers: Record<string, {
                 prefix: string;
@@ -1693,78 +1766,25 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             }>;
             jupyterToken?: string | undefined;
         } | undefined;
-        navigation?: {
-            navbarBreakpoint: {
-                full: number;
-                minimal: number;
+        build?: {
+            database: {
+                type: "postgres" | "sqlite";
+                postgres: {
+                    connectionURI: string;
+                    port?: undefined;
+                    dbName?: undefined;
+                } | {
+                    port: number;
+                    dbName: string;
+                    connectionURI?: undefined;
+                };
+                prioritize: "size" | "speed";
             };
-            maxResultLength: {
-                snippets: number;
-                searchAll: number;
-                equations: number;
-                categories: number;
+            additionalUserContent: {
+                css?: string | undefined;
+                logo?: string | undefined;
+                favicon?: string | undefined;
             };
-            bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-            syncLink: "none" | "sidebar" | "navbar" | "both";
-            darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-            snippetsLink: "none" | "sidebar" | "navbar" | "both";
-            navbarLinks: (string | {
-                label: string;
-                href?: string | undefined;
-                icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-            })[];
-            sidebarLinks: (string | {
-                icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
-                label?: string | undefined;
-                href?: string | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-                Icon?: ((...args: unknown[]) => unknown) | undefined;
-            })[];
-            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        } | undefined;
-        terminal?: {
-            logLevel: "info" | "none" | "debug" | "verbose";
-        } | undefined;
-        UI?: {
-            table: {
-                maxHeight: string;
-            };
-            text: {
-                blockQuoteItalic: boolean;
-                fontPaths: {
-                    path: string;
-                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-                    style: "bold" | "italic" | "normal";
-                }[] | "default";
-            };
-            theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
-            media: {
-                imageMap: Record<string, string | undefined>;
-                includeDefaultImageMap: boolean;
-                imageRemoteTest: RegExp[];
-            };
-            colors: Record<string, {
-                dark?: string | undefined;
-                light?: string | undefined;
-            } | undefined>;
-            autoApplyMdxTitles: boolean;
-        } | undefined;
-        slots?: {
-            math?: any;
-            snippets?: any;
-            bibliography?: any;
-            navigation?: any;
-            dashboard?: any;
-            taskManager?: any;
-            UI?: any;
-            pdf?: any;
-            editor?: any;
-            commandPalette?: any;
-            form?: any;
         } | undefined;
         autoTag?: {
             path: string;
@@ -1780,13 +1800,13 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         }[] | undefined;
         alwaysPreferFs?: boolean | undefined;
         ignoreFilepaths?: {
-            regex: string | RegExp;
             original: string;
+            regex: string | RegExp;
         }[] | undefined;
         tempDir?: string | undefined;
         generatedDir?: string | undefined;
         ignorePreferFsExtensions?: import("@ulld/configschema/zod/configUtilitySchemas").ParsedRegExpField[] | undefined;
-        fileTypePriority?: (".mdx" | ".ipynb" | ".md" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5")[] | undefined;
+        fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
         bibPath?: string | undefined;
         cslPath?: string | undefined;
         dateHandling?: {
@@ -1805,9 +1825,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             pages?: {
                 snippets?: boolean | undefined;
                 calendar?: boolean | undefined;
-                bibliography?: boolean | undefined;
                 taskManager?: boolean | undefined;
                 equations?: boolean | undefined;
+                bibliography?: boolean | undefined;
             } | undefined;
             enabled?: {
                 commandPalette: boolean;
@@ -1827,26 +1847,6 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         performance?: {
             latexParsingDebounceTimeout: number;
             mdxParsingDebounceTimeout: number;
-        } | undefined;
-        build?: {
-            database: {
-                type: "postgres" | "sqlite";
-                postgres: {
-                    connectionURI: string;
-                    port?: undefined;
-                    dbName?: undefined;
-                } | {
-                    port: number;
-                    dbName: string;
-                    connectionURI?: undefined;
-                };
-                prioritize: "speed" | "size";
-            };
-            additionalUserContent: {
-                css?: string | undefined;
-                logo?: string | undefined;
-                favicon?: string | undefined;
-            };
         } | undefined;
         meta?: {
             title: string;
@@ -1879,9 +1879,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     lineErrorLevel?: boolean | undefined;
                     lineDiff?: boolean | undefined;
                 } | undefined;
-                defaultLanguage?: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml" | {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                defaultLanguage?: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml" | {
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 } | undefined;
             } | undefined;
         } | undefined;
@@ -1893,6 +1893,79 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         database?: {
             storeFormatted?: boolean | undefined;
             removeIfNotPresentInFs?: boolean | undefined;
+        } | undefined;
+        UI?: {
+            table?: {
+                maxHeight?: string | number | undefined;
+            } | undefined;
+            text?: {
+                blockQuoteItalic?: boolean | undefined;
+                fontPaths?: "default" | {
+                    path: string;
+                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+                    style: "bold" | "italic" | "normal";
+                }[] | undefined;
+            } | undefined;
+            media?: {
+                imageMap?: Record<string, string | undefined> | undefined;
+                includeDefaultImageMap?: boolean | undefined;
+                imageRemoteTest?: RegExp[] | undefined;
+            } | undefined;
+            theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
+            colors?: Record<string, string | {
+                dark?: string | undefined;
+                light?: string | undefined;
+            } | null | undefined> | undefined;
+            autoApplyMdxTitles?: boolean | undefined;
+        } | undefined;
+        navigation?: {
+            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            navbarBreakpoint?: {
+                full?: number | undefined;
+                minimal?: number | undefined;
+            } | undefined;
+            maxResultLength?: {
+                snippets?: number | undefined;
+                searchAll?: number | undefined;
+                equations?: number | undefined;
+                categories?: number | undefined;
+            } | undefined;
+            bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            navbarLinks?: (string | {
+                label: string;
+                href?: string | undefined;
+                icon?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+            })[] | undefined;
+            sidebarLinks?: (string | {
+                icon: string;
+                label?: string | undefined;
+                href?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+                Icon?: ((...args: unknown[]) => unknown) | undefined;
+            })[] | undefined;
+        } | undefined;
+        slots?: {
+            math?: any;
+            snippets?: any;
+            dashboard?: any;
+            taskManager?: any;
+            UI?: any;
+            pdf?: any;
+            navigation?: any;
+            editor?: any;
+            bibliography?: any;
+            form?: any;
+            commandPalette?: any;
+        } | undefined;
+        terminal?: {
+            logLevel?: "none" | "debug" | "verbose" | "info" | undefined;
         } | undefined;
         jupyter?: {
             execute?: boolean | undefined;
@@ -1921,13 +1994,14 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 notebookOutputDir?: string | undefined;
             } | undefined;
             jupyterNotebookProps?: {
+                height?: string | undefined;
+                readOnly?: boolean | undefined;
                 maxHeight?: string | undefined;
                 cellMetadataPanel?: boolean | undefined;
                 cellSidebarMargin?: number | undefined;
-                height?: string | undefined;
                 bundledIPyWidgets?: {
-                    module: string | Record<string, string>;
                     name: string;
+                    module: string | Record<string, string>;
                     version: string;
                 }[] | undefined;
                 externalIPyWidgets?: {
@@ -1935,85 +2009,27 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     version: string;
                 }[] | undefined;
                 nbgrader?: boolean | undefined;
-                readOnly?: boolean | undefined;
             } | undefined;
             cellInputWrappers?: Record<string, string | {
                 prefix: string;
                 suffix: string;
             }> | undefined;
         } | undefined;
-        navigation?: {
-            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            navbarBreakpoint?: {
-                full?: number | undefined;
-                minimal?: number | undefined;
+        build?: {
+            database?: {
+                type?: "postgres" | "sqlite" | undefined;
+                postgres?: {
+                    port?: number | undefined;
+                    dbName?: string | undefined;
+                    connectionURI?: string | undefined;
+                } | undefined;
+                prioritize?: "size" | "speed" | undefined;
             } | undefined;
-            maxResultLength?: {
-                snippets?: number | undefined;
-                searchAll?: number | undefined;
-                equations?: number | undefined;
-                categories?: number | undefined;
+            additionalUserContent?: {
+                css?: string | undefined;
+                logo?: string | undefined;
+                favicon?: string | undefined;
             } | undefined;
-            bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            navbarLinks?: (string | {
-                label: string;
-                href?: string | undefined;
-                icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-            })[] | undefined;
-            sidebarLinks?: (string | {
-                icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
-                label?: string | undefined;
-                href?: string | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-                Icon?: ((...args: unknown[]) => unknown) | undefined;
-            })[] | undefined;
-        } | undefined;
-        terminal?: {
-            logLevel?: "info" | "none" | "debug" | "verbose" | undefined;
-        } | undefined;
-        UI?: {
-            table?: {
-                maxHeight?: string | number | undefined;
-            } | undefined;
-            text?: {
-                blockQuoteItalic?: boolean | undefined;
-                fontPaths?: {
-                    path: string;
-                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-                    style: "bold" | "italic" | "normal";
-                }[] | "default" | undefined;
-            } | undefined;
-            theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
-            media?: {
-                imageMap?: Record<string, string | undefined> | undefined;
-                includeDefaultImageMap?: boolean | undefined;
-                imageRemoteTest?: RegExp[] | undefined;
-            } | undefined;
-            colors?: Record<string, string | {
-                dark?: string | undefined;
-                light?: string | undefined;
-            } | null | undefined> | undefined;
-            autoApplyMdxTitles?: boolean | undefined;
-        } | undefined;
-        slots?: {
-            math?: any;
-            snippets?: any;
-            bibliography?: any;
-            navigation?: any;
-            dashboard?: any;
-            taskManager?: any;
-            UI?: any;
-            pdf?: any;
-            editor?: any;
-            commandPalette?: any;
-            form?: any;
         } | undefined;
         autoTag?: {
             path: string;
@@ -2029,20 +2045,20 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         }[] | undefined;
         alwaysPreferFs?: boolean | undefined;
         ignoreFilepaths?: (string | RegExp | {
-            regex: string | RegExp;
             original: string;
+            regex: string | RegExp;
         })[] | undefined;
         tempDir?: string | undefined;
         generatedDir?: string | undefined;
         ignorePreferFsExtensions?: (string | RegExp | {
-            regex: RegExp;
             original: string;
+            regex: RegExp;
         })[] | undefined;
-        fileTypePriority?: (".mdx" | ".ipynb" | ".md" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5")[] | undefined;
+        fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
         noteTypes?: {
             label: string;
             fs: string;
-            icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
+            icon?: string | undefined;
             UI?: {
                 styles?: {
                     dark?: {
@@ -2088,9 +2104,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             pages?: {
                 snippets?: boolean | undefined;
                 calendar?: boolean | undefined;
-                bibliography?: boolean | undefined;
                 taskManager?: boolean | undefined;
                 equations?: boolean | undefined;
+                bibliography?: boolean | undefined;
             } | undefined;
             enabled?: {
                 commandPalette?: boolean | undefined;
@@ -2110,22 +2126,6 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         performance?: {
             latexParsingDebounceTimeout?: number | undefined;
             mdxParsingDebounceTimeout?: number | undefined;
-        } | undefined;
-        build?: {
-            database?: {
-                type?: "postgres" | "sqlite" | undefined;
-                postgres?: {
-                    port?: number | undefined;
-                    dbName?: string | undefined;
-                    connectionURI?: string | undefined;
-                } | undefined;
-                prioritize?: "speed" | "size" | undefined;
-            } | undefined;
-            additionalUserContent?: {
-                css?: string | undefined;
-                logo?: string | undefined;
-                favicon?: string | undefined;
-            } | undefined;
         } | undefined;
         meta?: {
             title?: string | undefined;
@@ -2168,11 +2168,12 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         quickLink?: string | null | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
+    content: string;
     data: {
-        tags?: string[] | undefined;
         id?: string | null | undefined;
         topics?: string[] | undefined;
         subjects?: string[] | undefined;
+        tags?: string[] | undefined;
         title?: string | null | undefined;
         sequentialKey?: string | null | undefined;
         importantValues?: number[] | undefined;
@@ -2181,21 +2182,29 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
-            expand?: boolean | null | undefined;
-            text?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
+            text?: "small" | "base" | "lg" | "xl" | null | undefined;
+            math?: "small" | "base" | "lg" | "xl" | null | undefined;
             tableCenter?: boolean | null | undefined;
             textCenter?: boolean | null | undefined;
             headingCenter?: boolean | null | undefined;
             noMax?: boolean | null | undefined;
+            expand?: boolean | null | undefined;
         } | undefined;
     };
-    content: string;
     docTypeData: {
+        id: string;
+        url: string;
+        keywords: string[];
         label: string;
-        icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
+        docType: string;
+        matchWeight: number;
+        fs: string;
+        urlQuery: Record<string, string | number | string[] | number[]>;
+        autoTag: string[];
+        autoTopic: string[];
+        autoSubject: string[];
         UI: {
             styles: {
                 dark: {
@@ -2208,22 +2217,13 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 };
             };
         };
-        fs: string;
-        matchWeight: number;
-        urlQuery: Record<string, string | number | string[] | number[]>;
-        keywords: string[];
-        autoTag: string[];
-        autoTopic: string[];
-        autoSubject: string[];
+        icon: string;
         inSidebar: boolean;
         inNavbar: boolean;
-        id?: string | undefined;
-        docType?: string | undefined;
         filePathPattern?: string | undefined;
-        url?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
-    };
+    } | {};
     appConfig: {
         fsRoot: string;
         noteTypes: {
@@ -2231,7 +2231,7 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             id: string;
             url: string;
             label: string;
-            icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
+            icon: string;
             UI: {
                 styles: {
                     dark: {
@@ -2275,8 +2275,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     lineDiff: boolean;
                 };
                 defaultLanguage: {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 };
             };
         } | undefined;
@@ -2288,6 +2288,79 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         database?: {
             storeFormatted: boolean;
             removeIfNotPresentInFs: boolean;
+        } | undefined;
+        UI?: {
+            table: {
+                maxHeight: string;
+            };
+            text: {
+                blockQuoteItalic: boolean;
+                fontPaths: "default" | {
+                    path: string;
+                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+                    style: "bold" | "italic" | "normal";
+                }[];
+            };
+            media: {
+                imageMap: Record<string, string | undefined>;
+                includeDefaultImageMap: boolean;
+                imageRemoteTest: RegExp[];
+            };
+            theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
+            colors: Record<string, {
+                dark?: string | undefined;
+                light?: string | undefined;
+            } | undefined>;
+            autoApplyMdxTitles: boolean;
+        } | undefined;
+        navigation?: {
+            navbarBreakpoint: {
+                full: number;
+                minimal: number;
+            };
+            maxResultLength: {
+                snippets: number;
+                searchAll: number;
+                equations: number;
+                categories: number;
+            };
+            bookmarkLink: "none" | "sidebar" | "navbar" | "both";
+            syncLink: "none" | "sidebar" | "navbar" | "both";
+            darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
+            snippetsLink: "none" | "sidebar" | "navbar" | "both";
+            navbarLinks: (string | {
+                label: string;
+                href?: string | undefined;
+                icon?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+            })[];
+            sidebarLinks: (string | {
+                icon: string;
+                label?: string | undefined;
+                href?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+                Icon?: ((...args: unknown[]) => unknown) | undefined;
+            })[];
+            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
+        } | undefined;
+        slots?: {
+            math?: any;
+            snippets?: any;
+            dashboard?: any;
+            taskManager?: any;
+            UI?: any;
+            pdf?: any;
+            navigation?: any;
+            editor?: any;
+            bibliography?: any;
+            form?: any;
+            commandPalette?: any;
+        } | undefined;
+        terminal?: {
+            logLevel: "none" | "debug" | "verbose" | "info";
         } | undefined;
         jupyter?: {
             execute: boolean;
@@ -2315,11 +2388,12 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 } | undefined;
             };
             jupyterNotebookProps: {
+                readOnly: boolean;
                 cellMetadataPanel: boolean;
                 cellSidebarMargin: number;
                 bundledIPyWidgets: {
-                    module: string | Record<string, string>;
                     name: string;
+                    module: string | Record<string, string>;
                     version: string;
                 }[];
                 externalIPyWidgets: {
@@ -2327,9 +2401,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     version: string;
                 }[];
                 nbgrader: boolean;
-                readOnly: boolean;
-                maxHeight?: string | undefined;
                 height?: string | undefined;
+                maxHeight?: string | undefined;
             };
             cellInputWrappers: Record<string, {
                 prefix: string;
@@ -2337,78 +2410,25 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             }>;
             jupyterToken?: string | undefined;
         } | undefined;
-        navigation?: {
-            navbarBreakpoint: {
-                full: number;
-                minimal: number;
+        build?: {
+            database: {
+                type: "postgres" | "sqlite";
+                postgres: {
+                    connectionURI: string;
+                    port?: undefined;
+                    dbName?: undefined;
+                } | {
+                    port: number;
+                    dbName: string;
+                    connectionURI?: undefined;
+                };
+                prioritize: "size" | "speed";
             };
-            maxResultLength: {
-                snippets: number;
-                searchAll: number;
-                equations: number;
-                categories: number;
+            additionalUserContent: {
+                css?: string | undefined;
+                logo?: string | undefined;
+                favicon?: string | undefined;
             };
-            bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-            syncLink: "none" | "sidebar" | "navbar" | "both";
-            darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-            snippetsLink: "none" | "sidebar" | "navbar" | "both";
-            navbarLinks: (string | {
-                label: string;
-                href?: string | undefined;
-                icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-            })[];
-            sidebarLinks: (string | {
-                icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
-                label?: string | undefined;
-                href?: string | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-                Icon?: ((...args: unknown[]) => unknown) | undefined;
-            })[];
-            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        } | undefined;
-        terminal?: {
-            logLevel: "info" | "none" | "debug" | "verbose";
-        } | undefined;
-        UI?: {
-            table: {
-                maxHeight: string;
-            };
-            text: {
-                blockQuoteItalic: boolean;
-                fontPaths: {
-                    path: string;
-                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-                    style: "bold" | "italic" | "normal";
-                }[] | "default";
-            };
-            theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
-            media: {
-                imageMap: Record<string, string | undefined>;
-                includeDefaultImageMap: boolean;
-                imageRemoteTest: RegExp[];
-            };
-            colors: Record<string, {
-                dark?: string | undefined;
-                light?: string | undefined;
-            } | undefined>;
-            autoApplyMdxTitles: boolean;
-        } | undefined;
-        slots?: {
-            math?: any;
-            snippets?: any;
-            bibliography?: any;
-            navigation?: any;
-            dashboard?: any;
-            taskManager?: any;
-            UI?: any;
-            pdf?: any;
-            editor?: any;
-            commandPalette?: any;
-            form?: any;
         } | undefined;
         autoTag?: {
             path: string;
@@ -2424,13 +2444,13 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         }[] | undefined;
         alwaysPreferFs?: boolean | undefined;
         ignoreFilepaths?: {
-            regex: string | RegExp;
             original: string;
+            regex: string | RegExp;
         }[] | undefined;
         tempDir?: string | undefined;
         generatedDir?: string | undefined;
         ignorePreferFsExtensions?: import("@ulld/configschema/zod/configUtilitySchemas").ParsedRegExpField[] | undefined;
-        fileTypePriority?: (".mdx" | ".ipynb" | ".md" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5")[] | undefined;
+        fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
         bibPath?: string | undefined;
         cslPath?: string | undefined;
         dateHandling?: {
@@ -2449,9 +2469,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             pages?: {
                 snippets?: boolean | undefined;
                 calendar?: boolean | undefined;
-                bibliography?: boolean | undefined;
                 taskManager?: boolean | undefined;
                 equations?: boolean | undefined;
+                bibliography?: boolean | undefined;
             } | undefined;
             enabled?: {
                 commandPalette: boolean;
@@ -2471,26 +2491,6 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         performance?: {
             latexParsingDebounceTimeout: number;
             mdxParsingDebounceTimeout: number;
-        } | undefined;
-        build?: {
-            database: {
-                type: "postgres" | "sqlite";
-                postgres: {
-                    connectionURI: string;
-                    port?: undefined;
-                    dbName?: undefined;
-                } | {
-                    port: number;
-                    dbName: string;
-                    connectionURI?: undefined;
-                };
-                prioritize: "speed" | "size";
-            };
-            additionalUserContent: {
-                css?: string | undefined;
-                logo?: string | undefined;
-                favicon?: string | undefined;
-            };
         } | undefined;
         meta?: {
             title: string;
@@ -2516,11 +2516,12 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         quickLink?: string | null | undefined;
     } | undefined;
 }, {
+    content: string;
     data: {
-        tags?: string | string[] | undefined;
         id?: string | null | undefined;
         topics?: string | string[] | undefined;
         subjects?: string | string[] | undefined;
+        tags?: string | string[] | undefined;
         title?: string | null | undefined;
         sequentialKey?: string | null | undefined;
         importantValues?: number[] | undefined;
@@ -2529,48 +2530,16 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
-            expand?: boolean | null | undefined;
-            text?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
+            text?: "small" | "base" | "lg" | "xl" | null | undefined;
+            math?: "small" | "base" | "lg" | "xl" | null | undefined;
             tableCenter?: boolean | null | undefined;
             textCenter?: boolean | null | undefined;
             headingCenter?: boolean | null | undefined;
             noMax?: boolean | null | undefined;
+            expand?: boolean | null | undefined;
         } | undefined;
-    };
-    content: string;
-    docTypeData: {
-        label: string;
-        fs: string;
-        icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
     };
     appConfig: {
         fsRoot: string;
@@ -2591,9 +2560,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     lineErrorLevel?: boolean | undefined;
                     lineDiff?: boolean | undefined;
                 } | undefined;
-                defaultLanguage?: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml" | {
-                    inline: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
-                    block: "coffee" | "css" | "diff" | "fish" | "kotlin" | "latex" | "markdown" | "move" | "python" | "shell" | "swift" | "turtle" | "fs" | "json" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "csv" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mdx" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "md" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                defaultLanguage?: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml" | {
+                    inline: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
+                    block: "fs" | "json" | "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "\u6587\u8A00" | "wl" | "yml";
                 } | undefined;
             } | undefined;
         } | undefined;
@@ -2605,6 +2574,79 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         database?: {
             storeFormatted?: boolean | undefined;
             removeIfNotPresentInFs?: boolean | undefined;
+        } | undefined;
+        UI?: {
+            table?: {
+                maxHeight?: string | number | undefined;
+            } | undefined;
+            text?: {
+                blockQuoteItalic?: boolean | undefined;
+                fontPaths?: "default" | {
+                    path: string;
+                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+                    style: "bold" | "italic" | "normal";
+                }[] | undefined;
+            } | undefined;
+            media?: {
+                imageMap?: Record<string, string | undefined> | undefined;
+                includeDefaultImageMap?: boolean | undefined;
+                imageRemoteTest?: RegExp[] | undefined;
+            } | undefined;
+            theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
+            colors?: Record<string, string | {
+                dark?: string | undefined;
+                light?: string | undefined;
+            } | null | undefined> | undefined;
+            autoApplyMdxTitles?: boolean | undefined;
+        } | undefined;
+        navigation?: {
+            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            navbarBreakpoint?: {
+                full?: number | undefined;
+                minimal?: number | undefined;
+            } | undefined;
+            maxResultLength?: {
+                snippets?: number | undefined;
+                searchAll?: number | undefined;
+                equations?: number | undefined;
+                categories?: number | undefined;
+            } | undefined;
+            bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
+            navbarLinks?: (string | {
+                label: string;
+                href?: string | undefined;
+                icon?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+            })[] | undefined;
+            sidebarLinks?: (string | {
+                icon: string;
+                label?: string | undefined;
+                href?: string | undefined;
+                onClick?: ((...args: unknown[]) => unknown) | undefined;
+                Icon?: ((...args: unknown[]) => unknown) | undefined;
+            })[] | undefined;
+        } | undefined;
+        slots?: {
+            math?: any;
+            snippets?: any;
+            dashboard?: any;
+            taskManager?: any;
+            UI?: any;
+            pdf?: any;
+            navigation?: any;
+            editor?: any;
+            bibliography?: any;
+            form?: any;
+            commandPalette?: any;
+        } | undefined;
+        terminal?: {
+            logLevel?: "none" | "debug" | "verbose" | "info" | undefined;
         } | undefined;
         jupyter?: {
             execute?: boolean | undefined;
@@ -2633,13 +2675,14 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 notebookOutputDir?: string | undefined;
             } | undefined;
             jupyterNotebookProps?: {
+                height?: string | undefined;
+                readOnly?: boolean | undefined;
                 maxHeight?: string | undefined;
                 cellMetadataPanel?: boolean | undefined;
                 cellSidebarMargin?: number | undefined;
-                height?: string | undefined;
                 bundledIPyWidgets?: {
-                    module: string | Record<string, string>;
                     name: string;
+                    module: string | Record<string, string>;
                     version: string;
                 }[] | undefined;
                 externalIPyWidgets?: {
@@ -2647,85 +2690,27 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     version: string;
                 }[] | undefined;
                 nbgrader?: boolean | undefined;
-                readOnly?: boolean | undefined;
             } | undefined;
             cellInputWrappers?: Record<string, string | {
                 prefix: string;
                 suffix: string;
             }> | undefined;
         } | undefined;
-        navigation?: {
-            settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            navbarBreakpoint?: {
-                full?: number | undefined;
-                minimal?: number | undefined;
+        build?: {
+            database?: {
+                type?: "postgres" | "sqlite" | undefined;
+                postgres?: {
+                    port?: number | undefined;
+                    dbName?: string | undefined;
+                    connectionURI?: string | undefined;
+                } | undefined;
+                prioritize?: "size" | "speed" | undefined;
             } | undefined;
-            maxResultLength?: {
-                snippets?: number | undefined;
-                searchAll?: number | undefined;
-                equations?: number | undefined;
-                categories?: number | undefined;
+            additionalUserContent?: {
+                css?: string | undefined;
+                logo?: string | undefined;
+                favicon?: string | undefined;
             } | undefined;
-            bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
-            navbarLinks?: (string | {
-                label: string;
-                href?: string | undefined;
-                icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-            })[] | undefined;
-            sidebarLinks?: (string | {
-                icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
-                label?: string | undefined;
-                href?: string | undefined;
-                onClick?: ((...args: unknown[]) => unknown) | undefined;
-                Icon?: ((...args: unknown[]) => unknown) | undefined;
-            })[] | undefined;
-        } | undefined;
-        terminal?: {
-            logLevel?: "info" | "none" | "debug" | "verbose" | undefined;
-        } | undefined;
-        UI?: {
-            table?: {
-                maxHeight?: string | number | undefined;
-            } | undefined;
-            text?: {
-                blockQuoteItalic?: boolean | undefined;
-                fontPaths?: {
-                    path: string;
-                    weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-                    style: "bold" | "italic" | "normal";
-                }[] | "default" | undefined;
-            } | undefined;
-            theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
-            media?: {
-                imageMap?: Record<string, string | undefined> | undefined;
-                includeDefaultImageMap?: boolean | undefined;
-                imageRemoteTest?: RegExp[] | undefined;
-            } | undefined;
-            colors?: Record<string, string | {
-                dark?: string | undefined;
-                light?: string | undefined;
-            } | null | undefined> | undefined;
-            autoApplyMdxTitles?: boolean | undefined;
-        } | undefined;
-        slots?: {
-            math?: any;
-            snippets?: any;
-            bibliography?: any;
-            navigation?: any;
-            dashboard?: any;
-            taskManager?: any;
-            UI?: any;
-            pdf?: any;
-            editor?: any;
-            commandPalette?: any;
-            form?: any;
         } | undefined;
         autoTag?: {
             path: string;
@@ -2741,20 +2726,20 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         }[] | undefined;
         alwaysPreferFs?: boolean | undefined;
         ignoreFilepaths?: (string | RegExp | {
-            regex: string | RegExp;
             original: string;
+            regex: string | RegExp;
         })[] | undefined;
         tempDir?: string | undefined;
         generatedDir?: string | undefined;
         ignorePreferFsExtensions?: (string | RegExp | {
-            regex: RegExp;
             original: string;
+            regex: RegExp;
         })[] | undefined;
-        fileTypePriority?: (".mdx" | ".ipynb" | ".md" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5")[] | undefined;
+        fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
         noteTypes?: {
             label: string;
             fs: string;
-            icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
+            icon?: string | undefined;
             UI?: {
                 styles?: {
                     dark?: {
@@ -2800,9 +2785,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             pages?: {
                 snippets?: boolean | undefined;
                 calendar?: boolean | undefined;
-                bibliography?: boolean | undefined;
                 taskManager?: boolean | undefined;
                 equations?: boolean | undefined;
+                bibliography?: boolean | undefined;
             } | undefined;
             enabled?: {
                 commandPalette?: boolean | undefined;
@@ -2823,22 +2808,6 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             latexParsingDebounceTimeout?: number | undefined;
             mdxParsingDebounceTimeout?: number | undefined;
         } | undefined;
-        build?: {
-            database?: {
-                type?: "postgres" | "sqlite" | undefined;
-                postgres?: {
-                    port?: number | undefined;
-                    dbName?: string | undefined;
-                    connectionURI?: string | undefined;
-                } | undefined;
-                prioritize?: "speed" | "size" | undefined;
-            } | undefined;
-            additionalUserContent?: {
-                css?: string | undefined;
-                logo?: string | undefined;
-                favicon?: string | undefined;
-            } | undefined;
-        } | undefined;
         meta?: {
             title?: string | undefined;
             desc?: string | undefined;
@@ -2853,6 +2822,37 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             parserIndex?: number | undefined;
         }[] | undefined;
     };
+    docTypeData?: {
+        id: string;
+        url: string;
+        label: string;
+        docType: string;
+        fs: string;
+        keywords?: string[] | undefined;
+        filePathPattern?: string | undefined;
+        matchWeight?: number | undefined;
+        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
+        topicLabel?: string | undefined;
+        subjectLabel?: string | undefined;
+        autoTag?: string[] | undefined;
+        autoTopic?: string[] | undefined;
+        autoSubject?: string[] | undefined;
+        UI?: {
+            styles?: {
+                dark?: {
+                    bg?: string | undefined;
+                    fg?: string | undefined;
+                } | undefined;
+                light?: {
+                    bg?: string | undefined;
+                    fg?: string | undefined;
+                } | undefined;
+            } | undefined;
+        } | undefined;
+        icon?: string | undefined;
+        inSidebar?: boolean | undefined;
+        inNavbar?: boolean | undefined;
+    } | {} | undefined;
     serverClient?: any;
     db?: {
         firstSync: string | Date;

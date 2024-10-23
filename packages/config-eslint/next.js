@@ -19,7 +19,7 @@ module.exports = {
         "@vercel/style-guide/eslint/browser",
         "@vercel/style-guide/eslint/react",
         "@vercel/style-guide/eslint/next",
-        // "eslint-config-turbo",
+        // "turbo",
     ].map(require.resolve),
     parserOptions: {
         project,
@@ -42,6 +42,6 @@ module.exports = {
         "import/no-default-export": "off",
         "unicorn/prefer-node-protocol": "off",
         "unicorn/filename-case": "off",
-        "react/function-component-definition": "off" // Enforces declaring function components using the function keyword, which I don't think I've done once in my life.
+        "react/function-component-definition": "off", // Enforces declaring function components using the function keyword, which I don't think I've done once in my life.
     },
 };

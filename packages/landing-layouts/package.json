@@ -22,6 +22,7 @@
     "./types": "./src/types.ts"
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "better-react-mathjax": "2.0.3",
     "lucide-react": "0.428.0"
   },
@@ -37,7 +38,6 @@
     "@ulld/calendar": "workspace:*",
     "@ulld/configschema": "workspace:*",
     "@ulld/developer": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/hooks": "workspace:*",
     "@ulld/icons": "workspace:*",
     "@ulld/journal": "workspace:*",

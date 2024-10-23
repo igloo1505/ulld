@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkL4SEUS5Gcjs = require('../chunk-L4SEUS5G.cjs');
+var _chunkKSAZPCJHcjs = require('../chunk-KSAZPCJH.cjs');
 
 
 
-exports.iconNameField = _chunkL4SEUS5Gcjs.iconNameField; exports.navigationConfigSchema = _chunkL4SEUS5Gcjs.navigationConfigSchema;
+exports.iconNameField = _chunkKSAZPCJHcjs.iconNameField; exports.navigationConfigSchema = _chunkKSAZPCJHcjs.navigationConfigSchema;
 //# sourceMappingURL=navigationConfig.cjs.map

@@ -25,6 +25,7 @@
     "./readBuildData": "./src/utilityMethods/readBuildData.ts"
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -39,7 +40,6 @@
   "peerDependencies": {
     "@ulld/configschema": "workspace:*",
     "@ulld/database": "workspace:*",
-    "@ulld/eslint-config": "workspace:*",
     "@ulld/logger": "workspace:*",
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:*",

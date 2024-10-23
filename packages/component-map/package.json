@@ -21,6 +21,9 @@
     "./client": "./src/client/componentMap.ts",
     "./types": "./src/types.ts"
   },
+  "dependencies": {
+    "@ulld/eslint-config": "*"
+  },
   "devDependencies": {
     "@types/mdx": "2.0.13",
     "@types/node": "20.14.13"

@@ -2,13 +2,13 @@
 
 
 
-var _chunkNYX3ITR4cjs = require('../../chunk-NYX3ITR4.cjs');
+var _chunkE2INLS7Kcjs = require('../../chunk-E2INLS7K.cjs');
 require('../../chunk-YJNLTULQ.cjs');
-require('../../chunk-66M3LRRG.cjs');
+require('../../chunk-3DSSYCJG.cjs');
 require('../../chunk-WOP6I6SM.cjs');
 
 
 
 
-exports.extendedFrontMatterSchema = _chunkNYX3ITR4cjs.extendedFrontMatterSchema; exports.frontMatterSchema = _chunkNYX3ITR4cjs.frontMatterSchema; exports.jsonSerializableValue = _chunkNYX3ITR4cjs.jsonSerializableValue;
+exports.extendedFrontMatterSchema = _chunkE2INLS7Kcjs.extendedFrontMatterSchema; exports.frontMatterSchema = _chunkE2INLS7Kcjs.frontMatterSchema; exports.jsonSerializableValue = _chunkE2INLS7Kcjs.jsonSerializableValue;
 //# sourceMappingURL=main.cjs.map

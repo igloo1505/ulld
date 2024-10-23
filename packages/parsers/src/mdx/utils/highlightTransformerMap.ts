@@ -1,8 +1,10 @@
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import type * as ShikiExports from "@shikijs/transformers"
+
 
 export const highlightTransformerMap: Record<
     keyof AppConfigSchemaOutput["code"]["syntaxHighlighting"]["transformers"],
-    string
+    keyof typeof ShikiExports
 > = {
     regexHighlight: "transformerMetaWordHighlight",
     lineHighlight: "transformerMetaHighlight",

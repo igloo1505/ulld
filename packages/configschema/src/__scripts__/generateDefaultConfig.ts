@@ -6,18 +6,15 @@ import {
 import fs from "fs";
 import path from "path";
 
-const __dirname = import.meta.dirname
+const __dirname = import.meta.dirname;
 
-const targetPath = path.join(
-    __dirname,
-    "../defaults/generatedDefaultConfigs/base.json",
-);
-const physicsMathPath = path.join(
-    __dirname,
-    "../defaults/generatedDefaultConfigs/physicsMath.json",
-);
-const baseTargetPath =
-    "/Users/bigsexy/Desktop/current/ulldApp/appConfig.ulld.json";
+const defaultConfigDir = path.resolve(__dirname, "../../dist/defaults/");
+
+const getOutputPath = (filePath: string): string => {
+    return path.join(defaultConfigDir, filePath);
+};
+
+const baseTargetPath = "/Users/bigsexy/Desktop/current/ulldApp/appConfig.ulld.json";
 
 const dummyConfig: AppConfigSchemaInput = {
     fsRoot: "/Users/bigsexy/Desktop/notes/content",
@@ -128,15 +125,16 @@ const personalConfig: AppConfigSchemaInput = {
 
 const configs: { path: string; config: AppConfigSchemaOutput }[] = [
     {
-        path: targetPath,
+        path: getOutputPath("base.json"),
         config: appConfigSchema.parse(dummyConfig),
     },
     {
-        path: baseTargetPath,
+        path: getOutputPath("physicsMath.json"),
         config: appConfigSchema.parse(physicsMathConfig),
     },
+    // Internal development stuff below.
     {
-        path: physicsMathPath,
+        path: baseTargetPath,
         config: appConfigSchema.parse(physicsMathConfig),
     },
     {
@@ -152,14 +150,14 @@ const configs: { path: string; config: AppConfigSchemaOutput }[] = [
     },
 ];
 
+if(!fs.existsSync(defaultConfigDir)){
+    fs.mkdirSync(defaultConfigDir, {
+        recursive: true
+    })
+}
+
 for (const k of configs) {
     if (k.config) {
-        let exists = fs.existsSync(k.path);
-        if (!exists) {
-            throw new Error(
-                `parsedBaseConfig targetPath does not exist at ${k.path}`,
-            );
-        }
         fs.writeFileSync(k.path, JSON.stringify(k.config, null, 4), {
             encoding: "utf-8",
         });
@@ -167,4 +165,4 @@ for (const k of configs) {
     }
 }
 
-console.info("Generated default configs successfully.")
+console.info("Generated default configs successfully.");

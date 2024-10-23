@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import type { z } from 'zod';
 export type PropertiesOfType<T, K> = {
     [J in keyof T]: T[J] extends K ? T[J] : never;
@@ -33,8 +33,41 @@ export type ZodFriendly<T extends object> = {
     [key in keyof T]: T[key] extends never ? never : z.ZodType;
 };
 export type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
-export type PickPageParams<T> = {
-    searchParams: "searchParams" extends keyof T ? T["searchParams"] : {};
-    params: "params" extends keyof T ? T["params"] : {};
-};
+export interface PickPageParams<T> {
+    searchParams: "searchParams" extends keyof T ? T["searchParams"] : object;
+    params: "params" extends keyof T ? T["params"] : object;
+}
+export type Length<T> = T extends {
+    length: infer L;
+} ? L : never;
+export type Push<T extends unknown[], U> = T extends [...infer R] ? [...T, U] : never;
+export type PushFront<T extends unknown[], U> = T extends [...infer R] ? [U, ...T] : never;
+export type Pop<T extends unknown[]> = T extends [...infer R, infer U] ? U : never;
+export type PopFront<T extends unknown[]> = T extends [infer U, ...infer R] ? U : never;
+export type Shift<T extends unknown[]> = T extends [infer U, ...infer R] ? R : never;
+export type ShiftRight<T extends unknown[]> = T extends [...infer R, infer U] ? R : never;
+export type Filter<T extends unknown[], U> = T extends [] ? [] : T extends [infer F, ...infer R] ? F extends U ? Filter<R, U> : [F, ...Filter<R, U>] : never;
+export type TupleIncludes<T extends unknown[], U> = Length<Filter<T, U>> extends Length<T> ? false : true;
+/** Converts a tuple of strings to a joined string */
+export type Join<T extends unknown[], D extends string> = string[] extends T ? string : T extends string[] ? PopFront<T> extends string ? Length<T> extends 1 ? `${PopFront<T>}` : `${PopFront<T>}${D}${Join<Shift<T>, D>}` : never : never;
+export type StringIncludes<S extends string, D extends string> = S extends `${infer T}${D}${infer U}` ? true : false;
+export type Split<S extends string, D extends string> = string extends S ? string[] : S extends '' ? [] : S extends `${infer T}${D}${infer U}` ? [T, ...Split<U, D>] : [S];
+/** Accepts either a tuple or a string */
+export type Includes<T extends unknown[] | string, U> = T extends unknown[] ? TupleIncludes<T, U> : T extends string ? U extends string ? StringIncludes<T, U> : never : never;
+export type OneOf<T, Strict extends boolean = true> = {
+    [OuterKey in keyof T]: Strict extends false ? {
+        [K in OuterKey]: T[K];
+    } : {
+        [InnerKey in OuterKey | keyof T]?: InnerKey extends OuterKey ? T[OuterKey] : never;
+    } & {
+        [TheKey in OuterKey]: T[OuterKey];
+    };
+}[keyof T];
+export type ValidPaths<T> = keyof T extends never ? never : ({
+    [K in keyof T]: T[K] extends never ? never : T[K] extends Record<string | number | symbol, unknown> ? K extends string ? `${K}.${ValidPaths<T[K]>}` | K : never : K;
+})[keyof T] & string;
+export type ValidPathTuples<T> = keyof T extends never ? never : ({
+    [K in keyof T]: T[K] extends never ? never : T[K] extends Record<string | number | symbol, unknown> ? [K, ...ValidPathTuples<T[K]>] | [K] : [K];
+})[keyof T];
+export type NestedType<T, P extends string> = (Includes<P, '.'> extends true ? PopFront<Split<P, '.'>> extends keyof T ? NestedType<T[PopFront<Split<P, '.'>>], Join<Shift<Split<P, '.'>>, '.'>> : never : P extends keyof T ? T[P] : never);
 //# sourceMappingURL=utilityTypes.d.ts.map

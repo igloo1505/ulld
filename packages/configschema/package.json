@@ -11,56 +11,75 @@
   ],
   "scripts": {
     "build": "wireit",
-    "dev": "echo 'Add dev script here'",
-    "gatherTypes": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly",
+    "gatherTypes": "wireit",
     "generateConfigTunnels": "wireit",
     "generateDefaultConfig": "wireit",
     "generateSlotMap": "wireit",
     "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'",
     "typecheck": "tsc --noEmit -p ./tsconfig.json",
     "updateJsonSchemas": "wireit"
   },
   "wireit": {
     "build": {
-      "command": "trash ./dist && pnpm tsc --project ./tsConfigBuildTypes.json && tsup-node",
       "dependencies": [
-        "generateConfigTunnels",
-        "updateShikiThemes"
-      ],
-      "output": [
-        "dist"
+        "bundle",
+        "updateJsonSchemas",
+        "generateDefaultConfig"
       ],
       "files": [
         "src/**"
       ]
     },
+    "bundle": {
+      "command": "tsup-node",
+      "dependencies": [
+        "cleanBuild",
+        "generateConfigTunnels",
+        "updateShikiThemes",
+        "buildTypes"
+      ],
+      "output": [
+        "dist"
+      ],
+      "files": [
+        "src"
+      ],
+      "clean": false
+    },
+    "cleanBuild": {
+      "command": "trash ./dist"
+    },
     "generateDefaultConfig": {
       "command": "tsx src/__scripts__/generateDefaultConfig.ts",
-      "dependencies": [
-        "build"
-      ]
+      "clean": false
     },
     "generateSlotMap": {
-      "command": "tsx src/__scripts__/generateSlotMap.ts"
+      "command": "tsx src/__scripts__/generateSlotMap.ts",
+      "clean": false
     },
     "updateJsonSchemas": {
       "command": "tsx src/__scripts__/updateJsonSchema.ts",
-      "dependencies": [
-        "build"
-      ]
+      "clean": false
     },
     "generateConfigTunnels": {
-      "command": "tsx src/__scripts__/generateConfigTunnelFiles.ts"
+      "command": "tsx src/__scripts__/generateConfigTunnelFiles.ts",
+      "clean": false
     },
     "updateShikiThemes": {
-      "command": "tsx ./src/__scripts__/updateShikiThemes.ts"
+      "command": "tsx ./src/__scripts__/updateShikiThemes.ts",
+      "clean": false
     },
     "updateSlotMap": {
-      "command": "tsx src/__scripts__/generateSlotMap.ts"
+      "command": "tsx src/__scripts__/generateSlotMap.ts",
+      "clean": false
     },
     "gatherTypes": {
-      "command": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly"
+      "command": "tsc --project ./tsconfigTypes.json --emitDeclarationOnly",
+      "clean": false
+    },
+    "buildTypes": {
+      "command": "tsc --project ./tsConfigBuildTypes.json --emitDeclarationOnly",
+      "clean": false
     }
   },
   "types": "dist",
@@ -338,6 +357,7 @@
     }
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "dayjs": "1.11.11",
     "glob-to-regexp": "0.4.1",
     "rtl-simple-queries": "1.0.1",

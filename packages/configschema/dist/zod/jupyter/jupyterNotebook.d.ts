@@ -9,12 +9,12 @@ export declare const jupyterNotebookPropsSchema: z.ZodDefault<z.ZodObject<{
         name: z.ZodString;
         version: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        module: string | Record<string, string>;
         name: string;
+        module: string | Record<string, string>;
         version: string;
     }, {
-        module: string | Record<string, string>;
         name: string;
+        module: string | Record<string, string>;
         version: string;
     }>, "many">>;
     externalIPyWidgets: z.ZodDefault<z.ZodArray<z.ZodObject<Omit<{
@@ -31,11 +31,12 @@ export declare const jupyterNotebookPropsSchema: z.ZodDefault<z.ZodObject<{
     nbgrader: z.ZodDefault<z.ZodBoolean>;
     readOnly: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
+    readOnly: boolean;
     cellMetadataPanel: boolean;
     cellSidebarMargin: number;
     bundledIPyWidgets: {
-        module: string | Record<string, string>;
         name: string;
+        module: string | Record<string, string>;
         version: string;
     }[];
     externalIPyWidgets: {
@@ -43,17 +44,17 @@ export declare const jupyterNotebookPropsSchema: z.ZodDefault<z.ZodObject<{
         version: string;
     }[];
     nbgrader: boolean;
-    readOnly: boolean;
-    maxHeight?: string | undefined;
     height?: string | undefined;
+    maxHeight?: string | undefined;
 }, {
+    height?: string | undefined;
+    readOnly?: boolean | undefined;
     maxHeight?: string | undefined;
     cellMetadataPanel?: boolean | undefined;
     cellSidebarMargin?: number | undefined;
-    height?: string | undefined;
     bundledIPyWidgets?: {
-        module: string | Record<string, string>;
         name: string;
+        module: string | Record<string, string>;
         version: string;
     }[] | undefined;
     externalIPyWidgets?: {
@@ -61,6 +62,5 @@ export declare const jupyterNotebookPropsSchema: z.ZodDefault<z.ZodObject<{
         version: string;
     }[] | undefined;
     nbgrader?: boolean | undefined;
-    readOnly?: boolean | undefined;
 }>>;
 //# sourceMappingURL=jupyterNotebook.d.ts.map

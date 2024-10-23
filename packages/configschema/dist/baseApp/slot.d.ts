@@ -47,9 +47,9 @@ export declare const baseAppSlot: z.ZodObject<{
         label?: string | undefined;
     }[]>;
 }, "strip", z.ZodTypeAny, {
-    path: string;
     type: "component" | "embeddable" | "page";
-    parentSlot: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form";
+    path: string;
+    parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
     subSlot: string;
     clientOnly: boolean;
     embeddables: {
@@ -58,9 +58,9 @@ export declare const baseAppSlot: z.ZodObject<{
     }[];
     propsExtends?: string | undefined;
 }, {
-    path: string;
     type: "component" | "embeddable" | "page";
-    parentSlot: "math" | "snippets" | "bibliography" | "navigation" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette" | "form";
+    path: string;
+    parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
     subSlot: string;
     embeddables: {
         regexToInclude: string;

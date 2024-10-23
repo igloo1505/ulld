@@ -1,29 +1,29 @@
 "use client";
+import type { ReactNode } from "react";
 import React from "react";
-import { useNavSettingsForm } from "../../../state/useForm";
 import { Reorder } from "framer-motion";
+import { useNavSettingsForm } from "../../../state/useForm";
+import type { NavigationFormSettingSchema } from "../../../form/schema";
 import NavbarLinkListItem from "./item";
-import { NavigationFormSettingSchema } from "../../../form/schema";
 
-interface NavbarLinkListProps { }
 
-const NavbarLinkList = (props: NavbarLinkListProps) => {
+const NavbarLinkList = (): ReactNode => {
     const form = useNavSettingsForm();
     const items = form.watch("navbarLinks");
 
     const handleReorder = (
         newItems: NavigationFormSettingSchema["navbarLinks"],
-    ) => {
+    ): void => {
         form.setValue("navbarLinks", newItems);
     };
 
     return (
-        <Reorder.Group values={items} onReorder={handleReorder}>
+        <Reorder.Group onReorder={handleReorder} values={items}>
             {items.map((x, i) => {
                 return (
                     <NavbarLinkListItem
                         item={x}
-                        key={`${x.label}-${"action" in x ? x.action : x.url}`}
+                        key={`navlink-li-${x.label}-${x.value}`}
                         removeItem={() => {
                             form.setValue(
                                 "navbarLinks",

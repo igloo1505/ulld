@@ -2,7 +2,7 @@ import { z } from 'zod';
 export declare const internalDocTypes: z.ZodUnion<[z.ZodLiteral<"bookmarks">, z.ZodLiteral<"snippets">]>;
 export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
     label: z.ZodString;
-    icon: z.ZodDefault<z.ZodNativeEnum<typeof import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated>>;
+    icon: z.ZodDefault<z.ZodEffects<z.ZodString, string, string>>;
     UI: z.ZodDefault<z.ZodDefault<z.ZodObject<{
         styles: z.ZodDefault<z.ZodObject<{
             dark: z.ZodDefault<z.ZodObject<{
@@ -84,7 +84,7 @@ export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
     inNavbar: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
     label: string;
-    icon: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated;
+    icon: string;
     UI: {
         styles: {
             dark: {
@@ -115,7 +115,7 @@ export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
 }, {
     label: string;
     url: string;
-    icon?: import("@ulld/utilities/validIconNameEnum").ValidIconNameEnumDynamicallyGenerated | undefined;
+    icon?: string | undefined;
     UI?: {
         styles?: {
             dark?: {

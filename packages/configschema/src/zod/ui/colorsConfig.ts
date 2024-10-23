@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { defaultUlldColorMap } from "./defaultColorMap.js";
 import { convertColorString } from "@ulld/utilities/convertColorString";
+import { ZodOutputSchema } from "../../types.js";
 
 const colorTransformOptional = (val?: string | null) => val ? convertColorString(val) : undefined;
 
@@ -81,6 +82,12 @@ const colorValue = z
         return a;
     });
 
+
+export const colorValueOutput: ZodOutputSchema<typeof colorValue> = z.object({
+    dark: z.string(),
+    light: z.string(),
+})
+
 const configColors = z.union([
     z.literal("red"),
     z.literal("orange"),
@@ -114,9 +121,13 @@ const configColors = z.union([
 
 export type ConfigColorKey = z.input<typeof configColors>;
 
-export const colorsConfigSchema = z
+const colorConfigSchemaInner = z
     .record(z.string(), colorValue)
-    .default(defaultUlldColorMap);
+
+export const colorsConfigSchema = 
+    colorConfigSchemaInner.default(defaultUlldColorMap);
+
+export const colorConfigSchemaOutput = z.record(z.string(), colorValueOutput)
 
 export type ColorGroupType = z.infer<typeof colorGroup>;
 

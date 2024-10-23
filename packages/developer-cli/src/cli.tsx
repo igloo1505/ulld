@@ -6,8 +6,8 @@ const appOptions: Options = {
     name: 'ulldDev',
     description:
         'Internal development utilities for the ULLD academic note taking framework.',
-}
+};
 
 const app = new Pastel(appOptions);
 
-await app.run()
+await app.run();

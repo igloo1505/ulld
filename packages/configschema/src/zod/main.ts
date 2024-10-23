@@ -16,7 +16,6 @@ import { defaultIgnoreFilePaths } from "./defaults/general.js";
 import { slashesTransform } from "./transforms/general.js";
 import { allParsableFileExtensionSchema } from "./secondaryConfigParse/getParsableExtensions.js";
 import { featuresConfigSchema } from "./features/main.js";
-import { pluginSlotSchema } from "@ulld/configschema/slotsSchema";
 import {
     withForwardSlash,
     withForwardSlashOptional,
@@ -26,6 +25,7 @@ import { appMetaSchema } from "./meta.js";
 import { defaultNoteTypes } from "./defaults/defaultNoteTypes.js";
 import { WithRequired } from "@ulld/utilities/types";
 import { getCurrentPackageVersions } from "@ulld/utilities/internalDataHelpers";
+import { pluginSlotSchema } from "../developer/slotsSchema.js";
 
 export const zodRegexField = z
     .union([
@@ -37,6 +37,9 @@ export const zodRegexField = z
         }),
     ])
     .array();
+
+
+export const parsedZodRegexField = z.string().array().default([]);
 
 const pluginItemSchema = z.object({
     name: z.string(),
@@ -64,6 +67,18 @@ export const zodRegexFieldTransform = (b: z.input<typeof zodRegexField> = []) =>
         return a;
     });
 };
+
+export const globInputToString = (b: z.input<typeof zodRegexField> = []): string[] => {
+    return b.map((a) => {
+        if (a instanceof RegExp) {
+            return a.source
+        }
+        if(typeof a === "object" && "original" in a && "regex" in a){
+            return a.original as string
+        }
+        return a as unknown as string
+    })
+}
 
 const getDefaultPlugins = (): z.input<typeof pluginItemSchema>[]  => {
     const currentPackageVersions = getCurrentPackageVersions()
@@ -97,7 +112,7 @@ export const appConfigSchema = z.object({
             "File paths within the root directory which should be completely ignored by ULLD.",
         )
         .default(defaultIgnoreFilePaths)
-        .transform(zodRegexFieldTransform),
+        .transform(globInputToString),
     tempDir: z
         .string()
         .default("__temp__")
@@ -112,20 +127,11 @@ export const appConfigSchema = z.object({
             "fsRoot relative path to the directory for automatically generated content. In almost all use cases this can be left to it's default value.",
         )
         .transform(slashesTransform(true, false)),
-    ignorePreferFsExtensions: z
-        .union([
-        z.string(),
-        z.instanceof(RegExp),
-        z.object({
-            original: z.string(),
-            regex: z.instanceof(RegExp)
-        })
-    ])
+    ignorePreferFsExtensions: zodRegexField
         .describe(
             "An array of either glob strings or RegExp's with which to test file paths. Those evaluating to true will always be rendered from the database, regardless of other global settings.",
         )
-        .transform(zodPathGlobTransform)
-        .array()
+        .transform(globInputToString)
         .default([]),
     fileTypePriority: allParsableFileExtensionSchema
         .array()
@@ -205,7 +211,7 @@ export const appConfigSchema = z.object({
         .record(z.string(), z.string().url())
         .describe("A map of key value pairs of commonly referenced urls.")
         .default({}),
-    features: featuresConfigSchema,
+    // features: featuresConfigSchema,
     code: codeConfigSchema,
     math: mathConfigSchema,
     plotting: plotConfigSchema,

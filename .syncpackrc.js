@@ -1,5 +1,8 @@
-// @ts-check
+const devDependencyPackages = ["@ulld/test-utils", "@ulld/eslint-config"];
 
+const prodDependencyPackages = [];
+
+// @ts-check
 /** @type {import("syncpack").RcFile} */
 const config = {
     sortPackages: true,
@@ -49,13 +52,36 @@ const config = {
         {
             // Rewrite this glob to allow the @ulld/test-utils package to be used in the devDependencies once that package is actually useful.
             dependencies: [
-                "@ulld/**",
+                `@ulld/!{${[...devDependencyPackages, ...prodDependencyPackages].map((n) => n.replace("@ulld/", "")).join(",")}}`,
+                // `@ulld/!(${[...devDependencyPackages, ...prodDependencyPackages].map((n) => n.replace("@ulld/", "")).join("|")})`,
                 // "!@ulld/test-utils"
             ],
             dependencyTypes: ["!peer"],
             isBanned: true,
             packages: ["!@ulld/website"],
             label: "Internal packages should only be under peerDependencies",
+        },
+        // {
+        // NOTE: Turn this back on if any internal pacakges should be installed only in production dependencies and not as peerDependencies.
+        //     dependencies: prodDependencyPackages,
+        //     dependencyTypes: ["!prod"],
+        //     isBanned: true,
+        //     packages: ["**"],
+        //     label: `Pin ${prodDependencyPackages.join(", ")} to production dependency`,
+        // },
+        {
+            dependencies: devDependencyPackages,
+            dependencyTypes: ["!dev"],
+            isBanned: true,
+            packages: ["**"],
+            label: `Pin ${devDependencyPackages.join(", ")} to internal dev dependency`,
+        },
+        {
+            dependencies: [...prodDependencyPackages, ...devDependencyPackages],
+            // Change this pinVersion field to from "workspace:*" to "*" when the pinned packages are in better working order.
+            pinVersion: "workspace:*",
+            packages: ["**"],
+            label: `Pin ${[...prodDependencyPackages, ...devDependencyPackages].join(", ")} to internal dependency version *.`,
         },
         {
             // TODO: Check tailwind and all tailwind related packages like sass, autoprefixer to see if they can be installed only in development.
@@ -65,6 +91,7 @@ const config = {
                 "**jest**",
                 "ava",
                 "**mocha**",
+                "**vitest**",
                 "**babel**",
                 "**supertest**",
                 "**chai**",
@@ -251,14 +278,44 @@ const config = {
         {
             dependencies: ["ink"],
             packages: ["**"],
-            pinVersion: "4.1.0",
+            pinVersion: "4.4.1",
             label: "Pin ink to 4.1.0",
+        },
+        {
+            dependencies: ["@inkjs/ui"],
+            packages: ["**"],
+            pinVersion: "1.0.0",
+            label: "Pin @inkjs/ui to 1.0.0",
+        },
+        {
+            dependencies: ["ink-testing-library"],
+            packages: ["**"],
+            pinVersion: "3.0.0",
+            label: "Pin ink-testing-library to 3.0.0",
         },
         {
             dependencies: ["pastel"],
             packages: ["**"],
             pinVersion: "2.0.0",
             label: "Pin pastel",
+        },
+        {
+            dependencies: ["marked"],
+            packages: ["**"],
+            pinVersion: "14.1.3",
+            label: "Pin marked",
+        },
+        {
+            dependencies: ["marked-terminal"],
+            packages: ["**"],
+            pinVersion: "7.1.0",
+            label: "Pin marked-terminal",
+        },
+        {
+            dependencies: ["@types/marked-terminal"],
+            packages: ["**"],
+            pinVersion: "6.1.1",
+            label: "Pin @types/marked-terminal",
         },
         {
             dependencies: ["eslint"],

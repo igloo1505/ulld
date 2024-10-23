@@ -1,0 +1,1 @@
+{"version":3,"file":"getPathFromArgument.js","sourceRoot":"","sources":["../../src/utils/getPathFromArgument.ts"],"names":[],"mappings":"AAAA,OAAO,IAAI,MAAM,MAAM,CAAA;AAGvB,MAAM,CAAC,MAAM,mBAAmB,GAAG,CAAC,CAAS,EAAU,EAAE;IACrD,OAAO,IAAI,CAAC,UAAU,CAAC,CAAC,CAAC;QACrB,CAAC,CAAC,CAAC;QACH,CAAC,CAAC,IAAI,CAAC,OAAO,CAAC,OAAO,CAAC,GAAG,EAAE,EAAE,CAAC,CAAC,CAAC;AACzC,CAAC,CAAA"}

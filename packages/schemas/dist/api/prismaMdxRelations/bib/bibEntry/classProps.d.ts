@@ -143,6 +143,10 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
     }>, "many">>;
     added: z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodDate, z.ZodString]>>>, Date, string | Date | null | undefined>;
 }, "strip", z.ZodTypeAny, {
+    lastAccess: Date;
+    id: string;
+    createdAt: Date;
+    BibId: number;
     readingList: {
         name: string;
         description: string | null;
@@ -152,19 +156,15 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
         createdAt: Date;
         lastUpdate: Date;
     }[];
-    tags: {
-        value: string;
-        kanbanId?: number | null | undefined;
-    }[];
-    lastAccess: Date;
-    id: string;
-    createdAt: Date;
-    BibId: number;
     topics: {
         value: string;
     }[];
     subjects: {
         value: string;
+    }[];
+    tags: {
+        value: string;
+        kanbanId?: number | null | undefined;
     }[];
     read: boolean;
     OwnWork: boolean;
@@ -176,14 +176,7 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
     }[];
     added: Date;
     number?: string | null | undefined;
-    journal?: string | null | undefined;
-    editor?: string | null | undefined;
-    abstract?: string | null | undefined;
-    copyright?: string | null | undefined;
-    note?: string | null | undefined;
-    school?: string | null | undefined;
     type?: string | null | undefined;
-    volume?: string | null | undefined;
     Bib?: {
         entries: any[];
         filename: string;
@@ -201,48 +194,35 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
     crossref?: string | null | undefined;
     doi?: string | null | undefined;
     edition?: string | null | undefined;
+    editor?: string | null | undefined;
     email?: string | null | undefined;
     howpublished?: string | null | undefined;
     institution?: string | null | undefined;
+    journal?: string | null | undefined;
     month?: string | null | undefined;
+    note?: string | null | undefined;
     organization?: string | null | undefined;
     pages?: string | null | undefined;
     publisher?: string | null | undefined;
+    school?: string | null | undefined;
     series?: string | null | undefined;
     title?: string | null | undefined;
+    volume?: string | null | undefined;
     year?: string | null | undefined;
     numpages?: string | null | undefined;
     url?: string | null | undefined;
     issue?: string | null | undefined;
     issn?: string | null | undefined;
+    abstract?: string | null | undefined;
     urldate?: string | null | undefined;
     keywords?: string | null | undefined;
+    copyright?: string | null | undefined;
     tempPageIndex?: number | null | undefined;
     MdxNotes?: any[] | null | undefined;
 }, {
     id: string;
     number?: string | null | undefined;
-    journal?: string | null | undefined;
-    editor?: string | null | undefined;
-    abstract?: string | null | undefined;
-    copyright?: string | null | undefined;
-    note?: string | null | undefined;
-    readingList?: {
-        name: string;
-        description: string | null;
-        bibEntries: any[];
-        mdxNotes?: any[] | undefined;
-        ipynbNotes?: any[] | undefined;
-        createdAt?: string | Date | null | undefined;
-        lastUpdate?: string | Date | null | undefined;
-    }[] | undefined;
-    school?: string | null | undefined;
-    tags?: (string | {
-        value: string;
-        kanbanId?: number | null | undefined;
-    })[] | undefined;
     type?: string | null | undefined;
-    volume?: string | null | undefined;
     lastAccess?: string | Date | null | undefined;
     createdAt?: string | Date | null | undefined;
     Bib?: {
@@ -253,12 +233,25 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
         id?: number | undefined;
     } | undefined;
     BibId?: number | undefined;
+    readingList?: {
+        name: string;
+        description: string | null;
+        bibEntries: any[];
+        mdxNotes?: any[] | undefined;
+        ipynbNotes?: any[] | undefined;
+        createdAt?: string | Date | null | undefined;
+        lastUpdate?: string | Date | null | undefined;
+    }[] | undefined;
     topics?: {
         value: string;
     }[] | undefined;
     subjects?: {
         value: string;
     }[] | undefined;
+    tags?: (string | {
+        value: string;
+        kanbanId?: number | null | undefined;
+    })[] | undefined;
     htmlCitation?: string | null | undefined;
     PdfPath?: string | null | undefined;
     address?: string | null | undefined;
@@ -269,22 +262,29 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
     crossref?: string | null | undefined;
     doi?: string | null | undefined;
     edition?: string | null | undefined;
+    editor?: string | null | undefined;
     email?: string | null | undefined;
     howpublished?: string | null | undefined;
     institution?: string | null | undefined;
+    journal?: string | null | undefined;
     month?: string | null | undefined;
+    note?: string | null | undefined;
     organization?: string | null | undefined;
     pages?: string | null | undefined;
     publisher?: string | null | undefined;
+    school?: string | null | undefined;
     series?: string | null | undefined;
     title?: string | null | undefined;
+    volume?: string | null | undefined;
     year?: string | null | undefined;
     numpages?: string | null | undefined;
     url?: string | null | undefined;
     issue?: string | null | undefined;
     issn?: string | null | undefined;
+    abstract?: string | null | undefined;
     urldate?: string | null | undefined;
     keywords?: string | null | undefined;
+    copyright?: string | null | undefined;
     tempPageIndex?: number | null | undefined;
     read?: boolean | undefined;
     OwnWork?: boolean | undefined;
@@ -691,6 +691,10 @@ export declare const bibEntryPropsSchema: z.ZodEffects<z.ZodObject<{
     }>, "many">>;
     added: z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodDate, z.ZodString]>>>, Date, string | Date | null | undefined>;
 }, z.ZodString, "strip">>, Omit<{
+    lastAccess: Date;
+    id: string;
+    createdAt: Date;
+    BibId: number;
     readingList: {
         name: string;
         description: string | null;
@@ -700,19 +704,15 @@ export declare const bibEntryPropsSchema: z.ZodEffects<z.ZodObject<{
         createdAt: Date;
         lastUpdate: Date;
     }[];
-    tags: {
-        value: string;
-        kanbanId?: number | null | undefined;
-    }[];
-    lastAccess: Date;
-    id: string;
-    createdAt: Date;
-    BibId: number;
     topics: {
         value: string;
     }[];
     subjects: {
         value: string;
+    }[];
+    tags: {
+        value: string;
+        kanbanId?: number | null | undefined;
     }[];
     read: boolean;
     OwnWork: boolean;
@@ -724,14 +724,7 @@ export declare const bibEntryPropsSchema: z.ZodEffects<z.ZodObject<{
     }[];
     added: Date;
     number?: string | null | undefined;
-    journal?: string | null | undefined;
-    editor?: string | null | undefined;
-    abstract?: string | null | undefined;
-    copyright?: string | null | undefined;
-    note?: string | null | undefined;
-    school?: string | null | undefined;
     type?: string | null | undefined;
-    volume?: string | null | undefined;
     Bib?: {
         entries: any[];
         filename: string;
@@ -749,22 +742,29 @@ export declare const bibEntryPropsSchema: z.ZodEffects<z.ZodObject<{
     crossref?: string | null | undefined;
     doi?: string | null | undefined;
     edition?: string | null | undefined;
+    editor?: string | null | undefined;
     email?: string | null | undefined;
     howpublished?: string | null | undefined;
     institution?: string | null | undefined;
+    journal?: string | null | undefined;
     month?: string | null | undefined;
+    note?: string | null | undefined;
     organization?: string | null | undefined;
     pages?: string | null | undefined;
     publisher?: string | null | undefined;
+    school?: string | null | undefined;
     series?: string | null | undefined;
     title?: string | null | undefined;
+    volume?: string | null | undefined;
     year?: string | null | undefined;
     numpages?: string | null | undefined;
     url?: string | null | undefined;
     issue?: string | null | undefined;
     issn?: string | null | undefined;
+    abstract?: string | null | undefined;
     urldate?: string | null | undefined;
     keywords?: string | null | undefined;
+    copyright?: string | null | undefined;
     tempPageIndex?: number | null | undefined;
     MdxNotes?: any[] | null | undefined;
 }, "BibId"> & {

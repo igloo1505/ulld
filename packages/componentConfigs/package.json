@@ -19,6 +19,7 @@
     "./colors": "./src/subConfigs/colors.tsx"
   },
   "dependencies": {
+    "@ulld/eslint-config": "*",
     "tinycolor2": "1.6.0"
   },
   "peerDependencies": {

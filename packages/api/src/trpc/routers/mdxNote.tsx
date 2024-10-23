@@ -219,13 +219,13 @@ export const mdxNoteActionsRouter = router({
     parseAndCompileMdxString: publicProcedure
         .input(internalMdxStringParseParamSchemaOptionalAppConfig)
         .query(async ({ input }) => {
-            let appConfig = input.parseParams.appConfig
+        const appConfig = input.parseParams.appConfig
                 ? input.parseParams.appConfig
                 : await readAppConfig();
             if (!input.parseParams.appConfig) {
                 input.parseParams.appConfig = appConfig;
             }
-            let content = await formatMdxString(
+            const content = await formatMdxString(
                 input as typeof input & {
                     parseParams: (typeof input)["parseParams"] & {
                         appConfig: any;

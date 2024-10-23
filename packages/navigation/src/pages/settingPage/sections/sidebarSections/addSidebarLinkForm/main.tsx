@@ -6,6 +6,7 @@ import { useElementWidthByRef } from "@ulld/hooks/useElementWidthByRef";
 import { useElementWidthById } from "@ulld/hooks/useElementWidthById";
 import { cn } from "@ulld/utilities/cn";
 import { TextInput } from "@ulld/full-form/textInput";
+import {CheckboxOneFromGroup} from "@ulld/full-form/checkboxOneFromGroup"
 import type { SidebarLink } from "../../../form/schema";
 import { maxSidebarLinks } from "../../../staticSettingData";
 import EmbeddedFormCard from "../../../utilComponents/embeddedFormCard";
@@ -51,6 +52,7 @@ const AddSidebarLinkForm = ({
 
     return (
         <EmbeddedFormCard
+            className="@container/sidebarForm"
             form={form}
             id={outterContainerId}
             onSubmit={handleAddItem}
@@ -60,7 +62,7 @@ const AddSidebarLinkForm = ({
                     className={cn(
                         "w-full flex flex-col justify-center items-center gap-4",
                         isWide && "grid grid-cols-[2fr_3fr]",
-                    )}
+                   )}
                 >
                     <div className={isWide ? "" : "w-full"} ref={iconInputContainer}>
                         <IconInput
@@ -89,14 +91,31 @@ const AddSidebarLinkForm = ({
                         />
                     </div>
                 </div>
+                <div className="w-full h-fit flex flex-col @[500px]/sidebarForm:flex-row gap-6">
                 <TextInput
                     classes={{
-                        formItem: "w-full",
+                        formItem: "w-full @[500px]/sidebarForm:w-auto @[500px]/sidebarForm:flex-grow",
                         input: "w-full",
                     }}
                     label="Label"
                     name="label"
                 />
+                    <CheckboxOneFromGroup 
+                        alignRow
+                        label="Position"
+                        name="position"
+                        options={[
+                            {
+                                label: "Top",
+                                value: "top"
+                            },
+                            {
+                                label: "Bottom",
+                                value: "bottom"
+                            }
+                        ]}
+                    />
+                </div>
             </div>
             <div className="w-full flex flex-row justify-end items-center mt-4">
                 <Button disabled={disabled} type="submit">

@@ -11,7 +11,8 @@ export * from "./corePageUtils/commonPagePropTypes.js";
 export * from "./general.js";
 export * from "./buildTypes.js";
 export * from "./pageParams.js";
-export * from "./baseApp/main.js";
 export * from "./mdxStructure.js";
 export * from "./corePageProps.js";
+export type * from "../utils/generatedUtils/index";
+export type * from "../staticAppProperties/internalLocationsAndActions/index";
 //# sourceMappingURL=main.d.ts.map

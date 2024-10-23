@@ -18,6 +18,9 @@
     "vite.json",
     "targetApp.json"
   ],
+  "dependencies": {
+    "@ulld/eslint-config": "*"
+  },
   "peerDependencies": {
     "@ulld/types": "workspace:*"
   },
