@@ -1,9 +1,11 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunk6LXZO67Tcjs = require('../../chunk-6LXZO67T.cjs');
+
+var _chunkLFBBNVRXcjs = require('../../chunk-LFBBNVRX.cjs');
 
 
 
-exports.fontConfigSchema = _chunk6LXZO67Tcjs.fontConfigSchema; exports.textConfigSchema = _chunk6LXZO67Tcjs.textConfigSchema;
+
+exports.fontConfigSchema = _chunkLFBBNVRXcjs.fontConfigSchema; exports.textConfigSchema = _chunkLFBBNVRXcjs.textConfigSchema; exports.textConfigSchemaOutput = _chunkLFBBNVRXcjs.textConfigSchemaOutput;
 //# sourceMappingURL=textConfig.cjs.map

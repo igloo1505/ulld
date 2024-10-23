@@ -1,9 +1,11 @@
 import {
   fontConfigSchema,
-  textConfigSchema
-} from "../../chunk-VLOFAKAQ.mjs";
+  textConfigSchema,
+  textConfigSchemaOutput
+} from "../../chunk-F4OWPLKE.mjs";
 export {
   fontConfigSchema,
-  textConfigSchema
+  textConfigSchema,
+  textConfigSchemaOutput
 };
 //# sourceMappingURL=textConfig.mjs.map

@@ -15,11 +15,10 @@ export interface NoteDetailSheetProps {
 }
 
 
-
 export interface NavbarComponentProps {
     noteTypes: AppConfigSchemaOutput["noteTypes"];
     navConfig: AppConfigSchemaOutput["navigation"];
-    logo: ReactNode;
+    logo: FC<PassedLogoProps>;
 }
 
 export interface FullScreenNavProps

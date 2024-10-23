@@ -1,9 +1,9 @@
 import {
-  settingsPageOutputSchema
-} from "../chunk-BDTE7KYQ.mjs";
-import {
   componentDocumentationSchema
 } from "../chunk-27AMS425.mjs";
+import {
+  settingsPageOutputSchema
+} from "../chunk-BDTE7KYQ.mjs";
 import {
   navigationLinkSchema
 } from "../chunk-FBSQUA72.mjs";

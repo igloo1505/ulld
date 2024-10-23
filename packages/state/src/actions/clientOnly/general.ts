@@ -11,6 +11,7 @@ import {
 import { setTocContent } from "../../state/slices/functionality";
 import { copyStringToClipboard } from "@ulld/utilities/actions/copyStringToClipboard";
 import { ToastConfigType } from "@ulld/utilities/types/toastConfig";
+import { toggleBookmarkedState } from "@ulld/utilities/toggleBookmarkState";
 
 export const toggleSidebar = () =>
     document.body.classList.toggle("sidebarOpenPermanent");
@@ -35,8 +36,8 @@ export const toggleDarkMode = async () => {
         method: "POST",
         body: JSON.stringify({
             darkmode: newDarkMode ? "darkMode" : "noDarkMode",
-        })
-    })
+        }),
+    });
 };
 
 export const setTocPanelContent = (noteId: string | number) => {
@@ -93,15 +94,19 @@ export const toggleEquationSelectMode = (val?: boolean) => {
 };
 
 /**
- * @returns 
+ * @returns
  * boolean indicating success or failure.
  */
 export const toggleBookmarkedById = async (id: number): Promise<boolean> => {
-      const res = await axios.post("/utils/toggles/bookmarked", {
-        id
-    })
-    return Boolean(res?.data?.success as boolean | undefined)
-}
+    const res = await axios.post("/utils/toggles/bookmarked", {
+        id,
+    });
+    const success = Boolean(res?.data?.success as boolean | undefined);
+    if (success) {
+        toggleBookmarkedState();
+    }
+    return success;
+};
 
 export const toggleAllJupyterFolds = (fold?: boolean) => {
     let ems = document.querySelectorAll<HTMLDivElement>("div.jupyter-foldable");

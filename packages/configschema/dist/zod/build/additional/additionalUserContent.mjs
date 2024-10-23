@@ -1,7 +1,9 @@
 import {
-  additionalUserContent
-} from "../../../chunk-QK5DXQK6.mjs";
+  additionalUserContent,
+  additionalUserContentOutput
+} from "../../../chunk-MG7G2I5I.mjs";
 export {
-  additionalUserContent
+  additionalUserContent,
+  additionalUserContentOutput
 };
 //# sourceMappingURL=additionalUserContent.mjs.map

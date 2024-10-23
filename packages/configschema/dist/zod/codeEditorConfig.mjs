@@ -1,7 +1,9 @@
 import {
-  monacoEditorConfigSchema
-} from "../chunk-HDNJ4K5L.mjs";
+  monacoEditorConfigSchema,
+  monacoEditorConfigSchemaOutput
+} from "../chunk-YSQL5WSG.mjs";
 export {
-  monacoEditorConfigSchema
+  monacoEditorConfigSchema,
+  monacoEditorConfigSchemaOutput
 };
 //# sourceMappingURL=codeEditorConfig.mjs.map

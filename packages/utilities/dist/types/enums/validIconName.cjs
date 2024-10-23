@@ -1,13 +1,14 @@
 'use strict';
 
-require('../../chunk-7ARU3YXQ.cjs');
 var validIconNameList = require('@ulld/types/validIconNameList');
 
 
 
-Object.defineProperty(exports, "validIconNameList", {
-	enumerable: true,
-	get: function () { return validIconNameList.validIconNameList; }
+Object.keys(validIconNameList).forEach(function (k) {
+	if (k !== 'default' && !Object.prototype.hasOwnProperty.call(exports, k)) Object.defineProperty(exports, k, {
+		enumerable: true,
+		get: function () { return validIconNameList[k]; }
+	});
 });
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=validIconName.cjs.map

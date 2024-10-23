@@ -1,1 +1,1 @@
-{"version":3,"file":"codeEditorConfig.d.ts","sourceRoot":"","sources":["../../src/zod/codeEditorConfig.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAA;AAKvB,eAAO,MAAM,wBAAwB;;;;;;;;;GAGvB,CAAA"}
+{"version":3,"file":"codeEditorConfig.d.ts","sourceRoot":"","sources":["../../src/zod/codeEditorConfig.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAA;AACvB,OAAO,EAAE,eAAe,EAAE,MAAM,aAAa,CAAA;AAU7C,eAAO,MAAM,wBAAwB;;;;;;;;;GAA6C,CAAA;AAGlF,eAAO,MAAM,8BAA8B,EAAE,eAAe,CAAC,OAAO,wBAAwB,CAG1F,CAAA"}

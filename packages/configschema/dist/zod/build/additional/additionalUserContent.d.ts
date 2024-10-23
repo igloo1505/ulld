@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../../types.js";
 export declare const additionalUserContent: z.ZodDefault<z.ZodObject<{
     css: z.ZodOptional<z.ZodString>;
     favicon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
@@ -12,4 +13,5 @@ export declare const additionalUserContent: z.ZodDefault<z.ZodObject<{
     logo?: string | undefined;
     favicon?: string | undefined;
 }>>;
+export declare const additionalUserContentOutput: ZodOutputSchema<typeof additionalUserContent>;
 //# sourceMappingURL=additionalUserContent.d.ts.map

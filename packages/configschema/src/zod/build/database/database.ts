@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { postgresConfigSchema } from "./postgres.js";
+import { postgresConfigSchema, postgresConfigSchemaOutput } from "./postgres.js";
+import { ZodOutputSchema } from "../../../types.js";
 
 export const ulldSupportedDatabases = [
     "postgres",
@@ -25,3 +26,13 @@ export const databaseBuildSchema = z
                 "If you set the database type to 'Postgres', you must also provide a postgres configuration with either a port number and a database name, or a connection URI.",
         },
     );
+
+
+export const databaseBuildSchemaOutput: ZodOutputSchema<typeof databaseBuildSchema> = z
+    .object({
+        type: z
+            .enum(ulldSupportedDatabases),
+        postgres: postgresConfigSchemaOutput,
+        prioritize: z
+            .union([z.literal("speed"), z.literal("size")])
+    })

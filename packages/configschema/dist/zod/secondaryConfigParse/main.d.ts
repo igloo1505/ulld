@@ -17,19 +17,19 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
     })[] | undefined>;
     tempDir: z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>;
     generatedDir: z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>;
-    ignorePreferFsExtensions: z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodObject<{
+    ignorePreferFsExtensions: z.ZodDefault<z.ZodEffects<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString, z.ZodObject<{
         original: z.ZodString;
-        regex: z.ZodType<RegExp, z.ZodTypeDef, RegExp>;
+        regex: z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>]>, RegExp, string | RegExp>;
     }, "strip", z.ZodTypeAny, {
         regex: RegExp;
         original: string;
     }, {
-        regex: RegExp;
+        regex: string | RegExp;
         original: string;
-    }>]>, import("../configUtilitySchemas.js").ParsedRegExpField, string | RegExp | {
-        regex: RegExp;
+    }>]>, "many">, string[], (string | RegExp | {
+        regex: string | RegExp;
         original: string;
-    }>, "many">>;
+    })[]>>;
     fileTypePriority: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>, z.ZodUnion<[z.ZodLiteral<".csv">, z.ZodLiteral<".tsv">, z.ZodLiteral<".excel">, z.ZodLiteral<".numpy">, z.ZodLiteral<".html">, z.ZodLiteral<".pickle">, z.ZodLiteral<".db">, z.ZodLiteral<".sql">, z.ZodLiteral<".pdf">, z.ZodLiteral<".json">, z.ZodLiteral<".tex">, z.ZodLiteral<".hdf5">]>]>, "many">>;
     noteTypes: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodObject<{
         label: z.ZodString;
@@ -298,7 +298,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
     cslPath: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
     dateHandling: z.ZodDefault<z.ZodObject<{
         enableAdvancedFormat: z.ZodDefault<z.ZodBoolean>;
-        format: z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        format: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
             short: z.ZodDefault<z.ZodString>;
             long: z.ZodDefault<z.ZodString>;
             withTime: z.ZodDefault<z.ZodString>;
@@ -313,12 +313,22 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             long?: string | undefined;
             withTime?: string | undefined;
             timeOnly?: string | undefined;
-        }>]>>;
+        }>]>>, {
+            short: string;
+            long: string;
+            withTime: string;
+            timeOnly: string;
+        }, string | {
+            short?: string | undefined;
+            long?: string | undefined;
+            withTime?: string | undefined;
+            timeOnly?: string | undefined;
+        } | undefined>;
         defaultTimeDisplayType: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"analog">, z.ZodLiteral<"summarized">, z.ZodLiteral<"descriptive">]>>;
         defaultTimeZone: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -368,61 +378,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         subject: string;
     }>, "many">>;
     linkAliases: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodString>>;
-    features: z.ZodOptional<z.ZodObject<{
-        enabled: z.ZodDefault<z.ZodObject<{
-            commandPalette: z.ZodDefault<z.ZodBoolean>;
-            tikz: z.ZodDefault<z.ZodBoolean>;
-        }, "strip", z.ZodTypeAny, {
-            commandPalette: boolean;
-            tikz: boolean;
-        }, {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        }>>;
-        pages: z.ZodObject<{
-            equations: z.ZodDefault<z.ZodBoolean>;
-            snippets: z.ZodDefault<z.ZodBoolean>;
-            calendar: z.ZodDefault<z.ZodBoolean>;
-            bibliography: z.ZodDefault<z.ZodBoolean>;
-            taskManager: z.ZodDefault<z.ZodBoolean>;
-        }, "strip", z.ZodTypeAny, {
-            calendar: boolean;
-            bibliography: boolean;
-            snippets: boolean;
-            taskManager: boolean;
-            equations: boolean;
-        }, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }>;
-    }, "strip", z.ZodTypeAny, {
-        pages: {
-            calendar: boolean;
-            bibliography: boolean;
-            snippets: boolean;
-            taskManager: boolean;
-            equations: boolean;
-        };
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
-    }, {
-        pages: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        };
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    }>>;
     code: z.ZodDefault<z.ZodObject<{
         theme: z.ZodDefault<z.ZodObject<{
             dark: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
@@ -615,14 +570,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             equations?: number | undefined;
             categories?: number | undefined;
         }>>;
-        bookmarkLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        syncLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        fileSystemToggle: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        darkmodeToggle: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        settings: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        equationsLink: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        snippetsLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        backupData: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
         navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
             label: z.ZodString;
             icon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
@@ -649,14 +596,14 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }, {
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }>, z.ZodString]>, "many">>;
     }, "strip", z.ZodTypeAny, {
         navbarBreakpoint: {
@@ -669,10 +616,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -683,15 +626,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     }, {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -702,13 +640,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -719,8 +650,8 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
     }>>;
     UI: z.ZodDefault<z.ZodObject<{
@@ -764,15 +695,15 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         media: z.ZodDefault<z.ZodObject<{
             imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
             includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
-            imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
+            imageRemoteTest: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString]>, "many">>, string[], (string | RegExp)[] | undefined>;
         }, "strip", z.ZodTypeAny, {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         }, {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         }>>;
         colors: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodObject<{
             dark: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
@@ -807,7 +738,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -830,7 +761,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -1301,14 +1232,11 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, ({
+    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[], string | string[] | {
+    }[], string | string[] | {
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
@@ -1318,7 +1246,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         parserIndex?: number | undefined;
     }[] | undefined>;
 }, {
-    jupyter: z.ZodObject<z.objectUtil.extendShape<{
+    jupyter: import("../../types.js").ZodOutputSchema<z.ZodObject<{
         execute: z.ZodDefault<z.ZodBoolean>;
         environment: z.ZodDefault<z.ZodString>;
         syntaxHighlightTheme: z.ZodDefault<z.ZodString>;
@@ -1466,47 +1394,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             prefix: string;
             suffix: string;
         }>>>;
-    }, {
-        jupyterReactProps: z.ZodObject<z.objectUtil.extendShape<{
-            collaborative: z.ZodDefault<z.ZodBoolean>;
-            lite: z.ZodDefault<z.ZodBoolean>;
-            serverUrls: z.ZodOptional<z.ZodObject<{
-                baseUrl: z.ZodOptional<z.ZodString>;
-                wsUrl: z.ZodOptional<z.ZodString>;
-            }, "strip", z.ZodTypeAny, {
-                baseUrl?: string | undefined;
-                wsUrl?: string | undefined;
-            }, {
-                baseUrl?: string | undefined;
-                wsUrl?: string | undefined;
-            }>>;
-        }, {
-            serverUrls: z.ZodObject<{
-                baseUrl: z.ZodString;
-                wsUrl: z.ZodString;
-            }, "strip", z.ZodTypeAny, {
-                baseUrl: string;
-                wsUrl: string;
-            }, {
-                baseUrl: string;
-                wsUrl: string;
-            }>;
-        }>, "strip", z.ZodTypeAny, {
-            collaborative: boolean;
-            lite: boolean;
-            serverUrls: {
-                baseUrl: string;
-                wsUrl: string;
-            };
-        }, {
-            serverUrls: {
-                baseUrl: string;
-                wsUrl: string;
-            };
-            collaborative?: boolean | undefined;
-            lite?: boolean | undefined;
-        }>;
-    }>, "strip", z.ZodTypeAny, {
+    }, "strip", z.ZodTypeAny, {
         execute: boolean;
         environment: string;
         syntaxHighlightTheme: string;
@@ -1516,10 +1404,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         jupyterReactProps: {
             collaborative: boolean;
             lite: boolean;
-            serverUrls: {
-                baseUrl: string;
-                wsUrl: string;
-            };
+            serverUrls?: {
+                baseUrl?: string | undefined;
+                wsUrl?: string | undefined;
+            } | undefined;
         };
         nbConvert: {
             conversionTimeout: number;
@@ -1554,14 +1442,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         }>;
         jupyterToken?: string | undefined;
     }, {
-        jupyterReactProps: {
-            serverUrls: {
-                baseUrl: string;
-                wsUrl: string;
-            };
-            collaborative?: boolean | undefined;
-            lite?: boolean | undefined;
-        };
         execute?: boolean | undefined;
         environment?: string | undefined;
         syntaxHighlightTheme?: string | undefined;
@@ -1569,6 +1449,14 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         jupyterPort?: number | undefined;
         initiallyFoldCells?: boolean | undefined;
         kernel?: string | undefined;
+        jupyterReactProps?: {
+            collaborative?: boolean | undefined;
+            lite?: boolean | undefined;
+            serverUrls?: {
+                baseUrl?: string | undefined;
+                wsUrl?: string | undefined;
+            } | undefined;
+        } | undefined;
         nbConvert?: {
             nbconvertPath?: string | undefined;
             conversionTimeout?: number | undefined;
@@ -1600,18 +1488,8 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             prefix: string;
             suffix: string;
         }> | undefined;
-    }>;
-    code: z.ZodObject<{
-        editor: z.ZodDefault<z.ZodObject<{
-            defaultLangauge: z.ZodDefault<z.ZodString>;
-            useVimMode: z.ZodDefault<z.ZodBoolean>;
-        }, "strip", z.ZodTypeAny, {
-            defaultLangauge: string;
-            useVimMode: boolean;
-        }, {
-            defaultLangauge?: string | undefined;
-            useVimMode?: boolean | undefined;
-        }>>;
+    }>>;
+    code: import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         theme: z.ZodDefault<z.ZodObject<{
             dark: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
             light: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
@@ -1621,6 +1499,16 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         }, {
             dark?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
             light?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
+        }>>;
+        editor: z.ZodDefault<z.ZodObject<{
+            defaultLangauge: z.ZodDefault<z.ZodString>;
+            useVimMode: z.ZodDefault<z.ZodBoolean>;
+        }, "strip", z.ZodTypeAny, {
+            defaultLangauge: string;
+            useVimMode: boolean;
+        }, {
+            defaultLangauge?: string | undefined;
+            useVimMode?: boolean | undefined;
         }>>;
         syntaxHighlighting: z.ZodDefault<z.ZodObject<{
             transformers: z.ZodDefault<z.ZodObject<{
@@ -1727,7 +1615,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
                 block: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
             } | undefined;
         } | undefined;
-    }>;
+    }>>>;
 }>, "strip", z.ZodTypeAny, {
     code: {
         editor: {
@@ -1767,10 +1655,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -1781,13 +1665,9 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     };
     terminal: {
         logLevel: "info" | "none" | "debug" | "verbose";
@@ -1802,10 +1682,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         jupyterReactProps: {
             collaborative: boolean;
             lite: boolean;
-            serverUrls: {
-                baseUrl: string;
-                wsUrl: string;
-            };
+            serverUrls?: {
+                baseUrl?: string | undefined;
+                wsUrl?: string | undefined;
+            } | undefined;
         };
         nbConvert: {
             conversionTimeout: number;
@@ -1860,7 +1740,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -1919,7 +1799,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
     ignoreFilepaths: string[];
     tempDir: string;
     generatedDir: string;
-    ignorePreferFsExtensions: import("../configUtilitySchemas.js").ParsedRegExpField[];
+    ignorePreferFsExtensions: string[];
     fileTypePriority: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[];
     noteTypes: {
         docType: string;
@@ -1955,7 +1835,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
     bibPath: string;
     dateHandling: {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -1983,99 +1863,83 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         title: string;
         desc?: string | undefined;
     };
-    plugins: ({
+    plugins: {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[];
+    }[];
     cslPath?: string | undefined;
-    features?: {
-        pages: {
-            calendar: boolean;
-            bibliography: boolean;
-            snippets: boolean;
-            taskManager: boolean;
-            equations: boolean;
-        };
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
-    } | undefined;
 }, {
     code: {
-        editor?: {
-            defaultLangauge?: string | undefined;
-            useVimMode?: boolean | undefined;
-        } | undefined;
-        theme?: {
-            dark?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
-            light?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
-        } | undefined;
-        syntaxHighlighting?: {
-            transformers?: {
-                regexHighlight?: boolean | undefined;
-                lineHighlight?: boolean | undefined;
-                lineFocus?: boolean | undefined;
-                lineErrorLevel?: boolean | undefined;
-                lineDiff?: boolean | undefined;
-            } | undefined;
-            defaultLanguage?: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml" | {
+        editor: {
+            defaultLangauge: string;
+            useVimMode: boolean;
+        };
+        theme: {
+            dark: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light";
+            light: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light";
+        };
+        syntaxHighlighting: {
+            transformers: {
+                regexHighlight: boolean;
+                lineHighlight: boolean;
+                lineFocus: boolean;
+                lineErrorLevel: boolean;
+                lineDiff: boolean;
+            };
+            defaultLanguage: {
                 inline: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
                 block: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
-            } | undefined;
-        } | undefined;
+            };
+        };
     };
     jupyter: {
+        execute: boolean;
+        environment: string;
+        syntaxHighlightTheme: string;
+        jupyterPort: number;
+        initiallyFoldCells: boolean;
+        kernel: string;
         jupyterReactProps: {
-            serverUrls: {
-                baseUrl: string;
-                wsUrl: string;
-            };
-            collaborative?: boolean | undefined;
-            lite?: boolean | undefined;
+            collaborative: boolean;
+            lite: boolean;
+            serverUrls?: {
+                baseUrl?: string | undefined;
+                wsUrl?: string | undefined;
+            } | undefined;
         };
-        execute?: boolean | undefined;
-        environment?: string | undefined;
-        syntaxHighlightTheme?: string | undefined;
-        jupyterToken?: string | undefined;
-        jupyterPort?: number | undefined;
-        initiallyFoldCells?: boolean | undefined;
-        kernel?: string | undefined;
-        nbConvert?: {
+        nbConvert: {
+            conversionTimeout: number;
+            execute: boolean;
+            nbConvertTemplate: string;
+            notebookOutputDir: string;
             nbconvertPath?: string | undefined;
-            conversionTimeout?: number | undefined;
             customConversionFunction?: {
                 pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
-            execute?: boolean | undefined;
-            nbConvertTemplate?: string | undefined;
-            notebookOutputDir?: string | undefined;
-        } | undefined;
-        jupyterNotebookProps?: {
-            height?: string | undefined;
-            readOnly?: boolean | undefined;
-            maxHeight?: string | undefined;
-            cellMetadataPanel?: boolean | undefined;
-            cellSidebarMargin?: number | undefined;
-            bundledIPyWidgets?: {
+        };
+        jupyterNotebookProps: {
+            readOnly: boolean;
+            cellMetadataPanel: boolean;
+            cellSidebarMargin: number;
+            bundledIPyWidgets: {
                 name: string;
                 module: string | Record<string, string>;
                 version: string;
-            }[] | undefined;
-            externalIPyWidgets?: {
+            }[];
+            externalIPyWidgets: {
                 name: string;
                 version: string;
-            }[] | undefined;
-            nbgrader?: boolean | undefined;
-        } | undefined;
-        cellInputWrappers?: Record<string, string | {
+            }[];
+            nbgrader: boolean;
+            height?: string | undefined;
+            maxHeight?: string | undefined;
+        };
+        cellInputWrappers: Record<string, {
             prefix: string;
             suffix: string;
-        }> | undefined;
+        }>;
+        jupyterToken?: string | undefined;
     };
     fsRoot: string;
     database?: {
@@ -2083,7 +1947,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         removeIfNotPresentInFs?: boolean | undefined;
     } | undefined;
     navigation?: {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -2094,13 +1957,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -2111,8 +1967,8 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
     } | undefined;
     terminal?: {
@@ -2138,7 +1994,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -2196,7 +2052,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
     ignorePreferFsExtensions?: (string | RegExp | {
-        regex: RegExp;
+        regex: string | RegExp;
         original: string;
     })[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
@@ -2245,19 +2101,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        };
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    } | undefined;
     plotting?: {
         plotColorList?: string[] | {
             dark: string[];
@@ -2360,10 +2203,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -2374,13 +2213,9 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     };
     terminal: {
         logLevel: "info" | "none" | "debug" | "verbose";
@@ -2395,10 +2230,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         jupyterReactProps: {
             collaborative: boolean;
             lite: boolean;
-            serverUrls: {
-                baseUrl: string;
-                wsUrl: string;
-            };
+            serverUrls?: {
+                baseUrl?: string | undefined;
+                wsUrl?: string | undefined;
+            } | undefined;
         };
         nbConvert: {
             conversionTimeout: number;
@@ -2453,7 +2288,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -2512,7 +2347,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
     ignoreFilepaths: string[];
     tempDir: string;
     generatedDir: string;
-    ignorePreferFsExtensions: import("../configUtilitySchemas.js").ParsedRegExpField[];
+    ignorePreferFsExtensions: string[];
     fileTypePriority: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[];
     noteTypes: {
         docType: string;
@@ -2548,7 +2383,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
     bibPath: string;
     dateHandling: {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -2576,99 +2411,83 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         title: string;
         desc?: string | undefined;
     };
-    plugins: ({
+    plugins: {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[];
+    }[];
     cslPath?: string | undefined;
-    features?: {
-        pages: {
-            calendar: boolean;
-            bibliography: boolean;
-            snippets: boolean;
-            taskManager: boolean;
-            equations: boolean;
-        };
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
-    } | undefined;
 }, {
     code: {
-        editor?: {
-            defaultLangauge?: string | undefined;
-            useVimMode?: boolean | undefined;
-        } | undefined;
-        theme?: {
-            dark?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
-            light?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
-        } | undefined;
-        syntaxHighlighting?: {
-            transformers?: {
-                regexHighlight?: boolean | undefined;
-                lineHighlight?: boolean | undefined;
-                lineFocus?: boolean | undefined;
-                lineErrorLevel?: boolean | undefined;
-                lineDiff?: boolean | undefined;
-            } | undefined;
-            defaultLanguage?: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml" | {
+        editor: {
+            defaultLangauge: string;
+            useVimMode: boolean;
+        };
+        theme: {
+            dark: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light";
+            light: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light";
+        };
+        syntaxHighlighting: {
+            transformers: {
+                regexHighlight: boolean;
+                lineHighlight: boolean;
+                lineFocus: boolean;
+                lineErrorLevel: boolean;
+                lineDiff: boolean;
+            };
+            defaultLanguage: {
                 inline: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
                 block: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
-            } | undefined;
-        } | undefined;
+            };
+        };
     };
     jupyter: {
+        execute: boolean;
+        environment: string;
+        syntaxHighlightTheme: string;
+        jupyterPort: number;
+        initiallyFoldCells: boolean;
+        kernel: string;
         jupyterReactProps: {
-            serverUrls: {
-                baseUrl: string;
-                wsUrl: string;
-            };
-            collaborative?: boolean | undefined;
-            lite?: boolean | undefined;
+            collaborative: boolean;
+            lite: boolean;
+            serverUrls?: {
+                baseUrl?: string | undefined;
+                wsUrl?: string | undefined;
+            } | undefined;
         };
-        execute?: boolean | undefined;
-        environment?: string | undefined;
-        syntaxHighlightTheme?: string | undefined;
-        jupyterToken?: string | undefined;
-        jupyterPort?: number | undefined;
-        initiallyFoldCells?: boolean | undefined;
-        kernel?: string | undefined;
-        nbConvert?: {
+        nbConvert: {
+            conversionTimeout: number;
+            execute: boolean;
+            nbConvertTemplate: string;
+            notebookOutputDir: string;
             nbconvertPath?: string | undefined;
-            conversionTimeout?: number | undefined;
             customConversionFunction?: {
                 pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
-            execute?: boolean | undefined;
-            nbConvertTemplate?: string | undefined;
-            notebookOutputDir?: string | undefined;
-        } | undefined;
-        jupyterNotebookProps?: {
-            height?: string | undefined;
-            readOnly?: boolean | undefined;
-            maxHeight?: string | undefined;
-            cellMetadataPanel?: boolean | undefined;
-            cellSidebarMargin?: number | undefined;
-            bundledIPyWidgets?: {
+        };
+        jupyterNotebookProps: {
+            readOnly: boolean;
+            cellMetadataPanel: boolean;
+            cellSidebarMargin: number;
+            bundledIPyWidgets: {
                 name: string;
                 module: string | Record<string, string>;
                 version: string;
-            }[] | undefined;
-            externalIPyWidgets?: {
+            }[];
+            externalIPyWidgets: {
                 name: string;
                 version: string;
-            }[] | undefined;
-            nbgrader?: boolean | undefined;
-        } | undefined;
-        cellInputWrappers?: Record<string, string | {
+            }[];
+            nbgrader: boolean;
+            height?: string | undefined;
+            maxHeight?: string | undefined;
+        };
+        cellInputWrappers: Record<string, {
             prefix: string;
             suffix: string;
-        }> | undefined;
+        }>;
+        jupyterToken?: string | undefined;
     };
     fsRoot: string;
     database?: {
@@ -2676,7 +2495,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         removeIfNotPresentInFs?: boolean | undefined;
     } | undefined;
     navigation?: {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -2687,13 +2505,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -2704,8 +2515,8 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
     } | undefined;
     terminal?: {
@@ -2731,7 +2542,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -2789,7 +2600,7 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
     ignorePreferFsExtensions?: (string | RegExp | {
-        regex: RegExp;
+        regex: string | RegExp;
         original: string;
     })[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
@@ -2838,19 +2649,6 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        };
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    } | undefined;
     plotting?: {
         plotColorList?: string[] | {
             dark: string[];

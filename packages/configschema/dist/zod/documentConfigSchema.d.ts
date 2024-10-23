@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { ValidIconName } from "@ulld/types";
+import { ZodOutputSchema } from "../types.js";
 export declare const docTypeUISchema: z.ZodDefault<z.ZodObject<{
     styles: z.ZodDefault<z.ZodObject<{
         dark: z.ZodDefault<z.ZodObject<{
@@ -64,6 +65,7 @@ export declare const docTypeUISchema: z.ZodDefault<z.ZodObject<{
         } | undefined;
     } | undefined;
 }>>;
+export declare const docTypeUISchemaOutput: ZodOutputSchema<typeof docTypeUISchema>;
 export declare const zodDocTypeInput: z.ZodEffects<z.ZodString, string, string>;
 export declare const documentTypeConfigSchemaBase: z.ZodObject<{
     id: z.ZodOptional<z.ZodString>;
@@ -554,6 +556,7 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     inSidebar?: boolean | undefined;
     inNavbar?: boolean | undefined;
 }>;
+export declare const documentTypeConfigSchemaOutputSchema: z.ZodType<z.output<typeof documentTypeConfigSchema>>;
 export type DocumentTypeConfigAsDocTypeDataField = {
     docTypeData: Omit<z.infer<typeof documentTypeConfigSchema>, "icon"> & {
         icon: ValidIconName;

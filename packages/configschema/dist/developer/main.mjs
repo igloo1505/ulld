@@ -1,4 +1,12 @@
 import {
+  parserKeyList,
+  pluginParserMap
+} from "../chunk-OWYLDLQC.mjs";
+import {
+  navigationLinkSchema
+} from "../chunk-FBSQUA72.mjs";
+import "../chunk-CFDJDG42.mjs";
+import {
   componentConfigSchema
 } from "../chunk-JX2ADNSR.mjs";
 import {
@@ -19,14 +27,6 @@ import {
 import {
   pluginEventsSchema
 } from "../chunk-M6QZGRL4.mjs";
-import {
-  parserKeyList,
-  pluginParserMap
-} from "../chunk-OWYLDLQC.mjs";
-import {
-  navigationLinkSchema
-} from "../chunk-FBSQUA72.mjs";
-import "../chunk-CFDJDG42.mjs";
 import {
   trpcConfigSchema
 } from "../chunk-PAERU6NE.mjs";

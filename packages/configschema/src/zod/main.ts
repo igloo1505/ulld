@@ -2,7 +2,6 @@ import { z } from "zod";
 import { performanceConfigSchema } from "./performanceConfig.js";
 import { terminalConfigSchema } from "./terminalConfig.js";
 import { documentTypeConfigSchema } from "./documentConfigSchema.js";
-import { zodPathGlobTransform } from "./configUtilitySchemas.js";
 import { dateParseConfigSchema } from "./dateParseConfig.js";
 import { codeConfigSchema } from "./codeConfig.js";
 import { navigationConfigSchema } from "./navigationConfig.js";
@@ -15,7 +14,6 @@ import { credentialsConfigSchema } from "./credentials/main.js";
 import { defaultIgnoreFilePaths } from "./defaults/general.js";
 import { slashesTransform } from "./transforms/general.js";
 import { allParsableFileExtensionSchema } from "./secondaryConfigParse/getParsableExtensions.js";
-import { featuresConfigSchema } from "./features/main.js";
 import {
     withForwardSlash,
     withForwardSlashOptional,
@@ -24,8 +22,8 @@ import { buildOnlySchema } from "./build/main.js";
 import { appMetaSchema } from "./meta.js";
 import { defaultNoteTypes } from "./defaults/defaultNoteTypes.js";
 import { WithRequired } from "@ulld/utilities/types";
-import { getCurrentPackageVersions } from "@ulld/utilities/internalDataHelpers";
 import { pluginSlotSchema } from "../developer/slotsSchema.js";
+import { pluginsConfigSchema } from "./pluginsConfig.js";
 
 export const zodRegexField = z
     .union([
@@ -41,11 +39,6 @@ export const zodRegexField = z
 
 export const parsedZodRegexField = z.string().array().default([]);
 
-const pluginItemSchema = z.object({
-    name: z.string(),
-    version: z.string().default("latest"),
-    parserIndex: z.number().min(0).default(50),
-});
 
 export const zodRegexFieldTransform = (b: z.input<typeof zodRegexField> = []) => {
     return b.map((a) => {
@@ -79,22 +72,6 @@ export const globInputToString = (b: z.input<typeof zodRegexField> = []): string
         return a as unknown as string
     })
 }
-
-const getDefaultPlugins = (): z.input<typeof pluginItemSchema>[]  => {
-    const currentPackageVersions = getCurrentPackageVersions()
-       return [
-            {
-                name: "@ulld/api",
-                parserIndex: 0,
-                version: currentPackageVersions["@ulld/api"],
-            },
-            {
-                name: "@ulld/plot",
-                parserIndex: 0,
-                version: currentPackageVersions["@ulld/plot"],
-            },
-        ]
-    }
 
 export const appConfigSchema = z.object({
     fsRoot: z
@@ -225,23 +202,7 @@ export const appConfigSchema = z.object({
     slots: pluginSlotSchema.default({}),
     build: buildOnlySchema,
     meta: appMetaSchema,
-    plugins: z
-        .union([
-            pluginItemSchema,
-            pluginItemSchema.array(),
-            z.string(),
-            z.string().array(),
-        ])
-        .default(getDefaultPlugins())
-        .transform((a = []) => {
-            let items = Array.isArray(a) ? a : [a]
-            let names: string[] = [];
-            let newItems = items.map((s) => {
-                names.push(typeof s === "string" ? s : s.name);
-                return typeof s === "string" ? { name: s, version: "latest" } : s;
-            });
-            return newItems;
-        })
+    plugins: pluginsConfigSchema
 });
 
 export const appConfigSchemaTransform = (

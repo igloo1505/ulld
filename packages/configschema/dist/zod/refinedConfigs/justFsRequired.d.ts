@@ -163,14 +163,6 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         }>>;
-        bookmarkLink: import("zod").ZodDefault<import("zod").ZodOptional<import("zod").ZodUnion<[import("zod").ZodLiteral<"sidebar">, import("zod").ZodLiteral<"navbar">, import("zod").ZodLiteral<"both">, import("zod").ZodLiteral<"none">]>>>;
-        syncLink: import("zod").ZodDefault<import("zod").ZodOptional<import("zod").ZodUnion<[import("zod").ZodLiteral<"sidebar">, import("zod").ZodLiteral<"navbar">, import("zod").ZodLiteral<"both">, import("zod").ZodLiteral<"none">]>>>;
-        fileSystemToggle: import("zod").ZodOptional<import("zod").ZodUnion<[import("zod").ZodLiteral<"sidebar">, import("zod").ZodLiteral<"navbar">, import("zod").ZodLiteral<"both">, import("zod").ZodLiteral<"none">]>>;
-        darkmodeToggle: import("zod").ZodDefault<import("zod").ZodOptional<import("zod").ZodUnion<[import("zod").ZodLiteral<"sidebar">, import("zod").ZodLiteral<"navbar">, import("zod").ZodLiteral<"both">, import("zod").ZodLiteral<"none">]>>>;
-        settings: import("zod").ZodOptional<import("zod").ZodUnion<[import("zod").ZodLiteral<"sidebar">, import("zod").ZodLiteral<"navbar">, import("zod").ZodLiteral<"both">, import("zod").ZodLiteral<"none">]>>;
-        equationsLink: import("zod").ZodOptional<import("zod").ZodUnion<[import("zod").ZodLiteral<"sidebar">, import("zod").ZodLiteral<"navbar">, import("zod").ZodLiteral<"both">, import("zod").ZodLiteral<"none">]>>;
-        snippetsLink: import("zod").ZodDefault<import("zod").ZodOptional<import("zod").ZodUnion<[import("zod").ZodLiteral<"sidebar">, import("zod").ZodLiteral<"navbar">, import("zod").ZodLiteral<"both">, import("zod").ZodLiteral<"none">]>>>;
-        backupData: import("zod").ZodOptional<import("zod").ZodUnion<[import("zod").ZodLiteral<"sidebar">, import("zod").ZodLiteral<"navbar">, import("zod").ZodLiteral<"both">, import("zod").ZodLiteral<"none">]>>;
         navbarLinks: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodObject<{
             label: import("zod").ZodString;
             icon: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodString, string, string>>;
@@ -197,14 +189,14 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }, {
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }>, import("zod").ZodString]>, "many">>;
     }, "strip", import("zod").ZodTypeAny, {
         navbarBreakpoint: {
@@ -217,10 +209,6 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -231,15 +219,10 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     }, {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -250,13 +233,6 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -267,8 +243,8 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
     }>>>;
     terminal: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodObject<{
@@ -575,15 +551,15 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         media: import("zod").ZodDefault<import("zod").ZodObject<{
             imageMap: import("zod").ZodDefault<import("zod").ZodRecord<import("zod").ZodString, import("zod").ZodEffects<import("zod").ZodString, string, string> | import("zod").ZodEffects<import("zod").ZodOptional<import("zod").ZodString>, string | undefined, string | undefined>>>;
             includeDefaultImageMap: import("zod").ZodDefault<import("zod").ZodBoolean>;
-            imageRemoteTest: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodType<RegExp, import("zod").ZodTypeDef, RegExp>, "many">>;
+            imageRemoteTest: import("zod").ZodEffects<import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodUnion<[import("zod").ZodType<RegExp, import("zod").ZodTypeDef, RegExp>, import("zod").ZodString]>, "many">>, string[], (string | RegExp)[] | undefined>;
         }, "strip", import("zod").ZodTypeAny, {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         }, {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         }>>;
         colors: import("zod").ZodDefault<import("zod").ZodRecord<import("zod").ZodString, import("zod").ZodEffects<import("zod").ZodOptional<import("zod").ZodNullable<import("zod").ZodUnion<[import("zod").ZodObject<{
             dark: import("zod").ZodEffects<import("zod").ZodOptional<import("zod").ZodString>, string | undefined, string | undefined>;
@@ -618,7 +594,7 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -641,7 +617,7 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -848,19 +824,19 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
     })[] | undefined>>;
     tempDir: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodDefault<import("zod").ZodString>, string, string | undefined>>;
     generatedDir: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodDefault<import("zod").ZodString>, string, string | undefined>>;
-    ignorePreferFsExtensions: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodEffects<import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodType<RegExp, import("zod").ZodTypeDef, RegExp>, import("zod").ZodObject<{
+    ignorePreferFsExtensions: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodEffects<import("zod").ZodArray<import("zod").ZodUnion<[import("zod").ZodType<RegExp, import("zod").ZodTypeDef, RegExp>, import("zod").ZodString, import("zod").ZodObject<{
         original: import("zod").ZodString;
-        regex: import("zod").ZodType<RegExp, import("zod").ZodTypeDef, RegExp>;
+        regex: import("zod").ZodEffects<import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodType<RegExp, import("zod").ZodTypeDef, RegExp>]>, RegExp, string | RegExp>;
     }, "strip", import("zod").ZodTypeAny, {
         regex: RegExp;
         original: string;
     }, {
-        regex: RegExp;
+        regex: string | RegExp;
         original: string;
-    }>]>, import("../configUtilitySchemas.js").ParsedRegExpField, string | RegExp | {
-        regex: RegExp;
+    }>]>, "many">, string[], (string | RegExp | {
+        regex: string | RegExp;
         original: string;
-    }>, "many">>>;
+    })[]>>>;
     fileTypePriority: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodUnion<[import("zod").ZodUnion<[import("zod").ZodLiteral<".mdx">, import("zod").ZodLiteral<".md">, import("zod").ZodLiteral<".ipynb">]>, import("zod").ZodUnion<[import("zod").ZodLiteral<".csv">, import("zod").ZodLiteral<".tsv">, import("zod").ZodLiteral<".excel">, import("zod").ZodLiteral<".numpy">, import("zod").ZodLiteral<".html">, import("zod").ZodLiteral<".pickle">, import("zod").ZodLiteral<".db">, import("zod").ZodLiteral<".sql">, import("zod").ZodLiteral<".pdf">, import("zod").ZodLiteral<".json">, import("zod").ZodLiteral<".tex">, import("zod").ZodLiteral<".hdf5">]>]>, "many">>>;
     noteTypes: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodEffects<import("zod").ZodObject<{
         label: import("zod").ZodString;
@@ -1129,7 +1105,7 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
     cslPath: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodOptional<import("zod").ZodString>, string | undefined, string | undefined>>;
     dateHandling: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodObject<{
         enableAdvancedFormat: import("zod").ZodDefault<import("zod").ZodBoolean>;
-        format: import("zod").ZodDefault<import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodObject<{
+        format: import("zod").ZodEffects<import("zod").ZodDefault<import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodObject<{
             short: import("zod").ZodDefault<import("zod").ZodString>;
             long: import("zod").ZodDefault<import("zod").ZodString>;
             withTime: import("zod").ZodDefault<import("zod").ZodString>;
@@ -1144,12 +1120,22 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             long?: string | undefined;
             withTime?: string | undefined;
             timeOnly?: string | undefined;
-        }>]>>;
+        }>]>>, {
+            short: string;
+            long: string;
+            withTime: string;
+            timeOnly: string;
+        }, string | {
+            short?: string | undefined;
+            long?: string | undefined;
+            withTime?: string | undefined;
+            timeOnly?: string | undefined;
+        } | undefined>;
         defaultTimeDisplayType: import("zod").ZodDefault<import("zod").ZodUnion<[import("zod").ZodLiteral<"analog">, import("zod").ZodLiteral<"summarized">, import("zod").ZodLiteral<"descriptive">]>>;
         defaultTimeZone: import("zod").ZodOptional<import("zod").ZodString>;
     }, "strip", import("zod").ZodTypeAny, {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -1169,61 +1155,6 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         defaultTimeZone?: string | undefined;
     }>>>;
     linkAliases: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodRecord<import("zod").ZodString, import("zod").ZodString>>>;
-    features: import("zod").ZodOptional<import("zod").ZodOptional<import("zod").ZodObject<{
-        enabled: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodObject<{
-            commandPalette: import("zod").ZodDefault<import("zod").ZodBoolean>;
-            tikz: import("zod").ZodDefault<import("zod").ZodBoolean>;
-        }, "strip", import("zod").ZodTypeAny, {
-            commandPalette: boolean;
-            tikz: boolean;
-        }, {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        }>>>;
-        pages: import("zod").ZodOptional<import("zod").ZodObject<{
-            equations: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodBoolean>>;
-            snippets: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodBoolean>>;
-            calendar: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodBoolean>>;
-            bibliography: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodBoolean>>;
-            taskManager: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodBoolean>>;
-        }, "strip", import("zod").ZodTypeAny, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }>>;
-    }, "strip", import("zod").ZodTypeAny, {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette: boolean;
-            tikz: boolean;
-        } | undefined;
-    }, {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    }>>>;
     plotting: import("zod").ZodOptional<import("zod").ZodDefault<import("zod").ZodObject<{
         plotColorList: import("zod").ZodDefault<import("zod").ZodUnion<[import("zod").ZodArray<import("zod").ZodString, "many">, import("zod").ZodObject<{
             dark: import("zod").ZodArray<import("zod").ZodString, "many">;
@@ -1300,14 +1231,11 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }>, "many">, import("zod").ZodString, import("zod").ZodArray<import("zod").ZodString, "many">]>>, ({
+    }>, "many">, import("zod").ZodString, import("zod").ZodArray<import("zod").ZodString, "many">]>>, {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[], string | string[] | {
+    }[], string | string[] | {
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
@@ -1356,10 +1284,6 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -1370,13 +1294,9 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     } | undefined;
     terminal?: {
         logLevel: "info" | "none" | "debug" | "verbose";
@@ -1449,7 +1369,7 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -1507,7 +1427,7 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
     ignoreFilepaths?: string[] | undefined;
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
-    ignorePreferFsExtensions?: import("../configUtilitySchemas.js").ParsedRegExpField[] | undefined;
+    ignorePreferFsExtensions?: string[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
     noteTypes?: {
         docType: string;
@@ -1544,7 +1464,7 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
     cslPath?: string | undefined;
     dateHandling?: {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -1554,19 +1474,6 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette: boolean;
-            tikz: boolean;
-        } | undefined;
-    } | undefined;
     plotting?: {
         plotColorList: string[] | {
             dark: string[];
@@ -1585,14 +1492,11 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         title: string;
         desc?: string | undefined;
     } | undefined;
-    plugins?: ({
+    plugins?: {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[] | undefined;
+    }[] | undefined;
 }, {
     fsRoot: string;
     code?: {
@@ -1623,7 +1527,6 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         removeIfNotPresentInFs?: boolean | undefined;
     } | undefined;
     navigation?: {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -1634,13 +1537,6 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -1651,8 +1547,8 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
     } | undefined;
     terminal?: {
@@ -1726,7 +1622,7 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -1784,7 +1680,7 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
     ignorePreferFsExtensions?: (string | RegExp | {
-        regex: RegExp;
+        regex: string | RegExp;
         original: string;
     })[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
@@ -1833,19 +1729,6 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    } | undefined;
     plotting?: {
         plotColorList?: string[] | {
             dark: string[];

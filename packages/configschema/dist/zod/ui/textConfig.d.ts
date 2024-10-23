@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../types.js";
 export declare const fontConfigSchema: z.ZodObject<{
     path: z.ZodString;
     weight: z.ZodUnion<[z.ZodLiteral<"100">, z.ZodLiteral<"200">, z.ZodLiteral<"300">, z.ZodLiteral<"400">, z.ZodLiteral<"500">, z.ZodLiteral<"600">, z.ZodLiteral<"700">, z.ZodLiteral<"800">, z.ZodLiteral<"900">]>;
@@ -42,4 +43,5 @@ export declare const textConfigSchema: z.ZodDefault<z.ZodObject<{
         style: "bold" | "italic" | "normal";
     }[] | undefined;
 }>>;
+export declare const textConfigSchemaOutput: ZodOutputSchema<typeof textConfigSchema>;
 //# sourceMappingURL=textConfig.d.ts.map

@@ -1,7 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunk3DJT3TC6cjs = require('../../../chunk-3DJT3TC6.cjs');
+
+var _chunkAMQFLT7Scjs = require('../../../chunk-AMQFLT7S.cjs');
 
 
-exports.postgresConfigSchema = _chunk3DJT3TC6cjs.postgresConfigSchema;
+
+exports.postgresConfigSchema = _chunkAMQFLT7Scjs.postgresConfigSchema; exports.postgresConfigSchemaOutput = _chunkAMQFLT7Scjs.postgresConfigSchemaOutput;
 //# sourceMappingURL=postgres.cjs.map

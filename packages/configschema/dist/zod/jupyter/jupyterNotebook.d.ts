@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../types.js";
 export declare const jupyterNotebookPropsSchema: z.ZodDefault<z.ZodObject<{
     cellMetadataPanel: z.ZodDefault<z.ZodBoolean>;
     cellSidebarMargin: z.ZodDefault<z.ZodNumber>;
@@ -63,4 +64,5 @@ export declare const jupyterNotebookPropsSchema: z.ZodDefault<z.ZodObject<{
     }[] | undefined;
     nbgrader?: boolean | undefined;
 }>>;
+export declare const jupyterNotebookPropsSchemaOutput: ZodOutputSchema<typeof jupyterNotebookPropsSchema>;
 //# sourceMappingURL=jupyterNotebook.d.ts.map

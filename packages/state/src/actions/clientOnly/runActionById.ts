@@ -1,39 +1,33 @@
 import { broadcastGlobalEvent } from "../../globalEvents/utils";
 import {
-    GlobalActionParamater,
-    GlobalActionAwaitedReturnType,
-    GlobalActionMap,
+    GlobalActionIds,
+    UlldGlobalActionMap,
+    UlldGlobalActionParamater,
+    UlldGlobalActionAwaitedReturnType,
 } from "./actionMapTypes";
 import { bareGlobalActionsMap } from "./bareActionMap";
 import type { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
 
 
-// const isGlobalId = <T extends InternalGlobalActionIds, K extends InternalGlobalActionIds>(id: K, compareTo: T): id is T => {
-//        return id === compareTo
-// }
+const isGlobalId = <T extends GlobalActionIds>(id: T, globalActionId: GlobalActionIds): id is T => {
+      return id === globalActionId
+}
 
 
+// PRIORITY: Figure out why the fuck I can't constrain this id field no matter what sort of if and switch statements I apply.
 // RESUME: Figure out why the fuck I can't constrain this id field no matter what sort of if and switch statements I apply.
-const emitGlobalEvent = <ActionId extends keyof GlobalActionMap>(
-    id: ActionId,
-    props: GlobalActionParamater<ActionId>,
-    res: Awaited<GlobalActionAwaitedReturnType<ActionId>>,
+const emitGlobalEvent = <J extends keyof UlldGlobalActionMap>(
+    id: J,
+    props: UlldGlobalActionParamater<J>,
+    res: UlldGlobalActionAwaitedReturnType<J>,
 ): void => {
-    if(id === "toggleBookmarked"){
-        id
-        props
-        res
-    }
-    // switch (id) {
-    //     case "toggleBookmarked": {
-    //         return broadcastGlobalEvent("bookmarkStateChange", {
-    //             bookmarked: res || false,
-    //             id: props,
-    //         });
-    //     }
+    // if(id === "toggleBookmarked" as GlobalActionIds){
+    //     id
+    //     props
+    //     res
     // }
-    // if(id === ("toggleBookmarked" as "toggleBookmarked")){
-    //     return broadcastglobalevent("bookmarkstatechange", {
+    // if(id === "toggleDarkMode"){
+    //     return broadcastGlobalEvent("bookmarkStateChange", {
     //         bookmarked: res || false,
     //         id: props
     //    })
@@ -43,15 +37,15 @@ const emitGlobalEvent = <ActionId extends keyof GlobalActionMap>(
 
 export const runActionById = async <T extends InternalGlobalActionIds>(
     id: T,
-    ...props: GlobalActionParamater<T>
-): Promise<GlobalActionAwaitedReturnType<T>> => {
+    ...props: UlldGlobalActionParamater<T>
+): Promise<UlldGlobalActionAwaitedReturnType<T>> => {
     // Had to use weird hack to make typescript not complain about not returning a promise, even though all functions in the map return a promise.
     const _props = props
-        ? (props as GlobalActionParamater<T>)
-        : ([] as GlobalActionParamater<T>);
+        ? (props as UlldGlobalActionParamater<T>)
+        : ([] as UlldGlobalActionParamater<T>);
     const res = (await bareGlobalActionsMap[id](
         ...(_props ?? [])
-    )) as Awaited<GlobalActionAwaitedReturnType<T>>;
+    )) as Awaited<UlldGlobalActionAwaitedReturnType<T>>;
     emitGlobalEvent<T>(id, _props, res)
     return res;
 };

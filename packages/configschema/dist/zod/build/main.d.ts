@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../types.js";
 export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
     database: z.ZodDefault<z.ZodEffects<z.ZodDefault<z.ZodObject<{
         type: z.ZodDefault<z.ZodEnum<["postgres", "sqlite"]>>;
@@ -125,4 +126,5 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
         favicon?: string | undefined;
     } | undefined;
 }>>;
+export declare const buildOnlySchemaOutput: ZodOutputSchema<typeof buildOnlySchema>;
 //# sourceMappingURL=main.d.ts.map

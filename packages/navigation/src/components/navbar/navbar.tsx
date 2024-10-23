@@ -15,12 +15,13 @@ import NavbarSearchInput from "./navbarSearchInput";
 
 const NavShowBreakpoint = 20;
 
-export interface NavbarProps extends NavbarComponentProps { 
+export interface NavbarProps extends Omit<NavbarComponentProps, "logo"> { 
     buttons?: NavbarLink[]
+    logo?: ReactNode
 }
 
 
-const Navbar = ({ buttons = [], noteTypes, logo: Logo }: NavbarProps): ReactNode => {
+const Navbar = ({ buttons = [], logo: Logo }: NavbarProps): ReactNode => {
     const pathname = usePathname();
     const [show, setShow] = useState(pathname !== "/");
     const activeNoteId  = useActiveNoteIdValue();
@@ -59,19 +60,17 @@ const Navbar = ({ buttons = [], noteTypes, logo: Logo }: NavbarProps): ReactNode
             )}
             id="top-navbar"
         >
-            <div className="pl-4 py-3 md:pl-6 mx-0 px-8 flex w-screen min-w-screen">
-                <div className="flex items-center justify-between">
+            <div className="pl-4 py-3 md:pl-6 mx-0 px-8 flex w-screen min-w-screen flex-row justify-between items-center">
+                <div className="h-full w-fit flex items-center justify-center">
                     <Link
-                        href="/"
-                        /* width={300} */
-                        /* height={300} */
                         className="h-[calc(var(--nav-height)*0.7)] w-[80px]"
+                        href="/"
                     >
                         {Logo}
                     </Link>
                 </div>
                 <div
-                    className="inset-x-0 z-20 w-full py-4 transition-all duration-300 ease-in-out mt-0 p-0 top-0 relative translate-x-0 flex items-center justify-end lg:justify-between"
+                    className="inset-x-0 z-20 w-fit py-4 transition-all duration-300 ease-in-out mt-0 p-0 top-0 relative translate-x-0 flex items-center justify-end lg:justify-between"
                 >
                     <div className="px-2  flex-row mx-10 py-0 hidden lg:flex">
                         {buttons.map((a): ReactNode => {

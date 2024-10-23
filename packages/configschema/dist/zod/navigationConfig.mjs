@@ -1,9 +1,11 @@
 import {
   iconNameField,
-  navigationConfigSchema
-} from "../chunk-GSLEBKWB.mjs";
+  navigationConfigSchema,
+  navigationConfigSchemaOutput
+} from "../chunk-Y4CBYEJ6.mjs";
 export {
   iconNameField,
-  navigationConfigSchema
+  navigationConfigSchema,
+  navigationConfigSchemaOutput
 };
 //# sourceMappingURL=navigationConfig.mjs.map

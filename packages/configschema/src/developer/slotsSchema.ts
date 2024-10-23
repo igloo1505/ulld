@@ -2,13 +2,16 @@ import { z, ZodTypeAny } from "zod";
 import { SlotMap } from "./slotMapRootType.js";
 import { getCurrentPackageVersions } from "@ulld/utilities/internalDataHelpers";
 import { InternalAppName } from "@ulld/types";
+import { ZodOutputSchema } from "../types.js";
 
-export const configPluginSchema = z
+
+const configPluginSchemaBase = z
     .object({
         name: z.string(),
         version: z.string().default("latest"),
     })
-    .transform((x) => {
+
+export const configPluginSchema = configPluginSchemaBase.transform((x) => {
         const currentPackageVersions = getCurrentPackageVersions();
         return {
             name: x.name,
@@ -41,149 +44,76 @@ const pluginConfigTransform = (
     );
 };
 
+const slotFieldSchema = z.union([
+    z.string(),
+    z.string().array(),
+    configPluginSchema,
+    configPluginSchema.array(),
+]);
+
+export const slotFieldsBase: Record<keyof SlotMap, ZodTypeAny> = {
+    navigation: slotFieldSchema,
+    bibliography: slotFieldSchema,
+    commandPalette: slotFieldSchema,
+    editor: slotFieldSchema,
+    math: slotFieldSchema,
+    form: slotFieldSchema,
+    dashboard: slotFieldSchema,
+    pdf: slotFieldSchema,
+    snippets: slotFieldSchema,
+    taskManager: slotFieldSchema,
+    UI: slotFieldSchema,
+};
+
 // TODO: Type this with  {[k in keyof typeof slots]: ZodTypeAny} once the rest of the slots have been created in the base app and then generated to the slotMap file.
 
 export const slotFields: Record<keyof SlotMap, ZodTypeAny> = {
-    navigation: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
+    navigation: slotFieldsBase.navigation
         .default("@ulld/navigation")
         .transform(pluginConfigTransform),
-    // plot: z
-    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-    //     .default("@ulld/plot")
-    //     .transform(pluginConfigTransform),
-    bibliography: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
+    bibliography: slotFieldsBase.bibliography
         .default("@ulld/bib-manager")
         .transform(pluginConfigTransform),
-    // calendar: z
-    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-    //     .default("@ulld/calendar")
-    //     .transform(pluginConfigTransform),
-    commandPalette: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
+    commandPalette: slotFieldsBase.commandPalette
         .default("@ulld/command-palette")
         .transform(pluginConfigTransform),
-    editor: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
+    editor: slotFieldsBase.editor
         .default("@ulld/editor")
         .transform(pluginConfigTransform),
-    math: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
+    math: slotFieldsBase.math
         .default("@ulld/equations")
         .transform(pluginConfigTransform),
-    form: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
+    form: slotFieldsBase.form
         .default("@ulld/full-form")
         .transform(pluginConfigTransform),
-    // icons: z
-    // .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-    // .default("@ulld/icons")
-    // .transform(pluginConfigTransform),
-    // notebook: z
-    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-    //     .default("@ulld/notebook")
-    //     .transform(pluginConfigTransform),
-    // kanban: z
-    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-    //     .default("@ulld/kanban")
-    //     .transform(pluginConfigTransform),
-    dashboard: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
+    dashboard: slotFieldsBase.dashboard
         .default("@ulld/landing-layouts")
         .transform(pluginConfigTransform),
-    // logger: z
-    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-    //     .default("@ulld/logger")
-    //     .transform(pluginConfigTransform),
-    // journal: z
-    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-    //     .default("@ulld/journal")
-    //     .transform(pluginConfigTransform),
-    // noteNetwork: z
-    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-    //     .default("@ulld/note-network")
-    //     .transform(pluginConfigTransform),
-    pdf: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
-        .default("@ulld/pdf")
-        .transform(pluginConfigTransform),
-    snippets: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
+    pdf: slotFieldsBase.pdf.default("@ulld/pdf").transform(pluginConfigTransform),
+    snippets: slotFieldsBase.snippets
         .default("@ulld/snippets")
         .transform(pluginConfigTransform),
-    taskManager: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
+    taskManager: slotFieldsBase.taskManager
         .default("@ulld/task-manager")
         .transform(pluginConfigTransform),
-    // whiteboard: z
-    //     .union([z.string(), z.string().array(), configPluginSchema, configPluginSchema.array()])
-    //     .default("@ulld/whiteboard")
-    //     .transform(pluginConfigTransform),
-    // components: z.record(z.string(), z.string()).default({}),
-    // parsers: z.record(z.string(), z.string()).default({}),
-    UI: z
-        .union([
-            z.string(),
-            z.string().array(),
-            configPluginSchema,
-            configPluginSchema.array(),
-        ])
-        .default("@ulld/ui")
-        .transform(pluginConfigTransform),
+    UI: slotFieldsBase.UI.default("@ulld/ui").transform(pluginConfigTransform),
 };
 
 export const pluginSlotSchema = z.object(slotFields);
+
+export const pluginSlotSchemaOutput: ZodOutputSchema<typeof pluginSlotSchema> = z.object({
+    navigation: configPluginSchemaBase,
+    bibliography: configPluginSchemaBase,
+    commandPalette: configPluginSchemaBase,
+    editor: configPluginSchemaBase,
+    math: configPluginSchemaBase,
+    form: configPluginSchemaBase,
+    dashboard: configPluginSchemaBase,
+    pdf: configPluginSchemaBase,
+    snippets: configPluginSchemaBase,
+    taskManager: configPluginSchemaBase,
+    UI: configPluginSchemaBase,
+})
 
 // TODO: Remove this and rely on generated zod object.
 export const ulldSlots = Object.keys(slotFields);

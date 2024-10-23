@@ -1,7 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkXV6PA66Ccjs = require('../chunk-XV6PA66C.cjs');
+
+var _chunkMIX5AIE5cjs = require('../chunk-MIX5AIE5.cjs');
 
 
-exports.performanceConfigSchema = _chunkXV6PA66Ccjs.performanceConfigSchema;
+
+exports.performanceConfigSchema = _chunkMIX5AIE5cjs.performanceConfigSchema; exports.performanceConfigSchemaOutput = _chunkMIX5AIE5cjs.performanceConfigSchemaOutput;
 //# sourceMappingURL=performanceConfig.cjs.map

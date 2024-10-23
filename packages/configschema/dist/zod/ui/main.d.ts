@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../types.js";
 export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     table: z.ZodDefault<z.ZodObject<{
         maxHeight: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, string, string | number | undefined>;
@@ -40,15 +41,15 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     media: z.ZodDefault<z.ZodObject<{
         imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
         includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
-        imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
+        imageRemoteTest: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString]>, "many">>, string[], (string | RegExp)[] | undefined>;
     }, "strip", z.ZodTypeAny, {
         imageMap: Record<string, string | undefined>;
         includeDefaultImageMap: boolean;
-        imageRemoteTest: RegExp[];
+        imageRemoteTest: string[];
     }, {
         imageMap?: Record<string, string | undefined> | undefined;
         includeDefaultImageMap?: boolean | undefined;
-        imageRemoteTest?: RegExp[] | undefined;
+        imageRemoteTest?: (string | RegExp)[] | undefined;
     }>>;
     colors: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodObject<{
         dark: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
@@ -83,7 +84,7 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     media: {
         imageMap: Record<string, string | undefined>;
         includeDefaultImageMap: boolean;
-        imageRemoteTest: RegExp[];
+        imageRemoteTest: string[];
     };
     theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
     colors: Record<string, {
@@ -106,7 +107,7 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     media?: {
         imageMap?: Record<string, string | undefined> | undefined;
         includeDefaultImageMap?: boolean | undefined;
-        imageRemoteTest?: RegExp[] | undefined;
+        imageRemoteTest?: (string | RegExp)[] | undefined;
     } | undefined;
     theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
     colors?: Record<string, string | {
@@ -115,4 +116,5 @@ export declare const mainUIConfigSchema: z.ZodDefault<z.ZodObject<{
     } | null | undefined> | undefined;
     autoApplyMdxTitles?: boolean | undefined;
 }>>;
+export declare const mainUIConfigSchemaOutput: ZodOutputSchema<typeof mainUIConfigSchema>;
 //# sourceMappingURL=main.d.ts.map

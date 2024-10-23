@@ -1,9 +1,9 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkBSSSIKTOcjs = require('../../chunk-BSSSIKTO.cjs');
+var _chunkA6OISTXVcjs = require('../../chunk-A6OISTXV.cjs');
 
 
 
-exports.jupyterReactConfigSchema = _chunkBSSSIKTOcjs.jupyterReactConfigSchema; exports.jupyterReactConfigSchemaOutput = _chunkBSSSIKTOcjs.jupyterReactConfigSchemaOutput;
+exports.jupyterReactConfigSchema = _chunkA6OISTXVcjs.jupyterReactConfigSchema; exports.jupyterReactConfigSchemaOutput = _chunkA6OISTXVcjs.jupyterReactConfigSchemaOutput;
 //# sourceMappingURL=jupyterReact.cjs.map

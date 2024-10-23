@@ -1,8 +1,10 @@
 import {
-  mediaConfigSchema
-} from "../../chunk-VEKQJ2EE.mjs";
+  mediaConfigSchema,
+  mediaConfigSchemaOutput
+} from "../../chunk-PRBLBTKN.mjs";
 import "../../chunk-XHBPEY36.mjs";
 export {
-  mediaConfigSchema
+  mediaConfigSchema,
+  mediaConfigSchemaOutput
 };
 //# sourceMappingURL=mediaConfig.mjs.map

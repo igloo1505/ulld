@@ -10,11 +10,12 @@ export declare const zodRegexField: z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.Z
     regex: string | RegExp;
     original: string;
 }>]>, "many">;
+export declare const parsedZodRegexField: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
 export declare const zodRegexFieldTransform: (b?: z.input<typeof zodRegexField>) => {
     regex: string | RegExp;
     original: string;
 }[];
-export declare const zodRegexFieldToJsonSerializable: (b?: z.input<typeof zodRegexField>) => string[];
+export declare const globInputToString: (b?: z.input<typeof zodRegexField>) => string[];
 export declare const appConfigSchema: z.ZodObject<{
     fsRoot: z.ZodEffects<z.ZodString, string, string>;
     alwaysPreferFs: z.ZodDefault<z.ZodBoolean>;
@@ -33,19 +34,19 @@ export declare const appConfigSchema: z.ZodObject<{
     })[] | undefined>;
     tempDir: z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>;
     generatedDir: z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>;
-    ignorePreferFsExtensions: z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodObject<{
+    ignorePreferFsExtensions: z.ZodDefault<z.ZodEffects<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString, z.ZodObject<{
         original: z.ZodString;
-        regex: z.ZodType<RegExp, z.ZodTypeDef, RegExp>;
+        regex: z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>]>, RegExp, string | RegExp>;
     }, "strip", z.ZodTypeAny, {
         regex: RegExp;
         original: string;
     }, {
-        regex: RegExp;
+        regex: string | RegExp;
         original: string;
-    }>]>, import("./configUtilitySchemas.js").ParsedRegExpField, string | RegExp | {
-        regex: RegExp;
+    }>]>, "many">, string[], (string | RegExp | {
+        regex: string | RegExp;
         original: string;
-    }>, "many">>;
+    })[]>>;
     fileTypePriority: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>, z.ZodUnion<[z.ZodLiteral<".csv">, z.ZodLiteral<".tsv">, z.ZodLiteral<".excel">, z.ZodLiteral<".numpy">, z.ZodLiteral<".html">, z.ZodLiteral<".pickle">, z.ZodLiteral<".db">, z.ZodLiteral<".sql">, z.ZodLiteral<".pdf">, z.ZodLiteral<".json">, z.ZodLiteral<".tex">, z.ZodLiteral<".hdf5">]>]>, "many">>;
     noteTypes: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodObject<{
         label: z.ZodString;
@@ -314,7 +315,7 @@ export declare const appConfigSchema: z.ZodObject<{
     cslPath: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
     dateHandling: z.ZodDefault<z.ZodObject<{
         enableAdvancedFormat: z.ZodDefault<z.ZodBoolean>;
-        format: z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        format: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
             short: z.ZodDefault<z.ZodString>;
             long: z.ZodDefault<z.ZodString>;
             withTime: z.ZodDefault<z.ZodString>;
@@ -329,12 +330,22 @@ export declare const appConfigSchema: z.ZodObject<{
             long?: string | undefined;
             withTime?: string | undefined;
             timeOnly?: string | undefined;
-        }>]>>;
+        }>]>>, {
+            short: string;
+            long: string;
+            withTime: string;
+            timeOnly: string;
+        }, string | {
+            short?: string | undefined;
+            long?: string | undefined;
+            withTime?: string | undefined;
+            timeOnly?: string | undefined;
+        } | undefined>;
         defaultTimeDisplayType: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"analog">, z.ZodLiteral<"summarized">, z.ZodLiteral<"descriptive">]>>;
         defaultTimeZone: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -384,61 +395,6 @@ export declare const appConfigSchema: z.ZodObject<{
         subject: string;
     }>, "many">>;
     linkAliases: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodString>>;
-    features: z.ZodOptional<z.ZodObject<{
-        enabled: z.ZodDefault<z.ZodObject<{
-            commandPalette: z.ZodDefault<z.ZodBoolean>;
-            tikz: z.ZodDefault<z.ZodBoolean>;
-        }, "strip", z.ZodTypeAny, {
-            commandPalette: boolean;
-            tikz: boolean;
-        }, {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        }>>;
-        pages: z.ZodObject<{
-            equations: z.ZodDefault<z.ZodBoolean>;
-            snippets: z.ZodDefault<z.ZodBoolean>;
-            calendar: z.ZodDefault<z.ZodBoolean>;
-            bibliography: z.ZodDefault<z.ZodBoolean>;
-            taskManager: z.ZodDefault<z.ZodBoolean>;
-        }, "strip", z.ZodTypeAny, {
-            calendar: boolean;
-            bibliography: boolean;
-            snippets: boolean;
-            taskManager: boolean;
-            equations: boolean;
-        }, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }>;
-    }, "strip", z.ZodTypeAny, {
-        pages: {
-            calendar: boolean;
-            bibliography: boolean;
-            snippets: boolean;
-            taskManager: boolean;
-            equations: boolean;
-        };
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
-    }, {
-        pages: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        };
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    }>>;
     code: z.ZodDefault<z.ZodObject<{
         theme: z.ZodDefault<z.ZodObject<{
             dark: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
@@ -631,14 +587,6 @@ export declare const appConfigSchema: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         }>>;
-        bookmarkLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        syncLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        fileSystemToggle: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        darkmodeToggle: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        settings: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        equationsLink: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        snippetsLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        backupData: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
         navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
             label: z.ZodString;
             icon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
@@ -665,14 +613,14 @@ export declare const appConfigSchema: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }, {
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }>, z.ZodString]>, "many">>;
     }, "strip", z.ZodTypeAny, {
         navbarBreakpoint: {
@@ -685,10 +633,6 @@ export declare const appConfigSchema: z.ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -699,15 +643,10 @@ export declare const appConfigSchema: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     }, {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -718,13 +657,6 @@ export declare const appConfigSchema: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -735,8 +667,8 @@ export declare const appConfigSchema: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
     }>>;
     UI: z.ZodDefault<z.ZodObject<{
@@ -780,15 +712,15 @@ export declare const appConfigSchema: z.ZodObject<{
         media: z.ZodDefault<z.ZodObject<{
             imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
             includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
-            imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
+            imageRemoteTest: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString]>, "many">>, string[], (string | RegExp)[] | undefined>;
         }, "strip", z.ZodTypeAny, {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         }, {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         }>>;
         colors: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodObject<{
             dark: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
@@ -823,7 +755,7 @@ export declare const appConfigSchema: z.ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -846,7 +778,7 @@ export declare const appConfigSchema: z.ZodObject<{
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -1317,14 +1249,11 @@ export declare const appConfigSchema: z.ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, ({
+    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[], string | string[] | {
+    }[], string | string[] | {
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
@@ -1372,10 +1301,6 @@ export declare const appConfigSchema: z.ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -1386,13 +1311,9 @@ export declare const appConfigSchema: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     };
     terminal: {
         logLevel: "info" | "none" | "debug" | "verbose";
@@ -1465,7 +1386,7 @@ export declare const appConfigSchema: z.ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -1524,7 +1445,7 @@ export declare const appConfigSchema: z.ZodObject<{
     ignoreFilepaths: string[];
     tempDir: string;
     generatedDir: string;
-    ignorePreferFsExtensions: import("./configUtilitySchemas.js").ParsedRegExpField[];
+    ignorePreferFsExtensions: string[];
     fileTypePriority: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[];
     noteTypes: {
         docType: string;
@@ -1560,7 +1481,7 @@ export declare const appConfigSchema: z.ZodObject<{
     bibPath: string;
     dateHandling: {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -1588,28 +1509,12 @@ export declare const appConfigSchema: z.ZodObject<{
         title: string;
         desc?: string | undefined;
     };
-    plugins: ({
+    plugins: {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[];
+    }[];
     cslPath?: string | undefined;
-    features?: {
-        pages: {
-            calendar: boolean;
-            bibliography: boolean;
-            snippets: boolean;
-            taskManager: boolean;
-            equations: boolean;
-        };
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
-    } | undefined;
 }, {
     fsRoot: string;
     code?: {
@@ -1640,7 +1545,6 @@ export declare const appConfigSchema: z.ZodObject<{
         removeIfNotPresentInFs?: boolean | undefined;
     } | undefined;
     navigation?: {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -1651,13 +1555,6 @@ export declare const appConfigSchema: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -1668,8 +1565,8 @@ export declare const appConfigSchema: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
     } | undefined;
     terminal?: {
@@ -1743,7 +1640,7 @@ export declare const appConfigSchema: z.ZodObject<{
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -1801,7 +1698,7 @@ export declare const appConfigSchema: z.ZodObject<{
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
     ignorePreferFsExtensions?: (string | RegExp | {
-        regex: RegExp;
+        regex: string | RegExp;
         original: string;
     })[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
@@ -1850,19 +1747,6 @@ export declare const appConfigSchema: z.ZodObject<{
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        };
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    } | undefined;
     plotting?: {
         plotColorList?: string[] | {
             dark: string[];
@@ -1930,10 +1814,6 @@ export declare const appConfigSchemaTransform: (data: z.infer<typeof appConfigSc
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -1944,13 +1824,9 @@ export declare const appConfigSchemaTransform: (data: z.infer<typeof appConfigSc
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     };
     terminal: {
         logLevel: "info" | "none" | "debug" | "verbose";
@@ -2023,7 +1899,7 @@ export declare const appConfigSchemaTransform: (data: z.infer<typeof appConfigSc
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -2082,7 +1958,7 @@ export declare const appConfigSchemaTransform: (data: z.infer<typeof appConfigSc
     ignoreFilepaths: string[];
     tempDir: string;
     generatedDir: string;
-    ignorePreferFsExtensions: import("./configUtilitySchemas.js").ParsedRegExpField[];
+    ignorePreferFsExtensions: string[];
     fileTypePriority: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[];
     noteTypes: {
         docType: string;
@@ -2118,7 +1994,7 @@ export declare const appConfigSchemaTransform: (data: z.infer<typeof appConfigSc
     bibPath: string;
     dateHandling: {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -2146,28 +2022,12 @@ export declare const appConfigSchemaTransform: (data: z.infer<typeof appConfigSc
         title: string;
         desc?: string | undefined;
     };
-    plugins: ({
+    plugins: {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[];
+    }[];
     cslPath?: string | undefined;
-    features?: {
-        pages: {
-            calendar: boolean;
-            bibliography: boolean;
-            snippets: boolean;
-            taskManager: boolean;
-            equations: boolean;
-        };
-        enabled: {
-            commandPalette: boolean;
-            tikz: boolean;
-        };
-    } | undefined;
 };
 export declare const appConfigDeepPartial: z.ZodObject<{
     fsRoot: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
@@ -2187,19 +2047,19 @@ export declare const appConfigDeepPartial: z.ZodObject<{
     })[] | undefined>>;
     tempDir: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
     generatedDir: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
-    ignorePreferFsExtensions: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodObject<{
+    ignorePreferFsExtensions: z.ZodOptional<z.ZodDefault<z.ZodEffects<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString, z.ZodObject<{
         original: z.ZodString;
-        regex: z.ZodType<RegExp, z.ZodTypeDef, RegExp>;
+        regex: z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>]>, RegExp, string | RegExp>;
     }, "strip", z.ZodTypeAny, {
         regex: RegExp;
         original: string;
     }, {
-        regex: RegExp;
+        regex: string | RegExp;
         original: string;
-    }>]>, import("./configUtilitySchemas.js").ParsedRegExpField, string | RegExp | {
-        regex: RegExp;
+    }>]>, "many">, string[], (string | RegExp | {
+        regex: string | RegExp;
         original: string;
-    }>, "many">>>;
+    })[]>>>;
     fileTypePriority: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>, z.ZodUnion<[z.ZodLiteral<".csv">, z.ZodLiteral<".tsv">, z.ZodLiteral<".excel">, z.ZodLiteral<".numpy">, z.ZodLiteral<".html">, z.ZodLiteral<".pickle">, z.ZodLiteral<".db">, z.ZodLiteral<".sql">, z.ZodLiteral<".pdf">, z.ZodLiteral<".json">, z.ZodLiteral<".tex">, z.ZodLiteral<".hdf5">]>]>, "many">>>;
     noteTypes: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodObject<{
         label: z.ZodString;
@@ -2468,7 +2328,7 @@ export declare const appConfigDeepPartial: z.ZodObject<{
     cslPath: z.ZodOptional<z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>;
     dateHandling: z.ZodOptional<z.ZodDefault<z.ZodObject<{
         enableAdvancedFormat: z.ZodDefault<z.ZodBoolean>;
-        format: z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        format: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
             short: z.ZodDefault<z.ZodString>;
             long: z.ZodDefault<z.ZodString>;
             withTime: z.ZodDefault<z.ZodString>;
@@ -2483,12 +2343,22 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             long?: string | undefined;
             withTime?: string | undefined;
             timeOnly?: string | undefined;
-        }>]>>;
+        }>]>>, {
+            short: string;
+            long: string;
+            withTime: string;
+            timeOnly: string;
+        }, string | {
+            short?: string | undefined;
+            long?: string | undefined;
+            withTime?: string | undefined;
+            timeOnly?: string | undefined;
+        } | undefined>;
         defaultTimeDisplayType: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"analog">, z.ZodLiteral<"summarized">, z.ZodLiteral<"descriptive">]>>;
         defaultTimeZone: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -2538,61 +2408,6 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         subject: string;
     }>, "many">>>;
     linkAliases: z.ZodOptional<z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodString>>>;
-    features: z.ZodOptional<z.ZodOptional<z.ZodObject<{
-        enabled: z.ZodOptional<z.ZodDefault<z.ZodObject<{
-            commandPalette: z.ZodDefault<z.ZodBoolean>;
-            tikz: z.ZodDefault<z.ZodBoolean>;
-        }, "strip", z.ZodTypeAny, {
-            commandPalette: boolean;
-            tikz: boolean;
-        }, {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        }>>>;
-        pages: z.ZodOptional<z.ZodObject<{
-            equations: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            snippets: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            calendar: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            bibliography: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            taskManager: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-        }, "strip", z.ZodTypeAny, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }>>;
-    }, "strip", z.ZodTypeAny, {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette: boolean;
-            tikz: boolean;
-        } | undefined;
-    }, {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    }>>>;
     code: z.ZodOptional<z.ZodDefault<z.ZodObject<{
         theme: z.ZodDefault<z.ZodObject<{
             dark: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
@@ -2785,14 +2600,6 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         }>>;
-        bookmarkLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        syncLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        fileSystemToggle: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        darkmodeToggle: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        settings: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        equationsLink: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        snippetsLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        backupData: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
         navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
             label: z.ZodString;
             icon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
@@ -2819,14 +2626,14 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }, {
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }>, z.ZodString]>, "many">>;
     }, "strip", z.ZodTypeAny, {
         navbarBreakpoint: {
@@ -2839,10 +2646,6 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -2853,15 +2656,10 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     }, {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -2872,13 +2670,6 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -2889,8 +2680,8 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
     }>>>;
     UI: z.ZodOptional<z.ZodDefault<z.ZodObject<{
@@ -2934,15 +2725,15 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         media: z.ZodDefault<z.ZodObject<{
             imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
             includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
-            imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
+            imageRemoteTest: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString]>, "many">>, string[], (string | RegExp)[] | undefined>;
         }, "strip", z.ZodTypeAny, {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         }, {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         }>>;
         colors: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodObject<{
             dark: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
@@ -2977,7 +2768,7 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -3000,7 +2791,7 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -3471,14 +3262,11 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, ({
+    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[], string | string[] | {
+    }[], string | string[] | {
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
@@ -3526,10 +3314,6 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -3540,13 +3324,9 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     } | undefined;
     terminal?: {
         logLevel: "info" | "none" | "debug" | "verbose";
@@ -3619,7 +3399,7 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -3678,7 +3458,7 @@ export declare const appConfigDeepPartial: z.ZodObject<{
     ignoreFilepaths?: string[] | undefined;
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
-    ignorePreferFsExtensions?: import("./configUtilitySchemas.js").ParsedRegExpField[] | undefined;
+    ignorePreferFsExtensions?: string[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
     noteTypes?: {
         docType: string;
@@ -3715,7 +3495,7 @@ export declare const appConfigDeepPartial: z.ZodObject<{
     cslPath?: string | undefined;
     dateHandling?: {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -3725,19 +3505,6 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette: boolean;
-            tikz: boolean;
-        } | undefined;
-    } | undefined;
     plotting?: {
         plotColorList: string[] | {
             dark: string[];
@@ -3756,14 +3523,11 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         title: string;
         desc?: string | undefined;
     } | undefined;
-    plugins?: ({
+    plugins?: {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[] | undefined;
+    }[] | undefined;
 }, {
     code?: {
         editor?: {
@@ -3793,7 +3557,6 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         removeIfNotPresentInFs?: boolean | undefined;
     } | undefined;
     navigation?: {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -3804,13 +3567,6 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -3821,8 +3577,8 @@ export declare const appConfigDeepPartial: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
     } | undefined;
     terminal?: {
@@ -3896,7 +3652,7 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -3955,7 +3711,7 @@ export declare const appConfigDeepPartial: z.ZodObject<{
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
     ignorePreferFsExtensions?: (string | RegExp | {
-        regex: RegExp;
+        regex: string | RegExp;
         original: string;
     })[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
@@ -4004,19 +3760,6 @@ export declare const appConfigDeepPartial: z.ZodObject<{
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    } | undefined;
     plotting?: {
         plotColorList?: string[] | {
             dark: string[];

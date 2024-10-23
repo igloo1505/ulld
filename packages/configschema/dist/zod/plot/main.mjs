@@ -1,7 +1,9 @@
 import {
-  plotConfigSchema
-} from "../../chunk-VU5RDWX2.mjs";
+  plotConfigSchema,
+  plotConfigSchemaOutput
+} from "../../chunk-I3TUABK3.mjs";
 export {
-  plotConfigSchema
+  plotConfigSchema,
+  plotConfigSchemaOutput
 };
 //# sourceMappingURL=main.mjs.map

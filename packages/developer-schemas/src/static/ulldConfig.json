@@ -68,27 +68,7 @@
                 "ignorePreferFsExtensions": {
                     "type": "array",
                     "items": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {},
-                            {
-                                "type": "object",
-                                "properties": {
-                                    "original": {
-                                        "type": "string"
-                                    },
-                                    "regex": {}
-                                },
-                                "required": [
-                                    "original",
-                                    "regex"
-                                ],
-                                "additionalProperties": false
-                            }
-                        ],
-                        "description": "An array of either glob strings or RegExp's with which to test file paths. Those evaluating to true will always be rendered from the database, regardless of other global settings."
+                        "$ref": "#/definitions/ULLDConfig/properties/ignoreFilepaths/items"
                     },
                     "description": "An array of either glob strings or RegExp's with which to test file paths. Those evaluating to true will always be rendered from the database, regardless of other global settings.",
                     "default": []
@@ -331,7 +311,7 @@
                                     "properties": {
                                         "short": {
                                             "type": "string",
-                                            "default": "MM/D/YYYY",
+                                            "default": "MM/DD/YYYY",
                                             "description": "The format string passed to dayjs to format dates for short or small display fields. Formatting using the advancedFormat plugin is enabled by default. Please see the documentation of dayjs for more information about the date formatting syntax, both with and without the advanced format plugin."
                                         },
                                         "long": {
@@ -471,66 +451,6 @@
                     },
                     "description": "A map of key value pairs of commonly referenced urls.",
                     "default": {}
-                },
-                "features": {
-                    "type": "object",
-                    "properties": {
-                        "enabled": {
-                            "type": "object",
-                            "properties": {
-                                "commandPalette": {
-                                    "type": "boolean",
-                                    "default": true,
-                                    "description": "Whether or not app should include the command palette feature. This is only made available for the rare instance of breaking bugs within the command palette."
-                                },
-                                "tikz": {
-                                    "type": "boolean",
-                                    "default": true,
-                                    "description": "Whether or not to build with support for the tikz component. To allow drawing diagrams with the tikz latex package's syntax."
-                                }
-                            },
-                            "additionalProperties": false,
-                            "default": {
-                                "commandPalette": true,
-                                "tikz": true
-                            }
-                        },
-                        "pages": {
-                            "type": "object",
-                            "properties": {
-                                "equations": {
-                                    "type": "boolean",
-                                    "default": true,
-                                    "description": "Whether or not to generate an 'equations' page to input, store, reference and search equations."
-                                },
-                                "snippets": {
-                                    "type": "boolean",
-                                    "default": true,
-                                    "description": "Whether or not to generate a 'snippets' page to input, store, reference and search equations."
-                                },
-                                "calendar": {
-                                    "type": "boolean",
-                                    "default": true,
-                                    "description": "Whether or not to build a calendar page to integrate Google calendar within ULLD."
-                                },
-                                "bibliography": {
-                                    "type": "boolean",
-                                    "default": true,
-                                    "description": "Whether or not to build a bibliography page to allow the searching, sorting and referencing files and citations related to the apps .bib content."
-                                },
-                                "taskManager": {
-                                    "type": "boolean",
-                                    "default": true,
-                                    "description": "Whether or not to build a 'todo' page to integrate a task manager within the app."
-                                }
-                            },
-                            "additionalProperties": false
-                        }
-                    },
-                    "required": [
-                        "pages"
-                    ],
-                    "additionalProperties": false
                 },
                 "code": {
                     "type": "object",
@@ -1567,40 +1487,6 @@
                                 "searchAll": 12
                             }
                         },
-                        "bookmarkLink": {
-                            "type": "string",
-                            "enum": [
-                                "sidebar",
-                                "navbar",
-                                "both",
-                                "none"
-                            ],
-                            "default": "navbar"
-                        },
-                        "syncLink": {
-                            "$ref": "#/definitions/ULLDConfig/properties/navigation/properties/bookmarkLink",
-                            "default": "sidebar"
-                        },
-                        "fileSystemToggle": {
-                            "$ref": "#/definitions/ULLDConfig/properties/navigation/properties/bookmarkLink"
-                        },
-                        "darkmodeToggle": {
-                            "$ref": "#/definitions/ULLDConfig/properties/navigation/properties/bookmarkLink",
-                            "default": "sidebar"
-                        },
-                        "settings": {
-                            "$ref": "#/definitions/ULLDConfig/properties/navigation/properties/bookmarkLink"
-                        },
-                        "equationsLink": {
-                            "$ref": "#/definitions/ULLDConfig/properties/navigation/properties/bookmarkLink"
-                        },
-                        "snippetsLink": {
-                            "$ref": "#/definitions/ULLDConfig/properties/navigation/properties/bookmarkLink",
-                            "default": "sidebar"
-                        },
-                        "backupData": {
-                            "$ref": "#/definitions/ULLDConfig/properties/navigation/properties/bookmarkLink"
-                        },
                         "navbarLinks": {
                             "type": "array",
                             "items": {
@@ -1765,7 +1651,14 @@
                                 },
                                 "imageRemoteTest": {
                                     "type": "array",
-                                    "items": {},
+                                    "items": {
+                                        "anyOf": [
+                                            {},
+                                            {
+                                                "type": "string"
+                                            }
+                                        ]
+                                    },
                                     "default": []
                                 }
                             },
@@ -2257,233 +2150,43 @@
                             "default": "@ulld/navigation"
                         },
                         "bibliography": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
+                            "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation",
                             "default": "@ulld/bib-manager"
                         },
                         "commandPalette": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
+                            "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation",
                             "default": "@ulld/command-palette"
                         },
                         "editor": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
+                            "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation",
                             "default": "@ulld/editor"
                         },
                         "math": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
+                            "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation",
                             "default": "@ulld/equations"
                         },
                         "form": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
+                            "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation",
                             "default": "@ulld/full-form"
                         },
                         "dashboard": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
+                            "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation",
                             "default": "@ulld/landing-layouts"
                         },
                         "pdf": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
+                            "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation",
                             "default": "@ulld/pdf"
                         },
                         "snippets": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
+                            "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation",
                             "default": "@ulld/snippets"
                         },
                         "taskManager": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
+                            "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation",
                             "default": "@ulld/task-manager"
                         },
                         "UI": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                },
-                                {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation/anyOf/2"
-                                    }
-                                }
-                            ],
+                            "$ref": "#/definitions/ULLDConfig/properties/slots/properties/navigation",
                             "default": "@ulld/ui"
                         }
                     },

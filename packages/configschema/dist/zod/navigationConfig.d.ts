@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { ValidIconName } from "@ulld/icons/dynamic";
+import { ZodOutputSchema } from "../types.js";
 type V = {
     icon: ValidIconName;
     Icon?: never;
@@ -44,14 +45,6 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
         equations?: number | undefined;
         categories?: number | undefined;
     }>>;
-    bookmarkLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-    syncLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-    fileSystemToggle: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-    darkmodeToggle: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-    settings: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-    equationsLink: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-    snippetsLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-    backupData: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
     navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
         label: z.ZodString;
         icon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
@@ -78,14 +71,14 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
         icon: string;
         label?: string | undefined;
         href?: string | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
         Icon?: ((...args: unknown[]) => unknown) | undefined;
+        onClick?: ((...args: unknown[]) => unknown) | undefined;
     }, {
         icon: string;
         label?: string | undefined;
         href?: string | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
         Icon?: ((...args: unknown[]) => unknown) | undefined;
+        onClick?: ((...args: unknown[]) => unknown) | undefined;
     }>, z.ZodString]>, "many">>;
 }, "strip", z.ZodTypeAny, {
     navbarBreakpoint: {
@@ -98,10 +91,6 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
         equations: number;
         categories: number;
     };
-    bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-    syncLink: "none" | "sidebar" | "navbar" | "both";
-    darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-    snippetsLink: "none" | "sidebar" | "navbar" | "both";
     navbarLinks: (string | {
         label: string;
         href?: string | undefined;
@@ -112,15 +101,10 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
         icon: string;
         label?: string | undefined;
         href?: string | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
         Icon?: ((...args: unknown[]) => unknown) | undefined;
+        onClick?: ((...args: unknown[]) => unknown) | undefined;
     })[];
-    settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-    fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-    equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-    backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
 }, {
-    settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
     navbarBreakpoint?: {
         full?: number | undefined;
         minimal?: number | undefined;
@@ -131,13 +115,6 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
         equations?: number | undefined;
         categories?: number | undefined;
     } | undefined;
-    bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-    syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-    fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-    darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-    equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-    snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-    backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     navbarLinks?: (string | {
         label: string;
         href?: string | undefined;
@@ -148,10 +125,10 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
         icon: string;
         label?: string | undefined;
         href?: string | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
         Icon?: ((...args: unknown[]) => unknown) | undefined;
+        onClick?: ((...args: unknown[]) => unknown) | undefined;
     })[] | undefined;
 }>>;
-export type InternalNavigationKeys = keyof Pick<z.output<typeof navigationConfigSchema>, "bookmarkLink" | "syncLink" | "fileSystemToggle" | "darkmodeToggle" | "settings" | "equationsLink" | "snippetsLink" | "backupData">;
+export declare const navigationConfigSchemaOutput: ZodOutputSchema<typeof navigationConfigSchema>;
 export {};
 //# sourceMappingURL=navigationConfig.d.ts.map

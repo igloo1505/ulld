@@ -119,10 +119,6 @@
             "snippets": 10,
             "searchAll": 12
         },
-        "bookmarkLink": "navbar",
-        "syncLink": "sidebar",
-        "darkmodeToggle": "sidebar",
-        "snippetsLink": "sidebar",
         "navbarLinks": [],
         "sidebarLinks": []
     },

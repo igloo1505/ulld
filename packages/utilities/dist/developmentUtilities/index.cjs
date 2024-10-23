@@ -7,7 +7,7 @@ require('../chunk-OPQVKD2X.cjs');
 require('../chunk-AYRH4GFY.cjs');
 require('../chunk-T5AYEUMB.cjs');
 var chunkMLPV4KJR_cjs = require('../chunk-MLPV4KJR.cjs');
-var chunkZWWS36EK_cjs = require('../chunk-ZWWS36EK.cjs');
+var chunkBOTPD3V7_cjs = require('../chunk-BOTPD3V7.cjs');
 require('../chunk-7ARU3YXQ.cjs');
 
 
@@ -22,7 +22,7 @@ Object.defineProperty(exports, "readDevelopmentAppConfig", {
 });
 Object.defineProperty(exports, "convertPackageJsonExports", {
 	enumerable: true,
-	get: function () { return chunkZWWS36EK_cjs.a; }
+	get: function () { return chunkBOTPD3V7_cjs.a; }
 });
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=index.cjs.map

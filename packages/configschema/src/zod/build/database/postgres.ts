@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../../types.js";
 
 export const postgresConfigSchema = z
     .object({
@@ -21,3 +22,12 @@ export const postgresConfigSchema = z
             dbName: data.dbName,
         };
     });
+
+
+export const postgresConfigSchemaOutput: ZodOutputSchema<typeof postgresConfigSchema> = z.union([
+    z.object({connectionURI: z.string()}),
+    z.object({
+        port: z.number().int(),
+        dbName: z.string()
+    })
+])

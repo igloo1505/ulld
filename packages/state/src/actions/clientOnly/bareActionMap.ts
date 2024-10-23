@@ -8,11 +8,11 @@ import {
 } from "./general";
 import { toggleToolTips } from "./dom";
 import { syncRootDirectory } from "@ulld/utilities/actions-syncDirectory";
-import { GlobalActionMap } from "./actionMapTypes";
+import { UlldGlobalActionMap } from "./actionMapTypes";
 import { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
 
 
-export const bareGlobalActionsMap: GlobalActionMap = {
+export const bareGlobalActionsMap: UlldGlobalActionMap = {
     togglePreferFileSystem: async () => setPreferFs("toggle"),
     toggleTooltips: async () => toggleToolTips(),
     syncRootDirectory: async () => syncRootDirectory(),
@@ -20,5 +20,5 @@ export const bareGlobalActionsMap: GlobalActionMap = {
     toggleAllJupyterFolds: async () =>  toggleAllJupyterFolds(),
     toggleIdSelectMode: async () => enterIdSelectMode(),
     showEquationIds: async () => toggleEquationSelectMode(),
-    toggleBookmarked: (noteId: number) => toggleBookmarkedById(noteId)
+    toggleBookmarked: async (noteId: number) => toggleBookmarkedById(noteId)
 } satisfies {[K in InternalGlobalActionIds]: (props: any) => Promise<any>}

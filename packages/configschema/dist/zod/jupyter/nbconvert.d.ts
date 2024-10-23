@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../types.js";
 export declare const nbConvertTemplateOptions: z.ZodUnion<[z.ZodLiteral<"lab">, z.ZodLiteral<"classic">, z.ZodLiteral<"reveal">, z.ZodString]>;
 export declare const nbConvertConfigSchema: z.ZodObject<{
     nbconvertPath: z.ZodOptional<z.ZodString>;
@@ -32,4 +33,5 @@ export declare const nbConvertConfigSchema: z.ZodObject<{
     nbConvertTemplate?: string | undefined;
     notebookOutputDir?: string | undefined;
 }>;
+export declare const nbConvertConfigSchemaOutput: ZodOutputSchema<typeof nbConvertConfigSchema>;
 //# sourceMappingURL=nbconvert.d.ts.map

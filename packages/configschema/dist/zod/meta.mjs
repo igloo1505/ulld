@@ -1,7 +1,9 @@
 import {
-  appMetaSchema
-} from "../chunk-QIZF4VJT.mjs";
+  appMetaSchema,
+  appMetaSchemaOutput
+} from "../chunk-4TOS6Z5T.mjs";
 export {
-  appMetaSchema
+  appMetaSchema,
+  appMetaSchemaOutput
 };
 //# sourceMappingURL=meta.mjs.map

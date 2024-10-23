@@ -1,7 +1,9 @@
 import {
-  performanceConfigSchema
-} from "../chunk-2M3TXS4S.mjs";
+  performanceConfigSchema,
+  performanceConfigSchemaOutput
+} from "../chunk-GMU7AEL3.mjs";
 export {
-  performanceConfigSchema
+  performanceConfigSchema,
+  performanceConfigSchemaOutput
 };
 //# sourceMappingURL=performanceConfig.mjs.map

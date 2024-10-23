@@ -3,11 +3,15 @@
 
 
 
-var _chunkTBWRDALScjs = require('../chunk-TBWRDALS.cjs');
+
+
+var _chunkY5TBEYKZcjs = require('../chunk-Y5TBEYKZ.cjs');
 
 
 
 
 
-exports.configPluginSchema = _chunkTBWRDALScjs.configPluginSchema; exports.pluginSlotSchema = _chunkTBWRDALScjs.pluginSlotSchema; exports.slotFields = _chunkTBWRDALScjs.slotFields; exports.ulldSlots = _chunkTBWRDALScjs.ulldSlots;
+
+
+exports.configPluginSchema = _chunkY5TBEYKZcjs.configPluginSchema; exports.pluginSlotSchema = _chunkY5TBEYKZcjs.pluginSlotSchema; exports.pluginSlotSchemaOutput = _chunkY5TBEYKZcjs.pluginSlotSchemaOutput; exports.slotFields = _chunkY5TBEYKZcjs.slotFields; exports.slotFieldsBase = _chunkY5TBEYKZcjs.slotFieldsBase; exports.ulldSlots = _chunkY5TBEYKZcjs.ulldSlots;
 //# sourceMappingURL=slotsSchema.cjs.map

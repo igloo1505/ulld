@@ -1,7 +1,7 @@
-import { appConfigDeepPartial } from "../main.js";
 import {z} from 'zod'
+import { appConfigOutputDeepPartialSchema } from "./appConfigOutputSchemaDeepPartial.js";
 
-export const minimalParsableAppConfig = appConfigDeepPartial.required({
+export const minimalParsableAppConfig = appConfigOutputDeepPartialSchema.required({
     fsRoot: true,
     noteTypes: true
 })
@@ -11,14 +11,14 @@ export type MinimalParsableAppConfig = z.input<typeof minimalParsableAppConfig>
 export type MinimalParsableAppConfigOutput = z.output<typeof minimalParsableAppConfig>
 
 
-export const appConfigDeepPartialWithNotetypes = appConfigDeepPartial.required({
+export const appConfigDeepPartialWithNotetypes = appConfigOutputDeepPartialSchema.required({
     noteTypes: true
 })
 
 export type AppConfigSchemaDeepPartialOutputWithNoteTypes = z.output<typeof appConfigDeepPartialWithNotetypes>
 
 
-export const appConfigDeepPartialWithFsRoot = appConfigDeepPartial.required({
+export const appConfigDeepPartialWithFsRoot = appConfigOutputDeepPartialSchema.required({
     noteTypes: true
 })
 

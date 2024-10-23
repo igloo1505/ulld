@@ -1,10 +1,14 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
 
-var _chunkO5HV2BYWcjs = require('../../chunk-O5HV2BYW.cjs');
+
+
+var _chunk6WYSQD2Ocjs = require('../../chunk-6WYSQD2O.cjs');
 require('../../chunk-MZET64JI.cjs');
 
 
 
-exports.colorGroup = _chunkO5HV2BYWcjs.colorGroup; exports.colorsConfigSchema = _chunkO5HV2BYWcjs.colorsConfigSchema;
+
+
+exports.colorConfigSchemaOutput = _chunk6WYSQD2Ocjs.colorConfigSchemaOutput; exports.colorGroup = _chunk6WYSQD2Ocjs.colorGroup; exports.colorValueOutput = _chunk6WYSQD2Ocjs.colorValueOutput; exports.colorsConfigSchema = _chunk6WYSQD2Ocjs.colorsConfigSchema;
 //# sourceMappingURL=colorsConfig.cjs.map

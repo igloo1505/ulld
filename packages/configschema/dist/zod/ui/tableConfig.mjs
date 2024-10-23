@@ -1,7 +1,9 @@
 import {
-  tableUIConfigSchema
-} from "../../chunk-HIYUKVMC.mjs";
+  tableUIConfigSchema,
+  tableUIConfigSchemaOutput
+} from "../../chunk-E4QAKK37.mjs";
 export {
-  tableUIConfigSchema
+  tableUIConfigSchema,
+  tableUIConfigSchemaOutput
 };
 //# sourceMappingURL=tableConfig.mjs.map

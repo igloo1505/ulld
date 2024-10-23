@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/utils/domUtils/domState/toggleBookmarkState.ts"],"names":["toggleBookmarkedState"],"mappings":"AAAO,IAAMA,EAAwB,IAAY,CAC7C,SAAS,KAAK,UAAU,OAAO,cAAc,CACjD","sourcesContent":["export const toggleBookmarkedState = (): void => {\n    document.body.classList.toggle(\"isBookmarked\");\n}\n"]}

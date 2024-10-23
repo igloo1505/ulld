@@ -129,10 +129,4 @@ export const convertPackageJsonExports = (
         });
     }
     let newItems = exportItems.map((l) => convertExportItem(l, props.to, props))
-    console.log("newItems: ", newItems)
 };
-
-convertPackageJsonExports({
-    dirname: "/Users/bigsexy/Desktop/current/ulld/packages/utilities/",
-    to: "dist dir object"
-})

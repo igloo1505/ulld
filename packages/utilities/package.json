@@ -57,6 +57,11 @@
       "import": "./dist/staticAppProperties/buildUtils/main.mjs",
       "require": "./dist/staticAppProperties/buildUtils/main.cjs"
     },
+    "./toggleBookmarkState": {
+      "types": "./dist/utils/domUtils/domState/toggleBookmarkState.d.ts",
+      "import": "./dist/utils/domUtils/domState/toggleBookmarkState.mjs",
+      "require": "./dist/utils/domUtils/domState/toggleBookmarkState.cjs"
+    },
     "./copyJsonFilesToDist": {
       "types": "./dist/utils/build/copyJsonFilesToDist.d.ts",
       "import": "./dist/utils/build/copyJsonFilesToDist.mjs",

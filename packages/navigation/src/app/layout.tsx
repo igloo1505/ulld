@@ -11,7 +11,7 @@ import type { PassedLogoProps } from "@ulld/types";
 import { readDevelopmentAppConfig } from "@ulld/utilities/devUtils";
 import Footer from "../components/footer/ssr";
 import SecondaryNav from "../components/sidebar/sidebarSSR";
-import Navbar from "../components/navbar/navbar";
+import Navbar from "../components/navbar/navbarSSR";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 const appFont = localFont({
@@ -132,7 +132,7 @@ const RootLayout = (props: {
                 id="Ulld-body-root"
             >
                 <Navbar
-                    logo={<DemoLogo />}
+                    logo={DemoLogo}
                     navConfig={
                         appConfig.navigation as AppConfigSchemaOutput["navigation"]
                     }

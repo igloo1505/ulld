@@ -1,6 +1,5 @@
 import { appConfigSchema } from "../main.js";
 import { z } from "zod";
-import { slashesTransform } from "../transforms/general.js";
 import { allParsableFileExtensionSchema } from "../secondaryConfigParse/getParsableExtensions.js";
 import { documentTypeConfigSchemaOutputSchema } from "../documentConfigSchema.js";
 import { dateParseConfigSchemaOutput } from "../dateParseConfig.js";
@@ -11,42 +10,37 @@ import { navigationConfigSchemaOutput } from "../navigationConfig.js";
 import { mainUIConfigSchemaOutput } from "../ui/main.js";
 import { databaseConfigSchemaOutput } from "../database/main.js";
 import { jupyterConfigSchemaOutput } from "../jupyter/main.js";
-import { credentialsConfigSchema } from "../redentials/main.js";
+import { credentialsConfigSchemaOutput } from "../credentials/main.js";
+import {  performanceConfigSchemaOutput } from "../performanceConfig.js";
+import {  terminalConfigSchemaOutput } from "../terminalConfig.js";
+import {  pluginSlotSchemaOutput } from "../../developer/slotsSchema.js";
+import { buildOnlySchemaOutput } from "../build/main.js";
+import {  appMetaSchemaOutput } from "../meta.js";
+import { pluginsConfigSchemaOutput } from "../pluginsConfig.js";
+import { ZodOutputSchema } from "../../types.js";
 
-export const appConfigOutputSchema: z.ZodType<
-    z.output<typeof appConfigSchema>
-> = z.object({
+
+export const appConfigOutputSchema = z.object({
     fsRoot: z
-        .string()
-        .transform(slashesTransform(true, false)),
+        .string(),
     alwaysPreferFs: z
-        .boolean()
-        .default(false)
-        ,
+        .boolean(),
     ignoreFilepaths: z
         .string()
-        .array()
-        .default([])
-        ,
+        .array(),
     tempDir: z
-        .string()
-        
-        .transform(slashesTransform(true, false)),
+        .string(),
     generatedDir: z
-        .string()
-        
-        .transform(slashesTransform(true, false)),
+        .string(),
     ignorePreferFsExtensions: z
         .string()
-        .array() 
-        .default([]),
+        .array() ,
     fileTypePriority: allParsableFileExtensionSchema
         .array(),
     noteTypes: documentTypeConfigSchemaOutputSchema
         .array(),
     bibPath: z
-        .string()
-        .default("/citations.bib"),
+        .string(),
     cslPath: z
         .string()
         .optional(),
@@ -75,7 +69,6 @@ export const appConfigOutputSchema: z.ZodType<
         .array(),
     linkAliases: z
         .record(z.string(), z.string().url()), 
-    // features: featuresConfigSchema,
     code: codeConfigSchemaOutput,
     math: mathConfigSchemaOutput,
     plotting: plotConfigSchemaOutput,
@@ -83,27 +76,11 @@ export const appConfigOutputSchema: z.ZodType<
     UI: mainUIConfigSchemaOutput,
     database: databaseConfigSchemaOutput,
     jupyter: jupyterConfigSchemaOutput,
-    credentials: credentialsConfigSchema, // RESUME: Finish the rest of this config output schema when back n the car. No need to spend valuable time on wifi and a power outlet messing with this.
-    performance: performanceConfigSchema,
-    terminal: terminalConfigSchema,
-    slots: pluginSlotSchema.default({}),
-    build: buildOnlySchema,
-    meta: appMetaSchema,
-    plugins: z
-        .union([
-            pluginItemSchema,
-            pluginItemSchema.array(),
-            z.string(),
-            z.string().array(),
-        ])
-        .default(getDefaultPlugins())
-        .transform((a = []) => {
-            let items = Array.isArray(a) ? a : [a];
-            let names: string[] = [];
-            let newItems = items.map((s) => {
-                names.push(typeof s === "string" ? s : s.name);
-                return typeof s === "string" ? { name: s, version: "latest" } : s;
-            });
-            return newItems;
-        }),
-});
+    credentials: credentialsConfigSchemaOutput,
+    performance: performanceConfigSchemaOutput,
+    terminal: terminalConfigSchemaOutput,
+    slots: pluginSlotSchemaOutput,
+    build: buildOnlySchemaOutput,
+    meta: appMetaSchemaOutput,
+    plugins: pluginsConfigSchemaOutput,
+}) satisfies ZodOutputSchema<typeof appConfigSchema>

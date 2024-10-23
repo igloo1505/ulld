@@ -1,16 +1,14 @@
 import { client } from "../../trpc/client";
+import { toggleBookmarkedState } from "@ulld/utilities/toggleBookmarkState";
 
-export const toggleBookmarkedState = () =>
-    document.body.classList.toggle("isBookmarked");
 
 export const toggleBookmark = async (noteId?: number) => {
-    console.log("noteId: ", noteId);
     if (!noteId) {
-        console.log(`No note id was found while toggling bookmarked state`);
+        // eslint-disable-next-line no-console -- Should indicate why the action can't run successfully. #MoveToLoggerPackage
+        console.info(`No note id was found while toggling bookmarked state`);
         return;
     }
     const success = await client.mdx.toggleBookmarkedById.mutate(noteId);
-    console.log("success: ", success);
     if (success) {
         toggleBookmarkedState();
     }

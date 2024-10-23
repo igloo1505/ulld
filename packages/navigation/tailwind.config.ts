@@ -9,6 +9,7 @@ const tailwindCfg: Config = {
         "./node_modules/@ulld/ui/src/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@ulld/full-form/src/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@ulld/utilities/src/**/*.{js,ts,jsx,tsx,mdx}",
+        "./node_modules/@ulld/icons/dist/**/*.{js,ts,jsx,tsx,mdx}",
         "../../node_modules/@ulld/tailwind/src/**/*.{js,ts,jsx,tsx,mdx}",
         "../../node_modules/@ulld/editor/src/**/*.{js,ts,jsx,tsx,mdx}",
         "../../node_modules/@ulld/ui/src/**/*.{js,ts,jsx,tsx,mdx}",

@@ -1,7 +1,9 @@
 import {
-  jupyterNotebookPropsSchema
-} from "../../chunk-GDWFMZV6.mjs";
+  jupyterNotebookPropsSchema,
+  jupyterNotebookPropsSchemaOutput
+} from "../../chunk-VQMWP2MQ.mjs";
 export {
-  jupyterNotebookPropsSchema
+  jupyterNotebookPropsSchema,
+  jupyterNotebookPropsSchemaOutput
 };
 //# sourceMappingURL=jupyterNotebook.mjs.map

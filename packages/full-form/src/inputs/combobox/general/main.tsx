@@ -1,6 +1,8 @@
 "use client";
-import React, { CSSProperties, ReactNode, useState } from "react";
-import { FieldValues, Path, PathValue, useFormContext } from "react-hook-form";
+import type { CSSProperties, ReactNode} from "react";
+import React, { useState } from "react";
+import type { FieldValues, Path, PathValue} from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import {
     FormField,
     FormItem,
@@ -21,8 +23,9 @@ import {
     Popover,
     PopoverTrigger,
     PopoverContentNoPortal,
+    PopoverContent,
 } from "@ulld/tailwind/popover";
-import cn from "@ulld/utilities/cn";
+import { cn } from "@ulld/utilities/cn";
 import { ChevronsUpDown, Check } from "lucide-react";
 import { Button } from "@ulld/tailwind/button";
 import { onEnter } from "@ulld/state/listeners/keydown";
@@ -65,6 +68,20 @@ export interface ComboboxInputProps<
     };
 }
 
+
+const PlaceholderComp = <T extends FieldValues, J extends string | number, OptionType extends Option<J> = Option<J>>(props: Pick<ComboboxInputProps<T, J, OptionType>, "placeholder" | "getPlaceHolder"> & {curVal: PathValue<T, Path<T>>, foundOpt?: OptionType}): ReactNode => {
+    if(props.curVal){
+        if(props.getPlaceHolder && props.foundOpt && typeof props.foundOpt === "string"){
+            return props.getPlaceHolder(props.foundOpt)
+        }
+        if(typeof props.foundOpt === "object" && props.foundOpt.label){
+            return props.foundOpt.label
+        }
+    }
+    return props.placeholder
+}
+
+
 export const ComboboxInput = <
     T extends FieldValues,
     J extends string | number,
@@ -84,12 +101,12 @@ export const ComboboxInput = <
     onOpenChange,
     onSelectOverride,
     getPlaceHolder
-}: ComboboxInputProps<T, J, OptionType>) => {
+}: ComboboxInputProps<T, J, OptionType>): ReactNode => {
     const form = useFormContext<T>();
     const [open, setOpen] = useState(false);
-    let curVal = form.watch(name)
+    const curVal = form.watch(name)
 
-    const foundOpt = curVal ? options.find((item) => item.value === (typeof curVal === "string" ? curVal : curVal.value)) as OptionType : undefined
+    const foundOpt = curVal ? options.find((item) => item.value === (typeof curVal === "string" ? curVal : curVal.value)) : undefined
 
     return (
         <FormField
@@ -100,50 +117,52 @@ export const ComboboxInput = <
                     <FormItem className={cn("flex flex-col", classes.formItem)}>
                         <FormLabel>{label}</FormLabel>
                         <Popover
-                            open={open}
                             onOpenChange={(newOpen) => {
                                 if (onOpenChange) {
                                     onOpenChange(newOpen);
                                 }
                                 setOpen(newOpen);
                             }}
+                            open={open}
                         >
                             <PopoverTrigger asChild>
                                 <FormControl>
                                     <Button
-                                        variant="outline"
-                                        role="combobox"
                                         className={cn(
                                             "w-[200px] justify-between",
                                             !field.value && "text-muted-foreground",
                                             classes.button,
                                         )}
+                                        role="combobox"
                                         style={styles?.button}
+                                        variant="outline"
                                     >
-                                        <div className={"flex-grow text-left"}>
-                                            {curVal
-                                                ? (getPlaceHolder && foundOpt) ? getPlaceHolder(foundOpt) : (foundOpt?.label || placeholder)
-                                                : placeholder}
+                                        <div className="flex-grow text-left">
+                                            <PlaceholderComp
+                                                curVal={curVal}
+                                                foundOpt={foundOpt}
+                                                getPlaceHolder={getPlaceHolder}
+                                                placeholder={placeholder}
+                                            />
                                         </div>
                                         <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                     </Button>
                                 </FormControl>
                             </PopoverTrigger>
-                            <PopoverContentNoPortal
+                            <PopoverContent
                                 className={cn("w-[200px] p-0", classes.popoverContent)}
-                                style={styles?.popoverContent}
                                 id={ids?.popoverContent}
+                                style={styles?.popoverContent}
                             >
                                 <Command>
                                     <CommandInput
-                                        placeholder={inputPlaceholder}
-                                        className={"text-foreground"}
+                                        className="text-foreground"
                                         onKeyDown={(e) => {
                                             if (allowOtherInput) {
                                                 onEnter(e, (_e) => {
                                                     if (onSelectOverride) {
                                                         onSelectOverride((_e.target as HTMLInputElement).value);
-                                                        return setOpen(false);
+                                                        setOpen(false); return;
                                                     }
                                                     form.setValue(
                                                         name,
@@ -156,6 +175,7 @@ export const ComboboxInput = <
                                                 });
                                             }
                                         }}
+                                        placeholder={inputPlaceholder}
                                     />
                                     <CommandList className={cn("listyList", classes.commandList)}>
                                         <CommandEmpty className={cn("text-foreground p-2", classes.notFoundText)}>{notFoundText}</CommandEmpty>
@@ -164,13 +184,12 @@ export const ComboboxInput = <
                                         >
                                             {options.map((item) => (
                                                 <CommandItem
-                                                    value={item.label}
-                                                    key={item.value}
                                                     className={classes.option}
+                                                    key={item.value}
                                                     onSelect={() => {
                                                         if (onSelectOverride) {
-                                                            onSelectOverride(item as OptionType);
-                                                            return setOpen(false);
+                                                            onSelectOverride(item);
+                                                            setOpen(false); return;
                                                         }
                                                         form.setValue(
                                                             name,
@@ -178,6 +197,7 @@ export const ComboboxInput = <
                                                         );
                                                         setOpen(false);
                                                     }}
+                                                    value={item.label}
                                                 >
                                                     <Check
                                                         className={cn(
@@ -193,9 +213,9 @@ export const ComboboxInput = <
                                         </CommandGroup>
                                     </CommandList>
                                 </Command>
-                            </PopoverContentNoPortal>
+                            </PopoverContent>
                         </Popover>
-                        {desc && <FormDescription>{desc}</FormDescription>}
+                        {desc ? <FormDescription>{desc}</FormDescription> : null}
                         <FormMessage />
                     </FormItem>
                 );

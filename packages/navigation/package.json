@@ -19,7 +19,7 @@
     },
     "exports": {
         "./types": "./src/types.ts",
-        "./navbar": "./src/components/navbar/navbar.tsx",
+        "./navbar": "./src/components/navbar/navbarSSR.tsx",
         "./sidebar": "./src/components/sidebar/sidebarSSR.tsx",
         "./multiPageSidebar": "./src/components/multipageSidebar/main.tsx",
         "./fullScreenNav": "./src/components/fullScreenNavigationMenu/main.tsx",

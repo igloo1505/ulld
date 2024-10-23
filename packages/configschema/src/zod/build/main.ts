@@ -1,6 +1,7 @@
 import { z } from "zod";
-import { databaseBuildSchema } from "./database/database.js";
-import { additionalUserContent } from "./additional/additionalUserContent.js";
+import { databaseBuildSchema, databaseBuildSchemaOutput } from "./database/database.js";
+import { additionalUserContent, additionalUserContentOutput } from "./additional/additionalUserContent.js";
+import { ZodOutputSchema } from "../../types.js";
 
 export const buildOnlySchema = z
     .object({
@@ -8,3 +9,11 @@ export const buildOnlySchema = z
         additionalUserContent: additionalUserContent,
     })
     .default({});
+
+
+
+export const buildOnlySchemaOutput: ZodOutputSchema<typeof buildOnlySchema> = z
+    .object({
+        database: databaseBuildSchemaOutput,
+        additionalUserContent: additionalUserContentOutput,
+    })

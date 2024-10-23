@@ -354,6 +354,16 @@
       "types": "./dist/baseApp/slot.d.ts",
       "import": "./dist/baseApp/slot.mjs",
       "require": "./dist/baseApp/slot.cjs"
+    },
+    "./appConfigOutputSchema": {
+      "types": "./dist/zod/refinedConfigs/appConfigOutputSchema.d.ts",
+      "import": "./dist/zod/refinedConfigs/appConfigOutputSchema.mjs",
+      "require": "./dist/zod/refinedConfigs/appConfigOutputSchema.cjs"
+    },
+    "./minimalParsableAppConfigSchemas": {
+      "types": "./dist/zod/refinedConfigs/minimalParsableConfig.d.ts",
+      "import": "./dist/zod/refinedConfigs/minimalParsableConfig.mjs",
+      "require": "./dist/zod/refinedConfigs/minimalParsableConfig.cjs"
     }
   },
   "dependencies": {

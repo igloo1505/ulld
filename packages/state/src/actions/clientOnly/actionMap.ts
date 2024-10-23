@@ -1,5 +1,4 @@
 import { ValidIconNameDynamicallyGenerated } from "@ulld/types";
-import { GlobalActionIds } from "./actionMapTypes";
 import { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
 
 interface InternalActionItem {

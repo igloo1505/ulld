@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../../types.js";
 
 
 // PRIORITY: Double check these file types. Can definitely add some to the imageExtensions, and might have to remove some from the faviconExtensions.
@@ -38,3 +39,15 @@ ${validImageExtends.join("\n")}`,
             .optional(),
     })
     .default({});
+
+
+
+export const additionalUserContentOutput: ZodOutputSchema<typeof additionalUserContent> = z
+    .object({
+        css: z.string().optional(),
+        favicon: z
+            .string().optional(),
+        logo: z
+            .string()
+            .optional(),
+    })

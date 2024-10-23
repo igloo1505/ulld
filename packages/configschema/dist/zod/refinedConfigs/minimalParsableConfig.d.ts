@@ -1,6 +1,6 @@
 import { z } from 'zod';
 export declare const minimalParsableAppConfig: z.ZodObject<{
-    code: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    code: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         theme: z.ZodDefault<z.ZodObject<{
             dark: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
             light: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
@@ -126,8 +126,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
                 block: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
             } | undefined;
         } | undefined;
-    }>>>;
-    database: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    database: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         storeFormatted: z.ZodDefault<z.ZodBoolean>;
         removeIfNotPresentInFs: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
@@ -136,8 +136,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
     }, {
         storeFormatted?: boolean | undefined;
         removeIfNotPresentInFs?: boolean | undefined;
-    }>>>;
-    navigation: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    navigation: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         navbarBreakpoint: z.ZodDefault<z.ZodObject<{
             full: z.ZodDefault<z.ZodNumber>;
             minimal: z.ZodDefault<z.ZodNumber>;
@@ -164,14 +164,6 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         }>>;
-        bookmarkLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        syncLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        fileSystemToggle: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        darkmodeToggle: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        settings: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        equationsLink: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        snippetsLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        backupData: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
         navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
             label: z.ZodString;
             icon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
@@ -198,14 +190,14 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }, {
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }>, z.ZodString]>, "many">>;
     }, "strip", z.ZodTypeAny, {
         navbarBreakpoint: {
@@ -218,10 +210,6 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -232,15 +220,10 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     }, {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -251,13 +234,6 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -268,18 +244,18 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
-    }>>>;
-    terminal: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    terminal: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         logLevel: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"debug">, z.ZodLiteral<"verbose">, z.ZodLiteral<"info">, z.ZodLiteral<"none">]>>;
     }, "strip", z.ZodTypeAny, {
         logLevel: "info" | "none" | "debug" | "verbose";
     }, {
         logLevel?: "info" | "none" | "debug" | "verbose" | undefined;
-    }>>>;
-    jupyter: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    jupyter: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodObject<{
         execute: z.ZodDefault<z.ZodBoolean>;
         environment: z.ZodDefault<z.ZodString>;
         syntaxHighlightTheme: z.ZodDefault<z.ZodString>;
@@ -522,7 +498,7 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             suffix: string;
         }> | undefined;
     }>>>;
-    math: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    math: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         latexPackages: z.ZodDefault<z.ZodUnion<[z.ZodArray<z.ZodString, "many">, z.ZodLiteral<"all">]>>;
         latexFontUrl: z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
         constants: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodNumber>>;
@@ -534,8 +510,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         latexPackages?: string[] | "all" | undefined;
         latexFontUrl?: string | undefined;
         constants?: Record<string, number> | undefined;
-    }>>>;
-    UI: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    UI: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         table: z.ZodDefault<z.ZodObject<{
             maxHeight: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, string, string | number | undefined>;
         }, "strip", z.ZodTypeAny, {
@@ -576,15 +552,15 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         media: z.ZodDefault<z.ZodObject<{
             imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
             includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
-            imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
+            imageRemoteTest: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString]>, "many">>, string[], (string | RegExp)[] | undefined>;
         }, "strip", z.ZodTypeAny, {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         }, {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         }>>;
         colors: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodObject<{
             dark: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
@@ -619,7 +595,7 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -642,7 +618,7 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -650,8 +626,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             light?: string | undefined;
         } | null | undefined> | undefined;
         autoApplyMdxTitles?: boolean | undefined;
-    }>>>;
-    slots: z.ZodOptional<z.ZodDefault<z.ZodObject<Record<keyof import("../../developer/slotMapRootType.js").SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
+    }>>>>;
+    slots: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodObject<Record<keyof import("../../developer/slotMapRootType.js").SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
         navigation?: any;
         bibliography?: any;
         math?: any;
@@ -676,8 +652,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         form?: any;
         commandPalette?: any;
     }>>>;
-    fsRoot: z.ZodEffects<z.ZodString, string, string>;
-    build: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    fsRoot: z.ZodString;
+    build: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         database: z.ZodDefault<z.ZodEffects<z.ZodDefault<z.ZodObject<{
             type: z.ZodDefault<z.ZodEnum<["postgres", "sqlite"]>>;
             postgres: z.ZodEffects<z.ZodEffects<z.ZodDefault<z.ZodObject<{
@@ -802,210 +778,44 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             logo?: string | undefined;
             favicon?: string | undefined;
         } | undefined;
-    }>>>;
-    autoTag: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodObject<{
-        path: z.ZodString;
-        tag: z.ZodString;
+    }>>>>;
+    autoTag: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        path: z.ZodOptional<z.ZodString>;
+        tag: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        tag: string;
-        path: string;
+        tag?: string | undefined;
+        path?: string | undefined;
     }, {
-        tag: string;
-        path: string;
-    }>, "many">>>;
-    autoTopic: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodObject<{
-        path: z.ZodString;
-        topic: z.ZodString;
+        tag?: string | undefined;
+        path?: string | undefined;
+    }>, "many">>;
+    autoTopic: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        path: z.ZodOptional<z.ZodString>;
+        topic: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        path: string;
-        topic: string;
+        path?: string | undefined;
+        topic?: string | undefined;
     }, {
-        path: string;
-        topic: string;
-    }>, "many">>>;
-    autoSubject: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodObject<{
-        path: z.ZodString;
-        subject: z.ZodString;
+        path?: string | undefined;
+        topic?: string | undefined;
+    }>, "many">>;
+    autoSubject: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        path: z.ZodOptional<z.ZodString>;
+        subject: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        path: string;
-        subject: string;
+        path?: string | undefined;
+        subject?: string | undefined;
     }, {
-        path: string;
-        subject: string;
-    }>, "many">>>;
-    alwaysPreferFs: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-    ignoreFilepaths: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString, z.ZodObject<{
-        original: z.ZodString;
-        regex: z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>]>, RegExp, string | RegExp>;
-    }, "strip", z.ZodTypeAny, {
-        regex: RegExp;
-        original: string;
-    }, {
-        regex: string | RegExp;
-        original: string;
-    }>]>, "many">>, string[], (string | RegExp | {
-        regex: string | RegExp;
-        original: string;
-    })[] | undefined>>;
-    tempDir: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
-    generatedDir: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
-    ignorePreferFsExtensions: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodObject<{
-        original: z.ZodString;
-        regex: z.ZodType<RegExp, z.ZodTypeDef, RegExp>;
-    }, "strip", z.ZodTypeAny, {
-        regex: RegExp;
-        original: string;
-    }, {
-        regex: RegExp;
-        original: string;
-    }>]>, import("../configUtilitySchemas.js").ParsedRegExpField, string | RegExp | {
-        regex: RegExp;
-        original: string;
-    }>, "many">>>;
-    fileTypePriority: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>, z.ZodUnion<[z.ZodLiteral<".csv">, z.ZodLiteral<".tsv">, z.ZodLiteral<".excel">, z.ZodLiteral<".numpy">, z.ZodLiteral<".html">, z.ZodLiteral<".pickle">, z.ZodLiteral<".db">, z.ZodLiteral<".sql">, z.ZodLiteral<".pdf">, z.ZodLiteral<".json">, z.ZodLiteral<".tex">, z.ZodLiteral<".hdf5">]>]>, "many">>>;
-    noteTypes: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodObject<{
-        label: z.ZodString;
-        icon: z.ZodDefault<z.ZodEffects<z.ZodString, string, string>>;
-        UI: z.ZodDefault<z.ZodDefault<z.ZodObject<{
-            styles: z.ZodDefault<z.ZodObject<{
-                dark: z.ZodDefault<z.ZodObject<{
-                    bg: z.ZodOptional<z.ZodString>;
-                    fg: z.ZodOptional<z.ZodString>;
-                }, "strip", z.ZodTypeAny, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }>>;
-                light: z.ZodDefault<z.ZodObject<{
-                    bg: z.ZodOptional<z.ZodString>;
-                    fg: z.ZodOptional<z.ZodString>;
-                }, "strip", z.ZodTypeAny, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }>>;
-            }, "strip", z.ZodTypeAny, {
-                dark: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-                light: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-            }, {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            }>>;
-        }, "strip", z.ZodTypeAny, {
-            styles: {
-                dark: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-                light: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-            };
-        }, {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        }>>>;
-        fs: z.ZodEffects<z.ZodString, string, string>;
-        id: z.ZodOptional<z.ZodString>;
-        docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-        filePathPattern: z.ZodOptional<z.ZodString>;
-        matchWeight: z.ZodDefault<z.ZodNumber>;
-        url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-        urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
-        keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        topicLabel: z.ZodOptional<z.ZodString>;
-        subjectLabel: z.ZodOptional<z.ZodString>;
-        autoTag: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        autoTopic: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        autoSubject: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        inSidebar: z.ZodDefault<z.ZodBoolean>;
-        inNavbar: z.ZodDefault<z.ZodBoolean>;
-    }, "strip", z.ZodTypeAny, {
-        label: string;
-        icon: string;
-        UI: {
-            styles: {
-                dark: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-                light: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-            };
-        };
-        fs: string;
-        matchWeight: number;
-        urlQuery: Record<string, string | number | string[] | number[]>;
-        keywords: string[];
-        autoTag: string[];
-        autoTopic: string[];
-        autoSubject: string[];
-        inSidebar: boolean;
-        inNavbar: boolean;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        url?: string | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-    }, {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }>, {
+        path?: string | undefined;
+        subject?: string | undefined;
+    }>, "many">>;
+    alwaysPreferFs: z.ZodOptional<z.ZodBoolean>;
+    ignoreFilepaths: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    tempDir: z.ZodOptional<z.ZodString>;
+    generatedDir: z.ZodOptional<z.ZodString>;
+    ignorePreferFsExtensions: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    fileTypePriority: z.ZodOptional<z.ZodArray<z.ZodUnion<[z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>, z.ZodUnion<[z.ZodLiteral<".csv">, z.ZodLiteral<".tsv">, z.ZodLiteral<".excel">, z.ZodLiteral<".numpy">, z.ZodLiteral<".html">, z.ZodLiteral<".pickle">, z.ZodLiteral<".db">, z.ZodLiteral<".sql">, z.ZodLiteral<".pdf">, z.ZodLiteral<".json">, z.ZodLiteral<".tex">, z.ZodLiteral<".hdf5">]>]>, "many">>;
+    noteTypes: z.ZodArray<z.ZodType<{
         docType: string;
         id: string;
         url: string;
@@ -1035,37 +845,7 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
-    }, {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }>, "many">>, {
+    }, z.ZodTypeDef, {
         docType: string;
         id: string;
         url: string;
@@ -1095,42 +875,12 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
-    }[], {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }[] | undefined>;
-    bibPath: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
-    cslPath: z.ZodOptional<z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>;
-    dateHandling: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>, "many">;
+    bibPath: z.ZodOptional<z.ZodString>;
+    cslPath: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    dateHandling: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         enableAdvancedFormat: z.ZodDefault<z.ZodBoolean>;
-        format: z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        format: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
             short: z.ZodDefault<z.ZodString>;
             long: z.ZodDefault<z.ZodString>;
             withTime: z.ZodDefault<z.ZodString>;
@@ -1145,12 +895,22 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             long?: string | undefined;
             withTime?: string | undefined;
             timeOnly?: string | undefined;
-        }>]>>;
+        }>]>>, {
+            short: string;
+            long: string;
+            withTime: string;
+            timeOnly: string;
+        }, string | {
+            short?: string | undefined;
+            long?: string | undefined;
+            withTime?: string | undefined;
+            timeOnly?: string | undefined;
+        } | undefined>;
         defaultTimeDisplayType: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"analog">, z.ZodLiteral<"summarized">, z.ZodLiteral<"descriptive">]>>;
         defaultTimeZone: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -1168,64 +928,9 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         } | undefined;
         defaultTimeDisplayType?: "summarized" | "analog" | "descriptive" | undefined;
         defaultTimeZone?: string | undefined;
-    }>>>;
-    linkAliases: z.ZodOptional<z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodString>>>;
-    features: z.ZodOptional<z.ZodOptional<z.ZodObject<{
-        enabled: z.ZodOptional<z.ZodDefault<z.ZodObject<{
-            commandPalette: z.ZodDefault<z.ZodBoolean>;
-            tikz: z.ZodDefault<z.ZodBoolean>;
-        }, "strip", z.ZodTypeAny, {
-            commandPalette: boolean;
-            tikz: boolean;
-        }, {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        }>>>;
-        pages: z.ZodOptional<z.ZodObject<{
-            equations: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            snippets: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            calendar: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            bibliography: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            taskManager: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-        }, "strip", z.ZodTypeAny, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }>>;
-    }, "strip", z.ZodTypeAny, {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette: boolean;
-            tikz: boolean;
-        } | undefined;
-    }, {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    }>>>;
-    plotting: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    linkAliases: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodString>>;
+    plotting: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         plotColorList: z.ZodDefault<z.ZodUnion<[z.ZodArray<z.ZodString, "many">, z.ZodObject<{
             dark: z.ZodArray<z.ZodString, "many">;
             light: z.ZodArray<z.ZodString, "many">;
@@ -1249,15 +954,15 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             light: string[];
         } | undefined;
         plotColorCycleMethod?: "inOrder" | "random" | undefined;
-    }>>>;
-    credentials: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    credentials: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         googleServiceAccountJsonPath: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         googleServiceAccountJsonPath?: string | undefined;
     }, {
         googleServiceAccountJsonPath?: string | undefined;
-    }>>>;
-    performance: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    performance: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         latexParsingDebounceTimeout: z.ZodDefault<z.ZodNumber>;
         mdxParsingDebounceTimeout: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
@@ -1266,8 +971,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
     }, {
         latexParsingDebounceTimeout?: number | undefined;
         mdxParsingDebounceTimeout?: number | undefined;
-    }>>>;
-    meta: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    meta: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         title: z.ZodDefault<z.ZodString>;
         desc: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
@@ -1276,8 +981,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
     }, {
         title?: string | undefined;
         desc?: string | undefined;
-    }>>>;
-    plugins: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodObject<{
+    }>>>>;
+    plugins: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodObject<{
         name: z.ZodString;
         version: z.ZodDefault<z.ZodString>;
         parserIndex: z.ZodDefault<z.ZodNumber>;
@@ -1301,14 +1006,11 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, ({
+    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[], string | string[] | {
+    }[], string | string[] | {
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
@@ -1316,7 +1018,7 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }[] | undefined>>;
+    }[] | undefined>>>;
 }, "strip", z.ZodTypeAny, {
     fsRoot: string;
     noteTypes: {
@@ -1388,10 +1090,6 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -1402,13 +1100,9 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     } | undefined;
     terminal?: {
         logLevel: "info" | "none" | "debug" | "verbose";
@@ -1481,7 +1175,7 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -1524,28 +1218,28 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         };
     } | undefined;
     autoTag?: {
-        tag: string;
-        path: string;
+        tag?: string | undefined;
+        path?: string | undefined;
     }[] | undefined;
     autoTopic?: {
-        path: string;
-        topic: string;
+        path?: string | undefined;
+        topic?: string | undefined;
     }[] | undefined;
     autoSubject?: {
-        path: string;
-        subject: string;
+        path?: string | undefined;
+        subject?: string | undefined;
     }[] | undefined;
     alwaysPreferFs?: boolean | undefined;
     ignoreFilepaths?: string[] | undefined;
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
-    ignorePreferFsExtensions?: import("../configUtilitySchemas.js").ParsedRegExpField[] | undefined;
+    ignorePreferFsExtensions?: string[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
     bibPath?: string | undefined;
     cslPath?: string | undefined;
     dateHandling?: {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -1555,19 +1249,6 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette: boolean;
-            tikz: boolean;
-        } | undefined;
-    } | undefined;
     plotting?: {
         plotColorList: string[] | {
             dark: string[];
@@ -1586,155 +1267,175 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         title: string;
         desc?: string | undefined;
     } | undefined;
-    plugins?: ({
+    plugins?: {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[] | undefined;
+    }[] | undefined;
 }, {
     fsRoot: string;
+    noteTypes: {
+        docType: string;
+        id: string;
+        url: string;
+        label: string;
+        icon: string;
+        UI: {
+            styles: {
+                dark: {
+                    bg?: string | undefined;
+                    fg?: string | undefined;
+                };
+                light: {
+                    bg?: string | undefined;
+                    fg?: string | undefined;
+                };
+            };
+        };
+        fs: string;
+        matchWeight: number;
+        urlQuery: Record<string, string | number | string[] | number[]>;
+        keywords: string[];
+        autoTag: string[];
+        autoTopic: string[];
+        autoSubject: string[];
+        inSidebar: boolean;
+        inNavbar: boolean;
+        filePathPattern?: string | undefined;
+        topicLabel?: string | undefined;
+        subjectLabel?: string | undefined;
+    }[];
     code?: {
-        editor?: {
-            defaultLangauge?: string | undefined;
-            useVimMode?: boolean | undefined;
-        } | undefined;
-        theme?: {
-            dark?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
-            light?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
-        } | undefined;
-        syntaxHighlighting?: {
-            transformers?: {
-                regexHighlight?: boolean | undefined;
-                lineHighlight?: boolean | undefined;
-                lineFocus?: boolean | undefined;
-                lineErrorLevel?: boolean | undefined;
-                lineDiff?: boolean | undefined;
-            } | undefined;
-            defaultLanguage?: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml" | {
+        editor: {
+            defaultLangauge: string;
+            useVimMode: boolean;
+        };
+        theme: {
+            dark: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light";
+            light: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light";
+        };
+        syntaxHighlighting: {
+            transformers: {
+                regexHighlight: boolean;
+                lineHighlight: boolean;
+                lineFocus: boolean;
+                lineErrorLevel: boolean;
+                lineDiff: boolean;
+            };
+            defaultLanguage: {
                 inline: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
                 block: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
-            } | undefined;
-        } | undefined;
+            };
+        };
     } | undefined;
     database?: {
-        storeFormatted?: boolean | undefined;
-        removeIfNotPresentInFs?: boolean | undefined;
+        storeFormatted: boolean;
+        removeIfNotPresentInFs: boolean;
     } | undefined;
     navigation?: {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        navbarBreakpoint?: {
-            full?: number | undefined;
-            minimal?: number | undefined;
-        } | undefined;
-        maxResultLength?: {
-            snippets?: number | undefined;
-            searchAll?: number | undefined;
-            equations?: number | undefined;
-            categories?: number | undefined;
-        } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        navbarLinks?: (string | {
+        navbarBreakpoint: {
+            full: number;
+            minimal: number;
+        };
+        maxResultLength: {
+            snippets: number;
+            searchAll: number;
+            equations: number;
+            categories: number;
+        };
+        navbarLinks: (string | {
             label: string;
             href?: string | undefined;
             icon?: string | undefined;
             onClick?: ((...args: unknown[]) => unknown) | undefined;
-        })[] | undefined;
-        sidebarLinks?: (string | {
+        })[];
+        sidebarLinks: (string | {
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
-        })[] | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
+        })[];
     } | undefined;
     terminal?: {
-        logLevel?: "info" | "none" | "debug" | "verbose" | undefined;
+        logLevel: "info" | "none" | "debug" | "verbose";
     } | undefined;
     jupyter?: {
-        execute?: boolean | undefined;
-        environment?: string | undefined;
-        syntaxHighlightTheme?: string | undefined;
-        jupyterToken?: string | undefined;
-        jupyterPort?: number | undefined;
-        initiallyFoldCells?: boolean | undefined;
-        kernel?: string | undefined;
-        jupyterReactProps?: {
-            collaborative?: boolean | undefined;
-            lite?: boolean | undefined;
+        execute: boolean;
+        environment: string;
+        syntaxHighlightTheme: string;
+        jupyterPort: number;
+        initiallyFoldCells: boolean;
+        kernel: string;
+        jupyterReactProps: {
+            collaborative: boolean;
+            lite: boolean;
             serverUrls?: {
                 baseUrl?: string | undefined;
                 wsUrl?: string | undefined;
             } | undefined;
-        } | undefined;
-        nbConvert?: {
+        };
+        nbConvert: {
+            conversionTimeout: number;
+            execute: boolean;
+            nbConvertTemplate: string;
+            notebookOutputDir: string;
             nbconvertPath?: string | undefined;
-            conversionTimeout?: number | undefined;
             customConversionFunction?: {
                 pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
-            execute?: boolean | undefined;
-            nbConvertTemplate?: string | undefined;
-            notebookOutputDir?: string | undefined;
-        } | undefined;
-        jupyterNotebookProps?: {
-            height?: string | undefined;
-            readOnly?: boolean | undefined;
-            maxHeight?: string | undefined;
-            cellMetadataPanel?: boolean | undefined;
-            cellSidebarMargin?: number | undefined;
-            bundledIPyWidgets?: {
+        };
+        jupyterNotebookProps: {
+            readOnly: boolean;
+            cellMetadataPanel: boolean;
+            cellSidebarMargin: number;
+            bundledIPyWidgets: {
                 name: string;
                 module: string | Record<string, string>;
                 version: string;
-            }[] | undefined;
-            externalIPyWidgets?: {
+            }[];
+            externalIPyWidgets: {
                 name: string;
                 version: string;
-            }[] | undefined;
-            nbgrader?: boolean | undefined;
-        } | undefined;
-        cellInputWrappers?: Record<string, string | {
+            }[];
+            nbgrader: boolean;
+            height?: string | undefined;
+            maxHeight?: string | undefined;
+        };
+        cellInputWrappers: Record<string, {
             prefix: string;
             suffix: string;
-        }> | undefined;
+        }>;
+        jupyterToken?: string | undefined;
     } | undefined;
     math?: {
-        latexPackages?: string[] | "all" | undefined;
+        latexPackages: string[] | "all";
+        constants: Record<string, number>;
         latexFontUrl?: string | undefined;
-        constants?: Record<string, number> | undefined;
     } | undefined;
     UI?: {
-        table?: {
-            maxHeight?: string | number | undefined;
-        } | undefined;
-        text?: {
-            blockQuoteItalic?: boolean | undefined;
-            fontPaths?: "default" | {
+        table: {
+            maxHeight: string;
+        };
+        text: {
+            blockQuoteItalic: boolean;
+            fontPaths: "default" | {
                 weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
                 path: string;
                 style: "bold" | "italic" | "normal";
-            }[] | undefined;
-        } | undefined;
-        media?: {
-            imageMap?: Record<string, string | undefined> | undefined;
-            includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
-        } | undefined;
-        theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
-        colors?: Record<string, string | {
+            }[];
+        };
+        media: {
+            imageMap: Record<string, string | undefined>;
+            includeDefaultImageMap: boolean;
+            imageRemoteTest: string[];
+        };
+        theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
+        colors: Record<string, {
             dark?: string | undefined;
             light?: string | undefined;
-        } | null | undefined> | undefined;
-        autoApplyMdxTitles?: boolean | undefined;
+        } | undefined>;
+        autoApplyMdxTitles: boolean;
     } | undefined;
     slots?: {
         navigation?: any;
@@ -1750,135 +1451,85 @@ export declare const minimalParsableAppConfig: z.ZodObject<{
         commandPalette?: any;
     } | undefined;
     build?: {
-        database?: {
-            type?: "postgres" | "sqlite" | undefined;
-            postgres?: {
-                port?: number | undefined;
-                dbName?: string | undefined;
-                connectionURI?: string | undefined;
-            } | undefined;
-            prioritize?: "size" | "speed" | undefined;
-        } | undefined;
-        additionalUserContent?: {
+        database: {
+            type: "postgres" | "sqlite";
+            postgres: {
+                connectionURI: string;
+                port?: undefined;
+                dbName?: undefined;
+            } | {
+                port: number;
+                dbName: string;
+                connectionURI?: undefined;
+            };
+            prioritize: "size" | "speed";
+        };
+        additionalUserContent: {
             css?: string | undefined;
             logo?: string | undefined;
             favicon?: string | undefined;
-        } | undefined;
+        };
     } | undefined;
     autoTag?: {
-        tag: string;
-        path: string;
+        tag?: string | undefined;
+        path?: string | undefined;
     }[] | undefined;
     autoTopic?: {
-        path: string;
-        topic: string;
+        path?: string | undefined;
+        topic?: string | undefined;
     }[] | undefined;
     autoSubject?: {
-        path: string;
-        subject: string;
+        path?: string | undefined;
+        subject?: string | undefined;
     }[] | undefined;
     alwaysPreferFs?: boolean | undefined;
-    ignoreFilepaths?: (string | RegExp | {
-        regex: string | RegExp;
-        original: string;
-    })[] | undefined;
+    ignoreFilepaths?: string[] | undefined;
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
-    ignorePreferFsExtensions?: (string | RegExp | {
-        regex: RegExp;
-        original: string;
-    })[] | undefined;
+    ignorePreferFsExtensions?: string[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
-    noteTypes?: {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }[] | undefined;
     bibPath?: string | undefined;
     cslPath?: string | undefined;
     dateHandling?: {
-        enableAdvancedFormat?: boolean | undefined;
-        format?: string | {
-            short?: string | undefined;
-            long?: string | undefined;
-            withTime?: string | undefined;
-            timeOnly?: string | undefined;
-        } | undefined;
-        defaultTimeDisplayType?: "summarized" | "analog" | "descriptive" | undefined;
+        enableAdvancedFormat: boolean;
+        format: {
+            short: string;
+            long: string;
+            withTime: string;
+            timeOnly: string;
+        };
+        defaultTimeDisplayType: "summarized" | "analog" | "descriptive";
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    } | undefined;
     plotting?: {
-        plotColorList?: string[] | {
+        plotColorList: string[] | {
             dark: string[];
             light: string[];
-        } | undefined;
-        plotColorCycleMethod?: "inOrder" | "random" | undefined;
+        };
+        plotColorCycleMethod: "inOrder" | "random";
     } | undefined;
     credentials?: {
         googleServiceAccountJsonPath?: string | undefined;
     } | undefined;
     performance?: {
-        latexParsingDebounceTimeout?: number | undefined;
-        mdxParsingDebounceTimeout?: number | undefined;
+        latexParsingDebounceTimeout: number;
+        mdxParsingDebounceTimeout: number;
     } | undefined;
     meta?: {
-        title?: string | undefined;
+        title: string;
         desc?: string | undefined;
     } | undefined;
-    plugins?: string | string[] | {
+    plugins?: {
         name: string;
-        version?: string | undefined;
-        parserIndex?: number | undefined;
-    } | {
-        name: string;
-        version?: string | undefined;
-        parserIndex?: number | undefined;
+        version: string;
+        parserIndex: number;
     }[] | undefined;
 }>;
 export type MinimalParsableAppConfig = z.input<typeof minimalParsableAppConfig>;
 export type MinimalParsableAppConfigOutput = z.output<typeof minimalParsableAppConfig>;
 export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
-    code: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    code: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         theme: z.ZodDefault<z.ZodObject<{
             dark: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
             light: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
@@ -2004,8 +1655,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
                 block: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
             } | undefined;
         } | undefined;
-    }>>>;
-    database: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    database: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         storeFormatted: z.ZodDefault<z.ZodBoolean>;
         removeIfNotPresentInFs: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
@@ -2014,8 +1665,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
     }, {
         storeFormatted?: boolean | undefined;
         removeIfNotPresentInFs?: boolean | undefined;
-    }>>>;
-    navigation: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    navigation: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         navbarBreakpoint: z.ZodDefault<z.ZodObject<{
             full: z.ZodDefault<z.ZodNumber>;
             minimal: z.ZodDefault<z.ZodNumber>;
@@ -2042,14 +1693,6 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         }>>;
-        bookmarkLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        syncLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        fileSystemToggle: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        darkmodeToggle: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        settings: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        equationsLink: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        snippetsLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        backupData: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
         navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
             label: z.ZodString;
             icon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
@@ -2076,14 +1719,14 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }, {
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }>, z.ZodString]>, "many">>;
     }, "strip", z.ZodTypeAny, {
         navbarBreakpoint: {
@@ -2096,10 +1739,6 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -2110,15 +1749,10 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     }, {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -2129,13 +1763,6 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -2146,18 +1773,18 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
-    }>>>;
-    terminal: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    terminal: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         logLevel: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"debug">, z.ZodLiteral<"verbose">, z.ZodLiteral<"info">, z.ZodLiteral<"none">]>>;
     }, "strip", z.ZodTypeAny, {
         logLevel: "info" | "none" | "debug" | "verbose";
     }, {
         logLevel?: "info" | "none" | "debug" | "verbose" | undefined;
-    }>>>;
-    jupyter: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    jupyter: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodObject<{
         execute: z.ZodDefault<z.ZodBoolean>;
         environment: z.ZodDefault<z.ZodString>;
         syntaxHighlightTheme: z.ZodDefault<z.ZodString>;
@@ -2400,7 +2027,7 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             suffix: string;
         }> | undefined;
     }>>>;
-    math: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    math: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         latexPackages: z.ZodDefault<z.ZodUnion<[z.ZodArray<z.ZodString, "many">, z.ZodLiteral<"all">]>>;
         latexFontUrl: z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
         constants: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodNumber>>;
@@ -2412,8 +2039,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         latexPackages?: string[] | "all" | undefined;
         latexFontUrl?: string | undefined;
         constants?: Record<string, number> | undefined;
-    }>>>;
-    UI: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    UI: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         table: z.ZodDefault<z.ZodObject<{
             maxHeight: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, string, string | number | undefined>;
         }, "strip", z.ZodTypeAny, {
@@ -2454,15 +2081,15 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         media: z.ZodDefault<z.ZodObject<{
             imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
             includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
-            imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
+            imageRemoteTest: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString]>, "many">>, string[], (string | RegExp)[] | undefined>;
         }, "strip", z.ZodTypeAny, {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         }, {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         }>>;
         colors: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodObject<{
             dark: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
@@ -2497,7 +2124,7 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -2520,7 +2147,7 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -2528,8 +2155,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             light?: string | undefined;
         } | null | undefined> | undefined;
         autoApplyMdxTitles?: boolean | undefined;
-    }>>>;
-    slots: z.ZodOptional<z.ZodDefault<z.ZodObject<Record<keyof import("../../developer/slotMapRootType.js").SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
+    }>>>>;
+    slots: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodObject<Record<keyof import("../../developer/slotMapRootType.js").SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
         navigation?: any;
         bibliography?: any;
         math?: any;
@@ -2554,8 +2181,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         form?: any;
         commandPalette?: any;
     }>>>;
-    fsRoot: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-    build: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    fsRoot: z.ZodOptional<z.ZodString>;
+    build: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         database: z.ZodDefault<z.ZodEffects<z.ZodDefault<z.ZodObject<{
             type: z.ZodDefault<z.ZodEnum<["postgres", "sqlite"]>>;
             postgres: z.ZodEffects<z.ZodEffects<z.ZodDefault<z.ZodObject<{
@@ -2680,210 +2307,44 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             logo?: string | undefined;
             favicon?: string | undefined;
         } | undefined;
-    }>>>;
-    autoTag: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodObject<{
-        path: z.ZodString;
-        tag: z.ZodString;
+    }>>>>;
+    autoTag: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        path: z.ZodOptional<z.ZodString>;
+        tag: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        tag: string;
-        path: string;
+        tag?: string | undefined;
+        path?: string | undefined;
     }, {
-        tag: string;
-        path: string;
-    }>, "many">>>;
-    autoTopic: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodObject<{
-        path: z.ZodString;
-        topic: z.ZodString;
+        tag?: string | undefined;
+        path?: string | undefined;
+    }>, "many">>;
+    autoTopic: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        path: z.ZodOptional<z.ZodString>;
+        topic: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        path: string;
-        topic: string;
+        path?: string | undefined;
+        topic?: string | undefined;
     }, {
-        path: string;
-        topic: string;
-    }>, "many">>>;
-    autoSubject: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodObject<{
-        path: z.ZodString;
-        subject: z.ZodString;
+        path?: string | undefined;
+        topic?: string | undefined;
+    }>, "many">>;
+    autoSubject: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        path: z.ZodOptional<z.ZodString>;
+        subject: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        path: string;
-        subject: string;
+        path?: string | undefined;
+        subject?: string | undefined;
     }, {
-        path: string;
-        subject: string;
-    }>, "many">>>;
-    alwaysPreferFs: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-    ignoreFilepaths: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString, z.ZodObject<{
-        original: z.ZodString;
-        regex: z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>]>, RegExp, string | RegExp>;
-    }, "strip", z.ZodTypeAny, {
-        regex: RegExp;
-        original: string;
-    }, {
-        regex: string | RegExp;
-        original: string;
-    }>]>, "many">>, string[], (string | RegExp | {
-        regex: string | RegExp;
-        original: string;
-    })[] | undefined>>;
-    tempDir: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
-    generatedDir: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
-    ignorePreferFsExtensions: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodObject<{
-        original: z.ZodString;
-        regex: z.ZodType<RegExp, z.ZodTypeDef, RegExp>;
-    }, "strip", z.ZodTypeAny, {
-        regex: RegExp;
-        original: string;
-    }, {
-        regex: RegExp;
-        original: string;
-    }>]>, import("../configUtilitySchemas.js").ParsedRegExpField, string | RegExp | {
-        regex: RegExp;
-        original: string;
-    }>, "many">>>;
-    fileTypePriority: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>, z.ZodUnion<[z.ZodLiteral<".csv">, z.ZodLiteral<".tsv">, z.ZodLiteral<".excel">, z.ZodLiteral<".numpy">, z.ZodLiteral<".html">, z.ZodLiteral<".pickle">, z.ZodLiteral<".db">, z.ZodLiteral<".sql">, z.ZodLiteral<".pdf">, z.ZodLiteral<".json">, z.ZodLiteral<".tex">, z.ZodLiteral<".hdf5">]>]>, "many">>>;
-    noteTypes: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodObject<{
-        label: z.ZodString;
-        icon: z.ZodDefault<z.ZodEffects<z.ZodString, string, string>>;
-        UI: z.ZodDefault<z.ZodDefault<z.ZodObject<{
-            styles: z.ZodDefault<z.ZodObject<{
-                dark: z.ZodDefault<z.ZodObject<{
-                    bg: z.ZodOptional<z.ZodString>;
-                    fg: z.ZodOptional<z.ZodString>;
-                }, "strip", z.ZodTypeAny, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }>>;
-                light: z.ZodDefault<z.ZodObject<{
-                    bg: z.ZodOptional<z.ZodString>;
-                    fg: z.ZodOptional<z.ZodString>;
-                }, "strip", z.ZodTypeAny, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }>>;
-            }, "strip", z.ZodTypeAny, {
-                dark: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-                light: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-            }, {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            }>>;
-        }, "strip", z.ZodTypeAny, {
-            styles: {
-                dark: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-                light: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-            };
-        }, {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        }>>>;
-        fs: z.ZodEffects<z.ZodString, string, string>;
-        id: z.ZodOptional<z.ZodString>;
-        docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-        filePathPattern: z.ZodOptional<z.ZodString>;
-        matchWeight: z.ZodDefault<z.ZodNumber>;
-        url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-        urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
-        keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        topicLabel: z.ZodOptional<z.ZodString>;
-        subjectLabel: z.ZodOptional<z.ZodString>;
-        autoTag: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        autoTopic: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        autoSubject: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        inSidebar: z.ZodDefault<z.ZodBoolean>;
-        inNavbar: z.ZodDefault<z.ZodBoolean>;
-    }, "strip", z.ZodTypeAny, {
-        label: string;
-        icon: string;
-        UI: {
-            styles: {
-                dark: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-                light: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-            };
-        };
-        fs: string;
-        matchWeight: number;
-        urlQuery: Record<string, string | number | string[] | number[]>;
-        keywords: string[];
-        autoTag: string[];
-        autoTopic: string[];
-        autoSubject: string[];
-        inSidebar: boolean;
-        inNavbar: boolean;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        url?: string | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-    }, {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }>, {
+        path?: string | undefined;
+        subject?: string | undefined;
+    }>, "many">>;
+    alwaysPreferFs: z.ZodOptional<z.ZodBoolean>;
+    ignoreFilepaths: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    tempDir: z.ZodOptional<z.ZodString>;
+    generatedDir: z.ZodOptional<z.ZodString>;
+    ignorePreferFsExtensions: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    fileTypePriority: z.ZodOptional<z.ZodArray<z.ZodUnion<[z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>, z.ZodUnion<[z.ZodLiteral<".csv">, z.ZodLiteral<".tsv">, z.ZodLiteral<".excel">, z.ZodLiteral<".numpy">, z.ZodLiteral<".html">, z.ZodLiteral<".pickle">, z.ZodLiteral<".db">, z.ZodLiteral<".sql">, z.ZodLiteral<".pdf">, z.ZodLiteral<".json">, z.ZodLiteral<".tex">, z.ZodLiteral<".hdf5">]>]>, "many">>;
+    noteTypes: z.ZodArray<z.ZodType<{
         docType: string;
         id: string;
         url: string;
@@ -2913,37 +2374,7 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
-    }, {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }>, "many">>, {
+    }, z.ZodTypeDef, {
         docType: string;
         id: string;
         url: string;
@@ -2973,42 +2404,12 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
-    }[], {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }[] | undefined>;
-    bibPath: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
-    cslPath: z.ZodOptional<z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>;
-    dateHandling: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>, "many">;
+    bibPath: z.ZodOptional<z.ZodString>;
+    cslPath: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    dateHandling: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         enableAdvancedFormat: z.ZodDefault<z.ZodBoolean>;
-        format: z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        format: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
             short: z.ZodDefault<z.ZodString>;
             long: z.ZodDefault<z.ZodString>;
             withTime: z.ZodDefault<z.ZodString>;
@@ -3023,12 +2424,22 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             long?: string | undefined;
             withTime?: string | undefined;
             timeOnly?: string | undefined;
-        }>]>>;
+        }>]>>, {
+            short: string;
+            long: string;
+            withTime: string;
+            timeOnly: string;
+        }, string | {
+            short?: string | undefined;
+            long?: string | undefined;
+            withTime?: string | undefined;
+            timeOnly?: string | undefined;
+        } | undefined>;
         defaultTimeDisplayType: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"analog">, z.ZodLiteral<"summarized">, z.ZodLiteral<"descriptive">]>>;
         defaultTimeZone: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -3046,64 +2457,9 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         } | undefined;
         defaultTimeDisplayType?: "summarized" | "analog" | "descriptive" | undefined;
         defaultTimeZone?: string | undefined;
-    }>>>;
-    linkAliases: z.ZodOptional<z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodString>>>;
-    features: z.ZodOptional<z.ZodOptional<z.ZodObject<{
-        enabled: z.ZodOptional<z.ZodDefault<z.ZodObject<{
-            commandPalette: z.ZodDefault<z.ZodBoolean>;
-            tikz: z.ZodDefault<z.ZodBoolean>;
-        }, "strip", z.ZodTypeAny, {
-            commandPalette: boolean;
-            tikz: boolean;
-        }, {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        }>>>;
-        pages: z.ZodOptional<z.ZodObject<{
-            equations: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            snippets: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            calendar: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            bibliography: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            taskManager: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-        }, "strip", z.ZodTypeAny, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }>>;
-    }, "strip", z.ZodTypeAny, {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette: boolean;
-            tikz: boolean;
-        } | undefined;
-    }, {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    }>>>;
-    plotting: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    linkAliases: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodString>>;
+    plotting: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         plotColorList: z.ZodDefault<z.ZodUnion<[z.ZodArray<z.ZodString, "many">, z.ZodObject<{
             dark: z.ZodArray<z.ZodString, "many">;
             light: z.ZodArray<z.ZodString, "many">;
@@ -3127,15 +2483,15 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             light: string[];
         } | undefined;
         plotColorCycleMethod?: "inOrder" | "random" | undefined;
-    }>>>;
-    credentials: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    credentials: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         googleServiceAccountJsonPath: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         googleServiceAccountJsonPath?: string | undefined;
     }, {
         googleServiceAccountJsonPath?: string | undefined;
-    }>>>;
-    performance: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    performance: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         latexParsingDebounceTimeout: z.ZodDefault<z.ZodNumber>;
         mdxParsingDebounceTimeout: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
@@ -3144,8 +2500,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
     }, {
         latexParsingDebounceTimeout?: number | undefined;
         mdxParsingDebounceTimeout?: number | undefined;
-    }>>>;
-    meta: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    meta: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         title: z.ZodDefault<z.ZodString>;
         desc: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
@@ -3154,8 +2510,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
     }, {
         title?: string | undefined;
         desc?: string | undefined;
-    }>>>;
-    plugins: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodObject<{
+    }>>>>;
+    plugins: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodObject<{
         name: z.ZodString;
         version: z.ZodDefault<z.ZodString>;
         parserIndex: z.ZodDefault<z.ZodNumber>;
@@ -3179,14 +2535,11 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, ({
+    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[], string | string[] | {
+    }[], string | string[] | {
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
@@ -3194,7 +2547,7 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }[] | undefined>>;
+    }[] | undefined>>>;
 }, "strip", z.ZodTypeAny, {
     noteTypes: {
         docType: string;
@@ -3265,10 +2618,6 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -3279,13 +2628,9 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     } | undefined;
     terminal?: {
         logLevel: "info" | "none" | "debug" | "verbose";
@@ -3358,7 +2703,7 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -3402,28 +2747,28 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         };
     } | undefined;
     autoTag?: {
-        tag: string;
-        path: string;
+        tag?: string | undefined;
+        path?: string | undefined;
     }[] | undefined;
     autoTopic?: {
-        path: string;
-        topic: string;
+        path?: string | undefined;
+        topic?: string | undefined;
     }[] | undefined;
     autoSubject?: {
-        path: string;
-        subject: string;
+        path?: string | undefined;
+        subject?: string | undefined;
     }[] | undefined;
     alwaysPreferFs?: boolean | undefined;
     ignoreFilepaths?: string[] | undefined;
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
-    ignorePreferFsExtensions?: import("../configUtilitySchemas.js").ParsedRegExpField[] | undefined;
+    ignorePreferFsExtensions?: string[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
     bibPath?: string | undefined;
     cslPath?: string | undefined;
     dateHandling?: {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -3433,19 +2778,6 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette: boolean;
-            tikz: boolean;
-        } | undefined;
-    } | undefined;
     plotting?: {
         plotColorList: string[] | {
             dark: string[];
@@ -3464,154 +2796,174 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
         title: string;
         desc?: string | undefined;
     } | undefined;
-    plugins?: ({
+    plugins?: {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[] | undefined;
+    }[] | undefined;
 }, {
+    noteTypes: {
+        docType: string;
+        id: string;
+        url: string;
+        label: string;
+        icon: string;
+        UI: {
+            styles: {
+                dark: {
+                    bg?: string | undefined;
+                    fg?: string | undefined;
+                };
+                light: {
+                    bg?: string | undefined;
+                    fg?: string | undefined;
+                };
+            };
+        };
+        fs: string;
+        matchWeight: number;
+        urlQuery: Record<string, string | number | string[] | number[]>;
+        keywords: string[];
+        autoTag: string[];
+        autoTopic: string[];
+        autoSubject: string[];
+        inSidebar: boolean;
+        inNavbar: boolean;
+        filePathPattern?: string | undefined;
+        topicLabel?: string | undefined;
+        subjectLabel?: string | undefined;
+    }[];
     code?: {
-        editor?: {
-            defaultLangauge?: string | undefined;
-            useVimMode?: boolean | undefined;
-        } | undefined;
-        theme?: {
-            dark?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
-            light?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
-        } | undefined;
-        syntaxHighlighting?: {
-            transformers?: {
-                regexHighlight?: boolean | undefined;
-                lineHighlight?: boolean | undefined;
-                lineFocus?: boolean | undefined;
-                lineErrorLevel?: boolean | undefined;
-                lineDiff?: boolean | undefined;
-            } | undefined;
-            defaultLanguage?: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml" | {
+        editor: {
+            defaultLangauge: string;
+            useVimMode: boolean;
+        };
+        theme: {
+            dark: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light";
+            light: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light";
+        };
+        syntaxHighlighting: {
+            transformers: {
+                regexHighlight: boolean;
+                lineHighlight: boolean;
+                lineFocus: boolean;
+                lineErrorLevel: boolean;
+                lineDiff: boolean;
+            };
+            defaultLanguage: {
                 inline: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
                 block: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
-            } | undefined;
-        } | undefined;
+            };
+        };
     } | undefined;
     database?: {
-        storeFormatted?: boolean | undefined;
-        removeIfNotPresentInFs?: boolean | undefined;
+        storeFormatted: boolean;
+        removeIfNotPresentInFs: boolean;
     } | undefined;
     navigation?: {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        navbarBreakpoint?: {
-            full?: number | undefined;
-            minimal?: number | undefined;
-        } | undefined;
-        maxResultLength?: {
-            snippets?: number | undefined;
-            searchAll?: number | undefined;
-            equations?: number | undefined;
-            categories?: number | undefined;
-        } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        navbarLinks?: (string | {
+        navbarBreakpoint: {
+            full: number;
+            minimal: number;
+        };
+        maxResultLength: {
+            snippets: number;
+            searchAll: number;
+            equations: number;
+            categories: number;
+        };
+        navbarLinks: (string | {
             label: string;
             href?: string | undefined;
             icon?: string | undefined;
             onClick?: ((...args: unknown[]) => unknown) | undefined;
-        })[] | undefined;
-        sidebarLinks?: (string | {
+        })[];
+        sidebarLinks: (string | {
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
-        })[] | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
+        })[];
     } | undefined;
     terminal?: {
-        logLevel?: "info" | "none" | "debug" | "verbose" | undefined;
+        logLevel: "info" | "none" | "debug" | "verbose";
     } | undefined;
     jupyter?: {
-        execute?: boolean | undefined;
-        environment?: string | undefined;
-        syntaxHighlightTheme?: string | undefined;
-        jupyterToken?: string | undefined;
-        jupyterPort?: number | undefined;
-        initiallyFoldCells?: boolean | undefined;
-        kernel?: string | undefined;
-        jupyterReactProps?: {
-            collaborative?: boolean | undefined;
-            lite?: boolean | undefined;
+        execute: boolean;
+        environment: string;
+        syntaxHighlightTheme: string;
+        jupyterPort: number;
+        initiallyFoldCells: boolean;
+        kernel: string;
+        jupyterReactProps: {
+            collaborative: boolean;
+            lite: boolean;
             serverUrls?: {
                 baseUrl?: string | undefined;
                 wsUrl?: string | undefined;
             } | undefined;
-        } | undefined;
-        nbConvert?: {
+        };
+        nbConvert: {
+            conversionTimeout: number;
+            execute: boolean;
+            nbConvertTemplate: string;
+            notebookOutputDir: string;
             nbconvertPath?: string | undefined;
-            conversionTimeout?: number | undefined;
             customConversionFunction?: {
                 pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
-            execute?: boolean | undefined;
-            nbConvertTemplate?: string | undefined;
-            notebookOutputDir?: string | undefined;
-        } | undefined;
-        jupyterNotebookProps?: {
-            height?: string | undefined;
-            readOnly?: boolean | undefined;
-            maxHeight?: string | undefined;
-            cellMetadataPanel?: boolean | undefined;
-            cellSidebarMargin?: number | undefined;
-            bundledIPyWidgets?: {
+        };
+        jupyterNotebookProps: {
+            readOnly: boolean;
+            cellMetadataPanel: boolean;
+            cellSidebarMargin: number;
+            bundledIPyWidgets: {
                 name: string;
                 module: string | Record<string, string>;
                 version: string;
-            }[] | undefined;
-            externalIPyWidgets?: {
+            }[];
+            externalIPyWidgets: {
                 name: string;
                 version: string;
-            }[] | undefined;
-            nbgrader?: boolean | undefined;
-        } | undefined;
-        cellInputWrappers?: Record<string, string | {
+            }[];
+            nbgrader: boolean;
+            height?: string | undefined;
+            maxHeight?: string | undefined;
+        };
+        cellInputWrappers: Record<string, {
             prefix: string;
             suffix: string;
-        }> | undefined;
+        }>;
+        jupyterToken?: string | undefined;
     } | undefined;
     math?: {
-        latexPackages?: string[] | "all" | undefined;
+        latexPackages: string[] | "all";
+        constants: Record<string, number>;
         latexFontUrl?: string | undefined;
-        constants?: Record<string, number> | undefined;
     } | undefined;
     UI?: {
-        table?: {
-            maxHeight?: string | number | undefined;
-        } | undefined;
-        text?: {
-            blockQuoteItalic?: boolean | undefined;
-            fontPaths?: "default" | {
+        table: {
+            maxHeight: string;
+        };
+        text: {
+            blockQuoteItalic: boolean;
+            fontPaths: "default" | {
                 weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
                 path: string;
                 style: "bold" | "italic" | "normal";
-            }[] | undefined;
-        } | undefined;
-        media?: {
-            imageMap?: Record<string, string | undefined> | undefined;
-            includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
-        } | undefined;
-        theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
-        colors?: Record<string, string | {
+            }[];
+        };
+        media: {
+            imageMap: Record<string, string | undefined>;
+            includeDefaultImageMap: boolean;
+            imageRemoteTest: string[];
+        };
+        theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
+        colors: Record<string, {
             dark?: string | undefined;
             light?: string | undefined;
-        } | null | undefined> | undefined;
-        autoApplyMdxTitles?: boolean | undefined;
+        } | undefined>;
+        autoApplyMdxTitles: boolean;
     } | undefined;
     slots?: {
         navigation?: any;
@@ -3628,134 +2980,84 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
     } | undefined;
     fsRoot?: string | undefined;
     build?: {
-        database?: {
-            type?: "postgres" | "sqlite" | undefined;
-            postgres?: {
-                port?: number | undefined;
-                dbName?: string | undefined;
-                connectionURI?: string | undefined;
-            } | undefined;
-            prioritize?: "size" | "speed" | undefined;
-        } | undefined;
-        additionalUserContent?: {
+        database: {
+            type: "postgres" | "sqlite";
+            postgres: {
+                connectionURI: string;
+                port?: undefined;
+                dbName?: undefined;
+            } | {
+                port: number;
+                dbName: string;
+                connectionURI?: undefined;
+            };
+            prioritize: "size" | "speed";
+        };
+        additionalUserContent: {
             css?: string | undefined;
             logo?: string | undefined;
             favicon?: string | undefined;
-        } | undefined;
+        };
     } | undefined;
     autoTag?: {
-        tag: string;
-        path: string;
+        tag?: string | undefined;
+        path?: string | undefined;
     }[] | undefined;
     autoTopic?: {
-        path: string;
-        topic: string;
+        path?: string | undefined;
+        topic?: string | undefined;
     }[] | undefined;
     autoSubject?: {
-        path: string;
-        subject: string;
+        path?: string | undefined;
+        subject?: string | undefined;
     }[] | undefined;
     alwaysPreferFs?: boolean | undefined;
-    ignoreFilepaths?: (string | RegExp | {
-        regex: string | RegExp;
-        original: string;
-    })[] | undefined;
+    ignoreFilepaths?: string[] | undefined;
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
-    ignorePreferFsExtensions?: (string | RegExp | {
-        regex: RegExp;
-        original: string;
-    })[] | undefined;
+    ignorePreferFsExtensions?: string[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
-    noteTypes?: {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }[] | undefined;
     bibPath?: string | undefined;
     cslPath?: string | undefined;
     dateHandling?: {
-        enableAdvancedFormat?: boolean | undefined;
-        format?: string | {
-            short?: string | undefined;
-            long?: string | undefined;
-            withTime?: string | undefined;
-            timeOnly?: string | undefined;
-        } | undefined;
-        defaultTimeDisplayType?: "summarized" | "analog" | "descriptive" | undefined;
+        enableAdvancedFormat: boolean;
+        format: {
+            short: string;
+            long: string;
+            withTime: string;
+            timeOnly: string;
+        };
+        defaultTimeDisplayType: "summarized" | "analog" | "descriptive";
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    } | undefined;
     plotting?: {
-        plotColorList?: string[] | {
+        plotColorList: string[] | {
             dark: string[];
             light: string[];
-        } | undefined;
-        plotColorCycleMethod?: "inOrder" | "random" | undefined;
+        };
+        plotColorCycleMethod: "inOrder" | "random";
     } | undefined;
     credentials?: {
         googleServiceAccountJsonPath?: string | undefined;
     } | undefined;
     performance?: {
-        latexParsingDebounceTimeout?: number | undefined;
-        mdxParsingDebounceTimeout?: number | undefined;
+        latexParsingDebounceTimeout: number;
+        mdxParsingDebounceTimeout: number;
     } | undefined;
     meta?: {
-        title?: string | undefined;
+        title: string;
         desc?: string | undefined;
     } | undefined;
-    plugins?: string | string[] | {
+    plugins?: {
         name: string;
-        version?: string | undefined;
-        parserIndex?: number | undefined;
-    } | {
-        name: string;
-        version?: string | undefined;
-        parserIndex?: number | undefined;
+        version: string;
+        parserIndex: number;
     }[] | undefined;
 }>;
 export type AppConfigSchemaDeepPartialOutputWithNoteTypes = z.output<typeof appConfigDeepPartialWithNotetypes>;
 export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
-    code: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    code: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         theme: z.ZodDefault<z.ZodObject<{
             dark: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
             light: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"andromeeda">, z.ZodLiteral<"aurora-x">, z.ZodLiteral<"ayu-dark">, z.ZodLiteral<"catppuccin-frappe">, z.ZodLiteral<"catppuccin-latte">, z.ZodLiteral<"catppuccin-macchiato">, z.ZodLiteral<"catppuccin-mocha">, z.ZodLiteral<"dark-plus">, z.ZodLiteral<"dracula">, z.ZodLiteral<"dracula-soft">, z.ZodLiteral<"github-dark">, z.ZodLiteral<"github-dark-dimmed">, z.ZodLiteral<"github-light">, z.ZodLiteral<"light-plus">, z.ZodLiteral<"material-theme">, z.ZodLiteral<"material-theme-darker">, z.ZodLiteral<"material-theme-lighter">, z.ZodLiteral<"material-theme-ocean">, z.ZodLiteral<"material-theme-palenight">, z.ZodLiteral<"min-dark">, z.ZodLiteral<"min-light">, z.ZodLiteral<"monokai">, z.ZodLiteral<"night-owl">, z.ZodLiteral<"nord">, z.ZodLiteral<"one-dark-pro">, z.ZodLiteral<"poimandres">, z.ZodLiteral<"red">, z.ZodLiteral<"rose-pine">, z.ZodLiteral<"rose-pine-dawn">, z.ZodLiteral<"rose-pine-moon">, z.ZodLiteral<"slack-dark">, z.ZodLiteral<"slack-ochin">, z.ZodLiteral<"solarized-dark">, z.ZodLiteral<"solarized-light">, z.ZodLiteral<"synthwave-84">, z.ZodLiteral<"tokyo-night">, z.ZodLiteral<"vesper">, z.ZodLiteral<"vitesse-black">, z.ZodLiteral<"vitesse-dark">, z.ZodLiteral<"vitesse-light">]>>;
@@ -3881,8 +3183,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
                 block: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
             } | undefined;
         } | undefined;
-    }>>>;
-    database: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    database: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         storeFormatted: z.ZodDefault<z.ZodBoolean>;
         removeIfNotPresentInFs: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
@@ -3891,8 +3193,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
     }, {
         storeFormatted?: boolean | undefined;
         removeIfNotPresentInFs?: boolean | undefined;
-    }>>>;
-    navigation: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    navigation: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         navbarBreakpoint: z.ZodDefault<z.ZodObject<{
             full: z.ZodDefault<z.ZodNumber>;
             minimal: z.ZodDefault<z.ZodNumber>;
@@ -3919,14 +3221,6 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         }>>;
-        bookmarkLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        syncLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        fileSystemToggle: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        darkmodeToggle: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        settings: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        equationsLink: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
-        snippetsLink: z.ZodDefault<z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>>;
-        backupData: z.ZodOptional<z.ZodUnion<[z.ZodLiteral<"sidebar">, z.ZodLiteral<"navbar">, z.ZodLiteral<"both">, z.ZodLiteral<"none">]>>;
         navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
             label: z.ZodString;
             icon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
@@ -3953,14 +3247,14 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }, {
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         }>, z.ZodString]>, "many">>;
     }, "strip", z.ZodTypeAny, {
         navbarBreakpoint: {
@@ -3973,10 +3267,6 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -3987,15 +3277,10 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     }, {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarBreakpoint?: {
             full?: number | undefined;
             minimal?: number | undefined;
@@ -4006,13 +3291,6 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             equations?: number | undefined;
             categories?: number | undefined;
         } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
         navbarLinks?: (string | {
             label: string;
             href?: string | undefined;
@@ -4023,18 +3301,18 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[] | undefined;
-    }>>>;
-    terminal: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    terminal: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         logLevel: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"debug">, z.ZodLiteral<"verbose">, z.ZodLiteral<"info">, z.ZodLiteral<"none">]>>;
     }, "strip", z.ZodTypeAny, {
         logLevel: "info" | "none" | "debug" | "verbose";
     }, {
         logLevel?: "info" | "none" | "debug" | "verbose" | undefined;
-    }>>>;
-    jupyter: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    jupyter: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodObject<{
         execute: z.ZodDefault<z.ZodBoolean>;
         environment: z.ZodDefault<z.ZodString>;
         syntaxHighlightTheme: z.ZodDefault<z.ZodString>;
@@ -4277,7 +3555,7 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             suffix: string;
         }> | undefined;
     }>>>;
-    math: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    math: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         latexPackages: z.ZodDefault<z.ZodUnion<[z.ZodArray<z.ZodString, "many">, z.ZodLiteral<"all">]>>;
         latexFontUrl: z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
         constants: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodNumber>>;
@@ -4289,8 +3567,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         latexPackages?: string[] | "all" | undefined;
         latexFontUrl?: string | undefined;
         constants?: Record<string, number> | undefined;
-    }>>>;
-    UI: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    UI: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         table: z.ZodDefault<z.ZodObject<{
             maxHeight: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodNumber]>>, string, string | number | undefined>;
         }, "strip", z.ZodTypeAny, {
@@ -4331,15 +3609,15 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         media: z.ZodDefault<z.ZodObject<{
             imageMap: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodString, string, string> | z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>>;
             includeDefaultImageMap: z.ZodDefault<z.ZodBoolean>;
-            imageRemoteTest: z.ZodDefault<z.ZodArray<z.ZodType<RegExp, z.ZodTypeDef, RegExp>, "many">>;
+            imageRemoteTest: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString]>, "many">>, string[], (string | RegExp)[] | undefined>;
         }, "strip", z.ZodTypeAny, {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         }, {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         }>>;
         colors: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodObject<{
             dark: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
@@ -4374,7 +3652,7 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -4397,7 +3675,7 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         media?: {
             imageMap?: Record<string, string | undefined> | undefined;
             includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
+            imageRemoteTest?: (string | RegExp)[] | undefined;
         } | undefined;
         theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
         colors?: Record<string, string | {
@@ -4405,8 +3683,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             light?: string | undefined;
         } | null | undefined> | undefined;
         autoApplyMdxTitles?: boolean | undefined;
-    }>>>;
-    slots: z.ZodOptional<z.ZodDefault<z.ZodObject<Record<keyof import("../../developer/slotMapRootType.js").SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
+    }>>>>;
+    slots: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodObject<Record<keyof import("../../developer/slotMapRootType.js").SlotMap, z.ZodTypeAny>, "strip", z.ZodTypeAny, {
         navigation?: any;
         bibliography?: any;
         math?: any;
@@ -4431,8 +3709,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         form?: any;
         commandPalette?: any;
     }>>>;
-    fsRoot: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-    build: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    fsRoot: z.ZodOptional<z.ZodString>;
+    build: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         database: z.ZodDefault<z.ZodEffects<z.ZodDefault<z.ZodObject<{
             type: z.ZodDefault<z.ZodEnum<["postgres", "sqlite"]>>;
             postgres: z.ZodEffects<z.ZodEffects<z.ZodDefault<z.ZodObject<{
@@ -4557,210 +3835,44 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             logo?: string | undefined;
             favicon?: string | undefined;
         } | undefined;
-    }>>>;
-    autoTag: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodObject<{
-        path: z.ZodString;
-        tag: z.ZodString;
+    }>>>>;
+    autoTag: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        path: z.ZodOptional<z.ZodString>;
+        tag: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        tag: string;
-        path: string;
+        tag?: string | undefined;
+        path?: string | undefined;
     }, {
-        tag: string;
-        path: string;
-    }>, "many">>>;
-    autoTopic: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodObject<{
-        path: z.ZodString;
-        topic: z.ZodString;
+        tag?: string | undefined;
+        path?: string | undefined;
+    }>, "many">>;
+    autoTopic: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        path: z.ZodOptional<z.ZodString>;
+        topic: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        path: string;
-        topic: string;
+        path?: string | undefined;
+        topic?: string | undefined;
     }, {
-        path: string;
-        topic: string;
-    }>, "many">>>;
-    autoSubject: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodObject<{
-        path: z.ZodString;
-        subject: z.ZodString;
+        path?: string | undefined;
+        topic?: string | undefined;
+    }>, "many">>;
+    autoSubject: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        path: z.ZodOptional<z.ZodString>;
+        subject: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        path: string;
-        subject: string;
+        path?: string | undefined;
+        subject?: string | undefined;
     }, {
-        path: string;
-        subject: string;
-    }>, "many">>>;
-    alwaysPreferFs: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-    ignoreFilepaths: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodString, z.ZodObject<{
-        original: z.ZodString;
-        regex: z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>]>, RegExp, string | RegExp>;
-    }, "strip", z.ZodTypeAny, {
-        regex: RegExp;
-        original: string;
-    }, {
-        regex: string | RegExp;
-        original: string;
-    }>]>, "many">>, string[], (string | RegExp | {
-        regex: string | RegExp;
-        original: string;
-    })[] | undefined>>;
-    tempDir: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
-    generatedDir: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
-    ignorePreferFsExtensions: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodType<RegExp, z.ZodTypeDef, RegExp>, z.ZodObject<{
-        original: z.ZodString;
-        regex: z.ZodType<RegExp, z.ZodTypeDef, RegExp>;
-    }, "strip", z.ZodTypeAny, {
-        regex: RegExp;
-        original: string;
-    }, {
-        regex: RegExp;
-        original: string;
-    }>]>, import("../configUtilitySchemas.js").ParsedRegExpField, string | RegExp | {
-        regex: RegExp;
-        original: string;
-    }>, "many">>>;
-    fileTypePriority: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>, z.ZodUnion<[z.ZodLiteral<".csv">, z.ZodLiteral<".tsv">, z.ZodLiteral<".excel">, z.ZodLiteral<".numpy">, z.ZodLiteral<".html">, z.ZodLiteral<".pickle">, z.ZodLiteral<".db">, z.ZodLiteral<".sql">, z.ZodLiteral<".pdf">, z.ZodLiteral<".json">, z.ZodLiteral<".tex">, z.ZodLiteral<".hdf5">]>]>, "many">>>;
-    noteTypes: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodEffects<z.ZodObject<{
-        label: z.ZodString;
-        icon: z.ZodDefault<z.ZodEffects<z.ZodString, string, string>>;
-        UI: z.ZodDefault<z.ZodDefault<z.ZodObject<{
-            styles: z.ZodDefault<z.ZodObject<{
-                dark: z.ZodDefault<z.ZodObject<{
-                    bg: z.ZodOptional<z.ZodString>;
-                    fg: z.ZodOptional<z.ZodString>;
-                }, "strip", z.ZodTypeAny, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }>>;
-                light: z.ZodDefault<z.ZodObject<{
-                    bg: z.ZodOptional<z.ZodString>;
-                    fg: z.ZodOptional<z.ZodString>;
-                }, "strip", z.ZodTypeAny, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }, {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                }>>;
-            }, "strip", z.ZodTypeAny, {
-                dark: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-                light: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-            }, {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            }>>;
-        }, "strip", z.ZodTypeAny, {
-            styles: {
-                dark: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-                light: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-            };
-        }, {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        }>>>;
-        fs: z.ZodEffects<z.ZodString, string, string>;
-        id: z.ZodOptional<z.ZodString>;
-        docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-        filePathPattern: z.ZodOptional<z.ZodString>;
-        matchWeight: z.ZodDefault<z.ZodNumber>;
-        url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-        urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
-        keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        topicLabel: z.ZodOptional<z.ZodString>;
-        subjectLabel: z.ZodOptional<z.ZodString>;
-        autoTag: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        autoTopic: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        autoSubject: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
-        inSidebar: z.ZodDefault<z.ZodBoolean>;
-        inNavbar: z.ZodDefault<z.ZodBoolean>;
-    }, "strip", z.ZodTypeAny, {
-        label: string;
-        icon: string;
-        UI: {
-            styles: {
-                dark: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-                light: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                };
-            };
-        };
-        fs: string;
-        matchWeight: number;
-        urlQuery: Record<string, string | number | string[] | number[]>;
-        keywords: string[];
-        autoTag: string[];
-        autoTopic: string[];
-        autoSubject: string[];
-        inSidebar: boolean;
-        inNavbar: boolean;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        url?: string | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-    }, {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }>, {
+        path?: string | undefined;
+        subject?: string | undefined;
+    }>, "many">>;
+    alwaysPreferFs: z.ZodOptional<z.ZodBoolean>;
+    ignoreFilepaths: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    tempDir: z.ZodOptional<z.ZodString>;
+    generatedDir: z.ZodOptional<z.ZodString>;
+    ignorePreferFsExtensions: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    fileTypePriority: z.ZodOptional<z.ZodArray<z.ZodUnion<[z.ZodUnion<[z.ZodLiteral<".mdx">, z.ZodLiteral<".md">, z.ZodLiteral<".ipynb">]>, z.ZodUnion<[z.ZodLiteral<".csv">, z.ZodLiteral<".tsv">, z.ZodLiteral<".excel">, z.ZodLiteral<".numpy">, z.ZodLiteral<".html">, z.ZodLiteral<".pickle">, z.ZodLiteral<".db">, z.ZodLiteral<".sql">, z.ZodLiteral<".pdf">, z.ZodLiteral<".json">, z.ZodLiteral<".tex">, z.ZodLiteral<".hdf5">]>]>, "many">>;
+    noteTypes: z.ZodArray<z.ZodType<{
         docType: string;
         id: string;
         url: string;
@@ -4790,37 +3902,7 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
-    }, {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }>, "many">>, {
+    }, z.ZodTypeDef, {
         docType: string;
         id: string;
         url: string;
@@ -4850,42 +3932,12 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
-    }[], {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }[] | undefined>;
-    bibPath: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodString>, string, string | undefined>>;
-    cslPath: z.ZodOptional<z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>>;
-    dateHandling: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>, "many">;
+    bibPath: z.ZodOptional<z.ZodString>;
+    cslPath: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    dateHandling: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         enableAdvancedFormat: z.ZodDefault<z.ZodBoolean>;
-        format: z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        format: z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodString, z.ZodObject<{
             short: z.ZodDefault<z.ZodString>;
             long: z.ZodDefault<z.ZodString>;
             withTime: z.ZodDefault<z.ZodString>;
@@ -4900,12 +3952,22 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             long?: string | undefined;
             withTime?: string | undefined;
             timeOnly?: string | undefined;
-        }>]>>;
+        }>]>>, {
+            short: string;
+            long: string;
+            withTime: string;
+            timeOnly: string;
+        }, string | {
+            short?: string | undefined;
+            long?: string | undefined;
+            withTime?: string | undefined;
+            timeOnly?: string | undefined;
+        } | undefined>;
         defaultTimeDisplayType: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"analog">, z.ZodLiteral<"summarized">, z.ZodLiteral<"descriptive">]>>;
         defaultTimeZone: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -4923,64 +3985,9 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         } | undefined;
         defaultTimeDisplayType?: "summarized" | "analog" | "descriptive" | undefined;
         defaultTimeZone?: string | undefined;
-    }>>>;
-    linkAliases: z.ZodOptional<z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodString>>>;
-    features: z.ZodOptional<z.ZodOptional<z.ZodObject<{
-        enabled: z.ZodOptional<z.ZodDefault<z.ZodObject<{
-            commandPalette: z.ZodDefault<z.ZodBoolean>;
-            tikz: z.ZodDefault<z.ZodBoolean>;
-        }, "strip", z.ZodTypeAny, {
-            commandPalette: boolean;
-            tikz: boolean;
-        }, {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        }>>>;
-        pages: z.ZodOptional<z.ZodObject<{
-            equations: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            snippets: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            calendar: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            bibliography: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-            taskManager: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
-        }, "strip", z.ZodTypeAny, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }, {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        }>>;
-    }, "strip", z.ZodTypeAny, {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette: boolean;
-            tikz: boolean;
-        } | undefined;
-    }, {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    }>>>;
-    plotting: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    linkAliases: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodString>>;
+    plotting: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         plotColorList: z.ZodDefault<z.ZodUnion<[z.ZodArray<z.ZodString, "many">, z.ZodObject<{
             dark: z.ZodArray<z.ZodString, "many">;
             light: z.ZodArray<z.ZodString, "many">;
@@ -5004,15 +4011,15 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             light: string[];
         } | undefined;
         plotColorCycleMethod?: "inOrder" | "random" | undefined;
-    }>>>;
-    credentials: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    credentials: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         googleServiceAccountJsonPath: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         googleServiceAccountJsonPath?: string | undefined;
     }, {
         googleServiceAccountJsonPath?: string | undefined;
-    }>>>;
-    performance: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    performance: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         latexParsingDebounceTimeout: z.ZodDefault<z.ZodNumber>;
         mdxParsingDebounceTimeout: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
@@ -5021,8 +4028,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
     }, {
         latexParsingDebounceTimeout?: number | undefined;
         mdxParsingDebounceTimeout?: number | undefined;
-    }>>>;
-    meta: z.ZodOptional<z.ZodDefault<z.ZodObject<{
+    }>>>>;
+    meta: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
         title: z.ZodDefault<z.ZodString>;
         desc: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
@@ -5031,8 +4038,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
     }, {
         title?: string | undefined;
         desc?: string | undefined;
-    }>>>;
-    plugins: z.ZodOptional<z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodObject<{
+    }>>>>;
+    plugins: z.ZodOptional<import("../../types.js").ZodOutputSchema<z.ZodEffects<z.ZodDefault<z.ZodUnion<[z.ZodObject<{
         name: z.ZodString;
         version: z.ZodDefault<z.ZodString>;
         parserIndex: z.ZodDefault<z.ZodNumber>;
@@ -5056,14 +4063,11 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, ({
+    }>, "many">, z.ZodString, z.ZodArray<z.ZodString, "many">]>>, {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[], string | string[] | {
+    }[], string | string[] | {
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
@@ -5071,7 +4075,7 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         name: string;
         version?: string | undefined;
         parserIndex?: number | undefined;
-    }[] | undefined>>;
+    }[] | undefined>>>;
 }, "strip", z.ZodTypeAny, {
     noteTypes: {
         docType: string;
@@ -5142,10 +4146,6 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             equations: number;
             categories: number;
         };
-        bookmarkLink: "none" | "sidebar" | "navbar" | "both";
-        syncLink: "none" | "sidebar" | "navbar" | "both";
-        darkmodeToggle: "none" | "sidebar" | "navbar" | "both";
-        snippetsLink: "none" | "sidebar" | "navbar" | "both";
         navbarLinks: (string | {
             label: string;
             href?: string | undefined;
@@ -5156,13 +4156,9 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
         })[];
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
     } | undefined;
     terminal?: {
         logLevel: "info" | "none" | "debug" | "verbose";
@@ -5235,7 +4231,7 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         media: {
             imageMap: Record<string, string | undefined>;
             includeDefaultImageMap: boolean;
-            imageRemoteTest: RegExp[];
+            imageRemoteTest: string[];
         };
         theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
         colors: Record<string, {
@@ -5279,28 +4275,28 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         };
     } | undefined;
     autoTag?: {
-        tag: string;
-        path: string;
+        tag?: string | undefined;
+        path?: string | undefined;
     }[] | undefined;
     autoTopic?: {
-        path: string;
-        topic: string;
+        path?: string | undefined;
+        topic?: string | undefined;
     }[] | undefined;
     autoSubject?: {
-        path: string;
-        subject: string;
+        path?: string | undefined;
+        subject?: string | undefined;
     }[] | undefined;
     alwaysPreferFs?: boolean | undefined;
     ignoreFilepaths?: string[] | undefined;
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
-    ignorePreferFsExtensions?: import("../configUtilitySchemas.js").ParsedRegExpField[] | undefined;
+    ignorePreferFsExtensions?: string[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
     bibPath?: string | undefined;
     cslPath?: string | undefined;
     dateHandling?: {
         enableAdvancedFormat: boolean;
-        format: string | {
+        format: {
             short: string;
             long: string;
             withTime: string;
@@ -5310,19 +4306,6 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette: boolean;
-            tikz: boolean;
-        } | undefined;
-    } | undefined;
     plotting?: {
         plotColorList: string[] | {
             dark: string[];
@@ -5341,154 +4324,174 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
         title: string;
         desc?: string | undefined;
     } | undefined;
-    plugins?: ({
+    plugins?: {
         name: string;
         version: string;
         parserIndex: number;
-    } | {
-        name: string;
-        version: string;
-    })[] | undefined;
+    }[] | undefined;
 }, {
+    noteTypes: {
+        docType: string;
+        id: string;
+        url: string;
+        label: string;
+        icon: string;
+        UI: {
+            styles: {
+                dark: {
+                    bg?: string | undefined;
+                    fg?: string | undefined;
+                };
+                light: {
+                    bg?: string | undefined;
+                    fg?: string | undefined;
+                };
+            };
+        };
+        fs: string;
+        matchWeight: number;
+        urlQuery: Record<string, string | number | string[] | number[]>;
+        keywords: string[];
+        autoTag: string[];
+        autoTopic: string[];
+        autoSubject: string[];
+        inSidebar: boolean;
+        inNavbar: boolean;
+        filePathPattern?: string | undefined;
+        topicLabel?: string | undefined;
+        subjectLabel?: string | undefined;
+    }[];
     code?: {
-        editor?: {
-            defaultLangauge?: string | undefined;
-            useVimMode?: boolean | undefined;
-        } | undefined;
-        theme?: {
-            dark?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
-            light?: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light" | undefined;
-        } | undefined;
-        syntaxHighlighting?: {
-            transformers?: {
-                regexHighlight?: boolean | undefined;
-                lineHighlight?: boolean | undefined;
-                lineFocus?: boolean | undefined;
-                lineErrorLevel?: boolean | undefined;
-                lineDiff?: boolean | undefined;
-            } | undefined;
-            defaultLanguage?: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml" | {
+        editor: {
+            defaultLangauge: string;
+            useVimMode: boolean;
+        };
+        theme: {
+            dark: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light";
+            light: "andromeeda" | "aurora-x" | "ayu-dark" | "catppuccin-frappe" | "catppuccin-latte" | "catppuccin-macchiato" | "catppuccin-mocha" | "dark-plus" | "dracula" | "dracula-soft" | "github-dark" | "github-dark-dimmed" | "github-light" | "light-plus" | "material-theme" | "material-theme-darker" | "material-theme-lighter" | "material-theme-ocean" | "material-theme-palenight" | "min-dark" | "min-light" | "monokai" | "night-owl" | "nord" | "one-dark-pro" | "poimandres" | "red" | "rose-pine" | "rose-pine-dawn" | "rose-pine-moon" | "slack-dark" | "slack-ochin" | "solarized-dark" | "solarized-light" | "synthwave-84" | "tokyo-night" | "vesper" | "vitesse-black" | "vitesse-dark" | "vitesse-light";
+        };
+        syntaxHighlighting: {
+            transformers: {
+                regexHighlight: boolean;
+                lineHighlight: boolean;
+                lineFocus: boolean;
+                lineErrorLevel: boolean;
+                lineDiff: boolean;
+            };
+            defaultLanguage: {
                 inline: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
                 block: "coffee" | "diff" | "fish" | "move" | "shell" | "turtle" | "swift" | "python" | "markdown" | "kotlin" | "css" | "latex" | "fs" | "json" | "rel" | "mdx" | "md" | "csv" | "html" | "abap" | "actionscript-3" | "ada" | "angular-html" | "angular-ts" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "beancount" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "cpp" | "crystal" | "csharp" | "cue" | "cypher" | "d" | "dart" | "dax" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fortran-fixed-form" | "fortran-free-form" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glimmer-js" | "glimmer-ts" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hjson" | "hlsl" | "html-derivative" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja" | "jison" | "json5" | "jsonc" | "jsonl" | "jsonnet" | "jssm" | "jsx" | "julia" | "kusto" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "marko" | "matlab" | "mdc" | "mermaid" | "mojo" | "narrat" | "nextflow" | "nginx" | "nim" | "nix" | "nushell" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "r" | "raku" | "razor" | "reg" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "shellsession" | "smalltalk" | "solidity" | "sparql" | "splunk" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "system-verilog" | "tasl" | "tcl" | "terraform" | "tex" | "toml" | "tsx" | "twig" | "typescript" | "typst" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue" | "vue-html" | "vyper" | "wasm" | "wenyan" | "wgsl" | "wolfram" | "xml" | "xsl" | "yaml" | "zenscript" | "zig" | "batch" | "be" | "cdc" | "clj" | "ql" | "coffeescript" | "c++" | "c#" | "cs" | "cql" | "dockerfile" | "erl" | "f" | "for" | "f77" | "f90" | "f95" | "f03" | "f08" | "f18" | "f#" | "gjs" | "gts" | "gql" | "hbs" | "hs" | "properties" | "js" | "fsl" | "kt" | "kts" | "kql" | "makefile" | "nar" | "nf" | "nu" | "objc" | "ps" | "ps1" | "jade" | "py" | "perl6" | "rb" | "rs" | "shader" | "bash" | "sh" | "zsh" | "console" | "spl" | "styl" | "tf" | "tfvars" | "ts" | "typ" | "cmd" | "vim" | "vimscript" | "vy" | "文言" | "wl" | "yml";
-            } | undefined;
-        } | undefined;
+            };
+        };
     } | undefined;
     database?: {
-        storeFormatted?: boolean | undefined;
-        removeIfNotPresentInFs?: boolean | undefined;
+        storeFormatted: boolean;
+        removeIfNotPresentInFs: boolean;
     } | undefined;
     navigation?: {
-        settings?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        navbarBreakpoint?: {
-            full?: number | undefined;
-            minimal?: number | undefined;
-        } | undefined;
-        maxResultLength?: {
-            snippets?: number | undefined;
-            searchAll?: number | undefined;
-            equations?: number | undefined;
-            categories?: number | undefined;
-        } | undefined;
-        bookmarkLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        syncLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        fileSystemToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        darkmodeToggle?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        equationsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        snippetsLink?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        backupData?: "none" | "sidebar" | "navbar" | "both" | undefined;
-        navbarLinks?: (string | {
+        navbarBreakpoint: {
+            full: number;
+            minimal: number;
+        };
+        maxResultLength: {
+            snippets: number;
+            searchAll: number;
+            equations: number;
+            categories: number;
+        };
+        navbarLinks: (string | {
             label: string;
             href?: string | undefined;
             icon?: string | undefined;
             onClick?: ((...args: unknown[]) => unknown) | undefined;
-        })[] | undefined;
-        sidebarLinks?: (string | {
+        })[];
+        sidebarLinks: (string | {
             icon: string;
             label?: string | undefined;
             href?: string | undefined;
-            onClick?: ((...args: unknown[]) => unknown) | undefined;
             Icon?: ((...args: unknown[]) => unknown) | undefined;
-        })[] | undefined;
+            onClick?: ((...args: unknown[]) => unknown) | undefined;
+        })[];
     } | undefined;
     terminal?: {
-        logLevel?: "info" | "none" | "debug" | "verbose" | undefined;
+        logLevel: "info" | "none" | "debug" | "verbose";
     } | undefined;
     jupyter?: {
-        execute?: boolean | undefined;
-        environment?: string | undefined;
-        syntaxHighlightTheme?: string | undefined;
-        jupyterToken?: string | undefined;
-        jupyterPort?: number | undefined;
-        initiallyFoldCells?: boolean | undefined;
-        kernel?: string | undefined;
-        jupyterReactProps?: {
-            collaborative?: boolean | undefined;
-            lite?: boolean | undefined;
+        execute: boolean;
+        environment: string;
+        syntaxHighlightTheme: string;
+        jupyterPort: number;
+        initiallyFoldCells: boolean;
+        kernel: string;
+        jupyterReactProps: {
+            collaborative: boolean;
+            lite: boolean;
             serverUrls?: {
                 baseUrl?: string | undefined;
                 wsUrl?: string | undefined;
             } | undefined;
-        } | undefined;
-        nbConvert?: {
+        };
+        nbConvert: {
+            conversionTimeout: number;
+            execute: boolean;
+            nbConvertTemplate: string;
+            notebookOutputDir: string;
             nbconvertPath?: string | undefined;
-            conversionTimeout?: number | undefined;
             customConversionFunction?: {
                 pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
             } | undefined;
-            execute?: boolean | undefined;
-            nbConvertTemplate?: string | undefined;
-            notebookOutputDir?: string | undefined;
-        } | undefined;
-        jupyterNotebookProps?: {
-            height?: string | undefined;
-            readOnly?: boolean | undefined;
-            maxHeight?: string | undefined;
-            cellMetadataPanel?: boolean | undefined;
-            cellSidebarMargin?: number | undefined;
-            bundledIPyWidgets?: {
+        };
+        jupyterNotebookProps: {
+            readOnly: boolean;
+            cellMetadataPanel: boolean;
+            cellSidebarMargin: number;
+            bundledIPyWidgets: {
                 name: string;
                 module: string | Record<string, string>;
                 version: string;
-            }[] | undefined;
-            externalIPyWidgets?: {
+            }[];
+            externalIPyWidgets: {
                 name: string;
                 version: string;
-            }[] | undefined;
-            nbgrader?: boolean | undefined;
-        } | undefined;
-        cellInputWrappers?: Record<string, string | {
+            }[];
+            nbgrader: boolean;
+            height?: string | undefined;
+            maxHeight?: string | undefined;
+        };
+        cellInputWrappers: Record<string, {
             prefix: string;
             suffix: string;
-        }> | undefined;
+        }>;
+        jupyterToken?: string | undefined;
     } | undefined;
     math?: {
-        latexPackages?: string[] | "all" | undefined;
+        latexPackages: string[] | "all";
+        constants: Record<string, number>;
         latexFontUrl?: string | undefined;
-        constants?: Record<string, number> | undefined;
     } | undefined;
     UI?: {
-        table?: {
-            maxHeight?: string | number | undefined;
-        } | undefined;
-        text?: {
-            blockQuoteItalic?: boolean | undefined;
-            fontPaths?: "default" | {
+        table: {
+            maxHeight: string;
+        };
+        text: {
+            blockQuoteItalic: boolean;
+            fontPaths: "default" | {
                 weight: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
                 path: string;
                 style: "bold" | "italic" | "normal";
-            }[] | undefined;
-        } | undefined;
-        media?: {
-            imageMap?: Record<string, string | undefined> | undefined;
-            includeDefaultImageMap?: boolean | undefined;
-            imageRemoteTest?: RegExp[] | undefined;
-        } | undefined;
-        theme?: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet" | undefined;
-        colors?: Record<string, string | {
+            }[];
+        };
+        media: {
+            imageMap: Record<string, string | undefined>;
+            includeDefaultImageMap: boolean;
+            imageRemoteTest: string[];
+        };
+        theme: "ulld" | "red" | "orange" | "yellow" | "green" | "blue" | "rose" | "slate" | "gray" | "stone" | "zinc" | "neutral" | "violet";
+        colors: Record<string, {
             dark?: string | undefined;
             light?: string | undefined;
-        } | null | undefined> | undefined;
-        autoApplyMdxTitles?: boolean | undefined;
+        } | undefined>;
+        autoApplyMdxTitles: boolean;
     } | undefined;
     slots?: {
         navigation?: any;
@@ -5505,129 +4508,79 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
     } | undefined;
     fsRoot?: string | undefined;
     build?: {
-        database?: {
-            type?: "postgres" | "sqlite" | undefined;
-            postgres?: {
-                port?: number | undefined;
-                dbName?: string | undefined;
-                connectionURI?: string | undefined;
-            } | undefined;
-            prioritize?: "size" | "speed" | undefined;
-        } | undefined;
-        additionalUserContent?: {
+        database: {
+            type: "postgres" | "sqlite";
+            postgres: {
+                connectionURI: string;
+                port?: undefined;
+                dbName?: undefined;
+            } | {
+                port: number;
+                dbName: string;
+                connectionURI?: undefined;
+            };
+            prioritize: "size" | "speed";
+        };
+        additionalUserContent: {
             css?: string | undefined;
             logo?: string | undefined;
             favicon?: string | undefined;
-        } | undefined;
+        };
     } | undefined;
     autoTag?: {
-        tag: string;
-        path: string;
+        tag?: string | undefined;
+        path?: string | undefined;
     }[] | undefined;
     autoTopic?: {
-        path: string;
-        topic: string;
+        path?: string | undefined;
+        topic?: string | undefined;
     }[] | undefined;
     autoSubject?: {
-        path: string;
-        subject: string;
+        path?: string | undefined;
+        subject?: string | undefined;
     }[] | undefined;
     alwaysPreferFs?: boolean | undefined;
-    ignoreFilepaths?: (string | RegExp | {
-        regex: string | RegExp;
-        original: string;
-    })[] | undefined;
+    ignoreFilepaths?: string[] | undefined;
     tempDir?: string | undefined;
     generatedDir?: string | undefined;
-    ignorePreferFsExtensions?: (string | RegExp | {
-        regex: RegExp;
-        original: string;
-    })[] | undefined;
+    ignorePreferFsExtensions?: string[] | undefined;
     fileTypePriority?: (".mdx" | ".ipynb" | ".csv" | ".tsv" | ".excel" | ".numpy" | ".html" | ".pickle" | ".db" | ".sql" | ".pdf" | ".json" | ".tex" | ".hdf5" | ".md")[] | undefined;
-    noteTypes?: {
-        label: string;
-        fs: string;
-        icon?: string | undefined;
-        UI?: {
-            styles?: {
-                dark?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-                light?: {
-                    bg?: string | undefined;
-                    fg?: string | undefined;
-                } | undefined;
-            } | undefined;
-        } | undefined;
-        id?: string | undefined;
-        docType?: string | undefined;
-        filePathPattern?: string | undefined;
-        matchWeight?: number | undefined;
-        url?: string | undefined;
-        urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
-        keywords?: string[] | undefined;
-        topicLabel?: string | undefined;
-        subjectLabel?: string | undefined;
-        autoTag?: string[] | undefined;
-        autoTopic?: string[] | undefined;
-        autoSubject?: string[] | undefined;
-        inSidebar?: boolean | undefined;
-        inNavbar?: boolean | undefined;
-    }[] | undefined;
     bibPath?: string | undefined;
     cslPath?: string | undefined;
     dateHandling?: {
-        enableAdvancedFormat?: boolean | undefined;
-        format?: string | {
-            short?: string | undefined;
-            long?: string | undefined;
-            withTime?: string | undefined;
-            timeOnly?: string | undefined;
-        } | undefined;
-        defaultTimeDisplayType?: "summarized" | "analog" | "descriptive" | undefined;
+        enableAdvancedFormat: boolean;
+        format: {
+            short: string;
+            long: string;
+            withTime: string;
+            timeOnly: string;
+        };
+        defaultTimeDisplayType: "summarized" | "analog" | "descriptive";
         defaultTimeZone?: string | undefined;
     } | undefined;
     linkAliases?: Record<string, string> | undefined;
-    features?: {
-        pages?: {
-            calendar?: boolean | undefined;
-            bibliography?: boolean | undefined;
-            snippets?: boolean | undefined;
-            taskManager?: boolean | undefined;
-            equations?: boolean | undefined;
-        } | undefined;
-        enabled?: {
-            commandPalette?: boolean | undefined;
-            tikz?: boolean | undefined;
-        } | undefined;
-    } | undefined;
     plotting?: {
-        plotColorList?: string[] | {
+        plotColorList: string[] | {
             dark: string[];
             light: string[];
-        } | undefined;
-        plotColorCycleMethod?: "inOrder" | "random" | undefined;
+        };
+        plotColorCycleMethod: "inOrder" | "random";
     } | undefined;
     credentials?: {
         googleServiceAccountJsonPath?: string | undefined;
     } | undefined;
     performance?: {
-        latexParsingDebounceTimeout?: number | undefined;
-        mdxParsingDebounceTimeout?: number | undefined;
+        latexParsingDebounceTimeout: number;
+        mdxParsingDebounceTimeout: number;
     } | undefined;
     meta?: {
-        title?: string | undefined;
+        title: string;
         desc?: string | undefined;
     } | undefined;
-    plugins?: string | string[] | {
+    plugins?: {
         name: string;
-        version?: string | undefined;
-        parserIndex?: number | undefined;
-    } | {
-        name: string;
-        version?: string | undefined;
-        parserIndex?: number | undefined;
+        version: string;
+        parserIndex: number;
     }[] | undefined;
 }>;
 export type AppConfigSchemaDeepPartialOutputWithFsRoot = z.output<typeof appConfigDeepPartialWithFsRoot>;
