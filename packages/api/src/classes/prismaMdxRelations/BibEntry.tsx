@@ -2,23 +2,25 @@ import type {
     Prisma,
     BibEntry as PrismaBibEntry,
 } from "@ulld/database/internalDatabaseTypes";
-import { CitationGroup } from "./CitationGroup";
-import { MdxNote } from "./MdxNote";
-import { BibEntryProps } from "./protocols/bibEntry";
-import { PartialReadingListEntry, ReadingList } from "./readingList";
-import { Tag } from "./tag";
-import { BibCore } from "./Bib";
 import type { BibFilePresenter } from "bibtex";
 import { formatSearchAllParams } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams";
-import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
 import { replaceRecursively } from "@ulld/utilities/utils/general";
-import { ParsedBibEntryProps, bibEntryPropsSchema } from "./schemas/general";
-import { Topic } from "./topic";
-import { Subject } from "./subject";
-import type { serverClient } from "../../trpc/serverClient";
 import Link from "next/link";
-import { BibEntryReturned } from "../../types";
-import { z } from "zod";
+import type { z } from "zod";
+import { getUniversalQuery } from "../../actions/universal/getUniversalClient";
+import type { serverClient } from "../../trpc/serverClient";
+import type { BibEntryReturned } from "../../types";
+import type { client } from "../../trpc/client";
+import type { CitationGroup } from "./CitationGroup";
+import type { MdxNote } from "./MdxNote";
+import type { BibEntryProps } from "./protocols/bibEntry";
+import type { PartialReadingListEntry, ReadingList } from "./readingList";
+import type { Tag } from "./tag";
+import { BibCore } from "./Bib";
+import type { BibEntrySchemaInput, ParsedBibEntryProps} from "./schemas/general";
+import { bibEntryPropsSchema } from "./schemas/general";
+import type { Topic } from "./topic";
+import type { Subject } from "./subject";
 
 export type FromPrismaEntry =
     | Awaited<ReturnType<typeof serverClient.bibliography.getBibEntry>>
@@ -51,7 +53,7 @@ export class BibEntry {
     Bib: BibCore | undefined = undefined;
     prismaEntry?: PrismaBibEntry;
     id: string;
-    htmlCitation: string | null;
+    htmlCitation?: string | null;
     tempPageIndex?: number | null;
     BibId?: number | null;
     readingList?: ReadingList[] | undefined | null = [];
@@ -119,7 +121,7 @@ export class BibEntry {
         this.doi = props.doi;
         this.edition = props.edition;
         this.editor = props.editor;
-        this.email = props.eail;
+        this.email = props.email;
         this.howpublished = props.howpublished;
         this.institution = props.institution;
         this.journal = props.journal;
@@ -152,7 +154,7 @@ export class BibEntry {
             typeof tempPageIndex === "number" ? tempPageIndex : undefined;
     }
     getIdInBibFile(bibFileIds: string[], lowercaseBibFileIds: string[]) {
-        let s = bibFileIds[lowercaseBibFileIds.indexOf(this.id.toLowerCase())];
+        const s = bibFileIds[lowercaseBibFileIds.indexOf(this.id.toLowerCase())];
         return s;
     }
     toPlainObject() {
@@ -271,7 +273,7 @@ export class BibEntry {
         } satisfies Prisma.BibEntryCreateOrConnectWithoutBibInput;
     }
     connectOrCreateArgs(): Prisma.BibEntryCreateOrConnectWithoutBibInput {
-        let d: Prisma.BibEntryCreateOrConnectWithoutBibInput = {
+        const d: Prisma.BibEntryCreateOrConnectWithoutBibInput = {
             where: this.whereUniqueInput(),
             create: {
                 id: this.id.toLowerCase(),
@@ -323,8 +325,8 @@ export class BibEntry {
         };
         return d;
     }
-    createInput(noBibId: boolean = false): Prisma.BibEntryCreateInput {
-        let d: Prisma.BibEntryCreateInput = {
+    createInput(noBibId = false): Prisma.BibEntryCreateInput {
+        const d: Prisma.BibEntryCreateInput = {
             id: this.id.toLowerCase(),
             ...(this.Bib && {
                 Bib: {
@@ -380,7 +382,7 @@ export class BibEntry {
             data: this.createInput(),
         };
     }
-    upsertArgs(noBibId: boolean = false): Prisma.BibEntryUpsertArgs {
+    upsertArgs(noBibId = false): Prisma.BibEntryUpsertArgs {
         const a = this.createInput(noBibId);
         return {
             where: this.whereUniqueInput(),
@@ -416,12 +418,12 @@ export class BibEntry {
     }
 
     formatCitationForPageSpecificOutput(html: string, pageIndex: number) {
-        let r = /<sup>[\d|\s]*<\/sup>/gm;
+        const r = /<sup>[\d|\s]*<\/sup>/gm;
         return replaceRecursively(html, r, `<sup>${pageIndex + 1}</sup>`);
     }
     toHtml(): React.ReactNode {
         if (this.htmlCitation && typeof this.tempPageIndex === "number") {
-            let htmlContent = this.formatCitationForPageSpecificOutput(
+            const htmlContent = this.formatCitationForPageSpecificOutput(
                 this.htmlCitation,
                 this.tempPageIndex,
             );
@@ -443,8 +445,8 @@ export class BibEntry {
         }
         return <div key={`cit-${this.id}`}>{this.title}</div>;
     }
-    static fromPrisma(item: z.infer<typeof bibEntryPropsSchema>): BibEntry {
-        let parsed = bibEntryPropsSchema.parse(item);
+    static fromPrisma(item: BibEntrySchemaInput): BibEntry {
+        const parsed = bibEntryPropsSchema.parse(item);
         return new BibEntry(parsed);
     }
     static fromFs(
@@ -452,39 +454,39 @@ export class BibEntry {
         bib: BibCore,
         htmlCitation?: string,
     ): BibEntry {
-        let d: BibEntryProps = {
+        const d: BibEntryProps = {
             htmlCitation,
             id: item._id,
         } as BibEntryProps;
         for (const k in item.fields) {
-            let v = item.getFieldAsString(k);
+            const v = item.getFieldAsString(k);
             if (v) {
                 d[k] = typeof v === "string" ? v : String(v);
             }
         }
-        let props = bibEntryPropsSchema.parse({
+        const props = bibEntryPropsSchema.parse({
             ...d,
             type: item.type,
             Bib: bib,
             BibId: bib.id,
         });
-        let entry = new BibEntry(props);
+        const entry = new BibEntry(props);
         if (!entry.htmlCitation && htmlCitation) {
             entry.htmlCitation = htmlCitation;
         }
         return entry;
     }
     static async fromId(id: string): Promise<BibEntry | null> {
-        const query = await getUniversalQuery("getBibEntry", "bibliography");
-        let entry: BibEntryReturned = await query(id);
+        const query = await getUniversalQuery("getBibEntry", "bibliography") as typeof client.bibliography.getBibEntry.query
+        const entry = await query(id);
         if (entry) {
             /* let props = bibEntryPropsSchema.parse(entry) as ParsedBibEntryProps */
-            return BibEntry.fromPrisma(entry);
+            return BibEntry.fromPrisma(entry as BibEntrySchemaInput);
         }
         return null;
     }
     static fromFsList(items: BibFilePresenter["entries_raw"]): BibEntry[] {
-        let bib = new BibCore();
+        const bib = new BibCore();
         return items.map((item) => BibEntry.fromFs(item, bib));
     }
     static fromList(
@@ -495,7 +497,7 @@ export class BibEntry {
             if (item instanceof BibEntry) {
                 return item;
             }
-            let props = bibEntryPropsSchema.parse(item);
+            const props = bibEntryPropsSchema.parse(item);
             return new BibEntry(props);
         });
     }

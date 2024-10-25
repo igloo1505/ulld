@@ -14,17 +14,17 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             id: import("zod").ZodDefault<import("zod").ZodNumber>;
             entries: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodAny, "many">>;
         }, "strip", import("zod").ZodTypeAny, {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         }, {
+            id?: number | undefined;
             entries?: any[] | undefined;
             firstSync?: string | Date | null | undefined;
             lastAccess?: string | Date | null | undefined;
             filename?: string | undefined;
-            id?: number | undefined;
         }>>;
         BibId: import("zod").ZodDefault<import("zod").ZodNumber>;
         readingList: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodObject<{
@@ -127,12 +127,12 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             description: import("zod").ZodOptional<import("zod").ZodNullable<import("zod").ZodString>>;
             entries: import("zod").ZodArray<import("zod").ZodAny, "many">;
         }, "strip", import("zod").ZodTypeAny, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }>, "many">>;
         added: import("zod").ZodEffects<import("zod").ZodOptional<import("zod").ZodNullable<import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodDate, import("zod").ZodString]>>>, Date, string | Date | null | undefined>;
@@ -144,17 +144,17 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             id: import("zod").ZodDefault<import("zod").ZodNumber>;
             entries: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodAny, "many">>;
         }, "strip", import("zod").ZodTypeAny, {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         }, {
+            id?: number | undefined;
             entries?: any[] | undefined;
             firstSync?: string | Date | null | undefined;
             lastAccess?: string | Date | null | undefined;
             filename?: string | undefined;
-            id?: number | undefined;
         }>>;
         BibId: import("zod").ZodDefault<import("zod").ZodNumber>;
         readingList: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodObject<{
@@ -257,12 +257,12 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             description: import("zod").ZodOptional<import("zod").ZodNullable<import("zod").ZodString>>;
             entries: import("zod").ZodArray<import("zod").ZodAny, "many">;
         }, "strip", import("zod").ZodTypeAny, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }>, "many">>;
         added: import("zod").ZodEffects<import("zod").ZodOptional<import("zod").ZodNullable<import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodDate, import("zod").ZodString]>>>, Date, string | Date | null | undefined>;
@@ -274,17 +274,17 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             id: import("zod").ZodDefault<import("zod").ZodNumber>;
             entries: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodAny, "many">>;
         }, "strip", import("zod").ZodTypeAny, {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         }, {
+            id?: number | undefined;
             entries?: any[] | undefined;
             firstSync?: string | Date | null | undefined;
             lastAccess?: string | Date | null | undefined;
             filename?: string | undefined;
-            id?: number | undefined;
         }>>;
         BibId: import("zod").ZodDefault<import("zod").ZodNumber>;
         readingList: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodObject<{
@@ -387,20 +387,21 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             description: import("zod").ZodOptional<import("zod").ZodNullable<import("zod").ZodString>>;
             entries: import("zod").ZodArray<import("zod").ZodAny, "many">;
         }, "strip", import("zod").ZodTypeAny, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }>, "many">>;
         added: import("zod").ZodEffects<import("zod").ZodOptional<import("zod").ZodNullable<import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodDate, import("zod").ZodString]>>>, Date, string | Date | null | undefined>;
     }, import("zod").ZodString, "strip">>, Omit<{
-        lastAccess: Date;
         id: string;
-        createdAt: Date;
-        BibId: number;
+        tags: {
+            value: string;
+            kanbanId?: number | null | undefined;
+        }[];
         readingList: {
             name: string;
             description: string | null;
@@ -410,31 +411,38 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             createdAt: Date;
             lastUpdate: Date;
         }[];
+        lastAccess: Date;
+        createdAt: Date;
+        BibId: number;
         topics: {
             value: string;
         }[];
         subjects: {
             value: string;
         }[];
-        tags: {
-            value: string;
-            kanbanId?: number | null | undefined;
-        }[];
         read: boolean;
         OwnWork: boolean;
         ColleaguesWork: boolean;
         citationGroups: {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }[];
         added: Date;
         number?: string | null | undefined;
+        journal?: string | null | undefined;
+        editor?: string | null | undefined;
+        note?: string | null | undefined;
+        abstract?: string | null | undefined;
         type?: string | null | undefined;
+        title?: string | null | undefined;
+        copyright?: string | null | undefined;
+        school?: string | null | undefined;
+        volume?: string | null | undefined;
         Bib?: {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         } | undefined;
@@ -448,29 +456,21 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         crossref?: string | null | undefined;
         doi?: string | null | undefined;
         edition?: string | null | undefined;
-        editor?: string | null | undefined;
         email?: string | null | undefined;
         howpublished?: string | null | undefined;
         institution?: string | null | undefined;
-        journal?: string | null | undefined;
         month?: string | null | undefined;
-        note?: string | null | undefined;
         organization?: string | null | undefined;
         pages?: string | null | undefined;
         publisher?: string | null | undefined;
-        school?: string | null | undefined;
         series?: string | null | undefined;
-        title?: string | null | undefined;
-        volume?: string | null | undefined;
         year?: string | null | undefined;
         numpages?: string | null | undefined;
         url?: string | null | undefined;
         issue?: string | null | undefined;
         issn?: string | null | undefined;
-        abstract?: string | null | undefined;
         urldate?: string | null | undefined;
         keywords?: string | null | undefined;
-        copyright?: string | null | undefined;
         tempPageIndex?: number | null | undefined;
         MdxNotes?: any[] | null | undefined;
     }, "BibId"> & {
@@ -483,17 +483,17 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             id: import("zod").ZodDefault<import("zod").ZodNumber>;
             entries: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodAny, "many">>;
         }, "strip", import("zod").ZodTypeAny, {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         }, {
+            id?: number | undefined;
             entries?: any[] | undefined;
             firstSync?: string | Date | null | undefined;
             lastAccess?: string | Date | null | undefined;
             filename?: string | undefined;
-            id?: number | undefined;
         }>>;
         BibId: import("zod").ZodDefault<import("zod").ZodNumber>;
         readingList: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodObject<{
@@ -596,12 +596,12 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             description: import("zod").ZodOptional<import("zod").ZodNullable<import("zod").ZodString>>;
             entries: import("zod").ZodArray<import("zod").ZodAny, "many">;
         }, "strip", import("zod").ZodTypeAny, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }>, "many">>;
         added: import("zod").ZodEffects<import("zod").ZodOptional<import("zod").ZodNullable<import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodDate, import("zod").ZodString]>>>, Date, string | Date | null | undefined>;
@@ -704,6 +704,11 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             }, string>]>, "many">>;
         }>, "strip", import("zod").ZodTypeAny, {
             id: number;
+            label: string;
+            tags: {
+                value: string;
+                kanbanId?: number | null | undefined;
+            }[];
             createdAt: Date;
             lastUpdate: Date;
             topics: {
@@ -712,15 +717,14 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             subjects: {
                 value: string;
             }[];
-            tags: {
-                value: string;
-                kanbanId?: number | null | undefined;
-            }[];
-            label: string;
             tasks: any[];
         }, {
             id: number;
             label: string;
+            tags?: (string | {
+                value: string;
+                kanbanId?: number | null | undefined;
+            })[] | undefined;
             createdAt?: string | Date | null | undefined;
             lastUpdate?: string | Date | null | undefined;
             topics?: {
@@ -729,10 +733,6 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             subjects?: {
                 value: string;
             }[] | undefined;
-            tags?: (string | {
-                value: string;
-                kanbanId?: number | null | undefined;
-            })[] | undefined;
             tasks?: any[] | undefined;
         }>;
         toDoListId: import("zod").ZodNumber;
@@ -765,8 +765,12 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             kanbanId?: number | null | undefined;
         }, string>]>, "many">>;
     }>, "strip", import("zod").ZodTypeAny, {
-        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         id: number;
+        tags: {
+            value: string;
+            kanbanId?: number | null | undefined;
+        }[];
+        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         createdAt: Date;
         topics: {
             value: string;
@@ -774,12 +778,13 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         subjects: {
             value: string;
         }[];
-        tags: {
-            value: string;
-            kanbanId?: number | null | undefined;
-        }[];
         ToDoList: {
             id: number;
+            label: string;
+            tags: {
+                value: string;
+                kanbanId?: number | null | undefined;
+            }[];
             createdAt: Date;
             lastUpdate: Date;
             topics: {
@@ -788,11 +793,6 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             subjects: {
                 value: string;
             }[];
-            tags: {
-                value: string;
-                kanbanId?: number | null | undefined;
-            }[];
-            label: string;
             tasks: any[];
         };
         task: string;
@@ -807,11 +807,15 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         parent?: any;
         child?: any;
     }, {
-        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         id: number;
+        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         ToDoList: {
             id: number;
             label: string;
+            tags?: (string | {
+                value: string;
+                kanbanId?: number | null | undefined;
+            })[] | undefined;
             createdAt?: string | Date | null | undefined;
             lastUpdate?: string | Date | null | undefined;
             topics?: {
@@ -820,16 +824,16 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             subjects?: {
                 value: string;
             }[] | undefined;
-            tags?: (string | {
-                value: string;
-                kanbanId?: number | null | undefined;
-            })[] | undefined;
             tasks?: any[] | undefined;
         };
         task: string;
         category: "bug" | "feature" | "documentation" | "online" | "priority" | "urgent" | "work" | "gym" | "freetime" | "study" | "research" | "paper";
         priority: number;
         toDoListId: number;
+        tags?: (string | {
+            value: string;
+            kanbanId?: number | null | undefined;
+        })[] | undefined;
         createdAt?: string | Date | null | undefined;
         topics?: {
             value: string;
@@ -837,10 +841,6 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         subjects?: {
             value: string;
         }[] | undefined;
-        tags?: (string | {
-            value: string;
-            kanbanId?: number | null | undefined;
-        })[] | undefined;
         dueAt?: string | Date | null | undefined;
         details?: string | null | undefined;
         associatedNotes?: any[] | undefined;
@@ -880,12 +880,16 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         value: string;
         kanbanId?: number | null | undefined;
     }, string>]>, "many">>;
-}>, "topics" | "subjects" | "tags" | "sequentialKey" | "latexTitle" | "raw" | "floatImages" | "formatted" | "citations" | "quickLinkId" | "citationsListOrder" | "outgoingQuickLinks" | "equationIds" | "isProtected" | "sequentialIndex" | "remoteUrl" | "noLog" | "saveFormatted" | "trackRemote">, "strip", import("zod").ZodTypeAny, {
+}>, "tags" | "topics" | "subjects" | "sequentialKey" | "latexTitle" | "raw" | "floatImages" | "formatted" | "citations" | "quickLinkId" | "citationsListOrder" | "outgoingQuickLinks" | "equationIds" | "isProtected" | "sequentialIndex" | "remoteUrl" | "noLog" | "saveFormatted" | "trackRemote">, "strip", import("zod").ZodTypeAny, {
     firstSync: Date;
     noteType: string;
     toDo: {
-        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         id: number;
+        tags: {
+            value: string;
+            kanbanId?: number | null | undefined;
+        }[];
+        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         createdAt: Date;
         topics: {
             value: string;
@@ -893,12 +897,13 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         subjects: {
             value: string;
         }[];
-        tags: {
-            value: string;
-            kanbanId?: number | null | undefined;
-        }[];
         ToDoList: {
             id: number;
+            label: string;
+            tags: {
+                value: string;
+                kanbanId?: number | null | undefined;
+            }[];
             createdAt: Date;
             lastUpdate: Date;
             topics: {
@@ -907,11 +912,6 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             subjects: {
                 value: string;
             }[];
-            tags: {
-                value: string;
-                kanbanId?: number | null | undefined;
-            }[];
-            label: string;
             tasks: any[];
         };
         task: string;
@@ -930,27 +930,34 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
     importantValues: number[];
     lastSync: Date;
     id?: number | null | undefined;
+    href?: string | null | undefined;
+    summary?: string | null | undefined;
     title?: string | null | undefined;
     content?: string | null | undefined;
-    href?: string | null | undefined;
     rootRelativePath?: string | null | undefined;
     sequentialList?: {
         MdxNote: any[];
         Ipynb: any[];
         sequentialKey: string;
     } | undefined;
-    summary?: string | null | undefined;
 }, {
     noteType: string;
-    firstSync?: string | Date | null | undefined;
     id?: number | null | undefined;
+    href?: string | null | undefined;
+    summary?: string | null | undefined;
     title?: string | null | undefined;
+    content?: string | null | undefined;
+    firstSync?: string | Date | null | undefined;
     toDo?: {
-        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         id: number;
+        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         ToDoList: {
             id: number;
             label: string;
+            tags?: (string | {
+                value: string;
+                kanbanId?: number | null | undefined;
+            })[] | undefined;
             createdAt?: string | Date | null | undefined;
             lastUpdate?: string | Date | null | undefined;
             topics?: {
@@ -959,16 +966,16 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             subjects?: {
                 value: string;
             }[] | undefined;
-            tags?: (string | {
-                value: string;
-                kanbanId?: number | null | undefined;
-            })[] | undefined;
             tasks?: any[] | undefined;
         };
         task: string;
         category: "bug" | "feature" | "documentation" | "online" | "priority" | "urgent" | "work" | "gym" | "freetime" | "study" | "research" | "paper";
         priority: number;
         toDoListId: number;
+        tags?: (string | {
+            value: string;
+            kanbanId?: number | null | undefined;
+        })[] | undefined;
         createdAt?: string | Date | null | undefined;
         topics?: {
             value: string;
@@ -976,10 +983,6 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         subjects?: {
             value: string;
         }[] | undefined;
-        tags?: (string | {
-            value: string;
-            kanbanId?: number | null | undefined;
-        })[] | undefined;
         dueAt?: string | Date | null | undefined;
         details?: string | null | undefined;
         associatedNotes?: any[] | undefined;
@@ -989,16 +992,13 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         child?: any;
     }[] | undefined;
     bookmarked?: boolean | undefined;
-    content?: string | null | undefined;
     importantValues?: number[] | undefined;
-    href?: string | null | undefined;
     rootRelativePath?: string | null | undefined;
     sequentialList?: {
         sequentialKey: string;
         MdxNote?: any[] | undefined;
         Ipynb?: any[] | undefined;
     } | undefined;
-    summary?: string | null | undefined;
     lastSync?: string | Date | null | undefined;
 }>;
 //# sourceMappingURL=mdxNoteIntriguingValSummary.d.ts.map

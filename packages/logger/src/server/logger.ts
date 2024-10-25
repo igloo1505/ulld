@@ -1,8 +1,7 @@
-import { z } from "zod";
 import { highlight } from "cli-highlight";
 import {BaseUlldLogger} from "../base/main"
-import { LogLevel } from "../base/types"
 import {LoggerOptionsSchema, LoggerOptionsSchemaOutput, LogOpts, optionsSchema} from "./types"
+import { LogLevel } from "../base/sharedTypes";
 
 export class serverLogger extends BaseUlldLogger {
     logLevel: LogLevel = "normal";
@@ -48,14 +47,15 @@ export class serverLogger extends BaseUlldLogger {
             { language: "json", ignoreIllegals: true },
         );
     }
+    // TODO: Need to come back and handle these methods
     static info(value: any, opts?: LoggerOptionsSchema) {
-        new serverLogger().logOfType("normal", value, opts);
+        // new serverLogger().logOfType("normal", value, opts);
     }
     static verbose(value: any, opts?: LoggerOptionsSchema) {
-        new serverLogger().logOfType("verbose", value, opts);
+        // new serverLogger().logOfType("verbose", value, opts);
     }
     static debug(value: any, opts?: LoggerOptionsSchema) {
-        new serverLogger().logOfType("debug", value, opts);
+        // new serverLogger().logOfType("debug", value, opts);
     }
     static error(value: any, opts?: LoggerOptionsSchema) {
         new serverLogger().logError(value, opts);

@@ -64,7 +64,7 @@ export const appData: UlldAppData = {
             url: "https://github.com/igloo1505/ulld",
         },
     ],
-    includeInTypes: ["@ulld/configschema"],
+    includeInTypes: ["@ulld/configschema", "@ulld/api"],
     packagesBuildingToDist: [
         "@ulld/utilities",
         "@ulld/build",

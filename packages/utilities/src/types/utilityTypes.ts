@@ -102,7 +102,7 @@ export type NestedType<T, P extends string> = (
     : P extends keyof T ? T[P] : never
 );
 
-type NestedTypeByTuple<T, P extends string[]> = (
+export type NestedTypeByTuple<T, P extends string[]> = (
   Length<P> extends 1
     ? Pop<P> extends keyof T ? T[Pop<P>] : never
     : PopFront<P> extends keyof T ? Shift<P> extends string[] 

@@ -48,9 +48,9 @@ export declare const baseAppBuildData: z.ZodObject<{
             label?: string | undefined;
         }[]>;
     }, "strip", z.ZodTypeAny, {
-        type: "component" | "page" | "embeddable";
+        type: "component" | "embeddable" | "page";
         path: string;
-        parentSlot: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette";
+        parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
         subSlot: string;
         clientOnly: boolean;
         embeddables: {
@@ -59,9 +59,9 @@ export declare const baseAppBuildData: z.ZodObject<{
         }[];
         propsExtends?: string | undefined;
     }, {
-        type: "component" | "page" | "embeddable";
+        type: "component" | "embeddable" | "page";
         path: string;
-        parentSlot: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette";
+        parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
         subSlot: string;
         embeddables: {
             regexToInclude: string;
@@ -75,9 +75,9 @@ export declare const baseAppBuildData: z.ZodObject<{
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     slots: {
-        type: "component" | "page" | "embeddable";
+        type: "component" | "embeddable" | "page";
         path: string;
-        parentSlot: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette";
+        parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
         subSlot: string;
         clientOnly: boolean;
         embeddables: {
@@ -88,9 +88,9 @@ export declare const baseAppBuildData: z.ZodObject<{
     }[];
 }, {
     slots: {
-        type: "component" | "page" | "embeddable";
+        type: "component" | "embeddable" | "page";
         path: string;
-        parentSlot: "bibliography" | "math" | "navigation" | "form" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "commandPalette";
+        parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
         subSlot: string;
         embeddables: {
             regexToInclude: string;

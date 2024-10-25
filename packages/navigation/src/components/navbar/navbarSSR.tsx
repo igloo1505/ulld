@@ -1,10 +1,13 @@
 import React, { type ReactNode } from "react";
 import { PluginSettings } from "@ulld/api/pluginSettings-server";
 import type { NavigationFormSettingSchema } from "../../pages/settingPage/form/schema";
+import type { NavbarComponentProps } from "../../types";
 import type { NavbarProps } from "./navbar";
 import Navbar from "./navbar";
 
-type NavbarSSRProps = NavbarProps;
+interface NavbarSSRProps extends Omit<NavbarProps, "logo"> {
+    logo: NavbarComponentProps["logo"]
+}
 
 const NavbarSSR = async (props: NavbarSSRProps): Promise<ReactNode> => {
   const pluginSettings = new PluginSettings<NavigationFormSettingSchema>({

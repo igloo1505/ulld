@@ -104,7 +104,7 @@ export type CitationGroupPropsOutput = z.output<typeof citationGroupSchema>;
 const bibEntryPropsSchemaInner = z
     .object({
         Bib: bibCoreSchema.optional().transform((a) => new BibCore(a)),
-        BibId: z.number().int().default(1),
+        BibId: z.number().int().nullish().default(1),
         readingList: readingListZodObject
             .array()
             .default([])
@@ -190,7 +190,7 @@ export const bibEntryTransform = (
 } => {
     return {
         ...x,
-        BibId: x.BibId === 1 ? x.Bib.id : x.BibId,
+        BibId: (x.BibId === 1 ? x.Bib.id : x.BibId) ?? 1,
     };
 };
 
@@ -204,6 +204,8 @@ export const sequentialListPropsSchema = z.object({
 });
 
 export type ParsedBibEntryProps = z.output<typeof bibEntryPropsSchema>;
+
+export type BibEntrySchemaInput = z.input<typeof bibEntryPropsSchemaInner>
 
 export const todoListZodObject = z
     .object({

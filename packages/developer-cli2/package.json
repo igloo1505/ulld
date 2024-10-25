@@ -1,20 +1,19 @@
 {
   "name": "developer-cli2",
   "version": "0.0.0",
-  "license": "MIT",
-  "bin": "dist/cli.js",
   "type": "module",
-  "engines": {
-    "node": ">=16"
-  },
+  "bin": "dist/cli.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
     "test": "prettier --check . && xo && ava"
   },
-  "files": [
-    "dist"
-  ],
+  "engines": {
+    "node": ">=16"
+  },
   "dependencies": {
     "ink": "4.4.1",
     "meow": "11.0.0",
@@ -35,6 +34,14 @@
     "typescript": "5.5.4",
     "xo": "0.54.2"
   },
+  "prettier": "@vdemedes/prettier-config",
+  "xo": {
+    "extends": "xo-react",
+    "prettier": true,
+    "rules": {
+      "react/prop-types": "off"
+    }
+  },
   "ava": {
     "extensions": {
       "ts": "module",
@@ -44,12 +51,5 @@
       "--loader=ts-node/esm"
     ]
   },
-  "xo": {
-    "extends": "xo-react",
-    "prettier": true,
-    "rules": {
-      "react/prop-types": "off"
-    }
-  },
-  "prettier": "@vdemedes/prettier-config"
+  "license": "MIT"
 }

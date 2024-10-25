@@ -281,6 +281,11 @@ export type Definition = $Result.DefaultSelection<Prisma.$DefinitionPayload>
  */
 export type Settings = $Result.DefaultSelection<Prisma.$SettingsPayload>
 /**
+ * Model PluginSettings
+ * 
+ */
+export type PluginSettings = $Result.DefaultSelection<Prisma.$PluginSettingsPayload>
+/**
  * Model SettingsAppendix
  * 
  */
@@ -788,6 +793,16 @@ export class PrismaClient<
     * ```
     */
   get settings(): Prisma.SettingsDelegate<ExtArgs>;
+
+  /**
+   * `prisma.pluginSettings`: Exposes CRUD operations for the **PluginSettings** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more PluginSettings
+    * const pluginSettings = await prisma.pluginSettings.findMany()
+    * ```
+    */
+  get pluginSettings(): Prisma.PluginSettingsDelegate<ExtArgs>;
 
   /**
    * `prisma.settingsAppendix`: Exposes CRUD operations for the **SettingsAppendix** model.
@@ -1511,6 +1526,7 @@ export namespace Prisma {
     Equation: 'Equation',
     Definition: 'Definition',
     Settings: 'Settings',
+    PluginSettings: 'PluginSettings',
     SettingsAppendix: 'SettingsAppendix',
     RandomImage: 'RandomImage',
     NoteType: 'NoteType',
@@ -1549,7 +1565,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "subject" | "topic" | "tag" | "quote" | "dailyFocus" | "autoSetting" | "readingList" | "bibEntry" | "citationsGroup" | "bib" | "googleCalendarAuth" | "snippet" | "relatedValues" | "equation" | "definition" | "settings" | "settingsAppendix" | "randomImage" | "noteType" | "qAPair" | "practiceExam" | "sequentialNoteList" | "mdxNote" | "ipynb" | "toDoList" | "toDo" | "kanBanCard" | "kanBanList" | "kanban" | "timePeriod" | "diet" | "serving" | "dietaryItem" | "healthReport" | "whiteboard" | "dJT" | "featureRequest" | "waitlistRequest" | "businessContact"
+      modelProps: "subject" | "topic" | "tag" | "quote" | "dailyFocus" | "autoSetting" | "readingList" | "bibEntry" | "citationsGroup" | "bib" | "googleCalendarAuth" | "snippet" | "relatedValues" | "equation" | "definition" | "settings" | "pluginSettings" | "settingsAppendix" | "randomImage" | "noteType" | "qAPair" | "practiceExam" | "sequentialNoteList" | "mdxNote" | "ipynb" | "toDoList" | "toDo" | "kanBanCard" | "kanBanList" | "kanban" | "timePeriod" | "diet" | "serving" | "dietaryItem" | "healthReport" | "whiteboard" | "dJT" | "featureRequest" | "waitlistRequest" | "businessContact"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2670,6 +2686,76 @@ export namespace Prisma {
           count: {
             args: Prisma.SettingsCountArgs<ExtArgs>
             result: $Utils.Optional<SettingsCountAggregateOutputType> | number
+          }
+        }
+      }
+      PluginSettings: {
+        payload: Prisma.$PluginSettingsPayload<ExtArgs>
+        fields: Prisma.PluginSettingsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.PluginSettingsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PluginSettingsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.PluginSettingsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PluginSettingsPayload>
+          }
+          findFirst: {
+            args: Prisma.PluginSettingsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PluginSettingsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.PluginSettingsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PluginSettingsPayload>
+          }
+          findMany: {
+            args: Prisma.PluginSettingsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PluginSettingsPayload>[]
+          }
+          create: {
+            args: Prisma.PluginSettingsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PluginSettingsPayload>
+          }
+          createMany: {
+            args: Prisma.PluginSettingsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.PluginSettingsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PluginSettingsPayload>[]
+          }
+          delete: {
+            args: Prisma.PluginSettingsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PluginSettingsPayload>
+          }
+          update: {
+            args: Prisma.PluginSettingsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PluginSettingsPayload>
+          }
+          deleteMany: {
+            args: Prisma.PluginSettingsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.PluginSettingsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.PluginSettingsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PluginSettingsPayload>
+          }
+          aggregate: {
+            args: Prisma.PluginSettingsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePluginSettings>
+          }
+          groupBy: {
+            args: Prisma.PluginSettingsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PluginSettingsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.PluginSettingsCountArgs<ExtArgs>
+            result: $Utils.Optional<PluginSettingsCountAggregateOutputType> | number
           }
         }
       }
@@ -21181,7 +21267,6 @@ export namespace Prisma {
     lockedLandingImage: number
     cleanOnSync: number
     plotTheme: number
-    pluginSettings: number
     firstSync: number
     lastSync: number
     _all: number
@@ -21234,7 +21319,6 @@ export namespace Prisma {
     lockedLandingImage?: true
     cleanOnSync?: true
     plotTheme?: true
-    pluginSettings?: true
     firstSync?: true
     lastSync?: true
     _all?: true
@@ -21336,7 +21420,6 @@ export namespace Prisma {
     lockedLandingImage: string | null
     cleanOnSync: boolean
     plotTheme: string | null
-    pluginSettings: PrismaJson.PluginSettingsRecord
     firstSync: Date
     lastSync: Date
     _count: SettingsCountAggregateOutputType | null
@@ -21370,7 +21453,6 @@ export namespace Prisma {
     lockedLandingImage?: boolean
     cleanOnSync?: boolean
     plotTheme?: boolean
-    pluginSettings?: boolean
     firstSync?: boolean
     lastSync?: boolean
   }, ExtArgs["result"]["settings"]>
@@ -21385,7 +21467,6 @@ export namespace Prisma {
     lockedLandingImage?: boolean
     cleanOnSync?: boolean
     plotTheme?: boolean
-    pluginSettings?: boolean
     firstSync?: boolean
     lastSync?: boolean
   }, ExtArgs["result"]["settings"]>
@@ -21400,7 +21481,6 @@ export namespace Prisma {
     lockedLandingImage?: boolean
     cleanOnSync?: boolean
     plotTheme?: boolean
-    pluginSettings?: boolean
     firstSync?: boolean
     lastSync?: boolean
   }
@@ -21419,10 +21499,6 @@ export namespace Prisma {
       lockedLandingImage: string | null
       cleanOnSync: boolean
       plotTheme: string | null
-      /**
-       * [PluginSettingsRecord]
-       */
-      pluginSettings: PrismaJson.PluginSettingsRecord
       firstSync: Date
       lastSync: Date
     }, ExtArgs["result"]["settings"]>
@@ -21827,7 +21903,6 @@ export namespace Prisma {
     readonly lockedLandingImage: FieldRef<"Settings", 'String'>
     readonly cleanOnSync: FieldRef<"Settings", 'Boolean'>
     readonly plotTheme: FieldRef<"Settings", 'String'>
-    readonly pluginSettings: FieldRef<"Settings", 'Json'>
     readonly firstSync: FieldRef<"Settings", 'DateTime'>
     readonly lastSync: FieldRef<"Settings", 'DateTime'>
   }
@@ -22115,6 +22190,871 @@ export namespace Prisma {
      * Select specific fields to fetch from the Settings
      */
     select?: SettingsSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model PluginSettings
+   */
+
+  export type AggregatePluginSettings = {
+    _count: PluginSettingsCountAggregateOutputType | null
+    _min: PluginSettingsMinAggregateOutputType | null
+    _max: PluginSettingsMaxAggregateOutputType | null
+  }
+
+  export type PluginSettingsMinAggregateOutputType = {
+    pluginName: string | null
+    firstSync: Date | null
+    lastSync: Date | null
+  }
+
+  export type PluginSettingsMaxAggregateOutputType = {
+    pluginName: string | null
+    firstSync: Date | null
+    lastSync: Date | null
+  }
+
+  export type PluginSettingsCountAggregateOutputType = {
+    pluginName: number
+    data: number
+    firstSync: number
+    lastSync: number
+    _all: number
+  }
+
+
+  export type PluginSettingsMinAggregateInputType = {
+    pluginName?: true
+    firstSync?: true
+    lastSync?: true
+  }
+
+  export type PluginSettingsMaxAggregateInputType = {
+    pluginName?: true
+    firstSync?: true
+    lastSync?: true
+  }
+
+  export type PluginSettingsCountAggregateInputType = {
+    pluginName?: true
+    data?: true
+    firstSync?: true
+    lastSync?: true
+    _all?: true
+  }
+
+  export type PluginSettingsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PluginSettings to aggregate.
+     */
+    where?: PluginSettingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PluginSettings to fetch.
+     */
+    orderBy?: PluginSettingsOrderByWithRelationInput | PluginSettingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: PluginSettingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PluginSettings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PluginSettings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned PluginSettings
+    **/
+    _count?: true | PluginSettingsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PluginSettingsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PluginSettingsMaxAggregateInputType
+  }
+
+  export type GetPluginSettingsAggregateType<T extends PluginSettingsAggregateArgs> = {
+        [P in keyof T & keyof AggregatePluginSettings]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePluginSettings[P]>
+      : GetScalarType<T[P], AggregatePluginSettings[P]>
+  }
+
+
+
+
+  export type PluginSettingsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PluginSettingsWhereInput
+    orderBy?: PluginSettingsOrderByWithAggregationInput | PluginSettingsOrderByWithAggregationInput[]
+    by: PluginSettingsScalarFieldEnum[] | PluginSettingsScalarFieldEnum
+    having?: PluginSettingsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PluginSettingsCountAggregateInputType | true
+    _min?: PluginSettingsMinAggregateInputType
+    _max?: PluginSettingsMaxAggregateInputType
+  }
+
+  export type PluginSettingsGroupByOutputType = {
+    pluginName: string
+    data: PrismaJson.PluginSettingsRecord
+    firstSync: Date
+    lastSync: Date
+    _count: PluginSettingsCountAggregateOutputType | null
+    _min: PluginSettingsMinAggregateOutputType | null
+    _max: PluginSettingsMaxAggregateOutputType | null
+  }
+
+  type GetPluginSettingsGroupByPayload<T extends PluginSettingsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PluginSettingsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PluginSettingsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PluginSettingsGroupByOutputType[P]>
+            : GetScalarType<T[P], PluginSettingsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type PluginSettingsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    pluginName?: boolean
+    data?: boolean
+    firstSync?: boolean
+    lastSync?: boolean
+  }, ExtArgs["result"]["pluginSettings"]>
+
+  export type PluginSettingsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    pluginName?: boolean
+    data?: boolean
+    firstSync?: boolean
+    lastSync?: boolean
+  }, ExtArgs["result"]["pluginSettings"]>
+
+  export type PluginSettingsSelectScalar = {
+    pluginName?: boolean
+    data?: boolean
+    firstSync?: boolean
+    lastSync?: boolean
+  }
+
+
+  export type $PluginSettingsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "PluginSettings"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      pluginName: string
+      /**
+       * [PluginSettingsRecord]
+       */
+      data: PrismaJson.PluginSettingsRecord
+      firstSync: Date
+      lastSync: Date
+    }, ExtArgs["result"]["pluginSettings"]>
+    composites: {}
+  }
+
+  type PluginSettingsGetPayload<S extends boolean | null | undefined | PluginSettingsDefaultArgs> = $Result.GetResult<Prisma.$PluginSettingsPayload, S>
+
+  type PluginSettingsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<PluginSettingsFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: PluginSettingsCountAggregateInputType | true
+    }
+
+  export interface PluginSettingsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PluginSettings'], meta: { name: 'PluginSettings' } }
+    /**
+     * Find zero or one PluginSettings that matches the filter.
+     * @param {PluginSettingsFindUniqueArgs} args - Arguments to find a PluginSettings
+     * @example
+     * // Get one PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PluginSettingsFindUniqueArgs>(args: SelectSubset<T, PluginSettingsFindUniqueArgs<ExtArgs>>): Prisma__PluginSettingsClient<$Result.GetResult<Prisma.$PluginSettingsPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one PluginSettings that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {PluginSettingsFindUniqueOrThrowArgs} args - Arguments to find a PluginSettings
+     * @example
+     * // Get one PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PluginSettingsFindUniqueOrThrowArgs>(args: SelectSubset<T, PluginSettingsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PluginSettingsClient<$Result.GetResult<Prisma.$PluginSettingsPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first PluginSettings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PluginSettingsFindFirstArgs} args - Arguments to find a PluginSettings
+     * @example
+     * // Get one PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PluginSettingsFindFirstArgs>(args?: SelectSubset<T, PluginSettingsFindFirstArgs<ExtArgs>>): Prisma__PluginSettingsClient<$Result.GetResult<Prisma.$PluginSettingsPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first PluginSettings that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PluginSettingsFindFirstOrThrowArgs} args - Arguments to find a PluginSettings
+     * @example
+     * // Get one PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PluginSettingsFindFirstOrThrowArgs>(args?: SelectSubset<T, PluginSettingsFindFirstOrThrowArgs<ExtArgs>>): Prisma__PluginSettingsClient<$Result.GetResult<Prisma.$PluginSettingsPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more PluginSettings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PluginSettingsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.findMany()
+     * 
+     * // Get first 10 PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.findMany({ take: 10 })
+     * 
+     * // Only select the `pluginName`
+     * const pluginSettingsWithPluginNameOnly = await prisma.pluginSettings.findMany({ select: { pluginName: true } })
+     * 
+     */
+    findMany<T extends PluginSettingsFindManyArgs>(args?: SelectSubset<T, PluginSettingsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PluginSettingsPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a PluginSettings.
+     * @param {PluginSettingsCreateArgs} args - Arguments to create a PluginSettings.
+     * @example
+     * // Create one PluginSettings
+     * const PluginSettings = await prisma.pluginSettings.create({
+     *   data: {
+     *     // ... data to create a PluginSettings
+     *   }
+     * })
+     * 
+     */
+    create<T extends PluginSettingsCreateArgs>(args: SelectSubset<T, PluginSettingsCreateArgs<ExtArgs>>): Prisma__PluginSettingsClient<$Result.GetResult<Prisma.$PluginSettingsPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many PluginSettings.
+     * @param {PluginSettingsCreateManyArgs} args - Arguments to create many PluginSettings.
+     * @example
+     * // Create many PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends PluginSettingsCreateManyArgs>(args?: SelectSubset<T, PluginSettingsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many PluginSettings and returns the data saved in the database.
+     * @param {PluginSettingsCreateManyAndReturnArgs} args - Arguments to create many PluginSettings.
+     * @example
+     * // Create many PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many PluginSettings and only return the `pluginName`
+     * const pluginSettingsWithPluginNameOnly = await prisma.pluginSettings.createManyAndReturn({ 
+     *   select: { pluginName: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends PluginSettingsCreateManyAndReturnArgs>(args?: SelectSubset<T, PluginSettingsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PluginSettingsPayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a PluginSettings.
+     * @param {PluginSettingsDeleteArgs} args - Arguments to delete one PluginSettings.
+     * @example
+     * // Delete one PluginSettings
+     * const PluginSettings = await prisma.pluginSettings.delete({
+     *   where: {
+     *     // ... filter to delete one PluginSettings
+     *   }
+     * })
+     * 
+     */
+    delete<T extends PluginSettingsDeleteArgs>(args: SelectSubset<T, PluginSettingsDeleteArgs<ExtArgs>>): Prisma__PluginSettingsClient<$Result.GetResult<Prisma.$PluginSettingsPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one PluginSettings.
+     * @param {PluginSettingsUpdateArgs} args - Arguments to update one PluginSettings.
+     * @example
+     * // Update one PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends PluginSettingsUpdateArgs>(args: SelectSubset<T, PluginSettingsUpdateArgs<ExtArgs>>): Prisma__PluginSettingsClient<$Result.GetResult<Prisma.$PluginSettingsPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more PluginSettings.
+     * @param {PluginSettingsDeleteManyArgs} args - Arguments to filter PluginSettings to delete.
+     * @example
+     * // Delete a few PluginSettings
+     * const { count } = await prisma.pluginSettings.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends PluginSettingsDeleteManyArgs>(args?: SelectSubset<T, PluginSettingsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PluginSettings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PluginSettingsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends PluginSettingsUpdateManyArgs>(args: SelectSubset<T, PluginSettingsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one PluginSettings.
+     * @param {PluginSettingsUpsertArgs} args - Arguments to update or create a PluginSettings.
+     * @example
+     * // Update or create a PluginSettings
+     * const pluginSettings = await prisma.pluginSettings.upsert({
+     *   create: {
+     *     // ... data to create a PluginSettings
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the PluginSettings we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PluginSettingsUpsertArgs>(args: SelectSubset<T, PluginSettingsUpsertArgs<ExtArgs>>): Prisma__PluginSettingsClient<$Result.GetResult<Prisma.$PluginSettingsPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of PluginSettings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PluginSettingsCountArgs} args - Arguments to filter PluginSettings to count.
+     * @example
+     * // Count the number of PluginSettings
+     * const count = await prisma.pluginSettings.count({
+     *   where: {
+     *     // ... the filter for the PluginSettings we want to count
+     *   }
+     * })
+    **/
+    count<T extends PluginSettingsCountArgs>(
+      args?: Subset<T, PluginSettingsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PluginSettingsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a PluginSettings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PluginSettingsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PluginSettingsAggregateArgs>(args: Subset<T, PluginSettingsAggregateArgs>): Prisma.PrismaPromise<GetPluginSettingsAggregateType<T>>
+
+    /**
+     * Group by PluginSettings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PluginSettingsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends PluginSettingsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: PluginSettingsGroupByArgs['orderBy'] }
+        : { orderBy?: PluginSettingsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, PluginSettingsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPluginSettingsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the PluginSettings model
+   */
+  readonly fields: PluginSettingsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for PluginSettings.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__PluginSettingsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the PluginSettings model
+   */ 
+  interface PluginSettingsFieldRefs {
+    readonly pluginName: FieldRef<"PluginSettings", 'String'>
+    readonly data: FieldRef<"PluginSettings", 'Json'>
+    readonly firstSync: FieldRef<"PluginSettings", 'DateTime'>
+    readonly lastSync: FieldRef<"PluginSettings", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * PluginSettings findUnique
+   */
+  export type PluginSettingsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelect<ExtArgs> | null
+    /**
+     * Filter, which PluginSettings to fetch.
+     */
+    where: PluginSettingsWhereUniqueInput
+  }
+
+  /**
+   * PluginSettings findUniqueOrThrow
+   */
+  export type PluginSettingsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelect<ExtArgs> | null
+    /**
+     * Filter, which PluginSettings to fetch.
+     */
+    where: PluginSettingsWhereUniqueInput
+  }
+
+  /**
+   * PluginSettings findFirst
+   */
+  export type PluginSettingsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelect<ExtArgs> | null
+    /**
+     * Filter, which PluginSettings to fetch.
+     */
+    where?: PluginSettingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PluginSettings to fetch.
+     */
+    orderBy?: PluginSettingsOrderByWithRelationInput | PluginSettingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PluginSettings.
+     */
+    cursor?: PluginSettingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PluginSettings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PluginSettings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PluginSettings.
+     */
+    distinct?: PluginSettingsScalarFieldEnum | PluginSettingsScalarFieldEnum[]
+  }
+
+  /**
+   * PluginSettings findFirstOrThrow
+   */
+  export type PluginSettingsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelect<ExtArgs> | null
+    /**
+     * Filter, which PluginSettings to fetch.
+     */
+    where?: PluginSettingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PluginSettings to fetch.
+     */
+    orderBy?: PluginSettingsOrderByWithRelationInput | PluginSettingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PluginSettings.
+     */
+    cursor?: PluginSettingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PluginSettings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PluginSettings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PluginSettings.
+     */
+    distinct?: PluginSettingsScalarFieldEnum | PluginSettingsScalarFieldEnum[]
+  }
+
+  /**
+   * PluginSettings findMany
+   */
+  export type PluginSettingsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelect<ExtArgs> | null
+    /**
+     * Filter, which PluginSettings to fetch.
+     */
+    where?: PluginSettingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PluginSettings to fetch.
+     */
+    orderBy?: PluginSettingsOrderByWithRelationInput | PluginSettingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing PluginSettings.
+     */
+    cursor?: PluginSettingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PluginSettings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PluginSettings.
+     */
+    skip?: number
+    distinct?: PluginSettingsScalarFieldEnum | PluginSettingsScalarFieldEnum[]
+  }
+
+  /**
+   * PluginSettings create
+   */
+  export type PluginSettingsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelect<ExtArgs> | null
+    /**
+     * The data needed to create a PluginSettings.
+     */
+    data: XOR<PluginSettingsCreateInput, PluginSettingsUncheckedCreateInput>
+  }
+
+  /**
+   * PluginSettings createMany
+   */
+  export type PluginSettingsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many PluginSettings.
+     */
+    data: PluginSettingsCreateManyInput | PluginSettingsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * PluginSettings createManyAndReturn
+   */
+  export type PluginSettingsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many PluginSettings.
+     */
+    data: PluginSettingsCreateManyInput | PluginSettingsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * PluginSettings update
+   */
+  export type PluginSettingsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelect<ExtArgs> | null
+    /**
+     * The data needed to update a PluginSettings.
+     */
+    data: XOR<PluginSettingsUpdateInput, PluginSettingsUncheckedUpdateInput>
+    /**
+     * Choose, which PluginSettings to update.
+     */
+    where: PluginSettingsWhereUniqueInput
+  }
+
+  /**
+   * PluginSettings updateMany
+   */
+  export type PluginSettingsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update PluginSettings.
+     */
+    data: XOR<PluginSettingsUpdateManyMutationInput, PluginSettingsUncheckedUpdateManyInput>
+    /**
+     * Filter which PluginSettings to update
+     */
+    where?: PluginSettingsWhereInput
+  }
+
+  /**
+   * PluginSettings upsert
+   */
+  export type PluginSettingsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelect<ExtArgs> | null
+    /**
+     * The filter to search for the PluginSettings to update in case it exists.
+     */
+    where: PluginSettingsWhereUniqueInput
+    /**
+     * In case the PluginSettings found by the `where` argument doesn't exist, create a new PluginSettings with this data.
+     */
+    create: XOR<PluginSettingsCreateInput, PluginSettingsUncheckedCreateInput>
+    /**
+     * In case the PluginSettings was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<PluginSettingsUpdateInput, PluginSettingsUncheckedUpdateInput>
+  }
+
+  /**
+   * PluginSettings delete
+   */
+  export type PluginSettingsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelect<ExtArgs> | null
+    /**
+     * Filter which PluginSettings to delete.
+     */
+    where: PluginSettingsWhereUniqueInput
+  }
+
+  /**
+   * PluginSettings deleteMany
+   */
+  export type PluginSettingsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PluginSettings to delete
+     */
+    where?: PluginSettingsWhereInput
+  }
+
+  /**
+   * PluginSettings without action
+   */
+  export type PluginSettingsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PluginSettings
+     */
+    select?: PluginSettingsSelect<ExtArgs> | null
   }
 
 
@@ -46015,12 +46955,21 @@ export namespace Prisma {
     lockedLandingImage: 'lockedLandingImage',
     cleanOnSync: 'cleanOnSync',
     plotTheme: 'plotTheme',
-    pluginSettings: 'pluginSettings',
     firstSync: 'firstSync',
     lastSync: 'lastSync'
   };
 
   export type SettingsScalarFieldEnum = (typeof SettingsScalarFieldEnum)[keyof typeof SettingsScalarFieldEnum]
+
+
+  export const PluginSettingsScalarFieldEnum: {
+    pluginName: 'pluginName',
+    data: 'data',
+    firstSync: 'firstSync',
+    lastSync: 'lastSync'
+  };
+
+  export type PluginSettingsScalarFieldEnum = (typeof PluginSettingsScalarFieldEnum)[keyof typeof PluginSettingsScalarFieldEnum]
 
 
   export const SettingsAppendixScalarFieldEnum: {
@@ -46540,6 +47489,13 @@ export namespace Prisma {
   };
 
   export type SettingsOrderByRelevanceFieldEnum = (typeof SettingsOrderByRelevanceFieldEnum)[keyof typeof SettingsOrderByRelevanceFieldEnum]
+
+
+  export const PluginSettingsOrderByRelevanceFieldEnum: {
+    pluginName: 'pluginName'
+  };
+
+  export type PluginSettingsOrderByRelevanceFieldEnum = (typeof PluginSettingsOrderByRelevanceFieldEnum)[keyof typeof PluginSettingsOrderByRelevanceFieldEnum]
 
 
   export const SettingsAppendixOrderByRelevanceFieldEnum: {
@@ -48027,7 +48983,6 @@ export namespace Prisma {
     lockedLandingImage?: StringNullableFilter<"Settings"> | string | null
     cleanOnSync?: BoolFilter<"Settings"> | boolean
     plotTheme?: StringNullableFilter<"Settings"> | string | null
-    pluginSettings?: JsonFilter<"Settings">
     firstSync?: DateTimeFilter<"Settings"> | Date | string
     lastSync?: DateTimeFilter<"Settings"> | Date | string
   }
@@ -48042,7 +48997,6 @@ export namespace Prisma {
     lockedLandingImage?: SortOrderInput | SortOrder
     cleanOnSync?: SortOrder
     plotTheme?: SortOrderInput | SortOrder
-    pluginSettings?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
     _relevance?: SettingsOrderByRelevanceInput
@@ -48061,7 +49015,6 @@ export namespace Prisma {
     lockedLandingImage?: StringNullableFilter<"Settings"> | string | null
     cleanOnSync?: BoolFilter<"Settings"> | boolean
     plotTheme?: StringNullableFilter<"Settings"> | string | null
-    pluginSettings?: JsonFilter<"Settings">
     firstSync?: DateTimeFilter<"Settings"> | Date | string
     lastSync?: DateTimeFilter<"Settings"> | Date | string
   }, "id">
@@ -48076,7 +49029,6 @@ export namespace Prisma {
     lockedLandingImage?: SortOrderInput | SortOrder
     cleanOnSync?: SortOrder
     plotTheme?: SortOrderInput | SortOrder
-    pluginSettings?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
     _count?: SettingsCountOrderByAggregateInput
@@ -48099,9 +49051,56 @@ export namespace Prisma {
     lockedLandingImage?: StringNullableWithAggregatesFilter<"Settings"> | string | null
     cleanOnSync?: BoolWithAggregatesFilter<"Settings"> | boolean
     plotTheme?: StringNullableWithAggregatesFilter<"Settings"> | string | null
-    pluginSettings?: JsonWithAggregatesFilter<"Settings">
     firstSync?: DateTimeWithAggregatesFilter<"Settings"> | Date | string
     lastSync?: DateTimeWithAggregatesFilter<"Settings"> | Date | string
+  }
+
+  export type PluginSettingsWhereInput = {
+    AND?: PluginSettingsWhereInput | PluginSettingsWhereInput[]
+    OR?: PluginSettingsWhereInput[]
+    NOT?: PluginSettingsWhereInput | PluginSettingsWhereInput[]
+    pluginName?: StringFilter<"PluginSettings"> | string
+    data?: JsonFilter<"PluginSettings">
+    firstSync?: DateTimeFilter<"PluginSettings"> | Date | string
+    lastSync?: DateTimeFilter<"PluginSettings"> | Date | string
+  }
+
+  export type PluginSettingsOrderByWithRelationInput = {
+    pluginName?: SortOrder
+    data?: SortOrder
+    firstSync?: SortOrder
+    lastSync?: SortOrder
+    _relevance?: PluginSettingsOrderByRelevanceInput
+  }
+
+  export type PluginSettingsWhereUniqueInput = Prisma.AtLeast<{
+    pluginName?: string
+    AND?: PluginSettingsWhereInput | PluginSettingsWhereInput[]
+    OR?: PluginSettingsWhereInput[]
+    NOT?: PluginSettingsWhereInput | PluginSettingsWhereInput[]
+    data?: JsonFilter<"PluginSettings">
+    firstSync?: DateTimeFilter<"PluginSettings"> | Date | string
+    lastSync?: DateTimeFilter<"PluginSettings"> | Date | string
+  }, "pluginName" | "pluginName">
+
+  export type PluginSettingsOrderByWithAggregationInput = {
+    pluginName?: SortOrder
+    data?: SortOrder
+    firstSync?: SortOrder
+    lastSync?: SortOrder
+    _count?: PluginSettingsCountOrderByAggregateInput
+    _max?: PluginSettingsMaxOrderByAggregateInput
+    _min?: PluginSettingsMinOrderByAggregateInput
+  }
+
+  export type PluginSettingsScalarWhereWithAggregatesInput = {
+    AND?: PluginSettingsScalarWhereWithAggregatesInput | PluginSettingsScalarWhereWithAggregatesInput[]
+    OR?: PluginSettingsScalarWhereWithAggregatesInput[]
+    NOT?: PluginSettingsScalarWhereWithAggregatesInput | PluginSettingsScalarWhereWithAggregatesInput[]
+    pluginName?: StringWithAggregatesFilter<"PluginSettings"> | string
+    data?: JsonWithAggregatesFilter<"PluginSettings">
+    firstSync?: DateTimeWithAggregatesFilter<"PluginSettings"> | Date | string
+    lastSync?: DateTimeWithAggregatesFilter<"PluginSettings"> | Date | string
   }
 
   export type SettingsAppendixWhereInput = {
@@ -51056,7 +52055,6 @@ export namespace Prisma {
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
     plotTheme?: string | null
-    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -51071,7 +52069,6 @@ export namespace Prisma {
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
     plotTheme?: string | null
-    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -51086,7 +52083,6 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
-    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51101,7 +52097,6 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
-    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51116,7 +52111,6 @@ export namespace Prisma {
     lockedLandingImage?: string | null
     cleanOnSync?: boolean
     plotTheme?: string | null
-    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: Date | string
     lastSync?: Date | string
   }
@@ -51131,7 +52125,6 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
-    pluginSettings?: PrismaJson.PluginSettingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51146,7 +52139,55 @@ export namespace Prisma {
     lockedLandingImage?: NullableStringFieldUpdateOperationsInput | string | null
     cleanOnSync?: BoolFieldUpdateOperationsInput | boolean
     plotTheme?: NullableStringFieldUpdateOperationsInput | string | null
-    pluginSettings?: PrismaJson.PluginSettingsRecord
+    firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PluginSettingsCreateInput = {
+    pluginName: string
+    data?: PrismaJson.PluginSettingsRecord
+    firstSync?: Date | string
+    lastSync?: Date | string
+  }
+
+  export type PluginSettingsUncheckedCreateInput = {
+    pluginName: string
+    data?: PrismaJson.PluginSettingsRecord
+    firstSync?: Date | string
+    lastSync?: Date | string
+  }
+
+  export type PluginSettingsUpdateInput = {
+    pluginName?: StringFieldUpdateOperationsInput | string
+    data?: PrismaJson.PluginSettingsRecord
+    firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PluginSettingsUncheckedUpdateInput = {
+    pluginName?: StringFieldUpdateOperationsInput | string
+    data?: PrismaJson.PluginSettingsRecord
+    firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PluginSettingsCreateManyInput = {
+    pluginName: string
+    data?: PrismaJson.PluginSettingsRecord
+    firstSync?: Date | string
+    lastSync?: Date | string
+  }
+
+  export type PluginSettingsUpdateManyMutationInput = {
+    pluginName?: StringFieldUpdateOperationsInput | string
+    data?: PrismaJson.PluginSettingsRecord
+    firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PluginSettingsUncheckedUpdateManyInput = {
+    pluginName?: StringFieldUpdateOperationsInput | string
+    data?: PrismaJson.PluginSettingsRecord
     firstSync?: DateTimeFieldUpdateOperationsInput | Date | string
     lastSync?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -54085,7 +55126,6 @@ export namespace Prisma {
     lockedLandingImage?: SortOrder
     cleanOnSync?: SortOrder
     plotTheme?: SortOrder
-    pluginSettings?: SortOrder
     firstSync?: SortOrder
     lastSync?: SortOrder
   }
@@ -54134,6 +55174,31 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumImageAlignmentFilter<$PrismaModel>
     _max?: NestedEnumImageAlignmentFilter<$PrismaModel>
+  }
+
+  export type PluginSettingsOrderByRelevanceInput = {
+    fields: PluginSettingsOrderByRelevanceFieldEnum | PluginSettingsOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type PluginSettingsCountOrderByAggregateInput = {
+    pluginName?: SortOrder
+    data?: SortOrder
+    firstSync?: SortOrder
+    lastSync?: SortOrder
+  }
+
+  export type PluginSettingsMaxOrderByAggregateInput = {
+    pluginName?: SortOrder
+    firstSync?: SortOrder
+    lastSync?: SortOrder
+  }
+
+  export type PluginSettingsMinOrderByAggregateInput = {
+    pluginName?: SortOrder
+    firstSync?: SortOrder
+    lastSync?: SortOrder
   }
 
   export type BytesFilter<$PrismaModel = never> = {
@@ -70970,6 +72035,10 @@ export namespace Prisma {
      * @deprecated Use SettingsDefaultArgs instead
      */
     export type SettingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = SettingsDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use PluginSettingsDefaultArgs instead
+     */
+    export type PluginSettingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = PluginSettingsDefaultArgs<ExtArgs>
     /**
      * @deprecated Use SettingsAppendixDefaultArgs instead
      */

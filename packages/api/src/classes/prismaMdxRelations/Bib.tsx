@@ -30,10 +30,15 @@ export class BibCore {
             this.entries = bibEntryPropsSchema
                 .innerType()
                 .partial()
-                .transform(bibEntryTransform)
+                .transform((x) => {
+                    if(typeof x.BibId !== "number"){
+                        x.BibId = 1
+                    }
+                    return x
+                })
                 .array()
                 .parse(props.entries)
-                .map((a) => new BibEntry(a));
+                .map((a) => new BibEntry(bibEntryPropsSchema.parse(a)));
         }
     }
     // TODO: Need to implement this again according to google scholar/books docs
@@ -80,7 +85,7 @@ export class BibCore {
         };
     }
     upsertArgs(): Prisma.BibUpsertArgs {
-        let input = this.createInput();
+        const input = this.createInput();
         return {
             where: this.whereUniqueInput(),
             create: input,
@@ -103,8 +108,8 @@ export class BibCore {
         );
     }
     getCitationsInNote(content: string) {
-        let regex = /\[@(?<citation>\S*)]/gi;
-        let data = [];
+        const regex = /\[@(?<citation>\S*)]/gi;
+        const data = [];
         let m;
         do {
             m = regex.exec(content);
@@ -121,11 +126,11 @@ export class BibCore {
         return this.entries.find((e) => e.id === id);
     }
     async readFile(file?: string) {
-        let _bibFile = file || this.filename;
+        const _bibFile = file || this.filename;
         if (!_bibFile) {
             return;
         }
-        let content: string | undefined = undefined;
+        let content: string | undefined;
         let parsed: BibFilePresenter | undefined;
         const query = await getUniversalQuery("readBibFromFileSystem");
         const res = await query();
@@ -145,14 +150,14 @@ export class BibCore {
     }
     readFileObject(
         file: File,
-        autoAppend: boolean = false,
+        autoAppend = false,
         callback?: (result: any) => void,
     ) {
         const reader = new FileReader();
         reader.onload = async () => {
             if (reader.result) {
-                let parsed = parseBibFile(reader.result as string);
-                let newEntries = BibEntry.fromFsList(parsed.entries_raw);
+                const parsed = parseBibFile(reader.result as string);
+                const newEntries = BibEntry.fromFsList(parsed.entries_raw);
                 this.addEntries(newEntries);
             }
             callback && callback(reader.result);
@@ -170,7 +175,7 @@ export class BibCore {
                 entries: [],
             });
         }
-        let parsed = bibCoreSchema.parse(item);
+        const parsed = bibCoreSchema.parse(item);
         return new BibCore(parsed);
     }
 }

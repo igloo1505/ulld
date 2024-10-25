@@ -1,6 +1,6 @@
 import type { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import type { NavigationLink } from "@ulld/configschema/buildTypes";
-import type { FC, HTMLProps, ReactNode } from "react";
+import type { FC, HTMLProps } from "react";
 import type { ValidIconName } from "@ulld/icons";
 import type { NotePropertiesOutput, PassedLogoProps } from "@ulld/types";
 
@@ -18,7 +18,8 @@ export interface NoteDetailSheetProps {
 export interface NavbarComponentProps {
     noteTypes: AppConfigSchemaOutput["noteTypes"];
     navConfig: AppConfigSchemaOutput["navigation"];
-    logo: FC<PassedLogoProps>;
+    /** Logo component _should_ always be available, but marked as optional to encourage proper handling. */
+    logo?: FC<PassedLogoProps>;
 }
 
 export interface FullScreenNavProps

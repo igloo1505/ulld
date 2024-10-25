@@ -27,8 +27,6 @@ export const AdmonitionContainer = (props: AdmonitionContainerProps): ReactNode 
 
     const { body, type, title, dropdown, sidebar, footer, center } = props;
 
-    console.log("footer: ", footer)
-
     return (
         <div
             className={cn(

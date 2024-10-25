@@ -7,10 +7,10 @@ require('../chunk-MQKT3OUL.cjs');
 require('../chunk-N3UYQGE3.cjs');
 
 
-var _chunkGV6X5BBPcjs = require('../chunk-GV6X5BBP.cjs');
+var _chunkIDPXUFRGcjs = require('../chunk-IDPXUFRG.cjs');
 require('../chunk-UFNRIBN3.cjs');
 require('../chunk-JUH5FQQR.cjs');
-require('../chunk-C4XI6WMK.cjs');
+require('../chunk-EEXWFUX2.cjs');
 
 // src/configUtilityTypes/general.ts
 var getDocumentTypeConfig = (docType, config) => {
@@ -26,7 +26,7 @@ var getNoteTypeFromPath = (rootRelativePath, config) => {
     (n) => Boolean(n.fs && rootRelativePath.includes(n.fs))
   )]);
   let nt = _optionalChain([nts, 'access', _7 => _7.filter, 'call', _8 => _8((f) => typeof f.fs !== "undefined"), 'access', _9 => _9.sort, 'call', _10 => _10((a, b) => _optionalChain([b, 'access', _11 => _11.fs, 'optionalAccess', _12 => _12.length]) - _optionalChain([a, 'access', _13 => _13.fs, 'optionalAccess', _14 => _14.length])), 'optionalAccess', _15 => _15[0]]);
-  return nt ? _chunkGV6X5BBPcjs.documentTypeConfigSchema.parse(nt) : void 0;
+  return nt ? _chunkIDPXUFRGcjs.documentTypeConfigSchema.parse(nt) : void 0;
 };
 var getRootRelativePath = (slug, docType, config) => {
   const _config = config || _chunkDI5325TFcjs.getInternalConfig.call(void 0, );

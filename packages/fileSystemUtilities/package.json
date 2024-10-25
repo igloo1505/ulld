@@ -1,35 +1,36 @@
 {
-  "name": "@ulld/file-system-utils",
-  "version": "0.0.20",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "src"
-  ],
-  "exports": {
-    "./path": "./src/classes/path/main.ts",
-    "./methods-moveAndChangeExtension": "./src/methods/moveAndChangeExtension.ts",
-    "./methods-mapLinesAndReplace": "./src/methods/modifyContent/mapLinesAndReplace.ts"
-  },
-  "dependencies": {
-    "@ulld/eslint-config": "*",
-    "boxen": "8.0.1",
-    "chalk": "5.3.0",
-    "contains-path": "1.0.0",
-    "dotenv": "16.4.5",
-    "edit-string": "1.1.6",
-    "find-up": "7.0.0",
-    "fs-extra": "11.2.0",
-    "node-emoji": "2.1.3",
-    "node-fs-extra": "0.8.2",
-    "node-notifier": "10.0.1",
-    "shelljs": "0.8.5",
-    "xdg-app-paths": "8.3.0"
-  },
-  "packageManager": "pnpm@9.0.4",
-  "devDependencies": {
-    "mock-fs": "5.4.0"
-  }
+    "name": "@ulld/file-system-utils",
+    "version": "0.0.20",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "src"
+    ],
+    "exports": {
+        "./path": "./src/classes/path/main.ts",
+        "./methods-moveAndChangeExtension": "./src/methods/moveAndChangeExtension.ts",
+        "./methods-mapLinesAndReplace": "./src/methods/modifyContent/mapLinesAndReplace.ts"
+    },
+    "dependencies": {
+        "@ulld/eslint-config": "*",
+        "boxen": "8.0.1",
+        "chalk": "5.3.0",
+        "contains-path": "1.0.0",
+        "dotenv": "16.4.5",
+        "edit-string": "1.1.6",
+        "find-up": "7.0.0",
+        "fs-extra": "11.2.0",
+        "node-emoji": "2.1.3",
+        "node-fs-extra": "0.8.2",
+        "node-notifier": "10.0.1",
+        "shelljs": "0.8.5",
+        "xdg-app-paths": "8.3.0"
+    },
+    "devDependencies": {
+        "mock-fs": "5.4.0"
+    },
+    "peerDependencies": {},
+    "packageManager": "pnpm@9.0.4"
 }

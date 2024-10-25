@@ -1,17 +1,19 @@
 import {
   docTypeUISchema,
   docTypeUISchemaOutput,
+  documentTypeConfigMinimalOutputSchema,
   documentTypeConfigSchema,
   documentTypeConfigSchemaBase,
   documentTypeConfigSchemaInner,
   documentTypeConfigSchemaOutputSchema,
   zodDocTypeInput
-} from "../chunk-QY7EXTOX.mjs";
+} from "../chunk-DSCZCBFM.mjs";
 import "../chunk-XHBPEY36.mjs";
-import "../chunk-Y4CBYEJ6.mjs";
+import "../chunk-U5NPFAWN.mjs";
 export {
   docTypeUISchema,
   docTypeUISchemaOutput,
+  documentTypeConfigMinimalOutputSchema,
   documentTypeConfigSchema,
   documentTypeConfigSchemaBase,
   documentTypeConfigSchemaInner,

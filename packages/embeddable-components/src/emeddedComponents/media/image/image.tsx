@@ -9,6 +9,8 @@ import DispatchRenderedImageEvent from "../../dispatchRenderedImageEvent";
 import { readAppConfigSync } from "@ulld/developer/readAppConfig";
 import MemoizedEmbeddableClientImageElement from "./embeddableImageClientElement";
 import { formatImageSourceString } from "./serverUtils";
+import { isNoConfig } from "@ulld/utilities/isNoConfig";
+import { AppConfigSchemaOutput, MinimalParsableAppConfig, MinimalParsableAppConfigOutput } from "@ulld/configschema/types";
 
 type ImgProps = EmbeddedImageProps & Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, "title"> & { 
     noConfig?: boolean
@@ -81,7 +83,7 @@ const C = (props: ImgProps) => {
                 {...props}
                 imgProps={imgProps}
             />
-            {(props.desc || props.label) && (
+            {(props.desc || props.label) ? (
                 <div
                     className={clsx(
                         "text-sm text-muted-foreground mt-2",
@@ -89,24 +91,37 @@ const C = (props: ImgProps) => {
                         props.descLeft && "w-full text-left",
                     )}
                 >
-                    {(props.label || props.desc) && <SelfFigureIndex 
+                    {(props.label || props.desc) ? <SelfFigureIndex 
                         id={id} 
                         desc={props.desc}
                         imageId={imgProps.id}
-                    />}
+                    /> : null}
                 </div>
-            )}
+            ) : null}
             <DispatchRenderedImageEvent />
         </div>
     );
 };
 
+const isImageMapImage = (config: MinimalParsableAppConfigOutput | undefined | null, props: ImgProps): boolean => {
+    if(!props.image || !config){
+        return false
+    }
+    const imageMap = config.UI?.media?.imageMap
+    if(imageMap){
+        return Boolean(props.image in imageMap)
+    } 
+    return false
+}
 
 export const EmbeddedImage = (props: ImgProps) => {
-    const config = props.noConfig ? null : readAppConfigSync();
-    const { image } = props;
-    if (image && config && image in config?.UI?.media?.imageMap) {
-        return <ImageMapImage {...props} image={image} />
+    const config = isNoConfig(props) ? null : readAppConfigSync();
+    if (isImageMapImage(config, props)) {
+        return <ImageMapImage
+            {...props} 
+            /* eslint-disable-next-line  */
+            image={props.image!}
+        />
     }
     return <C {...props} src={props.src || props.url} />
 };

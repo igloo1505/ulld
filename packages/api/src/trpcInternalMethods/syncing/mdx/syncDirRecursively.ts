@@ -1,18 +1,19 @@
-import { syncMdx, SyncMdxProps } from "./syncMdx";
-import { globSync } from "glob";
-import { prisma } from "@ulld/database";
 import path from "path";
+import { prisma } from "@ulld/database";
+import { globSync } from "glob";
 import {
     sortNoteTypeDataForParsing,
     getNoteTypeDataFromPath,
 } from "@ulld/utilities/mdxParserUtils";
+import { syncMdx } from "./syncMdx";
+import type { SyncMdxProps } from "./syncMdx";
 
 export type UniversalMdxProps = Omit<
     SyncMdxProps,
     "file" | "dir" | "docTypeData" | "bookmarked" | "rootRelativePath"
 >;
 
-export const syncDirRecursively = async (props: UniversalMdxProps) => {
+export const syncDirRecursively = async (props: UniversalMdxProps): Promise<void> => {
     let allNotes = await prisma.mdxNote.findMany({
         select: {
             rootRelativePath: true,
@@ -26,15 +27,15 @@ export const syncDirRecursively = async (props: UniversalMdxProps) => {
         (a, b) => b.rootRelativePath.length - a.rootRelativePath.length,
     );
 
-    let filePaths = globSync("**/*.mdx", {
+    const filePaths = globSync("**/*.mdx", {
         cwd: props.appConfig.fsRoot,
         nodir: true,
-        ignore: props.appConfig.ignoreFilepaths.map((x) => x.original),
+        ignore: props.appConfig.ignoreFilepaths?.map((x) => x),
     });
 
     let existingNotePaths: (string | false)[] = [];
     if (props.opts.removeIfNotInFs) {
-        let an = await props.prisma.mdxNote.findMany({
+        const an = await props.prisma.mdxNote.findMany({
             select: {
                 rootRelativePath: true,
             },
@@ -42,22 +43,22 @@ export const syncDirRecursively = async (props: UniversalMdxProps) => {
         existingNotePaths = an.map((n) => n.rootRelativePath);
     }
 
-    let noteTypeIds = sortNoteTypeDataForParsing(props.appConfig);
+    const noteTypeIds = sortNoteTypeDataForParsing(props.appConfig);
 
     for await (const rootRelativePath of filePaths) {
         const absPath = path.join(props.appConfig.fsRoot, rootRelativePath);
 
-        let docTypeData = getNoteTypeDataFromPath(
+        const docTypeData = getNoteTypeDataFromPath(
             rootRelativePath,
             props.appConfig,
             noteTypeIds,
         );
 
         if (!docTypeData) {
+            // eslint-disable-next-line no-console -- Need to log error. #MoveToLoggerPackage
             console.error(`Can not save ${absPath}. No document type was found.`);
-        } else {
-            if (rootRelativePath.endsWith(".mdx")) {
-                let _index = existingNotePaths.indexOf(rootRelativePath);
+        } else if (rootRelativePath.endsWith(".mdx")) {
+                const _index = existingNotePaths.indexOf(rootRelativePath);
                 if (_index >= 0) {
                     existingNotePaths[_index] = false;
                 }
@@ -72,7 +73,6 @@ export const syncDirRecursively = async (props: UniversalMdxProps) => {
                     ),
                 });
             }
-        }
     }
 
     existingNotePaths = existingNotePaths.filter((f) => f);

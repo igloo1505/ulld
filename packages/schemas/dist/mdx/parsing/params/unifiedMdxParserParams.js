@@ -1,4 +1,4 @@
-import { documentTypeConfigSchemaBase } from "@ulld/configschema/zod/documentConfigSchema";
+import { documentTypeConfigSchemaOutputSchema } from "@ulld/configschema/zod/documentConfigSchema";
 import { z } from "zod";
 import { minimalParsableAppConfig } from "@ulld/configschema/zod-refinedAppConfigs";
 import { frontMatterSchema } from "../../frontMatter/main.js";
@@ -15,7 +15,7 @@ export const unifiedMdxParserParamSchema = z.object({
     content: z.string(),
     docTypeData: z
         .union([
-        documentTypeConfigSchemaBase.required({
+        documentTypeConfigSchemaOutputSchema.deepPartial().required({
             docType: true,
             id: true,
             url: true,

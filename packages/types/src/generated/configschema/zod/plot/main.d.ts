@@ -1,4 +1,5 @@
-import { z } from 'zod';
+import { z } from "zod";
+import { ZodOutputSchema } from "../../types.js";
 export declare const plotConfigSchema: z.ZodDefault<z.ZodObject<{
     plotColorList: z.ZodDefault<z.ZodUnion<[z.ZodArray<z.ZodString, "many">, z.ZodObject<{
         dark: z.ZodArray<z.ZodString, "many">;
@@ -24,4 +25,5 @@ export declare const plotConfigSchema: z.ZodDefault<z.ZodObject<{
     } | undefined;
     plotColorCycleMethod?: "inOrder" | "random" | undefined;
 }>>;
+export declare const plotConfigSchemaOutput: ZodOutputSchema<typeof plotConfigSchema>;
 //# sourceMappingURL=main.d.ts.map

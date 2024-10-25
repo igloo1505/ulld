@@ -1,6 +1,6 @@
+import React from "react";
 import fs from "fs";
 import path from 'path'
-import React from "react";
 import type { ReactNode } from "react";
 import type { EmbeddedImageProps } from "@ulld/utilities/types/embeddedImageProps";
 import { fileExtension } from "@ulld/utilities/fsUtils";
@@ -41,9 +41,7 @@ const getSource = async (
     if (props.file || props.image) {
         let imgPath = props.file || props.image
         if (imgPath && config && !imgPath.includes(config.fsRoot)) {
-            const _tests = config.UI.media.imageRemoteTest.map((t) =>
-                t instanceof RegExp ? t : new RegExp(t),
-            );
+            const _tests = config.UI.media.imageRemoteTest.map((t) => new RegExp(t));
             imgPath = formatImageSourceString(imgPath, _tests, config.fsRoot);
         }
         if(imgPath){

@@ -1,13 +1,15 @@
-export * from "./main";
-export * from "./settings/autoSettings";
-export * from "./rendering/additionalComponents";
-export * from "./parsing/jsonParsing";
-export * from "./pageParams/main";
-export * from "./navigation/linkItems";
-export * from "./individualNote/noteProps";
-export * from "./individualNote/frontMatter";
-export * from "./componentUtilityTypes/admonitionType";
-export * from "./compiledApp/passedComponents/logoProps";
-export * from "./compiledApp/methods/eventMethods/returnTypes";
-export * from "./compiledApp/methods/eventMethods/params";
-export * from "./globalEvents/index"
+export type * from "./main.ts";
+export type * from "./settings/autoSettings.ts";
+export type * from "./rendering/additionalComponents.ts";
+export type * from "./parsing/jsonParsing.ts";
+export type * from "./pageParams/main.ts";
+export type * from "./navigation/linkItems.ts";
+export type * from "./individualNote/noteProps.ts";
+export type * from "./individualNote/frontMatter.ts";
+export type * from "./globalEvents/index.ts";
+export type * from "./globalEvents/globalEventMap.ts";
+export type * from "./componentUtilityTypes/admonitionType.ts";
+export type * from "./compiledApp/passedComponents/logoProps.ts";
+export type * from "./compiledApp/methods/eventMethods/returnTypes.ts";
+export type * from "./compiledApp/methods/eventMethods/params.ts"
+export type * from "./errorHandling/index.ts"

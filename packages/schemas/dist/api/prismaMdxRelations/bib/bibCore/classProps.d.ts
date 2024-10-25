@@ -6,16 +6,16 @@ export declare const bibCoreSchema: z.ZodObject<{
     id: z.ZodDefault<z.ZodNumber>;
     entries: z.ZodDefault<z.ZodArray<z.ZodAny, "many">>;
 }, "strip", z.ZodTypeAny, {
+    id: number;
     entries: any[];
     filename: string;
-    id: number;
     firstSync?: Date | null | undefined;
     lastAccess?: Date | null | undefined;
 }, {
+    id?: number | undefined;
     entries?: any[] | undefined;
     firstSync?: string | Date | null | undefined;
     lastAccess?: string | Date | null | undefined;
     filename?: string | undefined;
-    id?: number | undefined;
 }>;
 //# sourceMappingURL=classProps.d.ts.map

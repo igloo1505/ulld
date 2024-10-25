@@ -2,10 +2,10 @@
 
 
 
-var _chunkC4XI6WMKcjs = require('../chunk-C4XI6WMK.cjs');
+var _chunkEEXWFUX2cjs = require('../chunk-EEXWFUX2.cjs');
 
 
 
 
-exports.iconNameField = _chunkC4XI6WMKcjs.iconNameField; exports.navigationConfigSchema = _chunkC4XI6WMKcjs.navigationConfigSchema; exports.navigationConfigSchemaOutput = _chunkC4XI6WMKcjs.navigationConfigSchemaOutput;
+exports.iconNameField = _chunkEEXWFUX2cjs.iconNameField; exports.navigationConfigSchema = _chunkEEXWFUX2cjs.navigationConfigSchema; exports.navigationConfigSchemaOutput = _chunkEEXWFUX2cjs.navigationConfigSchemaOutput;
 //# sourceMappingURL=navigationConfig.cjs.map

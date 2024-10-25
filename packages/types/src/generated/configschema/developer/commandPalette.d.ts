@@ -6,24 +6,24 @@ export declare const pluginCommandPaletteSchema: z.ZodArray<z.ZodUnion<[z.ZodObj
     action: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>;
 }>, "strip", z.ZodTypeAny, {
     label: string;
-    isAvailable: (...args: unknown[]) => boolean;
     action: (...args: unknown[]) => unknown;
+    isAvailable: (...args: unknown[]) => boolean;
 }, {
     label: string;
-    isAvailable: (...args: unknown[]) => boolean;
     action: (...args: unknown[]) => unknown;
+    isAvailable: (...args: unknown[]) => boolean;
 }>, z.ZodObject<z.objectUtil.extendShape<{
     label: z.ZodString;
     isAvailable: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodBoolean>;
 }, {
     href: z.ZodUnion<[z.ZodString, z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodString>]>;
 }>, "strip", z.ZodTypeAny, {
-    href: string | ((...args: unknown[]) => string);
     label: string;
+    href: string | ((...args: unknown[]) => string);
     isAvailable: (...args: unknown[]) => boolean;
 }, {
-    href: string | ((...args: unknown[]) => string);
     label: string;
+    href: string | ((...args: unknown[]) => string);
     isAvailable: (...args: unknown[]) => boolean;
 }>]>, "many">;
 //# sourceMappingURL=commandPalette.d.ts.map

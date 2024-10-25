@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { ZodOutputSchema } from '../types.js';
 export declare const monacoEditorConfigSchema: z.ZodDefault<z.ZodObject<{
     defaultLangauge: z.ZodDefault<z.ZodString>;
     useVimMode: z.ZodDefault<z.ZodBoolean>;
@@ -9,4 +10,5 @@ export declare const monacoEditorConfigSchema: z.ZodDefault<z.ZodObject<{
     defaultLangauge?: string | undefined;
     useVimMode?: boolean | undefined;
 }>>;
+export declare const monacoEditorConfigSchemaOutput: ZodOutputSchema<typeof monacoEditorConfigSchema>;
 //# sourceMappingURL=codeEditorConfig.d.ts.map

@@ -1,20 +1,18 @@
 import { z } from "zod";
-import { publicProcedure, router } from "../trpc";
 import { markdownExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
 import { prisma } from "@ulld/database";
-import { getRemoteMdx } from "../../trpcInternalMethods/notes/mdx/getRemoteMdx";
-import { getDatabaseMdxFromPathname } from "../../trpcInternalMethods/notes/mdx/getDatabaseMdxFromPathname";
-import { getFsMdx } from "../../trpcInternalMethods/filesystem/fsnotes";
 import { makeArrayTransform } from "@ulld/utilities/schemas/transforms";
 import { readAppConfig } from "@ulld/developer/readAppConfig";
 import { parseMdxString } from "@ulld/parsers";
 import { parseMdxStringParamTRPCSchema } from "@ulld/parsers/mdx/compilerTypes";
 import { formatMdxString } from "@ulld/parsers/formatMdxString";
 import { internalMdxStringParseParamSchemaOptionalAppConfig } from "@ulld/schemas/mdx-parsing-params";
-import {
-    mdxToHtmlWithoutRender,
-} from "@ulld/parsers/serverMdxToHtml";
+import { mdxToHtmlWithoutRender } from "@ulld/parsers/serverMdxToHtml";
 import { getComponentMap } from "@ulld/component-map/server";
+import { getFsMdx } from "../../trpcInternalMethods/filesystem/fsnotes";
+import { getDatabaseMdxFromPathname } from "../../trpcInternalMethods/notes/mdx/getDatabaseMdxFromPathname";
+import { getRemoteMdx } from "../../trpcInternalMethods/notes/mdx/getRemoteMdx";
+import { publicProcedure, router } from "../trpc";
 
 const idOrIdArray = z
     .union([z.number().int(), z.number().int().array()])
@@ -24,7 +22,7 @@ export const mdxNoteActionsRouter = router({
     deleteNoteById: publicProcedure
         .input(idOrIdArray)
         .mutation(async ({ input }) => {
-            return await prisma.mdxNote.deleteMany({
+            return prisma.mdxNote.deleteMany({
                 where: {
                     id: {
                         in: input,
@@ -35,7 +33,7 @@ export const mdxNoteActionsRouter = router({
     toggleBookmarkedById: publicProcedure
         .input(z.number().int())
         .mutation(async (opts) => {
-            let note = await prisma.mdxNote.findFirst({
+            const note = await prisma.mdxNote.findFirst({
                 where: {
                     id: opts.input,
                 },
@@ -44,23 +42,24 @@ export const mdxNoteActionsRouter = router({
                 },
             });
             if (!note) {
+                // eslint-disable-next-line no-console -- Need to log error.. #MoveToLoggerPackage
                 console.error(
                     `Could not find note to toggle bookmark state for note id ${opts.input}`,
                 );
                 return false;
             }
-            let newNote = await prisma.mdxNote.update({
+            const newNote = await prisma.mdxNote.update({
                 where: {
                     id: opts.input,
                 },
                 data: {
-                    bookmarked: !Boolean(note?.bookmarked),
+                    bookmarked: !note.bookmarked,
                 },
                 select: {
                     bookmarked: true,
                 },
             });
-            return Boolean(note?.bookmarked !== newNote.bookmarked);
+            return Boolean(note.bookmarked !== newNote.bookmarked);
         }),
     getDatabaseMdx: publicProcedure.input(z.string()).query(async (opts) => {
         return getRemoteMdx(opts.input);
@@ -68,7 +67,7 @@ export const mdxNoteActionsRouter = router({
     getDatabaseMdxFromPathname: publicProcedure
         .input(z.string())
         .query(async (opts) => {
-            return await getDatabaseMdxFromPathname(opts.input);
+            return getDatabaseMdxFromPathname(opts.input);
         }),
     getFsMdx: publicProcedure
         .input(
@@ -79,14 +78,14 @@ export const mdxNoteActionsRouter = router({
             }),
         )
         .query(async ({ input }) => {
-            let appConfig = await readAppConfig();
-            let content = await getFsMdx(
+            const appConfig = await readAppConfig();
+            const content = await getFsMdx(
                 input.rootRelativePath,
                 input.extension,
                 appConfig,
                 input.useProcessRoot,
             );
-            let noteDetails = await prisma.mdxNote.findFirst({
+            const noteDetails = await prisma.mdxNote.findFirst({
                 where: {
                     rootRelativePath: input.rootRelativePath,
                 },
@@ -101,15 +100,15 @@ export const mdxNoteActionsRouter = router({
                 },
             });
             return {
-                content: content,
+                content,
                 details: noteDetails
                     ? {
                         ...noteDetails,
                         quickLink: noteDetails.quickLink || undefined,
                         sequentialKey: noteDetails.sequentialKey || undefined,
                         sequentialIndex: noteDetails.sequentialIndex || undefined,
-                        firstSync: noteDetails.firstSync?.toString() as string | Date,
-                        lastSync: noteDetails.lastSync?.toString() as string | Date,
+                        firstSync: noteDetails.firstSync.toString() as string | Date,
+                        lastSync: noteDetails.lastSync.toString() as string | Date,
                     }
                     : undefined,
             };
@@ -117,8 +116,8 @@ export const mdxNoteActionsRouter = router({
     setMdxAccessed: publicProcedure
         .input(z.object({ rootRelativePath: z.string() }))
         .mutation(async ({ input }) => {
-            let _now = new Date();
-            let mdxNote = await prisma.mdxNote.findFirst({
+            const _now = new Date();
+            const mdxNote = await prisma.mdxNote.findFirst({
                 where: {
                     rootRelativePath: input.rootRelativePath,
                 },
@@ -147,12 +146,13 @@ export const mdxNoteActionsRouter = router({
                 },
             });
             if (!mdxNote) {
+                // eslint-disable-next-line no-console -- Need to log warning. #MoveToLoggerPackage
                 console.warn(
                     `Could not find mdxNote while attempting to execute setMdxAccessed method. Attempted with path ${input.rootRelativePath}`,
                 );
                 return;
             }
-            let values = {
+            const values = {
                 tags: mdxNote.tags.map((x) => x.value),
                 subjects: mdxNote.subjects.map((x) => x.value),
                 topics: mdxNote.topics.map((x) => x.value),
@@ -166,7 +166,7 @@ export const mdxNoteActionsRouter = router({
                     lastAccess: _now,
                 },
             });
-            if (values.tags && values.tags.length) {
+            if (values.tags.length) {
                 await prisma.tag.updateMany({
                     where: {
                         value: {
@@ -178,7 +178,7 @@ export const mdxNoteActionsRouter = router({
                     },
                 });
             }
-            if (values.topics && values.topics.length) {
+            if (values.topics.length) {
                 await prisma.topic.updateMany({
                     where: {
                         value: {
@@ -190,7 +190,7 @@ export const mdxNoteActionsRouter = router({
                     },
                 });
             }
-            if (values.subjects && values.subjects.length) {
+            if (values.subjects.length) {
                 await prisma.subject.updateMany({
                     where: {
                         value: {
@@ -202,7 +202,7 @@ export const mdxNoteActionsRouter = router({
                     },
                 });
             }
-            if (values.bibEntry && values.bibEntry.length) {
+            if (values.bibEntry.length) {
                 await prisma.bibEntry.updateMany({
                     where: {
                         id: {
@@ -219,7 +219,8 @@ export const mdxNoteActionsRouter = router({
     parseAndCompileMdxString: publicProcedure
         .input(internalMdxStringParseParamSchemaOptionalAppConfig)
         .query(async ({ input }) => {
-        const appConfig = input.parseParams.appConfig
+            /* const x = input.parseParams.appConfig.UI.media.imageRemoteTestjjk */
+            const appConfig = input.parseParams.appConfig
                 ? input.parseParams.appConfig
                 : await readAppConfig();
             if (!input.parseParams.appConfig) {
@@ -232,7 +233,7 @@ export const mdxNoteActionsRouter = router({
                     };
                 },
             );
-            return await parseMdxString({
+            return parseMdxString({
                 content,
                 appConfig: appConfig as any,
             });
@@ -240,8 +241,8 @@ export const mdxNoteActionsRouter = router({
     compileMdxString: publicProcedure
         .input(parseMdxStringParamTRPCSchema)
         .mutation(async ({ input }) => {
-            let appConfig = await readAppConfig();
-            return await parseMdxString({
+            const appConfig = await readAppConfig();
+            return parseMdxString({
                 ...input,
                 appConfig,
             });
@@ -250,20 +251,19 @@ export const mdxNoteActionsRouter = router({
         .input(z.string())
         .mutation(async ({ input }) => {
             const appConfig = await readAppConfig();
-            let data = await mdxToHtmlWithoutRender({
+            const data = await mdxToHtmlWithoutRender({
                 rawContent: input,
-                appConfig: appConfig,
+                appConfig,
                 components: [],
             });
             const toString = await import("react-dom/server").then(
                 (a) => a.renderToPipeableStream,
             );
-            const T = data.content
+            const T = data.content;
             /* let htmlData = toString(<T {...data.content.props}/>); */
             /* TODO: Handle these additional props properly with a zod schema and some reasonable default values. Will also have to make the generated component map available everywhere, likely by writing component map directly to the node_modules directory instead of in the generated app itself, similar to how prisma does it. */
             const _components = getComponentMap(input, {}, []);
-            let htmlData = toString(<T components={_components}/>);
-            console.log("htmlData: ", htmlData);
+            const htmlData = toString(<T components={_components} />);
             return "";
             /* /* const appConfig = await readAppConfig(); */
             /*   /* ts.renderToReadableStream */

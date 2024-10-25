@@ -5,6 +5,7 @@ import { TypeExportUnifier } from "./typeExportUnifier";
 const outputFile = path.join(__dirname, "../../../packages/api/src/types.ts");
 
 let typeDirRoot = path.join(__dirname, "../../../packages/api/src/trpcTypes");
+
 let typeIndividualDirRoot = path.join(
     __dirname,
     "../../../packages/api/src/individualTypesForDocumentation",

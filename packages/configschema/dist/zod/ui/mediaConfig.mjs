@@ -1,7 +1,7 @@
 import {
   mediaConfigSchema,
   mediaConfigSchemaOutput
-} from "../../chunk-PRBLBTKN.mjs";
+} from "../../chunk-SODMMTM6.mjs";
 import "../../chunk-XHBPEY36.mjs";
 export {
   mediaConfigSchema,

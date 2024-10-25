@@ -230,7 +230,7 @@ export class MdxNote extends MdxNoteProtocol {
         if (this.noLog) {
             return;
         }
-        /* TODO: Move this to the external logger package. */
+        // eslint-disable-next-line no-console -- General logger in the MdxNote class. #MoveToLoggerPackage
         console.log(typeof val === "string" ? val : JSON.stringify(val, null, 4));
     }
     whereUniqueInput(): Prisma.MdxNoteWhereUniqueInput {

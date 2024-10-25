@@ -1,5 +1,5 @@
 import { minimalParsableAppConfig } from "@ulld/configschema/zod-refinedAppConfigs";
-import { documentTypeConfigSchema, } from "@ulld/configschema/zod/documentConfigSchema";
+import { documentTypeConfigSchemaOutputSchema, } from "@ulld/configschema/zod/documentConfigSchema";
 import { z } from "zod";
 import { mdxNotePropsSchema } from "../../../api/prismaMdxRelations/mdxNote/classProps.js";
 import { extendedFrontMatterSchema, } from "../../frontMatter/main.js";
@@ -11,7 +11,7 @@ export const mdxNoteFromStringPropsSchema = mdxNotePropsSchema
     bookmarked: true,
 })
     .merge(z.object({
-    docTypeData: documentTypeConfigSchema,
+    docTypeData: documentTypeConfigSchemaOutputSchema,
 }));
 export const unifiedMdxParserSchema = z
     .function()
@@ -24,7 +24,7 @@ export const fromMdxStringOptSchema = z
     .default({});
 export const parseParamsSchema = z.object({
     appConfig: minimalParsableAppConfig,
-    docTypeData: z.union([documentTypeConfigSchema, z.object({})]).default({}),
+    docTypeData: z.union([documentTypeConfigSchemaOutputSchema, z.object({})]).default({}),
     parser: unifiedMdxParserSchema,
 });
 export const internalMdxStringParseParamSchema = z.object({

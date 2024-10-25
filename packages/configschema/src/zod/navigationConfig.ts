@@ -33,7 +33,7 @@ const defaultResultLengths = {
 
 export const iconNameField = z
     .string()
-    .refine((s) => validIconNameList.includes(s as string | ValidIconName));
+    .refine((s) => validIconNameList.includes(s as ValidIconName));
 
 let linkLocationSchema = z.union([
     z.literal("sidebar"),

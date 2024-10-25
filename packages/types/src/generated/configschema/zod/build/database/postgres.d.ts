@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../../types.js";
 export declare const postgresConfigSchema: z.ZodEffects<z.ZodEffects<z.ZodDefault<z.ZodObject<{
     port: z.ZodDefault<z.ZodNumber>;
     dbName: z.ZodDefault<z.ZodString>;
@@ -32,4 +33,5 @@ export declare const postgresConfigSchema: z.ZodEffects<z.ZodEffects<z.ZodDefaul
     dbName?: string | undefined;
     connectionURI?: string | undefined;
 } | undefined>;
+export declare const postgresConfigSchemaOutput: ZodOutputSchema<typeof postgresConfigSchema>;
 //# sourceMappingURL=postgres.d.ts.map

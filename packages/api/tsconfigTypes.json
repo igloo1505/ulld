@@ -7,19 +7,22 @@
         ".turbo",
         "src/**/*.test.ts",
         "jest**",
-         "src/__scripts__/**"
+         "src/__scripts__/**",
+         "src/unifiedTypes.d.ts",
+         "src/unifiedTypes.d.ts.map"
     ],
-    "files": [
-        "src/trpc/trpc.ts",
-        "src/trpc/serverClient.ts"
-        // "src/**/*.tsx"
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
     ],
     "compilerOptions": {
-        "declarationDir": "../types/src/generated/api",
+        // "declarationDir": "../types/src/generated/api",
+        "isolatedModules": false,
         "emitDeclarationOnly": true,
-        "outDir": "./dist",
+        // "outDir": "src/types",
         "moduleResolution": "Bundler",
         "baseUrl": ".",
-        "rootDir": "./src"
+        "rootDir": "src",
+        "outFile": "src/unifiedTypes"
     }
 }

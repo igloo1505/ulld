@@ -41,6 +41,11 @@ export declare const todoListZodObject: z.ZodObject<z.objectUtil.extendShape<z.o
     }, string>]>, "many">>;
 }>, "strip", z.ZodTypeAny, {
     id: number;
+    label: string;
+    tags: {
+        value: string;
+        kanbanId?: number | null | undefined;
+    }[];
     createdAt: Date;
     lastUpdate: Date;
     topics: {
@@ -49,15 +54,14 @@ export declare const todoListZodObject: z.ZodObject<z.objectUtil.extendShape<z.o
     subjects: {
         value: string;
     }[];
-    tags: {
-        value: string;
-        kanbanId?: number | null | undefined;
-    }[];
-    label: string;
     tasks: any[];
 }, {
     id: number;
     label: string;
+    tags?: (string | {
+        value: string;
+        kanbanId?: number | null | undefined;
+    })[] | undefined;
     createdAt?: string | Date | null | undefined;
     lastUpdate?: string | Date | null | undefined;
     topics?: {
@@ -66,10 +70,6 @@ export declare const todoListZodObject: z.ZodObject<z.objectUtil.extendShape<z.o
     subjects?: {
         value: string;
     }[] | undefined;
-    tags?: (string | {
-        value: string;
-        kanbanId?: number | null | undefined;
-    })[] | undefined;
     tasks?: any[] | undefined;
 }>;
 //# sourceMappingURL=classProps.d.ts.map

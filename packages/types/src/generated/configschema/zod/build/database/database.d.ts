@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ZodOutputSchema } from "../../../types.js";
 export declare const ulldSupportedDatabases: readonly ["postgres", "sqlite"];
 export declare const databaseBuildSchema: z.ZodEffects<z.ZodDefault<z.ZodObject<{
     type: z.ZodDefault<z.ZodEnum<["postgres", "sqlite"]>>;
@@ -47,7 +48,7 @@ export declare const databaseBuildSchema: z.ZodEffects<z.ZodDefault<z.ZodObject<
         dbName: string;
         connectionURI?: undefined;
     };
-    prioritize: "speed" | "size";
+    prioritize: "size" | "speed";
 }, {
     type?: "postgres" | "sqlite" | undefined;
     postgres?: {
@@ -55,7 +56,7 @@ export declare const databaseBuildSchema: z.ZodEffects<z.ZodDefault<z.ZodObject<
         dbName?: string | undefined;
         connectionURI?: string | undefined;
     } | undefined;
-    prioritize?: "speed" | "size" | undefined;
+    prioritize?: "size" | "speed" | undefined;
 }>>, {
     type: "postgres" | "sqlite";
     postgres: {
@@ -67,7 +68,7 @@ export declare const databaseBuildSchema: z.ZodEffects<z.ZodDefault<z.ZodObject<
         dbName: string;
         connectionURI?: undefined;
     };
-    prioritize: "speed" | "size";
+    prioritize: "size" | "speed";
 }, {
     type?: "postgres" | "sqlite" | undefined;
     postgres?: {
@@ -75,6 +76,7 @@ export declare const databaseBuildSchema: z.ZodEffects<z.ZodDefault<z.ZodObject<
         dbName?: string | undefined;
         connectionURI?: string | undefined;
     } | undefined;
-    prioritize?: "speed" | "size" | undefined;
+    prioritize?: "size" | "speed" | undefined;
 } | undefined>;
+export declare const databaseBuildSchemaOutput: ZodOutputSchema<typeof databaseBuildSchema>;
 //# sourceMappingURL=database.d.ts.map

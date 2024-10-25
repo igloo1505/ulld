@@ -38,9 +38,7 @@ export const mediaConfigSchema = z
 //     }
 // })
 
-export const mediaConfigSchemaOutput: ZodOutputSchema<
-    typeof mediaConfigSchema
-> = z.object({
+export const mediaConfigSchemaOutput = z.object({
     imageMap: z.record(
         z.string(),
         zodPathStringField(
@@ -49,4 +47,6 @@ export const mediaConfigSchemaOutput: ZodOutputSchema<
     ),
     includeDefaultImageMap: z.boolean(),
     imageRemoteTest: z.string().array(),
-});
+}) satisfies ZodOutputSchema<
+    typeof mediaConfigSchema
+>

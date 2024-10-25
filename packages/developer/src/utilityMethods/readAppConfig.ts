@@ -5,7 +5,7 @@ import path from "path";
 
 const getConfigPath = () => { 
     return Boolean(
-        process.env.USE_ULLD_TEST_APP_CONFIG && process.env.ULLD_ADDITIONAL_SOURCES,
+        process.env.USE_ULLD_TEST_APP_CONFIG && process.env.ULLD_ADDITIONAL_SOURCES
     )
         ? path.join(process.env.ULLD_ADDITIONAL_SOURCES!, "appConfig.ulld.json")
         : path.join(process.cwd(), "appConfig.ulld.json");
@@ -35,6 +35,7 @@ export const readDevelopmentAppConfig = () => {
 
 export const readAppConfigSync = () => {
     let _path = getConfigPath()
+    console.trace("readAppConfig")
     try {
         let res = fs.readFileSync(_path, { encoding: "utf-8" });
         return JSON.parse(res) as AppConfigSchemaOutput;

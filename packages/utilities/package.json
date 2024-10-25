@@ -1,732 +1,732 @@
 {
-  "name": "@ulld/utilities",
-  "version": "0.0.126",
-  "type": "module",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "wireit",
-    "dev": "next dev",
-    "test": "echo 'Add test script here'"
-  },
-  "wireit": {
-    "build": {
-      "dependencies": [
-        "generateValidIconNameData",
-        "generateInternalLocationsData",
-        "generateGlobalActionsData",
-        "clearBuild",
-        "genTypes",
-        "genBuild"
-      ]
-    },
-    "genTypes": {
-      "command": "pnpm tsc --project ./tsConfigBuildTypes.json"
-    },
-    "clearBuild": {
-      "command": "trash ./dist"
-    },
-    "genBuild": {
-      "command": "tsup-node",
-      "clean": false
-    },
-    "generateInternalLocationsData": {
-      "command": "tsx ./src/__scripts__/generateInternalAppLocations/main.ts"
-    },
-    "generateGlobalActionsData": {
-      "command": "tsx ../state/__scripts__/generateGlobalActionsData.ts"
-    },
-    "generateValidIconNameData": {
-      "command": "tsx ./src/__scripts__/generateValidIconNameData/main.ts"
-    }
-  },
-  "types": "./dist/types/main.d.ts",
-  "exports": {
-    "./types": {
-      "types": "./dist/types/main.d.ts",
-      "import": "./dist/types/main.mjs",
-      "require": "./dist/types/main.cjs"
-    },
-    "./buildUtils": {
-      "types": "./dist/staticAppProperties/buildUtils/main.d.ts",
-      "import": "./dist/staticAppProperties/buildUtils/main.mjs",
-      "require": "./dist/staticAppProperties/buildUtils/main.cjs"
-    },
-    "./toggleBookmarkState": {
-      "types": "./dist/utils/domUtils/domState/toggleBookmarkState.d.ts",
-      "import": "./dist/utils/domUtils/domState/toggleBookmarkState.mjs",
-      "require": "./dist/utils/domUtils/domState/toggleBookmarkState.cjs"
-    },
-    "./copyJsonFilesToDist": {
-      "types": "./dist/utils/build/copyJsonFilesToDist.d.ts",
-      "import": "./dist/utils/build/copyJsonFilesToDist.mjs",
-      "require": "./dist/utils/build/copyJsonFilesToDist.cjs"
-    },
-    "./ulldColorVars": {
-      "types": "./dist/styleUtilities/ulldColorVars.d.ts",
-      "import": "./dist/styleUtilities/ulldColorVars.mjs",
-      "require": "./dist/styleUtilities/ulldColorVars.cjs"
-    },
-    "./getGlobServerSide": {
-      "types": "./dist/utils/glob/getGlobServerSide.d.ts",
-      "import": "./dist/utils/glob/getGlobServerSide.mjs",
-      "require": "./dist/utils/glob/getGlobServerSide.cjs"
-    },
-    "./fetchWrapper": {
-      "types": "./dist/utils/fetchWrapper.d.ts",
-      "import": "./dist/utils/fetchWrapper.mjs",
-      "require": "./dist/utils/fetchWrapper.cjs"
-    },
-    "./filePathSchemas": {
-      "types": "./dist/schemas/filePath/index.d.ts",
-      "import": "./dist/schemas/filePath/index.mjs",
-      "require": "./dist/schemas/filePath/index.cjs"
-    },
-    "./isNoConfig": {
-      "types": "./dist/utils/webAppUtils/isNoConfig.d.ts",
-      "import": "./dist/utils/webAppUtils/isNoConfig.mjs",
-      "require": "./dist/utils/webAppUtils/isNoConfig.cjs"
-    },
-    "./errorNotifications": {
-      "types": "./dist/errorHandling/main.d.ts",
-      "import": "./dist/errorHandling/main.mjs",
-      "require": "./dist/errorHandling/main.cjs"
-    },
-    "./testDataHelpers": {
-      "types": "./dist/testDataHelpers/main.d.ts",
-      "import": "./dist/testDataHelpers/main.mjs",
-      "require": "./dist/testDataHelpers/main.cjs"
-    },
-    "./databaseTestData": {
-      "types": "./dist/testDataHelpers/databaseTestData.d.ts",
-      "import": "./dist/testDataHelpers/databaseTestData.mjs",
-      "require": "./dist/testDataHelpers/databaseTestData.cjs"
-    },
-    "./localDevelopmentMenu": {
-      "types": "./dist/components/localDevelopment/localDevelopmentMenu.d.ts",
-      "import": "./dist/components/localDevelopment/localDevelopmentMenu.mjs",
-      "require": "./dist/components/localDevelopment/localDevelopmentMenu.cjs"
-    },
-    "./localDevelopmentPageWrapper": {
-      "types": "./dist/components/localDevelopment/localDevelopmentPageWrapper.d.ts",
-      "import": "./dist/components/localDevelopment/localDevelopmentPageWrapper.mjs",
-      "require": "./dist/components/localDevelopment/localDevelopmentPageWrapper.cjs"
-    },
-    "./devUtils": {
-      "types": "./dist/developmentUtilities/index.d.ts",
-      "import": "./dist/developmentUtilities/index.mjs",
-      "require": "./dist/developmentUtilities/index.cjs"
-    },
-    "./utilNavLinks": {
-      "types": "./dist/navigation/utilityNavLinks.d.ts",
-      "import": "./dist/navigation/utilityNavLinks.mjs",
-      "require": "./dist/navigation/utilityNavLinks.cjs"
-    },
-    "./getPathnameFromHeaders": {
-      "types": "./dist/utils/getPathnameFromHeaders.d.ts",
-      "import": "./dist/utils/getPathnameFromHeaders.mjs",
-      "require": "./dist/utils/getPathnameFromHeaders.cjs"
-    },
-    "./glob": {
-      "types": "./dist/classes/glob/main.d.ts",
-      "import": "./dist/classes/glob/main.mjs",
-      "require": "./dist/classes/glob/main.cjs"
-    },
-    "./getMarkdownHeadings": {
-      "types": "./dist/additionalParsers/mdx/getContentHeadings.d.ts",
-      "import": "./dist/additionalParsers/mdx/getContentHeadings.mjs",
-      "require": "./dist/additionalParsers/mdx/getContentHeadings.cjs"
-    },
-    "./additionalSources": {
-      "types": "./dist/utils/build/additionalSourceFileStructure.d.ts",
-      "import": "./dist/utils/build/additionalSourceFileStructure.mjs",
-      "require": "./dist/utils/build/additionalSourceFileStructure.cjs"
-    },
-    "./paths": {
-      "types": "./dist/classes/urlManager.d.ts",
-      "import": "./dist/classes/urlManager.mjs",
-      "require": "./dist/classes/urlManager.cjs"
-    },
-    "./packageJsonType": {
-      "types": "./dist/types/packageJson/packageJsonType.d.ts",
-      "import": "./dist/types/packageJson/packageJsonType.mjs",
-      "require": "./dist/types/packageJson/packageJsonType.cjs"
-    },
-    "./paginationUtils": {
-      "types": "./dist/utils/paginationUtils.d.ts",
-      "import": "./dist/utils/paginationUtils.mjs",
-      "require": "./dist/utils/paginationUtils.cjs"
-    },
-    "./objectUtils": {
-      "types": "./dist/utils/objectUtils.d.ts",
-      "import": "./dist/utils/objectUtils.mjs",
-      "require": "./dist/utils/objectUtils.cjs"
-    },
-    "./filePathUtils": {
-      "types": "./dist/utils/filePathUtils.d.ts",
-      "import": "./dist/utils/filePathUtils.mjs",
-      "require": "./dist/utils/filePathUtils.cjs"
-    },
-    "./searchUtils": {
-      "types": "./dist/utils/searchUtils.d.ts",
-      "import": "./dist/utils/searchUtils.mjs",
-      "require": "./dist/utils/searchUtils.cjs"
-    },
-    "./sortUtils": {
-      "types": "./dist/utils/sortUtils.d.ts",
-      "import": "./dist/utils/sortUtils.mjs",
-      "require": "./dist/utils/sortUtils.cjs"
-    },
-    "./admonition/types": {
-      "types": "./dist/types/admonition.d.ts",
-      "import": "./dist/types/admonition.mjs",
-      "require": "./dist/types/admonition.cjs"
-    },
-    "./components/copyContextMenu": {
-      "types": "./dist/components/copyContextMenu.d.ts",
-      "import": "./dist/components/copyContextMenu.mjs",
-      "require": "./dist/components/copyContextMenu.cjs"
-    },
-    "./booleanAndEqualities/arrayTruthy": {
-      "types": "./dist/booleanAndEqualities/arrayTruthy.d.ts",
-      "import": "./dist/booleanAndEqualities/arrayTruthy.mjs",
-      "require": "./dist/booleanAndEqualities/arrayTruthy.cjs"
-    },
-    "./shadColorMap": {
-      "types": "./dist/utils/shadColorMap.d.ts",
-      "import": "./dist/utils/shadColorMap.mjs",
-      "require": "./dist/utils/shadColorMap.cjs"
-    },
-    "./types/navigation": {
-      "types": "./dist/types/navigation.d.ts",
-      "import": "./dist/types/navigation.mjs",
-      "require": "./dist/types/navigation.cjs"
-    },
-    "./types/utilityTypes": {
-      "types": "./dist/types/utilityTypes.d.ts",
-      "import": "./dist/types/utilityTypes.mjs",
-      "require": "./dist/types/utilityTypes.cjs"
-    },
-    "./types/toastConfig": {
-      "types": "./dist/types/toastConfig.d.ts",
-      "import": "./dist/types/toastConfig.mjs",
-      "require": "./dist/types/toastConfig.cjs"
-    },
-    "./types/todos": {
-      "types": "./dist/types/todos.d.ts",
-      "import": "./dist/types/todos.mjs",
-      "require": "./dist/types/todos.cjs"
-    },
-    "./types/embeddedImageProps": {
-      "types": "./dist/types/embeddedImageProps.d.ts",
-      "import": "./dist/types/embeddedImageProps.mjs",
-      "require": "./dist/types/embeddedImageProps.cjs"
-    },
-    "./staticAppProperties/main": {
-      "types": "./dist/staticAppProperties/main.d.ts",
-      "import": "./dist/staticAppProperties/main.mjs",
-      "require": "./dist/staticAppProperties/main.cjs"
-    },
-    "./general": {
-      "types": "./dist/utils/general.d.ts",
-      "import": "./dist/utils/general.mjs",
-      "require": "./dist/utils/general.cjs"
-    },
-    "./identity": {
-      "types": "./dist/utils/identity.d.ts",
-      "import": "./dist/utils/identity.mjs",
-      "require": "./dist/utils/identity.cjs"
-    },
-    "./dates": {
-      "types": "./dist/utils/dates.d.ts",
-      "import": "./dist/utils/dates.mjs",
-      "require": "./dist/utils/dates.cjs"
-    },
-    "./cn": {
-      "types": "./dist/utils/cn.d.ts",
-      "import": "./dist/utils/cn.mjs",
-      "require": "./dist/utils/cn.cjs"
-    },
-    "./cors": {
-      "types": "./dist/utils/cors.d.ts",
-      "import": "./dist/utils/cors.mjs",
-      "require": "./dist/utils/cors.cjs"
-    },
-    "./arrayUtilities": {
-      "types": "./dist/utils/arrayUtilities.d.ts",
-      "import": "./dist/utils/arrayUtilities.mjs",
-      "require": "./dist/utils/arrayUtilities.cjs"
-    },
-    "./latexUtils": {
-      "types": "./dist/utils/latexUtils.d.ts",
-      "import": "./dist/utils/latexUtils.mjs",
-      "require": "./dist/utils/latexUtils.cjs"
-    },
-    "./pathUtilsClientSide": {
-      "types": "./dist/utils/pathUtilsClientSide.d.ts",
-      "import": "./dist/utils/pathUtilsClientSide.mjs",
-      "require": "./dist/utils/pathUtilsClientSide.cjs"
-    },
-    "./pathUtilsServerSide": {
-      "types": "./dist/utils/pathUtilsServer.d.ts",
-      "import": "./dist/utils/pathUtilsServer.mjs",
-      "require": "./dist/utils/pathUtilsServer.cjs"
-    },
-    "./fsUtils": {
-      "types": "./dist/utils/fsUtils.d.ts",
-      "import": "./dist/utils/fsUtils.mjs",
-      "require": "./dist/utils/fsUtils.cjs"
-    },
-    "./utils/general": {
-      "types": "./dist/utils/general.d.ts",
-      "import": "./dist/utils/general.mjs",
-      "require": "./dist/utils/general.cjs"
-    },
-    "./utils/identity": {
-      "types": "./dist/utils/identity.d.ts",
-      "import": "./dist/utils/identity.mjs",
-      "require": "./dist/utils/identity.cjs"
-    },
-    "./utils/dates": {
-      "types": "./dist/utils/dates.d.ts",
-      "import": "./dist/utils/dates.mjs",
-      "require": "./dist/utils/dates.cjs"
-    },
-    "./utils/cn": {
-      "types": "./dist/utils/cn.d.ts",
-      "import": "./dist/utils/cn.mjs",
-      "require": "./dist/utils/cn.cjs"
-    },
-    "./utils/arrayUtilities": {
-      "types": "./dist/utils/arrayUtilities.d.ts",
-      "import": "./dist/utils/arrayUtilities.mjs",
-      "require": "./dist/utils/arrayUtilities.cjs"
-    },
-    "./utils/latexUtils": {
-      "types": "./dist/utils/latexUtils.d.ts",
-      "import": "./dist/utils/latexUtils.mjs",
-      "require": "./dist/utils/latexUtils.cjs"
-    },
-    "./utils/pathUtilsClientSide": {
-      "types": "./dist/utils/pathUtilsClientSide.d.ts",
-      "import": "./dist/utils/pathUtilsClientSide.mjs",
-      "require": "./dist/utils/pathUtilsClientSide.cjs"
-    },
-    "./utils/fsUtils": {
-      "types": "./dist/utils/fsUtils.d.ts",
-      "import": "./dist/utils/fsUtils.mjs",
-      "require": "./dist/utils/fsUtils.cjs"
-    },
-    "./utils-dom": {
-      "types": "./dist/utils/domUtils/main.d.ts",
-      "import": "./dist/utils/domUtils/main.mjs",
-      "require": "./dist/utils/domUtils/main.cjs"
-    },
-    "./getBodyClasses": {
-      "types": "./dist/utils/domUtils/main.d.ts",
-      "import": "./dist/utils/domUtils/main.mjs",
-      "require": "./dist/utils/domUtils/main.cjs"
-    },
-    "./toDoStatusData": {
-      "types": "./dist/schemas/todoItemStatus.d.ts",
-      "import": "./dist/schemas/todoItemStatus.mjs",
-      "require": "./dist/schemas/todoItemStatus.cjs"
-    },
-    "./schemas/snippets": {
-      "types": "./dist/schemas/snippets.d.ts",
-      "import": "./dist/schemas/snippets.mjs",
-      "require": "./dist/schemas/snippets.cjs"
-    },
-    "./schemas/utility": {
-      "types": "./dist/schemas/utility.d.ts",
-      "import": "./dist/schemas/utility.mjs",
-      "require": "./dist/schemas/utility.cjs"
-    },
-    "./schemas/transforms": {
-      "types": "./dist/schemas/transforms.d.ts",
-      "import": "./dist/schemas/transforms.mjs",
-      "require": "./dist/schemas/transforms.cjs"
-    },
-    "./schemas/mdx/parseMdxStringSchema": {
-      "types": "./dist/schemas/mdx/parseMdxStringSchema.d.ts",
-      "import": "./dist/schemas/mdx/parseMdxStringSchema.mjs",
-      "require": "./dist/schemas/mdx/parseMdxStringSchema.cjs"
-    },
-    "./schemas/mdx/parseMdxStringProps": {
-      "types": "./dist/schemas/mdx/parseMdxStringProps.d.ts",
-      "import": "./dist/schemas/mdx/parseMdxStringProps.mjs",
-      "require": "./dist/schemas/mdx/parseMdxStringProps.cjs"
-    },
-    "./defaults/markdownUniversalOptions": {
-      "types": "./dist/defaults/markdownUniversalOptions.d.ts",
-      "import": "./dist/defaults/markdownUniversalOptions.mjs",
-      "require": "./dist/defaults/markdownUniversalOptions.cjs"
-    },
-    "./defaults/markdown.json": {
-      "import": "./dist/defaults/markdownOptions.json",
-      "require": "./dist/defaults/markdownOptions.json"
-    },
-    "./defaults/defaultMermaidConfig": {
-      "types": "./dist/defaults/defaultMermaidConfig.d.ts",
-      "import": "./dist/defaults/defaultMermaidConfig.mjs",
-      "require": "./dist/defaults/defaultMermaidConfig.cjs"
-    },
-    "./defaults/forms/healthReport": {
-      "types": "./dist/defaults/forms/healthReport.d.ts",
-      "import": "./dist/defaults/forms/healthReport.mjs",
-      "require": "./dist/defaults/forms/healthReport.cjs"
-    },
-    "./defaults/prisma/commonZodFields": {
-      "types": "./dist/defaults/prisma/commonZodFields.d.ts",
-      "import": "./dist/defaults/prisma/commonZodFields.mjs",
-      "require": "./dist/defaults/prisma/commonZodFields.cjs"
-    },
-    "./defaults/prisma/notes": {
-      "types": "./dist/defaults/prisma/notes.d.ts",
-      "import": "./dist/defaults/prisma/notes.mjs",
-      "require": "./dist/defaults/prisma/notes.cjs"
-    },
-    "./getTocFromContent": {
-      "types": "./dist/navigation/getTocFromContent.d.ts",
-      "import": "./dist/navigation/getTocFromContent.mjs",
-      "require": "./dist/navigation/getTocFromContent.cjs"
-    },
-    "./actions/copyStringToClipboard": {
-      "types": "./dist/actions/copyStringToClipboard.d.ts",
-      "import": "./dist/actions/copyStringToClipboard.mjs",
-      "require": "./dist/actions/copyStringToClipboard.cjs"
-    },
-    "./copyStringToClipboard": {
-      "types": "./dist/actions/copyStringToClipboard.d.ts",
-      "import": "./dist/actions/copyStringToClipboard.mjs",
-      "require": "./dist/actions/copyStringToClipboard.cjs"
-    },
-    "./loaders/requireJS/requirejs": {
-      "types": "./dist/loaders/requireJS/requirejs.d.ts",
-      "import": "./dist/loaders/requireJS/requirejs.mjs",
-      "require": "./dist/loaders/requireJS/requirejs.cjs"
-    },
-    "./isLocal": {
-      "types": "./dist/utils/isLocal.d.ts",
-      "import": "./dist/utils/isLocal.mjs",
-      "require": "./dist/utils/isLocal.cjs"
-    },
-    "./initialLoader": {
-      "types": "./dist/loaders/installerComponents/initialLoader.d.ts",
-      "import": "./dist/loaders/installerComponents/initialLoader.mjs",
-      "require": "./dist/loaders/installerComponents/initialLoader.cjs"
-    },
-    "./tikzLoader": {
-      "types": "./dist/loaders/installerComponents/TikzLoader.d.ts",
-      "import": "./dist/loaders/installerComponents/TikzLoader.mjs",
-      "require": "./dist/loaders/installerComponents/TikzLoader.cjs"
-    },
-    "./autoWrapMathSchemas": {
-      "types": "./dist/schemas/autoWrapMathSchema.d.ts",
-      "import": "./dist/schemas/autoWrapMathSchema.mjs",
-      "require": "./dist/schemas/autoWrapMathSchema.cjs"
-    },
-    "./getDarkMode": {
-      "types": "./dist/utils/getDarkMode.d.ts",
-      "import": "./dist/utils/getDarkMode.mjs",
-      "require": "./dist/utils/getDarkMode.cjs"
-    },
-    "./internalDevTypes": {
-      "types": "./dist/internalDevTypes/main.d.ts",
-      "import": "./dist/internalDevTypes/main.mjs",
-      "require": "./dist/internalDevTypes/main.cjs"
-    },
-    "./monacoLanguages": {
-      "types": "./dist/monaco/languages.d.ts",
-      "import": "./dist/monaco/languages.mjs",
-      "require": "./dist/monaco/languages.cjs"
-    },
-    "./shikiLanguages": {
-      "types": "./dist/shiki/languageList.d.ts",
-      "import": "./dist/shiki/languageList.mjs",
-      "require": "./dist/shiki/languageList.cjs"
-    },
-    "./shikiThemes": {
-      "types": "./dist/shiki/themeList.d.ts",
-      "import": "./dist/shiki/themeList.mjs",
-      "require": "./dist/shiki/themeList.cjs"
-    },
-    "./getAssumedDimensions": {
-      "types": "./dist/utils/getAssumedDimensions.d.ts",
-      "import": "./dist/utils/getAssumedDimensions.mjs",
-      "require": "./dist/utils/getAssumedDimensions.cjs"
-    },
-    "./removeEmptyChildren": {
-      "types": "./dist/utils/removeEmptyChildren.d.ts",
-      "import": "./dist/utils/removeEmptyChildren.mjs",
-      "require": "./dist/utils/removeEmptyChildren.cjs"
-    },
-    "./getAllRegexMatches": {
-      "types": "./dist/utils/getAllRegexMatches.d.ts",
-      "import": "./dist/utils/getAllRegexMatches.mjs",
-      "require": "./dist/utils/getAllRegexMatches.cjs"
-    },
-    "./replaceContentByMatch": {
-      "types": "./dist/utils/replaceContentByRegexMatch.d.ts",
-      "import": "./dist/utils/replaceContentByRegexMatch.mjs",
-      "require": "./dist/utils/replaceContentByRegexMatch.cjs"
-    },
-    "./convertColorString": {
-      "types": "./dist/utils/colors/convertColorString.d.ts",
-      "import": "./dist/utils/colors/convertColorString.mjs",
-      "require": "./dist/utils/colors/convertColorString.cjs"
-    },
-    "./appData": {
-      "types": "./dist/appData.d.ts",
-      "import": "./dist/appData.mjs",
-      "require": "./dist/appData.cjs"
-    },
-    "./internalAppLocationsGeneratedData": {
-      "types": "./dist/utils/generatedUtils/internalAppLocations.d.ts",
-      "import": "./dist/utils/generatedUtils/internalAppLocations.mjs",
-      "require": "./dist/utils/generatedUtils/internalAppLocations.cjs"
-    },
-    "./internalGLobalActionsGeneratedData": {
-      "types": "./dist/utils/generatedUtils/internalGlobalActions.d.ts",
-      "import": "./dist/utils/generatedUtils/internalGlobalActions.mjs",
-      "require": "./dist/utils/generatedUtils/internalGlobalActions.cjs"
-    },
-    "./internalAppLocations": {
-      "types": "./dist/staticAppProperties/internalLocationsAndActions/main.d.ts",
-      "import": "./dist/staticAppProperties/internalLocationsAndActions/main.mjs",
-      "require": "./dist/staticAppProperties/internalLocationsAndActions/main.cjs"
-    },
-    "./getInternalLocationsAndActions": {
-      "types": "./dist/utils/generatedUtils/getInternalLocationsAndActions.d.ts",
-      "import": "./dist/utils/generatedUtils/getInternalLocationsAndActions.mjs",
-      "require": "./dist/utils/generatedUtils/getInternalLocationsAndActions.cjs"
-    },
-    "./listUtils": {
-      "types": "./dist/utils/listUtils.d.ts",
-      "import": "./dist/utils/listUtils.mjs",
-      "require": "./dist/utils/listUtils.cjs"
-    },
-    "./stringUtils": {
-      "types": "./dist/utils/stringUtils.d.ts",
-      "import": "./dist/utils/stringUtils.mjs",
-      "require": "./dist/utils/stringUtils.cjs"
-    },
-    "./numberUtils": {
-      "types": "./dist/utils/numberUtils.d.ts",
-      "import": "./dist/utils/numberUtils.mjs",
-      "require": "./dist/utils/numberUtils.cjs"
-    },
-    "./regexUtils": {
-      "types": "./dist/utils/regexUtils.d.ts",
-      "import": "./dist/utils/regexUtils.mjs",
-      "require": "./dist/utils/regexUtils.cjs"
-    },
-    "./slotDataType": {
-      "types": "./dist/types/slotDataType.d.ts",
-      "import": "./dist/types/slotDataType.mjs",
-      "require": "./dist/types/slotDataType.cjs"
-    },
-    "./slotMap.json": "./dist/utils/slotMap.json",
-    "./corePageProps": {
-      "types": "./dist/types/corePageProps.d.ts",
-      "import": "./dist/types/corePageProps.mjs",
-      "require": "./dist/types/corePageProps.cjs"
-    },
-    "./buildStaticData": {
-      "import": "./dist/utils/buildStaticData.mjs",
-      "require": "./dist/utils/buildStaticData.cjs"
-    },
-    "./buildStaticData.json": {
-      "import": "./dist/utils/buildStaticData.json",
-      "require": "./dist/utils/buildStaticData.json"
-    },
-    "./internalDataHelpers": {
-      "types": "./dist/internalDevTypes/index.d.ts",
-      "import": "./dist/internalDevTypes/index.mjs",
-      "require": "./dist/internalDevTypes/index.cjs"
-    },
-    "./dateTime": {
-      "types": "./dist/classes/DateTime/main.d.ts",
-      "import": "./dist/classes/DateTime/main.mjs",
-      "require": "./dist/classes/DateTime/main.cjs"
-    },
-    "./getPluginConfig": {
-      "types": "./dist/utils/baseAppUtils/getPluginConfig.d.ts",
-      "import": "./dist/utils/baseAppUtils/getPluginConfig.mjs",
-      "require": "./dist/utils/baseAppUtils/getPluginConfig.cjs"
-    },
-    "./componentDocsPathUtils": {
-      "types": "./dist/utils/baseAppUtils/componentDocPathUtils.d.ts",
-      "import": "./dist/utils/baseAppUtils/componentDocPathUtils.mjs",
-      "require": "./dist/utils/baseAppUtils/componentDocPathUtils.cjs"
-    },
-    "./providers-mathjax": {
-      "types": "./dist/providers/mathjax.d.ts",
-      "import": "./dist/providers/mathjax.mjs",
-      "require": "./dist/providers/mathjax.cjs"
-    },
-    "./transformExportString": {
-      "types": "./dist/utils/build/transformExportString.d.ts",
-      "import": "./dist/utils/build/transformExportString.mjs",
-      "require": "./dist/utils/build/transformExportString.cjs"
-    },
-    "./buildTypes": {
-      "types": "./dist/types/buildTypes.d.ts",
-      "import": "./dist/types/buildTypes.mjs",
-      "require": "./dist/types/buildTypes.cjs"
-    },
-    "./validateDeviceType": {
-      "types": "./dist/utils/deviceDetect.d.ts",
-      "import": "./dist/utils/deviceDetect.mjs",
-      "require": "./dist/utils/deviceDetect.cjs"
-    },
-    "./downloadFile": {
-      "types": "./dist/utils/downloadFile.d.ts",
-      "import": "./dist/utils/downloadFile.mjs",
-      "require": "./dist/utils/downloadFile.cjs"
-    },
-    "./jsonFileClass": {
-      "types": "./dist/classes/file/jsonFile.d.ts",
-      "import": "./dist/classes/file/jsonFile.mjs",
-      "require": "./dist/classes/file/jsonFile.cjs"
-    },
-    "./imageFile": {
-      "types": "./dist/classes/file/media/imageFile.d.ts",
-      "import": "./dist/classes/file/media/imageFile.mjs",
-      "require": "./dist/classes/file/media/imageFile.cjs"
-    },
-    "./fileClass": {
-      "types": "./dist/classes/file/main.d.ts",
-      "import": "./dist/classes/file/main.mjs",
-      "require": "./dist/classes/file/main.cjs"
-    },
-    "./mdxFile": {
-      "types": "./dist/classes/file/mdxFile.d.ts",
-      "import": "./dist/classes/file/mdxFile.mjs",
-      "require": "./dist/classes/file/mdxFile.cjs"
-    },
-    "./defaultColorThemeList": {
-      "types": "./dist/styleUtilities/ulldDefaultColorThemes.d.ts",
-      "import": "./dist/styleUtilities/ulldDefaultColorThemes.mjs",
-      "require": "./dist/styleUtilities/ulldDefaultColorThemes.cjs"
-    },
-    "./themeColorGradients": {
-      "import": "./dist/styleUtilities/themeColorGradients.mjs",
-      "require": "./dist/styleUtilities/themeColorGradients.cjs"
-    },
-    "./themeColorGradients.json": "./dist/styleUtilities/themeColorGradients.json",
-    "./themeColorSchemes": {
-      "import": "./dist/styleUtilities/generatedThemeColorSchemes.mjs",
-      "require": "./dist/styleUtilities/generatedThemeColorSchemes.cjs"
-    },
-    "./streamFile": {
-      "types": "./dist/utils/media/streamFile.d.ts",
-      "import": "./dist/utils/media/streamFile.mjs",
-      "require": "./dist/utils/media/streamFile.cjs"
-    },
-    "./mdxParserUtils": {
-      "types": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.d.ts",
-      "import": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.mjs",
-      "require": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.cjs"
-    },
-    "./fsRootGlob": {
-      "types": "./dist/utils/fsRootGlob.d.ts",
-      "import": "./dist/utils/fsRootGlob.mjs",
-      "require": "./dist/utils/fsRootGlob.cjs"
-    },
-    "./settingPageSection": {
-      "types": "./dist/components/settingPageUtils/settingPageSection.d.ts",
-      "import": "./dist/components/settingPageUtils/settingPageSection.mjs",
-      "require": "./dist/components/settingPageUtils/settingPageSection.cjs"
-    },
-    "./settingPageContainer": {
-      "types": "./dist/components/settingPageUtils/settingPageContainer.d.ts",
-      "import": "./dist/components/settingPageUtils/settingPageContainer.mjs",
-      "require": "./dist/components/settingPageUtils/settingPageContainer.cjs"
-    },
-    "./disableBookmark": {
-      "types": "./dist/components/disableBookmark.d.ts",
-      "import": "./dist/components/disableBookmark.mjs",
-      "require": "./dist/components/disableBookmark.cjs"
-    },
-    "./getBaseEmbeddableProps": {
-      "types": "./dist/componentHelpers/getBaseEmbeddableProps.d.ts",
-      "import": "./dist/componentHelpers/getBaseEmbeddableProps.mjs",
-      "require": "./dist/componentHelpers/getBaseEmbeddableProps.cjs"
-    },
-    "./getAppConfigClientSide": {
-      "types": "./dist/utils/getAppConfigClientSide.d.ts",
-      "import": "./dist/utils/getAppConfigClientSide.mjs",
-      "require": "./dist/utils/getAppConfigClientSide.cjs"
-    },
-    "./validIconNameList": {
-      "types": "./dist/types/enums/validIconName.d.ts",
-      "import": "./dist/types/enums/validIconName.mjs",
-      "require": "./dist/types/enums/validIconName.cjs"
-    },
-    "./validIconNameEnum": {
-      "types": "./dist/types/enums/validIconNameEnum.d.ts",
-      "import": "./dist/types/enums/validIconNameEnum.mjs",
-      "require": "./dist/types/enums/validIconNameEnum.cjs"
-    },
-    "./actions-syncDirectory": {
-      "types": "./dist/actions/sync/syncRootDirectory.d.ts",
-      "import": "./dist/actions/sync/syncRootDirectory.mjs",
-      "require": "./dist/actions/sync/syncRootDirectory.cjs"
-    }
-  },
-  "dependencies": {
-    "@ulld/eslint-config": "*",
-    "axios-endpoints": "1.0.3",
-    "better-react-mathjax": "2.0.3",
-    "dayjs": "1.11.11",
-    "fumadocs-core": "13.4.1",
-    "glob": "10.3.15",
-    "gray-matter": "*",
-    "jaro-winkler": "0.2.8",
-    "lucide-react": "0.428.0",
-    "react-responsive": "10.0.0",
-    "shiki": "1.1.7",
-    "tinycolor2": "1.6.0",
-    "zod": "3.23.8"
-  },
-  "devDependencies": {
-    "@faker-js/faker": "9.0.3",
-    "@tanstack/react-table": "8.13.2",
-    "@testing-library/cypress": "10.0.1",
-    "@testing-library/dom": "9.3.4",
-    "@testing-library/jest-dom": "6.4.2",
-    "@testing-library/react": "16.0.1",
-    "@testing-library/user-event": "14.5.2",
-    "@types/jaro-winkler": "0.2.3",
-    "@ulld/test-utils": "*",
-    "chai": "5.1.1",
-    "cypress": "13.7.1",
-    "eslint-plugin-jest-dom": "5.2.0",
-    "eslint-plugin-testing-library": "6.2.2",
-    "jest": "29.7.0",
-    "jest-environment-jsdom": "29.7.0",
-    "mocha": "10.3.0",
-    "mock-fs": "5.4.0",
-    "react-test-renderer": "18.3.1",
-    "supertest": "6.3.4",
-    "supertest-session": "5.0.1",
-    "ts-jest": "29.2.5"
-  },
-  "peerDependencies": {
-    "@ulld/database": "workspace:*",
-    "@ulld/math": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "packageManager": "pnpm@9.0.4"
+    "name": "@ulld/utilities",
+    "version": "0.0.126",
+    "type": "module",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "wireit",
+        "dev": "next dev",
+        "test": "echo 'Add test script here'"
+    },
+    "wireit": {
+        "build": {
+            "dependencies": [
+                "generateValidIconNameData",
+                "generateInternalLocationsData",
+                "generateGlobalActionsData",
+                "clearBuild",
+                "genTypes",
+                "genBuild"
+            ]
+        },
+        "genTypes": {
+            "command": "pnpm tsc --project ./tsConfigBuildTypes.json"
+        },
+        "clearBuild": {
+            "command": "trash ./dist"
+        },
+        "genBuild": {
+            "command": "tsup-node",
+            "clean": false
+        },
+        "generateInternalLocationsData": {
+            "command": "tsx ./src/__scripts__/generateInternalAppLocations/main.ts"
+        },
+        "generateGlobalActionsData": {
+            "command": "tsx ../state/__scripts__/generateGlobalActionsData.ts"
+        },
+        "generateValidIconNameData": {
+            "command": "tsx ./src/__scripts__/generateValidIconNameData/main.ts"
+        }
+    },
+    "types": "./dist/types/main.d.ts",
+    "exports": {
+        "./types": {
+            "types": "./dist/types/main.d.ts",
+            "import": "./dist/types/main.mjs",
+            "require": "./dist/types/main.cjs"
+        },
+        "./buildUtils": {
+            "types": "./dist/staticAppProperties/buildUtils/main.d.ts",
+            "import": "./dist/staticAppProperties/buildUtils/main.mjs",
+            "require": "./dist/staticAppProperties/buildUtils/main.cjs"
+        },
+        "./toggleBookmarkState": {
+            "types": "./dist/utils/domUtils/domState/toggleBookmarkState.d.ts",
+            "import": "./dist/utils/domUtils/domState/toggleBookmarkState.mjs",
+            "require": "./dist/utils/domUtils/domState/toggleBookmarkState.cjs"
+        },
+        "./copyJsonFilesToDist": {
+            "types": "./dist/utils/build/copyJsonFilesToDist.d.ts",
+            "import": "./dist/utils/build/copyJsonFilesToDist.mjs",
+            "require": "./dist/utils/build/copyJsonFilesToDist.cjs"
+        },
+        "./ulldColorVars": {
+            "types": "./dist/styleUtilities/ulldColorVars.d.ts",
+            "import": "./dist/styleUtilities/ulldColorVars.mjs",
+            "require": "./dist/styleUtilities/ulldColorVars.cjs"
+        },
+        "./getGlobServerSide": {
+            "types": "./dist/utils/glob/getGlobServerSide.d.ts",
+            "import": "./dist/utils/glob/getGlobServerSide.mjs",
+            "require": "./dist/utils/glob/getGlobServerSide.cjs"
+        },
+        "./fetchWrapper": {
+            "types": "./dist/utils/fetchWrapper.d.ts",
+            "import": "./dist/utils/fetchWrapper.mjs",
+            "require": "./dist/utils/fetchWrapper.cjs"
+        },
+        "./filePathSchemas": {
+            "types": "./dist/schemas/filePath/index.d.ts",
+            "import": "./dist/schemas/filePath/index.mjs",
+            "require": "./dist/schemas/filePath/index.cjs"
+        },
+        "./isNoConfig": {
+            "types": "./dist/utils/webAppUtils/isNoConfig.d.ts",
+            "import": "./dist/utils/webAppUtils/isNoConfig.mjs",
+            "require": "./dist/utils/webAppUtils/isNoConfig.cjs"
+        },
+        "./errorNotifications": {
+            "types": "./dist/errorHandling/main.d.ts",
+            "import": "./dist/errorHandling/main.mjs",
+            "require": "./dist/errorHandling/main.cjs"
+        },
+        "./testDataHelpers": {
+            "types": "./dist/testDataHelpers/main.d.ts",
+            "import": "./dist/testDataHelpers/main.mjs",
+            "require": "./dist/testDataHelpers/main.cjs"
+        },
+        "./databaseTestData": {
+            "types": "./dist/testDataHelpers/databaseTestData.d.ts",
+            "import": "./dist/testDataHelpers/databaseTestData.mjs",
+            "require": "./dist/testDataHelpers/databaseTestData.cjs"
+        },
+        "./localDevelopmentMenu": {
+            "types": "./dist/components/localDevelopment/localDevelopmentMenu.d.ts",
+            "import": "./dist/components/localDevelopment/localDevelopmentMenu.mjs",
+            "require": "./dist/components/localDevelopment/localDevelopmentMenu.cjs"
+        },
+        "./localDevelopmentPageWrapper": {
+            "types": "./dist/components/localDevelopment/localDevelopmentPageWrapper.d.ts",
+            "import": "./dist/components/localDevelopment/localDevelopmentPageWrapper.mjs",
+            "require": "./dist/components/localDevelopment/localDevelopmentPageWrapper.cjs"
+        },
+        "./devUtils": {
+            "types": "./dist/developmentUtilities/index.d.ts",
+            "import": "./dist/developmentUtilities/index.mjs",
+            "require": "./dist/developmentUtilities/index.cjs"
+        },
+        "./utilNavLinks": {
+            "types": "./dist/navigation/utilityNavLinks.d.ts",
+            "import": "./dist/navigation/utilityNavLinks.mjs",
+            "require": "./dist/navigation/utilityNavLinks.cjs"
+        },
+        "./getPathnameFromHeaders": {
+            "types": "./dist/utils/getPathnameFromHeaders.d.ts",
+            "import": "./dist/utils/getPathnameFromHeaders.mjs",
+            "require": "./dist/utils/getPathnameFromHeaders.cjs"
+        },
+        "./glob": {
+            "types": "./dist/classes/glob/main.d.ts",
+            "import": "./dist/classes/glob/main.mjs",
+            "require": "./dist/classes/glob/main.cjs"
+        },
+        "./getMarkdownHeadings": {
+            "types": "./dist/additionalParsers/mdx/getContentHeadings.d.ts",
+            "import": "./dist/additionalParsers/mdx/getContentHeadings.mjs",
+            "require": "./dist/additionalParsers/mdx/getContentHeadings.cjs"
+        },
+        "./additionalSources": {
+            "types": "./dist/utils/build/additionalSourceFileStructure.d.ts",
+            "import": "./dist/utils/build/additionalSourceFileStructure.mjs",
+            "require": "./dist/utils/build/additionalSourceFileStructure.cjs"
+        },
+        "./paths": {
+            "types": "./dist/classes/urlManager.d.ts",
+            "import": "./dist/classes/urlManager.mjs",
+            "require": "./dist/classes/urlManager.cjs"
+        },
+        "./packageJsonType": {
+            "types": "./dist/types/packageJson/packageJsonType.d.ts",
+            "import": "./dist/types/packageJson/packageJsonType.mjs",
+            "require": "./dist/types/packageJson/packageJsonType.cjs"
+        },
+        "./paginationUtils": {
+            "types": "./dist/utils/paginationUtils.d.ts",
+            "import": "./dist/utils/paginationUtils.mjs",
+            "require": "./dist/utils/paginationUtils.cjs"
+        },
+        "./objectUtils": {
+            "types": "./dist/utils/objectUtils.d.ts",
+            "import": "./dist/utils/objectUtils.mjs",
+            "require": "./dist/utils/objectUtils.cjs"
+        },
+        "./filePathUtils": {
+            "types": "./dist/utils/filePathUtils.d.ts",
+            "import": "./dist/utils/filePathUtils.mjs",
+            "require": "./dist/utils/filePathUtils.cjs"
+        },
+        "./searchUtils": {
+            "types": "./dist/utils/searchUtils.d.ts",
+            "import": "./dist/utils/searchUtils.mjs",
+            "require": "./dist/utils/searchUtils.cjs"
+        },
+        "./sortUtils": {
+            "types": "./dist/utils/sortUtils.d.ts",
+            "import": "./dist/utils/sortUtils.mjs",
+            "require": "./dist/utils/sortUtils.cjs"
+        },
+        "./admonition/types": {
+            "types": "./dist/types/admonition.d.ts",
+            "import": "./dist/types/admonition.mjs",
+            "require": "./dist/types/admonition.cjs"
+        },
+        "./components/copyContextMenu": {
+            "types": "./dist/components/copyContextMenu.d.ts",
+            "import": "./dist/components/copyContextMenu.mjs",
+            "require": "./dist/components/copyContextMenu.cjs"
+        },
+        "./booleanAndEqualities/arrayTruthy": {
+            "types": "./dist/booleanAndEqualities/arrayTruthy.d.ts",
+            "import": "./dist/booleanAndEqualities/arrayTruthy.mjs",
+            "require": "./dist/booleanAndEqualities/arrayTruthy.cjs"
+        },
+        "./shadColorMap": {
+            "types": "./dist/utils/shadColorMap.d.ts",
+            "import": "./dist/utils/shadColorMap.mjs",
+            "require": "./dist/utils/shadColorMap.cjs"
+        },
+        "./types/navigation": {
+            "types": "./dist/types/navigation.d.ts",
+            "import": "./dist/types/navigation.mjs",
+            "require": "./dist/types/navigation.cjs"
+        },
+        "./types/utilityTypes": {
+            "types": "./dist/types/utilityTypes.d.ts",
+            "import": "./dist/types/utilityTypes.mjs",
+            "require": "./dist/types/utilityTypes.cjs"
+        },
+        "./types/toastConfig": {
+            "types": "./dist/types/toastConfig.d.ts",
+            "import": "./dist/types/toastConfig.mjs",
+            "require": "./dist/types/toastConfig.cjs"
+        },
+        "./types/todos": {
+            "types": "./dist/types/todos.d.ts",
+            "import": "./dist/types/todos.mjs",
+            "require": "./dist/types/todos.cjs"
+        },
+        "./types/embeddedImageProps": {
+            "types": "./dist/types/embeddedImageProps.d.ts",
+            "import": "./dist/types/embeddedImageProps.mjs",
+            "require": "./dist/types/embeddedImageProps.cjs"
+        },
+        "./staticAppProperties/main": {
+            "types": "./dist/staticAppProperties/main.d.ts",
+            "import": "./dist/staticAppProperties/main.mjs",
+            "require": "./dist/staticAppProperties/main.cjs"
+        },
+        "./general": {
+            "types": "./dist/utils/general.d.ts",
+            "import": "./dist/utils/general.mjs",
+            "require": "./dist/utils/general.cjs"
+        },
+        "./identity": {
+            "types": "./dist/utils/identity.d.ts",
+            "import": "./dist/utils/identity.mjs",
+            "require": "./dist/utils/identity.cjs"
+        },
+        "./dates": {
+            "types": "./dist/utils/dates.d.ts",
+            "import": "./dist/utils/dates.mjs",
+            "require": "./dist/utils/dates.cjs"
+        },
+        "./cn": {
+            "types": "./dist/utils/cn.d.ts",
+            "import": "./dist/utils/cn.mjs",
+            "require": "./dist/utils/cn.cjs"
+        },
+        "./cors": {
+            "types": "./dist/utils/cors.d.ts",
+            "import": "./dist/utils/cors.mjs",
+            "require": "./dist/utils/cors.cjs"
+        },
+        "./arrayUtilities": {
+            "types": "./dist/utils/arrayUtilities.d.ts",
+            "import": "./dist/utils/arrayUtilities.mjs",
+            "require": "./dist/utils/arrayUtilities.cjs"
+        },
+        "./latexUtils": {
+            "types": "./dist/utils/latexUtils.d.ts",
+            "import": "./dist/utils/latexUtils.mjs",
+            "require": "./dist/utils/latexUtils.cjs"
+        },
+        "./pathUtilsClientSide": {
+            "types": "./dist/utils/pathUtilsClientSide.d.ts",
+            "import": "./dist/utils/pathUtilsClientSide.mjs",
+            "require": "./dist/utils/pathUtilsClientSide.cjs"
+        },
+        "./pathUtilsServerSide": {
+            "types": "./dist/utils/pathUtilsServer.d.ts",
+            "import": "./dist/utils/pathUtilsServer.mjs",
+            "require": "./dist/utils/pathUtilsServer.cjs"
+        },
+        "./fsUtils": {
+            "types": "./dist/utils/fsUtils.d.ts",
+            "import": "./dist/utils/fsUtils.mjs",
+            "require": "./dist/utils/fsUtils.cjs"
+        },
+        "./utils/general": {
+            "types": "./dist/utils/general.d.ts",
+            "import": "./dist/utils/general.mjs",
+            "require": "./dist/utils/general.cjs"
+        },
+        "./utils/identity": {
+            "types": "./dist/utils/identity.d.ts",
+            "import": "./dist/utils/identity.mjs",
+            "require": "./dist/utils/identity.cjs"
+        },
+        "./utils/dates": {
+            "types": "./dist/utils/dates.d.ts",
+            "import": "./dist/utils/dates.mjs",
+            "require": "./dist/utils/dates.cjs"
+        },
+        "./utils/cn": {
+            "types": "./dist/utils/cn.d.ts",
+            "import": "./dist/utils/cn.mjs",
+            "require": "./dist/utils/cn.cjs"
+        },
+        "./utils/arrayUtilities": {
+            "types": "./dist/utils/arrayUtilities.d.ts",
+            "import": "./dist/utils/arrayUtilities.mjs",
+            "require": "./dist/utils/arrayUtilities.cjs"
+        },
+        "./utils/latexUtils": {
+            "types": "./dist/utils/latexUtils.d.ts",
+            "import": "./dist/utils/latexUtils.mjs",
+            "require": "./dist/utils/latexUtils.cjs"
+        },
+        "./utils/pathUtilsClientSide": {
+            "types": "./dist/utils/pathUtilsClientSide.d.ts",
+            "import": "./dist/utils/pathUtilsClientSide.mjs",
+            "require": "./dist/utils/pathUtilsClientSide.cjs"
+        },
+        "./utils/fsUtils": {
+            "types": "./dist/utils/fsUtils.d.ts",
+            "import": "./dist/utils/fsUtils.mjs",
+            "require": "./dist/utils/fsUtils.cjs"
+        },
+        "./utils-dom": {
+            "types": "./dist/utils/domUtils/main.d.ts",
+            "import": "./dist/utils/domUtils/main.mjs",
+            "require": "./dist/utils/domUtils/main.cjs"
+        },
+        "./getBodyClasses": {
+            "types": "./dist/utils/domUtils/main.d.ts",
+            "import": "./dist/utils/domUtils/main.mjs",
+            "require": "./dist/utils/domUtils/main.cjs"
+        },
+        "./toDoStatusData": {
+            "types": "./dist/schemas/todoItemStatus.d.ts",
+            "import": "./dist/schemas/todoItemStatus.mjs",
+            "require": "./dist/schemas/todoItemStatus.cjs"
+        },
+        "./schemas/snippets": {
+            "types": "./dist/schemas/snippets.d.ts",
+            "import": "./dist/schemas/snippets.mjs",
+            "require": "./dist/schemas/snippets.cjs"
+        },
+        "./schemas/utility": {
+            "types": "./dist/schemas/utility.d.ts",
+            "import": "./dist/schemas/utility.mjs",
+            "require": "./dist/schemas/utility.cjs"
+        },
+        "./schemas/transforms": {
+            "types": "./dist/schemas/transforms.d.ts",
+            "import": "./dist/schemas/transforms.mjs",
+            "require": "./dist/schemas/transforms.cjs"
+        },
+        "./schemas/mdx/parseMdxStringSchema": {
+            "types": "./dist/schemas/mdx/parseMdxStringSchema.d.ts",
+            "import": "./dist/schemas/mdx/parseMdxStringSchema.mjs",
+            "require": "./dist/schemas/mdx/parseMdxStringSchema.cjs"
+        },
+        "./schemas/mdx/parseMdxStringProps": {
+            "types": "./dist/schemas/mdx/parseMdxStringProps.d.ts",
+            "import": "./dist/schemas/mdx/parseMdxStringProps.mjs",
+            "require": "./dist/schemas/mdx/parseMdxStringProps.cjs"
+        },
+        "./defaults/markdownUniversalOptions": {
+            "types": "./dist/defaults/markdownUniversalOptions.d.ts",
+            "import": "./dist/defaults/markdownUniversalOptions.mjs",
+            "require": "./dist/defaults/markdownUniversalOptions.cjs"
+        },
+        "./defaults/markdown.json": {
+            "import": "./dist/defaults/markdownOptions.json",
+            "require": "./dist/defaults/markdownOptions.json"
+        },
+        "./defaults/defaultMermaidConfig": {
+            "types": "./dist/defaults/defaultMermaidConfig.d.ts",
+            "import": "./dist/defaults/defaultMermaidConfig.mjs",
+            "require": "./dist/defaults/defaultMermaidConfig.cjs"
+        },
+        "./defaults/forms/healthReport": {
+            "types": "./dist/defaults/forms/healthReport.d.ts",
+            "import": "./dist/defaults/forms/healthReport.mjs",
+            "require": "./dist/defaults/forms/healthReport.cjs"
+        },
+        "./defaults/prisma/commonZodFields": {
+            "types": "./dist/defaults/prisma/commonZodFields.d.ts",
+            "import": "./dist/defaults/prisma/commonZodFields.mjs",
+            "require": "./dist/defaults/prisma/commonZodFields.cjs"
+        },
+        "./defaults/prisma/notes": {
+            "types": "./dist/defaults/prisma/notes.d.ts",
+            "import": "./dist/defaults/prisma/notes.mjs",
+            "require": "./dist/defaults/prisma/notes.cjs"
+        },
+        "./getTocFromContent": {
+            "types": "./dist/navigation/getTocFromContent.d.ts",
+            "import": "./dist/navigation/getTocFromContent.mjs",
+            "require": "./dist/navigation/getTocFromContent.cjs"
+        },
+        "./actions/copyStringToClipboard": {
+            "types": "./dist/actions/copyStringToClipboard.d.ts",
+            "import": "./dist/actions/copyStringToClipboard.mjs",
+            "require": "./dist/actions/copyStringToClipboard.cjs"
+        },
+        "./copyStringToClipboard": {
+            "types": "./dist/actions/copyStringToClipboard.d.ts",
+            "import": "./dist/actions/copyStringToClipboard.mjs",
+            "require": "./dist/actions/copyStringToClipboard.cjs"
+        },
+        "./loaders/requireJS/requirejs": {
+            "types": "./dist/loaders/requireJS/requirejs.d.ts",
+            "import": "./dist/loaders/requireJS/requirejs.mjs",
+            "require": "./dist/loaders/requireJS/requirejs.cjs"
+        },
+        "./isLocal": {
+            "types": "./dist/utils/isLocal.d.ts",
+            "import": "./dist/utils/isLocal.mjs",
+            "require": "./dist/utils/isLocal.cjs"
+        },
+        "./initialLoader": {
+            "types": "./dist/loaders/installerComponents/initialLoader.d.ts",
+            "import": "./dist/loaders/installerComponents/initialLoader.mjs",
+            "require": "./dist/loaders/installerComponents/initialLoader.cjs"
+        },
+        "./tikzLoader": {
+            "types": "./dist/loaders/installerComponents/TikzLoader.d.ts",
+            "import": "./dist/loaders/installerComponents/TikzLoader.mjs",
+            "require": "./dist/loaders/installerComponents/TikzLoader.cjs"
+        },
+        "./autoWrapMathSchemas": {
+            "types": "./dist/schemas/autoWrapMathSchema.d.ts",
+            "import": "./dist/schemas/autoWrapMathSchema.mjs",
+            "require": "./dist/schemas/autoWrapMathSchema.cjs"
+        },
+        "./getDarkMode": {
+            "types": "./dist/utils/getDarkMode.d.ts",
+            "import": "./dist/utils/getDarkMode.mjs",
+            "require": "./dist/utils/getDarkMode.cjs"
+        },
+        "./internalDevTypes": {
+            "types": "./dist/internalDevTypes/main.d.ts",
+            "import": "./dist/internalDevTypes/main.mjs",
+            "require": "./dist/internalDevTypes/main.cjs"
+        },
+        "./monacoLanguages": {
+            "types": "./dist/monaco/languages.d.ts",
+            "import": "./dist/monaco/languages.mjs",
+            "require": "./dist/monaco/languages.cjs"
+        },
+        "./shikiLanguages": {
+            "types": "./dist/shiki/languageList.d.ts",
+            "import": "./dist/shiki/languageList.mjs",
+            "require": "./dist/shiki/languageList.cjs"
+        },
+        "./shikiThemes": {
+            "types": "./dist/shiki/themeList.d.ts",
+            "import": "./dist/shiki/themeList.mjs",
+            "require": "./dist/shiki/themeList.cjs"
+        },
+        "./getAssumedDimensions": {
+            "types": "./dist/utils/getAssumedDimensions.d.ts",
+            "import": "./dist/utils/getAssumedDimensions.mjs",
+            "require": "./dist/utils/getAssumedDimensions.cjs"
+        },
+        "./removeEmptyChildren": {
+            "types": "./dist/utils/removeEmptyChildren.d.ts",
+            "import": "./dist/utils/removeEmptyChildren.mjs",
+            "require": "./dist/utils/removeEmptyChildren.cjs"
+        },
+        "./getAllRegexMatches": {
+            "types": "./dist/utils/getAllRegexMatches.d.ts",
+            "import": "./dist/utils/getAllRegexMatches.mjs",
+            "require": "./dist/utils/getAllRegexMatches.cjs"
+        },
+        "./replaceContentByMatch": {
+            "types": "./dist/utils/replaceContentByRegexMatch.d.ts",
+            "import": "./dist/utils/replaceContentByRegexMatch.mjs",
+            "require": "./dist/utils/replaceContentByRegexMatch.cjs"
+        },
+        "./convertColorString": {
+            "types": "./dist/utils/colors/convertColorString.d.ts",
+            "import": "./dist/utils/colors/convertColorString.mjs",
+            "require": "./dist/utils/colors/convertColorString.cjs"
+        },
+        "./appData": {
+            "types": "./dist/appData.d.ts",
+            "import": "./dist/appData.mjs",
+            "require": "./dist/appData.cjs"
+        },
+        "./internalAppLocationsGeneratedData": {
+            "types": "./dist/utils/generatedUtils/internalAppLocations.d.ts",
+            "import": "./dist/utils/generatedUtils/internalAppLocations.mjs",
+            "require": "./dist/utils/generatedUtils/internalAppLocations.cjs"
+        },
+        "./internalGLobalActionsGeneratedData": {
+            "types": "./dist/utils/generatedUtils/internalGlobalActions.d.ts",
+            "import": "./dist/utils/generatedUtils/internalGlobalActions.mjs",
+            "require": "./dist/utils/generatedUtils/internalGlobalActions.cjs"
+        },
+        "./internalAppLocations": {
+            "types": "./dist/staticAppProperties/internalLocationsAndActions/main.d.ts",
+            "import": "./dist/staticAppProperties/internalLocationsAndActions/main.mjs",
+            "require": "./dist/staticAppProperties/internalLocationsAndActions/main.cjs"
+        },
+        "./getInternalLocationsAndActions": {
+            "types": "./dist/utils/generatedUtils/getInternalLocationsAndActions.d.ts",
+            "import": "./dist/utils/generatedUtils/getInternalLocationsAndActions.mjs",
+            "require": "./dist/utils/generatedUtils/getInternalLocationsAndActions.cjs"
+        },
+        "./listUtils": {
+            "types": "./dist/utils/listUtils.d.ts",
+            "import": "./dist/utils/listUtils.mjs",
+            "require": "./dist/utils/listUtils.cjs"
+        },
+        "./stringUtils": {
+            "types": "./dist/utils/stringUtils.d.ts",
+            "import": "./dist/utils/stringUtils.mjs",
+            "require": "./dist/utils/stringUtils.cjs"
+        },
+        "./numberUtils": {
+            "types": "./dist/utils/numberUtils.d.ts",
+            "import": "./dist/utils/numberUtils.mjs",
+            "require": "./dist/utils/numberUtils.cjs"
+        },
+        "./regexUtils": {
+            "types": "./dist/utils/regexUtils.d.ts",
+            "import": "./dist/utils/regexUtils.mjs",
+            "require": "./dist/utils/regexUtils.cjs"
+        },
+        "./slotDataType": {
+            "types": "./dist/types/slotDataType.d.ts",
+            "import": "./dist/types/slotDataType.mjs",
+            "require": "./dist/types/slotDataType.cjs"
+        },
+        "./slotMap.json": "./dist/utils/slotMap.json",
+        "./corePageProps": {
+            "types": "./dist/types/corePageProps.d.ts",
+            "import": "./dist/types/corePageProps.mjs",
+            "require": "./dist/types/corePageProps.cjs"
+        },
+        "./buildStaticData": {
+            "import": "./dist/utils/buildStaticData.mjs",
+            "require": "./dist/utils/buildStaticData.cjs"
+        },
+        "./buildStaticData.json": {
+            "import": "./dist/utils/buildStaticData.json",
+            "require": "./dist/utils/buildStaticData.json"
+        },
+        "./internalDataHelpers": {
+            "types": "./dist/internalDevTypes/index.d.ts",
+            "import": "./dist/internalDevTypes/index.mjs",
+            "require": "./dist/internalDevTypes/index.cjs"
+        },
+        "./dateTime": {
+            "types": "./dist/classes/DateTime/main.d.ts",
+            "import": "./dist/classes/DateTime/main.mjs",
+            "require": "./dist/classes/DateTime/main.cjs"
+        },
+        "./getPluginConfig": {
+            "types": "./dist/utils/baseAppUtils/getPluginConfig.d.ts",
+            "import": "./dist/utils/baseAppUtils/getPluginConfig.mjs",
+            "require": "./dist/utils/baseAppUtils/getPluginConfig.cjs"
+        },
+        "./componentDocsPathUtils": {
+            "types": "./dist/utils/baseAppUtils/componentDocPathUtils.d.ts",
+            "import": "./dist/utils/baseAppUtils/componentDocPathUtils.mjs",
+            "require": "./dist/utils/baseAppUtils/componentDocPathUtils.cjs"
+        },
+        "./providers-mathjax": {
+            "types": "./dist/providers/mathjax.d.ts",
+            "import": "./dist/providers/mathjax.mjs",
+            "require": "./dist/providers/mathjax.cjs"
+        },
+        "./transformExportString": {
+            "types": "./dist/utils/build/transformExportString.d.ts",
+            "import": "./dist/utils/build/transformExportString.mjs",
+            "require": "./dist/utils/build/transformExportString.cjs"
+        },
+        "./buildTypes": {
+            "types": "./dist/types/buildTypes.d.ts",
+            "import": "./dist/types/buildTypes.mjs",
+            "require": "./dist/types/buildTypes.cjs"
+        },
+        "./validateDeviceType": {
+            "types": "./dist/utils/deviceDetect.d.ts",
+            "import": "./dist/utils/deviceDetect.mjs",
+            "require": "./dist/utils/deviceDetect.cjs"
+        },
+        "./downloadFile": {
+            "types": "./dist/utils/downloadFile.d.ts",
+            "import": "./dist/utils/downloadFile.mjs",
+            "require": "./dist/utils/downloadFile.cjs"
+        },
+        "./jsonFileClass": {
+            "types": "./dist/classes/file/jsonFile.d.ts",
+            "import": "./dist/classes/file/jsonFile.mjs",
+            "require": "./dist/classes/file/jsonFile.cjs"
+        },
+        "./imageFile": {
+            "types": "./dist/classes/file/media/imageFile.d.ts",
+            "import": "./dist/classes/file/media/imageFile.mjs",
+            "require": "./dist/classes/file/media/imageFile.cjs"
+        },
+        "./fileClass": {
+            "types": "./dist/classes/file/main.d.ts",
+            "import": "./dist/classes/file/main.mjs",
+            "require": "./dist/classes/file/main.cjs"
+        },
+        "./mdxFile": {
+            "types": "./dist/classes/file/mdxFile.d.ts",
+            "import": "./dist/classes/file/mdxFile.mjs",
+            "require": "./dist/classes/file/mdxFile.cjs"
+        },
+        "./defaultColorThemeList": {
+            "types": "./dist/styleUtilities/ulldDefaultColorThemes.d.ts",
+            "import": "./dist/styleUtilities/ulldDefaultColorThemes.mjs",
+            "require": "./dist/styleUtilities/ulldDefaultColorThemes.cjs"
+        },
+        "./themeColorGradients": {
+            "import": "./dist/styleUtilities/themeColorGradients.mjs",
+            "require": "./dist/styleUtilities/themeColorGradients.cjs"
+        },
+        "./themeColorGradients.json": "./dist/styleUtilities/themeColorGradients.json",
+        "./themeColorSchemes": {
+            "import": "./dist/styleUtilities/generatedThemeColorSchemes.mjs",
+            "require": "./dist/styleUtilities/generatedThemeColorSchemes.cjs"
+        },
+        "./streamFile": {
+            "types": "./dist/utils/media/streamFile.d.ts",
+            "import": "./dist/utils/media/streamFile.mjs",
+            "require": "./dist/utils/media/streamFile.cjs"
+        },
+        "./mdxParserUtils": {
+            "types": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.d.ts",
+            "import": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.mjs",
+            "require": "./dist/parsingUtilities/mdx/getNoteTypeDataFromPath.cjs"
+        },
+        "./fsRootGlob": {
+            "types": "./dist/utils/fsRootGlob.d.ts",
+            "import": "./dist/utils/fsRootGlob.mjs",
+            "require": "./dist/utils/fsRootGlob.cjs"
+        },
+        "./settingPageSection": {
+            "types": "./dist/components/settingPageUtils/settingPageSection.d.ts",
+            "import": "./dist/components/settingPageUtils/settingPageSection.mjs",
+            "require": "./dist/components/settingPageUtils/settingPageSection.cjs"
+        },
+        "./settingPageContainer": {
+            "types": "./dist/components/settingPageUtils/settingPageContainer.d.ts",
+            "import": "./dist/components/settingPageUtils/settingPageContainer.mjs",
+            "require": "./dist/components/settingPageUtils/settingPageContainer.cjs"
+        },
+        "./disableBookmark": {
+            "types": "./dist/components/disableBookmark.d.ts",
+            "import": "./dist/components/disableBookmark.mjs",
+            "require": "./dist/components/disableBookmark.cjs"
+        },
+        "./getBaseEmbeddableProps": {
+            "types": "./dist/componentHelpers/getBaseEmbeddableProps.d.ts",
+            "import": "./dist/componentHelpers/getBaseEmbeddableProps.mjs",
+            "require": "./dist/componentHelpers/getBaseEmbeddableProps.cjs"
+        },
+        "./getAppConfigClientSide": {
+            "types": "./dist/utils/getAppConfigClientSide.d.ts",
+            "import": "./dist/utils/getAppConfigClientSide.mjs",
+            "require": "./dist/utils/getAppConfigClientSide.cjs"
+        },
+        "./validIconNameList": {
+            "types": "./dist/types/enums/validIconName.d.ts",
+            "import": "./dist/types/enums/validIconName.mjs",
+            "require": "./dist/types/enums/validIconName.cjs"
+        },
+        "./validIconNameEnum": {
+            "types": "./dist/types/enums/validIconNameEnum.d.ts",
+            "import": "./dist/types/enums/validIconNameEnum.mjs",
+            "require": "./dist/types/enums/validIconNameEnum.cjs"
+        },
+        "./actions-syncDirectory": {
+            "types": "./dist/actions/sync/syncRootDirectory.d.ts",
+            "import": "./dist/actions/sync/syncRootDirectory.mjs",
+            "require": "./dist/actions/sync/syncRootDirectory.cjs"
+        }
+    },
+    "dependencies": {
+        "@ulld/eslint-config": "*",
+        "axios-endpoints": "1.0.3",
+        "better-react-mathjax": "2.0.3",
+        "dayjs": "1.11.11",
+        "fumadocs-core": "13.4.1",
+        "glob": "10.3.15",
+        "gray-matter": "*",
+        "jaro-winkler": "0.2.8",
+        "lucide-react": "0.428.0",
+        "react-responsive": "10.0.0",
+        "shiki": "1.1.7",
+        "tinycolor2": "1.6.0",
+        "zod": "3.23.8"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "9.0.3",
+        "@tanstack/react-table": "8.13.2",
+        "@testing-library/cypress": "10.0.1",
+        "@testing-library/dom": "9.3.4",
+        "@testing-library/jest-dom": "6.4.2",
+        "@testing-library/react": "16.0.1",
+        "@testing-library/user-event": "14.5.2",
+        "@types/jaro-winkler": "0.2.3",
+        "@ulld/test-utils": "*",
+        "chai": "5.1.1",
+        "cypress": "13.7.1",
+        "eslint-plugin-jest-dom": "5.2.0",
+        "eslint-plugin-testing-library": "6.2.2",
+        "jest": "29.7.0",
+        "jest-environment-jsdom": "29.7.0",
+        "mocha": "10.3.0",
+        "mock-fs": "5.4.0",
+        "react-test-renderer": "18.3.1",
+        "supertest": "6.3.4",
+        "supertest-session": "5.0.1",
+        "ts-jest": "29.2.5"
+    },
+    "peerDependencies": {
+        "@ulld/database": "workspace:*",
+        "@ulld/math": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "packageManager": "pnpm@9.0.4"
 }

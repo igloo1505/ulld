@@ -1,9 +1,9 @@
-import { ParsableExtensions } from "@ulld/configschema/zod/secondaryConfigParse/getParsableExtensions";
-import { serverClient } from "../../../trpc/serverClient";
-import { IpynbNote } from "../IpynbNote";
+import type { ParsableExtensions } from "@ulld/types";
+import type { Prisma } from "@ulld/database/internalDatabaseTypes"
+import type { serverClient } from "../../../trpc/serverClient";
+import type { IpynbNote } from "../IpynbNote";
 import { NoteBase } from "../NoteBase";
-import { PrismaMdxRelationshipProtocol } from "../type";
-import { Prisma } from "@ulld/database/internalDatabaseTypes"
+import type { PrismaMdxRelationshipProtocol } from "../type";
 
 
 export type IpynbPrismaReturnType = Awaited<ReturnType<typeof serverClient["notebook"]["getPrismaIpynb"]>>

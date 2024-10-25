@@ -6,9 +6,10 @@
 
 
 
-var _chunkGV6X5BBPcjs = require('../chunk-GV6X5BBP.cjs');
+
+var _chunkIDPXUFRGcjs = require('../chunk-IDPXUFRG.cjs');
 require('../chunk-JUH5FQQR.cjs');
-require('../chunk-C4XI6WMK.cjs');
+require('../chunk-EEXWFUX2.cjs');
 
 
 
@@ -17,5 +18,6 @@ require('../chunk-C4XI6WMK.cjs');
 
 
 
-exports.docTypeUISchema = _chunkGV6X5BBPcjs.docTypeUISchema; exports.docTypeUISchemaOutput = _chunkGV6X5BBPcjs.docTypeUISchemaOutput; exports.documentTypeConfigSchema = _chunkGV6X5BBPcjs.documentTypeConfigSchema; exports.documentTypeConfigSchemaBase = _chunkGV6X5BBPcjs.documentTypeConfigSchemaBase; exports.documentTypeConfigSchemaInner = _chunkGV6X5BBPcjs.documentTypeConfigSchemaInner; exports.documentTypeConfigSchemaOutputSchema = _chunkGV6X5BBPcjs.documentTypeConfigSchemaOutputSchema; exports.zodDocTypeInput = _chunkGV6X5BBPcjs.zodDocTypeInput;
+
+exports.docTypeUISchema = _chunkIDPXUFRGcjs.docTypeUISchema; exports.docTypeUISchemaOutput = _chunkIDPXUFRGcjs.docTypeUISchemaOutput; exports.documentTypeConfigMinimalOutputSchema = _chunkIDPXUFRGcjs.documentTypeConfigMinimalOutputSchema; exports.documentTypeConfigSchema = _chunkIDPXUFRGcjs.documentTypeConfigSchema; exports.documentTypeConfigSchemaBase = _chunkIDPXUFRGcjs.documentTypeConfigSchemaBase; exports.documentTypeConfigSchemaInner = _chunkIDPXUFRGcjs.documentTypeConfigSchemaInner; exports.documentTypeConfigSchemaOutputSchema = _chunkIDPXUFRGcjs.documentTypeConfigSchemaOutputSchema; exports.zodDocTypeInput = _chunkIDPXUFRGcjs.zodDocTypeInput;
 //# sourceMappingURL=documentConfigSchema.cjs.map

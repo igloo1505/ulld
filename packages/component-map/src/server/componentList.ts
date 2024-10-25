@@ -10,11 +10,12 @@ const Admonition = dynamic(() =>
     ),
 );
 
-const Image = dynamic(() =>
-    import("@ulld/embeddable-components/components/server/image").then(
+ /* @ts-expect-error Async Server Component */
+const Image = dynamic(() => {
+    return import("@ulld/embeddable-components/components/server/image").then(
         (a) => a.ServerEmbeddedImage,
-    ),
-);
+    )
+});
 const Color = dynamic(() =>
     import("@ulld/embeddable-components/components/server/colorText").then(
         (a) => a.ColorText,

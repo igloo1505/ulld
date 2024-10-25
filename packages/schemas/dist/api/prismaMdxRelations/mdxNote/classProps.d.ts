@@ -15,17 +15,17 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodDefault<z.ZodNumber>;
             entries: z.ZodDefault<z.ZodArray<z.ZodAny, "many">>;
         }, "strip", z.ZodTypeAny, {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         }, {
+            id?: number | undefined;
             entries?: any[] | undefined;
             firstSync?: string | Date | null | undefined;
             lastAccess?: string | Date | null | undefined;
             filename?: string | undefined;
-            id?: number | undefined;
         }>>;
         BibId: z.ZodDefault<z.ZodNumber>;
         readingList: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -128,12 +128,12 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             description: z.ZodOptional<z.ZodNullable<z.ZodString>>;
             entries: z.ZodArray<z.ZodAny, "many">;
         }, "strip", z.ZodTypeAny, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }>, "many">>;
         added: z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodDate, z.ZodString]>>>, Date, string | Date | null | undefined>;
@@ -145,17 +145,17 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodDefault<z.ZodNumber>;
             entries: z.ZodDefault<z.ZodArray<z.ZodAny, "many">>;
         }, "strip", z.ZodTypeAny, {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         }, {
+            id?: number | undefined;
             entries?: any[] | undefined;
             firstSync?: string | Date | null | undefined;
             lastAccess?: string | Date | null | undefined;
             filename?: string | undefined;
-            id?: number | undefined;
         }>>;
         BibId: z.ZodDefault<z.ZodNumber>;
         readingList: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -258,12 +258,12 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             description: z.ZodOptional<z.ZodNullable<z.ZodString>>;
             entries: z.ZodArray<z.ZodAny, "many">;
         }, "strip", z.ZodTypeAny, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }>, "many">>;
         added: z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodDate, z.ZodString]>>>, Date, string | Date | null | undefined>;
@@ -275,17 +275,17 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodDefault<z.ZodNumber>;
             entries: z.ZodDefault<z.ZodArray<z.ZodAny, "many">>;
         }, "strip", z.ZodTypeAny, {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         }, {
+            id?: number | undefined;
             entries?: any[] | undefined;
             firstSync?: string | Date | null | undefined;
             lastAccess?: string | Date | null | undefined;
             filename?: string | undefined;
-            id?: number | undefined;
         }>>;
         BibId: z.ZodDefault<z.ZodNumber>;
         readingList: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -388,20 +388,21 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             description: z.ZodOptional<z.ZodNullable<z.ZodString>>;
             entries: z.ZodArray<z.ZodAny, "many">;
         }, "strip", z.ZodTypeAny, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }>, "many">>;
         added: z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodDate, z.ZodString]>>>, Date, string | Date | null | undefined>;
     }, z.ZodString, "strip">>, Omit<{
-        lastAccess: Date;
         id: string;
-        createdAt: Date;
-        BibId: number;
+        tags: {
+            value: string;
+            kanbanId?: number | null | undefined;
+        }[];
         readingList: {
             name: string;
             description: string | null;
@@ -411,31 +412,38 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             createdAt: Date;
             lastUpdate: Date;
         }[];
+        lastAccess: Date;
+        createdAt: Date;
+        BibId: number;
         topics: {
             value: string;
         }[];
         subjects: {
             value: string;
         }[];
-        tags: {
-            value: string;
-            kanbanId?: number | null | undefined;
-        }[];
         read: boolean;
         OwnWork: boolean;
         ColleaguesWork: boolean;
         citationGroups: {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }[];
         added: Date;
         number?: string | null | undefined;
+        journal?: string | null | undefined;
+        editor?: string | null | undefined;
+        note?: string | null | undefined;
+        abstract?: string | null | undefined;
         type?: string | null | undefined;
+        title?: string | null | undefined;
+        copyright?: string | null | undefined;
+        school?: string | null | undefined;
+        volume?: string | null | undefined;
         Bib?: {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         } | undefined;
@@ -449,29 +457,21 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
         crossref?: string | null | undefined;
         doi?: string | null | undefined;
         edition?: string | null | undefined;
-        editor?: string | null | undefined;
         email?: string | null | undefined;
         howpublished?: string | null | undefined;
         institution?: string | null | undefined;
-        journal?: string | null | undefined;
         month?: string | null | undefined;
-        note?: string | null | undefined;
         organization?: string | null | undefined;
         pages?: string | null | undefined;
         publisher?: string | null | undefined;
-        school?: string | null | undefined;
         series?: string | null | undefined;
-        title?: string | null | undefined;
-        volume?: string | null | undefined;
         year?: string | null | undefined;
         numpages?: string | null | undefined;
         url?: string | null | undefined;
         issue?: string | null | undefined;
         issn?: string | null | undefined;
-        abstract?: string | null | undefined;
         urldate?: string | null | undefined;
         keywords?: string | null | undefined;
-        copyright?: string | null | undefined;
         tempPageIndex?: number | null | undefined;
         MdxNotes?: any[] | null | undefined;
     }, "BibId"> & {
@@ -484,17 +484,17 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodDefault<z.ZodNumber>;
             entries: z.ZodDefault<z.ZodArray<z.ZodAny, "many">>;
         }, "strip", z.ZodTypeAny, {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         }, {
+            id?: number | undefined;
             entries?: any[] | undefined;
             firstSync?: string | Date | null | undefined;
             lastAccess?: string | Date | null | undefined;
             filename?: string | undefined;
-            id?: number | undefined;
         }>>;
         BibId: z.ZodDefault<z.ZodNumber>;
         readingList: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -597,12 +597,12 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             description: z.ZodOptional<z.ZodNullable<z.ZodString>>;
             entries: z.ZodArray<z.ZodAny, "many">;
         }, "strip", z.ZodTypeAny, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }>, "many">>;
         added: z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodDate, z.ZodString]>>>, Date, string | Date | null | undefined>;
@@ -705,6 +705,11 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             }, string>]>, "many">>;
         }>, "strip", z.ZodTypeAny, {
             id: number;
+            label: string;
+            tags: {
+                value: string;
+                kanbanId?: number | null | undefined;
+            }[];
             createdAt: Date;
             lastUpdate: Date;
             topics: {
@@ -713,15 +718,14 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             subjects: {
                 value: string;
             }[];
-            tags: {
-                value: string;
-                kanbanId?: number | null | undefined;
-            }[];
-            label: string;
             tasks: any[];
         }, {
             id: number;
             label: string;
+            tags?: (string | {
+                value: string;
+                kanbanId?: number | null | undefined;
+            })[] | undefined;
             createdAt?: string | Date | null | undefined;
             lastUpdate?: string | Date | null | undefined;
             topics?: {
@@ -730,10 +734,6 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             subjects?: {
                 value: string;
             }[] | undefined;
-            tags?: (string | {
-                value: string;
-                kanbanId?: number | null | undefined;
-            })[] | undefined;
             tasks?: any[] | undefined;
         }>;
         toDoListId: z.ZodNumber;
@@ -766,8 +766,12 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             kanbanId?: number | null | undefined;
         }, string>]>, "many">>;
     }>, "strip", z.ZodTypeAny, {
-        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         id: number;
+        tags: {
+            value: string;
+            kanbanId?: number | null | undefined;
+        }[];
+        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         createdAt: Date;
         topics: {
             value: string;
@@ -775,12 +779,13 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
         subjects: {
             value: string;
         }[];
-        tags: {
-            value: string;
-            kanbanId?: number | null | undefined;
-        }[];
         ToDoList: {
             id: number;
+            label: string;
+            tags: {
+                value: string;
+                kanbanId?: number | null | undefined;
+            }[];
             createdAt: Date;
             lastUpdate: Date;
             topics: {
@@ -789,11 +794,6 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             subjects: {
                 value: string;
             }[];
-            tags: {
-                value: string;
-                kanbanId?: number | null | undefined;
-            }[];
-            label: string;
             tasks: any[];
         };
         task: string;
@@ -808,11 +808,15 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
         parent?: any;
         child?: any;
     }, {
-        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         id: number;
+        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         ToDoList: {
             id: number;
             label: string;
+            tags?: (string | {
+                value: string;
+                kanbanId?: number | null | undefined;
+            })[] | undefined;
             createdAt?: string | Date | null | undefined;
             lastUpdate?: string | Date | null | undefined;
             topics?: {
@@ -821,16 +825,16 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             subjects?: {
                 value: string;
             }[] | undefined;
-            tags?: (string | {
-                value: string;
-                kanbanId?: number | null | undefined;
-            })[] | undefined;
             tasks?: any[] | undefined;
         };
         task: string;
         category: "bug" | "feature" | "documentation" | "online" | "priority" | "urgent" | "work" | "gym" | "freetime" | "study" | "research" | "paper";
         priority: number;
         toDoListId: number;
+        tags?: (string | {
+            value: string;
+            kanbanId?: number | null | undefined;
+        })[] | undefined;
         createdAt?: string | Date | null | undefined;
         topics?: {
             value: string;
@@ -838,10 +842,6 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
         subjects?: {
             value: string;
         }[] | undefined;
-        tags?: (string | {
-            value: string;
-            kanbanId?: number | null | undefined;
-        })[] | undefined;
         dueAt?: string | Date | null | undefined;
         details?: string | null | undefined;
         associatedNotes?: any[] | undefined;
@@ -882,6 +882,10 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
         kanbanId?: number | null | undefined;
     }, string>]>, "many">>;
 }>, "strip", z.ZodTypeAny, {
+    tags: {
+        value: string;
+        kanbanId?: number | null | undefined;
+    }[];
     firstSync: Date;
     topics: {
         value: string;
@@ -889,14 +893,14 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
     subjects: {
         value: string;
     }[];
-    tags: {
-        value: string;
-        kanbanId?: number | null | undefined;
-    }[];
     noteType: string;
     toDo: {
-        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         id: number;
+        tags: {
+            value: string;
+            kanbanId?: number | null | undefined;
+        }[];
+        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         createdAt: Date;
         topics: {
             value: string;
@@ -904,12 +908,13 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
         subjects: {
             value: string;
         }[];
-        tags: {
-            value: string;
-            kanbanId?: number | null | undefined;
-        }[];
         ToDoList: {
             id: number;
+            label: string;
+            tags: {
+                value: string;
+                kanbanId?: number | null | undefined;
+            }[];
             createdAt: Date;
             lastUpdate: Date;
             topics: {
@@ -918,11 +923,6 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             subjects: {
                 value: string;
             }[];
-            tags: {
-                value: string;
-                kanbanId?: number | null | undefined;
-            }[];
-            label: string;
             tasks: any[];
         };
         task: string;
@@ -941,10 +941,11 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
     raw: string;
     floatImages: boolean;
     citations: (Omit<{
-        lastAccess: Date;
         id: string;
-        createdAt: Date;
-        BibId: number;
+        tags: {
+            value: string;
+            kanbanId?: number | null | undefined;
+        }[];
         readingList: {
             name: string;
             description: string | null;
@@ -954,31 +955,38 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             createdAt: Date;
             lastUpdate: Date;
         }[];
+        lastAccess: Date;
+        createdAt: Date;
+        BibId: number;
         topics: {
             value: string;
         }[];
         subjects: {
             value: string;
         }[];
-        tags: {
-            value: string;
-            kanbanId?: number | null | undefined;
-        }[];
         read: boolean;
         OwnWork: boolean;
         ColleaguesWork: boolean;
         citationGroups: {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }[];
         added: Date;
         number?: string | null | undefined;
+        journal?: string | null | undefined;
+        editor?: string | null | undefined;
+        note?: string | null | undefined;
+        abstract?: string | null | undefined;
         type?: string | null | undefined;
+        title?: string | null | undefined;
+        copyright?: string | null | undefined;
+        school?: string | null | undefined;
+        volume?: string | null | undefined;
         Bib?: {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         } | undefined;
@@ -992,29 +1000,21 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
         crossref?: string | null | undefined;
         doi?: string | null | undefined;
         edition?: string | null | undefined;
-        editor?: string | null | undefined;
         email?: string | null | undefined;
         howpublished?: string | null | undefined;
         institution?: string | null | undefined;
-        journal?: string | null | undefined;
         month?: string | null | undefined;
-        note?: string | null | undefined;
         organization?: string | null | undefined;
         pages?: string | null | undefined;
         publisher?: string | null | undefined;
-        school?: string | null | undefined;
         series?: string | null | undefined;
-        title?: string | null | undefined;
-        volume?: string | null | undefined;
         year?: string | null | undefined;
         numpages?: string | null | undefined;
         url?: string | null | undefined;
         issue?: string | null | undefined;
         issn?: string | null | undefined;
-        abstract?: string | null | undefined;
         urldate?: string | null | undefined;
         keywords?: string | null | undefined;
-        copyright?: string | null | undefined;
         tempPageIndex?: number | null | undefined;
         MdxNotes?: any[] | null | undefined;
     }, "BibId"> & {
@@ -1030,13 +1030,14 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
     trackRemote: boolean;
     lastSync: Date;
     id?: number | null | undefined;
+    href?: string | null | undefined;
+    summary?: string | null | undefined;
     title?: string | null | undefined;
-    sequentialKey?: string | null | undefined;
     content?: string | null | undefined;
+    sequentialKey?: string | null | undefined;
     latexTitle?: string | null | undefined;
     formatted?: string | null | undefined;
     quickLinkId?: string | null | undefined;
-    href?: string | null | undefined;
     rootRelativePath?: string | null | undefined;
     sequentialIndex?: number | null | undefined;
     sequentialList?: {
@@ -1045,29 +1046,35 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
         sequentialKey: string;
     } | undefined;
     remoteUrl?: string | null | undefined;
-    summary?: string | null | undefined;
 }, {
     noteType: string;
     raw: string;
-    firstSync?: string | Date | null | undefined;
     id?: number | null | undefined;
+    href?: string | null | undefined;
+    summary?: string | null | undefined;
+    title?: string | null | undefined;
+    content?: string | null | undefined;
+    tags?: (string | {
+        value: string;
+        kanbanId?: number | null | undefined;
+    })[] | undefined;
+    firstSync?: string | Date | null | undefined;
     topics?: {
         value: string;
     }[] | undefined;
     subjects?: {
         value: string;
     }[] | undefined;
-    tags?: (string | {
-        value: string;
-        kanbanId?: number | null | undefined;
-    })[] | undefined;
-    title?: string | null | undefined;
     toDo?: {
-        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         id: number;
+        status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         ToDoList: {
             id: number;
             label: string;
+            tags?: (string | {
+                value: string;
+                kanbanId?: number | null | undefined;
+            })[] | undefined;
             createdAt?: string | Date | null | undefined;
             lastUpdate?: string | Date | null | undefined;
             topics?: {
@@ -1076,16 +1083,16 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             subjects?: {
                 value: string;
             }[] | undefined;
-            tags?: (string | {
-                value: string;
-                kanbanId?: number | null | undefined;
-            })[] | undefined;
             tasks?: any[] | undefined;
         };
         task: string;
         category: "bug" | "feature" | "documentation" | "online" | "priority" | "urgent" | "work" | "gym" | "freetime" | "study" | "research" | "paper";
         priority: number;
         toDoListId: number;
+        tags?: (string | {
+            value: string;
+            kanbanId?: number | null | undefined;
+        })[] | undefined;
         createdAt?: string | Date | null | undefined;
         topics?: {
             value: string;
@@ -1093,10 +1100,6 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
         subjects?: {
             value: string;
         }[] | undefined;
-        tags?: (string | {
-            value: string;
-            kanbanId?: number | null | undefined;
-        })[] | undefined;
         dueAt?: string | Date | null | undefined;
         details?: string | null | undefined;
         associatedNotes?: any[] | undefined;
@@ -1107,7 +1110,6 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
     }[] | undefined;
     bookmarked?: boolean | undefined;
     sequentialKey?: string | null | undefined;
-    content?: string | null | undefined;
     latexTitle?: string | null | undefined;
     floatImages?: boolean | undefined;
     formatted?: string | null | undefined;
@@ -1119,17 +1121,17 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             id: z.ZodDefault<z.ZodNumber>;
             entries: z.ZodDefault<z.ZodArray<z.ZodAny, "many">>;
         }, "strip", z.ZodTypeAny, {
+            id: number;
             entries: any[];
             filename: string;
-            id: number;
             firstSync?: Date | null | undefined;
             lastAccess?: Date | null | undefined;
         }, {
+            id?: number | undefined;
             entries?: any[] | undefined;
             firstSync?: string | Date | null | undefined;
             lastAccess?: string | Date | null | undefined;
             filename?: string | undefined;
-            id?: number | undefined;
         }>>;
         BibId: z.ZodDefault<z.ZodNumber>;
         readingList: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -1232,19 +1234,18 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
             description: z.ZodOptional<z.ZodNullable<z.ZodString>>;
             entries: z.ZodArray<z.ZodAny, "many">;
         }, "strip", z.ZodTypeAny, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }, {
-            entries: any[];
             name: string;
+            entries: any[];
             description?: string | null | undefined;
         }>, "many">>;
         added: z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodDate, z.ZodString]>>>, Date, string | Date | null | undefined>;
     }, z.ZodString, "strip">[] | undefined;
     importantValues?: number[] | undefined;
     quickLinkId?: string | null | undefined;
-    href?: string | null | undefined;
     citationsListOrder?: string[] | undefined;
     outgoingQuickLinks?: string[] | undefined;
     rootRelativePath?: string | null | undefined;
@@ -1260,7 +1261,6 @@ export declare const mdxNotePropsSchema: z.ZodObject<z.objectUtil.extendShape<{
     noLog?: boolean | undefined;
     saveFormatted?: boolean | undefined;
     trackRemote?: boolean | undefined;
-    summary?: string | null | undefined;
     lastSync?: string | Date | null | undefined;
 }>;
 export type MdxNotePropsSchemaType = z.infer<typeof mdxNotePropsSchema>;

@@ -1,83 +1,55 @@
+import type { ReactNode } from "react";
 import React from "react";
-import { FullScreenNavProps } from "../../types";
 import { ClientSideXIcon } from "@ulld/icons/clientX";
+import type { ValidIconName } from "@ulld/types";
+import type { FullScreenNavProps } from "../../types";
 import FullScreenNavigationGroup from "./group";
 
-interface FullScreenNavigationMenuProps extends FullScreenNavProps { }
+type FullScreenNavigationMenuProps = FullScreenNavProps
 
-/* export const utilityNavLinks: NavItem[] = [ */
-/* { */
-/*     label: "Flip Cards", */
-/*     url: "/flipCard" */
-/* }, */
-/* { */
-/*     label: "Add Flip Card", */
-/*     url: "/flipCard/add" */
-/* }, */
-/* { */
-/*     label: "Practice Exam", */
-/*     url: "/practiceExam" */
-/* }, */
-/* { */
-/*     label: "Calendar", */
-/*     url: "/calendar?past=true" */
-/* }, */
-/* { */
-/*     label: "Value Search", */
-/*     url: "/valueTable?fixed=5" */
-/* }, */
-/* ] */
 
 /* TODO: Create a trpc method to pass in an array of DocType strings and return a Record<DocTypeString, number> where number is the number of total notes of that type. */
 const FullScreenNavigationMenu = ({
     isModal,
     items,
     noteTypes,
-}: FullScreenNavigationMenuProps) => {
+}: FullScreenNavigationMenuProps): ReactNode => {
 
     return (
         <div
-            className={
-                "w-full bg-background min-h-screen pb-8 pt-4 px-[8%] flex flex-col lg:flex-row justify-start items-start gap-3 md:gap-6 relative"
-            }
+            className="w-full bg-background min-h-screen pb-8 pt-4 px-[8%] flex flex-col lg:flex-row justify-start items-start gap-3 md:gap-6 relative"
         >
-            {isModal && (
-                <ClientSideXIcon
-                    className={"absolute top-4 right-4"}
-                    backOnClick={true}
-                />
-            )}
+            {isModal ? <ClientSideXIcon
+                    backOnClick
+                    className="absolute top-4 right-4"
+                /> : null}
             <div
-                className={
-                    "w-full flex flex-col justify-start items-start gap-3 md:gap-6"
-                }
+                className="w-full flex flex-col justify-start items-start gap-3 md:gap-6"
             >
                 <FullScreenNavigationGroup
-                    key={`left-over-1`}
+                    key="left-over-1"
+                    label="Notes"
                     links={noteTypes.map((p) => ({
                         label: p.label,
                         url: p.url,
                         id: p.id,
-                        icon: p.icon
+                        icon: p.icon as ValidIconName
                     }))}
-                    label="Notes"
                 />
             </div>
             <div
-                className={
-                    "w-full flex flex-col justify-start items-start gap-3 md:gap-6"
-                }
+                className="w-full flex flex-col justify-start items-start gap-3 md:gap-6"
                 /* style={{ */
                 /*     gridTemplateColumns: `repeat(${items.length}, 1fr)`, */
                 /* }} */
             >
                 <FullScreenNavigationGroup
-                    key={`left-over-2`}
+                    key="left-over-2"
+                    label="Utility"
                     links={items.map((p) => ({
                         label: p.label,
                         url: p.href,
                     }))}
-                    label="Utility"
                 />
             </div>
         </div>

@@ -183,25 +183,47 @@ export const documentTypeConfigSchema = documentTypeConfigSchemaInner.transform(
     },
 );
 
-export const documentTypeConfigSchemaOutputSchema: z.ZodType<
-    z.output<typeof documentTypeConfigSchema>
-> = documentTypeConfigSchemaInner.merge(
-    z.object({
-        id: z.string(),
-        docType: z.string(),
-        matchWeight: matchWeightField,
-        urlQuery: urlQueryField,
-        url: z.string(),
-        keywords: z.string().array(),
-        autoTag: z.string().array(),
-        autoTopic: z.string().array(),
-        autoSubject: z.string().array(),
-        UI: docTypeUISchemaOutput,
-        icon: iconNameField,
-        inSidebar: z.boolean(),
-        inNavbar: z.boolean(),
-    }),
-);
+export const documentTypeConfigSchemaOutputSchema =
+    documentTypeConfigSchemaInner.merge(
+        z.object({
+            id: z.string(),
+            docType: z.string(),
+            matchWeight: matchWeightField,
+            urlQuery: urlQueryField,
+            url: z.string(),
+            keywords: z.string().array(),
+            autoTag: z.string().array(),
+            autoTopic: z.string().array(),
+            autoSubject: z.string().array(),
+            UI: docTypeUISchemaOutput,
+            icon: iconNameField,
+            inSidebar: z.boolean(),
+            inNavbar: z.boolean(),
+        }),
+    ) satisfies ZodOutputSchema<typeof documentTypeConfigSchema>;
+
+const documentTypeConfigSchemaDeepPartial =
+    documentTypeConfigSchemaOutputSchema.deepPartial();
+
+export const documentTypeConfigMinimalOutputSchema =
+    documentTypeConfigSchemaInner.deepPartial().merge(
+        z.object({
+            id: z.string().optional(),
+            docType: z.string().optional(),
+            matchWeight: matchWeightField.optional(),
+            urlQuery: urlQueryField.optional(),
+            url: z.string().optional(),
+            keywords: z.string().array().optional(),
+            autoTag: z.string().array().optional(),
+            autoTopic: z.string().array().optional(),
+            autoSubject: z.string().array().optional(),
+            UI: docTypeUISchemaOutput.optional(),
+            icon: iconNameField.optional(),
+            inSidebar: z.boolean().optional(),
+            inNavbar: z.boolean().optional(),
+            fs: z.string(),
+        }),
+    ) satisfies ZodOutputSchema<typeof documentTypeConfigSchemaDeepPartial>;
 
 export type DocumentTypeConfigAsDocTypeDataField = {
     docTypeData: Omit<z.infer<typeof documentTypeConfigSchema>, "icon"> & {

@@ -2,7 +2,7 @@
 import type { AppConfigSchemaDeepPartial } from "@ulld/configschema/types";
 import { minimalParsableAppConfig } from "@ulld/configschema/zod-refinedAppConfigs";
 import {
-  documentTypeConfigSchema,
+  documentTypeConfigSchemaOutputSchema,
 } from "@ulld/configschema/zod/documentConfigSchema";
 import { type AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import type { WithRequired } from "@ulld/utilities/types";
@@ -21,7 +21,7 @@ export const mdxNoteFromStringPropsSchema = mdxNotePropsSchema
   })
   .merge(
     z.object({
-      docTypeData: documentTypeConfigSchema,
+      docTypeData: documentTypeConfigSchemaOutputSchema,
     }),
   );
 
@@ -39,7 +39,7 @@ export const fromMdxStringOptSchema = z
 
 export const parseParamsSchema = z.object({
   appConfig: minimalParsableAppConfig,
-  docTypeData: z.union([documentTypeConfigSchema, z.object({})]).default({}),
+  docTypeData: z.union([documentTypeConfigSchemaOutputSchema, z.object({})]).default({}),
   parser: unifiedMdxParserSchema,
 });
 

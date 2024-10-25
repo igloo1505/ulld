@@ -1,10 +1,12 @@
 import {z} from 'zod'
 import { appConfigOutputDeepPartialSchema } from "./appConfigOutputSchemaDeepPartial.js";
+import { documentTypeConfigMinimalOutputSchema } from '../documentConfigSchema.js';
 
 export const minimalParsableAppConfig = appConfigOutputDeepPartialSchema.required({
     fsRoot: true,
-    noteTypes: true
-})
+}).merge(z.object({
+   noteTypes: documentTypeConfigMinimalOutputSchema.array()
+}))
 
 
 export type MinimalParsableAppConfig = z.input<typeof minimalParsableAppConfig>
