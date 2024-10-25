@@ -248,6 +248,7 @@
         "@ulld/component-map": "workspace:*",
         "@ulld/configschema": "workspace:*",
         "@ulld/database": "workspace:*",
+        "@ulld/developer": "workspace:*",
         "@ulld/diagram": "workspace:*",
         "@ulld/editor": "workspace:*",
         "@ulld/embeddable-components": "workspace:*",
