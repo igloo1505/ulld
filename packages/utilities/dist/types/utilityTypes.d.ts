@@ -70,4 +70,5 @@ export type ValidPathTuples<T> = keyof T extends never ? never : ({
     [K in keyof T]: T[K] extends never ? never : T[K] extends Record<string | number | symbol, unknown> ? [K, ...ValidPathTuples<T[K]>] | [K] : [K];
 })[keyof T];
 export type NestedType<T, P extends string> = (Includes<P, '.'> extends true ? PopFront<Split<P, '.'>> extends keyof T ? NestedType<T[PopFront<Split<P, '.'>>], Join<Shift<Split<P, '.'>>, '.'>> : never : P extends keyof T ? T[P] : never);
+export type NestedTypeByTuple<T, P extends string[]> = (Length<P> extends 1 ? Pop<P> extends keyof T ? T[Pop<P>] : never : PopFront<P> extends keyof T ? Shift<P> extends string[] ? NestedTypeByTuple<T[PopFront<P>], Shift<P>> : never : never);
 //# sourceMappingURL=utilityTypes.d.ts.map

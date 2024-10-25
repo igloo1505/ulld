@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import clsx from "clsx";
 import ImageMapImage from "../../imageMapImage";
 import { EmbeddedImageProps } from "@ulld/utilities/types/embeddedImageProps";
@@ -114,7 +114,7 @@ const isImageMapImage = (config: MinimalParsableAppConfigOutput | undefined | nu
     return false
 }
 
-export const EmbeddedImage = (props: ImgProps) => {
+export const EmbeddedImage = (props: ImgProps): ReactNode => {
     const config = isNoConfig(props) ? null : readAppConfigSync();
     if (isImageMapImage(config, props)) {
         return <ImageMapImage
