@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import PreventSharpEdges from "#/components/utility/ui/preventSharpEdges";
 import cn from "@ulld/utilities/cn";
 import {
@@ -26,10 +26,12 @@ export const HeroBackground = ({
 
   const handleMouseMove = ({ currentTarget, clientX, clientY }: MouseEvent) => {
     if (!currentTarget) return;
-    let { left, top } = ref.current?.getBoundingClientRect();
-    if(left === undefined || top === undefined) return
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
+    const rect = ref.current?.getBoundingClientRect();
+    if (!rect) {
+      return;
+    }
+    mouseX.set(clientX - rect.left);
+    mouseY.set(clientY - rect.top);
   };
 
   /* const scroll = useScroll() */
