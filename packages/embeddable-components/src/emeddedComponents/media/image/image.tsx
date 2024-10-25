@@ -1,16 +1,16 @@
-import React, { ReactNode } from "react";
+import type { ReactNode } from "react";
+import React from "react";
 import clsx from "clsx";
-import ImageMapImage from "../../imageMapImage";
-import { EmbeddedImageProps } from "@ulld/utilities/types/embeddedImageProps";
+import type { EmbeddedImageProps } from "@ulld/utilities/types/embeddedImageProps";
 import { isFullWidth } from "@ulld/state/formatting/styleUtilities";
 import { getRandomId } from "@ulld/utilities/identity";
-import SelfFigureIndex from "../../selfImageIndex";
-import DispatchRenderedImageEvent from "../../dispatchRenderedImageEvent";
 import { readAppConfigSync } from "@ulld/developer/readAppConfig";
-import MemoizedEmbeddableClientImageElement from "./embeddableImageClientElement";
-import { formatImageSourceString } from "./serverUtils";
 import { isNoConfig } from "@ulld/utilities/isNoConfig";
-import { AppConfigSchemaOutput, MinimalParsableAppConfig, MinimalParsableAppConfigOutput } from "@ulld/configschema/types";
+import type { MinimalParsableAppConfigOutput } from "@ulld/configschema/types";
+import DispatchRenderedImageEvent from "../../dispatchRenderedImageEvent";
+import SelfFigureIndex from "../../selfImageIndex";
+import ImageMapImage from "../../imageMapImage";
+import MemoizedEmbeddableClientImageElement from "./embeddableImageClientElement";
 
 type ImgProps = EmbeddedImageProps & Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, "title"> & { 
     noConfig?: boolean
@@ -20,7 +20,7 @@ type ImgProps = EmbeddedImageProps & Omit<React.DetailedHTMLProps<React.ImgHTMLA
 
 const C = (props: ImgProps) => {
 
-    let id = props.id || getRandomId();
+    const id = props.id || getRandomId();
 
     const fullWidth = isFullWidth(props);
 
@@ -28,10 +28,10 @@ const C = (props: ImgProps) => {
         return null
     }
 
-    let imgProps = {
-        src: props.src!,
+    const imgProps = {
+        src: props.src,
         alt: props.alt,
-        id: id,
+        id,
         ...(!props.notFigure && { "data-ulld-figure": true }),
     };
 
@@ -52,7 +52,7 @@ const C = (props: ImgProps) => {
                 props.inline && "inline h-4",
                 props.circle
                     ? "rounded-full p-4"
-                    : Boolean(props.border || props.bordered)
+                    : props.border || props.bordered
                         ? "rounded-lg p-2"
                         : "",
                 Boolean(
@@ -92,8 +92,8 @@ const C = (props: ImgProps) => {
                     )}
                 >
                     {(props.label || props.desc) ? <SelfFigureIndex 
-                        id={id} 
-                        desc={props.desc}
+                        desc={props.desc} 
+                        id={id}
                         imageId={imgProps.id}
                     /> : null}
                 </div>
@@ -107,7 +107,7 @@ const isImageMapImage = (config: MinimalParsableAppConfigOutput | undefined | nu
     if(!props.image || !config){
         return false
     }
-    const imageMap = config.UI?.media?.imageMap
+    const imageMap = config.UI?.media.imageMap
     if(imageMap){
         return Boolean(props.image in imageMap)
     } 

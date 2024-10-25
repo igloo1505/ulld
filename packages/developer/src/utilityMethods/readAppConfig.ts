@@ -13,6 +13,7 @@ const getConfigPath = () => {
 
 export const readAppConfig = async () => {
     let _path = getConfigPath()
+    console.trace("readAppConfig")
     try {
         let res = await fs.promises.readFile(_path, { encoding: "utf-8" });
         return JSON.parse(res) as AppConfigSchemaOutput;
@@ -34,13 +35,13 @@ export const readDevelopmentAppConfig = () => {
 
 
 export const readAppConfigSync = () => {
+    console.trace("readAppConfigSync")
     let _path = getConfigPath()
-    console.trace("readAppConfig")
     try {
         let res = fs.readFileSync(_path, { encoding: "utf-8" });
         return JSON.parse(res) as AppConfigSchemaOutput;
     } catch (err) {
         console.error("Error in readAppConfigSync: ", err);
-        throw new Error("Unable to read appConfig in readAppConfig method.")
+        throw new Error("Unable to read appConfig in readAppConfigSync method.")
     }
 }
