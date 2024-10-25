@@ -235,7 +235,7 @@ export const mdxNoteActionsRouter = router({
             );
             return parseMdxString({
                 content,
-                appConfig: appConfig as any,
+                appConfig: appConfig,
             });
         }),
     compileMdxString: publicProcedure
@@ -246,28 +246,5 @@ export const mdxNoteActionsRouter = router({
                 ...input,
                 appConfig,
             });
-        }),
-    streamMdxContent: publicProcedure
-        .input(z.string())
-        .mutation(async ({ input }) => {
-            const appConfig = await readAppConfig();
-            const data = await mdxToHtmlWithoutRender({
-                rawContent: input,
-                appConfig,
-                components: [],
-            });
-            const toString = await import("react-dom/server").then(
-                (a) => a.renderToPipeableStream,
-            );
-            const T = data.content;
-            /* let htmlData = toString(<T {...data.content.props}/>); */
-            /* TODO: Handle these additional props properly with a zod schema and some reasonable default values. Will also have to make the generated component map available everywhere, likely by writing component map directly to the node_modules directory instead of in the generated app itself, similar to how prisma does it. */
-            const _components = getComponentMap(input, {}, []);
-            const htmlData = toString(<T components={_components} />);
-            return "";
-            /* /* const appConfig = await readAppConfig(); */
-            /*   /* ts.renderToReadableStream */
-            /* let em = <MdxContentRSC content={input} /> */
-            /* return toString(em) */
         }),
 });

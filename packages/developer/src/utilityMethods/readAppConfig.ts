@@ -11,9 +11,13 @@ const getConfigPath = () => {
         : path.join(process.cwd(), "appConfig.ulld.json");
     }
 
-export const readAppConfig = async () => {
-    let _path = getConfigPath()
+export const readAppConfig = async (returnUndefinedIfNoConfig: boolean = true) => {
+    if(returnUndefinedIfNoConfig && process.env.ULLD_NO_CONFIG){
+        return undefined
+    }
     console.trace("readAppConfig")
+    let _path = getConfigPath()
+    console.error("reached readAppConfig", process.env.ULLD_NO_CONFIG);
     try {
         let res = await fs.promises.readFile(_path, { encoding: "utf-8" });
         return JSON.parse(res) as AppConfigSchemaOutput;
@@ -34,8 +38,14 @@ export const readDevelopmentAppConfig = () => {
 }
 
 
-export const readAppConfigSync = () => {
+
+// TODO: Set this to false by default and clean up all of the places where this is called.
+export const readAppConfigSync = (returnUndefinedIfNoConfig: boolean = true) => {
+    if(returnUndefinedIfNoConfig && process.env.ULLD_NO_CONFIG){
+        return undefined
+    }
     console.trace("readAppConfigSync")
+    console.error("reached readAppConfigSync", process.env.ULLD_NO_CONFIG);
     let _path = getConfigPath()
     try {
         let res = fs.readFileSync(_path, { encoding: "utf-8" });
