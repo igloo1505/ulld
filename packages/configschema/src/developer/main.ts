@@ -48,7 +48,7 @@ export const _developerConfigSchema = z.object({
     styles: z.object({
         root: z.string().optional().describe("Optional export of a scss file that should be imported to all pages."),
         mdx: z.string().optional().describe("Optional export of a scss file that should be imported to pages with mdx content only."),
-    }).default({})
+    }).default({}),
 });
 
 export const developerConfigSchema = _developerConfigSchema.transform(

@@ -69,10 +69,10 @@ export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
     }>>>;
     fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     id: z.ZodOptional<z.ZodString>;
+    url: z.ZodEffects<z.ZodString, string, string>;
     docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     filePathPattern: z.ZodOptional<z.ZodString>;
     matchWeight: z.ZodDefault<z.ZodNumber>;
-    url: z.ZodEffects<z.ZodString, string, string>;
     urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
     keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     topicLabel: z.ZodOptional<z.ZodString>;
@@ -97,8 +97,8 @@ export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
             };
         };
     };
-    matchWeight: number;
     url: string;
+    matchWeight: number;
     urlQuery: Record<string, string | number | string[] | number[]>;
     keywords: string[];
     autoTag: string[];

@@ -1,5 +1,4 @@
-import { ValidIconNameDynamicallyGenerated } from "@ulld/types";
-import { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
+import type { ValidIconNameDynamicallyGenerated, InternalGlobalActionIds } from "@ulld/types";
 
 interface InternalActionItem {
     label: string;

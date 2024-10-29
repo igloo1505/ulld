@@ -5,6 +5,7 @@ import { MdxContentCLIENT } from "@ulld/render/mdx";
 import { AdmonitionContainer } from "../../admonition/admonitionContainer";
 import { getAdmonitionId } from "../../admonition/admonitionUtils";
 import { FoldingAdmonitionContainer } from "../../admonition/foldingAdmonitionContainer";
+import { getTitleClassNames } from "../../admonition/classNames";
 
 const ContentWrapper = ({ content, className }: {content?: ReactNode, className?: string}): ReactNode => {
     if (typeof content === "string") {
@@ -41,7 +42,7 @@ export const Admonition = (props: AdmonitionProps): ReactNode => {
                 footer={getContentWrapper(footer)}
                 icon={icon as ValidIconName | undefined}
                 id={id}
-                title={getContentWrapper(title)}
+                title={getContentWrapper(title, getTitleClassNames(props))}
             />
         );
     }
@@ -53,7 +54,7 @@ export const Admonition = (props: AdmonitionProps): ReactNode => {
             footer={getContentWrapper(footer)}
             icon={icon as ValidIconName | undefined}
             id={id}
-            title={getContentWrapper(title)}
+            title={getContentWrapper(title, getTitleClassNames(props))}
         />
     );
 };

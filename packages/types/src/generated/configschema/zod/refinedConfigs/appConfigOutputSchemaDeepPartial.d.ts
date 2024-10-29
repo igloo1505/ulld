@@ -105,10 +105,10 @@ export declare const appConfigOutputDeepPartialSchema: import("zod").ZodObject<{
         } | undefined;
         fs?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;
@@ -135,10 +135,10 @@ export declare const appConfigOutputDeepPartialSchema: import("zod").ZodObject<{
         } | undefined;
         fs?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;
@@ -1302,10 +1302,10 @@ export declare const appConfigOutputDeepPartialSchema: import("zod").ZodObject<{
         } | undefined;
         fs?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;
@@ -1555,10 +1555,10 @@ export declare const appConfigOutputDeepPartialSchema: import("zod").ZodObject<{
         } | undefined;
         fs?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;

@@ -16,13 +16,13 @@ export declare const zodFrontMatterTableStylesObject: z.ZodObject<{
     textCenter: boolean | null;
     headingCenter: boolean | null;
     noMax: boolean | null;
-    math?: "base" | "lg" | "xl" | "small" | null | undefined;
     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+    math?: "base" | "lg" | "xl" | "small" | null | undefined;
     float?: "right" | "left" | null | undefined;
 }, {
-    math?: "base" | "lg" | "xl" | "small" | null | undefined;
     expand?: boolean | null | undefined;
     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+    math?: "base" | "lg" | "xl" | "small" | null | undefined;
     float?: "right" | "left" | null | undefined;
     fullWidth?: boolean | null | undefined;
     tableCenter?: boolean | null | undefined;

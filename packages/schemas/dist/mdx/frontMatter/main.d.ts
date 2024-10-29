@@ -29,13 +29,13 @@ export declare const frontMatterSchema: z.ZodObject<{
         textCenter: boolean | null;
         headingCenter: boolean | null;
         noMax: boolean | null;
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
     }, {
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         expand?: boolean | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
         fullWidth?: boolean | null | undefined;
         tableCenter?: boolean | null | undefined;
@@ -62,8 +62,8 @@ export declare const frontMatterSchema: z.ZodObject<{
         textCenter: boolean | null;
         headingCenter: boolean | null;
         noMax: boolean | null;
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
     } | undefined;
 }, {
@@ -79,9 +79,9 @@ export declare const frontMatterSchema: z.ZodObject<{
     updated?: string | null | undefined;
     sequential?: number | null | undefined;
     tableStyles?: {
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         expand?: boolean | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
         fullWidth?: boolean | null | undefined;
         tableCenter?: boolean | null | undefined;
@@ -119,13 +119,13 @@ export declare const extendedFrontMatterSchema: z.ZodIntersection<z.ZodObject<{
         textCenter: boolean | null;
         headingCenter: boolean | null;
         noMax: boolean | null;
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
     }, {
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         expand?: boolean | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
         fullWidth?: boolean | null | undefined;
         tableCenter?: boolean | null | undefined;
@@ -152,8 +152,8 @@ export declare const extendedFrontMatterSchema: z.ZodIntersection<z.ZodObject<{
         textCenter: boolean | null;
         headingCenter: boolean | null;
         noMax: boolean | null;
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
     } | undefined;
 }, {
@@ -169,9 +169,9 @@ export declare const extendedFrontMatterSchema: z.ZodIntersection<z.ZodObject<{
     updated?: string | null | undefined;
     sequential?: number | null | undefined;
     tableStyles?: {
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         expand?: boolean | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
         fullWidth?: boolean | null | undefined;
         tableCenter?: boolean | null | undefined;

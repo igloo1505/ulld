@@ -6,7 +6,6 @@ export const seedTargetAppIfNotExists = async (
     appConfig: AppConfigSchemaOutput,
 ) => {
     let existingBib = await prisma.bib.findFirst({});
-
     if (!existingBib) {
         await prisma.bib.create({
             data: {

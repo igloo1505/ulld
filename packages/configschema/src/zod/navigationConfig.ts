@@ -3,24 +3,6 @@ import { ValidIconName } from "@ulld/icons/dynamic";
 import { validIconNameList } from "@ulld/types/validIconNameList";
 import { ZodOutputSchema } from "../types.js";
 
-type V = {
-    icon: ValidIconName;
-    Icon?: never;
-};
-
-type F = {
-    Icon: React.FC<{ className: string }>;
-    icon?: never;
-};
-
-type B = {
-    href?: string;
-    onClick?: () => any;
-    label?: string;
-};
-
-export type SidebarLink = (B & V) | (B & F);
-
 const defaultResultLengths = {
     categories: 12,
     equations: 10,

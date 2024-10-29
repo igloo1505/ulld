@@ -17,6 +17,7 @@ import { getComponentMapContent } from "./fileContent/componentMap.js";
 import { getEventMethodListContent } from "./fileContent/eventMethodList.js";
 import { BuildOptionsType } from "../../utils/options.js";
 import type { pathKeys} from "@ulld/utilities/buildUtils"
+import { todo } from "node:test";
 // import { SlotMapInternalType } from "@ulld/configschema/slotMapInternalType";
 
 interface ParserFunctionData {
@@ -71,6 +72,7 @@ export class BaseApp extends ShellManager {
         this.copyPluginDocs();
         this.logVerbose("Generating database schema...");
         this.writePrismaSchema();
+        // TODO: Handle these below in the template app now that it's part of the monorepo. THat should add some reliability and improve the typesaftey moving forward. Can still contain the main scripts in the @ulld/utilities package, but just have them be called inside of the template package as part of a wireit script.
         this.runOnBuild();
         this.logVerbose("Wrapping up build...");
         this.onBuild();

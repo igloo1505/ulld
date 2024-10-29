@@ -8,7 +8,6 @@ import {
     NoteFilterType,
     TaskManagerOverview,
 } from "../types";
-import { MathJaxContext } from "better-react-mathjax";
 
 export interface DashboardState
     extends Omit<TaskManagerOverview, "overdueCount"> {
@@ -164,34 +163,7 @@ export const DashboardProvider = ({
                     initialModularData={initialModularData}
                     initialTaskData={initialTaskData}
                 >
-                    <MathJaxContext
-                        config={{
-                            tex: {
-                                inlineMath: [["$", "$"]],
-                                displayMath: [["$$", "$$"]],
-                            },
-                            startup: {
-                                ready: () => {
-                                    /* @ts-ignore */
-                                    MathJax.startup.defaultReady();
-                                    /* @ts-ignore */
-                                    MathJax.startup.promise.then(() => {
-                                        window.dispatchEvent(new CustomEvent("mathjax-loaded"));
-                                    });
-                                },
-                            },
-                        }}
-                        src={
-                            online
-                                ? "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
-                                : "/utils/tex-chtml.js"
-                        }
-                        onLoad={() => {
-                            window.dispatchEvent(new CustomEvent("mathjax-loaded"));
-                        }}
-                    >
                         {children}
-                    </MathJaxContext>
                 </DashboardInnerProvider>
             </DashboardDispatchContext.Provider>
         </DashboardContext.Provider>

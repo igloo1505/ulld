@@ -907,10 +907,10 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         }>>>;
         fs: import("zod").ZodEffects<import("zod").ZodString, string, string>;
         id: import("zod").ZodOptional<import("zod").ZodString>;
+        url: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodString, string, string>>;
         docType: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodString, string, string>>;
         filePathPattern: import("zod").ZodOptional<import("zod").ZodString>;
         matchWeight: import("zod").ZodDefault<import("zod").ZodNumber>;
-        url: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodString, string, string>>;
         urlQuery: import("zod").ZodDefault<import("zod").ZodOptional<import("zod").ZodRecord<import("zod").ZodString, import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodArray<import("zod").ZodString, "many">, import("zod").ZodNumber, import("zod").ZodArray<import("zod").ZodNumber, "many">]>>>>;
         keywords: import("zod").ZodDefault<import("zod").ZodArray<import("zod").ZodString, "many">>;
         topicLabel: import("zod").ZodOptional<import("zod").ZodString>;
@@ -945,9 +945,9 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         inSidebar: boolean;
         inNavbar: boolean;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
-        url?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
     }, {
@@ -967,10 +967,10 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             } | undefined;
         } | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;
@@ -1027,10 +1027,10 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             } | undefined;
         } | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;
@@ -1087,10 +1087,10 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             } | undefined;
         } | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;
@@ -1701,10 +1701,10 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             } | undefined;
         } | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;

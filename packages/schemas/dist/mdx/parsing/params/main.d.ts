@@ -436,8 +436,6 @@ export declare const mdxNoteFromStringPropsSchema: z.ZodObject<z.objectUtil.exte
         }[];
         added: Date;
         number?: string | null | undefined;
-        journal?: string | null | undefined;
-        editor?: string | null | undefined;
         note?: string | null | undefined;
         abstract?: string | null | undefined;
         type?: string | null | undefined;
@@ -445,6 +443,9 @@ export declare const mdxNoteFromStringPropsSchema: z.ZodObject<z.objectUtil.exte
         copyright?: string | null | undefined;
         school?: string | null | undefined;
         volume?: string | null | undefined;
+        journal?: string | null | undefined;
+        url?: string | null | undefined;
+        editor?: string | null | undefined;
         Bib?: {
             id: number;
             entries: any[];
@@ -472,7 +473,6 @@ export declare const mdxNoteFromStringPropsSchema: z.ZodObject<z.objectUtil.exte
         series?: string | null | undefined;
         year?: string | null | undefined;
         numpages?: string | null | undefined;
-        url?: string | null | undefined;
         issue?: string | null | undefined;
         issn?: string | null | undefined;
         urldate?: string | null | undefined;
@@ -956,10 +956,10 @@ export declare const mdxNoteFromStringPropsSchema: z.ZodObject<z.objectUtil.exte
         }>>>;
         fs: z.ZodEffects<z.ZodString, string, string>;
         id: z.ZodOptional<z.ZodString>;
+        url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         filePathPattern: z.ZodOptional<z.ZodString>;
         matchWeight: z.ZodDefault<z.ZodNumber>;
-        url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
         keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
         topicLabel: z.ZodOptional<z.ZodString>;
@@ -1063,9 +1063,9 @@ export declare const mdxNoteFromStringPropsSchema: z.ZodObject<z.objectUtil.exte
         };
         fs: string;
         id: string;
+        url: string;
         docType: string;
         matchWeight: number;
-        url: string;
         urlQuery: Record<string, string | number | string[] | number[]>;
         keywords: string[];
         autoTag: string[];
@@ -1093,9 +1093,9 @@ export declare const mdxNoteFromStringPropsSchema: z.ZodObject<z.objectUtil.exte
         };
         fs: string;
         id: string;
+        url: string;
         docType: string;
         matchWeight: number;
-        url: string;
         urlQuery: Record<string, string | number | string[] | number[]>;
         keywords: string[];
         autoTag: string[];
@@ -1127,9 +1127,9 @@ export declare const mdxNoteFromStringPropsSchema: z.ZodObject<z.objectUtil.exte
         };
         fs: string;
         id: string;
+        url: string;
         docType: string;
         matchWeight: number;
-        url: string;
         urlQuery: Record<string, string | number | string[] | number[]>;
         keywords: string[];
         autoTag: string[];
@@ -1161,9 +1161,9 @@ export declare const mdxNoteFromStringPropsSchema: z.ZodObject<z.objectUtil.exte
         };
         fs: string;
         id: string;
+        url: string;
         docType: string;
         matchWeight: number;
-        url: string;
         urlQuery: Record<string, string | number | string[] | number[]>;
         keywords: string[];
         autoTag: string[];
@@ -1346,9 +1346,9 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
             noMax: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
             expand: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
         }, "strip", z.ZodTypeAny, {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -1356,9 +1356,9 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
             headingCenter?: boolean | null | undefined;
             noMax?: boolean | null | undefined;
         }, {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -1379,9 +1379,9 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -1402,9 +1402,9 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -2328,10 +2328,10 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
             } | undefined;
             fs?: string | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -2358,10 +2358,10 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
             } | undefined;
             fs?: string | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -2585,10 +2585,10 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
             }>>>>;
             fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+            url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
             docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
             filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
             matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
-            url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
             urlQuery: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>>;
             keywords: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodString, "many">>>;
             topicLabel: z.ZodOptional<z.ZodOptional<z.ZodString>>;
@@ -2693,10 +2693,10 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -2723,10 +2723,10 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -2756,10 +2756,10 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -3009,10 +3009,10 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -3284,9 +3284,9 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -3346,10 +3346,10 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -3605,9 +3605,9 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -3636,10 +3636,10 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -3941,13 +3941,13 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
         textCenter: boolean | null;
         headingCenter: boolean | null;
         noMax: boolean | null;
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
     }, {
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         expand?: boolean | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
         fullWidth?: boolean | null | undefined;
         tableCenter?: boolean | null | undefined;
@@ -3974,8 +3974,8 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
         textCenter: boolean | null;
         headingCenter: boolean | null;
         noMax: boolean | null;
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
     } | undefined;
 }, {
@@ -3991,9 +3991,9 @@ export declare const unifiedMdxParserSchema: z.ZodFunction<z.ZodTuple<[z.ZodObje
     updated?: string | null | undefined;
     sequential?: number | null | undefined;
     tableStyles?: {
-        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         expand?: boolean | null | undefined;
         text?: "base" | "lg" | "xl" | "small" | null | undefined;
+        math?: "base" | "lg" | "xl" | "small" | null | undefined;
         float?: "right" | "left" | null | undefined;
         fullWidth?: boolean | null | undefined;
         tableCenter?: boolean | null | undefined;
@@ -4925,10 +4925,10 @@ export declare const parseParamsSchema: z.ZodObject<{
             } | undefined;
             fs?: string | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -4955,10 +4955,10 @@ export declare const parseParamsSchema: z.ZodObject<{
             } | undefined;
             fs?: string | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -5182,10 +5182,10 @@ export declare const parseParamsSchema: z.ZodObject<{
             }>>>>;
             fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+            url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
             docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
             filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
             matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
-            url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
             urlQuery: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>>;
             keywords: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodString, "many">>>;
             topicLabel: z.ZodOptional<z.ZodOptional<z.ZodString>>;
@@ -5290,10 +5290,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -5320,10 +5320,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -5353,10 +5353,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -5606,10 +5606,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -5910,10 +5910,10 @@ export declare const parseParamsSchema: z.ZodObject<{
         }>>>;
         fs: z.ZodEffects<z.ZodString, string, string>;
         id: z.ZodOptional<z.ZodString>;
+        url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         filePathPattern: z.ZodOptional<z.ZodString>;
         matchWeight: z.ZodDefault<z.ZodNumber>;
-        url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
         keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
         topicLabel: z.ZodOptional<z.ZodString>;
@@ -6017,9 +6017,9 @@ export declare const parseParamsSchema: z.ZodObject<{
         };
         fs: string;
         id: string;
+        url: string;
         docType: string;
         matchWeight: number;
-        url: string;
         urlQuery: Record<string, string | number | string[] | number[]>;
         keywords: string[];
         autoTag: string[];
@@ -6047,9 +6047,9 @@ export declare const parseParamsSchema: z.ZodObject<{
         };
         fs: string;
         id: string;
+        url: string;
         docType: string;
         matchWeight: number;
-        url: string;
         urlQuery: Record<string, string | number | string[] | number[]>;
         keywords: string[];
         autoTag: string[];
@@ -6229,9 +6229,9 @@ export declare const parseParamsSchema: z.ZodObject<{
                 noMax: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
                 expand: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
             }, "strip", z.ZodTypeAny, {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -6239,9 +6239,9 @@ export declare const parseParamsSchema: z.ZodObject<{
                 headingCenter?: boolean | null | undefined;
                 noMax?: boolean | null | undefined;
             }, {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -6262,9 +6262,9 @@ export declare const parseParamsSchema: z.ZodObject<{
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -6285,9 +6285,9 @@ export declare const parseParamsSchema: z.ZodObject<{
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -7211,10 +7211,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                 } | undefined;
                 fs?: string | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -7241,10 +7241,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                 } | undefined;
                 fs?: string | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -7468,10 +7468,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                 }>>>>;
                 fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
                 id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+                url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
                 matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
-                url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 urlQuery: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>>;
                 keywords: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodString, "many">>>;
                 topicLabel: z.ZodOptional<z.ZodOptional<z.ZodString>>;
@@ -7576,10 +7576,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -7606,10 +7606,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -7639,10 +7639,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -7892,10 +7892,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -8167,9 +8167,9 @@ export declare const parseParamsSchema: z.ZodObject<{
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -8229,10 +8229,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -8488,9 +8488,9 @@ export declare const parseParamsSchema: z.ZodObject<{
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -8519,10 +8519,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -8824,13 +8824,13 @@ export declare const parseParamsSchema: z.ZodObject<{
             textCenter: boolean | null;
             headingCenter: boolean | null;
             noMax: boolean | null;
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
         }, {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -8857,8 +8857,8 @@ export declare const parseParamsSchema: z.ZodObject<{
             textCenter: boolean | null;
             headingCenter: boolean | null;
             noMax: boolean | null;
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
         } | undefined;
     }, {
@@ -8874,9 +8874,9 @@ export declare const parseParamsSchema: z.ZodObject<{
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -8903,9 +8903,9 @@ export declare const parseParamsSchema: z.ZodObject<{
         };
         fs: string;
         id: string;
+        url: string;
         docType: string;
         matchWeight: number;
-        url: string;
         urlQuery: Record<string, string | number | string[] | number[]>;
         keywords: string[];
         autoTag: string[];
@@ -8936,10 +8936,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -9185,9 +9185,9 @@ export declare const parseParamsSchema: z.ZodObject<{
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -9216,10 +9216,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -9511,8 +9511,8 @@ export declare const parseParamsSchema: z.ZodObject<{
             textCenter: boolean | null;
             headingCenter: boolean | null;
             noMax: boolean | null;
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
         } | undefined;
     } & Record<string, string | number | boolean | Record<string, string | number | boolean | null> | Record<string, Record<string, string | number | boolean | null>> | Record<string, string | number | boolean | null>[] | (string | number | boolean | null)[] | (string | number | boolean | null)[][] | null>>;
@@ -9536,10 +9536,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                 };
             } | undefined;
             id?: string | undefined;
+            url?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
-            url?: string | undefined;
             urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
             keywords?: string[] | undefined;
             topicLabel?: string | undefined;
@@ -9785,9 +9785,9 @@ export declare const parseParamsSchema: z.ZodObject<{
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -9847,10 +9847,10 @@ export declare const parseParamsSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -10105,9 +10105,9 @@ export declare const parseParamsSchema: z.ZodObject<{
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -10133,9 +10133,9 @@ export declare const parseParamsSchema: z.ZodObject<{
         };
         fs: string;
         id: string;
+        url: string;
         docType: string;
         matchWeight: number;
-        url: string;
         urlQuery: Record<string, string | number | string[] | number[]>;
         keywords: string[];
         autoTag: string[];
@@ -10588,8 +10588,6 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             }[];
             added: Date;
             number?: string | null | undefined;
-            journal?: string | null | undefined;
-            editor?: string | null | undefined;
             note?: string | null | undefined;
             abstract?: string | null | undefined;
             type?: string | null | undefined;
@@ -10597,6 +10595,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             copyright?: string | null | undefined;
             school?: string | null | undefined;
             volume?: string | null | undefined;
+            journal?: string | null | undefined;
+            url?: string | null | undefined;
+            editor?: string | null | undefined;
             Bib?: {
                 id: number;
                 entries: any[];
@@ -10624,7 +10625,6 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             series?: string | null | undefined;
             year?: string | null | undefined;
             numpages?: string | null | undefined;
-            url?: string | null | undefined;
             issue?: string | null | undefined;
             issn?: string | null | undefined;
             urldate?: string | null | undefined;
@@ -11108,10 +11108,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             }>>>;
             fs: z.ZodEffects<z.ZodString, string, string>;
             id: z.ZodOptional<z.ZodString>;
+            url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             filePathPattern: z.ZodOptional<z.ZodString>;
             matchWeight: z.ZodDefault<z.ZodNumber>;
-            url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
             keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
             topicLabel: z.ZodOptional<z.ZodString>;
@@ -11215,9 +11215,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -11245,9 +11245,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -11279,9 +11279,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -11313,9 +11313,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -12246,10 +12246,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 } | undefined;
                 fs?: string | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -12276,10 +12276,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 } | undefined;
                 fs?: string | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -12503,10 +12503,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 }>>>>;
                 fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
                 id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+                url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
                 matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
-                url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 urlQuery: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>>;
                 keywords: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodString, "many">>>;
                 topicLabel: z.ZodOptional<z.ZodOptional<z.ZodString>>;
@@ -12611,10 +12611,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -12641,10 +12641,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -12674,10 +12674,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -12927,10 +12927,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -13231,10 +13231,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             }>>>;
             fs: z.ZodEffects<z.ZodString, string, string>;
             id: z.ZodOptional<z.ZodString>;
+            url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             filePathPattern: z.ZodOptional<z.ZodString>;
             matchWeight: z.ZodDefault<z.ZodNumber>;
-            url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
             keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
             topicLabel: z.ZodOptional<z.ZodString>;
@@ -13338,9 +13338,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -13368,9 +13368,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -13550,9 +13550,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     noMax: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
                     expand: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
                 }, "strip", z.ZodTypeAny, {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -13560,9 +13560,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     headingCenter?: boolean | null | undefined;
                     noMax?: boolean | null | undefined;
                 }, {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -13583,9 +13583,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -13606,9 +13606,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -14532,10 +14532,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     } | undefined;
                     fs?: string | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -14562,10 +14562,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     } | undefined;
                     fs?: string | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -14789,10 +14789,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     }>>>>;
                     fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
                     id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+                    url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                     docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                     filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
                     matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
-                    url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                     urlQuery: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>>;
                     keywords: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodString, "many">>>;
                     topicLabel: z.ZodOptional<z.ZodOptional<z.ZodString>>;
@@ -14897,10 +14897,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -14927,10 +14927,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -14960,10 +14960,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -15213,10 +15213,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -15488,9 +15488,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -15550,10 +15550,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -15809,9 +15809,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -15840,10 +15840,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -16145,13 +16145,13 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             }, {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -16178,8 +16178,8 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             } | undefined;
         }, {
@@ -16195,9 +16195,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -16224,9 +16224,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -16257,10 +16257,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -16506,9 +16506,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -16537,10 +16537,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -16832,8 +16832,8 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             } | undefined;
         } & Record<string, string | number | boolean | Record<string, string | number | boolean | null> | Record<string, Record<string, string | number | boolean | null>> | Record<string, string | number | boolean | null>[] | (string | number | boolean | null)[] | (string | number | boolean | null)[][] | null>>;
@@ -16857,10 +16857,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -17106,9 +17106,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -17168,10 +17168,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -17426,9 +17426,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -17454,9 +17454,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -17493,9 +17493,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -17527,9 +17527,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -17560,10 +17560,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -17809,9 +17809,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -17840,10 +17840,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -18135,8 +18135,8 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             } | undefined;
         } & Record<string, string | number | boolean | Record<string, string | number | boolean | null> | Record<string, Record<string, string | number | boolean | null>> | Record<string, string | number | boolean | null>[] | (string | number | boolean | null)[] | (string | number | boolean | null)[][] | null>>;
@@ -18161,9 +18161,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -18198,10 +18198,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -18447,9 +18447,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -18509,10 +18509,10 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -18767,9 +18767,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -18795,9 +18795,9 @@ export declare const internalMdxStringParseParamSchema: z.ZodObject<{
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -19254,8 +19254,6 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             }[];
             added: Date;
             number?: string | null | undefined;
-            journal?: string | null | undefined;
-            editor?: string | null | undefined;
             note?: string | null | undefined;
             abstract?: string | null | undefined;
             type?: string | null | undefined;
@@ -19263,6 +19261,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             copyright?: string | null | undefined;
             school?: string | null | undefined;
             volume?: string | null | undefined;
+            journal?: string | null | undefined;
+            url?: string | null | undefined;
+            editor?: string | null | undefined;
             Bib?: {
                 id: number;
                 entries: any[];
@@ -19290,7 +19291,6 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             series?: string | null | undefined;
             year?: string | null | undefined;
             numpages?: string | null | undefined;
-            url?: string | null | undefined;
             issue?: string | null | undefined;
             issn?: string | null | undefined;
             urldate?: string | null | undefined;
@@ -19774,10 +19774,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             }>>>;
             fs: z.ZodEffects<z.ZodString, string, string>;
             id: z.ZodOptional<z.ZodString>;
+            url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             filePathPattern: z.ZodOptional<z.ZodString>;
             matchWeight: z.ZodDefault<z.ZodNumber>;
-            url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
             keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
             topicLabel: z.ZodOptional<z.ZodString>;
@@ -19881,9 +19881,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -19911,9 +19911,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -19945,9 +19945,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -19979,9 +19979,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -20912,10 +20912,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 } | undefined;
                 fs?: string | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -20942,10 +20942,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 } | undefined;
                 fs?: string | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -21169,10 +21169,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 }>>>>;
                 fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
                 id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+                url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
                 matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
-                url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 urlQuery: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>>;
                 keywords: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodString, "many">>>;
                 topicLabel: z.ZodOptional<z.ZodOptional<z.ZodString>>;
@@ -21277,10 +21277,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -21307,10 +21307,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -21340,10 +21340,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -21593,10 +21593,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -21897,10 +21897,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             }>>>;
             fs: z.ZodEffects<z.ZodString, string, string>;
             id: z.ZodOptional<z.ZodString>;
+            url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             filePathPattern: z.ZodOptional<z.ZodString>;
             matchWeight: z.ZodDefault<z.ZodNumber>;
-            url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
             keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
             topicLabel: z.ZodOptional<z.ZodString>;
@@ -22004,9 +22004,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -22034,9 +22034,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -22216,9 +22216,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     noMax: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
                     expand: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
                 }, "strip", z.ZodTypeAny, {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -22226,9 +22226,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     headingCenter?: boolean | null | undefined;
                     noMax?: boolean | null | undefined;
                 }, {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -22249,9 +22249,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -22272,9 +22272,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -23198,10 +23198,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     } | undefined;
                     fs?: string | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -23228,10 +23228,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     } | undefined;
                     fs?: string | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -23455,10 +23455,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     }>>>>;
                     fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
                     id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+                    url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                     docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                     filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
                     matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
-                    url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                     urlQuery: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>>;
                     keywords: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodString, "many">>>;
                     topicLabel: z.ZodOptional<z.ZodOptional<z.ZodString>>;
@@ -23563,10 +23563,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -23593,10 +23593,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -23626,10 +23626,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -23879,10 +23879,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -24154,9 +24154,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -24216,10 +24216,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -24475,9 +24475,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -24506,10 +24506,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -24811,13 +24811,13 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             }, {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -24844,8 +24844,8 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             } | undefined;
         }, {
@@ -24861,9 +24861,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -24890,9 +24890,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -24923,10 +24923,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -25172,9 +25172,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -25203,10 +25203,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -25498,8 +25498,8 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             } | undefined;
         } & Record<string, string | number | boolean | Record<string, string | number | boolean | null> | Record<string, Record<string, string | number | boolean | null>> | Record<string, string | number | boolean | null>[] | (string | number | boolean | null)[] | (string | number | boolean | null)[][] | null>>;
@@ -25523,10 +25523,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -25772,9 +25772,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -25834,10 +25834,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -26092,9 +26092,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -26120,9 +26120,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -26206,10 +26206,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             }>>>;
             fs: z.ZodEffects<z.ZodString, string, string>;
             id: z.ZodOptional<z.ZodString>;
+            url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             filePathPattern: z.ZodOptional<z.ZodString>;
             matchWeight: z.ZodDefault<z.ZodNumber>;
-            url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
             urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
             keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
             topicLabel: z.ZodOptional<z.ZodString>;
@@ -26313,9 +26313,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -26343,9 +26343,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -27272,10 +27272,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 } | undefined;
                 fs?: string | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -27302,10 +27302,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 } | undefined;
                 fs?: string | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -27529,10 +27529,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 }>>>>;
                 fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
                 id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+                url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
                 matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
-                url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                 urlQuery: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>>;
                 keywords: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodString, "many">>>;
                 topicLabel: z.ZodOptional<z.ZodOptional<z.ZodString>>;
@@ -27637,10 +27637,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -27667,10 +27667,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -27700,10 +27700,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -27953,10 +27953,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -28356,9 +28356,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     noMax: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
                     expand: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
                 }, "strip", z.ZodTypeAny, {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -28366,9 +28366,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     headingCenter?: boolean | null | undefined;
                     noMax?: boolean | null | undefined;
                 }, {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -28389,9 +28389,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -28412,9 +28412,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -29338,10 +29338,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     } | undefined;
                     fs?: string | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -29368,10 +29368,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     } | undefined;
                     fs?: string | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -29595,10 +29595,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     }>>>>;
                     fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
                     id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+                    url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                     docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                     filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
                     matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
-                    url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
                     urlQuery: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>>;
                     keywords: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodString, "many">>>;
                     topicLabel: z.ZodOptional<z.ZodOptional<z.ZodString>>;
@@ -29703,10 +29703,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -29733,10 +29733,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -29766,10 +29766,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -30019,10 +30019,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -30294,9 +30294,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -30356,10 +30356,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -30615,9 +30615,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -30646,10 +30646,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -30951,13 +30951,13 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             }, {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -30984,8 +30984,8 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             } | undefined;
         }, {
@@ -31001,9 +31001,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -31030,9 +31030,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -31058,9 +31058,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -31089,10 +31089,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -31384,8 +31384,8 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             } | undefined;
         } & Record<string, string | number | boolean | Record<string, string | number | boolean | null> | Record<string, Record<string, string | number | boolean | null>> | Record<string, string | number | boolean | null>[] | (string | number | boolean | null)[] | (string | number | boolean | null)[][] | null>>;
@@ -31408,10 +31408,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -31658,9 +31658,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -31720,10 +31720,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -31978,9 +31978,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -32006,9 +32006,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -32039,10 +32039,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -32299,9 +32299,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -32333,9 +32333,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -32361,9 +32361,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -32392,10 +32392,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -32687,8 +32687,8 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 textCenter: boolean | null;
                 headingCenter: boolean | null;
                 noMax: boolean | null;
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
             } | undefined;
         } & Record<string, string | number | boolean | Record<string, string | number | boolean | null> | Record<string, Record<string, string | number | boolean | null>> | Record<string, string | number | boolean | null>[] | (string | number | boolean | null)[] | (string | number | boolean | null)[][] | null>>;
@@ -32711,10 +32711,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;
@@ -32967,9 +32967,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -32999,9 +32999,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                 updated?: string | null | undefined;
                 sequential?: number | null | undefined;
                 tableStyles?: {
-                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     expand?: boolean | null | undefined;
                     text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                    math?: "base" | "lg" | "xl" | "small" | null | undefined;
                     float?: "right" | "left" | null | undefined;
                     fullWidth?: boolean | null | undefined;
                     tableCenter?: boolean | null | undefined;
@@ -33061,10 +33061,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                         };
                     } | undefined;
                     id?: string | undefined;
+                    url?: string | undefined;
                     docType?: string | undefined;
                     filePathPattern?: string | undefined;
                     matchWeight?: number | undefined;
-                    url?: string | undefined;
                     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                     keywords?: string[] | undefined;
                     topicLabel?: string | undefined;
@@ -33319,9 +33319,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             updated?: string | null | undefined;
             sequential?: number | null | undefined;
             tableStyles?: {
-                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 expand?: boolean | null | undefined;
                 text?: "base" | "lg" | "xl" | "small" | null | undefined;
+                math?: "base" | "lg" | "xl" | "small" | null | undefined;
                 float?: "right" | "left" | null | undefined;
                 fullWidth?: boolean | null | undefined;
                 tableCenter?: boolean | null | undefined;
@@ -33347,9 +33347,9 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
             };
             fs: string;
             id: string;
+            url: string;
             docType: string;
             matchWeight: number;
-            url: string;
             urlQuery: Record<string, string | number | string[] | number[]>;
             keywords: string[];
             autoTag: string[];
@@ -33380,10 +33380,10 @@ export declare const internalMdxStringParseParamSchemaOptionalAppConfig: z.ZodOb
                     };
                 } | undefined;
                 id?: string | undefined;
+                url?: string | undefined;
                 docType?: string | undefined;
                 filePathPattern?: string | undefined;
                 matchWeight?: number | undefined;
-                url?: string | undefined;
                 urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
                 keywords?: string[] | undefined;
                 topicLabel?: string | undefined;

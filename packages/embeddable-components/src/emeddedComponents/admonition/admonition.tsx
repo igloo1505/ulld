@@ -1,10 +1,11 @@
 import type { ValidIconName } from "@ulld/types";
 import type { AdmonitionProps } from "@ulld/utilities/admonition/types";
-import { MdxContentSERVER } from "@ulld/render/mdx/server";
+import { MdxContentRSC } from "@ulld/render/mdx-rsc"
 import type { ReactNode } from "react";
 import { AdmonitionContainer } from "./admonitionContainer";
 import { getAdmonitionId } from "./admonitionUtils";
 import { FoldingAdmonitionContainer } from "./foldingAdmonitionContainer";
+import { getTitleClassNames } from "./classNames";
 
 const ContentWrapper = ({
     content,
@@ -17,7 +18,7 @@ const ContentWrapper = ({
         return null;
     }
     if (typeof content === "string") {
-        return <MdxContentSERVER className={className} content={content} />;
+        return <MdxContentRSC className={className} content={content} />;
     }
     return content;
 };
@@ -44,7 +45,7 @@ export const Admonition = (props: AdmonitionProps): ReactNode => {
                 footer={getContentWrapper(footer)}
                 icon={icon as ValidIconName | undefined}
                 id={id}
-                title={getContentWrapper(title)}
+                title={getContentWrapper(title, getTitleClassNames(props))}
             />
         );
     }
@@ -56,7 +57,7 @@ export const Admonition = (props: AdmonitionProps): ReactNode => {
             footer={getContentWrapper(footer)}
             icon={icon as ValidIconName | undefined}
             id={id}
-            title={getContentWrapper(title)}
+            title={getContentWrapper(title, getTitleClassNames(props))}
         />
     );
 };

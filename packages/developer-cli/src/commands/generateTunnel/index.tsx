@@ -19,7 +19,7 @@ export const args = z.tuple([
                 defaultValueDescription: 'cwd',
             }),
         ),
-    z.string().default(".js").describe(argument({
+    z.string().default("inherit").describe(argument({
         name: "file extension",
         description: "File extension to append to imported file paths."
     }))
@@ -78,7 +78,7 @@ const getExportString = (
     fileExt: string,
     exportType?: boolean,
 ) => {
-    if (!exportType) {
+    if (!exportType && fileExt !== "inherit") {
         let fpData = path.parse(filePath);
         filePath = path.join(fpData.dir, `${fpData.name}${fileExt}`);
     }

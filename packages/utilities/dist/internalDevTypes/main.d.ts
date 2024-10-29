@@ -1,4 +1,4 @@
-import { InternalAppName, InternalDocumentConfigType } from "@ulld/types";
+import type { InternalAppName, InternalDocumentConfigType } from "@ulld/types";
 export interface InternalPackageItem {
     currentVersion: string;
     /** Relative path of the package's root directory with respect to the monorepo root. */
@@ -6,6 +6,9 @@ export interface InternalPackageItem {
     name: InternalAppName;
     type: "app" | "package";
     hasPluginConfig: boolean;
+    sourceLocation: "dist" | "src";
+    /** True if package is already transpiled. If false, package must be appended to the buildStaticData.json file's transpilePackages field. */
+    isTranspiled: boolean;
 }
 export interface ProtectedPath {
     filePath: string;

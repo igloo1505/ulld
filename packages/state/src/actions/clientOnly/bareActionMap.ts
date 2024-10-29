@@ -9,7 +9,7 @@ import {
 import { toggleToolTips } from "./dom";
 import { syncRootDirectory } from "@ulld/utilities/actions-syncDirectory";
 import { UlldGlobalActionMap } from "./actionMapTypes";
-import { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
+import type { InternalGlobalActionIds } from "@ulld/types";
 
 
 export const bareGlobalActionsMap: UlldGlobalActionMap = {

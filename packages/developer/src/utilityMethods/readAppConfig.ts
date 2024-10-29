@@ -1,4 +1,6 @@
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
+import { IsNoConfigProps } from "@ulld/types";
+import { isNoConfig } from "@ulld/utilities/isNoConfig";
 import fs from "fs";
 import path from "path";
 
@@ -26,6 +28,13 @@ export const readAppConfig = async (returnUndefinedIfNoConfig: boolean = true) =
         throw new Error("Unable to read appConfig in readAppConfig method.")
     }
 };
+
+
+export const readAppConfigIfNotNoConfig = async <T extends IsNoConfigProps>(props?: T): Promise<AppConfigSchemaOutput | undefined> => {
+    if(!isNoConfig(props)){
+        return await readAppConfig()
+    }
+}
 
 
 export const readDevelopmentAppConfig = () => {

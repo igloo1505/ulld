@@ -1,13 +1,8 @@
 import React from "react";
 import BlogPostList from "#/components/pageSpecific/blog/blogPostList/blogPostList";
 import BlogSideBar from "#/components/pageSpecific/blog/tagSideBar/blogSideBar";
-import MathjaxProvider from "#/components/utility/providers/mathjax";
+import { BlogSearchParams } from "../../types/general";
 
-export type BlogSearchParams = {
-    tags?: string[];
-    page?: string;
-    category?: string;
-};
 
 interface BlogPageProps {
     searchParams: BlogSearchParams;
@@ -32,9 +27,9 @@ const BlogPage = ({ searchParams }: BlogPageProps) => {
             >
                 <BlogSideBar 
                 />
-                <MathjaxProvider>
-                    <BlogPostList />
-                </MathjaxProvider>
+                    <BlogPostList
+                        searchParams={searchParams}
+                    />
             </div>
         </div>
     );

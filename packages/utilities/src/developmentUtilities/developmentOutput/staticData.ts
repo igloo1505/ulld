@@ -9,5 +9,5 @@ export const functionPlacementMap: Omit<
 > = {
     prefix: ["rawFileHeader", "rawPrefixContent"],
     suffix: ["rawSuffixContent"],
-    locationComments: ["sourceLocationComment"],
+    locationComments: ["sourceLocationComment", "generatedFromScriptComment"],
 };

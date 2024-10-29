@@ -1,6 +1,5 @@
-"use client";
 import { PageType } from "#/types/general";
-import React, { useMemo } from "react";
+import React from "react";
 import BlogSummaryImageSection from "./blogSummaryImageSection";
 import Link from "next/link"
 import dayjs from "dayjs";
@@ -16,14 +15,16 @@ interface BlogPostSummaryCardProps {
     item: PageType;
 }
 
-const BlogPostSummaryCard = ({ item }: BlogPostSummaryCardProps) => {
-    const itemDate = useMemo(() => {
+const getItemDate = (item: PageType): string | undefined => {
         let _itemDate = item.data.updated || item.data.created;
         if (_itemDate) {
             _itemDate = dayjs(_itemDate.replaceAll("-", "/")).format("MMM Do, YYYY");
         }
         return _itemDate
-    }, [item]);
+    }
+
+const BlogPostSummaryCard = ({ item }: BlogPostSummaryCardProps) => {
+    const itemDate = getItemDate(item)
 
     return (
         <div

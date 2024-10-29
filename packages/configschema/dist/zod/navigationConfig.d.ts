@@ -1,22 +1,5 @@
 import { z } from "zod";
-import { ValidIconName } from "@ulld/icons/dynamic";
 import { ZodOutputSchema } from "../types.js";
-type V = {
-    icon: ValidIconName;
-    Icon?: never;
-};
-type F = {
-    Icon: React.FC<{
-        className: string;
-    }>;
-    icon?: never;
-};
-type B = {
-    href?: string;
-    onClick?: () => any;
-    label?: string;
-};
-export type SidebarLink = (B & V) | (B & F);
 export declare const iconNameField: z.ZodEffects<z.ZodString, string, string>;
 export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
     navbarBreakpoint: z.ZodDefault<z.ZodObject<{
@@ -130,5 +113,4 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
     })[] | undefined;
 }>>;
 export declare const navigationConfigSchemaOutput: ZodOutputSchema<typeof navigationConfigSchema>;
-export {};
 //# sourceMappingURL=navigationConfig.d.ts.map

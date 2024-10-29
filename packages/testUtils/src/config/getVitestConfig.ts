@@ -46,6 +46,9 @@ export const getVitestConfig = ({
 
     return {
         plugins: react ? [reactPlugin()] : [],
+        define: {
+            "import.meta.vitest": "undefined"
+        },
         root,
         test: {
             ...props,

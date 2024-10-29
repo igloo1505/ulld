@@ -31,6 +31,7 @@ import { BuildOptionsType } from "../utils/options.js";
 import { getInternalTailwindSources } from "../utils/getInternalTailwindSources.js";
 import { SlotMap } from "@ulld/configschema/slotMapRootType";
 import type { SlotMapOfType } from "@ulld/configschema/slotMapInternalType";
+import { todo } from "node:test";
 
 const { prompt } = enq;
 
@@ -498,20 +499,23 @@ ${fullSlotMap.missingItems.map((k, i) => `${i + 1}. ${k.slot} -> ${k.subSlot}`).
     }
     getTailwindSources(): string[] {
         let items = getInternalTailwindSources();
-        const getSrcDiretory = (pkg: string) => {
-            if (appData.packagesBuildingToDist.includes(pkg)) {
-                return "dist";
-            }
-            return "src";
-        };
-        let additionalItems = this.plugins
-            .filter((f) => f.includeInTailwindSources)
-            .map((p) => `./node_modules/${p.name}/${getSrcDiretory(p.name)}/**/*.{js,ts,jsx,tsx,mdx}`);
-        for (const k of additionalItems) {
-            if (!items.includes(k)) {
-                items.push(k);
-            }
-        }
+        // const getSrcDiretory = (pkg: string) => {
+        //     if (appData.packagesBuildingToDist.includes(pkg)) {
+        //         return "dist";
+        //     }
+        //     return "src";
+        // };
+       
+        // ULLD_BUILD_PROCESS: Need to handle this immediately.
+        // PRIORITY: Allow the pluginConfig.ulld.json file to specify a tailwindSource field as a glob that will be appended here. Make sure that this glob is relative to the package root, so that the node_modules path can be handled internally.
+        // let additionalItems = this.plugins
+        //     .filter((f) => f.includeInTailwindSources)
+        //     .map((p) => `./node_modules/${p.name}/${getSrcDiretory(p.name)}/**/*.{js,ts,jsx,tsx,mdx}`);
+        // for (const k of additionalItems) {
+        //     if (!items.includes(k)) {
+        //         items.push(k);
+        //     }
+        // }
         return items;
     }
     revalidatePluginConfigs() {

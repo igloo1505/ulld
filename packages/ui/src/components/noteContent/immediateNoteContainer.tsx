@@ -2,7 +2,6 @@ import React from "react";
 import NoteContentObserver from "../observers/noteContentObserver";
 import { getRandomId } from "@ulld/utilities/utils/identity";
 import { noteContainerPrefix } from "@ulld/utilities/staticAppProperties/main";
-import MathjaxProvider from "@ulld/utilities/providers-mathjax";
 
 interface ImmediateNoteContentContainerProps {
     children: React.ReactNode;
@@ -21,7 +20,7 @@ export const ImmediateNoteContentContainer = ({
                 }
                 id={id}
             >
-                <MathjaxProvider>{children ? children : <></>}</MathjaxProvider>
+                {children ? children : <></>}
             </div>
         </>
     );

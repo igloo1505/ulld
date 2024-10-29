@@ -10,7 +10,7 @@ import { internalAppLocations } from "@ulld/utilities/internalAppLocations";
 import React, { type ReactNode, type RefObject, useMemo } from "react";
 import type { SidebarLink } from "../form/schema";
 import { type NavLinkType, superTruthy } from "../form/utils";
-import { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
+import { InternalGlobalActionIds } from "@ulld/types";
 
 interface InternalLocationsInputWrapperProps<T extends NavLinkType>
     extends Partial<InternalLocationsComboboxProps<T>> {

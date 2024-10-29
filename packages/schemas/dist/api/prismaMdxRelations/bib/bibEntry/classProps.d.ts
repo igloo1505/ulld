@@ -176,8 +176,6 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
     }[];
     added: Date;
     number?: string | null | undefined;
-    journal?: string | null | undefined;
-    editor?: string | null | undefined;
     note?: string | null | undefined;
     abstract?: string | null | undefined;
     type?: string | null | undefined;
@@ -185,6 +183,9 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
     copyright?: string | null | undefined;
     school?: string | null | undefined;
     volume?: string | null | undefined;
+    journal?: string | null | undefined;
+    url?: string | null | undefined;
+    editor?: string | null | undefined;
     Bib?: {
         id: number;
         entries: any[];
@@ -212,7 +213,6 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
     series?: string | null | undefined;
     year?: string | null | undefined;
     numpages?: string | null | undefined;
-    url?: string | null | undefined;
     issue?: string | null | undefined;
     issn?: string | null | undefined;
     urldate?: string | null | undefined;
@@ -222,8 +222,6 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
 }, {
     id: string;
     number?: string | null | undefined;
-    journal?: string | null | undefined;
-    editor?: string | null | undefined;
     note?: string | null | undefined;
     abstract?: string | null | undefined;
     type?: string | null | undefined;
@@ -235,6 +233,7 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
         kanbanId?: number | null | undefined;
     })[] | undefined;
     volume?: string | null | undefined;
+    journal?: string | null | undefined;
     readingList?: {
         name: string;
         description: string | null;
@@ -244,6 +243,8 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
         createdAt?: string | Date | null | undefined;
         lastUpdate?: string | Date | null | undefined;
     }[] | undefined;
+    url?: string | null | undefined;
+    editor?: string | null | undefined;
     lastAccess?: string | Date | null | undefined;
     createdAt?: string | Date | null | undefined;
     Bib?: {
@@ -280,7 +281,6 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
     series?: string | null | undefined;
     year?: string | null | undefined;
     numpages?: string | null | undefined;
-    url?: string | null | undefined;
     issue?: string | null | undefined;
     issn?: string | null | undefined;
     urldate?: string | null | undefined;
@@ -724,8 +724,6 @@ export declare const bibEntryPropsSchema: z.ZodEffects<z.ZodObject<{
     }[];
     added: Date;
     number?: string | null | undefined;
-    journal?: string | null | undefined;
-    editor?: string | null | undefined;
     note?: string | null | undefined;
     abstract?: string | null | undefined;
     type?: string | null | undefined;
@@ -733,6 +731,9 @@ export declare const bibEntryPropsSchema: z.ZodEffects<z.ZodObject<{
     copyright?: string | null | undefined;
     school?: string | null | undefined;
     volume?: string | null | undefined;
+    journal?: string | null | undefined;
+    url?: string | null | undefined;
+    editor?: string | null | undefined;
     Bib?: {
         id: number;
         entries: any[];
@@ -760,7 +761,6 @@ export declare const bibEntryPropsSchema: z.ZodEffects<z.ZodObject<{
     series?: string | null | undefined;
     year?: string | null | undefined;
     numpages?: string | null | undefined;
-    url?: string | null | undefined;
     issue?: string | null | undefined;
     issn?: string | null | undefined;
     urldate?: string | null | undefined;

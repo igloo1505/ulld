@@ -7,12 +7,12 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
         import: z.ZodOptional<z.ZodString>;
         require: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        types?: string | undefined;
         import?: string | undefined;
+        types?: string | undefined;
         require?: string | undefined;
     }, {
-        types?: string | undefined;
         import?: string | undefined;
+        types?: string | undefined;
         require?: string | undefined;
     }>]>>>;
     files: z.ZodDefault<z.ZodOptional<z.ZodArray<z.ZodString, "many">>>;
@@ -79,8 +79,8 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
     description?: string | undefined;
     scripts?: Record<string, string> | undefined;
     exports?: Record<string, string | {
-        types?: string | undefined;
         import?: string | undefined;
+        types?: string | undefined;
         require?: string | undefined;
     }> | undefined;
     devDependencies?: Record<string, string> | undefined;
@@ -117,8 +117,8 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
     keywords?: string[] | undefined;
     scripts?: Record<string, string> | undefined;
     exports?: Record<string, string | {
-        types?: string | undefined;
         import?: string | undefined;
+        types?: string | undefined;
         require?: string | undefined;
     }> | undefined;
     packageManager?: string | undefined;

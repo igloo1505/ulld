@@ -1,5 +1,4 @@
-import type { ValidIconNameDynamicallyGenerated } from "@ulld/types";
-export type InternalGlobalActionIds = "togglePreferFileSystem" | "toggleTooltips" | "syncRootDirectory" | "toggleDarkMode" | "toggleAllJupyterFolds" | "toggleIdSelectMode" | "showEquationIds" | "toggleBookmarked";
+import type { ValidIconNameDynamicallyGenerated, InternalGlobalActionIds } from "@ulld/types";
 export declare const internalGlobalActionsIdMap: Record<InternalGlobalActionIds, {
     label: string;
     defaultIcon: ValidIconNameDynamicallyGenerated;

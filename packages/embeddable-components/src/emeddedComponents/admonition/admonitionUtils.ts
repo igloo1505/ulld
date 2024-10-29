@@ -1,15 +1,13 @@
 import { stringToConsistentId } from "@ulld/state/formatting/general";
-import type { AdmonitionType, ValidIconName } from "@ulld/types";
+import type { ValidIconName } from "@ulld/types";
 import { getRandomId } from "@ulld/utilities/identity";
 import type { AdmonitionProps } from "@ulld/utilities/types";
-import type { HTMLProps, ReactNode } from "react";
+import type { ReactNode } from "react";
 
-export interface AdmonitionTitleProps extends HTMLProps<HTMLDivElement> {
-  title: string;
-  admonitionType?: AdmonitionType;
-  dropdown?: boolean;
-  titleBold?: boolean;
-  icon?: ValidIconName;
+export interface AdmonitionTitleProps
+    extends Pick<AdmonitionContainerProps, "title" | "dropdown" | "titleBold"> {
+    iconName?: ValidIconName;
+    onClick?: () => void
 }
 
 export interface AdmonitionContainerProps extends Omit<AdmonitionProps, "children" | "title" | "footer" | "icon"> {

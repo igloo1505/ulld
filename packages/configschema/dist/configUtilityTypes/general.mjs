@@ -7,10 +7,10 @@ import "../chunk-PPLLPMHA.mjs";
 import "../chunk-AZ3BL532.mjs";
 import {
   documentTypeConfigSchema
-} from "../chunk-DSCZCBFM.mjs";
+} from "../chunk-I62DW57C.mjs";
 import "../chunk-UUFTJZTI.mjs";
 import "../chunk-XHBPEY36.mjs";
-import "../chunk-U5NPFAWN.mjs";
+import "../chunk-ULQTWAOY.mjs";
 
 // src/configUtilityTypes/general.ts
 var getDocumentTypeConfig = (docType, config) => {

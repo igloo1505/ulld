@@ -1,6 +1,6 @@
 import { DocsPageProps } from "fumadocs-ui/page";
 import { parseMarkdownTitle } from "@ulld/utilities/getMarkdownHeadings";
-import { MdxContentSERVER } from "@ulld/render/mdx/server";
+import { MdxContentRSC } from "@ulld/render/mdx/rsc";
 
 export const getLatexTocEntries = (
   toc: DocsPageProps["toc"] = [],
@@ -19,10 +19,11 @@ export const getLatexTocEntries = (
     t.push({
       ...entry,
       title: titleAsComponent ? (
-        <MdxContentSERVER
-                    content={newTitle}
-                    className={"no-list-margin"}
-                />
+        <MdxContentRSC
+          notProse
+          content={newTitle}
+          className={"no-list-margin"}
+        />
       ) : (
         newTitle
       ),

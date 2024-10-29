@@ -13,3 +13,5 @@ export type * from "./compiledApp/passedComponents/logoProps.ts";
 export type * from "./compiledApp/methods/eventMethods/returnTypes.ts";
 export type * from "./compiledApp/methods/eventMethods/params.ts"
 export type * from "./errorHandling/index.ts"
+export type * from "./packageSpecific/index.ts"
+export type * from "./baseApp/index.ts"

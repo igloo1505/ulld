@@ -55,7 +55,8 @@ const getShikiTransformers = async (config?: AppConfigSchemaDeepPartialOutput) =
 
 const rehypePlugins = async (
     config?: AppConfigSchemaDeepPartialOutput,
-    opts?: ParseMdxStringOptions
+    opts?: ParseMdxStringOptions,
+    noConfig?: boolean
 ): Promise<CompileOptions["rehypePlugins"]> => {
     let shikiTransformers = await getShikiTransformers(config)
     return [
@@ -134,7 +135,7 @@ const remarkPlugins = (
 export const parseMdxString = async ({
     content,
     appConfig,
-    opts = {}
+    opts = {},
 }: ParseMdxStringParams) => {
     let _rehypePlugins = await rehypePlugins(appConfig, opts)
     let res = await compile(content, {

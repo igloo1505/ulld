@@ -50,3 +50,10 @@ export type PageType = {
 
 
 export type BaseLayoutProps = ComponentPropsWithoutRef<typeof DocsLayout>
+
+
+export type BlogSearchParams = {
+    tags?: string[];
+    page?: string;
+    category?: string;
+};

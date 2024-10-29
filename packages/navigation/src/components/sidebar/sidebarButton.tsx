@@ -4,7 +4,7 @@ import { DynamicIcon } from "@ulld/icons/dynamic";
 import { usePathname } from "next/navigation";
 import type { HTMLProps, ReactNode } from "react";
 import { runActionById } from "@ulld/state/runActionById";
-import type { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
+import type { InternalGlobalActionIds } from "@ulld/types";
 import { cn } from "@ulld/utilities/cn";
 import type { NavigationFormSettingSchema } from "../../pages/settingPage/form/schema";
 

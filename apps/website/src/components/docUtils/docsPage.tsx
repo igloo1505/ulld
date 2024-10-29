@@ -124,8 +124,6 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
                 <div id={id} className={cn("w-full @container/mdx", props.className)}>
                     <DocsPageInternal {...props} id={id} />
                 </div>
-            /* <MathjaxProvider> */
-            /* </MathjaxProvider> */
         );
     }
 
@@ -148,8 +146,6 @@ const DocsPageComponent = (props: DocsPageComponentProps) => {
                     <DocsPageInternal {...props} id={id} />
                 </DocsBody>
             </DocsPage>
-        /* <MathjaxProvider> */
-        /* </MathjaxProvider> */
     );
 };
 

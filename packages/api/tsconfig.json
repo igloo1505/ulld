@@ -1,17 +1,15 @@
 {
     "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "extends": "@ulld/typescript-config/nextjs.json",
+    "exclude": [
+        "__scripts__"
+    ],
     "compilerOptions": {
         "types": ["@testing-library/jest-dom", "jest-environment-jsdom"],
         "moduleResolution": "bundler",
         "rootDir": ".",
         "outDir": "dist",
         "jsx": "react-jsx",
-        // "paths": {
-        //     "#/*": [
-        //         "./src/*"
-        //     ]
-        // },
         "esModuleInterop": true,
         "resolveJsonModule": true,
         // "declarationMap": true,

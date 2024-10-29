@@ -1,10 +1,10 @@
 import { z } from "zod";
-import { bundledLanguages } from "shiki"
+import shikiLanguageList from "@ulld/utilities/shikiLanguages"
 
 export const snippetFilterSchema = z
     .object({
         language: z.string().optional().refine((x) => {
-        if(typeof x === "string" && !Object.keys(bundledLanguages).includes(x)){
+        if(typeof x === "string" && !shikiLanguageList.includes(x as typeof shikiLanguageList[number])){
             return false
         }
         return true

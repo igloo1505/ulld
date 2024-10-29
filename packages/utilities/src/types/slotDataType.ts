@@ -1,4 +1,4 @@
-import propsExtends from "../utils/buildStaticData.json" with { type: "json" };
+import propsExtends from "../utils/buildStaticData.json"
 
 export const slotTypes = [
     "page",

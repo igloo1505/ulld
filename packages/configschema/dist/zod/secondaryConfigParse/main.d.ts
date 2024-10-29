@@ -100,10 +100,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         }>>>;
         fs: z.ZodEffects<z.ZodString, string, string>;
         id: z.ZodOptional<z.ZodString>;
+        url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         filePathPattern: z.ZodOptional<z.ZodString>;
         matchWeight: z.ZodDefault<z.ZodNumber>;
-        url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
         keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
         topicLabel: z.ZodOptional<z.ZodString>;
@@ -138,9 +138,9 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
         inSidebar: boolean;
         inNavbar: boolean;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
-        url?: string | undefined;
         topicLabel?: string | undefined;
         subjectLabel?: string | undefined;
     }, {
@@ -160,10 +160,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             } | undefined;
         } | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;
@@ -220,10 +220,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             } | undefined;
         } | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;
@@ -280,10 +280,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             } | undefined;
         } | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;
@@ -2073,10 +2073,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             } | undefined;
         } | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;
@@ -2146,8 +2146,8 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
                 };
             };
         };
-        matchWeight: number;
         url: string;
+        matchWeight: number;
         urlQuery: Record<string, string | number | string[] | number[]>;
         keywords: string[];
         autoTag: string[];
@@ -2621,10 +2621,10 @@ export declare const secondaryConfigParse: z.ZodEffects<z.ZodObject<z.objectUtil
             } | undefined;
         } | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
-        url?: string | undefined;
         urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
         keywords?: string[] | undefined;
         topicLabel?: string | undefined;

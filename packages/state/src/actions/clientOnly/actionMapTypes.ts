@@ -1,7 +1,7 @@
 import type { syncRootDirectory } from "@ulld/utilities/actions-syncDirectory";
 // import { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
 import { internalGlobalActionMap } from "./actionMap";
-import { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
+import { InternalGlobalActionIds } from "@ulld/types";
 
 // TODO: Find ways to implement type saftey, making sure all of the keys in the internalGlobalActionIds type are accounted for.
 

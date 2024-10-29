@@ -1,14 +1,12 @@
-import { AppConfigSchemaOutput } from "@ulld/configschema/types";
-import { parseMdxString } from "./mdx-to-jsx";
+import { parseMdxString, ParseMdxStringParams } from "./mdx-to-jsx";
 import grayMatter from "gray-matter";
 import { jsxRuntime } from "../utils/jsxRuntime.cjs";
 import { getComponentMap } from "@ulld/component-map/server";
 import { ConditionalComponentProps } from "@ulld/component-map/types";
 import { AdditionalComponents } from "@ulld/component-map/types";
 
-interface MdxToHtmlProps {
+interface MdxToHtmlProps extends Omit<ParseMdxStringParams, "content"> {
     rawContent: string;
-    appConfig: AppConfigSchemaOutput;
     components: AdditionalComponents;
     componentOpts?: ConditionalComponentProps;
 }
@@ -16,9 +14,7 @@ interface MdxToHtmlProps {
 const getHtmlData = async ({
     rawContent,
     appConfig,
-    components = [],
-    componentOpts,
-}: MdxToHtmlProps) => {
+}: Pick<MdxToHtmlProps, "rawContent" | "appConfig">) => {
         
     let frontMatter = grayMatter(rawContent);
     let parsedContent = await parseMdxString({

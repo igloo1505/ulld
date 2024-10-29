@@ -1,6 +1,7 @@
 import { mathOptions } from "@ulld/utilities/defaults/markdownUniversalOptions"
 import { z } from 'zod'
 import { appConfigSchema, AppConfigSchemaDeepPartialOutput } from "@ulld/configschema/zod/main"
+import { IsNoConfigProps } from "@ulld/types"
 
 export interface ParseMdxStringOptions {
     mathLabels?: typeof mathOptions["tex"]["tags"]

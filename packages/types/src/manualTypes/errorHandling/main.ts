@@ -10,3 +10,8 @@ export interface ErrorNotification {
 export interface ErrorHandlingReturnData {
     errorNotifications?: ErrorNotification[]
 }
+
+
+export interface IsNoConfigProps {
+    noConfig?: boolean
+}

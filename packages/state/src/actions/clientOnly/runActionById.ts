@@ -6,7 +6,7 @@ import {
     UlldGlobalActionAwaitedReturnType,
 } from "./actionMapTypes";
 import { bareGlobalActionsMap } from "./bareActionMap";
-import type { InternalGlobalActionIds } from "@ulld/utilities/internalGLobalActionsGeneratedData";
+import type { InternalGlobalActionIds } from "@ulld/types";
 
 
 const isGlobalId = <T extends GlobalActionIds>(id: T, globalActionId: GlobalActionIds): id is T => {

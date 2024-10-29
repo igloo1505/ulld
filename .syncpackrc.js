@@ -58,8 +58,24 @@ const config = {
             ],
             dependencyTypes: ["!peer"],
             isBanned: true,
-            packages: ["!@ulld/website"],
+            packages: ["@ulld/!{website,template}"],
             label: "Internal packages should only be under peerDependencies",
+        },
+        {
+            dependencies: [
+                "next"
+            ],
+            packages: ["@ulld/template"],
+            pinVersion: "14.2.5",
+            label: "Pin next in template app."
+        },
+        {
+            dependencies: [
+                "@tanstack/react-virtual"
+            ],
+            packages: ["@ulld/template"],
+            pinVersion: "3.9.0",
+            label: "Pin @tanstack/react-virtual in template app."
         },
         // {
         // NOTE: Turn this back on if any internal pacakges should be installed only in production dependencies and not as peerDependencies.
@@ -169,7 +185,7 @@ const config = {
         },
         {
             dependencies: ["next"],
-            packages: ["!@ulld/website"],
+            packages: ["@ulld/!{website,template}"],
             pinVersion: "14.2.3",
             label: "Pin Next.js",
         },

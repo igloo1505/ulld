@@ -7,7 +7,6 @@ import {
     ResizablePanel,
     ResizableHandle,
 } from "@ulld/tailwind/resizable";
-import MathjaxProvider from "#/components/utility/providers/mathjax";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import NavbarButtonPortal from "#/components/utility/portals/navbar";
 import { navbarButtonClasses } from "../navbar/navbarButtonGroup";
@@ -119,9 +118,7 @@ const SideBySideWithSource = ({ mdx, children }: SideBySideWithSourceProps) => {
                 className={"hidden md:flex"}
             >
                 <CodeOutput ref={outputContainer} data-name={names.output}>
-                    <MathjaxProvider>
                         {children}
-                    </MathjaxProvider>
                 </CodeOutput>
             </ResizablePanel>
         </ResizablePanelGroup>

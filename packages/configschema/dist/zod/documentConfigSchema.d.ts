@@ -165,8 +165,8 @@ export declare const documentTypeConfigSchemaBase: z.ZodObject<{
         };
     };
     fs: string;
-    matchWeight: number;
     url: string;
+    matchWeight: number;
     urlQuery: Record<string, string | number | string[] | number[]>;
     keywords: string[];
     autoTag: string[];
@@ -279,10 +279,10 @@ export declare const documentTypeConfigSchemaInner: z.ZodObject<{
     }>>>;
     fs: z.ZodEffects<z.ZodString, string, string>;
     id: z.ZodOptional<z.ZodString>;
+    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     filePathPattern: z.ZodOptional<z.ZodString>;
     matchWeight: z.ZodDefault<z.ZodNumber>;
-    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
     keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     topicLabel: z.ZodOptional<z.ZodString>;
@@ -317,9 +317,9 @@ export declare const documentTypeConfigSchemaInner: z.ZodObject<{
     inSidebar: boolean;
     inNavbar: boolean;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
-    url?: string | undefined;
     topicLabel?: string | undefined;
     subjectLabel?: string | undefined;
 }, {
@@ -339,10 +339,10 @@ export declare const documentTypeConfigSchemaInner: z.ZodObject<{
         } | undefined;
     } | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     matchWeight?: number | undefined;
-    url?: string | undefined;
     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
     keywords?: string[] | undefined;
     topicLabel?: string | undefined;
@@ -422,10 +422,10 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     }>>>;
     fs: z.ZodEffects<z.ZodString, string, string>;
     id: z.ZodOptional<z.ZodString>;
+    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     filePathPattern: z.ZodOptional<z.ZodString>;
     matchWeight: z.ZodDefault<z.ZodNumber>;
-    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
     keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     topicLabel: z.ZodOptional<z.ZodString>;
@@ -460,9 +460,9 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     inSidebar: boolean;
     inNavbar: boolean;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
-    url?: string | undefined;
     topicLabel?: string | undefined;
     subjectLabel?: string | undefined;
 }, {
@@ -482,10 +482,10 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
         } | undefined;
     } | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     matchWeight?: number | undefined;
-    url?: string | undefined;
     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
     keywords?: string[] | undefined;
     topicLabel?: string | undefined;
@@ -542,10 +542,10 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
         } | undefined;
     } | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     matchWeight?: number | undefined;
-    url?: string | undefined;
     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
     keywords?: string[] | undefined;
     topicLabel?: string | undefined;
@@ -625,10 +625,10 @@ export declare const documentTypeConfigSchemaOutputSchema: z.ZodObject<z.objectU
     }>>>;
     fs: z.ZodEffects<z.ZodString, string, string>;
     id: z.ZodOptional<z.ZodString>;
+    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     filePathPattern: z.ZodOptional<z.ZodString>;
     matchWeight: z.ZodDefault<z.ZodNumber>;
-    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     urlQuery: z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>;
     keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     topicLabel: z.ZodOptional<z.ZodString>;
@@ -732,9 +732,9 @@ export declare const documentTypeConfigSchemaOutputSchema: z.ZodObject<z.objectU
     };
     fs: string;
     id: string;
+    url: string;
     docType: string;
     matchWeight: number;
-    url: string;
     urlQuery: Record<string, string | number | string[] | number[]>;
     keywords: string[];
     autoTag: string[];
@@ -762,9 +762,9 @@ export declare const documentTypeConfigSchemaOutputSchema: z.ZodObject<z.objectU
     };
     fs: string;
     id: string;
+    url: string;
     docType: string;
     matchWeight: number;
-    url: string;
     urlQuery: Record<string, string | number | string[] | number[]>;
     keywords: string[];
     autoTag: string[];
@@ -845,10 +845,10 @@ export declare const documentTypeConfigMinimalOutputSchema: z.ZodObject<z.object
     }>>>>;
     fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
     docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
     filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
     matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
-    url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
     urlQuery: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnion<[z.ZodString, z.ZodArray<z.ZodString, "many">, z.ZodNumber, z.ZodArray<z.ZodNumber, "many">]>>>>>;
     keywords: z.ZodOptional<z.ZodDefault<z.ZodArray<z.ZodString, "many">>>;
     topicLabel: z.ZodOptional<z.ZodOptional<z.ZodString>>;
@@ -953,10 +953,10 @@ export declare const documentTypeConfigMinimalOutputSchema: z.ZodObject<z.object
         };
     } | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     matchWeight?: number | undefined;
-    url?: string | undefined;
     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
     keywords?: string[] | undefined;
     topicLabel?: string | undefined;
@@ -983,10 +983,10 @@ export declare const documentTypeConfigMinimalOutputSchema: z.ZodObject<z.object
         };
     } | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     matchWeight?: number | undefined;
-    url?: string | undefined;
     urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
     keywords?: string[] | undefined;
     topicLabel?: string | undefined;

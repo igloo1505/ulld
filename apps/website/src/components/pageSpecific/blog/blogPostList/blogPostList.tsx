@@ -1,12 +1,14 @@
-"use client";
-import React, { useRef } from "react";
+import React from "react";
 import { getAllBlogPages } from "#/fumaDocs/utils/getConcatenatedPages";
 import BlogPostSummaryCard from "../blogSummaryCard/main";
-import { useSearchParams } from "next/navigation";
 import PaginationGroup from "@ulld/ui/paginationGroup";
 import { getPaginationTemplateString } from "@ulld/utilities/paginationUtils";
+import { BlogSearchParams } from "../../../../types/general";
+import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 
-interface BlogPostListProps { }
+interface BlogPostListProps { 
+    searchParams: BlogSearchParams
+}
 
 const itemsPerPage = 8;
 
@@ -61,17 +63,16 @@ const getBlogPostListItems = (
     };
 };
 
-const BlogPostList = ({ }: BlogPostListProps) => {
-    const ref = useRef<HTMLDivElement>(null!);
-    const sp = useSearchParams();
-    let page: string | number | undefined | null = sp.get("page");
+const BlogPostList = ({searchParams: sp}: BlogPostListProps) => {
+    let page: string | number | undefined | null = sp.page;
     if (typeof page === "string") {
         page = parseInt(page);
     }
-    let category = sp.get("category");
-    let tags = sp.getAll("tags");
+    const category = sp.category
+    const tags = ArrayUtilities.beArray(sp.tags || []);
     const { items, currentPage, showPagination, totalItems } =
         getBlogPostListItems(category, tags, page || undefined);
+
     const paginationTemplateString = getPaginationTemplateString((n) => {
         let s = new URLSearchParams();
         if (category) {
@@ -86,7 +87,6 @@ const BlogPostList = ({ }: BlogPostListProps) => {
 
     return (
         <div
-            ref={ref}
             className={
                 "w-full h-full flex flex-col justify-start items-center space-y-6 gap-y-16 py-6 px-6 lgr:place-self-start"
             }

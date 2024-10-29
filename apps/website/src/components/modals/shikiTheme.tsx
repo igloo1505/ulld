@@ -6,7 +6,7 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@ulld/tailwind/dialog";
-import { BundledTheme } from "shiki";
+import type { BundledTheme } from "shiki";
 import { CheckIcon } from "lucide-react";
 
 interface ShikiThemeSelectProps {

@@ -1,7 +1,6 @@
-import type { ValidIconName } from "@ulld/types/types"
+import type { InternalGlobalActionIds, ValidIconName } from "@ulld/types/types"
 import type {InternalAppLocationIds} from "./internalAppLocations";
 import { internalAppLocationsLabelMap} from "./internalAppLocations"
-import type {InternalGlobalActionIds} from "./internalGlobalActions";
 import { internalGlobalActionsIdMap} from "./internalGlobalActions"
 
 export type InternalLocationAndAction = {

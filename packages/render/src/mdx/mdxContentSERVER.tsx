@@ -1,60 +1,28 @@
+import type { ReactNode } from 'react';
 import React from 'react'
-import { autoWrapMath } from '@ulld/utilities/latexUtils';
-import MdxContentPreCompiled from './mdxContentPreCompiled';
+import { parseMdxString } from "@ulld/parsers/mdx";
 import { getMdxClassnames } from './getMdxClassnames';
-import { parseMdxString, ParseMdxStringOptions } from "@ulld/parsers/mdx";
-import { AdditionalComponents } from '@ulld/component-map/types';
-import { AppConfigSchemaOutput } from '@ulld/configschema/types';
+import { MdxContentPreCompiled } from './mdxContentPreCompiled';
+import type { MdxContentSERVERProps } from './typeUtils';
+import { parseMdxContentProps } from './mdxPropsUtils';
 
 
-export interface MdxContentSERVERProps {
-    id?: string
-    bareAss?: boolean
-    content?: string
-    inline?: boolean
-    parentId?: string
-    className?: string
-    hideMathjaxLabels?: boolean
-    isMathOnly?: boolean
-    autoWrap?: boolean
-    display?: boolean
-    small?: boolean
-    large?: boolean
-    xl?: boolean
-    live?: boolean // Might not be using this. Double check later.
-    applyMathContextMenu?: boolean
-    components?: AdditionalComponents
-    appConfig?: AppConfigSchemaOutput
-    parserOpts?: ParseMdxStringOptions
-}
-
-
-
-const parseProps = (p: MdxContentSERVERProps) => {
-    let inline = p.display === true ? false : true
-    return {
-        ...p,
-        displayType: inline ? "inline" as "inline" : "display" as "display",
-        content: !p.content ? "" : p.autoWrap ? autoWrapMath(p.content, !inline) : p.content
-    }
-}
-
-export const MdxContentSERVER = async (_props: MdxContentSERVERProps) => {
-    const props = parseProps(_props)
-    let compiled = await parseMdxString({
+export const MdxContentSERVER = async (_props: MdxContentSERVERProps): Promise<Awaited<ReactNode>> => {
+    const props = parseMdxContentProps<MdxContentSERVERProps>(_props)
+    const compiled = await parseMdxString({
         content: props.content,
         appConfig: props.appConfig,
         opts: _props.parserOpts
     })
     const classNames = getMdxClassnames(_props)
     return (
-        <MdxContentPreCompiled 
+        <MdxContentPreCompiled
+            applyMathContextMenu={(props.autoWrap && props.isMathOnly) || props.applyMathContextMenu}
+            className={classNames}
+            components={[]}
             content={compiled || ""}
             raw={props.content}
-            className={classNames}
-            applyMathContextMenu={(props.autoWrap && props.isMathOnly) || props.applyMathContextMenu}
-            /* components={_props.components} */
-            components={[]}
+        /* components={_props.components} */
         />
     )
 }
@@ -62,4 +30,4 @@ export const MdxContentSERVER = async (_props: MdxContentSERVERProps) => {
 
 MdxContentSERVER.displayName = "MdxContentSERVER"
 
-
+export type { MdxContentSERVERProps }

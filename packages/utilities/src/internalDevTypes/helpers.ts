@@ -24,6 +24,19 @@ export const getPackageDataOnly = (): InternalPackageItem[] => {
     );
 };
 
+export const getInternalPackageRecord = (): Record<
+    InternalAppName,
+    InternalPackageItem
+> => {
+    const data = {} as Record<InternalAppName, InternalPackageItem>;
+    for (const k of (internalBuildData as InternalBuildData)
+        .internalPackageData) {
+        data[k.name] = k;
+    }
+
+    return data;
+};
+
 /** Returns only the package data in the app directory, not the packages directory */
 export const getAppDataOnly = (): InternalPackageItem[] => {
     return (internalBuildData as InternalBuildData).internalPackageData.filter(
@@ -35,10 +48,18 @@ export const getInternalPackageNames = (): InternalAppName[] => {
     return getPackageDataOnly().map((x) => x.name);
 };
 
+export const getInternalPackagesToTranspile = (): InternalAppName[] => {
+    return getPackageDataOnly()
+        .filter((x) => !x.isTranspiled)
+        .map((x) => x.name);
+};
+
 export const getInternalAppNames = (): InternalAppName[] => {
     return getAppDataOnly().map((x) => x.name);
 };
 
 export const getAllInternalNames = (): InternalAppName[] => {
-     return internalBuildData.internalPackageData.map((n) => n.name as InternalAppName)
-}
+    return internalBuildData.internalPackageData.map(
+        (n) => n.name as InternalAppName,
+    );
+};

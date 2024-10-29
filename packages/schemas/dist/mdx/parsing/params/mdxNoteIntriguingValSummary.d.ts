@@ -430,8 +430,6 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         }[];
         added: Date;
         number?: string | null | undefined;
-        journal?: string | null | undefined;
-        editor?: string | null | undefined;
         note?: string | null | undefined;
         abstract?: string | null | undefined;
         type?: string | null | undefined;
@@ -439,6 +437,9 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         copyright?: string | null | undefined;
         school?: string | null | undefined;
         volume?: string | null | undefined;
+        journal?: string | null | undefined;
+        url?: string | null | undefined;
+        editor?: string | null | undefined;
         Bib?: {
             id: number;
             entries: any[];
@@ -466,7 +467,6 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         series?: string | null | undefined;
         year?: string | null | undefined;
         numpages?: string | null | undefined;
-        url?: string | null | undefined;
         issue?: string | null | undefined;
         issn?: string | null | undefined;
         urldate?: string | null | undefined;

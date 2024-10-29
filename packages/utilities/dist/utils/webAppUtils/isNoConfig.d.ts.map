@@ -1,1 +1,1 @@
-{"version":3,"file":"isNoConfig.d.ts","sourceRoot":"","sources":["../../../src/utils/webAppUtils/isNoConfig.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,UAAU,UAAW;IAAC,QAAQ,CAAC,EAAE,OAAO,CAAA;CAAC,KAAG,OAExD,CAAA"}
+{"version":3,"file":"isNoConfig.d.ts","sourceRoot":"","sources":["../../../src/utils/webAppUtils/isNoConfig.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,aAAa,CAAA;AAElD,eAAO,MAAM,UAAU,WAAY,eAAe,KAAG,OAEpD,CAAA"}

@@ -2,7 +2,7 @@ import {
   iconNameField,
   navigationConfigSchema,
   navigationConfigSchemaOutput
-} from "../chunk-U5NPFAWN.mjs";
+} from "../chunk-ULQTWAOY.mjs";
 export {
   iconNameField,
   navigationConfigSchema,
