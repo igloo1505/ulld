@@ -9,8 +9,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsx ./src/scripts/build/main.ts",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "lint": "tsc --watch --noEmit -p ./tsconfig.json",
     "writeImports": "tsx ./src/scripts/writeImports.ts"
   },
   "exports": {

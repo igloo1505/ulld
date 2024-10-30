@@ -1,8 +1,9 @@
 "use client";
+import type { ReactNode } from "react";
 import React, { useEffect, useMemo, useState } from "react";
-import type { MdxContentSERVERProps } from "./mdxContentSERVER";
 import { useDebounceMdxParse } from "@ulld/hooks/useDebounceMdxParse";
 import { autoWrapMath } from "@ulld/utilities/latexUtils";
+import type { MdxContentSERVERProps } from "./mdxContentSERVER";
 import { getMdxClassnames } from "./getMdxClassnames";
 
 interface MdxContentClientSideProps
@@ -13,18 +14,18 @@ interface MdxContentClientSideProps
     onReady?: () => void;
 }
 
-export const MdxContentCLIENT = (props: MdxContentClientSideProps) => {
-    let memoizedValue = useMemo(() => props.content, [props.content]);
+export const MdxContentCLIENT = (
+    props: MdxContentClientSideProps,
+): ReactNode => {
+    const memoizedValue = useMemo(() => props.content, [props.content]);
 
-
-    const { value, setValue, Component, isReady } = useDebounceMdxParse(
+    const { setValue, Component, isReady } = useDebounceMdxParse(
         memoizedValue,
         props.debounceTimeout || 350,
         {
-            bareAss: props.bareAss === false ? false : true,
+            bareAss: props.bareAss !== false,
         },
     );
-
 
     const [hasSetReady, setHasSetReady] = useState(false);
 
@@ -32,23 +33,26 @@ export const MdxContentCLIENT = (props: MdxContentClientSideProps) => {
         if (!props.onReady) {
             return;
         }
-        if (!hasSetReady && isReady && props.onReady) {
+        if (!hasSetReady && isReady) {
             props.onReady();
             setHasSetReady(true);
         }
+        /* eslint-disable react-hooks/exhaustive-deps -- Including other deps would cause useless calls to the useEffect hook. */
     }, [Component]);
 
     useEffect(() => {
-        setValue(
-            props.content
-                ? props.autoWrap
+        if (props.content) {
+            setValue(
+                props.autoWrap
                     ? autoWrapMath(
                         props.content,
                         Boolean(props.inline === false || props.display),
                     )
-                    : props.content
-                : "",
-        );
+                    : props.content,
+            );
+            return;
+        }
+        setValue("");
     }, [props.content]);
 
     return <Component className={getMdxClassnames(props)} />;

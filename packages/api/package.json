@@ -16,7 +16,7 @@
     "seedTestBuild": "wireit",
     "test": "vitest",
     "test:watch": "jest --watchAll",
-    "typecheck": "tsc --watch --noEmit -p ./tsconfigLint.json"
+    "typecheck": "tsc --watch --noEmit -p ./tsconfig.json"
   },
   "wireit": {
     "gatherTypes": {

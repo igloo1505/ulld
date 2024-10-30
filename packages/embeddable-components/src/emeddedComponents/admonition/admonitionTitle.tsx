@@ -10,7 +10,9 @@ import {
 } from "./classNames";
 
 export const AdmonitionTitle = (props: AdmonitionTitleProps): ReactNode => {
-    const { title, dropdown, iconName, ..._props } = props;
+    const { title, dropdown, iconName,..._props } = props;
+    delete _props.titleBold
+
     if (!title && !dropdown) {
         return null;
     }

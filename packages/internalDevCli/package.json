@@ -18,7 +18,7 @@
     "build": "rm -rf ./dist && tsc -b",
     "compile": "oclif pack tarballs",
     "dev": "node ./bin/dev.js",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "typecheck": "tsc --noEmit -p ./tsconfig.json",
     "test": "jest"
   },
   "types": "dist/index.d.ts",

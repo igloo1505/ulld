@@ -16,7 +16,6 @@
     "genTypes": "wireit",
     "lint": "next lint",
     "setDatabaseTunnelExports": "wireit",
-    "test": "echo 'Add test script here'",
     "typecheck": "tsc -p ./tsconfig.json --noEmit"
   },
   "wireit": {

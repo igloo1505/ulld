@@ -23,7 +23,6 @@ export const MdxContentRSC = async (_props: MdxContentRSCProps): Promise<ReactNo
         rawContent: props.content,
         appConfig,
         components,
-        className: props.className
     });
 
     const autoApplyTitle = Boolean(

@@ -10,8 +10,7 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
+    "typecheck": "tsc --noEmit -p ./tsconfig.json"
   },
   "exports": {
     ".": "./src/components/whiteboard/main.tsx",

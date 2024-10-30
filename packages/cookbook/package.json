@@ -9,10 +9,7 @@
     "src"
   ],
   "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "/Users/bigsexy/.pnpm/global/5/.pnpm/dotenv-cli@7.4.1/node_modules/dotenv-cli/cli.js -e /Users/bigsexy/Desktop/currentProjects/ulld/.env.local -- next dev",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
+    "dev": "next dev"
   },
   "dependencies": {
     "next": "14.2.3",

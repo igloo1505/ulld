@@ -13,6 +13,7 @@ import Footer from "../components/footer/ssr";
 import SecondaryNav from "../components/sidebar/sidebarSSR";
 import Navbar from "../components/navbar/navbarSSR";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import DefaultLogo from "@ulld/ui/defaultLogo"
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -55,10 +56,6 @@ const appFont = localFont({
     ],
     display: "swap",
 });
-
-const DemoLogo = (props: PassedLogoProps): ReactNode => {
-    return <DynamicIcon {...props} name="ulld" />;
-};
 
 const RootLayout = (props: {
     children: React.ReactNode;
@@ -132,7 +129,7 @@ const RootLayout = (props: {
                 id="Ulld-body-root"
             >
                 <Navbar
-                    logo={DemoLogo}
+                    logo={DefaultLogo}
                     navConfig={
                         appConfig.navigation as AppConfigSchemaOutput["navigation"]
                     }
@@ -146,7 +143,7 @@ const RootLayout = (props: {
                 />
                 {props.children}
                 <Toaster />
-                <Footer logo={DemoLogo} />
+                <Footer logo={DefaultLogo} />
             </body>
         </html>
     );

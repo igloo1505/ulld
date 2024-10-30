@@ -18,6 +18,8 @@ export const FoldingAdmonitionTitle = (
 
     const { dropdown, iconName, title, ..._props } = props;
 
+    delete _props.titleBold
+
     return (
         <div
             {..._props}

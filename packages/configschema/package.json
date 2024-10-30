@@ -15,7 +15,6 @@
     "generateConfigTunnels": "wireit",
     "generateDefaultConfig": "wireit",
     "generateSlotMap": "wireit",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
     "typecheck": "tsc --noEmit -p ./tsconfig.json",
     "updateJsonSchemas": "wireit"
   },

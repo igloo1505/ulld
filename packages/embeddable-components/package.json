@@ -10,10 +10,8 @@
     "src"
   ],
   "scripts": {
-    "build": "echo 'Add build script here'",
     "dev": "next dev",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'"
+    "typecheck": "tsc --watch --noEmit -p ./tsconfig.json"
   },
   "types": "src/types/general.ts",
   "main": "src/index.ts",

@@ -10,7 +10,7 @@
     "src"
   ],
   "scripts": {
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json"
+    "typecheck": "tsc --noEmit -p ./tsconfig.json"
   },
   "main": "./src/tailwind.config.ts",
   "exports": {

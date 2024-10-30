@@ -11,8 +11,7 @@
   ],
   "scripts": {
     "build": "wireit",
-    "dev": "next dev",
-    "test": "echo 'Add test script here'"
+    "dev": "next dev"
   },
   "wireit": {
     "build": {

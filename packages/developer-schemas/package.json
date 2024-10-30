@@ -9,9 +9,7 @@
     "src"
   ],
   "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'Add test script here'",
+    "typecheck": "tsc --noEmit -p ./tsconfig.json",
     "updateJsonSchemas": "tsx src/__scripts__/updateSchemas.ts"
   },
   "exports": {

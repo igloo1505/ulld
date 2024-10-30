@@ -10,7 +10,6 @@
     "pluginConfig.ulld.json"
   ],
   "scripts": {
-    "build": "echo 'Add build script here'",
     "dev": "next dev",
     "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
     "lint": "eslint",
@@ -69,6 +68,7 @@
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:*",
     "@ulld/utilities": "workspace:*",
+    "@ulld/ui": "workspace:*",
     "next": "14.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"

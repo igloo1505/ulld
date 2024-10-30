@@ -11,16 +11,12 @@
     "pluginConfig.ulld.json"
   ],
   "scripts": {
-    "build": "echo 'add build:internal script here'",
-    "build:internal": "echo 'rollup is no longer installed. Used to execute \\'rollup --config\\''",
     "clean": "rm -rf dist",
     "dev": "next dev",
     "genDeclaration": "tsc --emitDeclarationOnly --declaration",
     "generatePluginConfig": "tsx ./pluginConfig.ulld.ts",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
-    "test": "echo 'add jest here once tests have been created'",
-    "tsupDev": "tsup src/index.ts --format esm --watch --dts --external react",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit -p ./tsconfigLint.json",
+    "tsupDev": "tsup src/index.ts --format esm --watch --dts --external react"
   },
   "types": "src/types/general.ts",
   "main": "dist/index.js",

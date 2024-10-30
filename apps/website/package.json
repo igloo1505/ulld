@@ -26,7 +26,8 @@
     "prepareWeb": "wireit",
     "prisma:studio": "dotenv -e .env.local -- prisma studio --schema=./src/prisma/schema.prisma",
     "simulateProduction": "OVERRIDE_PRODUCTION=true next dev",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint"
   },
   "wireit": {
     "prepareCommit:webOnly": {

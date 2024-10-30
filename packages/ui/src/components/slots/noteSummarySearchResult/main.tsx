@@ -1,8 +1,8 @@
 import React from "react";
-import { NoteSummaryProps } from "../../../types/general";
+import { getRandomId } from "@ulld/utilities/identity";
+import type { NoteSummaryProps } from "../../../types/general";
 import DefaultNoteSummaryCard from "./card";
 import ThemedSummaryCardContextMenu from "./contextMenu";
-import { getRandomId } from "@ulld/utilities/identity";
 
 
 
@@ -11,8 +11,8 @@ const NoteSummaryWrapper = (props: NoteSummaryProps) => {
     return (
         <ThemedSummaryCardContextMenu 
             cardId={cardId}
-            item={props.item} 
-            className={"w-full lg:h-full"}
+            className="w-full lg:h-full" 
+            item={props.item}
         >
             <DefaultNoteSummaryCard {...props} cardId={cardId} />
         </ThemedSummaryCardContextMenu>

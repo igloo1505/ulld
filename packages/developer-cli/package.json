@@ -16,7 +16,7 @@
     "build": "tsc -p ./tsconfig.json",
     "bundle": "wireit",
     "dev": "tsc --watch",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "typecheck": "tsc --noEmit -p ./tsconfig.json",
     "test": "prettier --check . && xo && ava"
   },
   "wireit": {

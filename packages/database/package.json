@@ -10,7 +10,6 @@
     "prisma"
   ],
   "scripts": {
-    "build": "echo 'Add build script here'",
     "db:generate": "prisma generate",
     "db:generateInternalDevelopment": "prisma generate",
     "db:generateTargetProjectSchema": "run generateTargetDatabase",
@@ -19,14 +18,13 @@
     "db:push": "prisma db push --skip-generate",
     "dev": "echo 'Add dev script here'",
     "generateTargetDatabase": "prisma generate",
-    "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
+    "typecheck": "tsc --noEmit -p ./tsconfig.json",
     "migrate:reset": "dotenv -e .env.local -- prisma migrate reset",
     "migrateTargetDatabase": "dotenv -e .env.local -- prisma migrate dev",
     "postinstall": "prisma generate",
     "prebuild": "prisma generate",
     "predev": "prisma generate",
-    "prisma:studio": "dotenv -e .env.local -- prisma studio",
-    "test": "echo 'Add test script here'"
+    "prisma:studio": "dotenv -e .env.local -- prisma studio"
   },
   "types": "./src/db/main.ts",
   "exports": {
