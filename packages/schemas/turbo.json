@@ -1,0 +1,12 @@
+{
+    "extends": [
+        "//"
+    ],
+    "tasks": {
+        "build": {
+            "dependsOn": [
+                "@ulld/configschema#build"
+            ]
+        }
+    }
+}

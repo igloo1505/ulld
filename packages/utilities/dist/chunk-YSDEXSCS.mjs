@@ -1,0 +1,7 @@
+import o from 'axios';
+
+var n=t=>t.startsWith("/")?t:`/${t}`,f=t=>typeof t>"u"?void 0:n(t),a=t=>t.endsWith("/")?t.slice(0,t.length-1):t,l=t=>t.endsWith("/")?t:`${t}/`,p=t=>/^http(s?):\/\//gm.test(t)||typeof window>"u"?t:`${(window.location.href.startsWith("http")?window.location.href.startsWith("https"):process.env.NEXT_PUBLIC_PRODUCTION_REMOTE)?"https":"http"}://${t}`,g=t=>t.startsWith("/")?t.slice(1,t.length):t,h=({value:t,leading:e,trailing:r})=>{let s=t;return s=e?n(s):g(s),s=r?l(s):a(s),s},i=t=>t.includes("/")?t.slice(0,t.lastIndexOf("/")):t,c=t=>t.includes("/")?t.slice(t.lastIndexOf("/")+1,t.length):t,d=(t,e)=>n(t.includes(e)?t.split(e)[1]:t),x=(t,e)=>t.includes(e)?t:`${e}${h({value:t,leading:!0,trailing:!1})}`,m=(t,e=!0,r)=>({parent:e?d(i(t),r):i(t),filename:c(t)}),w=t=>t.split(".").at(-1)?.toLowerCase(),P=(t,e,r="")=>t.startsWith(e)?`${r}${t.split(e)[1]}`:t,$=(t,e,r="")=>t.endsWith(e)?`${t.slice(0,t.length-e.length)}${r}`:t,S=async t=>{try{let e=await o.post("/api/glob",t);if(e.data.filePaths)return e.data.filePaths}catch(e){console.error(e);}};
+
+export { n as a, f as b, a as c, l as d, p as e, g as f, h as g, i as h, c as i, d as j, x as k, m as l, w as m, P as n, $ as o, S as p };
+//# sourceMappingURL=out.js.map
+//# sourceMappingURL=chunk-YSDEXSCS.mjs.map

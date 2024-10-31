@@ -10,66 +10,67 @@ export declare const baseAppSlot: z.ZodObject<{
         regexToInclude: z.ZodString;
         label: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        label?: string;
-        regexToInclude?: string;
+        regexToInclude: string;
+        label?: string | undefined;
     }, {
-        label?: string;
-        regexToInclude?: string;
+        regexToInclude: string;
+        label?: string | undefined;
     }>, {
         label: string;
-        regexToInclude?: string;
+        regexToInclude: string;
     }, {
-        label?: string;
-        regexToInclude?: string;
+        regexToInclude: string;
+        label?: string | undefined;
     }>, z.ZodArray<z.ZodEffects<z.ZodObject<{
         regexToInclude: z.ZodString;
         label: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        label?: string;
-        regexToInclude?: string;
+        regexToInclude: string;
+        label?: string | undefined;
     }, {
-        label?: string;
-        regexToInclude?: string;
+        regexToInclude: string;
+        label?: string | undefined;
     }>, {
         label: string;
-        regexToInclude?: string;
+        regexToInclude: string;
     }, {
-        label?: string;
-        regexToInclude?: string;
+        regexToInclude: string;
+        label?: string | undefined;
     }>, "many">]>, {
         label: string;
-        regexToInclude?: string;
+        regexToInclude: string;
     }[], {
-        label?: string;
-        regexToInclude?: string;
+        regexToInclude: string;
+        label?: string | undefined;
     } | {
-        label?: string;
-        regexToInclude?: string;
+        regexToInclude: string;
+        label?: string | undefined;
     }[]>;
 }, "strip", z.ZodTypeAny, {
-    type?: "component" | "embeddable" | "page";
-    path?: string;
-    parentSlot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
-    subSlot?: string;
-    clientOnly?: boolean;
-    propsExtends?: string;
-    embeddables?: {
+    type: "component" | "embeddable" | "page";
+    path: string;
+    parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
+    subSlot: string;
+    clientOnly: boolean;
+    embeddables: {
         label: string;
-        regexToInclude?: string;
+        regexToInclude: string;
     }[];
+    propsExtends?: string | undefined;
 }, {
-    type?: "component" | "embeddable" | "page";
-    path?: string;
-    parentSlot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
-    subSlot?: string;
-    clientOnly?: boolean;
-    propsExtends?: string;
-    embeddables?: {
-        label?: string;
-        regexToInclude?: string;
+    type: "component" | "embeddable" | "page";
+    path: string;
+    parentSlot: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
+    subSlot: string;
+    embeddables: {
+        regexToInclude: string;
+        label?: string | undefined;
     } | {
-        label?: string;
-        regexToInclude?: string;
+        regexToInclude: string;
+        label?: string | undefined;
     }[];
+    clientOnly?: boolean | undefined;
+    propsExtends?: string | undefined;
 }>;
 export type BaseAppSlotConfig = z.input<typeof baseAppSlot>;
+//# sourceMappingURL=slot.d.ts.map

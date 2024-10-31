@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Box, useFocusManager, useInput } from 'ink';
+import React, { useMemo, useState } from 'react';
+import { Box, useInput, useStdin } from 'ink';
 import { UlldMultiSelectItem } from './item.js';
 /* TODO: Need to handle this much better, but it's not the most important thing for right now. */
 /**
@@ -7,13 +7,21 @@ import { UlldMultiSelectItem } from './item.js';
  * nToTake: The number of items to include in the slice.
  */
 const getSliceIndices = (arrLength, focusedIndex, nToTake) => {
-    const min = Math.max(focusedIndex === 0 ? 0 : Math.floor(focusedIndex - nToTake / 2), 0);
-    const max = Math.min(min + nToTake, arrLength);
-    return [min, max];
+    let vals = [
+        Math.ceil(focusedIndex - nToTake / 2),
+        Math.ceil(focusedIndex + nToTake / 2),
+    ];
+    if (vals[1] > arrLength) {
+        vals = [Math.max(0, arrLength - nToTake - 1), arrLength - 1];
+    }
+    else if (vals[0] < 0) {
+        vals = [0, Math.min(arrLength - 1, nToTake)];
+    }
+    return vals;
 };
 const getSlicedList = (arr, focusedIndex, maxItems) => {
     let indices = getSliceIndices(arr.length, focusedIndex, maxItems);
-    console.log('indices: ', indices);
+    /* console.log('indices: ', indices); */
     return arr.slice(...indices);
 };
 export const UlldSlicedSelectList = ({ options, showCount, selectedIds, }) => {
@@ -36,21 +44,14 @@ export const UlldSlicedSelectList = ({ options, showCount, selectedIds, }) => {
         if (l === 'k') {
             return cycleIndex(-1);
         }
-        console.log('l: ', l);
     };
-    const op = useFocusManager();
-    useEffect(() => {
-        const o = options[focusedIndex];
-        if (o) {
-            op.focus(o.id);
-        }
-    }, [focusedIndex]);
     useInput(handleInput);
-    console.log('slicedItems.length: ', slicedItems.length);
+    const x = useStdin();
+    x.internal_eventEmitter.setMaxListeners(0);
+    useInput(handleInput);
     return (React.createElement(Box, { flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", height: '100%' }, slicedItems.map((n, i) => {
-        return (React.createElement(UlldMultiSelectItem, { key: n.id, item: n, focused: i === focusedIndex, checked: selectedIds.includes(n.id), index: i }));
+        return (React.createElement(UlldMultiSelectItem, { key: n.id, item: n, focused: i === focusedIndex, checked: selectedIds.includes(n.id), index: i, setFocusedIndex: () => setFocusedIndex(i) }));
     })));
-    return React.createElement("div", null);
 };
 UlldSlicedSelectList.displayName = 'UlldSlicedSelectList';
 //# sourceMappingURL=slicedList.js.map

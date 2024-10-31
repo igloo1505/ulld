@@ -16,7 +16,7 @@ export const args = z.tuple([
         description: 'Directory at which tunnel file should be created',
         defaultValueDescription: 'cwd',
     })),
-    z.string().default(".js").describe(argument({
+    z.string().default("inherit").describe(argument({
         name: "file extension",
         description: "File extension to append to imported file paths."
     }))
@@ -44,7 +44,7 @@ const ExportedPath = ({ exportedPath }) => {
         React.createElement(Text, null, exportedPath)));
 };
 const getExportString = (filePath, sourceFile, fileExt, exportType) => {
-    if (!exportType) {
+    if (!exportType && fileExt !== "inherit") {
         let fpData = path.parse(filePath);
         filePath = path.join(fpData.dir, `${fpData.name}${fileExt}`);
     }

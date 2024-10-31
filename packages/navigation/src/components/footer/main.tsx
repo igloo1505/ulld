@@ -7,15 +7,19 @@ import { DynamicIcon } from "@ulld/icons";
 import { cn } from "@ulld/utilities/cn";
 import type { FooterLogoLink } from "../../types";
 import type { NavigationFormSettingSchema } from "../../pages/settingPage/form/schema";
-import FooterCategory from "./footerCategory";
-import FooterSectionsGroup from "./footerSectionsGroup";
+import FooterSectionsGroup, { GroupedFooterLinks } from "./footerSectionsGroup";
 
 const footerLogoLinks: FooterLogoLink[] = [];
+
+
+type SettingsData = Omit<NavigationFormSettingSchema, "quickLinks"> & {
+    quickLinks?: NavigationFormSettingSchema["quickLinks"]
+}
 
 interface InternalFooterProps {
     /** The rendered logo component, since the FC can't be passed directly to the client footer component. */
     children: ReactNode
-    pluginSettings: NavigationFormSettingSchema | null
+    pluginSettings: SettingsData | null
 }
 
 type GroupedQuickLinks = Record<
@@ -25,10 +29,10 @@ type GroupedQuickLinks = Record<
 
 const getGroupedFooterLinks = (
     footerLinks?: NavigationFormSettingSchema["footerSections"],
-): GroupedQuickLinks => {
-    const groupedLinks: GroupedLinks = {};
+): {groupedFooterLinks: GroupedQuickLinks, hasFooterSections: boolean} => {
+    const groupedLinks: GroupedFooterLinks = {};
     if(!footerLinks){
-        return groupedLinks
+        return {groupedFooterLinks: groupedLinks, hasFooterSections: false}
     }
     for (const f of footerLinks) {
         if (!(f.label in groupedLinks)) {
@@ -42,12 +46,13 @@ const getGroupedFooterLinks = (
             };
         }
     }
-    return groupedLinks;
+     return {hasFooterSections: true, groupedFooterLinks: groupedLinks}
 };
 
 const Footer = ({ children, pluginSettings }: InternalFooterProps): ReactNode => {
 
-    const groupedFooterLinks = useMemo(() => getGroupedFooterLinks(pluginSettings?.footerSections), [pluginSettings?.footerSections]);
+    const { groupedFooterLinks, hasFooterSections } = useMemo(() => getGroupedFooterLinks(pluginSettings?.footerSections), [pluginSettings?.footerSections]);
+    
 
     return (
         <footer
@@ -56,7 +61,7 @@ const Footer = ({ children, pluginSettings }: InternalFooterProps): ReactNode =>
         >
             <div className="container p-6 mx-auto">
                 <div className="lg:flex lg:flex-row lg:gap-6">
-                    <div className="w-full -mx-6 lg:w-2/5">
+                    <div className={cn("w-full -mx-6 lg:w-2/5", !hasFooterSections && "lg:w-fit")}>
                         <div className="px-6 w-fit">
                             <Link className="h-12 w-auto" href="/">
                                 {children}
@@ -65,15 +70,15 @@ const Footer = ({ children, pluginSettings }: InternalFooterProps): ReactNode =>
                                 {pluginSettings?.quickLinkLabel || "Quick Links"}
                             </p>
                             <div className="flex mt-6 -mx-2 w-fit">
-                                {pluginSettings?.quickLinks?
-                                    .slice(0, Math.min(3, footerLogoLinks.length))
+                                {pluginSettings?.quickLinks
+                                    ?.slice(0, Math.min(3, footerLogoLinks.length))
                                     .map((l) => {
                                         return (
                                             <Link
-                                                aria-label={l.label}
+                                                /* aria-label={l.label} */
                                                 className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-primary"
-                                                href={l.href}
-                                                key={`${l.label}-${l.icon}`}
+                                                href={l.url}
+                                                key={`${l.url}-${l.icon}`}
                                             >
                                                 <DynamicIcon
                                                     className="w-5 h-5 fill-current"

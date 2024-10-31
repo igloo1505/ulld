@@ -716,15 +716,6 @@
       "isTranspiled": false
     },
     {
-      "currentVersion": "0.0.126",
-      "relativeDirPath": "packages/developer-template",
-      "name": "@ulld/developer-template",
-      "type": "package",
-      "hasPluginConfig": true,
-      "sourceLocation": "src",
-      "isTranspiled": false
-    },
-    {
       "currentVersion": "0.0.116",
       "relativeDirPath": "packages/developer-schemas",
       "name": "@ulld/developer-schemas",
@@ -899,6 +890,15 @@
       "currentVersion": "0.0.126",
       "relativeDirPath": "apps/website",
       "name": "@ulld/website",
+      "type": "app",
+      "hasPluginConfig": false,
+      "sourceLocation": "src",
+      "isTranspiled": false
+    },
+    {
+      "currentVersion": "0.0.0",
+      "relativeDirPath": "apps/template",
+      "name": "@ulld/template",
       "type": "app",
       "hasPluginConfig": false,
       "sourceLocation": "src",

@@ -37,8 +37,8 @@ export declare const equationSearchParamsSchema: z.ZodObject<z.objectUtil.extend
     value?: string | undefined;
     query?: string | undefined;
 }, {
-    value?: string | undefined;
     tags?: string | string[] | undefined;
+    value?: string | undefined;
     page?: number | undefined;
     query?: string | undefined;
     orderBy?: "title" | "createdAt" | undefined;

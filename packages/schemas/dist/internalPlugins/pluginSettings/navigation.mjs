@@ -32,10 +32,7 @@ var sidebarLinkSchema = z.object({
   label: z.string(),
   fieldType: z.literal("url").or(z.literal("action")).default("url"),
   value: z.string(),
-  position: z.union([
-    z.literal("top"),
-    z.literal("bottom")
-  ]).default("top")
+  position: z.union([z.literal("top"), z.literal("bottom")]).default("top")
 });
 var navbarLinkSchema = z.object({
   label: z.string(),

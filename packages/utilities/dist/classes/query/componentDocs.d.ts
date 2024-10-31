@@ -9,6 +9,7 @@ export declare class ComponentDocsQuery {
     private itemMatchesQuery;
     queryItem(item: QueryItem, query: ComponentDocsQueryParams): boolean;
     queryAll(items: QueryItem[], query: ComponentDocsQueryParams): {
+        tags: string[];
         pluginName: string;
         componentName: string;
         embeddableSyntax: string[];
@@ -20,7 +21,6 @@ export declare class ComponentDocsQuery {
             short?: string | undefined;
             full?: string | undefined;
         };
-        tags: string[];
         componentId: string;
     }[];
 }

@@ -15,7 +15,11 @@ interface FooterSectionsGroupProps {
 
 const NoFooterSectionsIndicator = (): ReactNode => {
     return (
-        <div className="mt-6 lg:mt-0 lg:flex-1 text-sm text-muted-foreground">You don't have any footer links yet. Visit the settings page <Link className="text-link" href="/settings/navigation">here</Link> to configure your navigation settings.</div>
+        <div className="mt-6 lg:mt-0 lg:flex-1 flex flex-col justify-center items-center">
+            <div className="text-sm text-muted-foreground">
+            You don't have any footer links yet. Visit the settings page <Link className="text-link" href="/settings/navigation">here</Link> to configure your navigation settings.
+            </div>
+        </div>
     )
 }
 

@@ -1,0 +1,1 @@
+{"version":3,"file":"terminalConfig.d.ts","sourceRoot":"","sources":["../../../../../configschema/src/zod/terminalConfig.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAA;AAEvB,OAAO,EAAE,eAAe,EAAE,MAAM,aAAa,CAAA;AAG7C,eAAO,MAAM,oBAAoB;;;;;;GAEnB,CAAA;AAGd,eAAO,MAAM,0BAA0B,EAAE,eAAe,CAAC,OAAO,oBAAoB,CAElF,CAAA"}

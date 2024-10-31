@@ -7,50 +7,51 @@ export declare const componentDocumentationSchema: z.ZodObject<{
         short: z.ZodOptional<z.ZodString>;
         full: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        short?: string;
-        full?: string;
+        short?: string | undefined;
+        full?: string | undefined;
     }, {
-        short?: string;
-        full?: string;
+        short?: string | undefined;
+        full?: string | undefined;
     }>;
     filePaths: z.ZodObject<{
         short: z.ZodOptional<z.ZodString>;
         full: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        short?: string;
-        full?: string;
+        short?: string | undefined;
+        full?: string | undefined;
     }, {
-        short?: string;
-        full?: string;
+        short?: string | undefined;
+        full?: string | undefined;
     }>;
     tags: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     componentId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    tags?: string[];
-    pluginName?: string;
-    componentName?: string;
-    embeddableSyntax?: string[];
-    urls?: {
-        short?: string;
-        full?: string;
+    tags: string[];
+    pluginName: string;
+    componentName: string;
+    embeddableSyntax: string[];
+    urls: {
+        short?: string | undefined;
+        full?: string | undefined;
     };
-    filePaths?: {
-        short?: string;
-        full?: string;
+    filePaths: {
+        short?: string | undefined;
+        full?: string | undefined;
     };
-    componentId?: string;
+    componentId: string;
 }, {
-    tags?: string[];
-    pluginName?: string;
-    componentName?: string;
-    embeddableSyntax?: string[];
-    urls?: {
-        short?: string;
-        full?: string;
+    pluginName: string;
+    componentName: string;
+    urls: {
+        short?: string | undefined;
+        full?: string | undefined;
     };
-    filePaths?: {
-        short?: string;
-        full?: string;
+    filePaths: {
+        short?: string | undefined;
+        full?: string | undefined;
     };
-    componentId?: string;
+    componentId: string;
+    tags?: string[] | undefined;
+    embeddableSyntax?: string[] | undefined;
 }>;
+//# sourceMappingURL=componentDocumentation.d.ts.map

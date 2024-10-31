@@ -9,63 +9,63 @@ export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
                 bg: z.ZodOptional<z.ZodString>;
                 fg: z.ZodOptional<z.ZodString>;
             }, "strip", z.ZodTypeAny, {
-                bg?: string;
-                fg?: string;
+                bg?: string | undefined;
+                fg?: string | undefined;
             }, {
-                bg?: string;
-                fg?: string;
+                bg?: string | undefined;
+                fg?: string | undefined;
             }>>;
             light: z.ZodDefault<z.ZodObject<{
                 bg: z.ZodOptional<z.ZodString>;
                 fg: z.ZodOptional<z.ZodString>;
             }, "strip", z.ZodTypeAny, {
-                bg?: string;
-                fg?: string;
+                bg?: string | undefined;
+                fg?: string | undefined;
             }, {
-                bg?: string;
-                fg?: string;
+                bg?: string | undefined;
+                fg?: string | undefined;
             }>>;
         }, "strip", z.ZodTypeAny, {
-            dark?: {
-                bg?: string;
-                fg?: string;
+            dark: {
+                bg?: string | undefined;
+                fg?: string | undefined;
             };
-            light?: {
-                bg?: string;
-                fg?: string;
+            light: {
+                bg?: string | undefined;
+                fg?: string | undefined;
             };
         }, {
             dark?: {
-                bg?: string;
-                fg?: string;
-            };
+                bg?: string | undefined;
+                fg?: string | undefined;
+            } | undefined;
             light?: {
-                bg?: string;
-                fg?: string;
-            };
+                bg?: string | undefined;
+                fg?: string | undefined;
+            } | undefined;
         }>>;
     }, "strip", z.ZodTypeAny, {
-        styles?: {
-            dark?: {
-                bg?: string;
-                fg?: string;
+        styles: {
+            dark: {
+                bg?: string | undefined;
+                fg?: string | undefined;
             };
-            light?: {
-                bg?: string;
-                fg?: string;
+            light: {
+                bg?: string | undefined;
+                fg?: string | undefined;
             };
         };
     }, {
         styles?: {
             dark?: {
-                bg?: string;
-                fg?: string;
-            };
+                bg?: string | undefined;
+                fg?: string | undefined;
+            } | undefined;
             light?: {
-                bg?: string;
-                fg?: string;
-            };
-        };
+                bg?: string | undefined;
+                fg?: string | undefined;
+            } | undefined;
+        } | undefined;
     }>>>;
     fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     url: z.ZodEffects<z.ZodString, string, string>;
@@ -83,66 +83,67 @@ export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
     inSidebar: z.ZodDefault<z.ZodBoolean>;
     inNavbar: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
-    label?: string;
-    icon?: string;
-    UI?: {
-        styles?: {
-            dark?: {
-                bg?: string;
-                fg?: string;
+    label: string;
+    icon: string;
+    UI: {
+        styles: {
+            dark: {
+                bg?: string | undefined;
+                fg?: string | undefined;
             };
-            light?: {
-                bg?: string;
-                fg?: string;
+            light: {
+                bg?: string | undefined;
+                fg?: string | undefined;
             };
         };
     };
-    fs?: string;
-    url?: string;
-    id?: string;
-    docType?: string;
-    filePathPattern?: string;
-    matchWeight?: number;
-    urlQuery?: Record<string, string | number | string[] | number[]>;
-    keywords?: string[];
-    topicLabel?: string;
-    subjectLabel?: string;
-    autoTag?: string[];
-    autoTopic?: string[];
-    autoSubject?: string[];
-    inSidebar?: boolean;
-    inNavbar?: boolean;
+    url: string;
+    matchWeight: number;
+    urlQuery: Record<string, string | number | string[] | number[]>;
+    keywords: string[];
+    autoTag: string[];
+    autoTopic: string[];
+    autoSubject: string[];
+    inSidebar: boolean;
+    inNavbar: boolean;
+    fs?: string | undefined;
+    id?: string | undefined;
+    docType?: string | undefined;
+    filePathPattern?: string | undefined;
+    topicLabel?: string | undefined;
+    subjectLabel?: string | undefined;
 }, {
-    label?: string;
-    icon?: string;
+    label: string;
+    url: string;
+    icon?: string | undefined;
     UI?: {
         styles?: {
             dark?: {
-                bg?: string;
-                fg?: string;
-            };
+                bg?: string | undefined;
+                fg?: string | undefined;
+            } | undefined;
             light?: {
-                bg?: string;
-                fg?: string;
-            };
-        };
-    };
-    fs?: string;
-    url?: string;
-    id?: string;
-    docType?: string;
-    filePathPattern?: string;
-    matchWeight?: number;
-    urlQuery?: Record<string, string | number | string[] | number[]>;
-    keywords?: string[];
-    topicLabel?: string;
-    subjectLabel?: string;
-    autoTag?: string[];
-    autoTopic?: string[];
-    autoSubject?: string[];
-    inSidebar?: boolean;
-    inNavbar?: boolean;
+                bg?: string | undefined;
+                fg?: string | undefined;
+            } | undefined;
+        } | undefined;
+    } | undefined;
+    fs?: string | undefined;
+    id?: string | undefined;
+    docType?: string | undefined;
+    filePathPattern?: string | undefined;
+    matchWeight?: number | undefined;
+    urlQuery?: Record<string, string | number | string[] | number[]> | undefined;
+    keywords?: string[] | undefined;
+    topicLabel?: string | undefined;
+    subjectLabel?: string | undefined;
+    autoTag?: string[] | undefined;
+    autoTopic?: string[] | undefined;
+    autoSubject?: string[] | undefined;
+    inSidebar?: boolean | undefined;
+    inNavbar?: boolean | undefined;
 }>;
 export type InternalDocumentConfigType = z.output<typeof internalDocumentTypeConfigSchema>;
 export type InternalDocumentConfigInput = z.input<typeof internalDocumentTypeConfigSchema>;
 export declare const internalDocumentTypes: z.input<typeof internalDocumentTypeConfigSchema>[];
+//# sourceMappingURL=internalDocumentTypes.d.ts.map

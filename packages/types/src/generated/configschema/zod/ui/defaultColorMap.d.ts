@@ -5,3 +5,4 @@ export declare const defaultUlldColorMap: {
         light: string;
     };
 };
+//# sourceMappingURL=defaultColorMap.d.ts.map

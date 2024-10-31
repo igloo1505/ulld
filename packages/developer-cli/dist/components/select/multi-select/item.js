@@ -3,7 +3,7 @@ import { Checkbox } from 'ink-checkbox';
 export const UlldMultiSelectItem = ({ item, focused, checked, index, }) => {
     const cbProps = {
         label: item.label,
-        focused,
+        focused: focused,
         checked,
         index,
     };

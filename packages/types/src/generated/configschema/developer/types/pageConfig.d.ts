@@ -21,3 +21,4 @@ type WithUrl = {
 export type PluginPageConfig<T extends PluginSlotKey | undefined> = (PluginPageConfigBase & WithUrl) | (PluginPageConfigBase & WithSlot<T>);
 export type PluginPageConfigWithoutGeneric = (PluginPageConfigBase & WithUrl) | (PluginPageConfigBase & WithSlotWithoutGeneric);
 export {};
+//# sourceMappingURL=pageConfig.d.ts.map

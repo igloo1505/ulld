@@ -11,3 +11,4 @@ export type PluginSettingsConfig = {
     /** A subtitle displayed on the setting page and made available to other plugins. */
     subtitle?: string;
 };
+//# sourceMappingURL=pluginSettingsConfig.d.ts.map

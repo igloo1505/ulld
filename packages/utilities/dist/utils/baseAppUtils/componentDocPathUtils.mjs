@@ -1,10 +1,10 @@
 import { a } from '../../chunk-AKBRSWKU.mjs';
 import '../../chunk-T7KECS5U.mjs';
-import p from 'path';
+import u from 'path';
 import c from 'fs';
 
-var u=(t,o,n=!1,a)=>p.join(a||process.cwd(),"generatedMarkdown","componentDocs",n?"full":"short",encodeURI(t),`${encodeURI(o)}.mdx`),D=t=>{let o=new URLSearchParams;return t.tag&&(Array.isArray(t.tag)?t.tag:[t.tag]).forEach(n=>o.append("tag",n)),t.full&&o.set("full","true"),t.query&&o.set("query",t.query),t.syntax&&o.set("syntax",t.syntax),t.pluginId&&o.set("pluginId",t.pluginId),`/componentDocs?${o.toString()}`},l=(t,o=!1)=>u(t.pluginName,t.componentName,o),i=async(t,o=!1)=>{let n=l(t,o);if(!(!n||!c.existsSync(n)))return await c.promises.readFile(n,{encoding:"utf-8"})},y=(t,o)=>new a().queryAll(t.componentDocs,o),x=async(t,o,n,a=!1,m=!0)=>{let r=t.componentDocs.find(e=>e.pluginName===o&&e.componentName===n);if(r){let e=await i(r,a);return !e&&m&&(e=await i(r,!a)),{item:r,content:e}}};
+var m=(t,n,o=!1,r)=>u.join(r||process.cwd(),"generatedMarkdown","componentDocs",o?"full":"short",encodeURI(t),`${encodeURI(n)}.mdx`),D=t=>{let n=new URLSearchParams;return t.tag&&(Array.isArray(t.tag)?t.tag:[t.tag]).forEach(o=>{n.append("tag",o);}),t.full&&n.set("full","true"),t.query&&n.set("query",t.query),t.syntax&&n.set("syntax",t.syntax),t.pluginId&&n.set("pluginId",t.pluginId),`/componentDocs?${n.toString()}`},l=(t,n=!1)=>m(t.pluginName,t.componentName,n),i=async(t,n=!1)=>{let o=l(t,n);if(!(!o||!c.existsSync(o)))return c.promises.readFile(o,{encoding:"utf-8"})},y=(t,n)=>new a().queryAll(t.componentDocs,n),P=async(t,n,o,r=!1,p=!0)=>{let s=t.componentDocs.find(e=>e.pluginName===n&&e.componentName===o);if(s){let e=await i(s,r);return !e&&p&&(e=await i(s,!r)),{item:s,content:e}}};
 
-export { D as componentDocQueryObjectToUrl, u as componentDocsPathFromPluginComponent, l as docItemToComponentDocsFilePath, i as getComponentDocsContentFromItem, y as getItemsByQuery, x as getPluginDocContentByIds };
+export { D as componentDocQueryObjectToUrl, m as componentDocsPathFromPluginComponent, l as docItemToComponentDocsFilePath, i as getComponentDocsContentFromItem, y as getItemsByQuery, P as getPluginDocContentByIds };
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=componentDocPathUtils.mjs.map

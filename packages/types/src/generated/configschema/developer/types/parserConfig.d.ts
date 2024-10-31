@@ -4,3 +4,4 @@ export type ParserConfig = {
         frontMatter?: string;
     };
 };
+//# sourceMappingURL=parserConfig.d.ts.map

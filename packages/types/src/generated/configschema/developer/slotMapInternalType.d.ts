@@ -10,3 +10,4 @@ export type SlotMapOfType<T> = {
         [S in keyof SlotMap[K]]: T;
     };
 };
+//# sourceMappingURL=slotMapInternalType.d.ts.map

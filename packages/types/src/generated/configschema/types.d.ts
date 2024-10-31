@@ -19,3 +19,4 @@ export type AppConfigGroup = {
 export type DefaultColorKey = keyof AppConfigSchemaOutput["UI"]["colors"];
 export type ColorBooleanRecord = Record<DefaultColorKey, boolean>;
 export type ZodOutputSchema<T extends z.ZodTypeAny> = z.ZodType<z.output<T>>;
+//# sourceMappingURL=types.d.ts.map

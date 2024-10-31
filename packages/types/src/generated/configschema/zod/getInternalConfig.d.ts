@@ -11,3 +11,4 @@ interface ExtraConfig {
 }
 export declare const getInternalConfig: <T extends object>(appConfig?: AppConfigSchemaOutput, searchParams?: T) => ExtraConfig & AppConfigSchemaOutput;
 export {};
+//# sourceMappingURL=getInternalConfig.d.ts.map

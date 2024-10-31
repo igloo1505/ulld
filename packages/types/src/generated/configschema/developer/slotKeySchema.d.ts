@@ -11,3 +11,4 @@ export declare const navigationSubkeySchema: z.ZodUnion<[z.ZodLiteral<"secondary
 export declare const dashboardSubkeySchema: z.ZodLiteral<"LandingPage">;
 export declare const formSubkeySchema: z.ZodLiteral<"SettingsPageContainer">;
 export declare const commandPaletteSubkeySchema: z.ZodLiteral<"commandPalette">;
+//# sourceMappingURL=slotKeySchema.d.ts.map

@@ -69,3 +69,4 @@ export interface SlotMap {
         commandPalette: string;
     };
 }
+//# sourceMappingURL=slotMapRootType.d.ts.map

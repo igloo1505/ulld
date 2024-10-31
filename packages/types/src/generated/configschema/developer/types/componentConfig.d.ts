@@ -10,3 +10,4 @@ export type ComponentConfig<T extends PluginSlotKey | undefined = undefined> = {
     fullDocsExport?: string;
     exportedPropsName?: string;
 };
+//# sourceMappingURL=componentConfig.d.ts.map

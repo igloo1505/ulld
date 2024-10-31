@@ -35,3 +35,4 @@ export type InternalDeveloperConfigInputWithoutGeneric = {
     events?: PluginEventsConfig;
     navigationLinks?: NavigationLinkType[];
 };
+//# sourceMappingURL=developerConfig.d.ts.map

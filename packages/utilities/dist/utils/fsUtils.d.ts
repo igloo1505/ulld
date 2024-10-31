@@ -1,5 +1,5 @@
-import { filePathGlobPropsSchema } from "../schemas/filePath/filePathInput.js";
-import { z } from "zod";
+import type { z } from "zod";
+import type { filePathGlobPropsSchema } from "../schemas/filePath/filePathInput.js";
 export declare const withForwardSlash: (p: string) => string;
 export declare const withForwardSlashOptional: (p?: string) => string | undefined;
 export declare const noTrailingSlash: (p: string) => string;

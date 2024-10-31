@@ -10,58 +10,59 @@ export declare const jupyterNotebookPropsSchema: z.ZodDefault<z.ZodObject<{
         name: z.ZodString;
         version: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        name?: string;
-        module?: string | Record<string, string>;
-        version?: string;
+        name: string;
+        module: string | Record<string, string>;
+        version: string;
     }, {
-        name?: string;
-        module?: string | Record<string, string>;
-        version?: string;
+        name: string;
+        module: string | Record<string, string>;
+        version: string;
     }>, "many">>;
     externalIPyWidgets: z.ZodDefault<z.ZodArray<z.ZodObject<Omit<{
         module: z.ZodUnion<[z.ZodString, z.ZodRecord<z.ZodString, z.ZodString>]>;
         name: z.ZodString;
         version: z.ZodString;
     }, "module">, "strip", z.ZodTypeAny, {
-        name?: string;
-        version?: string;
+        name: string;
+        version: string;
     }, {
-        name?: string;
-        version?: string;
+        name: string;
+        version: string;
     }>, "many">>;
     nbgrader: z.ZodDefault<z.ZodBoolean>;
     readOnly: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
-    height?: string;
-    readOnly?: boolean;
-    maxHeight?: string;
-    cellMetadataPanel?: boolean;
-    cellSidebarMargin?: number;
-    bundledIPyWidgets?: {
-        name?: string;
-        module?: string | Record<string, string>;
-        version?: string;
+    readOnly: boolean;
+    cellMetadataPanel: boolean;
+    cellSidebarMargin: number;
+    bundledIPyWidgets: {
+        name: string;
+        module: string | Record<string, string>;
+        version: string;
     }[];
-    externalIPyWidgets?: {
-        name?: string;
-        version?: string;
+    externalIPyWidgets: {
+        name: string;
+        version: string;
     }[];
-    nbgrader?: boolean;
+    nbgrader: boolean;
+    height?: string | undefined;
+    maxHeight?: string | undefined;
 }, {
-    height?: string;
-    readOnly?: boolean;
-    maxHeight?: string;
-    cellMetadataPanel?: boolean;
-    cellSidebarMargin?: number;
+    height?: string | undefined;
+    readOnly?: boolean | undefined;
+    maxHeight?: string | undefined;
+    cellMetadataPanel?: boolean | undefined;
+    cellSidebarMargin?: number | undefined;
     bundledIPyWidgets?: {
-        name?: string;
-        module?: string | Record<string, string>;
-        version?: string;
-    }[];
+        name: string;
+        module: string | Record<string, string>;
+        version: string;
+    }[] | undefined;
     externalIPyWidgets?: {
-        name?: string;
-        version?: string;
-    }[];
-    nbgrader?: boolean;
+        name: string;
+        version: string;
+    }[] | undefined;
+    nbgrader?: boolean | undefined;
 }>>;
 export declare const jupyterNotebookPropsSchemaOutput: ZodOutputSchema<typeof jupyterNotebookPropsSchema>;
+//# sourceMappingURL=jupyterNotebook.d.ts.map

@@ -4,6 +4,7 @@ import { CheckboxProps } from 'ink-checkbox';
 interface UlldMultiSelectItemProps extends Pick<CheckboxProps, 'focused' | 'checked'> {
     item: MultiSelectOption;
     index: number;
+    setFocusedIndex: () => void;
 }
 export declare const UlldMultiSelectItem: {
     ({ item, focused, checked, index, }: UlldMultiSelectItemProps): ReactNode;

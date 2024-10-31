@@ -7,6 +7,7 @@ import { SearchIcon, BookmarkIcon } from "lucide-react";
 import { useActiveNoteIdValue } from "@ulld/hooks/useActiveNoteId";
 import { cn } from "@ulld/utilities/cn";
 import { runActionById } from "@ulld/state/runActionById";
+import { toast } from "@ulld/tailwind/use-toast";
 import type { NavbarComponentProps } from "../../types";
 import type { NavbarLink } from "../../pages/settingPage/form/schema";
 import { IsomorphicNavLink } from "../utilityComponents/isomorphicNavLink";
@@ -87,7 +88,7 @@ const Navbar = ({ buttons = [], logo: Logo }: NavbarProps): ReactNode => {
                         className="flex flex-row gap-2 justify-center items-center w-fit"
                     >
                             <Link
-                                className="px-2.5 py-2 navbtn transform mx-2 hidden sm:flex lg:hidden"
+                                className="px-2.5 py-2 navbtn transform mx-2 hidden sm:flex"
                                 href="/bookmarks"
                             >
                                 Bookmarks
@@ -103,6 +104,10 @@ const Navbar = ({ buttons = [], logo: Logo }: NavbarProps): ReactNode => {
                             onClick={() => {
                                 if(activeNoteId.current){
                                     runActionById("toggleBookmarked", activeNoteId.current).catch(() => {
+                                        toast({
+                                            title: "Something went wrong.",
+                                            description: "There was an error toggling that bookmark."
+                                        })
                                         // eslint-disable-next-line no-console -- Need to log error. #MoveToLoggerPackage
                                         console.error(`Could not toggle bookmarked state for note with id ${activeNoteId.current}`)
                                     })

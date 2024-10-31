@@ -1,6 +1,6 @@
 import React from 'react';
 import InternalPackageSelect from '../../components/select/internalPackageSelect.js';
-const GenerateFilterString = (props) => {
+const GenerateFilterString = () => {
     return React.createElement(InternalPackageSelect, null);
 };
 GenerateFilterString.displayName = 'GenerateFilterString';

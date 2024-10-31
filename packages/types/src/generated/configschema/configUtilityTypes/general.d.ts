@@ -6,31 +6,32 @@ export declare const getNoteTypeFromPath: (rootRelativePath?: string | null, con
     docType: string;
     id: string;
     url: string;
-    label?: string;
-    icon?: string;
-    UI?: {
-        styles?: {
-            dark?: {
-                bg?: string;
-                fg?: string;
+    label: string;
+    icon: string;
+    UI: {
+        styles: {
+            dark: {
+                bg?: string | undefined;
+                fg?: string | undefined;
             };
-            light?: {
-                bg?: string;
-                fg?: string;
+            light: {
+                bg?: string | undefined;
+                fg?: string | undefined;
             };
         };
     };
-    fs?: string;
-    filePathPattern?: string;
-    matchWeight?: number;
-    urlQuery?: Record<string, string | number | string[] | number[]>;
-    keywords?: string[];
-    topicLabel?: string;
-    subjectLabel?: string;
-    autoTag?: string[];
-    autoTopic?: string[];
-    autoSubject?: string[];
-    inSidebar?: boolean;
-    inNavbar?: boolean;
-} | "RemoteNote";
+    fs: string;
+    matchWeight: number;
+    urlQuery: Record<string, string | number | string[] | number[]>;
+    keywords: string[];
+    autoTag: string[];
+    autoTopic: string[];
+    autoSubject: string[];
+    inSidebar: boolean;
+    inNavbar: boolean;
+    filePathPattern?: string | undefined;
+    topicLabel?: string | undefined;
+    subjectLabel?: string | undefined;
+} | "RemoteNote" | undefined;
 export declare const getRootRelativePath: (slug: string, docType: DocTypes, config?: AppConfigSchemaOutput) => string;
+//# sourceMappingURL=general.d.ts.map

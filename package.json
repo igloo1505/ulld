@@ -30,8 +30,9 @@
   ],
   "private": true,
   "scripts": {
-    "build": "turbo build --filter=@ulld/utilities && turbo build --filter @ulld/icons && turbo build --filter=@ulld/configschema && turbo build --filter=@ulld/schemas && turbo build --filter=@ulld/build",
-    "checkPackages": "manypkg check",
+    "build": "turbo build --filter=!@ulld/template --filter=!@ulld/website --filter=!@ulld/internal-dev-cli --filter=!@ulld/cli --filter=!@ulld/developer-cli",
+    "build2": "turbo build --filter=@ulld/utilities && turbo build --filter @ulld/icons && turbo build --filter=@ulld/configschema && turbo build --filter=@ulld/schemas && turbo build --filter=@ulld/build",
+    "checkPackages": "syncpack list-mismatches",
     "ci:publish": "pnpm publish -r --no-git-checks",
     "clean": "turbo clean",
     "dev": "turbo dev",

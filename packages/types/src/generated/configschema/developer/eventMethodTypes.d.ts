@@ -16,3 +16,4 @@ export type OutputMethods<T extends object, K extends keyof PluginEventsConfig> 
     func: EventMethods<T>[K];
     pluginId: string;
 }[];
+//# sourceMappingURL=eventMethodTypes.d.ts.map
