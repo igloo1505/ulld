@@ -22,8 +22,13 @@ var footerSectionSchema = z.object({
   label: z.string().max(15),
   items: navigationLinkSchema.array().max(maxFooterSectionLinks).default([])
 });
+var iconField = z.enum(validIconNameList);
+var quickLinkSchema = z.object({
+  icon: iconField,
+  url: z.string()
+});
 var sidebarLinkSchema = z.object({
-  icon: z.enum(validIconNameList),
+  icon: iconField,
   label: z.string(),
   fieldType: z.literal("url").or(z.literal("action")).default("url"),
   value: z.string(),
@@ -42,7 +47,8 @@ var navigationFormSettingSchema = z.object({
   sidebarLinks: sidebarLinkSchema.array().default([]),
   navbarLinks: navbarLinkSchema.array().max(maxNavbarLinks).default([]),
   quickLinkLabel: z.string().default(defaultQuickLinkLabel),
-  copyrightText: z.string().default(defaultCopyrightText)
+  copyrightText: z.string().default(defaultCopyrightText),
+  quickLinks: quickLinkSchema.array().default([])
 });
 var navigationFormSchemaWithUtilities = navigationFormSettingSchema.merge(navigationFormUtilityFields);
 var defaultFormValues = {
@@ -50,6 +56,7 @@ var defaultFormValues = {
   footerSectionInput: "",
   sidebarLinks: [],
   navbarLinks: [],
+  quickLinks: [],
   quickLinkLabel: defaultQuickLinkLabel,
   copyrightText: defaultCopyrightText
 };
@@ -67,6 +74,7 @@ export {
   navigationFormSchemaWithUtilities,
   navigationFormSettingSchema,
   navigationLinkSchema,
+  quickLinkSchema,
   sidebarLinkSchema
 };
 //# sourceMappingURL=navigation.mjs.map

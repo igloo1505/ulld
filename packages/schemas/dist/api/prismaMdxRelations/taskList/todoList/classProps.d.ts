@@ -40,12 +40,12 @@ export declare const todoListZodObject: z.ZodObject<z.objectUtil.extendShape<z.o
         kanbanId?: number | null | undefined;
     }, string>]>, "many">>;
 }>, "strip", z.ZodTypeAny, {
-    id: number;
-    label: string;
     tags: {
         value: string;
         kanbanId?: number | null | undefined;
     }[];
+    id: number;
+    label: string;
     createdAt: Date;
     lastUpdate: Date;
     topics: {

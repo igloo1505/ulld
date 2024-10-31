@@ -33,7 +33,7 @@ export declare class UlldPlugin extends ShellManager {
         componentName: string;
         generatedComponentName: string;
     })[];
-    constructor(paths: TargetPaths, name: string, version: string, baseAppGitBranch: string);
+    constructor(paths: TargetPaths, name: string, version: string | undefined, baseAppGitBranch: string);
     gatherConfig(noError?: boolean): void;
     noPackageJsonError(noError?: boolean): void;
     noConfigError(noError?: boolean): void;

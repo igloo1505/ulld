@@ -30,7 +30,7 @@
   ],
   "private": true,
   "scripts": {
-    "build": "turbo build --filter=@ulld/!{template,website,internal-dev-cli}",
+    "build": "turbo build --filter=@ulld/utilities && turbo build --filter @ulld/icons && turbo build --filter=@ulld/configschema && turbo build --filter=@ulld/schemas && turbo build --filter=@ulld/build",
     "checkPackages": "manypkg check",
     "ci:publish": "pnpm publish -r --no-git-checks",
     "clean": "turbo clean",

@@ -12,4 +12,3 @@ export type DashboardSubSlots = keyof SM["dashboard"];
 export type FormSubSlots = keyof SM["form"];
 export type CommandPaletteSubSlots = keyof SM["commandPalette"];
 export type AnySubSlotKey = SnippetsSubSlots | MathSubSlots | EditorSubSlots | UISubSlots | BibliographySubSlots | TaskManagerSubSlots | PdfSubSlots | NavigationSubSlots | DashboardSubSlots | FormSubSlots | CommandPaletteSubSlots;
-//# sourceMappingURL=slotMapType.d.ts.map

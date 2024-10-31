@@ -5,17 +5,17 @@ export declare const configPluginSchema: z.ZodEffects<z.ZodObject<{
     name: z.ZodString;
     version: z.ZodDefault<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    name: string;
-    version: string;
+    name?: string;
+    version?: string;
 }, {
-    name: string;
-    version?: string | undefined;
+    name?: string;
+    version?: string;
 }>, {
     name: string;
     version: string;
 }, {
-    name: string;
-    version?: string | undefined;
+    name?: string;
+    version?: string;
 }>;
 export declare const slotFieldsBase: Record<keyof SlotMap, ZodTypeAny>;
 export declare const slotFields: Record<keyof SlotMap, ZodTypeAny>;
@@ -46,4 +46,3 @@ export declare const pluginSlotSchema: z.ZodObject<Record<keyof SlotMap, z.ZodTy
 }>;
 export declare const pluginSlotSchemaOutput: ZodOutputSchema<typeof pluginSlotSchema>;
 export declare const ulldSlots: string[];
-//# sourceMappingURL=slotsSchema.d.ts.map

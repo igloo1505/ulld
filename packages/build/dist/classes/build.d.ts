@@ -51,9 +51,9 @@ export declare class UlldBuildProcess extends Prompter {
     resolvePageConflicts(): Promise<void>;
     getFlatComponentDocs(): BuildStaticDataInput["componentDocs"];
     getFlatNavigationLinks(): {
-        href: string;
         label: string;
-        category: "code" | "math" | "calendar" | "database" | "school" | "search" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+        href: string;
+        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
         icon?: string | undefined;
         pluginName?: string | undefined;
     }[];

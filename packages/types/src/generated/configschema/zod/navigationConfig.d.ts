@@ -6,11 +6,11 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
         full: z.ZodDefault<z.ZodNumber>;
         minimal: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
-        full: number;
-        minimal: number;
+        full?: number;
+        minimal?: number;
     }, {
-        full?: number | undefined;
-        minimal?: number | undefined;
+        full?: number;
+        minimal?: number;
     }>>;
     maxResultLength: z.ZodDefault<z.ZodObject<{
         categories: z.ZodDefault<z.ZodNumber>;
@@ -18,15 +18,15 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
         snippets: z.ZodDefault<z.ZodNumber>;
         searchAll: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
-        snippets: number;
-        searchAll: number;
-        equations: number;
-        categories: number;
+        snippets?: number;
+        searchAll?: number;
+        equations?: number;
+        categories?: number;
     }, {
-        snippets?: number | undefined;
-        searchAll?: number | undefined;
-        equations?: number | undefined;
-        categories?: number | undefined;
+        snippets?: number;
+        searchAll?: number;
+        equations?: number;
+        categories?: number;
     }>>;
     navbarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodString, z.ZodObject<{
         label: z.ZodString;
@@ -34,15 +34,15 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
         href: z.ZodOptional<z.ZodString>;
         onClick: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
-        label: string;
-        href?: string | undefined;
-        icon?: string | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        onClick?: (...args: unknown[]) => unknown;
     }, {
-        label: string;
-        href?: string | undefined;
-        icon?: string | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        onClick?: (...args: unknown[]) => unknown;
     }>]>, "many">>;
     sidebarLinks: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<{
         icon: z.ZodEffects<z.ZodString, string, string>;
@@ -51,66 +51,65 @@ export declare const navigationConfigSchema: z.ZodDefault<z.ZodObject<{
         Icon: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
         onClick: z.ZodOptional<z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
-        icon: string;
-        label?: string | undefined;
-        href?: string | undefined;
-        Icon?: ((...args: unknown[]) => unknown) | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        Icon?: (...args: unknown[]) => unknown;
+        onClick?: (...args: unknown[]) => unknown;
     }, {
-        icon: string;
-        label?: string | undefined;
-        href?: string | undefined;
-        Icon?: ((...args: unknown[]) => unknown) | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        Icon?: (...args: unknown[]) => unknown;
+        onClick?: (...args: unknown[]) => unknown;
     }>, z.ZodString]>, "many">>;
 }, "strip", z.ZodTypeAny, {
-    navbarBreakpoint: {
-        full: number;
-        minimal: number;
+    navbarBreakpoint?: {
+        full?: number;
+        minimal?: number;
     };
-    maxResultLength: {
-        snippets: number;
-        searchAll: number;
-        equations: number;
-        categories: number;
+    maxResultLength?: {
+        snippets?: number;
+        searchAll?: number;
+        equations?: number;
+        categories?: number;
     };
-    navbarLinks: (string | {
-        label: string;
-        href?: string | undefined;
-        icon?: string | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
+    navbarLinks?: (string | {
+        label?: string;
+        href?: string;
+        icon?: string;
+        onClick?: (...args: unknown[]) => unknown;
     })[];
-    sidebarLinks: (string | {
-        icon: string;
-        label?: string | undefined;
-        href?: string | undefined;
-        Icon?: ((...args: unknown[]) => unknown) | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
+    sidebarLinks?: (string | {
+        label?: string;
+        href?: string;
+        icon?: string;
+        Icon?: (...args: unknown[]) => unknown;
+        onClick?: (...args: unknown[]) => unknown;
     })[];
 }, {
     navbarBreakpoint?: {
-        full?: number | undefined;
-        minimal?: number | undefined;
-    } | undefined;
+        full?: number;
+        minimal?: number;
+    };
     maxResultLength?: {
-        snippets?: number | undefined;
-        searchAll?: number | undefined;
-        equations?: number | undefined;
-        categories?: number | undefined;
-    } | undefined;
+        snippets?: number;
+        searchAll?: number;
+        equations?: number;
+        categories?: number;
+    };
     navbarLinks?: (string | {
-        label: string;
-        href?: string | undefined;
-        icon?: string | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
-    })[] | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        onClick?: (...args: unknown[]) => unknown;
+    })[];
     sidebarLinks?: (string | {
-        icon: string;
-        label?: string | undefined;
-        href?: string | undefined;
-        Icon?: ((...args: unknown[]) => unknown) | undefined;
-        onClick?: ((...args: unknown[]) => unknown) | undefined;
-    })[] | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        Icon?: (...args: unknown[]) => unknown;
+        onClick?: (...args: unknown[]) => unknown;
+    })[];
 }>>;
 export declare const navigationConfigSchemaOutput: ZodOutputSchema<typeof navigationConfigSchema>;
-//# sourceMappingURL=navigationConfig.d.ts.map

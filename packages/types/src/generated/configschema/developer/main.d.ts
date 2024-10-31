@@ -17,101 +17,101 @@ export declare const _developerConfigSchema: z.ZodObject<{
             regexToInclude: z.ZodString;
             label: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>, {
             label: string;
-            regexToInclude: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>, "many">, z.ZodEffects<z.ZodObject<{
             regexToInclude: z.ZodString;
             label: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>, {
             label: string;
-            regexToInclude: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>]>>, {
             label: string;
-            regexToInclude: string;
-        }[] | undefined, {
-            regexToInclude: string;
-            label?: string | undefined;
+            regexToInclude?: string;
+        }[], {
+            label?: string;
+            regexToInclude?: string;
         } | {
-            regexToInclude: string;
-            label?: string | undefined;
-        }[] | undefined>;
+            label?: string;
+            regexToInclude?: string;
+        }[]>;
         exportedPropsName: z.ZodOptional<z.ZodString>;
         docsExport: z.ZodOptional<z.ZodString>;
         fullDocsExport: z.ZodOptional<z.ZodString>;
         componentId: z.ZodDefault<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        tags: string[];
-        componentName: string;
-        componentId: string;
-        export: string;
-        slot?: string | undefined;
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
         embeddable?: {
             label: string;
-            regexToInclude: string;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
     }, {
-        componentName: string;
-        export: string;
-        tags?: string[] | undefined;
-        componentId?: string | undefined;
-        slot?: string | undefined;
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
         embeddable?: {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         } | {
-            regexToInclude: string;
-            label?: string | undefined;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
     }>, "many">>;
     parsers: z.ZodDefault<z.ZodObject<{
         mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig.js").ParserConfig, z.ZodTypeDef, import("./types/parserConfig.js").ParserConfig>>;
     }, "strip", z.ZodTypeAny, {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig;
     }, {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig;
     }>>;
     additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig.js").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig.js").AdditionalImportsConfig>>;
     trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig.js").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig.js").TrpcConfig>>;
     settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig.js").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig.js").PluginSettingsConfig>>;
     pages: z.ZodDefault<z.ZodArray<z.ZodObject<{
-        targetUrl: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
+        targetUrl: z.ZodEffects<z.ZodOptional<z.ZodString>, string, string>;
         slot: z.ZodOptional<z.ZodString>;
         export: z.ZodEffects<z.ZodString, string, string>;
         exportsPageProps: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
-        export: string;
-        exportsPageProps: boolean;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
     }, {
-        export: string;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-        exportsPageProps?: boolean | undefined;
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
     }>, "many">>;
     events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig.js").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig.js").PluginEventsConfig>>;
     navigationLinks: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -121,17 +121,17 @@ export declare const _developerConfigSchema: z.ZodObject<{
         pluginName: z.ZodOptional<z.ZodString>;
         category: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"math">, z.ZodLiteral<"snippets">, z.ZodLiteral<"code">, z.ZodLiteral<"AI">, z.ZodLiteral<"ML">, z.ZodLiteral<"writing">, z.ZodLiteral<"search">, z.ZodLiteral<"notebooks">, z.ZodLiteral<"database">, z.ZodLiteral<"work">, z.ZodLiteral<"school">, z.ZodLiteral<"organization">, z.ZodLiteral<"task-management">, z.ZodLiteral<"academic">, z.ZodLiteral<"research">, z.ZodLiteral<"project-planning">, z.ZodLiteral<"calendar">, z.ZodLiteral<"general">]>>;
     }, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
     }, {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
     }>, "many">>;
     commandPalette: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
@@ -139,150 +139,150 @@ export declare const _developerConfigSchema: z.ZodObject<{
     }, {
         action: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>;
     }>, "strip", z.ZodTypeAny, {
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
     }, {
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
     }>, z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
         isAvailable: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodBoolean>;
     }, {
         href: z.ZodUnion<[z.ZodString, z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodString>]>;
     }>, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
     }, {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
     }>]>, "many">>;
     tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
-    documentation: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
+    documentation: z.ZodEffects<z.ZodOptional<z.ZodString>, string, string>;
     styles: z.ZodDefault<z.ZodObject<{
         root: z.ZodOptional<z.ZodString>;
         mdx: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        mdx?: string | undefined;
-        root?: string | undefined;
+        mdx?: string;
+        root?: string;
     }, {
-        mdx?: string | undefined;
-        root?: string | undefined;
+        mdx?: string;
+        root?: string;
     }>>;
 }, "strip", z.ZodTypeAny, {
-    label: string;
-    pluginName: string;
-    components: {
-        tags: string[];
-        componentName: string;
-        componentId: string;
-        export: string;
-        slot?: string | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig;
+    label?: string;
+    pluginName?: string;
+    components?: {
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
         embeddable?: {
             label: string;
-            regexToInclude: string;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
     }[];
-    pages: {
-        export: string;
-        exportsPageProps: boolean;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-    }[];
-    navigationLinks: {
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-    }[];
-    tailwind: {};
-    parsers: {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
-    };
-    styles: {
-        mdx?: string | undefined;
-        root?: string | undefined;
-    };
-    commandPalette: ({
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
-    } | {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
-    })[];
-    pluginId: string;
-    events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
-    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
-    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
-    documentation?: string | undefined;
-}, {
-    label: string;
-    pluginName: string;
-    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    components?: {
-        componentName: string;
-        export: string;
-        tags?: string[] | undefined;
-        componentId?: string | undefined;
-        slot?: string | undefined;
-        embeddable?: {
-            regexToInclude: string;
-            label?: string | undefined;
-        } | {
-            regexToInclude: string;
-            label?: string | undefined;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
-    }[] | undefined;
     pages?: {
-        export: string;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-        exportsPageProps?: boolean | undefined;
-    }[] | undefined;
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
+    }[];
     navigationLinks?: {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
-    }[] | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
-    tailwind?: {} | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
+    tailwind?: {};
     parsers?: {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
-    } | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig;
+    };
     styles?: {
-        mdx?: string | undefined;
-        root?: string | undefined;
-    } | undefined;
+        mdx?: string;
+        root?: string;
+    };
     commandPalette?: ({
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
     } | {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
-    })[] | undefined;
-    pluginId?: string | undefined;
-    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
-    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig | undefined;
-    documentation?: string | undefined;
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
+    })[];
+    pluginId?: string;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig;
+    documentation?: string;
+}, {
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig;
+    label?: string;
+    pluginName?: string;
+    components?: {
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
+        embeddable?: {
+            label?: string;
+            regexToInclude?: string;
+        } | {
+            label?: string;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
+    }[];
+    pages?: {
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
+    }[];
+    navigationLinks?: {
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
+    tailwind?: {};
+    parsers?: {
+        mdx?: import("./types/parserConfig.js").ParserConfig;
+    };
+    styles?: {
+        mdx?: string;
+        root?: string;
+    };
+    commandPalette?: ({
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
+    } | {
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
+    })[];
+    pluginId?: string;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig;
+    documentation?: string;
 }>;
 export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     pluginName: z.ZodString;
@@ -298,101 +298,101 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
             regexToInclude: z.ZodString;
             label: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>, {
             label: string;
-            regexToInclude: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>, "many">, z.ZodEffects<z.ZodObject<{
             regexToInclude: z.ZodString;
             label: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>, {
             label: string;
-            regexToInclude: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>]>>, {
             label: string;
-            regexToInclude: string;
-        }[] | undefined, {
-            regexToInclude: string;
-            label?: string | undefined;
+            regexToInclude?: string;
+        }[], {
+            label?: string;
+            regexToInclude?: string;
         } | {
-            regexToInclude: string;
-            label?: string | undefined;
-        }[] | undefined>;
+            label?: string;
+            regexToInclude?: string;
+        }[]>;
         exportedPropsName: z.ZodOptional<z.ZodString>;
         docsExport: z.ZodOptional<z.ZodString>;
         fullDocsExport: z.ZodOptional<z.ZodString>;
         componentId: z.ZodDefault<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        tags: string[];
-        componentName: string;
-        componentId: string;
-        export: string;
-        slot?: string | undefined;
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
         embeddable?: {
             label: string;
-            regexToInclude: string;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
     }, {
-        componentName: string;
-        export: string;
-        tags?: string[] | undefined;
-        componentId?: string | undefined;
-        slot?: string | undefined;
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
         embeddable?: {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         } | {
-            regexToInclude: string;
-            label?: string | undefined;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
     }>, "many">>;
     parsers: z.ZodDefault<z.ZodObject<{
         mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig.js").ParserConfig, z.ZodTypeDef, import("./types/parserConfig.js").ParserConfig>>;
     }, "strip", z.ZodTypeAny, {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig;
     }, {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig;
     }>>;
     additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig.js").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig.js").AdditionalImportsConfig>>;
     trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig.js").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig.js").TrpcConfig>>;
     settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig.js").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig.js").PluginSettingsConfig>>;
     pages: z.ZodDefault<z.ZodArray<z.ZodObject<{
-        targetUrl: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
+        targetUrl: z.ZodEffects<z.ZodOptional<z.ZodString>, string, string>;
         slot: z.ZodOptional<z.ZodString>;
         export: z.ZodEffects<z.ZodString, string, string>;
         exportsPageProps: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
-        export: string;
-        exportsPageProps: boolean;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
     }, {
-        export: string;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-        exportsPageProps?: boolean | undefined;
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
     }>, "many">>;
     events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig.js").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig.js").PluginEventsConfig>>;
     navigationLinks: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -402,17 +402,17 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         pluginName: z.ZodOptional<z.ZodString>;
         category: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"math">, z.ZodLiteral<"snippets">, z.ZodLiteral<"code">, z.ZodLiteral<"AI">, z.ZodLiteral<"ML">, z.ZodLiteral<"writing">, z.ZodLiteral<"search">, z.ZodLiteral<"notebooks">, z.ZodLiteral<"database">, z.ZodLiteral<"work">, z.ZodLiteral<"school">, z.ZodLiteral<"organization">, z.ZodLiteral<"task-management">, z.ZodLiteral<"academic">, z.ZodLiteral<"research">, z.ZodLiteral<"project-planning">, z.ZodLiteral<"calendar">, z.ZodLiteral<"general">]>>;
     }, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
     }, {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
     }>, "many">>;
     commandPalette: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
@@ -420,261 +420,261 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
     }, {
         action: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>;
     }>, "strip", z.ZodTypeAny, {
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
     }, {
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
     }>, z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
         isAvailable: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodBoolean>;
     }, {
         href: z.ZodUnion<[z.ZodString, z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodString>]>;
     }>, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
     }, {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
     }>]>, "many">>;
     tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
-    documentation: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
+    documentation: z.ZodEffects<z.ZodOptional<z.ZodString>, string, string>;
     styles: z.ZodDefault<z.ZodObject<{
         root: z.ZodOptional<z.ZodString>;
         mdx: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        mdx?: string | undefined;
-        root?: string | undefined;
+        mdx?: string;
+        root?: string;
     }, {
-        mdx?: string | undefined;
-        root?: string | undefined;
+        mdx?: string;
+        root?: string;
     }>>;
 }, "strip", z.ZodTypeAny, {
-    label: string;
-    pluginName: string;
-    components: {
-        tags: string[];
-        componentName: string;
-        componentId: string;
-        export: string;
-        slot?: string | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig;
+    label?: string;
+    pluginName?: string;
+    components?: {
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
         embeddable?: {
             label: string;
-            regexToInclude: string;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
     }[];
-    pages: {
-        export: string;
-        exportsPageProps: boolean;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-    }[];
-    navigationLinks: {
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-    }[];
-    tailwind: {};
-    parsers: {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
-    };
-    styles: {
-        mdx?: string | undefined;
-        root?: string | undefined;
-    };
-    commandPalette: ({
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
-    } | {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
-    })[];
-    pluginId: string;
-    events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
-    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
-    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
-    documentation?: string | undefined;
-}, {
-    label: string;
-    pluginName: string;
-    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    components?: {
-        componentName: string;
-        export: string;
-        tags?: string[] | undefined;
-        componentId?: string | undefined;
-        slot?: string | undefined;
-        embeddable?: {
-            regexToInclude: string;
-            label?: string | undefined;
-        } | {
-            regexToInclude: string;
-            label?: string | undefined;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
-    }[] | undefined;
     pages?: {
-        export: string;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-        exportsPageProps?: boolean | undefined;
-    }[] | undefined;
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
+    }[];
     navigationLinks?: {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
-    }[] | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
-    tailwind?: {} | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
+    tailwind?: {};
     parsers?: {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
-    } | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig;
+    };
     styles?: {
-        mdx?: string | undefined;
-        root?: string | undefined;
-    } | undefined;
+        mdx?: string;
+        root?: string;
+    };
     commandPalette?: ({
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
     } | {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
-    })[] | undefined;
-    pluginId?: string | undefined;
-    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
-    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig | undefined;
-    documentation?: string | undefined;
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
+    })[];
+    pluginId?: string;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig;
+    documentation?: string;
+}, {
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig;
+    label?: string;
+    pluginName?: string;
+    components?: {
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
+        embeddable?: {
+            label?: string;
+            regexToInclude?: string;
+        } | {
+            label?: string;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
+    }[];
+    pages?: {
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
+    }[];
+    navigationLinks?: {
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
+    tailwind?: {};
+    parsers?: {
+        mdx?: import("./types/parserConfig.js").ParserConfig;
+    };
+    styles?: {
+        mdx?: string;
+        root?: string;
+    };
+    commandPalette?: ({
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
+    } | {
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
+    })[];
+    pluginId?: string;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig;
+    documentation?: string;
 }>, {
-    label: string;
-    pluginName: string;
-    components: {
-        tags: string[];
-        componentName: string;
-        componentId: string;
-        export: string;
-        slot?: string | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig;
+    label?: string;
+    pluginName?: string;
+    components?: {
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
         embeddable?: {
             label: string;
-            regexToInclude: string;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
     }[];
-    pages: {
-        export: string;
-        exportsPageProps: boolean;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-    }[];
-    navigationLinks: {
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-    }[];
-    tailwind: {};
-    parsers: {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
-    };
-    styles: {
-        mdx?: string | undefined;
-        root?: string | undefined;
-    };
-    commandPalette: ({
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
-    } | {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
-    })[];
-    pluginId: string;
-    events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
-    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
-    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
-    documentation?: string | undefined;
-}, {
-    label: string;
-    pluginName: string;
-    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    components?: {
-        componentName: string;
-        export: string;
-        tags?: string[] | undefined;
-        componentId?: string | undefined;
-        slot?: string | undefined;
-        embeddable?: {
-            regexToInclude: string;
-            label?: string | undefined;
-        } | {
-            regexToInclude: string;
-            label?: string | undefined;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
-    }[] | undefined;
     pages?: {
-        export: string;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-        exportsPageProps?: boolean | undefined;
-    }[] | undefined;
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
+    }[];
     navigationLinks?: {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
-    }[] | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
-    tailwind?: {} | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
+    tailwind?: {};
     parsers?: {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
-    } | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig;
+    };
     styles?: {
-        mdx?: string | undefined;
-        root?: string | undefined;
-    } | undefined;
+        mdx?: string;
+        root?: string;
+    };
     commandPalette?: ({
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
     } | {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
-    })[] | undefined;
-    pluginId?: string | undefined;
-    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
-    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig | undefined;
-    documentation?: string | undefined;
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
+    })[];
+    pluginId?: string;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig;
+    documentation?: string;
+}, {
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig;
+    label?: string;
+    pluginName?: string;
+    components?: {
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
+        embeddable?: {
+            label?: string;
+            regexToInclude?: string;
+        } | {
+            label?: string;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
+    }[];
+    pages?: {
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
+    }[];
+    navigationLinks?: {
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
+    tailwind?: {};
+    parsers?: {
+        mdx?: import("./types/parserConfig.js").ParserConfig;
+    };
+    styles?: {
+        mdx?: string;
+        root?: string;
+    };
+    commandPalette?: ({
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
+    } | {
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
+    })[];
+    pluginId?: string;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig;
+    documentation?: string;
 }>;
 export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUtil.extendShape<{
     pluginName: z.ZodString;
@@ -690,101 +690,101 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
             regexToInclude: z.ZodString;
             label: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>, {
             label: string;
-            regexToInclude: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>, "many">, z.ZodEffects<z.ZodObject<{
             regexToInclude: z.ZodString;
             label: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>, {
             label: string;
-            regexToInclude: string;
+            regexToInclude?: string;
         }, {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         }>]>>, {
             label: string;
-            regexToInclude: string;
-        }[] | undefined, {
-            regexToInclude: string;
-            label?: string | undefined;
+            regexToInclude?: string;
+        }[], {
+            label?: string;
+            regexToInclude?: string;
         } | {
-            regexToInclude: string;
-            label?: string | undefined;
-        }[] | undefined>;
+            label?: string;
+            regexToInclude?: string;
+        }[]>;
         exportedPropsName: z.ZodOptional<z.ZodString>;
         docsExport: z.ZodOptional<z.ZodString>;
         fullDocsExport: z.ZodOptional<z.ZodString>;
         componentId: z.ZodDefault<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        tags: string[];
-        componentName: string;
-        componentId: string;
-        export: string;
-        slot?: string | undefined;
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
         embeddable?: {
             label: string;
-            regexToInclude: string;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
     }, {
-        componentName: string;
-        export: string;
-        tags?: string[] | undefined;
-        componentId?: string | undefined;
-        slot?: string | undefined;
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
         embeddable?: {
-            regexToInclude: string;
-            label?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
         } | {
-            regexToInclude: string;
-            label?: string | undefined;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
+            label?: string;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
     }>, "many">>;
     parsers: z.ZodDefault<z.ZodObject<{
         mdx: z.ZodOptional<z.ZodType<import("./types/parserConfig.js").ParserConfig, z.ZodTypeDef, import("./types/parserConfig.js").ParserConfig>>;
     }, "strip", z.ZodTypeAny, {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig;
     }, {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig;
     }>>;
     additionalImports: z.ZodOptional<z.ZodType<import("./types/additionalImportsConfig.js").AdditionalImportsConfig, z.ZodTypeDef, import("./types/additionalImportsConfig.js").AdditionalImportsConfig>>;
     trpc: z.ZodOptional<z.ZodType<import("./types/trpcConfig.js").TrpcConfig, z.ZodTypeDef, import("./types/trpcConfig.js").TrpcConfig>>;
     settings: z.ZodOptional<z.ZodType<import("./types/pluginSettingsConfig.js").PluginSettingsConfig, z.ZodTypeDef, import("./types/pluginSettingsConfig.js").PluginSettingsConfig>>;
     pages: z.ZodDefault<z.ZodArray<z.ZodObject<{
-        targetUrl: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
+        targetUrl: z.ZodEffects<z.ZodOptional<z.ZodString>, string, string>;
         slot: z.ZodOptional<z.ZodString>;
         export: z.ZodEffects<z.ZodString, string, string>;
         exportsPageProps: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
-        export: string;
-        exportsPageProps: boolean;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
     }, {
-        export: string;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-        exportsPageProps?: boolean | undefined;
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
     }>, "many">>;
     events: z.ZodDefault<z.ZodType<import("./types/pluginEventsConfig.js").PluginEventsConfig, z.ZodTypeDef, import("./types/pluginEventsConfig.js").PluginEventsConfig>>;
     navigationLinks: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -794,17 +794,17 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
         pluginName: z.ZodOptional<z.ZodString>;
         category: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"math">, z.ZodLiteral<"snippets">, z.ZodLiteral<"code">, z.ZodLiteral<"AI">, z.ZodLiteral<"ML">, z.ZodLiteral<"writing">, z.ZodLiteral<"search">, z.ZodLiteral<"notebooks">, z.ZodLiteral<"database">, z.ZodLiteral<"work">, z.ZodLiteral<"school">, z.ZodLiteral<"organization">, z.ZodLiteral<"task-management">, z.ZodLiteral<"academic">, z.ZodLiteral<"research">, z.ZodLiteral<"project-planning">, z.ZodLiteral<"calendar">, z.ZodLiteral<"general">]>>;
     }, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
     }, {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
     }>, "many">>;
     commandPalette: z.ZodDefault<z.ZodArray<z.ZodUnion<[z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
@@ -812,155 +812,154 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
     }, {
         action: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodUnknown>;
     }>, "strip", z.ZodTypeAny, {
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
     }, {
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
     }>, z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
         isAvailable: z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodBoolean>;
     }, {
         href: z.ZodUnion<[z.ZodString, z.ZodFunction<z.ZodTuple<[], z.ZodUnknown>, z.ZodString>]>;
     }>, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
     }, {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
     }>]>, "many">>;
     tailwind: z.ZodDefault<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>>;
-    documentation: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
+    documentation: z.ZodEffects<z.ZodOptional<z.ZodString>, string, string>;
     styles: z.ZodDefault<z.ZodObject<{
         root: z.ZodOptional<z.ZodString>;
         mdx: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        mdx?: string | undefined;
-        root?: string | undefined;
+        mdx?: string;
+        root?: string;
     }, {
-        mdx?: string | undefined;
-        root?: string | undefined;
+        mdx?: string;
+        root?: string;
     }>>;
 }, {
     pluginId: z.ZodEffects<z.ZodString, string, string>;
 }>, "strip", z.ZodTypeAny, {
-    label: string;
-    pluginName: string;
-    components: {
-        tags: string[];
-        componentName: string;
-        componentId: string;
-        export: string;
-        slot?: string | undefined;
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig;
+    label?: string;
+    pluginName?: string;
+    components?: {
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
         embeddable?: {
             label: string;
-            regexToInclude: string;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
     }[];
-    pages: {
-        export: string;
-        exportsPageProps: boolean;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-    }[];
-    navigationLinks: {
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-    }[];
-    tailwind: {};
-    parsers: {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
-    };
-    styles: {
-        mdx?: string | undefined;
-        root?: string | undefined;
-    };
-    commandPalette: ({
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
-    } | {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
-    })[];
-    pluginId: string;
-    events: import("./types/pluginEventsConfig.js").PluginEventsConfig;
-    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
-    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
-    documentation?: string | undefined;
-}, {
-    label: string;
-    pluginName: string;
-    pluginId: string;
-    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig | undefined;
-    components?: {
-        componentName: string;
-        export: string;
-        tags?: string[] | undefined;
-        componentId?: string | undefined;
-        slot?: string | undefined;
-        embeddable?: {
-            regexToInclude: string;
-            label?: string | undefined;
-        } | {
-            regexToInclude: string;
-            label?: string | undefined;
-        }[] | undefined;
-        exportedPropsName?: string | undefined;
-        docsExport?: string | undefined;
-        fullDocsExport?: string | undefined;
-    }[] | undefined;
     pages?: {
-        export: string;
-        slot?: string | undefined;
-        targetUrl?: string | undefined;
-        exportsPageProps?: boolean | undefined;
-    }[] | undefined;
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
+    }[];
     navigationLinks?: {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
-    }[] | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
-    tailwind?: {} | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
+    tailwind?: {};
     parsers?: {
-        mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
-    } | undefined;
+        mdx?: import("./types/parserConfig.js").ParserConfig;
+    };
     styles?: {
-        mdx?: string | undefined;
-        root?: string | undefined;
-    } | undefined;
+        mdx?: string;
+        root?: string;
+    };
     commandPalette?: ({
-        label: string;
-        action: (...args: unknown[]) => unknown;
-        isAvailable: (...args: unknown[]) => boolean;
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
     } | {
-        label: string;
-        href: string | ((...args: unknown[]) => string);
-        isAvailable: (...args: unknown[]) => boolean;
-    })[] | undefined;
-    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig | undefined;
-    trpc?: import("./types/trpcConfig.js").TrpcConfig | undefined;
-    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig | undefined;
-    documentation?: string | undefined;
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
+    })[];
+    pluginId?: string;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig;
+    documentation?: string;
+}, {
+    settings?: import("./types/pluginSettingsConfig.js").PluginSettingsConfig;
+    label?: string;
+    pluginName?: string;
+    components?: {
+        tags?: string[];
+        componentName?: string;
+        componentId?: string;
+        slot?: string;
+        export?: string;
+        embeddable?: {
+            label?: string;
+            regexToInclude?: string;
+        } | {
+            label?: string;
+            regexToInclude?: string;
+        }[];
+        exportedPropsName?: string;
+        docsExport?: string;
+        fullDocsExport?: string;
+    }[];
+    pages?: {
+        slot?: string;
+        export?: string;
+        targetUrl?: string;
+        exportsPageProps?: boolean;
+    }[];
+    navigationLinks?: {
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette";
+    tailwind?: {};
+    parsers?: {
+        mdx?: import("./types/parserConfig.js").ParserConfig;
+    };
+    styles?: {
+        mdx?: string;
+        root?: string;
+    };
+    commandPalette?: ({
+        label?: string;
+        action?: (...args: unknown[]) => unknown;
+        isAvailable?: (...args: unknown[]) => boolean;
+    } | {
+        label?: string;
+        href?: string | ((...args: unknown[]) => string);
+        isAvailable?: (...args: unknown[]) => boolean;
+    })[];
+    pluginId?: string;
+    additionalImports?: import("./types/additionalImportsConfig.js").AdditionalImportsConfig;
+    trpc?: import("./types/trpcConfig.js").TrpcConfig;
+    events?: import("./types/pluginEventsConfig.js").PluginEventsConfig;
+    documentation?: string;
 }>;
 export type DeveloperConfigOutput = z.output<typeof developerConfigSchema>;
 export type DeveloperConfigInput<T extends PluginSlotKey | undefined = undefined> = DCI<T>;
 export type DeveloperConfigInputWithoutGeneric = InternalDeveloperConfigInputWithoutGeneric;
 export type ParserKey = keyof DeveloperConfigOutput["parsers"];
-//# sourceMappingURL=main.d.ts.map

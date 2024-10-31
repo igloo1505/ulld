@@ -422,14 +422,22 @@ ${fullSlotMap.missingItems.map((k, i) => `${i + 1}. ${k.slot} -> ${k.subSlot}`).
     }
     getTailwindSources() {
         let items = getInternalTailwindSources();
-        let additionalItems = this.plugins
-            .filter((f) => f.includeInTailwindSources)
-            .map((p) => `./node_modules/${p.name}/src/**/*.{js,ts,jsx,tsx,mdx}`);
-        for (const k of additionalItems) {
-            if (!items.includes(k)) {
-                items.push(k);
-            }
-        }
+        // const getSrcDiretory = (pkg: string) => {
+        //     if (appData.packagesBuildingToDist.includes(pkg)) {
+        //         return "dist";
+        //     }
+        //     return "src";
+        // };
+        // ULLD_BUILD_PROCESS: Need to handle this immediately.
+        // PRIORITY: Allow the pluginConfig.ulld.json file to specify a tailwindSource field as a glob that will be appended here. Make sure that this glob is relative to the package root, so that the node_modules path can be handled internally.
+        // let additionalItems = this.plugins
+        //     .filter((f) => f.includeInTailwindSources)
+        //     .map((p) => `./node_modules/${p.name}/${getSrcDiretory(p.name)}/**/*.{js,ts,jsx,tsx,mdx}`);
+        // for (const k of additionalItems) {
+        //     if (!items.includes(k)) {
+        //         items.push(k);
+        //     }
+        // }
         return items;
     }
     revalidatePluginConfigs() {

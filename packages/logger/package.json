@@ -1,45 +1,45 @@
 {
-  "name": "@ulld/logger",
-  "version": "0.0.116",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "src"
-  ],
-  "scripts": {
-    "typecheck": "tsc --noEmit -p ./tsconfig.json"
-  },
-  "types": "./src/index.ts",
-  "exports": {
-    "./server": "./src/server/logger.ts",
-    "./client": "./src/client/logger.ts"
-  },
-  "dependencies": {
-    "chalk": "5.3.0",
-    "cli-highlight": "2.1.11",
-    "colors": "1.4.0",
-    "dayjs": "1.11.11",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tslog": "4.9.3",
-    "zod": "3.23.8"
-  },
-  "devDependencies": {
-    "chalk": "5.3.0",
-    "cli-highlight": "2.1.11",
-    "colors": "1.4.0",
-    "dayjs": "1.11.11",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tslog": "4.9.3",
-    "zod": "3.23.8"
-  },
-  "peerDependencies": {
-    "@ulld/types": "workspace:*"
-  },
-  "packageManager": "pnpm@9.0.4"
+    "name": "@ulld/logger",
+    "version": "0.0.116",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "src"
+    ],
+    "scripts": {
+        "typecheck": "tsc --noEmit -p ./tsconfig.json"
+    },
+    "types": "./src/index.ts",
+    "exports": {
+        "./server": "./src/server/logger.ts",
+        "./client": "./src/client/logger.ts"
+    },
+    "dependencies": {
+        "chalk": "5.3.0",
+        "cli-highlight": "2.1.11",
+        "colors": "1.4.0",
+        "dayjs": "1.11.11",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "tslog": "4.9.3",
+        "zod": "3.23.8"
+    },
+    "devDependencies": {
+        "chalk": "5.3.0",
+        "cli-highlight": "2.1.11",
+        "colors": "1.4.0",
+        "dayjs": "1.11.11",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "tslog": "4.9.3",
+        "zod": "3.23.8"
+    },
+    "peerDependencies": {
+        "@ulld/types": "workspace:*"
+    },
+    "packageManager": "pnpm@9.0.4"
 }

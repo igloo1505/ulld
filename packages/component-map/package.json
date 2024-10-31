@@ -1,51 +1,52 @@
 {
-  "name": "@ulld/component-map",
-  "version": "0.0.126",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "./src/**",
-    "src"
-  ],
-  "scripts": {
-    "typecheck": "tsc --watch --noEmit -p ./tsconfig.json"
-  },
-  "types": "src/index.ts",
-  "exports": {
-    "./server": "./src/server/componentMap.ts",
-    "./client": "./src/client/componentMap.ts",
-    "./types": "./src/types.ts"
-  },
-  "devDependencies": {
-    "@types/mdx": "2.0.13",
-    "@types/node": "20.14.13"
-  },
-  "peerDependencies": {
-    "@ulld/bib-manager": "workspace:*",
-    "@ulld/calendar": "workspace:*",
-    "@ulld/configschema": "workspace:*",
-    "@ulld/default-image-map": "workspace:*",
-    "@ulld/diagram": "workspace:*",
-    "@ulld/editor": "workspace:*",
-    "@ulld/embeddable-components": "workspace:*",
-    "@ulld/equations": "workspace:*",
-    "@ulld/full-form": "workspace:*",
-    "@ulld/journal": "workspace:*",
-    "@ulld/navigation": "workspace:*",
-    "@ulld/notebook": "workspace:*",
-    "@ulld/pdf": "workspace:*",
-    "@ulld/plot": "workspace:*",
-    "@ulld/snippets": "workspace:*",
-    "@ulld/tailwind": "workspace:*",
-    "@ulld/task-manager": "workspace:*",
-    "@ulld/types": "workspace:*",
-    "@ulld/typescript-config": "workspace:*",
-    "@ulld/whiteboard": "workspace:*",
-    "next": "14.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "packageManager": "pnpm@9.0.4"
+    "name": "@ulld/component-map",
+    "version": "0.0.126",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "./src/**",
+        "src"
+    ],
+    "scripts": {
+        "typecheck": "tsc --watch --noEmit -p ./tsconfig.json"
+    },
+    "types": "src/index.ts",
+    "exports": {
+        "./server": "./src/server/componentMap.ts",
+        "./client": "./src/client/componentMap.ts",
+        "./types": "./src/types.ts"
+    },
+    "devDependencies": {
+        "@types/mdx": "2.0.13",
+        "@types/node": "20.14.13"
+    },
+    "peerDependencies": {
+        "@ulld/bib-manager": "workspace:*",
+        "@ulld/calendar": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/default-image-map": "workspace:*",
+        "@ulld/diagram": "workspace:*",
+        "@ulld/editor": "workspace:*",
+        "@ulld/embeddable-components": "workspace:*",
+        "@ulld/equations": "workspace:*",
+        "@ulld/full-form": "workspace:*",
+        "@ulld/journal": "workspace:*",
+        "@ulld/navigation": "workspace:*",
+        "@ulld/notebook": "workspace:*",
+        "@ulld/pdf": "workspace:*",
+        "@ulld/plot": "workspace:*",
+        "@ulld/snippets": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/task-manager": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@ulld/whiteboard": "workspace:*",
+        "next": "14.2.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "packageManager": "pnpm@9.0.4",
+    "dependencies": {}
 }

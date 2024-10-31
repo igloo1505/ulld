@@ -10,4 +10,3 @@ export * from "./componentConfig.js";
 export * from "./additionalImportsConfig.js";
 export * from "../slotMapRootType.js";
 export * from "../slotMapType.js";
-//# sourceMappingURL=main.d.ts.map

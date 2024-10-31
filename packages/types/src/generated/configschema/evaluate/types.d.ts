@@ -9,4 +9,3 @@ export interface ConfigEvaluationError {
 }
 export type EvaluationErrors = ConfigEvaluationError[];
 export type EvalFunction = (appConfig: AppConfigSchemaOutput, errors: EvaluationErrors) => EvaluationErrors;
-//# sourceMappingURL=types.d.ts.map

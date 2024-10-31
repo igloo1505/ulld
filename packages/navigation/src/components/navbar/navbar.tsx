@@ -61,14 +61,12 @@ const Navbar = ({ buttons = [], logo: Logo }: NavbarProps): ReactNode => {
             id="top-navbar"
         >
             <div className="pl-4 py-3 md:pl-6 mx-0 px-8 flex w-screen min-w-screen flex-row justify-between items-center">
-                <div className="h-full w-fit flex items-center justify-center">
                     <Link
-                        className="h-[calc(var(--nav-height)*0.7)] w-[80px]"
+                        className="h-[calc(var(--nav-height)*0.7)] max-h-9 max-w-[80px]"
                         href="/"
                     >
                         {Logo}
                     </Link>
-                </div>
                 <div
                     className="inset-x-0 z-20 w-fit py-4 transition-all duration-300 ease-in-out mt-0 p-0 top-0 relative translate-x-0 flex items-center justify-end lg:justify-between"
                 >

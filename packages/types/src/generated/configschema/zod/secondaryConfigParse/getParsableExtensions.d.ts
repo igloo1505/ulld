@@ -10,4 +10,3 @@ export type MarkdownFileExtensions = z.input<typeof markdownExtensions>;
 export type ActiveParsableExtensions = z.input<typeof currentParsableExtensions>;
 export declare const getParsableExtensions: (config: AppConfigSchemaOutput) => (z.input<typeof defaultParsableFileExtensions> | z.input<typeof parsableFileExtensions>)[];
 export declare const getFileTypeAppendices: (parsableExtensions: ReturnType<typeof getParsableExtensions>) => Record<ParsableExtensionsSchema, string>;
-//# sourceMappingURL=getParsableExtensions.d.ts.map

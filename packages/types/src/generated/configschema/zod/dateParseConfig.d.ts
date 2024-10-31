@@ -10,49 +10,48 @@ export declare const dateParseConfigSchema: z.ZodDefault<z.ZodObject<{
         withTime: z.ZodDefault<z.ZodString>;
         timeOnly: z.ZodDefault<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        short: string;
-        long: string;
-        withTime: string;
-        timeOnly: string;
+        short?: string;
+        long?: string;
+        withTime?: string;
+        timeOnly?: string;
     }, {
-        short?: string | undefined;
-        long?: string | undefined;
-        withTime?: string | undefined;
-        timeOnly?: string | undefined;
+        short?: string;
+        long?: string;
+        withTime?: string;
+        timeOnly?: string;
     }>]>>, {
         short: string;
         long: string;
         withTime: string;
         timeOnly: string;
     }, string | {
-        short?: string | undefined;
-        long?: string | undefined;
-        withTime?: string | undefined;
-        timeOnly?: string | undefined;
-    } | undefined>;
+        short?: string;
+        long?: string;
+        withTime?: string;
+        timeOnly?: string;
+    }>;
     defaultTimeDisplayType: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"analog">, z.ZodLiteral<"summarized">, z.ZodLiteral<"descriptive">]>>;
     defaultTimeZone: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    enableAdvancedFormat: boolean;
-    format: {
+    enableAdvancedFormat?: boolean;
+    format?: {
         short: string;
         long: string;
         withTime: string;
         timeOnly: string;
     };
-    defaultTimeDisplayType: "summarized" | "analog" | "descriptive";
-    defaultTimeZone?: string | undefined;
+    defaultTimeDisplayType?: "summarized" | "analog" | "descriptive";
+    defaultTimeZone?: string;
 }, {
-    enableAdvancedFormat?: boolean | undefined;
+    enableAdvancedFormat?: boolean;
     format?: string | {
-        short?: string | undefined;
-        long?: string | undefined;
-        withTime?: string | undefined;
-        timeOnly?: string | undefined;
-    } | undefined;
-    defaultTimeDisplayType?: "summarized" | "analog" | "descriptive" | undefined;
-    defaultTimeZone?: string | undefined;
+        short?: string;
+        long?: string;
+        withTime?: string;
+        timeOnly?: string;
+    };
+    defaultTimeDisplayType?: "summarized" | "analog" | "descriptive";
+    defaultTimeZone?: string;
 }>>;
 export declare const dateParseConfigSchemaOutput: ZodOutputSchema<typeof dateParseConfigSchema>;
 export {};
-//# sourceMappingURL=dateParseConfig.d.ts.map

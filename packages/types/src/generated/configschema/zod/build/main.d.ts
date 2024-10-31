@@ -8,22 +8,22 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName: z.ZodDefault<z.ZodString>;
             connectionURI: z.ZodDefault<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            port: number;
-            dbName: string;
-            connectionURI: string;
+            port?: number;
+            dbName?: string;
+            connectionURI?: string;
         }, {
-            port?: number | undefined;
-            dbName?: string | undefined;
-            connectionURI?: string | undefined;
+            port?: number;
+            dbName?: string;
+            connectionURI?: string;
         }>>, {
-            port: number;
-            dbName: string;
-            connectionURI: string;
+            port?: number;
+            dbName?: string;
+            connectionURI?: string;
         }, {
-            port?: number | undefined;
-            dbName?: string | undefined;
-            connectionURI?: string | undefined;
-        } | undefined>, {
+            port?: number;
+            dbName?: string;
+            connectionURI?: string;
+        }>, {
             connectionURI: string;
             port?: undefined;
             dbName?: undefined;
@@ -32,14 +32,14 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName: string;
             connectionURI?: undefined;
         }, {
-            port?: number | undefined;
-            dbName?: string | undefined;
-            connectionURI?: string | undefined;
-        } | undefined>;
+            port?: number;
+            dbName?: string;
+            connectionURI?: string;
+        }>;
         prioritize: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"speed">, z.ZodLiteral<"size">]>>;
     }, "strip", z.ZodTypeAny, {
-        type: "postgres" | "sqlite";
-        postgres: {
+        type?: "postgres" | "sqlite";
+        postgres?: {
             connectionURI: string;
             port?: undefined;
             dbName?: undefined;
@@ -48,18 +48,18 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName: string;
             connectionURI?: undefined;
         };
-        prioritize: "size" | "speed";
+        prioritize?: "size" | "speed";
     }, {
-        type?: "postgres" | "sqlite" | undefined;
+        type?: "postgres" | "sqlite";
         postgres?: {
-            port?: number | undefined;
-            dbName?: string | undefined;
-            connectionURI?: string | undefined;
-        } | undefined;
-        prioritize?: "size" | "speed" | undefined;
+            port?: number;
+            dbName?: string;
+            connectionURI?: string;
+        };
+        prioritize?: "size" | "speed";
     }>>, {
-        type: "postgres" | "sqlite";
-        postgres: {
+        type?: "postgres" | "sqlite";
+        postgres?: {
             connectionURI: string;
             port?: undefined;
             dbName?: undefined;
@@ -68,33 +68,33 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName: string;
             connectionURI?: undefined;
         };
-        prioritize: "size" | "speed";
+        prioritize?: "size" | "speed";
     }, {
-        type?: "postgres" | "sqlite" | undefined;
+        type?: "postgres" | "sqlite";
         postgres?: {
-            port?: number | undefined;
-            dbName?: string | undefined;
-            connectionURI?: string | undefined;
-        } | undefined;
-        prioritize?: "size" | "speed" | undefined;
-    } | undefined>>;
+            port?: number;
+            dbName?: string;
+            connectionURI?: string;
+        };
+        prioritize?: "size" | "speed";
+    }>>;
     additionalUserContent: z.ZodDefault<z.ZodObject<{
         css: z.ZodOptional<z.ZodString>;
         favicon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         logo: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     }, "strip", z.ZodTypeAny, {
-        css?: string | undefined;
-        logo?: string | undefined;
-        favicon?: string | undefined;
+        css?: string;
+        logo?: string;
+        favicon?: string;
     }, {
-        css?: string | undefined;
-        logo?: string | undefined;
-        favicon?: string | undefined;
+        css?: string;
+        logo?: string;
+        favicon?: string;
     }>>;
 }, "strip", z.ZodTypeAny, {
-    database: {
-        type: "postgres" | "sqlite";
-        postgres: {
+    database?: {
+        type?: "postgres" | "sqlite";
+        postgres?: {
             connectionURI: string;
             port?: undefined;
             dbName?: undefined;
@@ -103,28 +103,27 @@ export declare const buildOnlySchema: z.ZodDefault<z.ZodObject<{
             dbName: string;
             connectionURI?: undefined;
         };
-        prioritize: "size" | "speed";
+        prioritize?: "size" | "speed";
     };
-    additionalUserContent: {
-        css?: string | undefined;
-        logo?: string | undefined;
-        favicon?: string | undefined;
+    additionalUserContent?: {
+        css?: string;
+        logo?: string;
+        favicon?: string;
     };
 }, {
     database?: {
-        type?: "postgres" | "sqlite" | undefined;
+        type?: "postgres" | "sqlite";
         postgres?: {
-            port?: number | undefined;
-            dbName?: string | undefined;
-            connectionURI?: string | undefined;
-        } | undefined;
-        prioritize?: "size" | "speed" | undefined;
-    } | undefined;
+            port?: number;
+            dbName?: string;
+            connectionURI?: string;
+        };
+        prioritize?: "size" | "speed";
+    };
     additionalUserContent?: {
-        css?: string | undefined;
-        logo?: string | undefined;
-        favicon?: string | undefined;
-    } | undefined;
+        css?: string;
+        logo?: string;
+        favicon?: string;
+    };
 }>>;
 export declare const buildOnlySchemaOutput: ZodOutputSchema<typeof buildOnlySchema>;
-//# sourceMappingURL=main.d.ts.map

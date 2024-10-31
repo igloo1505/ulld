@@ -1,1 +1,0 @@
-{"version":3,"sources":["../staticDevelopmentData.json"],"sourcesContent":["{\n  \"workingOffline\": false,\n  \"includeInTailwindSources\": [\"@ulld/plot\"],\n  \"alwaysIncludedTailwindSources\": [],\n  \"excludeFromInternalTailwindSources\": []\n}\n"],"mappings":";AAAA;AAAA,EACE,gBAAkB;AAAA,EAClB,0BAA4B,CAAC,YAAY;AAAA,EACzC,+BAAiC,CAAC;AAAA,EAClC,oCAAsC,CAAC;AACzC;","names":[]}

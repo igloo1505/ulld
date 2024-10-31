@@ -21,8 +21,13 @@ export const footerSectionSchema = z.object({
     label: z.string().max(15),
     items: navigationLinkSchema.array().max(maxFooterSectionLinks).default([]),
 });
+const iconField = z.enum(validIconNameList);
+export const quickLinkSchema = z.object({
+    icon: iconField,
+    url: z.string()
+});
 export const sidebarLinkSchema = z.object({
-    icon: z.enum(validIconNameList),
+    icon: iconField,
     label: z.string(),
     fieldType: z.literal("url").or(z.literal("action")).default("url"),
     value: z.string(),
@@ -45,6 +50,7 @@ export const navigationFormSettingSchema = z.object({
     navbarLinks: navbarLinkSchema.array().max(maxNavbarLinks).default([]),
     quickLinkLabel: z.string().default(defaultQuickLinkLabel),
     copyrightText: z.string().default(defaultCopyrightText),
+    quickLinks: quickLinkSchema.array().default([])
 });
 export const navigationFormSchemaWithUtilities = navigationFormSettingSchema.merge(navigationFormUtilityFields);
 export const defaultFormValues = {
@@ -52,6 +58,7 @@ export const defaultFormValues = {
     footerSectionInput: "",
     sidebarLinks: [],
     navbarLinks: [],
+    quickLinks: [],
     quickLinkLabel: defaultQuickLinkLabel,
     copyrightText: defaultCopyrightText,
 };

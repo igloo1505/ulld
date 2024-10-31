@@ -7,31 +7,30 @@ export declare const nbConvertConfigSchema: z.ZodObject<{
     customConversionFunction: z.ZodOptional<z.ZodObject<{
         pdf: z.ZodOptional<z.ZodFunction<z.ZodTuple<[z.ZodString, z.ZodString], z.ZodUnknown>, z.ZodString>>;
     }, "strip", z.ZodTypeAny, {
-        pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
+        pdf?: (args_0: string, args_1: string, ...args: unknown[]) => string;
     }, {
-        pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
+        pdf?: (args_0: string, args_1: string, ...args: unknown[]) => string;
     }>>;
     execute: z.ZodDefault<z.ZodBoolean>;
     nbConvertTemplate: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"lab">, z.ZodLiteral<"classic">, z.ZodLiteral<"reveal">, z.ZodString]>>;
     notebookOutputDir: z.ZodDefault<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    conversionTimeout: number;
-    execute: boolean;
-    nbConvertTemplate: string;
-    notebookOutputDir: string;
-    nbconvertPath?: string | undefined;
+    nbconvertPath?: string;
+    conversionTimeout?: number;
     customConversionFunction?: {
-        pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
-    } | undefined;
+        pdf?: (args_0: string, args_1: string, ...args: unknown[]) => string;
+    };
+    execute?: boolean;
+    nbConvertTemplate?: string;
+    notebookOutputDir?: string;
 }, {
-    nbconvertPath?: string | undefined;
-    conversionTimeout?: number | undefined;
+    nbconvertPath?: string;
+    conversionTimeout?: number;
     customConversionFunction?: {
-        pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
-    } | undefined;
-    execute?: boolean | undefined;
-    nbConvertTemplate?: string | undefined;
-    notebookOutputDir?: string | undefined;
+        pdf?: (args_0: string, args_1: string, ...args: unknown[]) => string;
+    };
+    execute?: boolean;
+    nbConvertTemplate?: string;
+    notebookOutputDir?: string;
 }>;
 export declare const nbConvertConfigSchemaOutput: ZodOutputSchema<typeof nbConvertConfigSchema>;
-//# sourceMappingURL=nbconvert.d.ts.map

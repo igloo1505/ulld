@@ -27,9 +27,9 @@ export declare const noteDetailsReturn: z.ZodObject<{
 export declare const unifiedMdxParserParamSchema: z.ZodObject<{
     content: z.ZodString;
     docTypeData: z.ZodDefault<z.ZodUnion<[z.ZodObject<{
+        url: z.ZodString;
         id: z.ZodString;
         label: z.ZodOptional<z.ZodString>;
-        url: z.ZodString;
         keywords: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
         icon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         UI: z.ZodOptional<import("@ulld/configschema/types").ZodOutputSchema<z.ZodDefault<z.ZodObject<{
@@ -109,8 +109,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         inSidebar: z.ZodOptional<z.ZodBoolean>;
         inNavbar: z.ZodOptional<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
-        id: string;
         url: string;
+        id: string;
         docType: string;
         label?: string | undefined;
         keywords?: string[] | undefined;
@@ -139,8 +139,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         inSidebar?: boolean | undefined;
         inNavbar?: boolean | undefined;
     }, {
-        id: string;
         url: string;
+        id: string;
         docType: string;
         label?: string | undefined;
         keywords?: string[] | undefined;
@@ -192,9 +192,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             noMax: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
             expand: z.ZodOptional<z.ZodDefault<z.ZodOptional<z.ZodNullable<z.ZodBoolean>>>>;
         }, "strip", z.ZodTypeAny, {
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -202,9 +202,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             headingCenter?: boolean | null | undefined;
             noMax?: boolean | null | undefined;
         }, {
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -213,10 +213,10 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             noMax?: boolean | null | undefined;
         }>>>;
     }, "strip", z.ZodTypeAny, {
+        tags?: string[] | undefined;
         id?: string | null | undefined;
         summary?: string | null | undefined;
         title?: string | null | undefined;
-        tags?: string[] | undefined;
         topics?: string[] | undefined;
         subjects?: string[] | undefined;
         sequentialKey?: string | null | undefined;
@@ -225,9 +225,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -236,10 +236,10 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
             noMax?: boolean | null | undefined;
         } | undefined;
     }, {
+        tags?: string | string[] | undefined;
         id?: string | null | undefined;
         summary?: string | null | undefined;
         title?: string | null | undefined;
-        tags?: string | string[] | undefined;
         topics?: string | string[] | undefined;
         subjects?: string | string[] | undefined;
         sequentialKey?: string | null | undefined;
@@ -248,9 +248,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -1173,8 +1173,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 };
             } | undefined;
             fs?: string | undefined;
-            id?: string | undefined;
             url?: string | undefined;
+            id?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
@@ -1203,8 +1203,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 };
             } | undefined;
             fs?: string | undefined;
-            id?: string | undefined;
             url?: string | undefined;
+            id?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
@@ -1430,8 +1430,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                 } | undefined;
             }>>>>;
             fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-            id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
             url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
+            id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
             docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
             filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
             matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
@@ -1538,8 +1538,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     };
                 };
             } | undefined;
-            id?: string | undefined;
             url?: string | undefined;
+            id?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
@@ -1568,8 +1568,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     };
                 };
             } | undefined;
-            id?: string | undefined;
             url?: string | undefined;
+            id?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
@@ -1601,8 +1601,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     };
                 };
             } | undefined;
-            id?: string | undefined;
             url?: string | undefined;
+            id?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
@@ -1854,8 +1854,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     };
                 };
             } | undefined;
-            id?: string | undefined;
             url?: string | undefined;
+            id?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
@@ -2118,10 +2118,10 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
     }>>;
 }, "strip", z.ZodTypeAny, {
     data: {
+        tags?: string[] | undefined;
         id?: string | null | undefined;
         summary?: string | null | undefined;
         title?: string | null | undefined;
-        tags?: string[] | undefined;
         topics?: string[] | undefined;
         subjects?: string[] | undefined;
         sequentialKey?: string | null | undefined;
@@ -2130,9 +2130,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -2143,8 +2143,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
     };
     content: string;
     docTypeData: {
-        id: string;
         url: string;
+        id: string;
         docType: string;
         label?: string | undefined;
         keywords?: string[] | undefined;
@@ -2191,8 +2191,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     };
                 };
             } | undefined;
-            id?: string | undefined;
             url?: string | undefined;
+            id?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
@@ -2439,10 +2439,10 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
     } | undefined;
 }, {
     data: {
+        tags?: string | string[] | undefined;
         id?: string | null | undefined;
         summary?: string | null | undefined;
         title?: string | null | undefined;
-        tags?: string | string[] | undefined;
         topics?: string | string[] | undefined;
         subjects?: string | string[] | undefined;
         sequentialKey?: string | null | undefined;
@@ -2451,9 +2451,9 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         updated?: string | null | undefined;
         sequential?: number | null | undefined;
         tableStyles?: {
+            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             expand?: boolean | null | undefined;
             text?: "base" | "lg" | "xl" | "small" | null | undefined;
-            math?: "base" | "lg" | "xl" | "small" | null | undefined;
             float?: "right" | "left" | null | undefined;
             fullWidth?: boolean | null | undefined;
             tableCenter?: boolean | null | undefined;
@@ -2481,8 +2481,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
                     };
                 };
             } | undefined;
-            id?: string | undefined;
             url?: string | undefined;
+            id?: string | undefined;
             docType?: string | undefined;
             filePathPattern?: string | undefined;
             matchWeight?: number | undefined;
@@ -2718,8 +2718,8 @@ export declare const unifiedMdxParserParamSchema: z.ZodObject<{
         }[] | undefined;
     };
     docTypeData?: {
-        id: string;
         url: string;
+        id: string;
         docType: string;
         label?: string | undefined;
         keywords?: string[] | undefined;

@@ -76,8 +76,8 @@ export declare const appConfigOutputSchema: z.ZodObject<{
             } | undefined;
         }>>>;
         fs: z.ZodEffects<z.ZodString, string, string>;
-        id: z.ZodOptional<z.ZodString>;
         url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
+        id: z.ZodOptional<z.ZodString>;
         docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
         filePathPattern: z.ZodOptional<z.ZodString>;
         matchWeight: z.ZodDefault<z.ZodNumber>;
@@ -183,8 +183,8 @@ export declare const appConfigOutputSchema: z.ZodObject<{
             };
         };
         fs: string;
-        id: string;
         url: string;
+        id: string;
         docType: string;
         matchWeight: number;
         urlQuery: Record<string, string | number | string[] | number[]>;
@@ -213,8 +213,8 @@ export declare const appConfigOutputSchema: z.ZodObject<{
             };
         };
         fs: string;
-        id: string;
         url: string;
+        id: string;
         docType: string;
         matchWeight: number;
         urlQuery: Record<string, string | number | string[] | number[]>;
@@ -1380,8 +1380,8 @@ export declare const appConfigOutputSchema: z.ZodObject<{
             };
         };
         fs: string;
-        id: string;
         url: string;
+        id: string;
         docType: string;
         matchWeight: number;
         urlQuery: Record<string, string | number | string[] | number[]>;
@@ -1633,8 +1633,8 @@ export declare const appConfigOutputSchema: z.ZodObject<{
             };
         };
         fs: string;
-        id: string;
         url: string;
+        id: string;
         docType: string;
         matchWeight: number;
         urlQuery: Record<string, string | number | string[] | number[]>;

@@ -67,12 +67,12 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
             kanbanId?: number | null | undefined;
         }, string>]>, "many">>;
     }>, "strip", z.ZodTypeAny, {
-        id: number;
-        label: string;
         tags: {
             value: string;
             kanbanId?: number | null | undefined;
         }[];
+        id: number;
+        label: string;
         createdAt: Date;
         lastUpdate: Date;
         topics: {
@@ -129,11 +129,11 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
         kanbanId?: number | null | undefined;
     }, string>]>, "many">>;
 }>, "strip", z.ZodTypeAny, {
-    id: number;
     tags: {
         value: string;
         kanbanId?: number | null | undefined;
     }[];
+    id: number;
     status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
     createdAt: Date;
     topics: {
@@ -143,12 +143,12 @@ export declare const todoTaskZodObject: z.ZodObject<z.objectUtil.extendShape<{
         value: string;
     }[];
     ToDoList: {
-        id: number;
-        label: string;
         tags: {
             value: string;
             kanbanId?: number | null | undefined;
         }[];
+        id: number;
+        label: string;
         createdAt: Date;
         lastUpdate: Date;
         topics: {

@@ -1,11 +1,11 @@
 import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
 import { FileManager } from "../baseClasses/fileManager.js";
-import buildData from "@ulld/utilities/buildStaticData.json" with { type: "json" };
+import { getInternalPackagesToTranspile } from "@ulld/utilities/internalDataHelpers";
 export class BuildStaticData {
     paths;
     build;
     settingPageData = [];
-    transpilePackages = buildData.internalPackageNames;
+    transpilePackages = getInternalPackagesToTranspile();
     hasSet = {
         settingsData: false
     };

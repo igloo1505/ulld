@@ -5,7 +5,6 @@ export declare const componentDocQueryObjectToUrl: (query: ComponentDocsQueryPar
 export declare const docItemToComponentDocsFilePath: (item: BuildStaticDataOutput["componentDocs"][number], full?: boolean) => string;
 export declare const getComponentDocsContentFromItem: (item: BuildStaticDataOutput["componentDocs"][number], full?: boolean) => Promise<string | undefined>;
 export declare const getItemsByQuery: (buildData: BuildStaticDataOutput, query: ComponentDocsQueryParams) => {
-    tags: string[];
     pluginName: string;
     componentName: string;
     embeddableSyntax: string[];
@@ -17,11 +16,11 @@ export declare const getItemsByQuery: (buildData: BuildStaticDataOutput, query: 
         short?: string | undefined;
         full?: string | undefined;
     };
+    tags: string[];
     componentId: string;
 }[];
 export declare const getPluginDocContentByIds: (buildData: BuildStaticDataOutput, pluginName: string, componentName: string, full?: boolean, permitOppositeOfFullIfNotFound?: boolean) => Promise<{
     item: {
-        tags: string[];
         pluginName: string;
         componentName: string;
         embeddableSyntax: string[];
@@ -33,6 +32,7 @@ export declare const getPluginDocContentByIds: (buildData: BuildStaticDataOutput
             short?: string | undefined;
             full?: string | undefined;
         };
+        tags: string[];
         componentId: string;
     };
     content: string | undefined;

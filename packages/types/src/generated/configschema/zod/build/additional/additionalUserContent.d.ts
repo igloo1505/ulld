@@ -5,13 +5,12 @@ export declare const additionalUserContent: z.ZodDefault<z.ZodObject<{
     favicon: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     logo: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
 }, "strip", z.ZodTypeAny, {
-    css?: string | undefined;
-    logo?: string | undefined;
-    favicon?: string | undefined;
+    css?: string;
+    logo?: string;
+    favicon?: string;
 }, {
-    css?: string | undefined;
-    logo?: string | undefined;
-    favicon?: string | undefined;
+    css?: string;
+    logo?: string;
+    favicon?: string;
 }>>;
 export declare const additionalUserContentOutput: ZodOutputSchema<typeof additionalUserContent>;
-//# sourceMappingURL=additionalUserContent.d.ts.map

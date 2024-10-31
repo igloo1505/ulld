@@ -68,8 +68,8 @@ export declare const internalDocumentTypeConfigSchema: z.ZodObject<{
         } | undefined;
     }>>>;
     fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-    id: z.ZodOptional<z.ZodString>;
     url: z.ZodEffects<z.ZodString, string, string>;
+    id: z.ZodOptional<z.ZodString>;
     docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     filePathPattern: z.ZodOptional<z.ZodString>;
     matchWeight: z.ZodDefault<z.ZodNumber>;

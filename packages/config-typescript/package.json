@@ -1,25 +1,27 @@
 {
-  "name": "@ulld/typescript-config",
-  "version": "0.0.116",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "src",
-    "react-app.json",
-    "docs.json",
-    "nextjs.json",
-    "remix.json",
-    "rollup.json",
-    "react-library.json",
-    "base.json",
-    "generateTypes.json",
-    "vite.json",
-    "targetApp.json"
-  ],
-  "peerDependencies": {
-    "@ulld/types": "workspace:*"
-  },
-  "license": "MIT"
+    "name": "@ulld/typescript-config",
+    "version": "0.0.116",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "src",
+        "react-app.json",
+        "docs.json",
+        "nextjs.json",
+        "remix.json",
+        "rollup.json",
+        "react-library.json",
+        "base.json",
+        "generateTypes.json",
+        "vite.json",
+        "targetApp.json"
+    ],
+    "peerDependencies": {
+        "@ulld/types": "workspace:*"
+    },
+    "license": "MIT",
+    "devDependencies": {},
+    "dependencies": {}
 }

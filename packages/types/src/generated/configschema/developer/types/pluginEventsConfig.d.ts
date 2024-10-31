@@ -8,4 +8,3 @@ export type PluginEventsConfig = {
     /** The package.json export of a function that will be used to restore data from a previous backup. The argument will be an optional object of an identical type to what was stored using the onBackup event. */
     onRestore?: string;
 };
-//# sourceMappingURL=pluginEventsConfig.d.ts.map

@@ -143,7 +143,6 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
     }>, "many">>;
     added: z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodDate, z.ZodString]>>>, Date, string | Date | null | undefined>;
 }, "strip", z.ZodTypeAny, {
-    id: string;
     tags: {
         value: string;
         kanbanId?: number | null | undefined;
@@ -157,6 +156,7 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
         createdAt: Date;
         lastUpdate: Date;
     }[];
+    id: string;
     lastAccess: Date;
     createdAt: Date;
     BibId: number;
@@ -176,16 +176,16 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
     }[];
     added: Date;
     number?: string | null | undefined;
-    note?: string | null | undefined;
-    abstract?: string | null | undefined;
-    type?: string | null | undefined;
-    title?: string | null | undefined;
+    journal?: string | null | undefined;
+    editor?: string | null | undefined;
     copyright?: string | null | undefined;
     school?: string | null | undefined;
+    type?: string | null | undefined;
     volume?: string | null | undefined;
-    journal?: string | null | undefined;
+    note?: string | null | undefined;
+    abstract?: string | null | undefined;
     url?: string | null | undefined;
-    editor?: string | null | undefined;
+    title?: string | null | undefined;
     Bib?: {
         id: number;
         entries: any[];
@@ -222,18 +222,18 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
 }, {
     id: string;
     number?: string | null | undefined;
-    note?: string | null | undefined;
-    abstract?: string | null | undefined;
-    type?: string | null | undefined;
-    title?: string | null | undefined;
+    journal?: string | null | undefined;
+    editor?: string | null | undefined;
     copyright?: string | null | undefined;
     school?: string | null | undefined;
     tags?: (string | {
         value: string;
         kanbanId?: number | null | undefined;
     })[] | undefined;
+    type?: string | null | undefined;
     volume?: string | null | undefined;
-    journal?: string | null | undefined;
+    note?: string | null | undefined;
+    abstract?: string | null | undefined;
     readingList?: {
         name: string;
         description: string | null;
@@ -244,7 +244,7 @@ declare const bibEntryPropsSchemaInner: z.ZodObject<{
         lastUpdate?: string | Date | null | undefined;
     }[] | undefined;
     url?: string | null | undefined;
-    editor?: string | null | undefined;
+    title?: string | null | undefined;
     lastAccess?: string | Date | null | undefined;
     createdAt?: string | Date | null | undefined;
     Bib?: {
@@ -691,7 +691,6 @@ export declare const bibEntryPropsSchema: z.ZodEffects<z.ZodObject<{
     }>, "many">>;
     added: z.ZodEffects<z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodString, z.ZodDate, z.ZodString]>>>, Date, string | Date | null | undefined>;
 }, z.ZodString, "strip">>, Omit<{
-    id: string;
     tags: {
         value: string;
         kanbanId?: number | null | undefined;
@@ -705,6 +704,7 @@ export declare const bibEntryPropsSchema: z.ZodEffects<z.ZodObject<{
         createdAt: Date;
         lastUpdate: Date;
     }[];
+    id: string;
     lastAccess: Date;
     createdAt: Date;
     BibId: number;
@@ -724,16 +724,16 @@ export declare const bibEntryPropsSchema: z.ZodEffects<z.ZodObject<{
     }[];
     added: Date;
     number?: string | null | undefined;
-    note?: string | null | undefined;
-    abstract?: string | null | undefined;
-    type?: string | null | undefined;
-    title?: string | null | undefined;
+    journal?: string | null | undefined;
+    editor?: string | null | undefined;
     copyright?: string | null | undefined;
     school?: string | null | undefined;
+    type?: string | null | undefined;
     volume?: string | null | undefined;
-    journal?: string | null | undefined;
+    note?: string | null | undefined;
+    abstract?: string | null | undefined;
     url?: string | null | undefined;
-    editor?: string | null | undefined;
+    title?: string | null | undefined;
     Bib?: {
         id: number;
         entries: any[];

@@ -1,7 +1,13 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
-  "globalEnv": [".env.local", "ENABLE_EXPERIMENTAL_COREPACK=1"],
+    "ui": "stream",
+  "globalDependencies": [
+      "**/.env.*local"
+  ],
+  "globalEnv": [
+      ".env.local",
+      "ENABLE_EXPERIMENTAL_COREPACK=1",
+      "ULLD_DEV_ROOT"
+  ],
   "tasks": {
     "prepareWeb": {
       "env": [".env.local"]

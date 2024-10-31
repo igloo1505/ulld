@@ -1,22 +1,26 @@
 {
-    "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
-    "extends": "@ulld/typescript-config/generateTypes.json",
     "exclude": [
         "node_modules",
         "dist",
         ".turbo",
         "src/**/*.test.ts",
         "jest**",
-         "src/__scripts__/**"
+         "src/__scripts__/**",
+         "../types/"
     ],
     "include": [
         "src/**/*.ts",
         "src/**/*.tsx"
     ],
     "compilerOptions": {
+        "noEmitOnError": false,
+        "declaration": true,
         "declarationDir": "../types/src/generated/configschema",
-        "outDir": "dist",
+        "emitDeclarationOnly": true,
         "moduleResolution": "Bundler",
+        "skipLibCheck": true,
+        "jsx": "react-jsx",
+        "module": "ESNext",
         "baseUrl": ".",
         "rootDir": "src"
     }

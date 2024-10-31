@@ -3,17 +3,17 @@ export declare const embeddableConfigSchema: z.ZodEffects<z.ZodObject<{
     regexToInclude: z.ZodString;
     label: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    regexToInclude: string;
-    label?: string | undefined;
+    label?: string;
+    regexToInclude?: string;
 }, {
-    regexToInclude: string;
-    label?: string | undefined;
+    label?: string;
+    regexToInclude?: string;
 }>, {
     label: string;
-    regexToInclude: string;
+    regexToInclude?: string;
 }, {
-    regexToInclude: string;
-    label?: string | undefined;
+    label?: string;
+    regexToInclude?: string;
 }>;
 export declare const componentConfigSchema: z.ZodObject<{
     componentName: z.ZodEffects<z.ZodString, string, string>;
@@ -24,75 +24,75 @@ export declare const componentConfigSchema: z.ZodObject<{
         regexToInclude: z.ZodString;
         label: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        regexToInclude: string;
-        label?: string | undefined;
+        label?: string;
+        regexToInclude?: string;
     }, {
-        regexToInclude: string;
-        label?: string | undefined;
+        label?: string;
+        regexToInclude?: string;
     }>, {
         label: string;
-        regexToInclude: string;
+        regexToInclude?: string;
     }, {
-        regexToInclude: string;
-        label?: string | undefined;
+        label?: string;
+        regexToInclude?: string;
     }>, "many">, z.ZodEffects<z.ZodObject<{
         regexToInclude: z.ZodString;
         label: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        regexToInclude: string;
-        label?: string | undefined;
+        label?: string;
+        regexToInclude?: string;
     }, {
-        regexToInclude: string;
-        label?: string | undefined;
+        label?: string;
+        regexToInclude?: string;
     }>, {
         label: string;
-        regexToInclude: string;
+        regexToInclude?: string;
     }, {
-        regexToInclude: string;
-        label?: string | undefined;
+        label?: string;
+        regexToInclude?: string;
     }>]>>, {
         label: string;
-        regexToInclude: string;
-    }[] | undefined, {
-        regexToInclude: string;
-        label?: string | undefined;
+        regexToInclude?: string;
+    }[], {
+        label?: string;
+        regexToInclude?: string;
     } | {
-        regexToInclude: string;
-        label?: string | undefined;
-    }[] | undefined>;
+        label?: string;
+        regexToInclude?: string;
+    }[]>;
     exportedPropsName: z.ZodOptional<z.ZodString>;
     docsExport: z.ZodOptional<z.ZodString>;
     fullDocsExport: z.ZodOptional<z.ZodString>;
     componentId: z.ZodDefault<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    tags: string[];
-    componentName: string;
-    componentId: string;
-    export: string;
-    slot?: string | undefined;
+    tags?: string[];
+    componentName?: string;
+    componentId?: string;
+    slot?: string;
+    export?: string;
     embeddable?: {
         label: string;
-        regexToInclude: string;
-    }[] | undefined;
-    exportedPropsName?: string | undefined;
-    docsExport?: string | undefined;
-    fullDocsExport?: string | undefined;
+        regexToInclude?: string;
+    }[];
+    exportedPropsName?: string;
+    docsExport?: string;
+    fullDocsExport?: string;
 }, {
-    componentName: string;
-    export: string;
-    tags?: string[] | undefined;
-    componentId?: string | undefined;
-    slot?: string | undefined;
+    tags?: string[];
+    componentName?: string;
+    componentId?: string;
+    slot?: string;
+    export?: string;
     embeddable?: {
-        regexToInclude: string;
-        label?: string | undefined;
+        label?: string;
+        regexToInclude?: string;
     } | {
-        regexToInclude: string;
-        label?: string | undefined;
-    }[] | undefined;
-    exportedPropsName?: string | undefined;
-    docsExport?: string | undefined;
-    fullDocsExport?: string | undefined;
+        label?: string;
+        regexToInclude?: string;
+    }[];
+    exportedPropsName?: string;
+    docsExport?: string;
+    fullDocsExport?: string;
 }>;
 export type EmbeddableConfigSchema = z.infer<typeof embeddableConfigSchema>;
 export type BaseAppEmbeddableConfig = {
@@ -101,4 +101,3 @@ export type BaseAppEmbeddableConfig = {
     data: EmbeddableConfigSchema | EmbeddableConfigSchema[];
 };
 export type ComponentConfigSchema = z.input<typeof componentConfigSchema>;
-//# sourceMappingURL=componentSchema.d.ts.map

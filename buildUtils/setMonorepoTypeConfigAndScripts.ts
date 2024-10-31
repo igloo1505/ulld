@@ -30,8 +30,8 @@ const p = new PackageManager();
 for (const k of p.packages) {
     if (k.content.scripts) {
         if (appData.includeInTypes.includes(k.name as any)) {
-            k.content.scripts.gatherTypes =
-                "tsc --project ./tsconfigTypes.json --emitDeclarationOnly";
+            // k.content.scripts.gatherTypes =
+            //     "tsc --project ./tsconfigTypes.json --emitDeclarationOnly";
             let targetPath = path.join(path.dirname(k.path), "tsconfigTypes.json");
             if (!fs.existsSync(targetPath)) {
                 fs.writeFileSync(targetPath, template(k.name));

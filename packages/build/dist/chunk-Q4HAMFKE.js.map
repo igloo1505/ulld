@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/__test__/testData.ts"],"sourcesContent":["export const buildTestData = {\n    targetDirectory: \"/Users/bigsexy/Desktop/current/ulld/apps/build-sandbox/\"\n}\n"],"mappings":";;;;;AAAA;AAAO,IAAM,gBAAgB;AAAA,EACzB,iBAAiB;AACrB;","names":[]}

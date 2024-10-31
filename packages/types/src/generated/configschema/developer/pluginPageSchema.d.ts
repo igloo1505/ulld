@@ -1,18 +1,17 @@
 import { z } from 'zod';
 export declare const pluginAdditionalPageSchema: z.ZodObject<{
-    targetUrl: z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>;
+    targetUrl: z.ZodEffects<z.ZodOptional<z.ZodString>, string, string>;
     slot: z.ZodOptional<z.ZodString>;
     export: z.ZodEffects<z.ZodString, string, string>;
     exportsPageProps: z.ZodDefault<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
-    export: string;
-    exportsPageProps: boolean;
-    slot?: string | undefined;
-    targetUrl?: string | undefined;
+    slot?: string;
+    export?: string;
+    targetUrl?: string;
+    exportsPageProps?: boolean;
 }, {
-    export: string;
-    slot?: string | undefined;
-    targetUrl?: string | undefined;
-    exportsPageProps?: boolean | undefined;
+    slot?: string;
+    export?: string;
+    targetUrl?: string;
+    exportsPageProps?: boolean;
 }>;
-//# sourceMappingURL=pluginPageSchema.d.ts.map

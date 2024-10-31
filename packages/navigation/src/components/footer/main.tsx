@@ -4,9 +4,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import React, { useMemo } from "react";
 import { DynamicIcon } from "@ulld/icons";
+import { cn } from "@ulld/utilities/cn";
 import type { FooterLogoLink } from "../../types";
 import type { NavigationFormSettingSchema } from "../../pages/settingPage/form/schema";
 import FooterCategory from "./footerCategory";
+import FooterSectionsGroup from "./footerSectionsGroup";
 
 const footerLogoLinks: FooterLogoLink[] = [];
 
@@ -21,13 +23,10 @@ type GroupedQuickLinks = Record<
     { label: string; items: QuickLinkType[] }
 >;
 
-const getGroupedQuickLinks = (
+const getGroupedFooterLinks = (
     footerLinks?: NavigationFormSettingSchema["footerSections"],
 ): GroupedQuickLinks => {
-    const groupedLinks: Record<
-        string,
-        { label: string; items: QuickLinkType[] }
-    > = {};
+    const groupedLinks: GroupedLinks = {};
     if(!footerLinks){
         return groupedLinks
     }
@@ -48,7 +47,7 @@ const getGroupedQuickLinks = (
 
 const Footer = ({ children, pluginSettings }: InternalFooterProps): ReactNode => {
 
-    const groupedQuickLinks = useMemo(() => getGroupedQuickLinks(pluginSettings?.footerSections), [pluginSettings?.footerSections]);
+    const groupedFooterLinks = useMemo(() => getGroupedFooterLinks(pluginSettings?.footerSections), [pluginSettings?.footerSections]);
 
     return (
         <footer
@@ -56,17 +55,17 @@ const Footer = ({ children, pluginSettings }: InternalFooterProps): ReactNode =>
             id="footer-panel"
         >
             <div className="container p-6 mx-auto">
-                <div className="lg:flex">
+                <div className="lg:flex lg:flex-row lg:gap-6">
                     <div className="w-full -mx-6 lg:w-2/5">
-                        <div className="px-6">
+                        <div className="px-6 w-fit">
                             <Link className="h-12 w-auto" href="/">
                                 {children}
                             </Link>
-                            <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
+                            <p className={cn("max-w-sm mt-2 text-gray-500 dark:text-gray-400", !pluginSettings?.quickLinks?.length && "visibility-[hidden]")}>
                                 {pluginSettings?.quickLinkLabel || "Quick Links"}
                             </p>
-                            <div className="flex mt-6 -mx-2">
-                                {footerLogoLinks
+                            <div className="flex mt-6 -mx-2 w-fit">
+                                {pluginSettings?.quickLinks?
                                     .slice(0, Math.min(3, footerLogoLinks.length))
                                     .map((l) => {
                                         return (
@@ -86,22 +85,10 @@ const Footer = ({ children, pluginSettings }: InternalFooterProps): ReactNode =>
                             </div>
                         </div>
                     </div>
-                    <div className="mt-6 lg:mt-0 lg:flex-1">
-                        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                            {Object.keys(groupedQuickLinks).map((k) => {
-                                return (
-                                    <FooterCategory
-                                        items={groupedQuickLinks[k].items}
-                                        key={`footer-cat-${groupedQuickLinks[k].label}`}
-                                        title={groupedQuickLinks[k].label}
-                                    />
-                                );
-                            })}
-                        </div>
-                    </div>
+                    <FooterSectionsGroup groupedLinks={groupedFooterLinks} />
                 </div>
                 <div>
-                    <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">{pluginSettings?.copyrightText || `© Uh Little Less Dum ${new Date().getFullYear()} - All rights reserved, but do your thang`}</p>
+                    <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">{pluginSettings?.copyrightText || `© Uh Little Less Dum ${new Date().getFullYear()} - All rights reserved, but do your thang`}</p>
                 </div>
             </div>
         </footer>

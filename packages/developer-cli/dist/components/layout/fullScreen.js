@@ -1,6 +1,6 @@
 import { Box } from 'ink';
 import React, { useEffect, useState } from 'react';
-const FullScreen = ({ children, applyHeight = true, }) => {
+const FullScreen = ({ children, applyHeight = true, ...props }) => {
     const [size, setSize] = useState({
         columns: process.stdout.columns,
         rows: process.stdout.rows,
@@ -19,7 +19,7 @@ const FullScreen = ({ children, applyHeight = true, }) => {
             process.stdout.write('\x1b[?1049l');
         };
     }, []);
-    return (React.createElement(Box, { width: size.columns, height: applyHeight ? size.rows : undefined }, children));
+    return (React.createElement(Box, { ...props, width: size.columns, height: applyHeight ? size.rows : undefined }, children));
 };
 FullScreen.displayName = 'FullScreen';
 export default FullScreen;

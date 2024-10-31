@@ -22,8 +22,13 @@ var footerSectionSchema = _zod.z.object({
   label: _zod.z.string().max(15),
   items: navigationLinkSchema.array().max(maxFooterSectionLinks).default([])
 });
+var iconField = _zod.z.enum(_validIconNameList.validIconNameList);
+var quickLinkSchema = _zod.z.object({
+  icon: iconField,
+  url: _zod.z.string()
+});
 var sidebarLinkSchema = _zod.z.object({
-  icon: _zod.z.enum(_validIconNameList.validIconNameList),
+  icon: iconField,
   label: _zod.z.string(),
   fieldType: _zod.z.literal("url").or(_zod.z.literal("action")).default("url"),
   value: _zod.z.string(),
@@ -42,7 +47,8 @@ var navigationFormSettingSchema = _zod.z.object({
   sidebarLinks: sidebarLinkSchema.array().default([]),
   navbarLinks: navbarLinkSchema.array().max(maxNavbarLinks).default([]),
   quickLinkLabel: _zod.z.string().default(defaultQuickLinkLabel),
-  copyrightText: _zod.z.string().default(defaultCopyrightText)
+  copyrightText: _zod.z.string().default(defaultCopyrightText),
+  quickLinks: quickLinkSchema.array().default([])
 });
 var navigationFormSchemaWithUtilities = navigationFormSettingSchema.merge(navigationFormUtilityFields);
 var defaultFormValues = {
@@ -50,6 +56,7 @@ var defaultFormValues = {
   footerSectionInput: "",
   sidebarLinks: [],
   navbarLinks: [],
+  quickLinks: [],
   quickLinkLabel: defaultQuickLinkLabel,
   copyrightText: defaultCopyrightText
 };
@@ -68,5 +75,6 @@ var defaultFormValues = {
 
 
 
-exports.actionLabelMap = actionLabelMap; exports.defaultCopyrightText = defaultCopyrightText; exports.defaultFormValues = defaultFormValues; exports.defaultQuickLinkLabel = defaultQuickLinkLabel; exports.footerSectionSchema = footerSectionSchema; exports.maxFooterSectionLinks = maxFooterSectionLinks; exports.maxFooterSections = maxFooterSections; exports.maxNavbarLinks = maxNavbarLinks; exports.maxSidebarLinks = maxSidebarLinks; exports.navbarLinkSchema = navbarLinkSchema; exports.navigationFormSchemaWithUtilities = navigationFormSchemaWithUtilities; exports.navigationFormSettingSchema = navigationFormSettingSchema; exports.navigationLinkSchema = navigationLinkSchema; exports.sidebarLinkSchema = sidebarLinkSchema;
+
+exports.actionLabelMap = actionLabelMap; exports.defaultCopyrightText = defaultCopyrightText; exports.defaultFormValues = defaultFormValues; exports.defaultQuickLinkLabel = defaultQuickLinkLabel; exports.footerSectionSchema = footerSectionSchema; exports.maxFooterSectionLinks = maxFooterSectionLinks; exports.maxFooterSections = maxFooterSections; exports.maxNavbarLinks = maxNavbarLinks; exports.maxSidebarLinks = maxSidebarLinks; exports.navbarLinkSchema = navbarLinkSchema; exports.navigationFormSchemaWithUtilities = navigationFormSchemaWithUtilities; exports.navigationFormSettingSchema = navigationFormSettingSchema; exports.navigationLinkSchema = navigationLinkSchema; exports.quickLinkSchema = quickLinkSchema; exports.sidebarLinkSchema = sidebarLinkSchema;
 //# sourceMappingURL=navigation.cjs.map

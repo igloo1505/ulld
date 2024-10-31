@@ -260,11 +260,11 @@ export declare const _developerConfigSchema: z.ZodObject<{
         pluginName?: string | undefined;
         category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }[] | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
     tailwind?: {} | undefined;
     parsers?: {
         mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
     styles?: {
         mdx?: string | undefined;
         root?: string | undefined;
@@ -541,11 +541,11 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         pluginName?: string | undefined;
         category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }[] | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
     tailwind?: {} | undefined;
     parsers?: {
         mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
     styles?: {
         mdx?: string | undefined;
         root?: string | undefined;
@@ -652,11 +652,11 @@ export declare const developerConfigSchema: z.ZodEffects<z.ZodObject<{
         pluginName?: string | undefined;
         category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }[] | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
     tailwind?: {} | undefined;
     parsers?: {
         mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
     styles?: {
         mdx?: string | undefined;
         root?: string | undefined;
@@ -936,11 +936,11 @@ export declare const internalBuildDeveloperConfigSchema: z.ZodObject<z.objectUti
         pluginName?: string | undefined;
         category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
     }[] | undefined;
-    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
     tailwind?: {} | undefined;
     parsers?: {
         mdx?: import("./types/parserConfig.js").ParserConfig | undefined;
     } | undefined;
+    slot?: "navigation" | "bibliography" | "math" | "snippets" | "dashboard" | "taskManager" | "UI" | "pdf" | "editor" | "form" | "commandPalette" | undefined;
     styles?: {
         mdx?: string | undefined;
         root?: string | undefined;

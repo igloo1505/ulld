@@ -31,7 +31,8 @@
         "build": {
             "dependencies": [
                 "compile"
-            ]
+            ],
+            "clean": "if-file-deleted"
         },
         "compile": {
             "command": "pnpm tsc",
@@ -43,7 +44,7 @@
                 "dist/**",
                 "*.tsbuildinfo"
             ],
-            "clean": "if-file-deleted"
+            "clean": false
         }
     },
     "exports": {

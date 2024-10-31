@@ -4,17 +4,17 @@ export declare const jupyterCellWrapperField: z.ZodEffects<z.ZodUnion<[z.ZodStri
     prefix: z.ZodString;
     suffix: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    prefix: string;
-    suffix: string;
+    prefix?: string;
+    suffix?: string;
 }, {
-    prefix: string;
-    suffix: string;
+    prefix?: string;
+    suffix?: string;
 }>]>, {
-    prefix: string;
-    suffix: string;
+    prefix?: string;
+    suffix?: string;
 }, string | {
-    prefix: string;
-    suffix: string;
+    prefix?: string;
+    suffix?: string;
 }>;
 export declare const jupyterConfigSchema: z.ZodObject<{
     execute: z.ZodDefault<z.ZodBoolean>;
@@ -31,26 +31,26 @@ export declare const jupyterConfigSchema: z.ZodObject<{
             baseUrl: z.ZodOptional<z.ZodString>;
             wsUrl: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            baseUrl?: string | undefined;
-            wsUrl?: string | undefined;
+            baseUrl?: string;
+            wsUrl?: string;
         }, {
-            baseUrl?: string | undefined;
-            wsUrl?: string | undefined;
+            baseUrl?: string;
+            wsUrl?: string;
         }>>;
     }, "strip", z.ZodTypeAny, {
-        collaborative: boolean;
-        lite: boolean;
+        collaborative?: boolean;
+        lite?: boolean;
         serverUrls?: {
-            baseUrl?: string | undefined;
-            wsUrl?: string | undefined;
-        } | undefined;
+            baseUrl?: string;
+            wsUrl?: string;
+        };
     }, {
-        collaborative?: boolean | undefined;
-        lite?: boolean | undefined;
+        collaborative?: boolean;
+        lite?: boolean;
         serverUrls?: {
-            baseUrl?: string | undefined;
-            wsUrl?: string | undefined;
-        } | undefined;
+            baseUrl?: string;
+            wsUrl?: string;
+        };
     }>>;
     nbConvert: z.ZodDefault<z.ZodObject<{
         nbconvertPath: z.ZodOptional<z.ZodString>;
@@ -58,31 +58,31 @@ export declare const jupyterConfigSchema: z.ZodObject<{
         customConversionFunction: z.ZodOptional<z.ZodObject<{
             pdf: z.ZodOptional<z.ZodFunction<z.ZodTuple<[z.ZodString, z.ZodString], z.ZodUnknown>, z.ZodString>>;
         }, "strip", z.ZodTypeAny, {
-            pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
+            pdf?: (args_0: string, args_1: string, ...args: unknown[]) => string;
         }, {
-            pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
+            pdf?: (args_0: string, args_1: string, ...args: unknown[]) => string;
         }>>;
         execute: z.ZodDefault<z.ZodBoolean>;
         nbConvertTemplate: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"lab">, z.ZodLiteral<"classic">, z.ZodLiteral<"reveal">, z.ZodString]>>;
         notebookOutputDir: z.ZodDefault<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        conversionTimeout: number;
-        execute: boolean;
-        nbConvertTemplate: string;
-        notebookOutputDir: string;
-        nbconvertPath?: string | undefined;
+        nbconvertPath?: string;
+        conversionTimeout?: number;
         customConversionFunction?: {
-            pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
-        } | undefined;
+            pdf?: (args_0: string, args_1: string, ...args: unknown[]) => string;
+        };
+        execute?: boolean;
+        nbConvertTemplate?: string;
+        notebookOutputDir?: string;
     }, {
-        nbconvertPath?: string | undefined;
-        conversionTimeout?: number | undefined;
+        nbconvertPath?: string;
+        conversionTimeout?: number;
         customConversionFunction?: {
-            pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
-        } | undefined;
-        execute?: boolean | undefined;
-        nbConvertTemplate?: string | undefined;
-        notebookOutputDir?: string | undefined;
+            pdf?: (args_0: string, args_1: string, ...args: unknown[]) => string;
+        };
+        execute?: boolean;
+        nbConvertTemplate?: string;
+        notebookOutputDir?: string;
     }>>;
     jupyterNotebookProps: z.ZodDefault<z.ZodObject<{
         cellMetadataPanel: z.ZodDefault<z.ZodBoolean>;
@@ -94,170 +94,169 @@ export declare const jupyterConfigSchema: z.ZodObject<{
             name: z.ZodString;
             version: z.ZodString;
         }, "strip", z.ZodTypeAny, {
-            name: string;
-            module: string | Record<string, string>;
-            version: string;
+            name?: string;
+            module?: string | Record<string, string>;
+            version?: string;
         }, {
-            name: string;
-            module: string | Record<string, string>;
-            version: string;
+            name?: string;
+            module?: string | Record<string, string>;
+            version?: string;
         }>, "many">>;
         externalIPyWidgets: z.ZodDefault<z.ZodArray<z.ZodObject<Omit<{
             module: z.ZodUnion<[z.ZodString, z.ZodRecord<z.ZodString, z.ZodString>]>;
             name: z.ZodString;
             version: z.ZodString;
         }, "module">, "strip", z.ZodTypeAny, {
-            name: string;
-            version: string;
+            name?: string;
+            version?: string;
         }, {
-            name: string;
-            version: string;
+            name?: string;
+            version?: string;
         }>, "many">>;
         nbgrader: z.ZodDefault<z.ZodBoolean>;
         readOnly: z.ZodDefault<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
-        readOnly: boolean;
-        cellMetadataPanel: boolean;
-        cellSidebarMargin: number;
-        bundledIPyWidgets: {
-            name: string;
-            module: string | Record<string, string>;
-            version: string;
-        }[];
-        externalIPyWidgets: {
-            name: string;
-            version: string;
-        }[];
-        nbgrader: boolean;
-        height?: string | undefined;
-        maxHeight?: string | undefined;
-    }, {
-        height?: string | undefined;
-        readOnly?: boolean | undefined;
-        maxHeight?: string | undefined;
-        cellMetadataPanel?: boolean | undefined;
-        cellSidebarMargin?: number | undefined;
+        height?: string;
+        readOnly?: boolean;
+        maxHeight?: string;
+        cellMetadataPanel?: boolean;
+        cellSidebarMargin?: number;
         bundledIPyWidgets?: {
-            name: string;
-            module: string | Record<string, string>;
-            version: string;
-        }[] | undefined;
+            name?: string;
+            module?: string | Record<string, string>;
+            version?: string;
+        }[];
         externalIPyWidgets?: {
-            name: string;
-            version: string;
-        }[] | undefined;
-        nbgrader?: boolean | undefined;
+            name?: string;
+            version?: string;
+        }[];
+        nbgrader?: boolean;
+    }, {
+        height?: string;
+        readOnly?: boolean;
+        maxHeight?: string;
+        cellMetadataPanel?: boolean;
+        cellSidebarMargin?: number;
+        bundledIPyWidgets?: {
+            name?: string;
+            module?: string | Record<string, string>;
+            version?: string;
+        }[];
+        externalIPyWidgets?: {
+            name?: string;
+            version?: string;
+        }[];
+        nbgrader?: boolean;
     }>>;
     cellInputWrappers: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodObject<{
         prefix: z.ZodString;
         suffix: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        prefix: string;
-        suffix: string;
+        prefix?: string;
+        suffix?: string;
     }, {
-        prefix: string;
-        suffix: string;
+        prefix?: string;
+        suffix?: string;
     }>]>, {
-        prefix: string;
-        suffix: string;
+        prefix?: string;
+        suffix?: string;
     }, string | {
-        prefix: string;
-        suffix: string;
+        prefix?: string;
+        suffix?: string;
     }>>>;
 }, "strip", z.ZodTypeAny, {
-    execute: boolean;
-    environment: string;
-    syntaxHighlightTheme: string;
-    jupyterPort: number;
-    initiallyFoldCells: boolean;
-    kernel: string;
-    jupyterReactProps: {
-        collaborative: boolean;
-        lite: boolean;
-        serverUrls?: {
-            baseUrl?: string | undefined;
-            wsUrl?: string | undefined;
-        } | undefined;
-    };
-    nbConvert: {
-        conversionTimeout: number;
-        execute: boolean;
-        nbConvertTemplate: string;
-        notebookOutputDir: string;
-        nbconvertPath?: string | undefined;
-        customConversionFunction?: {
-            pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
-        } | undefined;
-    };
-    jupyterNotebookProps: {
-        readOnly: boolean;
-        cellMetadataPanel: boolean;
-        cellSidebarMargin: number;
-        bundledIPyWidgets: {
-            name: string;
-            module: string | Record<string, string>;
-            version: string;
-        }[];
-        externalIPyWidgets: {
-            name: string;
-            version: string;
-        }[];
-        nbgrader: boolean;
-        height?: string | undefined;
-        maxHeight?: string | undefined;
-    };
-    cellInputWrappers: Record<string, {
-        prefix: string;
-        suffix: string;
-    }>;
-    jupyterToken?: string | undefined;
-}, {
-    execute?: boolean | undefined;
-    environment?: string | undefined;
-    syntaxHighlightTheme?: string | undefined;
-    jupyterToken?: string | undefined;
-    jupyterPort?: number | undefined;
-    initiallyFoldCells?: boolean | undefined;
-    kernel?: string | undefined;
+    execute?: boolean;
+    environment?: string;
+    syntaxHighlightTheme?: string;
+    jupyterToken?: string;
+    jupyterPort?: number;
+    initiallyFoldCells?: boolean;
+    kernel?: string;
     jupyterReactProps?: {
-        collaborative?: boolean | undefined;
-        lite?: boolean | undefined;
+        collaborative?: boolean;
+        lite?: boolean;
         serverUrls?: {
-            baseUrl?: string | undefined;
-            wsUrl?: string | undefined;
-        } | undefined;
-    } | undefined;
+            baseUrl?: string;
+            wsUrl?: string;
+        };
+    };
     nbConvert?: {
-        nbconvertPath?: string | undefined;
-        conversionTimeout?: number | undefined;
+        nbconvertPath?: string;
+        conversionTimeout?: number;
         customConversionFunction?: {
-            pdf?: ((args_0: string, args_1: string, ...args: unknown[]) => string) | undefined;
-        } | undefined;
-        execute?: boolean | undefined;
-        nbConvertTemplate?: string | undefined;
-        notebookOutputDir?: string | undefined;
-    } | undefined;
+            pdf?: (args_0: string, args_1: string, ...args: unknown[]) => string;
+        };
+        execute?: boolean;
+        nbConvertTemplate?: string;
+        notebookOutputDir?: string;
+    };
     jupyterNotebookProps?: {
-        height?: string | undefined;
-        readOnly?: boolean | undefined;
-        maxHeight?: string | undefined;
-        cellMetadataPanel?: boolean | undefined;
-        cellSidebarMargin?: number | undefined;
+        height?: string;
+        readOnly?: boolean;
+        maxHeight?: string;
+        cellMetadataPanel?: boolean;
+        cellSidebarMargin?: number;
         bundledIPyWidgets?: {
-            name: string;
-            module: string | Record<string, string>;
-            version: string;
-        }[] | undefined;
+            name?: string;
+            module?: string | Record<string, string>;
+            version?: string;
+        }[];
         externalIPyWidgets?: {
-            name: string;
-            version: string;
-        }[] | undefined;
-        nbgrader?: boolean | undefined;
-    } | undefined;
+            name?: string;
+            version?: string;
+        }[];
+        nbgrader?: boolean;
+    };
+    cellInputWrappers?: Record<string, {
+        prefix?: string;
+        suffix?: string;
+    }>;
+}, {
+    execute?: boolean;
+    environment?: string;
+    syntaxHighlightTheme?: string;
+    jupyterToken?: string;
+    jupyterPort?: number;
+    initiallyFoldCells?: boolean;
+    kernel?: string;
+    jupyterReactProps?: {
+        collaborative?: boolean;
+        lite?: boolean;
+        serverUrls?: {
+            baseUrl?: string;
+            wsUrl?: string;
+        };
+    };
+    nbConvert?: {
+        nbconvertPath?: string;
+        conversionTimeout?: number;
+        customConversionFunction?: {
+            pdf?: (args_0: string, args_1: string, ...args: unknown[]) => string;
+        };
+        execute?: boolean;
+        nbConvertTemplate?: string;
+        notebookOutputDir?: string;
+    };
+    jupyterNotebookProps?: {
+        height?: string;
+        readOnly?: boolean;
+        maxHeight?: string;
+        cellMetadataPanel?: boolean;
+        cellSidebarMargin?: number;
+        bundledIPyWidgets?: {
+            name?: string;
+            module?: string | Record<string, string>;
+            version?: string;
+        }[];
+        externalIPyWidgets?: {
+            name?: string;
+            version?: string;
+        }[];
+        nbgrader?: boolean;
+    };
     cellInputWrappers?: Record<string, string | {
-        prefix: string;
-        suffix: string;
-    }> | undefined;
+        prefix?: string;
+        suffix?: string;
+    }>;
 }>;
 export declare const jupyterConfigSchemaOutput: ZodOutputSchema<typeof jupyterConfigSchema>;
-//# sourceMappingURL=main.d.ts.map

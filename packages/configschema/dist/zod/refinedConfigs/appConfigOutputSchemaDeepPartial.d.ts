@@ -104,8 +104,8 @@ export declare const appConfigOutputDeepPartialSchema: import("zod").ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        id?: string | undefined;
         url?: string | undefined;
+        id?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -134,8 +134,8 @@ export declare const appConfigOutputDeepPartialSchema: import("zod").ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        id?: string | undefined;
         url?: string | undefined;
+        id?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -1301,8 +1301,8 @@ export declare const appConfigOutputDeepPartialSchema: import("zod").ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        id?: string | undefined;
         url?: string | undefined;
+        id?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -1554,8 +1554,8 @@ export declare const appConfigOutputDeepPartialSchema: import("zod").ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        id?: string | undefined;
         url?: string | undefined;
+        id?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;

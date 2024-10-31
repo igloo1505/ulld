@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/moduletypes.d.ts","./src/monorepoutils.ts","./src/commands/clearnodemodules/index.ts","./src/commands/filtercommandbypackage/index.ts","./src/commands/setpackagemanager/index.ts","./src/commands/updatepackageversion/index.ts","./src/utilclasses/mdxfile.ts"],"version":"5.6.3"}

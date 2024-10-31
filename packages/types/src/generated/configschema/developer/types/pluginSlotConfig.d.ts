@@ -8,4 +8,3 @@ export type PluginSlotObject = {
 export type PluginSlotConfig = {
     [k in keyof typeof slots]?: string | string[] | PluginSlotObject | PluginSlotObject[];
 };
-//# sourceMappingURL=pluginSlotConfig.d.ts.map

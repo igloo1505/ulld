@@ -397,7 +397,6 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         }>, "many">>;
         added: import("zod").ZodEffects<import("zod").ZodOptional<import("zod").ZodNullable<import("zod").ZodUnion<[import("zod").ZodString, import("zod").ZodDate, import("zod").ZodString]>>>, Date, string | Date | null | undefined>;
     }, import("zod").ZodString, "strip">>, Omit<{
-        id: string;
         tags: {
             value: string;
             kanbanId?: number | null | undefined;
@@ -411,6 +410,7 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             createdAt: Date;
             lastUpdate: Date;
         }[];
+        id: string;
         lastAccess: Date;
         createdAt: Date;
         BibId: number;
@@ -430,16 +430,16 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
         }[];
         added: Date;
         number?: string | null | undefined;
-        note?: string | null | undefined;
-        abstract?: string | null | undefined;
-        type?: string | null | undefined;
-        title?: string | null | undefined;
+        journal?: string | null | undefined;
+        editor?: string | null | undefined;
         copyright?: string | null | undefined;
         school?: string | null | undefined;
+        type?: string | null | undefined;
         volume?: string | null | undefined;
-        journal?: string | null | undefined;
+        note?: string | null | undefined;
+        abstract?: string | null | undefined;
         url?: string | null | undefined;
-        editor?: string | null | undefined;
+        title?: string | null | undefined;
         Bib?: {
             id: number;
             entries: any[];
@@ -703,12 +703,12 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
                 kanbanId?: number | null | undefined;
             }, string>]>, "many">>;
         }>, "strip", import("zod").ZodTypeAny, {
-            id: number;
-            label: string;
             tags: {
                 value: string;
                 kanbanId?: number | null | undefined;
             }[];
+            id: number;
+            label: string;
             createdAt: Date;
             lastUpdate: Date;
             topics: {
@@ -765,11 +765,11 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             kanbanId?: number | null | undefined;
         }, string>]>, "many">>;
     }>, "strip", import("zod").ZodTypeAny, {
-        id: number;
         tags: {
             value: string;
             kanbanId?: number | null | undefined;
         }[];
+        id: number;
         status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         createdAt: Date;
         topics: {
@@ -779,12 +779,12 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             value: string;
         }[];
         ToDoList: {
-            id: number;
-            label: string;
             tags: {
                 value: string;
                 kanbanId?: number | null | undefined;
             }[];
+            id: number;
+            label: string;
             createdAt: Date;
             lastUpdate: Date;
             topics: {
@@ -884,11 +884,11 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
     firstSync: Date;
     noteType: string;
     toDo: {
-        id: number;
         tags: {
             value: string;
             kanbanId?: number | null | undefined;
         }[];
+        id: number;
         status: "ToDo" | "In_Progress" | "Backlog" | "Cancelled" | "Done" | "Future";
         createdAt: Date;
         topics: {
@@ -898,12 +898,12 @@ export declare const mdxNoteIntriguingValSummaryPropsSchema: import("zod").ZodOb
             value: string;
         }[];
         ToDoList: {
-            id: number;
-            label: string;
             tags: {
                 value: string;
                 kanbanId?: number | null | undefined;
             }[];
+            id: number;
+            label: string;
             createdAt: Date;
             lastUpdate: Date;
             topics: {

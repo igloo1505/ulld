@@ -19,7 +19,7 @@ const ignoreMixedSources: InternalAppName[] = [
 
 const getSourceType = (item: GetInternalPackageDataProps["pkg"]): Pick<InternalPackageItem, "sourceLocation" | "isTranspiled"> => {
     let sourceTypes: ("src" | "dist")[] = []
-    if(item.content.files.includes("src")){
+    if(item.content?.files?.includes("src")){
         sourceTypes.push("src")
     } else {
         sourceTypes.push("dist")

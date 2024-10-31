@@ -1,5 +1,4 @@
 import { z } from "zod";
-import type { ValidIconName } from "@ulld/icons";
 export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
     fsRoot: z.ZodString;
     navigationLinks: z.ZodEffects<z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -9,49 +8,45 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         pluginName: z.ZodOptional<z.ZodString>;
         category: z.ZodDefault<z.ZodUnion<[z.ZodLiteral<"math">, z.ZodLiteral<"snippets">, z.ZodLiteral<"code">, z.ZodLiteral<"AI">, z.ZodLiteral<"ML">, z.ZodLiteral<"writing">, z.ZodLiteral<"search">, z.ZodLiteral<"notebooks">, z.ZodLiteral<"database">, z.ZodLiteral<"work">, z.ZodLiteral<"school">, z.ZodLiteral<"organization">, z.ZodLiteral<"task-management">, z.ZodLiteral<"academic">, z.ZodLiteral<"research">, z.ZodLiteral<"project-planning">, z.ZodLiteral<"calendar">, z.ZodLiteral<"general">]>>;
     }, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
     }, {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
-    }>, "many">>, ({
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-    } | {
-        label: string;
-        href: string;
-        icon: ValidIconName;
-    })[], {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
-    }[] | undefined>;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }>, "many">>, {
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[], {
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[]>;
     settingPages: z.ZodDefault<z.ZodArray<z.ZodObject<{
         title: z.ZodOptional<z.ZodString>;
         subtitle: z.ZodOptional<z.ZodString>;
         href: z.ZodString;
         pluginName: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        href: string;
-        pluginName: string;
-        title?: string | undefined;
-        subtitle?: string | undefined;
+        href?: string;
+        pluginName?: string;
+        title?: string;
+        subtitle?: string;
     }, {
-        href: string;
-        pluginName: string;
-        title?: string | undefined;
-        subtitle?: string | undefined;
+        href?: string;
+        pluginName?: string;
+        title?: string;
+        subtitle?: string;
     }>, "many">>;
     componentDocs: z.ZodDefault<z.ZodArray<z.ZodObject<{
         pluginName: z.ZodString;
@@ -61,123 +56,119 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
             short: z.ZodOptional<z.ZodString>;
             full: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            short?: string | undefined;
-            full?: string | undefined;
+            short?: string;
+            full?: string;
         }, {
-            short?: string | undefined;
-            full?: string | undefined;
+            short?: string;
+            full?: string;
         }>;
         filePaths: z.ZodObject<{
             short: z.ZodOptional<z.ZodString>;
             full: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            short?: string | undefined;
-            full?: string | undefined;
+            short?: string;
+            full?: string;
         }, {
-            short?: string | undefined;
-            full?: string | undefined;
+            short?: string;
+            full?: string;
         }>;
         tags: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
         componentId: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        tags: string[];
-        pluginName: string;
-        componentName: string;
-        embeddableSyntax: string[];
-        urls: {
-            short?: string | undefined;
-            full?: string | undefined;
+        tags?: string[];
+        pluginName?: string;
+        componentName?: string;
+        embeddableSyntax?: string[];
+        urls?: {
+            short?: string;
+            full?: string;
         };
-        filePaths: {
-            short?: string | undefined;
-            full?: string | undefined;
+        filePaths?: {
+            short?: string;
+            full?: string;
         };
-        componentId: string;
+        componentId?: string;
     }, {
-        pluginName: string;
-        componentName: string;
-        urls: {
-            short?: string | undefined;
-            full?: string | undefined;
+        tags?: string[];
+        pluginName?: string;
+        componentName?: string;
+        embeddableSyntax?: string[];
+        urls?: {
+            short?: string;
+            full?: string;
         };
-        filePaths: {
-            short?: string | undefined;
-            full?: string | undefined;
+        filePaths?: {
+            short?: string;
+            full?: string;
         };
-        componentId: string;
-        tags?: string[] | undefined;
-        embeddableSyntax?: string[] | undefined;
+        componentId?: string;
     }>, "many">>;
     transpilePackages: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     tailwindSources: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
 }, "strip", z.ZodTypeAny, {
-    fsRoot: string;
-    navigationLinks: ({
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-    } | {
-        label: string;
-        href: string;
-        icon: ValidIconName;
-    })[];
-    settingPages: {
-        href: string;
-        pluginName: string;
-        title?: string | undefined;
-        subtitle?: string | undefined;
-    }[];
-    componentDocs: {
-        tags: string[];
-        pluginName: string;
-        componentName: string;
-        embeddableSyntax: string[];
-        urls: {
-            short?: string | undefined;
-            full?: string | undefined;
-        };
-        filePaths: {
-            short?: string | undefined;
-            full?: string | undefined;
-        };
-        componentId: string;
-    }[];
-    transpilePackages: string[];
-    tailwindSources: string[];
-}, {
-    fsRoot: string;
+    fsRoot?: string;
     navigationLinks?: {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
-    }[] | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
     settingPages?: {
-        href: string;
-        pluginName: string;
-        title?: string | undefined;
-        subtitle?: string | undefined;
-    }[] | undefined;
+        href?: string;
+        pluginName?: string;
+        title?: string;
+        subtitle?: string;
+    }[];
     componentDocs?: {
-        pluginName: string;
-        componentName: string;
-        urls: {
-            short?: string | undefined;
-            full?: string | undefined;
+        tags?: string[];
+        pluginName?: string;
+        componentName?: string;
+        embeddableSyntax?: string[];
+        urls?: {
+            short?: string;
+            full?: string;
         };
-        filePaths: {
-            short?: string | undefined;
-            full?: string | undefined;
+        filePaths?: {
+            short?: string;
+            full?: string;
         };
-        componentId: string;
-        tags?: string[] | undefined;
-        embeddableSyntax?: string[] | undefined;
-    }[] | undefined;
-    transpilePackages?: string[] | undefined;
-    tailwindSources?: string[] | undefined;
+        componentId?: string;
+    }[];
+    transpilePackages?: string[];
+    tailwindSources?: string[];
+}, {
+    fsRoot?: string;
+    navigationLinks?: {
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
+    settingPages?: {
+        href?: string;
+        pluginName?: string;
+        title?: string;
+        subtitle?: string;
+    }[];
+    componentDocs?: {
+        tags?: string[];
+        pluginName?: string;
+        componentName?: string;
+        embeddableSyntax?: string[];
+        urls?: {
+            short?: string;
+            full?: string;
+        };
+        filePaths?: {
+            short?: string;
+            full?: string;
+        };
+        componentId?: string;
+    }[];
+    transpilePackages?: string[];
+    tailwindSources?: string[];
 }>, {
     parsableExtensions: string[];
     filetypeSpecificAppendices: Record<string, string>;
@@ -189,9 +180,9 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         urlQuery: {};
         keywords: string[];
         label: string;
-        autoTag: never[];
-        autoTopic: never[];
-        autoSubject: never[];
+        autoTag: any[];
+        autoTopic: any[];
+        autoSubject: any[];
         UI: {
             styles: {
                 dark: {};
@@ -211,9 +202,9 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
         urlQuery: {};
         keywords: string[];
         label: string;
-        autoTag: never[];
-        autoTopic: never[];
-        autoSubject: never[];
+        autoTag: any[];
+        autoTopic: any[];
+        autoSubject: any[];
         UI: {
             styles: {
                 dark: {};
@@ -227,72 +218,67 @@ export declare const buildStaticDataSchema: z.ZodEffects<z.ZodObject<{
     fileTypes: {
         image: string[];
     };
-    fsRoot: string;
-    navigationLinks: ({
-        label: string;
-        href: string;
-        category: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-    } | {
-        label: string;
-        href: string;
-        icon: ValidIconName;
-    })[];
-    settingPages: {
-        href: string;
-        pluginName: string;
-        title?: string | undefined;
-        subtitle?: string | undefined;
-    }[];
-    componentDocs: {
-        tags: string[];
-        pluginName: string;
-        componentName: string;
-        embeddableSyntax: string[];
-        urls: {
-            short?: string | undefined;
-            full?: string | undefined;
-        };
-        filePaths: {
-            short?: string | undefined;
-            full?: string | undefined;
-        };
-        componentId: string;
-    }[];
-    transpilePackages: string[];
-    tailwindSources: string[];
-}, {
-    fsRoot: string;
+    fsRoot?: string;
     navigationLinks?: {
-        label: string;
-        href: string;
-        icon?: string | undefined;
-        pluginName?: string | undefined;
-        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general" | undefined;
-    }[] | undefined;
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
     settingPages?: {
-        href: string;
-        pluginName: string;
-        title?: string | undefined;
-        subtitle?: string | undefined;
-    }[] | undefined;
+        href?: string;
+        pluginName?: string;
+        title?: string;
+        subtitle?: string;
+    }[];
     componentDocs?: {
-        pluginName: string;
-        componentName: string;
-        urls: {
-            short?: string | undefined;
-            full?: string | undefined;
+        tags?: string[];
+        pluginName?: string;
+        componentName?: string;
+        embeddableSyntax?: string[];
+        urls?: {
+            short?: string;
+            full?: string;
         };
-        filePaths: {
-            short?: string | undefined;
-            full?: string | undefined;
+        filePaths?: {
+            short?: string;
+            full?: string;
         };
-        componentId: string;
-        tags?: string[] | undefined;
-        embeddableSyntax?: string[] | undefined;
-    }[] | undefined;
-    transpilePackages?: string[] | undefined;
-    tailwindSources?: string[] | undefined;
+        componentId?: string;
+    }[];
+    transpilePackages?: string[];
+    tailwindSources?: string[];
+}, {
+    fsRoot?: string;
+    navigationLinks?: {
+        label?: string;
+        href?: string;
+        icon?: string;
+        pluginName?: string;
+        category?: "calendar" | "code" | "database" | "school" | "search" | "math" | "snippets" | "AI" | "ML" | "writing" | "notebooks" | "work" | "organization" | "task-management" | "academic" | "research" | "project-planning" | "general";
+    }[];
+    settingPages?: {
+        href?: string;
+        pluginName?: string;
+        title?: string;
+        subtitle?: string;
+    }[];
+    componentDocs?: {
+        tags?: string[];
+        pluginName?: string;
+        componentName?: string;
+        embeddableSyntax?: string[];
+        urls?: {
+            short?: string;
+            full?: string;
+        };
+        filePaths?: {
+            short?: string;
+            full?: string;
+        };
+        componentId?: string;
+    }[];
+    transpilePackages?: string[];
+    tailwindSources?: string[];
 }>;
-//# sourceMappingURL=main.d.ts.map

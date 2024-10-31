@@ -21,26 +21,26 @@ export declare class PackageJson extends Prompter {
     getData(): {
         name: string;
         dependencies: Record<string, string>;
+        main?: string | undefined;
+        cpu?: string[] | undefined;
+        files?: string[] | undefined;
+        type?: string | undefined;
         version?: string | undefined;
         exports?: Record<string, string> | undefined;
-        files?: string[] | undefined;
         packageManager?: string | undefined;
         devDependencies?: Record<string, string> | undefined;
         peerDependencies?: Record<string, string> | undefined;
         peerDependenciesMeta?: any;
         optionalDependencies?: Record<string, string> | undefined;
         bundleDependencies?: Record<string, string> | undefined;
-        type?: string | undefined;
         scripts?: Record<string, string> | undefined;
         private?: boolean | undefined;
         os?: string[] | undefined;
-        cpu?: string[] | undefined;
         workspaces?: string[] | undefined;
         funding?: {
-            type: "individual" | "patreon";
+            type: "patreon" | "individual";
             url: string;
         } | undefined;
-        main?: string | undefined;
         bin?: string | undefined;
         man?: string | string[] | undefined;
         keywords?: string[] | undefined;
@@ -48,8 +48,8 @@ export declare class PackageJson extends Prompter {
         license?: string | undefined;
         people?: {
             name: string;
-            email?: string | undefined;
             url?: string | undefined;
+            email?: string | undefined;
         } | {
             author: string;
         } | undefined;

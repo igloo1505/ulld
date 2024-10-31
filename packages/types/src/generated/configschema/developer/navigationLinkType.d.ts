@@ -8,4 +8,3 @@ export type NavigationLinkType = {
     icon?: ValidIconName;
     category?: NavigationLinkCategory;
 };
-//# sourceMappingURL=navigationLinkType.d.ts.map
