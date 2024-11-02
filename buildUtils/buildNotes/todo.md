@@ -1,5 +1,12 @@
 # ULLD To-Do
 
+
+## Priority
+
+- [ ] Create utility scripts to read and right each file in  `/Users/bigsexy/Desktop/current/ulld/buildUtils/buildNotes/` similar to the `whenOnline` scripts.
+
+---
+
 - Find docs on pushing just the `@ulld/template` package to an independent repository and setup a solid workflow around that.
   - Need to have a much more reliable update script that handles at least these 4 specific cases flawlessly:
     1. Version all packages (must not automatically push website and trigger rebuild)

@@ -46,3 +46,4 @@ Set sandbox dependency paths to local source | tsx /Users/bigsexy/Desktop/curren
 Copy database client for local development | zsh /Users/bigsexy/Desktop/current/ulld/buildUtils/developmentSetup/copyDatabaseClientForLocalDev.zsh
 Copy database schemas to schemas package | tsx /Users/bigsexy/Desktop/current/ulld/buildUtils/syncGlobalData/copyDatabaseSchemas.ts
 Run 'when back on wifi' unified script | zsh /Users/bigsexy/dev-utils/lib/utilityScripts/whenBackOnline.zsh
+Sync test sandbox data | cd $ULLD_DEV_ROOT/packages/api && pnpm seedTestData

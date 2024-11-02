@@ -17,14 +17,21 @@ ${body}
 
 
 const content = getTestMdxContent(`
-<Admonition title="Regular admonition with a really really really long title and stuff" type="info" sidebar>
+<Admonition title="Regular admonition with a really really really long title and stuff" type="info">
 Some admonition body
 </Admonition>
+
 
 <Admonition title="Regular admonition with a really really really long title and stuff" type="info" dropdown>
 Some admonition body
 </Admonition>
-`);
+
+<Admonition title="Regular admonition with a really really really long title and stuff" type="info" sidebar>
+Sidebar admonition
+</Admonition>
+`)
+
+
 
 const AdmonitionDemoPage = (): ReactNode => {
     return (
