@@ -18,13 +18,27 @@ ${content}`,
     );
 };
 
+const getInputs = (): string[] => {
+       return globSync("**/*.{tsx,ts,json}", {
+        cwd: path.join(__dirname, "src"),
+        nodir: true,
+        absolute: true,
+        ignore: [
+            "src/testDataHelpers/databaseTestData.ts",
+            "src/__scripts__"
+        ]
+    });
+ 
+    }
+
 const prependDirectives = async (ignore?: RegExp[]) => {
     let files = globSync("**/*.{tsx,ts}", {
         cwd: path.join(__dirname, "src"),
         nodir: true,
         absolute: true,
         ignore: [
-            "src/testDataHelpers/databaseTestData.ts"
+            "src/testDataHelpers/databaseTestData.ts",
+            "src/__scripts__"
         ]
     });
     if(ignore){
@@ -59,15 +73,12 @@ const prependDirectives = async (ignore?: RegExp[]) => {
     copyJsonFilesToDist(__dirname);
 };
 
+
 export default defineConfig((options) => {
+    const files = getInputs()
+    console.log("files: ", files)
     return {
-        entry: [
-            "src/**/*.ts",
-            "src/**/*.tsx",
-            "src/**/*.json",
-            "!src/__scripts__/**",
-            "src/styleUtilities/generatedThemeColorSchemes.json"
-        ],
+        entry: getInputs(),
         // platform: "neutral",
         splitting: true,
         sourcemap: true,

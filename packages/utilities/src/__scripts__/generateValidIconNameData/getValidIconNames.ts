@@ -12,13 +12,14 @@ interface IconData {
     name: string;
 }
 
+
 export const getValidIconData = (): IconData[] => {
-    const icons: IconData[] = []
-    for (const lucideIcon in (allDynamicLucideImports as unknown as {default: Record<string, () => void>}).default) {
+    const icons: IconData[] = [];
+    for (const lucideIcon in allDynamicLucideImports) {
         icons.push({
             type: "lucide",
-            name: lucideIcon
-        })
+            name: lucideIcon,
+        });
     }
     const logoIconDirectory = path.join(
         getUlldDevRoot("getValidIconNames"),
@@ -42,8 +43,8 @@ export const getValidIconData = (): IconData[] => {
     for (const k in iconNameMap) {
         icons.push({
             type: "nameMap",
-            name: k
-        })
+            name: k,
+        });
     }
     return icons;
 };

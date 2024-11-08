@@ -1,9 +1,13 @@
 'use strict';
 
+var chunk3C6RACUK_cjs = require('../chunk-3C6RACUK.cjs');
 require('../chunk-7ARU3YXQ.cjs');
 
-var e=n=>{if(!process.env.ULLD_DEV_ROOT)throw new Error(`Could not find ULLD_DEV_ROOT env variable. Cannot conitnue in ${n}`);return process.env.ULLD_DEV_ROOT};
 
-exports.getUlldDevRoot = e;
+
+Object.defineProperty(exports, "getUlldDevRoot", {
+	enumerable: true,
+	get: function () { return chunk3C6RACUK_cjs.a; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=getUlldDevRoot.cjs.map

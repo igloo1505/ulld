@@ -2,6 +2,7 @@
     "name": "@ulld/types",
     "version": "0.0.116",
     "private": false,
+    "type": "module",
     "publishConfig": {
         "access": "public"
     },

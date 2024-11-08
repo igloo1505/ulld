@@ -1,11 +1,18 @@
 'use strict';
 
-var chunkLY5APYUW_cjs = require('../chunk-LY5APYUW.cjs');
+var chunkGVLMYDX2_cjs = require('../chunk-GVLMYDX2.cjs');
+require('../chunk-LY5APYUW.cjs');
 require('../chunk-7ARU3YXQ.cjs');
 
-var l=["blue","gray","green","neutral","orange","red","rose","slate","stone","violet","yellow","zinc","ulld"],t=[...Object.keys(chunkLY5APYUW_cjs.a)];
 
-exports.ulldDefaultColorThemes = l;
-exports.ulldDefaultPlotThemes = t;
+
+Object.defineProperty(exports, "ulldDefaultColorThemes", {
+	enumerable: true,
+	get: function () { return chunkGVLMYDX2_cjs.a; }
+});
+Object.defineProperty(exports, "ulldDefaultPlotThemes", {
+	enumerable: true,
+	get: function () { return chunkGVLMYDX2_cjs.b; }
+});
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=ulldDefaultColorThemes.cjs.map

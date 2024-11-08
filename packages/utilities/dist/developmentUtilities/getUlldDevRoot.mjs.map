@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../src/developmentUtilities/getUlldDevRoot.ts"],"names":["getUlldDevRoot","locationKey"],"mappings":"8BAAO,IAAMA,EAAkBC,GAAwB,CACnD,GAAG,CAAC,QAAQ,IAAI,cACZ,MAAM,IAAI,MAAM,iEAAiEA,CAAW,EAAE,EAElG,OAAO,QAAQ,IAAI,aACvB","sourcesContent":["export const getUlldDevRoot = (locationKey: string) => {\n    if(!process.env.ULLD_DEV_ROOT){\n        throw new Error(`Could not find ULLD_DEV_ROOT env variable. Cannot conitnue in ${locationKey}`)\n    }\n    return process.env.ULLD_DEV_ROOT\n}\n"]}
+{"version":3,"sources":[],"names":[],"mappings":""}

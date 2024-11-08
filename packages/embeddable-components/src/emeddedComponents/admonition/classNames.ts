@@ -1,8 +1,18 @@
 import { cn } from "@ulld/utilities/cn";
 import type { AdmonitionProps } from "@ulld/utilities/types";
 import type { AdmonitionContainerProps, AdmonitionTitleProps } from "./admonitionUtils";
+import { CSSProperties } from "react";
 
 export const getTitleClassNames = (props: AdmonitionProps): string => cn("[&_p]:w-full [&_p]:max-w-full contents", props.dropdown && "pr-8", props.titleBold && "font-semibold")
+
+
+// BETA: Not yet implemented.
+export const getTitleStyles = (props: AdmonitionProps): CSSProperties => {
+    return {
+        color: props.titleFg,
+        backgroundColor: props.titleBg
+    }
+}
 
 export const getBodyClassNames = (props: AdmonitionContainerProps): string =>
     cn(

@@ -23,7 +23,6 @@
         "dist",
         "./dist",
         "./dist/**",
-        "__scripts__",
         "rollup.config.mjs",
         "src/testDataHelpers/databaseTestData.ts",
         "next.config.mjs",
@@ -33,9 +32,5 @@
     "include": [
         "./src/**/*.ts",
         "./src/**/*.tsx",
-        "./src/**/*.json",
-        "**/*.ts",
-        "**/*.tsx",
-        "**/*.json"
     ]
 }

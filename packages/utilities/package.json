@@ -11,7 +11,8 @@
     ],
     "scripts": {
         "build": "wireit",
-        "dev": "next dev"
+        "dev": "next dev",
+        "generateValidIconNameData": "wireit"
     },
     "wireit": {
         "build": {
@@ -22,7 +23,8 @@
                 "clearBuild",
                 "genTypes",
                 "genBuild"
-            ]
+            ],
+            "clean": false
         },
         "genTypes": {
             "command": "pnpm tsc --project ./tsConfigBuildTypes.json"
