@@ -78,7 +78,7 @@ export const FoldingAdmonitionContainer = (
                     },
                 }}
             >
-                <div className="admonition-bodyContainer w-full h-full p-4">{body}</div>
+                <div className="admonition-bodyContainer w-full h-full p-4 not-prose space-y-3">{body}</div>
             </motion.div>
             {footer ? <div className={footerClassNames}>{footer}</div> : null}
         </div>

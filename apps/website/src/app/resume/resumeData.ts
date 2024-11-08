@@ -77,6 +77,7 @@ const resumeData: ResumeDataInput = {
             "Bash/Zsh": 8,
             "Css & Sass": 10,
             Latex: 8,
+            Golang: 8,
             Swift: 6,
             Lua: 8,
         },
@@ -101,7 +102,7 @@ const resumeData: ResumeDataInput = {
         "Math... <span class='italic'>I know</span>",
     ],
     projectsDesc:
-        "Due to my current living situation, much of my more meaningful previous work is no longer hosted. I can provide links to the repo's or video demonstrations on request.",
+        "Due to my current living situation, much of my more meaningful previous work is no longer hosted. I can provide links to the repos or video demonstrations on request.",
     projects: [
         {
             title: "Uh Little Less Dum",

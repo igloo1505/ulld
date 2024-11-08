@@ -4,6 +4,7 @@
 ## Priority
 
 - [ ] Create utility scripts to read and right each file in  `/Users/bigsexy/Desktop/current/ulld/buildUtils/buildNotes/` similar to the `whenOnline` scripts.
+- [ ] Cli script to render markdown using the UlldServer throught he cli and display as an independent page, similar to grip.
 
 ---
 

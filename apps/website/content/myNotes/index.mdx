@@ -16,7 +16,7 @@ blogPin: 1
 ---
 
 <Admonition title="Status" type="note" center>
-    This article is currently being revised. An updated revised version will be available soon.
+    This article is currently being revised. Updates will be available here as this revision continues.
 </Admonition>
 
 ## Abstract time
@@ -46,17 +46,18 @@ Note that simultaneity can be found for two proportional simultaneous integrals 
 
 $$
 \begin{align}
-\frac{\int dl_a}{\int dl_b} = \frac{dx_a}{dx_b}
+    \frac{\int dl_a}{\int dl_b} = \frac{dx_a}{dx_b}
 \end{align}
 $$
 
 where $dl_a$ represents a small portion of the path of $a$, and $dx_a$ represents a derivative of the motion of $a$ as proportional to the derivative of the motion of $b$, $dx_b$.
 
-### Time Equivalent
+### Time Equivalent Quantities
 
-As many existing formulas that might be of interest reference this abstract time dimension directly, we should define a _time equivalent_ that follows the model described here, but has no explicit time dependence and is proportional to our existing measures. Of course $d/v$ is one such time equivalent quantity, but there exists many others for various types of motion, oscillations, and other time dependent functions.
+As many existing formulas that might be of interest reference this abstract time dimension directly, we should define a _time equivalent_ quantity that follows the model described here, but has no explicit time dependence and is proportional to our existing measures. Of course $d/v$ is one such time equivalent quantity, but there exists many others for various types of motion, oscillations, and other time dependent functions.
 
-As $v$ itself is time dependent, we should note here that $v$ is not velocity in the traditional sense, but rather the proportional integral $\int_P$ of some $dx$ over $\int dl$, where $\int dl$ in turn is the distance equivalent of one unit of time for that velocity. $d$ on the other hand is the proportional integral of this velocity that continues as pseudo-time progresses. In other words, $\int_P dx = \int dl$ if $t = 1$, but $\int_P dx$ will grow proportionally to the progression of pseudo-time, where as $\int dl$ will remain fixed at $1$ unit of pseudo-time.
+As $v$ itself is time dependent, we should note here that $v$ is not velocity in the traditional sense, but rather the proportional integral $\int_P$ of some $dx$ over $\int dl$, where $\int dl$ in turn is the distance equivalent of one unit of time for that velocity. In other words, $\int_P dx = \int dl$ if $t = 1$, but $\int_P dx$ will grow proportionally to the progression of pseudo-time, where as $\int dl$ will remain fixed at $1$ unit of pseudo-time.[^12]
+
 
 $$
 \begin{align}
@@ -162,33 +163,36 @@ If we consider this experiment in the context of the time equivalent quantities 
 
 $$
 \begin{align}
-v = \frac{ds}{dt_p} \tau_\epsilon
+v = g ~ dt = g \frac{1}{\tau_o}
 \end{align}
 $$
 
-As $ds = dx_{\bar{v}} \frac{g}{\bar{v}}$ and $\tau_o = \frac{1}{dt}$, we should find this equivalence as
+As $dx_v$ is proportional to $dt$ in the traditional sense when considering local gravitational parameters, we can describe $dx_v$ as:
 
 $$
 \begin{align}
- v = ds \tau_\epsilon \tau_o
+    dx_v = \bar{v} \frac{h}{c}
 \end{align}
 $$
 
-this then gives
+We then find:[^13]
 
 $$
 \begin{align}
- v = \overbrace{dx_{\bar{v}} \left( \frac{g}{\bar{v}} \right)}^{\text{ds}} \underbrace{\left( \frac{\bar{v}}{dx_{\bar{v}}} \right)}_{\tau_\epsilon} \overbrace{\left( \frac{h}{c} \right)}^{\tau_o}
+\frac{1}{\tau_o} = \frac{\bar{v} \frac{h}{c}}{\bar{v}}
 \end{align}
 $$
 
-Simplified, this then gives the findings by Pound and Rebka as:
+This in turn produces the Pound-Rebka results as:
 
 $$
 \begin{align}
-v = \cancel{dx_{\bar{v}}} \frac{g}{\cancel{\bar{v}}} \frac{\cancel{\bar{v}}}{\cancel{dx_{\bar{v}}}} \frac{h}{c} = g \frac{h}{c}
+  v = g ~ dt & = g \frac{1}{\tau_o} \\
+&= g \frac{\cancel{ \bar{v} } \frac{h}{c}}{\cancel{\bar{v}}} \\ 
+&= g \frac{h}{c}
 \end{align}
 $$
+
 
 
 ### $\delta$ in the $\mathbb{R}^{3}_\tau$ frame of the body in motion
@@ -282,13 +286,11 @@ Recall from the section on the [time derivative equivalent](#time-derivative-equ
 This then gives
 
 <EqRef anchor id="equation-14">
-
 $$
 \begin{align}
 \dot{x}^{2} = 2 \frac{ds}{\tau_o} R_{0} + \frac{ds^{2}}{\tau_o^{2}} = 2 dx_{\bar{v}} \frac{g}{\bar{v}}  \frac{dx_{\bar{v}}}{\bar{v}} R_{0} + dx_{\bar{v}}^{2} \frac{g^{2}}{\bar{v}^{2}} dt_p^{2}
 \end{align}
 $$
-
 </EqRef>
 
 And then simplifying equation <EqRef id="equation-14"/> and solving for $dx_{\bar{v}}$ gives
@@ -318,6 +320,7 @@ $$
     label
     id="dsPhiRelationship"
 />
+
 Consider the diagram in figure <FigRef id="dsPhiRelationship" /> above. Recall that in the model being proposed, proportional velocity derivatives should be proportional to some $dx_c$ velocity derivative of the speed of light. This is to say that for some infinitesimally small $dx_c$, $dx_v = dx_c \frac{v}{c}$.
 
 
@@ -385,3 +388,5 @@ Further, this model describes the _apparent_ gravitational acceleration as the r
 [^9]: In units of time as they appear in the traditional notion velocity.
 [^10]: The integral of the displacement vector of a length equivalent to 1 unit of time for a given velocity. For $n_{a} ~ \text{m}/\text{s}$, the integral of $\int_0^{n} dx_a$ gives a combined length of $n$ meters, indicating the passage of 1 unit of time in traditional models.
 [^11]: $t_{p}$: Pseudo-time equivalent
+[^12]: For this reason, when integrating $\tau_\epsilon$, only the numerator is integrated. For a known velocity $a$, $\int dl_a = a$ in the units of distance inherent to $a$ after normalizing the units of time of $a$ to match other time dependent parameters.
+[^13]: Note that $\bar{v}$ in the denominator is acting as a measure of distance alone, of a magnitude equal to $\bar{v}$ and in the units of distance expressed in $\bar{v}$.
