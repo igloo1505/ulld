@@ -1,0 +1,469 @@
+@tailwind components;
+
+body {
+  min-height: 100vh;
+  height: fit-content;
+  overscroll-behavior-y: none;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --nav-height: 78px;
+  --code-background: #111827;
+  --sidebar-width: 64px;
+  // TODO: Make sure this is being implemented on next build or dev server. This might be overridden by the later imported jupyter-ui css
+  --jp-ui-font-size: 16px !important;
+  --jp-brand-color1: hsl(var(--primary)) !important;
+  /* TODO: Apply these variables where applicable, and create an enum that will allow setting these color properties dynamically directly from a component's props. */
+  --ulld-hint: #39f614;
+  --ulld-info: #0ea5e9;
+  --ulld-error: #ef4444;
+  --ulld-note: #3f51b5;
+  --ulld-tip: #03a9f4;
+  --ulld-faq: #ffeb3b;
+  --ulld-practice: #2096f3;
+  --ulld-abstract: #ff9800;
+  --ulld-todo: #ff5722;
+  --ulld-success: #76ff03;
+  --ulld-warn: #ffff00;
+  --ulld-fail: #f44336;
+  --ulld-example: #9c27b0;
+  --ulld-quote: #e91e63;
+  --ulld-cite: #0ea5e9;
+  --ulld-equation: #ff5722;
+  --ulld-definition: #3f51b5;
+  --ulld-important: #ffff00;
+}
+
+.ulldBlueImportant {
+  color: hsl(var(--brand)) !important;
+  stroke: hsl(var(--brand)) !important;
+  fill: hsl(var(--brand)) !important;
+}
+
+.truncateWidth {
+  padding: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jupyterUI {
+  --jp-ui-font-size: 13px !important;
+  font-size: 13px;
+}
+
+.sidebarAdjust {
+  transition:
+    padding-left 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+div.cm-editor {
+  font-size: 13px;
+}
+
+.absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#sidebar-panel {
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-size: 1rem;
+
+  span[role="slider"] {
+    &:focus-visible {
+      border: none;
+    }
+  }
+
+  &.sidebarOpen {
+    #sidebar-panel {
+      transform: translateX(0);
+    }
+
+    // NOTE: Removed to remove cummulative layout shift inside of notes. Might consider adding back in in certain locations. .sidebarAdjust class still exists on appropritate elements
+    // .sidebarAdjust {
+    //   padding-left: var(--sidebar-width);
+    // }
+  }
+
+  &.sidebarOpenPermanent {
+    #sidebar-panel {
+      transform: translateX(0);
+    }
+
+    .sidebarAdjust {
+      padding-left: var(--sidebar-width);
+    }
+  }
+
+  &.tooltips-hidden {
+    .conditionalTooltip {
+      display: none;
+    }
+  }
+
+  .bookmark-indicator {
+    display: none;
+  }
+
+  &.canBookmark {
+    .bookmark-indicator {
+      display: flex;
+    }
+  }
+}
+
+.vhnav {
+  min-height: calc(100vh - var(--nav-height));
+}
+
+@layer components {
+  .navbtn {
+    @apply text-gray-700 dark:hover:bg-gray-800 transition-colors duration-300 rounded-lg dark:text-gray-200 hover:bg-gray-100;
+  }
+
+  .prose-all {
+    @apply prose dark:prose-invert prose-a:text-link prose-a:no-underline;
+  }
+
+  .pixi-canvas {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  .inputBase {
+    @apply dark:bg-gray-900 text-gray-900 dark:text-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
+  }
+
+  .linkColor {
+    @apply text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200;
+  }
+
+  .mdx {
+    @apply lining-nums ordinal;
+  }
+}
+
+@layer components {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar,
+  mjx-container::-webkit-scrollbar,
+  .math::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .pageMargins {
+    @apply px-8 md:px-16 w-full min-h-full relative py-6;
+  }
+
+  .pageCenterContent {
+    @apply flex flex-col justify-center items-center gap-6;
+  }
+}
+
+.no-scrollbar-all {
+  * {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+
+    /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.min-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: white #778899;
+
+  @supports (scrollbar-width: auto) {
+    * {
+      scrollbar-width: thin;
+    }
+  }
+
+  @supports selector(::-webkit-scrollbar) {
+    & *::-webkit-scrollbar {
+      background-color: hsl(var(--muted));
+      width: 2px;
+      height: 6px;
+    }
+
+    & *::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--background));
+    }
+
+    &.scrollbarMuted {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--muted));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarMutedForeground {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--muted-foreground));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarPrimary {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--primary));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarForeground {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--foreground));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+  }
+}
+
+.dark .min-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #1f2937 black;
+
+  @supports (scrollbar-width: auto) {
+    * {
+      scrollbar-width: thin;
+    }
+  }
+
+  @supports selector(::-webkit-scrollbar) {
+    & *::-webkit-scrollbar {
+      background-color: hsl(var(--muted));
+      width: 2px;
+      height: 6px;
+    }
+
+    & *::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--background));
+    }
+
+    &.scrollbarMuted {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--muted));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarMutedForeground {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--muted-foreground));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarPrimary {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--primary));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+
+    &.scrollbarForeground {
+      & *::-webkit-scrollbar {
+        background-color: hsl(var(--foreground));
+      }
+
+      & *::-webkit-scrollbar-thumb {
+        background: hsl(var(--background));
+      }
+    }
+  }
+}
+
+div[cmdk-list]::-webkit-scrollbar,
+div.jp-WindowedPanel-outer::-webkit-scrollbar {
+  display: none;
+}
+
+div[cmdk-list],
+div.jp-WindowedPanel-outer {
+  -ms-overflow-style: none;
+  /* /* IE and Edge */
+  scrollbar-width: none;
+  /* /* Firefox */
+  border-width: 1px;
+  border-top-width: 0px;
+}
+
+.onlyHoverNavbar {
+  transform: translateY(-100%);
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
+.scroll-snap-container {
+  scroll-snap-type: y mandatory;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+
+  section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+  }
+
+  .scrollSnapSection {
+    width: 100vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .scroll-snap-container {
+    section {
+      min-height: unset;
+    }
+
+    .scrollSnapSection {
+      height: 100vh;
+    }
+  }
+}
+
+.math-display {
+  scrollbar-width: thin;
+
+  .MathJax {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.admonition-title {
+  mjx-container[jax="CHTML"] {
+    line-height: inherit;
+    display: inline-grid;
+    place-content: center;
+  }
+
+  mjx-math {
+    font-size: 18px;
+  }
+}
+
+.math-inline {
+  display: inline;
+}
+
+.math.math-display {
+  mjx-container.MathJax {
+    &:not(div.jupyterUI *) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.boldItalic {
+  font-style: italic;
+  font-weight: 600;
+}
+
+div[role="dialog"][cmdk-dialog] {
+  z-index: 9999;
+}
+
+.mdx {
+  a[data-footnote-ref] {
+    padding: 0;
+  }
+
+  .excalidraw {
+    &.theme--dark {
+      --color-surface-primary-container: hsl(var(--primary) / 0.5);
+      --color-primary: hsl(var(--primary) / 0.7);
+      --color-primary-darker: hsl(var(--primary) / 0.85);
+      --color-primary-darkest: hsl(var(--primary));
+      --color-primary-light: hsl(var(--primary) / 0.6);
+    }
+
+    --color-surface-primary-container: hsl(var(--primary) / 0.5);
+    --color-primary: hsl(var(--primary) / 0.7);
+    --color-primary-darker: hsl(var(--primary) / 0.85);
+    --color-primary-darkest: hsl(var(--primary));
+    --color-primary-light: hsl(var(--primary) / 0.6);
+  }
+
+  span.citationAnchor-container {
+    width: 0.75ch;
+    height: 1em;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    a.citationAnchor {
+      transform: translateY(-0.25em);
+      font-size: 0.75em;
+      position: absolute;
+      top: -1;
+      color: var(--general-link-color);
+    }
+  }
+}
+
+li.hide-li-marker {
+  ::marker {
+    content: none !important;
+  }
+}

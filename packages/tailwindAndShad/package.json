@@ -5,91 +5,379 @@
     "publishConfig": {
         "access": "public"
     },
+    "type": "module",
     "files": [
-        "dist",
-        "src"
+        "dist"
     ],
     "scripts": {
-        "typecheck": "tsc --noEmit -p ./tsconfig.json"
+        "typecheck": "tsc --noEmit -p ./tsconfig.json",
+        "build": "wireit"
     },
-    "main": "./src/tailwind.config.ts",
+    "wireit": {
+        "build": {
+            "command": "tsup-node",
+            "dependencies": [
+                "gatherTypes"
+            ],
+            "clean": false
+        },
+        "gatherTypes": {
+            "command": "tsc -p ./tsconfigTypes.json",
+            "clean": "if-file-deleted"
+        }
+    },
+    "main": "./dist/tailwindConfig.mjs",
     "exports": {
-        ".": "./src/tailwind.config.ts",
-        "./themeUtils": "./src/shad/lib/themeUtils.ts",
-        "./defaultThemes": "./src/defaultThemes.ts",
-        "./handleThemeCookies": "./src/shad/lib/handleThemeCookies.ts",
+        ".": {
+            "import": "./dist/tailwindConfig.mjs",
+            "require": "./dist/tailwindConfig.cjs",
+            "types": "./dist/tailwindConfig.d.ts"
+        },
+        "./themeUtils": {
+            "import": "./dist/shad/lib/themeUtils.mjs",
+            "require": "./dist/shad/lib/themeUtils.cjs",
+            "types": "./dist/shad/lib/themeUtils.d.ts"
+        },
+        "./defaultThemes": {
+            "import": "./dist/defaultThemes.mjs",
+            "require": "./dist/defaultThemes.cjs",
+            "types": "./dist/defaultThemes.d.ts"
+        },
+        "./handleThemeCookies": {
+            "import": "./dist/shad/lib/handleThemeCookies.mjs",
+            "require": "./dist/shad/lib/handleThemeCookies.cjs",
+            "types": "./dist/shad/lib/handleThemeCookies.d.ts"
+        },
         "./tailwindConfig": "./src/tailwindConfig.ts",
-        "./defaultFont": "./src/defaultFont/localDefaultFont.ts",
-        "./aspect-ratio": "./src/shad/components/ui/aspect-ratio.tsx",
-        "./alert-dialog": "./src/shad/components/ui/alert-dialog.tsx",
-        "./pagination": "./src/shad/components/ui/pagination.tsx",
-        "./tabs": "./src/shad/components/ui/tabs.tsx",
-        "./card": "./src/shad/components/ui/card.tsx",
-        "./popover": "./src/shad/components/ui/popover.tsx",
-        "./progress": "./src/shad/components/ui/progress.tsx",
-        "./toaster": "./src/shad/components/ui/toaster.tsx",
-        "./hover-card": "./src/shad/components/ui/hover-card.tsx",
-        "./sheet": "./src/shad/components/ui/sheet.tsx",
-        "./scroll-area": "./src/shad/components/ui/scroll-area.tsx",
-        "./resizable": "./src/shad/components/ui/resizable.tsx",
-        "./label": "./src/shad/components/ui/label.tsx",
-        "./navigation-menu": "./src/shad/components/ui/navigation-menu.tsx",
-        "./accordion": "./src/shad/components/ui/accordion.tsx",
-        "./drawer": "./src/shad/components/ui/drawer.tsx",
-        "./tooltip": "./src/shad/components/ui/tooltip.tsx",
-        "./alert": "./src/shad/components/ui/alert.tsx",
-        "./use-toast": "./src/shad/components/ui/use-toast.tsx",
-        "./switch": "./src/shad/components/ui/switch.tsx",
-        "./calendar": "./src/shad/components/ui/calendar.tsx",
-        "./radio-group": "./src/shad/components/ui/radio-group.tsx",
-        "./command": "./src/shad/components/ui/command.tsx",
-        "./toggle-group": "./src/shad/components/ui/toggle-group.tsx",
-        "./avatar": "./src/shad/components/ui/avatar.tsx",
-        "./menubar": "./src/shad/components/ui/menubar.tsx",
-        "./dialog": "./src/shad/components/ui/dialog.tsx",
-        "./badge": "./src/shad/components/ui/badge.tsx",
-        "./table": "./src/shad/components/ui/table.tsx",
-        "./separator": "./src/shad/components/ui/separator.tsx",
-        "./button": "./src/shad/components/ui/button.tsx",
-        "./toggle": "./src/shad/components/ui/toggle.tsx",
-        "./toast": "./src/shad/components/ui/toast.tsx",
-        "./checkbox": "./src/shad/components/ui/checkbox.tsx",
-        "./collapsible": "./src/shad/components/ui/collapsible.tsx",
-        "./dropdown-menu": "./src/shad/components/ui/dropdown-menu.tsx",
-        "./select": "./src/shad/components/ui/select.tsx",
-        "./textarea": "./src/shad/components/ui/textarea.tsx",
-        "./input": "./src/shad/components/ui/input.tsx",
-        "./skeleton": "./src/shad/components/ui/skeleton.tsx",
-        "./context-menu": "./src/shad/components/ui/context-menu.tsx",
-        "./form": "./src/shad/components/ui/form.tsx",
-        "./carousel": "./src/shad/components/ui/carousel.tsx",
-        "./slider": "./src/shad/components/ui/slider.tsx",
-        "./defaultStyles.scss": "./src/tunnels/ulldApp.scss",
-        "./websiteStyles.scss": "./src/tunnels/website.scss",
-        "./themes/gray.scss": "./src/shad/defaultThemes/gray.scss",
-        "./themes/violet.scss": "./src/shad/defaultThemes/violet.scss",
-        "./themes/slate.scss": "./src/shad/defaultThemes/slate.scss",
-        "./themes/neutral.scss": "./src/shad/defaultThemes/neutral.scss",
-        "./themes/stone.scss": "./src/shad/defaultThemes/stone.scss",
-        "./themes/green.scss": "./src/shad/defaultThemes/green.scss",
-        "./themes/orange.scss": "./src/shad/defaultThemes/orange.scss",
-        "./themes/yellow.scss": "./src/shad/defaultThemes/yellow.scss",
-        "./themes/blue.scss": "./src/shad/defaultThemes/blue.scss",
-        "./themes/zinc.scss": "./src/shad/defaultThemes/zinc.scss",
-        "./themes/rose.scss": "./src/shad/defaultThemes/rose.scss",
-        "./themes/red.scss": "./src/shad/defaultThemes/red.scss",
-        "./colorMap/gray": "./src/shad/defaultThemes/colorMaps/gray.json",
-        "./colorMap/violet": "./src/shad/defaultThemes/colorMaps/violet.json",
-        "./colorMap/slate": "./src/shad/defaultThemes/colorMaps/slate.json",
-        "./colorMap/neutral": "./src/shad/defaultThemes/colorMaps/neutral.json",
-        "./colorMap/stone": "./src/shad/defaultThemes/colorMaps/stone.json",
-        "./colorMap/green": "./src/shad/defaultThemes/colorMaps/green.json",
-        "./colorMap/orange": "./src/shad/defaultThemes/colorMaps/orange.json",
-        "./colorMap/yellow": "./src/shad/defaultThemes/colorMaps/yellow.json",
-        "./colorMap/blue": "./src/shad/defaultThemes/colorMaps/blue.json",
-        "./colorMap/zinc": "./src/shad/defaultThemes/colorMaps/zinc.json",
-        "./colorMap/rose": "./src/shad/defaultThemes/colorMaps/rose.json",
-        "./colorMap/red": "./src/shad/defaultThemes/colorMaps/red.json"
+        "./defaultFont": {
+            "import": "./dist/defaultFont/localDefaultFont.mjs",
+            "require": "./dist/defaultFont/localDefaultFont.cjs",
+            "types": "./dist/defaultFont/localDefaultFont.d.ts"
+        },
+        "./aspect-ratio": {
+            "import": "./dist/shad/components/ui/aspect-ratio.mjs",
+            "require": "./dist/shad/components/ui/aspect-ratio.cjs",
+            "types": "./dist/shad/components/ui/aspect-ratio.d.ts"
+        },
+        "./alert-dialog": {
+            "import": "./dist/shad/components/ui/alert-dialog.mjs",
+            "require": "./dist/shad/components/ui/alert-dialog.cjs",
+            "types": "./dist/shad/components/ui/alert-dialog.d.ts"
+        },
+        "./pagination": {
+            "import": "./dist/shad/components/ui/pagination.mjs",
+            "require": "./dist/shad/components/ui/pagination.cjs",
+            "types": "./dist/shad/components/ui/pagination.d.ts"
+        },
+        "./tabs": {
+            "import": "./dist/shad/components/ui/tabs.mjs",
+            "require": "./dist/shad/components/ui/tabs.cjs",
+            "types": "./dist/shad/components/ui/tabs.d.ts"
+        },
+        "./card": {
+            "import": "./dist/shad/components/ui/card.mjs",
+            "require": "./dist/shad/components/ui/card.cjs",
+            "types": "./dist/shad/components/ui/card.d.ts"
+        },
+        "./popover": {
+            "import": "./dist/shad/components/ui/popover.mjs",
+            "require": "./dist/shad/components/ui/popover.cjs",
+            "types": "./dist/shad/components/ui/popover.d.ts"
+        },
+        "./progress": {
+            "import": "./dist/shad/components/ui/progress.mjs",
+            "require": "./dist/shad/components/ui/progress.cjs",
+            "types": "./dist/shad/components/ui/progress.d.ts"
+        },
+        "./toaster": {
+            "import": "./dist/shad/components/ui/toaster.mjs",
+            "require": "./dist/shad/components/ui/toaster.cjs",
+            "types": "./dist/shad/components/ui/toaster.d.ts"
+        },
+        "./hover-card": {
+            "import": "./dist/shad/components/ui/hover-card.mjs",
+            "require": "./dist/shad/components/ui/hover-card.cjs",
+            "types": "./dist/shad/components/ui/hover-card.d.ts"
+        },
+        "./sheet": {
+            "import": "./dist/shad/components/ui/sheet.mjs",
+            "require": "./dist/shad/components/ui/sheet.cjs",
+            "types": "./dist/shad/components/ui/sheet.d.ts"
+        },
+        "./scroll-area": {
+            "import": "./dist/shad/components/ui/scroll-area.mjs",
+            "require": "./dist/shad/components/ui/scroll-area.cjs",
+            "types": "./dist/shad/components/ui/scroll-area.d.ts"
+        },
+        "./resizable": {
+            "import": "./dist/shad/components/ui/resizable.mjs",
+            "require": "./dist/shad/components/ui/resizable.cjs",
+            "types": "./dist/shad/components/ui/resizable.d.ts"
+        },
+        "./label": {
+            "import": "./dist/shad/components/ui/label.mjs",
+            "require": "./dist/shad/components/ui/label.cjs",
+            "types": "./dist/shad/components/ui/label.d.ts"
+        },
+        "./navigation-menu": {
+            "import": "./dist/shad/components/ui/navigation-menu.mjs",
+            "require": "./dist/shad/components/ui/navigation-menu.cjs",
+            "types": "./dist/shad/components/ui/navigation-menu.d.ts"
+        },
+        "./accordion": {
+            "import": "./dist/shad/components/ui/accordion.mjs",
+            "require": "./dist/shad/components/ui/accordion.cjs",
+            "types": "./dist/shad/components/ui/accordion.d.ts"
+        },
+        "./drawer": {
+            "import": "./dist/shad/components/ui/drawer.mjs",
+            "require": "./dist/shad/components/ui/drawer.cjs",
+            "types": "./dist/shad/components/ui/drawer.d.ts"
+        },
+        "./tooltip": {
+            "import": "./dist/shad/components/ui/tooltip.mjs",
+            "require": "./dist/shad/components/ui/tooltip.cjs",
+            "types": "./dist/shad/components/ui/tooltip.d.ts"
+        },
+        "./alert": {
+            "import": "./dist/shad/components/ui/alert.mjs",
+            "require": "./dist/shad/components/ui/alert.cjs",
+            "types": "./dist/shad/components/ui/alert.d.ts"
+        },
+        "./use-toast": {
+            "import": "./dist/shad/components/ui/use-toast.mjs",
+            "require": "./dist/shad/components/ui/use-toast.cjs",
+            "types": "./dist/shad/components/ui/use-toast.d.ts"
+        },
+        "./switch": {
+            "import": "./dist/shad/components/ui/switch.mjs",
+            "require": "./dist/shad/components/ui/switch.cjs",
+            "types": "./dist/shad/components/ui/switch.d.ts"
+        },
+        "./calendar": {
+            "import": "./dist/shad/components/ui/calendar.mjs",
+            "require": "./dist/shad/components/ui/calendar.cjs",
+            "types": "./dist/shad/components/ui/calendar.d.ts"
+        },
+        "./radio-group": {
+            "import": "./dist/shad/components/ui/radio-group.mjs",
+            "require": "./dist/shad/components/ui/radio-group.cjs",
+            "types": "./dist/shad/components/ui/radio-group.d.ts"
+        },
+        "./command": {
+            "import": "./dist/shad/components/ui/command.mjs",
+            "require": "./dist/shad/components/ui/command.cjs",
+            "types": "./dist/shad/components/ui/command.d.ts"
+        },
+        "./toggle-group": {
+            "import": "./dist/shad/components/ui/toggle-group.mjs",
+            "require": "./dist/shad/components/ui/toggle-group.cjs",
+            "types": "./dist/shad/components/ui/toggle-group.d.ts"
+        },
+        "./avatar": {
+            "import": "./dist/shad/components/ui/avatar.mjs",
+            "require": "./dist/shad/components/ui/avatar.cjs",
+            "types": "./dist/shad/components/ui/avatar.d.ts"
+        },
+        "./menubar": {
+            "import": "./dist/shad/components/ui/menubar.mjs",
+            "require": "./dist/shad/components/ui/menubar.cjs",
+            "types": "./dist/shad/components/ui/menubar.d.ts"
+        },
+        "./dialog": {
+            "import": "./dist/shad/components/ui/dialog.mjs",
+            "require": "./dist/shad/components/ui/dialog.cjs",
+            "types": "./dist/shad/components/ui/dialog.d.ts"
+        },
+        "./badge": {
+            "import": "./dist/shad/components/ui/badge.mjs",
+            "require": "./dist/shad/components/ui/badge.cjs",
+            "types": "./dist/shad/components/ui/badge.d.ts"
+        },
+        "./table": {
+            "import": "./dist/shad/components/ui/table.mjs",
+            "require": "./dist/shad/components/ui/table.cjs",
+            "types": "./dist/shad/components/ui/table.d.ts"
+        },
+        "./separator": {
+            "import": "./dist/shad/components/ui/separator.mjs",
+            "require": "./dist/shad/components/ui/separator.cjs",
+            "types": "./dist/shad/components/ui/separator.d.ts"
+        },
+        "./button": {
+            "import": "./dist/shad/components/ui/button.mjs",
+            "require": "./dist/shad/components/ui/button.cjs",
+            "types": "./dist/shad/components/ui/button.d.ts"
+        },
+        "./toggle": {
+            "import": "./dist/shad/components/ui/toggle.mjs",
+            "require": "./dist/shad/components/ui/toggle.cjs",
+            "types": "./dist/shad/components/ui/toggle.d.ts"
+        },
+        "./toast": {
+            "import": "./dist/shad/components/ui/toast.mjs",
+            "require": "./dist/shad/components/ui/toast.cjs",
+            "types": "./dist/shad/components/ui/toast.d.ts"
+        },
+        "./checkbox": {
+            "import": "./dist/shad/components/ui/checkbox.mjs",
+            "require": "./dist/shad/components/ui/checkbox.cjs",
+            "types": "./dist/shad/components/ui/checkbox.d.ts"
+        },
+        "./collapsible": {
+            "import": "./dist/shad/components/ui/collapsible.mjs",
+            "require": "./dist/shad/components/ui/collapsible.cjs",
+            "types": "./dist/shad/components/ui/collapsible.d.ts"
+        },
+        "./dropdown-menu": {
+            "import": "./dist/shad/components/ui/dropdown-menu.mjs",
+            "require": "./dist/shad/components/ui/dropdown-menu.cjs",
+            "types": "./dist/shad/components/ui/dropdown-menu.d.ts"
+        },
+        "./select": {
+            "import": "./dist/shad/components/ui/select.mjs",
+            "require": "./dist/shad/components/ui/select.cjs",
+            "types": "./dist/shad/components/ui/select.d.ts"
+        },
+        "./textarea": {
+            "import": "./dist/shad/components/ui/textarea.mjs",
+            "require": "./dist/shad/components/ui/textarea.cjs",
+            "types": "./dist/shad/components/ui/textarea.d.ts"
+        },
+        "./input": {
+            "import": "./dist/shad/components/ui/input.mjs",
+            "require": "./dist/shad/components/ui/input.cjs",
+            "types": "./dist/shad/components/ui/input.d.ts"
+        },
+        "./skeleton": {
+            "import": "./dist/shad/components/ui/skeleton.mjs",
+            "require": "./dist/shad/components/ui/skeleton.cjs",
+            "types": "./dist/shad/components/ui/skeleton.d.ts"
+        },
+        "./context-menu": {
+            "import": "./dist/shad/components/ui/context-menu.mjs",
+            "require": "./dist/shad/components/ui/context-menu.cjs",
+            "types": "./dist/shad/components/ui/context-menu.d.ts"
+        },
+        "./form": {
+            "import": "./dist/shad/components/ui/form.mjs",
+            "require": "./dist/shad/components/ui/form.cjs",
+            "types": "./dist/shad/components/ui/form.d.ts"
+        },
+        "./carousel": {
+            "import": "./dist/shad/components/ui/carousel.mjs",
+            "require": "./dist/shad/components/ui/carousel.cjs",
+            "types": "./dist/shad/components/ui/carousel.d.ts"
+        },
+        "./slider": {
+            "import": "./dist/shad/components/ui/slider.mjs",
+            "require": "./dist/shad/components/ui/slider.cjs",
+            "types": "./dist/shad/components/ui/slider.d.ts"
+        },
+        "./defaultStyles.scss": {
+            "import": "./dist/tunnels/ulldApp.scss",
+            "require": "./dist/tunnels/ulldApp.scss"
+        },
+        "./websiteStyles.scss": {
+            "import": "./dist/tunnels/website.scss",
+            "require": "./dist/tunnels/website.scss"
+        },
+        "./themes/gray.scss": {
+            "import": "./dist/shad/defaultThemes/gray.scss",
+            "require": "./dist/shad/defaultThemes/gray.scss"
+        },
+        "./themes/violet.scss": {
+            "import": "./dist/shad/defaultThemes/violet.scss",
+            "require": "./dist/shad/defaultThemes/violet.scss"
+        },
+        "./themes/slate.scss": {
+            "import": "./dist/shad/defaultThemes/slate.scss",
+            "require": "./dist/shad/defaultThemes/slate.scss"
+        },
+        "./themes/neutral.scss": {
+            "import": "./dist/shad/defaultThemes/neutral.scss",
+            "require": "./dist/shad/defaultThemes/neutral.scss"
+        },
+        "./themes/stone.scss": {
+            "import": "./dist/shad/defaultThemes/stone.scss",
+            "require": "./dist/shad/defaultThemes/stone.scss"
+        },
+        "./themes/green.scss": {
+            "import": "./dist/shad/defaultThemes/green.scss",
+            "require": "./dist/shad/defaultThemes/green.scss"
+        },
+        "./themes/orange.scss": {
+            "import": "./dist/shad/defaultThemes/orange.scss",
+            "require": "./dist/shad/defaultThemes/orange.scss"
+        },
+        "./themes/yellow.scss": {
+            "import": "./dist/shad/defaultThemes/yellow.scss",
+            "require": "./dist/shad/defaultThemes/yellow.scss"
+        },
+        "./themes/blue.scss": {
+            "import": "./dist/shad/defaultThemes/blue.scss",
+            "require": "./dist/shad/defaultThemes/blue.scss"
+        },
+        "./themes/zinc.scss": {
+            "import": "./dist/shad/defaultThemes/zinc.scss",
+            "require": "./dist/shad/defaultThemes/zinc.scss"
+        },
+        "./themes/rose.scss": {
+            "import": "./dist/shad/defaultThemes/rose.scss",
+            "require": "./dist/shad/defaultThemes/rose.scss"
+        },
+        "./themes/red.scss": {
+            "import": "./dist/shad/defaultThemes/red.scss",
+            "require": "./dist/shad/defaultThemes/red.scss"
+        },
+        "./colorMap/gray": {
+            "import": "./dist/shad/defaultThemes/colorMaps/gray.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/gray.cjs"
+        },
+        "./colorMap/violet": {
+            "import": "./dist/shad/defaultThemes/colorMaps/violet.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/violet.cjs"
+        },
+        "./colorMap/slate": {
+            "import": "./dist/shad/defaultThemes/colorMaps/slate.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/slate.cjs"
+        },
+        "./colorMap/neutral": {
+            "import": "./dist/shad/defaultThemes/colorMaps/neutral.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/neutral.cjs"
+        },
+        "./colorMap/stone": {
+            "import": "./dist/shad/defaultThemes/colorMaps/stone.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/stone.cjs"
+        },
+        "./colorMap/green": {
+            "import": "./dist/shad/defaultThemes/colorMaps/green.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/green.cjs"
+        },
+        "./colorMap/orange": {
+            "import": "./dist/shad/defaultThemes/colorMaps/orange.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/orange.cjs"
+        },
+        "./colorMap/yellow": {
+            "import": "./dist/shad/defaultThemes/colorMaps/yellow.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/yellow.cjs"
+        },
+        "./colorMap/blue": {
+            "import": "./dist/shad/defaultThemes/colorMaps/blue.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/blue.cjs"
+        },
+        "./colorMap/zinc": {
+            "import": "./dist/shad/defaultThemes/colorMaps/zinc.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/zinc.cjs"
+        },
+        "./colorMap/rose": {
+            "import": "./dist/shad/defaultThemes/colorMaps/rose.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/rose.cjs"
+        },
+        "./colorMap/red": {
+            "import": "./dist/shad/defaultThemes/colorMaps/red.mjs",
+            "require": "./dist/shad/defaultThemes/colorMaps/red.cjs"
+        }
     },
     "dependencies": {
         "@hookform/resolvers": "3.6.0",

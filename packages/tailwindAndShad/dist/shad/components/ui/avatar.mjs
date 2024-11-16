@@ -1,0 +1,11 @@
+"use client"
+import { a as a$1 } from '../../../chunk-ORBRSQKI.mjs';
+import '../../../chunk-PD25TUY5.mjs';
+import * as e from 'react';
+import * as a from '@radix-ui/react-avatar';
+
+var m=e.forwardRef(({className:t,...i},r)=>e.createElement(a.Root,{ref:r,className:a$1("relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full",t),...i}));m.displayName=a.Root.displayName;var l=e.forwardRef(({className:t,...i},r)=>e.createElement(a.Image,{ref:r,className:a$1("aspect-square h-full w-full",t),...i}));l.displayName=a.Image.displayName;var f=e.forwardRef(({className:t,...i},r)=>e.createElement(a.Fallback,{ref:r,className:a$1("flex h-full w-full items-center justify-center rounded-full bg-muted",t),...i}));f.displayName=a.Fallback.displayName;
+
+export { m as Avatar, f as AvatarFallback, l as AvatarImage };
+//# sourceMappingURL=out.js.map
+//# sourceMappingURL=avatar.mjs.map

@@ -341,7 +341,6 @@
     "scripts": {
         "build": "wireit",
         "gatherTypes": "wireit",
-        "generateGoStructs": "wireit",
         "generateConfigTunnels": "wireit",
         "generateDefaultConfig": "wireit",
         "generateSlotMap": "wireit",
@@ -362,9 +361,6 @@
                 "src/**"
             ],
             "clean": false
-        },
-        "generateGoStructs": {
-            "command": "go-jsonschema -p ./dist/jsonSchemas/appConfigJsonSchema.json"
         },
         "bundle": {
             "command": "tsup-node",

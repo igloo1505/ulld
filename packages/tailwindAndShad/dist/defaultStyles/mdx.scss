@@ -1,0 +1,610 @@
+@tailwind components;
+
+a.queryTag {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: var(--radius);
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+  transition: background-color 0.15s ease-in-out;
+  &:hover {
+    background-color: hsl(var(--primary) / 0.9);
+  }
+}
+
+code {
+  .copy-code-btn {
+    display: none;
+    transform: scale(0);
+    transition: transition 0.2s ease-in;
+  }
+  &:hover {
+    .copy-code-btn {
+      display: inline-block;
+      transform: scale(1);
+    }
+  }
+}
+
+p code {
+  &::before {
+    content: "" !important;
+  }
+  &::after {
+    content: "" !important;
+  }
+}
+
+/* WARN: This might be a cause of issues with the website if code highlighting in that app suddenly breaks. If that works fine, delete this comment. Otherwise, apply this conditionally to the generated app. */
+.shiki {
+  code {
+    font-size: 13px;
+  }
+  color: var(--shiki-light) !important;
+  background-color: var(--shiki-light-bg) !important;
+  font-style: var(--shiki-light-font-style) !important;
+  font-weight: var(--shiki-light-font-weight) !important;
+  text-decoration: var(--shiki-light-text-decoration) !important;
+  span {
+    color: var(--shiki-light) !important;
+    background-color: var(--shiki-light-bg) !important;
+    font-style: var(--shiki-light-font-style) !important;
+    font-weight: var(--shiki-light-font-weight) !important;
+    text-decoration: var(--shiki-light-text-decoration) !important;
+  }
+}
+
+.dark {
+  .shiki,
+  .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+}
+
+*[data-rehype-pretty-code-figure] {
+  code {
+    padding: 0.2rem 0.3rem;
+    border-radius: 6px;
+    font-size: 13px;
+    &::before {
+      content: "" !important;
+    }
+    &::after {
+      content: "" !important;
+    }
+    color: var(--shiki-light) !important;
+    background-color: var(--shiki-light-bg) !important;
+    font-style: var(--shiki-light-font-style) !important;
+    font-weight: var(--shiki-light-font-weight) !important;
+    text-decoration: var(--shiki-light-text-decoration) !important;
+    span {
+      color: var(--shiki-light) !important;
+      background-color: var(--shiki-light-bg) !important;
+      font-style: var(--shiki-light-font-style) !important;
+      font-weight: var(--shiki-light-font-weight) !important;
+      text-decoration: var(--shiki-light-text-decoration) !important;
+    }
+  }
+}
+
+.dark *[data-rehype-pretty-code-figure] {
+  code,
+  code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+}
+
+figure[data-rehype-pretty-code-figure] {
+  mark[data-highlighted-chars] {
+    background-color: hsl(var(--bg-muted-foreground) / 0.4) !important;
+    color: hsl(var(--text-foreground));
+    span {
+      background-color: hsl(var(--bg-muted-foreground) / 0.4) !important;
+      color: hsl(var(--text-foreground));
+    }
+  }
+}
+
+pre[data-theme="dark"],
+pre[data-theme="light"] {
+  overflow: auto;
+}
+
+pre[data-theme="dark"],
+code[data-theme="dark"] {
+  display: none;
+}
+
+.dark {
+  div[data-rehype-pretty-code-fragment] {
+    pre[data-theme="dark"] {
+      display: block;
+    }
+    code[data-theme="dark"] {
+      display: grid;
+    }
+  }
+  span[data-rehype-pretty-code-fragment] {
+    pre[data-theme="dark"] {
+      display: inline-block;
+    }
+    code[data-theme="dark"] {
+      display: inline-grid;
+    }
+  }
+  pre[data-theme="light"],
+  code[data-theme="light"] {
+    display: none;
+  }
+  a.citationAnchor {
+    color: #3b82f6;
+  }
+}
+
+.admonition-bodyContainer {
+  :first-child {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+@layer components {
+  .note-base-layout {
+    @apply w-full h-fit bg-background text-foreground;
+  }
+  span[data-rehype-pretty-code-fragment] {
+    code {
+      @apply px-1 rounded-sm bg-gray-100 dark:bg-gray-900;
+    }
+  }
+  div[data-rehype-pretty-code-fragment] {
+    // @apply p-2 bg-gray-100 dark:bg-gray-800;
+    pre {
+      @apply p-2 my-4 rounded-sm bg-gray-100 dark:bg-gray-900;
+      code {
+        // @apply p-2 bg-gray-100 dark:bg-gray-800;
+        @apply bg-transparent;
+        span,
+        mark {
+          [data-highlighted-chars] {
+            @apply bg-muted-foreground/40 border text-foreground;
+            span {
+              @apply bg-muted-foreground text-foreground;
+            }
+          }
+        }
+      }
+    }
+  }
+  .gridCols-2 {
+    @apply grid-cols-1 md:grid-cols-2;
+  }
+  .gridCols-3 {
+    @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+  .gridCols-4 {
+    @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+  }
+
+  .inline-citation {
+    @apply text-blue-400 dark:text-blue-300 font-semibold text-sm;
+  }
+  .tabGroup {
+    &.active-0 {
+      .tab-btn-0 {
+        @apply bg-blue-500 dark:bg-blue-400 text-white;
+      }
+    }
+    &.active-1 {
+      .tab-btn-1 {
+        @apply bg-blue-500 dark:bg-blue-400 text-white;
+      }
+    }
+    &.active-2 {
+      .tab-btn-2 {
+        @apply bg-blue-500 dark:bg-blue-400 text-white;
+      }
+    }
+    &.active-3 {
+      .tab-btn-3 {
+        @apply bg-blue-500 dark:bg-blue-400 text-white;
+      }
+    }
+    &.active-4 {
+      .tab-btn-4 {
+        @apply bg-blue-500 dark:bg-blue-400 text-white;
+      }
+    }
+    &.active-5 {
+      .tab-btn-5 {
+        @apply bg-blue-500 dark:bg-blue-400 text-white;
+      }
+    }
+    &.active-6 {
+      .tab-btn-6 {
+        @apply bg-blue-500 dark:bg-blue-400 text-white;
+      }
+    }
+    &.active-7 {
+      .tab-btn-7 {
+        @apply bg-blue-500 dark:bg-blue-400 text-white;
+      }
+    }
+    &.active-8 {
+      .tab-btn-8 {
+        @apply bg-blue-500 dark:bg-blue-400 text-white;
+      }
+    }
+    &.active-9 {
+      .tab-btn-9 {
+        @apply bg-blue-500 dark:bg-blue-400 text-white;
+      }
+    }
+  }
+}
+
+/// Required for rehype styles to not implode.
+pre > code {
+  display: grid;
+  counter-reset: line;
+}
+
+code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 2rem;
+}
+
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 3rem;
+}
+
+.math.math.math-display {
+  overflow: auto;
+}
+
+.inlineMath mjx-container {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.hideMathjaxEquationLabels {
+  mjx-math[display="true"] {
+    mjx-labels {
+      display: none !important;
+    }
+  }
+}
+
+.compactMdx .math.math-display {
+  width: 100%;
+  & .MathJax {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.mdx {
+  .queryLink {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    color: #fff;
+    & * {
+      color: #fff;
+    }
+  }
+  p > .queryLink {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  .queryTag {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  p > .queryTag {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #fff;
+    & * {
+      color: #fff;
+    }
+  }
+  &.userMdxStyles {
+    a:not(.noLinkColor, .math) {
+      color: var(--general-link-color);
+    }
+  }
+  & li > ul {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+  }
+  &.floatImages {
+    li {
+      list-style-position: inside;
+    }
+  }
+  nav.toc {
+    display: none;
+  }
+  .tabGroup {
+    .tabContent {
+      display: none;
+    }
+    &.active-0 {
+      .tab-content-0 {
+        display: flex;
+      }
+    }
+    &.active-1 {
+      .tab-content-1 {
+        display: flex;
+      }
+    }
+    &.active-2 {
+      .tab-content-2 {
+        display: flex;
+      }
+    }
+
+    &.active-3 {
+      .tab-content-3 {
+        display: flex;
+      }
+    }
+    &.active-4 {
+      .tab-content-4 {
+        display: flex;
+      }
+    }
+    &.active-5 {
+      .tab-content-5 {
+        display: flex;
+      }
+    }
+    &.active-6 {
+      .tab-content-6 {
+        display: flex;
+      }
+    }
+    &.active-7 {
+      .tab-content-7 {
+        display: flex;
+      }
+    }
+    &.active-8 {
+      .tab-content-8 {
+        display: flex;
+      }
+    }
+  }
+  sup {
+    display: inline-block;
+  }
+
+  hr {
+    padding: 0.5rem 0;
+  }
+
+  li {
+    display: list-item;
+    flex-direction: row;
+  }
+
+  ul {
+    padding-left: 1rem;
+    li {
+      list-style-type: disc;
+      &::marker {
+        color: var(--primary-light);
+      }
+    }
+  }
+  ol {
+    padding-left: 1rem;
+    li {
+      list-style-type: decimal;
+      &::marker {
+        color: var(--primary-light);
+      }
+    }
+  }
+  ul.internalTaskList {
+    li {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      &::marker {
+        display: none;
+      }
+    }
+  }
+  section.footnotes[data-footnotes="true"] {
+    & > h2.sr-only {
+      position: relative !important;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      width: 100%;
+      height: fit-content;
+    }
+    ol {
+      font-size: 0.875rem;
+    }
+  }
+  mjx-container {
+    &[jax="CHTML"][display="true"] {
+      min-width: 0px !important;
+      max-width: 100%;
+      overflow-x: auto;
+      font-size: 1.25rem;
+      margin: 0px !important;
+      padding: 1rem 0.5rem;
+    }
+    mjx-script {
+      mjx-mtext {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+      }
+    }
+  }
+}
+
+html.dark {
+  ul {
+    li {
+      &::marker {
+        color: var(--primary-dark);
+      }
+    }
+  }
+  ol {
+    li {
+      &::marker {
+        color: var(--primary-dark);
+      }
+    }
+  }
+}
+
+html.idSelectMode {
+  .mdx {
+    & *[id] {
+      position: relative;
+      cursor: pointer;
+      &::after {
+        transition: background-color 0.3s ease-in-out;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #4b556355;
+      }
+      &:hover {
+        &::after {
+          background-color: #4b556388;
+        }
+      }
+    }
+  }
+}
+
+html.idSelectMode.dark {
+  .mdx {
+    & *[id] {
+      // border: 2px solid #ef4444;
+      &::after {
+        background-color: #6b728055;
+      }
+      &:hover {
+        &::after {
+          background-color: #6b728088;
+        }
+      }
+    }
+  }
+}
+
+section.footnotes {
+  margin-top: 2rem;
+  ol {
+    li {
+      p > div {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.references.csl-bib-body {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+latex-js {
+  display: inline-block;
+  width: min(83.3%, 768px);
+}
+
+table {
+  overflow: auto !important;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.noMaxTableHeight {
+  .internalTable {
+    max-height: unset !important;
+  }
+}
+
+dl.definitionAnchor {
+  display: block;
+  margin-bottom: 1rem;
+  dt {
+    font-size: 1.275rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+  }
+  dd {
+    margin: 3px 30px 10px 30px;
+  }
+  h1,
+  h2,
+  h3 {
+    font-size: 1.275rem;
+    line-height: 1.75rem;
+  }
+}
+
+.text-sm {
+  .embeddedLink {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.toc-disable-highlights {
+  text-decoration: none !important;
+  font-weight: 400 !important;
+  font-style: inherit !important;
+  .highlight-background {
+    background-color: hsl(var(--background)) !important;
+    * {
+      background-color: hsl(var(--background)) !important;
+    }
+  }
+  * {
+    text-decoration: none !important;
+    font-weight: 400 !important;
+    font-style: inherit !important;
+  }
+}

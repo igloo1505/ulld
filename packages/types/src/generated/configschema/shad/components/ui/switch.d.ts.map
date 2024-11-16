@@ -1,0 +1,1 @@
+{"version":3,"file":"switch.d.ts","sourceRoot":"","sources":["../../../../../../../tailwindAndShad/src/shad/components/ui/switch.tsx"],"names":[],"mappings":"AAEA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAA;AAC9B,OAAO,KAAK,gBAAgB,MAAM,wBAAwB,CAAA;AAI1D,UAAU,gBAAgB;IAC1B,KAAK,CAAC,EAAE,OAAO,CAAA;IACX,UAAU,CAAC,EAAE,OAAO,CAAA;CACnB;AAEL,QAAA,MAAM,MAAM,iLAoBV,CAAA;AAGF,OAAO,EAAE,MAAM,EAAE,CAAA"}

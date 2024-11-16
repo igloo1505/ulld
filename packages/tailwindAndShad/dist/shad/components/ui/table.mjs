@@ -1,0 +1,9 @@
+import { a } from '../../../chunk-ORBRSQKI.mjs';
+import '../../../chunk-PD25TUY5.mjs';
+import * as e from 'react';
+
+var r=e.forwardRef(({className:t,...a$1},l)=>e.createElement("div",{className:"relative w-full overflow-auto"},e.createElement("table",{ref:l,className:a("w-full caption-bottom text-sm",t),...a$1})));r.displayName="Table";var T=e.forwardRef(({className:t,...a$1},l)=>e.createElement("thead",{ref:l,className:a("[&_tr]:border-b",t),...a$1}));T.displayName="TableHeader";var b=e.forwardRef(({className:t,...a$1},l)=>e.createElement("tbody",{ref:l,className:a("[&_tr:last-child]:border-0",t),...a$1}));b.displayName="TableBody";var s=e.forwardRef(({className:t,...a$1},l)=>e.createElement("tfoot",{ref:l,className:a("border-t bg-muted/50 font-medium [&>tr]:last:border-b-0",t),...a$1}));s.displayName="TableFooter";var m=e.forwardRef(({className:t,...a$1},l)=>e.createElement("tr",{ref:l,className:a("border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",t),...a$1}));m.displayName="TableRow";var c=e.forwardRef(({className:t,...a$1},l)=>e.createElement("th",{ref:l,className:a("h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0",t),...a$1}));c.displayName="TableHead";var d=e.forwardRef(({className:t,...a$1},l)=>e.createElement("td",{ref:l,className:a("p-4 align-middle [&:has([role=checkbox])]:pr-0",t),...a$1}));d.displayName="TableCell";var n=e.forwardRef(({className:t,...a$1},l)=>e.createElement("caption",{ref:l,className:a("mt-4 text-sm text-muted-foreground",t),...a$1}));n.displayName="TableCaption";
+
+export { r as Table, b as TableBody, n as TableCaption, d as TableCell, s as TableFooter, c as TableHead, T as TableHeader, m as TableRow };
+//# sourceMappingURL=out.js.map
+//# sourceMappingURL=table.mjs.map

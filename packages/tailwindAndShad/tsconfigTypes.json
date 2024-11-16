@@ -1,5 +1,4 @@
 {
-    "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "extends": "@ulld/typescript-config/generateTypes.json",
     "exclude": [
         "node_modules",
@@ -10,11 +9,10 @@
         "src/__scripts__/**"
     ],
     "include": [
-        "**/*.ts",
-        "**/*.tsx"
+        "src/**/*.ts",
+        "src/**/*.tsx"
     ],
     "compilerOptions": {
-        "declarationDir": "../types/src/generated/configschema",
         "outDir": "./dist",
         "moduleResolution": "Bundler",
         "baseUrl": ".",

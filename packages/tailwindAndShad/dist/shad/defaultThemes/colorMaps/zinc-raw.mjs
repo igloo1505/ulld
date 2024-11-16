@@ -1,0 +1,7 @@
+import '../../../chunk-PD25TUY5.mjs';
+
+var e={popover:[.0351,.0351,.0429],popoverForeground:[.98,.98,.98],card:[.0351,.0351,.0429],cardForeground:[.98,.98,.98],primary:[.98,.98,.98],primaryForeground:[.09410000000000002,.09410000000000002,.1059],secondary:[.153117,.153117,.164883],secondaryForeground:[.98,.98,.98],muted:[.153117,.153117,.164883],mutedForeground:[.63145,.63145,.6665500000000001],border:[.153117,.153117,.164883],destructive:[.498168,.11383199999999999,.11383199999999999],destructiveForeground:[.98,.98,.98],input:[.153117,.153117,.164883],ring:[.831111,.831111,.8468890000000001],background:[.0351,.0351,.0429],foreground:[.98,.98,.98]},d={popover:[1,1,1],popoverForeground:[.0351,.0351,.0429],card:[1,1,1],cardForeground:[.0351,.0351,.0429],primary:[.09410000000000002,.09410000000000002,.1059],primaryForeground:[.98,.98,.98],secondary:[.957032,.957032,.9609680000000002],secondaryForeground:[.09410000000000002,.09410000000000002,.1059],muted:[.957032,.957032,.9609680000000002],mutedForeground:[.443482,.443482,.47851800000000005],border:[.8941,.8941,.9059],destructive:[.937116,.266884,.266884],destructiveForeground:[.98,.98,.98],input:[.8941,.8941,.9059],ring:[.09410000000000002,.09410000000000002,.1059],background:[1,1,1],foreground:[.0351,.0351,.0429]},u={dark:e,light:d};
+
+export { e as dark, u as default, d as light };
+//# sourceMappingURL=out.js.map
+//# sourceMappingURL=zinc-raw.mjs.map

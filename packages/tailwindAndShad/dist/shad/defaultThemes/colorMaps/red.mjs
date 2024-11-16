@@ -1,0 +1,7 @@
+import '../../../chunk-PD25TUY5.mjs';
+
+var o={popover:"rgb(9.95, 9.95, 9.95)",popoverForeground:"rgb(249.9, 249.9, 249.9)",card:"rgb(9.95, 9.95, 9.95)",cardForeground:"rgb(249.9, 249.9, 249.9)",primary:"rgb(219.98, 38.08, 38.08)",primaryForeground:"rgb(254.02, 242.21, 242.21)",secondary:"rgb(37.99, 37.99, 37.99)",secondaryForeground:"rgb(249.9, 249.9, 249.9)",muted:"rgb(37.99, 37.99, 37.99)",mutedForeground:"rgb(162.94, 162.94, 162.94)",border:"rgb(37.99, 37.99, 37.99)",destructive:"rgb(127.03, 29.03, 29.03)",destructiveForeground:"rgb(249.9, 249.9, 249.9)",input:"rgb(37.99, 37.99, 37.99)",ring:"rgb(219.98, 38.08, 38.08)",background:"rgb(9.95, 9.95, 9.95)",foreground:"rgb(249.9, 249.9, 249.9)"},b={popover:"rgb(255.0, 255.0, 255.0)",popoverForeground:"rgb(9.95, 9.95, 9.95)",card:"rgb(255.0, 255.0, 255.0)",cardForeground:"rgb(9.95, 9.95, 9.95)",primary:"rgb(219.98, 38.08, 38.08)",primaryForeground:"rgb(254.02, 242.21, 242.21)",secondary:"rgb(245.05, 245.05, 245.05)",secondaryForeground:"rgb(22.95, 22.95, 22.95)",muted:"rgb(245.05, 245.05, 245.05)",mutedForeground:"rgb(115.01, 115.01, 115.01)",border:"rgb(228.99, 228.99, 228.99)",destructive:"rgb(238.96, 68.06, 68.06)",destructiveForeground:"rgb(249.9, 249.9, 249.9)",input:"rgb(228.99, 228.99, 228.99)",ring:"rgb(219.98, 38.08, 38.08)",background:"rgb(255.0, 255.0, 255.0)",foreground:"rgb(9.95, 9.95, 9.95)"},e={dark:o,light:b};
+
+export { o as dark, e as default, b as light };
+//# sourceMappingURL=out.js.map
+//# sourceMappingURL=red.mjs.map

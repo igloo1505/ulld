@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/shad/components/ui/aspect-ratio.tsx"],"names":["AspectRatioPrimitive","AspectRatio"],"mappings":"iDAEA,UAAYA,MAA0B,+BAEtC,IAAMC,EAAmC","sourcesContent":["\"use client\"\n\nimport * as AspectRatioPrimitive from \"@radix-ui/react-aspect-ratio\"\n\nconst AspectRatio = AspectRatioPrimitive.Root\n\nexport { AspectRatio }\n"]}

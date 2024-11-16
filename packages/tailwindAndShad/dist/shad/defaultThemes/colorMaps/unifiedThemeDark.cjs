@@ -1,0 +1,13 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+require('../../../chunk-GX4GL4KK.cjs');
+
+var o={popover:"rgb(2.99, 6.97, 17.92)",popoverForeground:"rgb(248.88, 249.9, 250.92)",card:"rgb(2.99, 6.97, 17.92)",cardForeground:"rgb(248.88, 249.9, 250.92)",primary:"rgb(248.88, 249.9, 250.92)",primaryForeground:"rgb(17.03, 24.04, 39.07)",secondary:"rgb(31.07, 41.09, 55.12)",secondaryForeground:"rgb(248.88, 249.9, 250.92)",muted:"rgb(31.07, 41.09, 55.12)",mutedForeground:"rgb(156.01, 163.0, 174.98)",border:"rgb(31.07, 41.09, 55.12)",destructive:"rgb(127.03, 29.03, 29.03)",destructiveForeground:"rgb(248.88, 249.9, 250.92)",input:"rgb(31.07, 41.09, 55.12)",ring:"rgb(208.94, 212.94, 218.95)",background:"rgb(2.99, 6.97, 17.92)",foreground:"rgb(248.88, 249.9, 250.92)"},b={popover:"rgb(2.0, 8.23, 22.99)",popoverForeground:"rgb(247.86, 249.9, 251.94)",card:"rgb(2.0, 8.23, 22.99)",cardForeground:"rgb(247.86, 249.9, 251.94)",primary:"rgb(59.0, 130.05, 245.98)",primaryForeground:"rgb(15.02, 23.05, 42.1)",secondary:"rgb(30.08, 41.13, 59.17)",secondaryForeground:"rgb(247.86, 249.9, 251.94)",muted:"rgb(30.08, 41.13, 59.17)",mutedForeground:"rgb(148.03, 163.01, 183.98)",border:"rgb(30.08, 41.13, 59.17)",destructive:"rgb(127.03, 29.03, 29.03)",destructiveForeground:"rgb(247.86, 249.9, 251.94)",input:"rgb(30.08, 41.13, 59.17)",ring:"rgb(29.01, 77.88, 215.79)",background:"rgb(2.0, 8.23, 22.99)",foreground:"rgb(247.86, 249.9, 251.94)"},e={dark:o,light:b};
+
+exports.dark = o;
+exports.default = e;
+exports.light = b;
+//# sourceMappingURL=out.js.map
+//# sourceMappingURL=unifiedThemeDark.cjs.map

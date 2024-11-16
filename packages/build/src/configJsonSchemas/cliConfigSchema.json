@@ -1,0 +1,36 @@
+{
+  "$ref": "#/definitions/ulldCliConfig",
+  "definitions": {
+    "ulldCliConfig": {
+      "type": "object",
+      "properties": {
+        "build": {
+          "type": "object",
+          "properties": {
+            "buildDir": {
+              "type": "string",
+              "description": "Absolute path to the directory where the ULLD app should be generated."
+            }
+          },
+          "additionalProperties": false,
+          "default": {}
+        },
+        "logLevel": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warn",
+            "error",
+            "debug"
+          ]
+        },
+        "logFile": {
+          "type": "string",
+          "description": "Absolute path to a log file used during the build process."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,226 @@
+.Cheatsheet-ui {
+  background-color: #bef264;
+  color: #030712;
+}
+
+.Doc-ui {
+  background-color: #facc15;
+  color: #000;
+}
+.Guide-ui {
+  background-color: #ec4899;
+  color: #fff;
+}
+.JournalEntrie-ui {
+  background-color: #f43f5e;
+  color: #fff;
+}
+.MathNote-ui {
+  background-color: #2dd4bf;
+  color: #fff;
+}
+.HealthNote-ui {
+  background-color: #00bfff;
+  color: #000;
+}
+.PhysicsNote-ui {
+  background-color: #6366f1;
+  color: #000;
+}
+.QuickNote-ui {
+  background-color: #6366f1;
+  color: #fff;
+}
+.QuickThought-ui {
+  background-color: #8b5cf6;
+  color: #fff;
+}
+.Recipe-ui {
+  background-color: #d946ef;
+  color: #fff;
+}
+.Reference-ui {
+  background-color: #0ea5e9;
+  color: #fff;
+}
+.TechNote-ui {
+  background-color: #8b5cf6;
+  color: #fff;
+}
+
+// Admonitions
+.admonition.open {
+  .fold-icon {
+    transform: rotateZ(180deg);
+  }
+}
+
+// PRIORITY: Enable this extended property to override mathjax classes applied elsewhere
+.admonition.info {
+  .title {
+    background-color: #0ea5e9;
+    color: #fff !important;
+    & * {
+      color: #fff !important;
+    }
+  }
+}
+
+.admonition.bug {
+  .title {
+    background-color: #ef4444;
+    color: #fff !important;
+  }
+}
+
+.admonition.note {
+  .title {
+    background-color: #3f51b5;
+    color: #fff !important;
+  }
+}
+
+.admonition.tip {
+  .title {
+    background-color: #03a9f4;
+    color: #fff !important;
+  }
+}
+
+.admonition.faq {
+  .title {
+    background-color: #ffeb3b;
+    color: #000 !important;
+  }
+}
+
+.admonition.practice {
+  .title {
+    background-color: #2096f3;
+    color: #fff !important;
+  }
+}
+
+.admonition.abstract {
+  .title {
+    background-color: #ff9800;
+    color: #fff !important;
+  }
+}
+
+.admonition.todo {
+  .title {
+    background-color: #ff5722;
+    color: #fff !important;
+  }
+}
+
+.admonition.success {
+  .title {
+    background-color: #76ff03;
+    color: #000 !important;
+  }
+}
+
+.admonition.warn {
+  .title {
+    background-color: #ffff00;
+    color: #000 !important;
+  }
+}
+
+.admonition.fail {
+  .title {
+    background-color: #f44336;
+    color: #fff !important;
+  }
+}
+
+.admonition.example {
+  .title {
+    background-color: #9c27b0;
+    color: #fff !important;
+  }
+}
+
+.admonition.quote {
+  .title {
+    background-color: #e91e63;
+    color: #fff !important;
+  }
+}
+
+.admonition.cite {
+  .title {
+    background-color: #0ea5e9;
+    color: #fff !important;
+  }
+}
+
+.admonition.equation {
+  .title {
+    background-color: #ff5722;
+    color: #fff !important;
+  }
+}
+
+.admonition.definition {
+  .title {
+    background-color: #3f51b5;
+    color: #fff !important;
+  }
+}
+
+.admonition.important {
+  .title {
+    background-color: #ffff00;
+    color: #000 !important;
+  }
+}
+
+html.dark {
+  .Cheatsheet-ui {
+    background-color: #a3e635;
+    color: #030712 !important;
+  }
+  .Doc-ui {
+    background-color: #facc15;
+    color: #fff !important;
+  }
+  .Guide-ui {
+    background-color: #ec4899;
+    color: #fff !important;
+  }
+  .JournalEntrie-ui {
+    background-color: #e11d48;
+    color: #fff !important;
+  }
+  .MathNote-ui {
+    background-color: #2dd4bf;
+    color: #fff !important;
+  }
+  .PhysicsNote-ui {
+    background-color: #6366f1;
+    color: #fff !important;
+  }
+  .QuickNote-ui {
+    background-color: #6366f1;
+    color: #fff !important;
+  }
+  .QuickThought-ui {
+    background-color: #8b5cf6;
+    color: #fff !important;
+  }
+  .Recipe-ui {
+    background-color: #d946ef;
+    color: #fff !important;
+  }
+  .Reference-ui {
+    background-color: #0ea5e9;
+    color: #fff !important;
+  }
+  .TechNote-ui {
+    background-color: #8b5cf6;
+    color: #fff !important;
+  }
+}
