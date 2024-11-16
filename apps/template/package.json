@@ -1,0 +1,253 @@
+{
+    "name": "@ulld/template",
+    "version": "0.0.0",
+    "private": true,
+    "files": [
+        "src"
+    ],
+    "scripts": {
+        "build": "wireit",
+        "rebuild": "wireit",
+        "db:generate": "wireit",
+        "db:migrate": "wireit",
+        "db:studio": "dotenv -e .env.local -- prisma studio",
+        "dev": "next dev",
+        "dev-inspect": "NODE_OPTIONS='--inspect' next dev",
+        "dev-inspect:windows": "cross-env NODE_OPTIONS='--inspect' next dev",
+        "lint": "wireit",
+        "typecheck": "wireit",
+        "postinstall": "pnpm run db:generate",
+        "predev": "pnpm run db:generate",
+        "prepareUpdate": "wireit",
+        "runOnBuild": "wireit",
+        "start": "next start",
+        "toTemplateDeps": "wireit",
+        "toWorkspaceDeps": "wireit"
+    },
+    "wireit": {
+        "prepareUpdate": {
+            "command": "pnpm syncpack format",
+            "clean": false,
+            "devOnly": true
+        },
+        "build": {
+            "dependencies": [
+                "db:autoMigrate",
+                "runOnBuild",
+                "clean:preBuild",
+                "compile",
+                "clean:postBuild"
+            ]
+        },
+        "rebuild": {
+            "dependencies": [
+                "db:generate",
+                "runOnBuild",
+                "clean:preBuild",
+                "compile",
+                "clean:postBuild"
+            ]
+        },
+        "compile": {
+            "command": "next build",
+            "clean": false
+        },
+        "db:autoMigrate": {
+            "command": "dotenv -e .env.local -- prisma migrate dev --name=ulldAutoMigrate"
+        },
+        "db:migrate": {
+            "command": "dotenv -e .env.local -- prisma migrate dev"
+        },
+        "db:generate": {
+            "command": "dotenv -e .env.local -- prisma generate --schema=./src/database/schema.prisma"
+        },
+        "runOnBuild": {
+            "command": "tsx ./buildUtils/__TEMP__/runOnBuild.ts",
+            "clean": false
+        },
+        "clean:preBuild": {
+            "command": "tsx ./__scripts__/build/cleanup/prebuild/main.ts",
+            "clean": false
+        },
+        "clean:postBuild": {
+            "command": "tsx ./__scripts__/build/cleanup/postbuild/main.ts",
+            "clean": false
+        },
+        "toWorkspaceDeps": {
+            "command": "zsh ./.commitHooks/toWorkspaceDeps.zsh",
+            "output": [
+                "package.json"
+            ],
+            "clean": false
+        },
+        "toTemplateDeps": {
+            "command": "tsx ./__scripts__/development/setInternalVersions.ts template",
+            "output": [
+                "package.json"
+            ],
+            "clean": false
+        },
+        "lint": {
+            "command": "eslint"
+        },
+        "typecheck": {
+            "command": "tsc --watch --noEmit -p ./tsconfig.json",
+            "clean": false,
+            "service": true
+        }
+    },
+    "engines": {
+        "node": ">=20"
+    },
+    "dependencies": {
+        "@dimforge/rapier3d": "0.12.0",
+        "@ducanh2912/next-pwa": "10.2.7",
+        "@google/model-viewer": "3.5.0",
+        "@hookform/resolvers": "3.6.0",
+        "@mdx-js/loader": "3.0.1",
+        "@mdx-js/mdx": "3.0.1",
+        "@mdx-js/node-loader": "3.0.1",
+        "@mdx-js/react": "3.0.1",
+        "@napi-rs/canvas": "0.1.52",
+        "@next/mdx": "14.2.3",
+        "@next/third-parties": "14.2.3",
+        "@prisma/client": "5.17.0",
+        "@prisma/nextjs-monorepo-workaround-plugin": "5.17.0",
+        "@reduxjs/toolkit": "1.9.7",
+        "@trpc/server": "10.45.2",
+        "@ulld/api": "workspace:*",
+        "@ulld/bib-manager": "workspace:*",
+        "@ulld/calendar": "workspace:*",
+        "@ulld/command-palette": "workspace:*",
+        "@ulld/component-configs": "workspace:*",
+        "@ulld/component-map": "workspace:*",
+        "@ulld/configschema": "workspace:*",
+        "@ulld/database": "workspace:*",
+        "@ulld/default-image-map": "workspace:*",
+        "@ulld/developer": "workspace:*",
+        "@ulld/developer-schemas": "workspace:*",
+        "@ulld/editor": "workspace:*",
+        "@ulld/embeddable-components": "workspace:*",
+        "@ulld/equations": "workspace:*",
+        "@ulld/full-form": "workspace:*",
+        "@ulld/hooks": "workspace:*",
+        "@ulld/icons": "workspace:*",
+        "@ulld/journal": "workspace:*",
+        "@ulld/landing-layouts": "workspace:*",
+        "@ulld/logger": "workspace:*",
+        "@ulld/math": "workspace:*",
+        "@ulld/navigation": "workspace:*",
+        "@ulld/parsers": "workspace:*",
+        "@ulld/pdf": "workspace:*",
+        "@ulld/plot": "workspace:*",
+        "@ulld/render": "workspace:*",
+        "@ulld/schemas": "workspace:*",
+        "@ulld/snippets": "workspace:*",
+        "@ulld/state": "workspace:*",
+        "@ulld/tailwind": "workspace:*",
+        "@ulld/task-manager": "workspace:*",
+        "@ulld/ui": "workspace:*",
+        "@ulld/utilities": "workspace:*",
+        "@ulld/whiteboard": "workspace:*",
+        "@use-gesture/react": "10.3.1",
+        "@use-gesture/vanilla": "10.3.1",
+        "alea": "1.0.1",
+        "axios": "1.7.2",
+        "better-react-mathjax": "2.0.3",
+        "bibtex": "0.9.0",
+        "clsx": "2.1.1",
+        "dayjs": "1.11.11",
+        "dotenv": "16.4.5",
+        "file-loader": "6.2.0",
+        "framer-motion": "11.5.4",
+        "fumadocs-ui": "13.4.1",
+        "fuse.js": "7.0.0",
+        "glob": "11.0.0",
+        "gray-matter": "*",
+        "gsap": "3.12.5",
+        "jsdom": "25.0.0",
+        "lethargy": "1.0.9",
+        "lucide-react": "0.428.0",
+        "maath": "0.10.7",
+        "mathjax": "3.2.2",
+        "mathjax-full": "3.2.2",
+        "mini-svg-data-uri": "1.4.4",
+        "monaco-editor": "0.49.0",
+        "monaco-editor-webpack-plugin": "7.1.0",
+        "next": "14.2.5",
+        "popmotion": "11.0.5",
+        "postprocessing": "6.35.4",
+        "range-parser": "1.2.1",
+        "raw-loader": "4.0.2",
+        "rc-virtual-list": "3.14.2",
+        "react": "18.2.0",
+        "react-colorful": "5.6.1",
+        "react-device-detect": "2.2.3",
+        "react-dom": "18.2.0",
+        "react-ga4": "2.1.0",
+        "react-redux": "8.1.3",
+        "react-use-measure": "2.1.1",
+        "redux-persist-indexeddb-storage": "1.0.4",
+        "rehype-autolink-headings": "7.1.0",
+        "rehype-format": "5.0.0",
+        "rehype-mathjax": "6.0.0",
+        "rehype-pretty-code": "0.13.2",
+        "rehype-sanitize": "6.0.0",
+        "rehype-slug": "6.0.0",
+        "rehype-stringify": "10.0.0",
+        "rehype-video": "2.1.0",
+        "remark-custom-header-id": "1.0.0",
+        "remark-emoji": "4.0.1",
+        "remark-gfm": "3.0.1",
+        "remark-heading-id": "1.0.1",
+        "remark-math": "6.0.0",
+        "remark-parse": "11.0.0",
+        "remark-rehype": "11.1.0",
+        "sharp": "0.33.4",
+        "shiki": "1.1.7",
+        "superjson": "2.2.1",
+        "zod": "3.23.8"
+    },
+    "devDependencies": {
+        "@shikijs/rehype": "1.5.2",
+        "@shikijs/transformers": "1.6.4",
+        "@shikijs/twoslash": "1.5.2",
+        "@tailwindcss/container-queries": "0.1.1",
+        "@tailwindcss/forms": "0.5.7",
+        "@tailwindcss/typography": "0.5.13",
+        "@types/eslint": "8.56.10",
+        "@types/file-loader": "5.0.4",
+        "@types/jest": "29.5.11",
+        "@types/mathjax": "0.0.40",
+        "@types/mdx": "2.0.13",
+        "@types/node": "20.14.13",
+        "@types/react": "18.2.79",
+        "@types/react-dom": "18.2.25",
+        "@types/remark-heading-id": "1.0.0",
+        "@types/three": "0.162.0",
+        "@types/tinycolor2": "1.4.6",
+        "@ulld/eslint-config": "workspace:*",
+        "@ulld/types": "workspace:*",
+        "@ulld/typescript-config": "workspace:*",
+        "@vercel/node": "3.1.4",
+        "autoprefixer": "10.4.19",
+        "dotenv-cli": "*",
+        "eslint": "8.57.1",
+        "globby": "14.0.1",
+        "postcss": "8.4.39",
+        "postcss-import": "16.1.0",
+        "prisma": "5.17.0",
+        "sass": "1.77.8",
+        "syncpack": "12.4.0",
+        "tailwindcss": "3.4.1",
+        "tsx": "*",
+        "turbo": "2.0.9",
+        "typescript": "5.5.4",
+        "wireit": "0.14.9",
+        "zod-prisma-types": "3.1.8"
+    },
+    "prisma": {
+        "schema": "src/database/schema.prisma"
+    },
+    "peerDependencies": {}
+}

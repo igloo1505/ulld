@@ -1,0 +1,185 @@
+0000000000000000000000000000000000000000 518115cc848ed477367be10e03e9674df252b5ad safestub <admin@safestub.com> 1720313666 -0500	clone: from https://github.com/igloo1505/ulldApp.git
+518115cc848ed477367be10e03e9674df252b5ad 5ce21dee6cdd498501c01cad0806c9b3d0c64277 safestub <admin@safestub.com> 1720380918 -0500	commit: Update equation slots.
+5ce21dee6cdd498501c01cad0806c9b3d0c64277 c37716ce07952265566b80ec47b09f67a0235a92 safestub <admin@safestub.com> 1720381402 -0500	commit: Update equation page slots. Still have tons of slot stuff to handle, but this should be good to start working on generating pages dynamically.
+c37716ce07952265566b80ec47b09f67a0235a92 62d4689b16fc03300fb2741fb7d388bacfdb2b81 igloo1505 <iglinskia44@gmail.com> 1720394865 -0500	commit: Update more slots.
+62d4689b16fc03300fb2741fb7d388bacfdb2b81 a65ed90e966e1958cf933445dc394b9a2d859c0e igloo1505 <iglinskia44@gmail.com> 1720394891 -0500	commit: Update internal versions.
+a65ed90e966e1958cf933445dc394b9a2d859c0e 71bf7ab47bf1e8f7ad7d95ab9c5ddd1da02a0b93 igloo1505 <iglinskia44@gmail.com> 1720399095 -0500	commit: More work on slot templates. Coming together smoothly so far, but of course none of the actual compilation is taking place yet.
+71bf7ab47bf1e8f7ad7d95ab9c5ddd1da02a0b93 275303c01d0dbb065e29c9c59e586cb6bbf103da igloo1505 <iglinskia44@gmail.com> 1720405764 -0500	commit: Updated more slot templates. About 80% done with the initial templates I think
+275303c01d0dbb065e29c9c59e586cb6bbf103da 08c4ae396eb9297864836838df6a226fd3f7da86 igloo1505 <iglinskia44@gmail.com> 1720453423 -0500	commit: Update gitignore
+08c4ae396eb9297864836838df6a226fd3f7da86 25286b974099d822986099236d7b3355fa22ca47 igloo1505 <iglinskia44@gmail.com> 1720459103 -0500	commit: Updated versions to match updated package versions
+25286b974099d822986099236d7b3355fa22ca47 03a2824474b8713074c087ffcf0947f511d839a4 igloo1505 <iglinskia44@gmail.com> 1720540745 -0500	commit: Update more slots
+03a2824474b8713074c087ffcf0947f511d839a4 caf7fa4f23198be78a937e5188e6746357e4243e igloo1505 <iglinskia44@gmail.com> 1720582789 -0500	commit: Reworked components and pages to use the REPLACEME component as a place holder, and then replace only that content and the import for that component in each slot. Push this up in the AM when back on wifi, and you might be able to attempt to actually build this fucking thing tomorrow night.
+caf7fa4f23198be78a937e5188e6746357e4243e ec609cc5d5651793c782f9cf9d23652d9039c63b igloo1505 <iglinskia44@gmail.com> 1720630532 -0500	commit: Added pre-commit hooks to handle json formatting and local-remote package sourcing
+ec609cc5d5651793c782f9cf9d23652d9039c63b 46dbec1931294b1fb0423f4567caf08774d7cddd igloo1505 <iglinskia44@gmail.com> 1720631707 -0500	commit: Update pre-commit
+46dbec1931294b1fb0423f4567caf08774d7cddd 438afedf42b5ef1eb7a2a224c22e88cf4cbf9a90 igloo1505 <iglinskia44@gmail.com> 1720631936 -0500	commit: Update pre-commit hooks
+438afedf42b5ef1eb7a2a224c22e88cf4cbf9a90 72ad90cf8a06a85fa086868be5ee391bc171138c igloo1505 <iglinskia44@gmail.com> 1720632032 -0500	commit: broken commit hooks
+72ad90cf8a06a85fa086868be5ee391bc171138c be69221d3fa4c65200ba8a9e5630b42efc8e1ffb igloo1505 <iglinskia44@gmail.com> 1720632199 -0500	commit: broken pre-commit hook
+be69221d3fa4c65200ba8a9e5630b42efc8e1ffb 9e9c7df728b505257d4183fe936b4d119a06d5ec igloo1505 <iglinskia44@gmail.com> 1720632372 -0500	commit: wtf
+9e9c7df728b505257d4183fe936b4d119a06d5ec 893b703a629d44e82e768bfe5e8cce7518907699 igloo1505 <iglinskia44@gmail.com> 1720633190 -0500	commit: Nowww finally have this commit hook working, I think?
+893b703a629d44e82e768bfe5e8cce7518907699 bed99df9313a0cad554c378391e9bccca8e9a7c9 igloo1505 <iglinskia44@gmail.com> 1720911176 -0500	commit: Update slots. Need to push to remote ASAP
+bed99df9313a0cad554c378391e9bccca8e9a7c9 8a07d53108abae0ba27a1d97da8c8e3bc3cd34ab igloo1505 <iglinskia44@gmail.com> 1721056901 -0500	commit: Update slots. Haven't committed to remote in several days due to weather
+8a07d53108abae0ba27a1d97da8c8e3bc3cd34ab 7fe93b6bab84f5f4a214ffebeaee92504d8e83d7 igloo1505 <iglinskia44@gmail.com> 1721063085 -0500	commit: Update some of the task-manager slots to provide proper props.
+7fe93b6bab84f5f4a214ffebeaee92504d8e83d7 263dfc13c5d7ebb62e95e5b4edf6b72d5f0b0a40 igloo1505 <iglinskia44@gmail.com> 1721079323 -0500	commit: Done with the slots for now. Working on the build script now.
+263dfc13c5d7ebb62e95e5b4edf6b72d5f0b0a40 14a1329dcc962b0cf33015511a1619148ea4aace igloo1505 <iglinskia44@gmail.com> 1721152742 -0500	merge buildScript: Fast-forward
+14a1329dcc962b0cf33015511a1619148ea4aace 56ece7c2867f583d36a87c010c930bbf97d697ee igloo1505 <iglinskia44@gmail.com> 1721874246 -0500	merge buildScript: Fast-forward
+56ece7c2867f583d36a87c010c930bbf97d697ee ae46016b93b18c2addd1ce2dca5b7fdfab64beff igloo1505 <iglinskia44@gmail.com> 1721883185 -0500	commit: Update scripts
+ae46016b93b18c2addd1ce2dca5b7fdfab64beff 6d7b420f491505059b4421d07d2d91a6a41c817f igloo1505 <iglinskia44@gmail.com> 1721923022 -0500	commit: Update versions
+6d7b420f491505059b4421d07d2d91a6a41c817f 1850f2bb679c91bf266acd44c7131f94c78f1b75 igloo1505 <iglinskia44@gmail.com> 1721931051 -0500	commit: Updated some misaligned paths and passed down more props needed to
+1850f2bb679c91bf266acd44c7131f94c78f1b75 62225e947aea6b4c1e2089c4865d26746728d13a igloo1505 <iglinskia44@gmail.com> 1721931814 -0500	commit: Added dynamic transpile packages field.
+62225e947aea6b4c1e2089c4865d26746728d13a d28301d07cc467e0537fd97fbd13595ec64f5fb5 igloo1505 <iglinskia44@gmail.com> 1721943355 -0500	commit: Update exports to avoid conflicts.
+d28301d07cc467e0537fd97fbd13595ec64f5fb5 a40738d9c5e4e27e1a1d39472d9b20beaba4f771 igloo1505 <iglinskia44@gmail.com> 1721944270 -0500	commit: Update props to avoid name conflict.
+a40738d9c5e4e27e1a1d39472d9b20beaba4f771 33aa77866db6478d0540151bf41423043588da26 igloo1505 <iglinskia44@gmail.com> 1721945962 -0500	commit: Add default tailwind config. Will add ability to overwrite and modify
+33aa77866db6478d0540151bf41423043588da26 1b132c26be1a87860c0736b18621064bd05b1426 igloo1505 <iglinskia44@gmail.com> 1721953197 -0500	commit: Adjust dependency versions and added the prisma monorepo plugin to next
+1b132c26be1a87860c0736b18621064bd05b1426 84754e0ba5815d9f053dc287850421aaece0e2f9 igloo1505 <iglinskia44@gmail.com> 1721953378 -0500	commit: Update internal dependency versions to match patch bump.
+84754e0ba5815d9f053dc287850421aaece0e2f9 bf1838de4804f01bcda0f67a4af91cd68531c86c igloo1505 <iglinskia44@gmail.com> 1722004156 -0500	commit: Update config
+bf1838de4804f01bcda0f67a4af91cd68531c86c 11c04256839ebed6942598b8dd701704776878cc igloo1505 <iglinskia44@gmail.com> 1722007014 -0500	commit: Update internal versions to match patch bump.
+11c04256839ebed6942598b8dd701704776878cc 509949976d47412193fb4d109ec0b78f6f155e7a igloo1505 <iglinskia44@gmail.com> 1722007207 -0500	commit: Update to match internal version patch bump.
+509949976d47412193fb4d109ec0b78f6f155e7a 6de97305acb6f8ea10bea066250222b0306774b1 igloo1505 <iglinskia44@gmail.com> 1722007817 -0500	commit: Update versions to match internal patch bump.
+6de97305acb6f8ea10bea066250222b0306774b1 7ffe76e6ca856d960a300e187e04059f81f69b47 igloo1505 <iglinskia44@gmail.com> 1722010119 -0500	commit: Change versions to match patch bump
+7ffe76e6ca856d960a300e187e04059f81f69b47 613dcb2761e9f7468808f52d6f210e817d273315 igloo1505 <iglinskia44@gmail.com> 1722015294 -0500	commit: Adjusted onSync method quite a bit
+613dcb2761e9f7468808f52d6f210e817d273315 e7660e651adb5a06e8f8d9367cfe8eba80bd587c igloo1505 <iglinskia44@gmail.com> 1722015575 -0500	commit: Update tailwind with some missing dependencies and adjusted the sync method quite a bit.
+e7660e651adb5a06e8f8d9367cfe8eba80bd587c 91c995cd7d959835628dec2d6232aa813e5e88dc igloo1505 <iglinskia44@gmail.com> 1722017194 -0500	commit: Change versions to match patch bump
+91c995cd7d959835628dec2d6232aa813e5e88dc c974ef7d5c0e851a5af01d86db70bcd388b97b75 igloo1505 <iglinskia44@gmail.com> 1722019371 -0500	commit: Update react version to match monorepo
+c974ef7d5c0e851a5af01d86db70bcd388b97b75 73817736d41c80ff77d8a0cff6ef39f94a38012d igloo1505 <iglinskia44@gmail.com> 1722022855 -0500	commit: Change versions to match patch bump
+73817736d41c80ff77d8a0cff6ef39f94a38012d 60e11a332b7005ce65a6a036219d1c0a412c8173 igloo1505 <iglinskia44@gmail.com> 1722024325 -0500	commit: Lock in React and Next versions.
+60e11a332b7005ce65a6a036219d1c0a412c8173 65f7359ad0a7932b2050de24abca2a5cc8b84d42 igloo1505 <iglinskia44@gmail.com> 1722103618 -0500	merge staticPrismaSchema: Fast-forward
+65f7359ad0a7932b2050de24abca2a5cc8b84d42 38949f55cd03f31003561e9d33d3a5bb472d426a igloo1505 <iglinskia44@gmail.com> 1722110756 -0500	merge updateReactAndNext: Fast-forward
+38949f55cd03f31003561e9d33d3a5bb472d426a 85b130faebe2326b99bb3382a12dcfb9b7ecf49c igloo1505 <iglinskia44@gmail.com> 1722111100 -0500	commit: Added turbo.
+85b130faebe2326b99bb3382a12dcfb9b7ecf49c 8241fcb4c5f255e1bafe692c4092d241924c5555 igloo1505 <iglinskia44@gmail.com> 1722111398 -0500	commit: Change versions to match patch bump
+8241fcb4c5f255e1bafe692c4092d241924c5555 0d694ca56bfef9fba26f0a044378158663748b80 igloo1505 <iglinskia44@gmail.com> 1722134155 -0500	commit: Starting to deal with some TS errors as a result of the build. Need to
+0d694ca56bfef9fba26f0a044378158663748b80 1a4fd7fdf4fa78e4bb16dcd1b611a773891a46f8 igloo1505 <iglinskia44@gmail.com> 1722187401 -0500	commit: Change versions to match patch bump
+1a4fd7fdf4fa78e4bb16dcd1b611a773891a46f8 5e6666ed88c2241d0f976b8aa435ea48253fc834 igloo1505 <iglinskia44@gmail.com> 1722189675 -0500	commit: Update redux to support react version
+5e6666ed88c2241d0f976b8aa435ea48253fc834 ab40da1ee60aed99cf79d64ebe88729d1c518389 igloo1505 <iglinskia44@gmail.com> 1722190288 -0500	commit: Update react types to address some typing issues.
+ab40da1ee60aed99cf79d64ebe88729d1c518389 36435db42c71f21b78e4bab91c32977993ebb450 igloo1505 <iglinskia44@gmail.com> 1722192020 -0500	commit: Change versions to match patch bump
+36435db42c71f21b78e4bab91c32977993ebb450 acfb94321077e3742fc2d3426781afc81592475c igloo1505 <iglinskia44@gmail.com> 1722195760 -0500	commit: Lord I hope these package.json files are back in working order.
+acfb94321077e3742fc2d3426781afc81592475c b64971574ed61f3c6f25a9200b74c35c124bbf15 igloo1505 <iglinskia44@gmail.com> 1722195800 -0500	commit: Change versions to match patch bump
+b64971574ed61f3c6f25a9200b74c35c124bbf15 80bc687bc8b664396571339b09c6e21fdd74e94c igloo1505 <iglinskia44@gmail.com> 1722195971 -0500	commit: Change versions to match patch bump
+80bc687bc8b664396571339b09c6e21fdd74e94c dc36eabacee0294f3c191afd265e3dabd7105259 igloo1505 <iglinskia44@gmail.com> 1722196792 -0500	commit: Change versions to match patch bump
+dc36eabacee0294f3c191afd265e3dabd7105259 7d4e561b852a71c95b08836d707925eb8a3add78 igloo1505 <iglinskia44@gmail.com> 1722197001 -0500	commit: Update internal database package version.
+7d4e561b852a71c95b08836d707925eb8a3add78 44d029a45f9225a30bba505f51c79fe15dc9f6e8 igloo1505 <iglinskia44@gmail.com> 1722197567 -0500	commit: Change versions to match patch bump
+44d029a45f9225a30bba505f51c79fe15dc9f6e8 4d7e44a2db4260f860e8c138da66ef4d904350fe igloo1505 <iglinskia44@gmail.com> 1722198159 -0500	commit: Change versions to match patch bump
+4d7e44a2db4260f860e8c138da66ef4d904350fe d5a34a9441cb8c3aeac8adaa2a05abedabda4bac igloo1505 <iglinskia44@gmail.com> 1722199492 -0500	commit: Automatically changed versions to match patch bump
+d5a34a9441cb8c3aeac8adaa2a05abedabda4bac bac577ac42f88c7517d64b6ca39d649b243f2198 igloo1505 <iglinskia44@gmail.com> 1722270166 -0500	commit: Fixed a few TS errors that result as part of the build process.
+bac577ac42f88c7517d64b6ca39d649b243f2198 6fc5ea3bf2b371e877ec627447db15a76bf1705e igloo1505 <iglinskia44@gmail.com> 1722270300 -0500	commit: Automatically changed versions to match patch bump
+6fc5ea3bf2b371e877ec627447db15a76bf1705e c09ac20aac5185be57a68d66ec281e8f82ea90e1 igloo1505 <iglinskia44@gmail.com> 1722271541 -0500	commit: Automatically changed versions to match patch bump
+c09ac20aac5185be57a68d66ec281e8f82ea90e1 981d0bb4658e1607fa67256de4c66a1d05495c23 igloo1505 <iglinskia44@gmail.com> 1722277462 -0500	commit: Automatically changed versions to match patch bump
+981d0bb4658e1607fa67256de4c66a1d05495c23 99860dbb8c4414d8eddc46b19f136b05257cb04a igloo1505 <iglinskia44@gmail.com> 1722281546 -0500	commit: Automatically changed versions to match patch bump
+99860dbb8c4414d8eddc46b19f136b05257cb04a d82df3c39a60f554c84f02887d3c998e87a8d236 igloo1505 <iglinskia44@gmail.com> 1722281876 -0500	commit: Automatically changed versions to match patch bump
+d82df3c39a60f554c84f02887d3c998e87a8d236 9103a7030a570724ed5ec604838f9670f2fd73db igloo1505 <iglinskia44@gmail.com> 1722282784 -0500	commit: Automatically changed versions to match patch bump
+9103a7030a570724ed5ec604838f9670f2fd73db 638009524395cfc9bd4dac74d43f6940a48e2fca igloo1505 <iglinskia44@gmail.com> 1722352654 -0500	commit: Add some missing dependencies.
+638009524395cfc9bd4dac74d43f6940a48e2fca 37fd6d6dd11dbb5de3cbd39e577807f197a4eded igloo1505 <iglinskia44@gmail.com> 1722352878 -0500	commit: Automatically changed versions to match patch bump
+37fd6d6dd11dbb5de3cbd39e577807f197a4eded 905cec7065186acca487ed3c8c11df11a2b4004d igloo1505 <iglinskia44@gmail.com> 1722353183 -0500	commit: Automatically changed versions to match patch bump
+905cec7065186acca487ed3c8c11df11a2b4004d cd775e20a5ca8583ef6ea92820f9a8ce9ce1d556 igloo1505 <iglinskia44@gmail.com> 1722354334 -0500	commit: Automatically changed versions to match patch bump
+cd775e20a5ca8583ef6ea92820f9a8ce9ce1d556 0114da0ee3abe5426e467019de0b3a20569581f4 igloo1505 <iglinskia44@gmail.com> 1722355161 -0500	commit: Automatically changed versions to match patch bump
+0114da0ee3abe5426e467019de0b3a20569581f4 b5b7d6920a24bf4f993f8cbe90a68667647cafb2 igloo1505 <iglinskia44@gmail.com> 1722358934 -0500	commit: Automatically changed versions to match patch bump
+b5b7d6920a24bf4f993f8cbe90a68667647cafb2 882ab36d55b9f46834f7fe9ccc58c3c1a461765c igloo1505 <iglinskia44@gmail.com> 1722363392 -0500	commit: Automatically changed versions to match patch bump
+882ab36d55b9f46834f7fe9ccc58c3c1a461765c edd5901a2f40c51e00a27250a3281c7ee5bb8102 igloo1505 <iglinskia44@gmail.com> 1722364273 -0500	commit: Fixed tailwind darkmode issues.
+edd5901a2f40c51e00a27250a3281c7ee5bb8102 adebf3918cf246f438214c0e3743e9adb6bbeb6b igloo1505 <iglinskia44@gmail.com> 1722438915 -0500	commit: Added method to set mdxNote lastAccess data.
+adebf3918cf246f438214c0e3743e9adb6bbeb6b 706bde0a591f2a050fc904351575ab1778dafb8f igloo1505 <iglinskia44@gmail.com> 1722439013 -0500	commit: Automatically changed versions to match patch bump
+706bde0a591f2a050fc904351575ab1778dafb8f 5764868f1242e2497e8192f50bd732fc008c229d igloo1505 <iglinskia44@gmail.com> 1722444456 -0500	commit: Automatically changed versions to match patch bump
+5764868f1242e2497e8192f50bd732fc008c229d 58974c9b41228658ee08594156db343176e678ad igloo1505 <iglinskia44@gmail.com> 1722476315 -0500	commit: Added *all* missing api routes from the original app to the base app,
+58974c9b41228658ee08594156db343176e678ad 437eab1f31e959ad936e47d6a873265023a22b03 igloo1505 <iglinskia44@gmail.com> 1722477396 -0500	commit: Added default note type of 'dailyNote'. Make sure to notify the user
+437eab1f31e959ad936e47d6a873265023a22b03 9c3fd22d034249353edbfb77e82be37b071e9a9f igloo1505 <iglinskia44@gmail.com> 1722525862 -0500	commit: Update quite a bit to match new trpc approach.
+9c3fd22d034249353edbfb77e82be37b071e9a9f 28bd22644d7405a2339faaa6ac475f8100551b01 igloo1505 <iglinskia44@gmail.com> 1722710675 -0500	commit: Automatically changed versions to match patch bump
+28bd22644d7405a2339faaa6ac475f8100551b01 b88efc19eb1d9b170215563f399dfde470a1a546 igloo1505 <iglinskia44@gmail.com> 1722712726 -0500	commit: Automatically changed versions to match patch bump
+b88efc19eb1d9b170215563f399dfde470a1a546 d1b7a827db8224419c82a50fc5332eeb08312ba0 igloo1505 <iglinskia44@gmail.com> 1722713234 -0500	commit: Automatically changed versions to match patch bump
+d1b7a827db8224419c82a50fc5332eeb08312ba0 e27c4842672488c02df242f501223de1b9a58679 igloo1505 <iglinskia44@gmail.com> 1722714570 -0500	commit: Automatically changed versions to match patch bump
+e27c4842672488c02df242f501223de1b9a58679 88d64f7b2b55a47a1b1cc1613b87ba0da7b3264c igloo1505 <iglinskia44@gmail.com> 1722715607 -0500	commit: Automatically changed versions to match patch bump
+88d64f7b2b55a47a1b1cc1613b87ba0da7b3264c 33579354af88c1bd6694b2e9eb00669afc59cbfc igloo1505 <iglinskia44@gmail.com> 1722873188 -0500	commit: Add/Update some internal dependencies and fixed some layout props.
+33579354af88c1bd6694b2e9eb00669afc59cbfc 739accaff384913e7fe1b31d27580cc6c6debd6c igloo1505 <iglinskia44@gmail.com> 1722873442 -0500	commit: Automatically changed versions to match patch bump
+739accaff384913e7fe1b31d27580cc6c6debd6c 36634b5f16716cd9e4e136a1f5cfba937b6ea351 igloo1505 <iglinskia44@gmail.com> 1722887622 -0500	commit: Update viewport to avoid overscroll.
+36634b5f16716cd9e4e136a1f5cfba937b6ea351 3d67051465f9131606a97132371a90a16fff675c igloo1505 <iglinskia44@gmail.com> 1722956828 -0500	commit: Update some layout props to handle some css and mathjax stuff.
+3d67051465f9131606a97132371a90a16fff675c 62e03bd65b755d5a2bf23c0ff90cf90d50d2d3cf igloo1505 <iglinskia44@gmail.com> 1722956956 -0500	commit: Automatically changed versions to match patch bump
+62e03bd65b755d5a2bf23c0ff90cf90d50d2d3cf b9cd532364ed5340702dcfded1781def86fa756c igloo1505 <iglinskia44@gmail.com> 1722958291 -0500	commit: Added jsdom dependency.
+b9cd532364ed5340702dcfded1781def86fa756c 1712a438cbf93ea832ab5a4c31533e89cbf71480 igloo1505 <iglinskia44@gmail.com> 1722960450 -0500	commit: Automatically changed versions to match patch bump
+1712a438cbf93ea832ab5a4c31533e89cbf71480 65ec167e24a3dc70153fad2c64cc5a32dbb6651d igloo1505 <iglinskia44@gmail.com> 1722972770 -0500	commit: Trpc working.
+65ec167e24a3dc70153fad2c64cc5a32dbb6651d c8469a816477de928711bdab5eca575fa8925859 igloo1505 <iglinskia44@gmail.com> 1722972851 -0500	commit: Automatically changed versions to match patch bump
+c8469a816477de928711bdab5eca575fa8925859 2a8ad2560150ab04f6b8ab8fa5177205fa8b78a5 igloo1505 <iglinskia44@gmail.com> 1722991921 -0500	commit: Adjusted approach to gathering tailwind sources for internally developed packages.
+2a8ad2560150ab04f6b8ab8fa5177205fa8b78a5 ec9a29b3a736567e23168018bda1ce4fe4b8d431 igloo1505 <iglinskia44@gmail.com> 1723043271 -0500	commit: Automatically changed versions to match patch bump
+ec9a29b3a736567e23168018bda1ce4fe4b8d431 2f4b494aacde84a05ed2f93325ddd8aae5ac4889 igloo1505 <iglinskia44@gmail.com> 1723052506 -0500	commit: Automatically changed versions to match patch bump
+2f4b494aacde84a05ed2f93325ddd8aae5ac4889 38694be1c6096584f7d989ca1d415f2645b649b2 igloo1505 <iglinskia44@gmail.com> 1723057363 -0500	commit: Automatically changed versions to match patch bump
+38694be1c6096584f7d989ca1d415f2645b649b2 c46d0d5dfca53e8b59b44f96d0c7dc13067deef7 igloo1505 <iglinskia44@gmail.com> 1723057970 -0500	commit: Automatically changed versions to match patch bump
+c46d0d5dfca53e8b59b44f96d0c7dc13067deef7 21ed507f1894c84d1f76670a2c668328802f303e igloo1505 <iglinskia44@gmail.com> 1723130327 -0500	commit: Automatically changed versions to match patch bump
+21ed507f1894c84d1f76670a2c668328802f303e 61e4fd569640d0bea72eea12225f1737d7b1e3f9 igloo1505 <iglinskia44@gmail.com> 1723130525 -0500	commit: Automatically changed versions to match patch bump
+61e4fd569640d0bea72eea12225f1737d7b1e3f9 4a451acf3e713f39c25fd629305a286fcf6fce54 igloo1505 <iglinskia44@gmail.com> 1723132222 -0500	commit: Automatically changed versions to match patch bump
+4a451acf3e713f39c25fd629305a286fcf6fce54 867f2d2e9b3ed79d5fd2fd293d88bd16b92f0287 igloo1505 <iglinskia44@gmail.com> 1723133534 -0500	commit: Update some dependencies.
+867f2d2e9b3ed79d5fd2fd293d88bd16b92f0287 140c7d5a99e3b6075469d73c7838fb7822ecf263 igloo1505 <iglinskia44@gmail.com> 1723133951 -0500	commit: Automatically changed versions to match patch bump
+140c7d5a99e3b6075469d73c7838fb7822ecf263 fc711a9e83e3aaddcfb4f8cdbe32d568e8d16c2f igloo1505 <iglinskia44@gmail.com> 1723137999 -0500	commit: Automatically changed versions to match patch bump
+fc711a9e83e3aaddcfb4f8cdbe32d568e8d16c2f a1c1a9006dda5c9a4ac7856f34c5bd1e5be48e24 igloo1505 <iglinskia44@gmail.com> 1723139072 -0500	commit: Automatically changed versions to match patch bump
+a1c1a9006dda5c9a4ac7856f34c5bd1e5be48e24 92f04ae4e2029a77a158a668d3c40a83f9b5a6e3 igloo1505 <iglinskia44@gmail.com> 1723144193 -0500	commit: Automatically changed versions to match patch bump
+92f04ae4e2029a77a158a668d3c40a83f9b5a6e3 329b35416c80ac88db6aaee4d95a638deb455665 igloo1505 <iglinskia44@gmail.com> 1723145788 -0500	commit: Automatically changed versions to match patch bump
+329b35416c80ac88db6aaee4d95a638deb455665 bb7575af830dbdf52999673bde5548df10178924 igloo1505 <iglinskia44@gmail.com> 1723221259 -0500	commit: Fix tailwind issue that was causing build and even dev server with local sources to fail.
+bb7575af830dbdf52999673bde5548df10178924 39328cd41fb225c44a5b678b0a332c6f308658cd igloo1505 <iglinskia44@gmail.com> 1723221371 -0500	commit: Automatically changed versions to match patch bump
+39328cd41fb225c44a5b678b0a332c6f308658cd b747c0bcb017b9ea434ea610588155d27730585d igloo1505 <iglinskia44@gmail.com> 1723231543 -0500	commit: Automatically changed versions to match patch bump
+b747c0bcb017b9ea434ea610588155d27730585d df8b984f961cacf058b7277cc58a41550fb685fb igloo1505 <iglinskia44@gmail.com> 1723232557 -0500	commit: Add typed json prisma generator.
+df8b984f961cacf058b7277cc58a41550fb685fb 4de435765af808da7f86f186b03a64f3ba1d7f4f igloo1505 <iglinskia44@gmail.com> 1723233565 -0500	commit: Automatically changed versions to match patch bump
+4de435765af808da7f86f186b03a64f3ba1d7f4f 42d243f68cf0d1615096d5af98bbbe4b71915288 igloo1505 <iglinskia44@gmail.com> 1723235192 -0500	commit: Automatically changed versions to match patch bump
+42d243f68cf0d1615096d5af98bbbe4b71915288 7da475d8fd9ab331e0d9524cc9a11868cd12f63e igloo1505 <iglinskia44@gmail.com> 1723236182 -0500	commit: Added prisma-generator-fake-data to dev dependencies. This has no
+7da475d8fd9ab331e0d9524cc9a11868cd12f63e 112eda874ffa2458e4190fc122961ab4920450df igloo1505 <iglinskia44@gmail.com> 1723404082 -0500	commit: Update next.config to support node-glob import in trpc
+112eda874ffa2458e4190fc122961ab4920450df 1cfbd06e3e8ec1473435653cda93c6a293f90f88 igloo1505 <iglinskia44@gmail.com> 1723579220 -0500	commit: Update glob route to expose method anywhere on the server, since glob
+1cfbd06e3e8ec1473435653cda93c6a293f90f88 fb7ff8e60b3eb42a54fe98ecfbf55e0c18de9759 igloo1505 <iglinskia44@gmail.com> 1723741832 -0500	commit: Cleaned up extra component and passed toc component to IndividualNoteWrapper to handle outside of the base app's scope.
+fb7ff8e60b3eb42a54fe98ecfbf55e0c18de9759 6b0cf2b49169faaec58281fab9b28da2a8ba0b1f igloo1505 <iglinskia44@gmail.com> 1723819399 -0500	commit: Applied NoteDetailSheet component.
+6b0cf2b49169faaec58281fab9b28da2a8ba0b1f 4727370ab7d287d3250a1ed664ee2bb6351dd28f igloo1505 <iglinskia44@gmail.com> 1723819621 -0500	commit: Automatically changed versions to match patch bump
+4727370ab7d287d3250a1ed664ee2bb6351dd28f 61b43e53bafb710368353a412d70032a15f528a0 igloo1505 <iglinskia44@gmail.com> 1723944274 -0500	commit: Automatically changed versions to match patch bump
+61b43e53bafb710368353a412d70032a15f528a0 d456b0f2dea0aae11d47cfa47a097b8edaded9ab igloo1505 <iglinskia44@gmail.com> 1723947368 -0500	commit: Automatically changed versions to match patch bump
+d456b0f2dea0aae11d47cfa47a097b8edaded9ab b26e37f8a27f70b45ba291ad876bdcb914c5a30c igloo1505 <iglinskia44@gmail.com> 1723950462 -0500	commit: Automatically changed versions to match patch bump
+b26e37f8a27f70b45ba291ad876bdcb914c5a30c 1909c075918cc7af3981b840db6f30c80a3f73e4 igloo1505 <iglinskia44@gmail.com> 1723952172 -0500	commit: Add @ulld/state and @ulld/utilities to base app since they're no longer installed automatically as peer deps.
+1909c075918cc7af3981b840db6f30c80a3f73e4 a588af232ead149c68e39cf8cfae1b860e494317 igloo1505 <iglinskia44@gmail.com> 1724004310 -0500	commit: Automatically changed versions to match patch bump
+a588af232ead149c68e39cf8cfae1b860e494317 9bec7ce25ba3ec5ff256125329212170fa3a8f5c igloo1505 <iglinskia44@gmail.com> 1724010938 -0500	commit: Automatically changed versions to match patch bump
+9bec7ce25ba3ec5ff256125329212170fa3a8f5c 19dc74894096784e0835da3f21f10cf1c6657560 igloo1505 <iglinskia44@gmail.com> 1724038725 -0500	commit: Removed some conflated styles from the settings page layout. Moving most of that into components in the @ulld/utilities package for components intended to be available for developer use, and the @ulld/full-form package for wrapper comonents used in the base app directly
+19dc74894096784e0835da3f21f10cf1c6657560 1a4b818640b101b7fe548d1b31816517d5b40516 igloo1505 <iglinskia44@gmail.com> 1724080276 -0500	commit: Automatically changed versions to match patch bump
+1a4b818640b101b7fe548d1b31816517d5b40516 5fc89a8e40cbb0aab72e2118a35e7a8db7702bcd igloo1505 <iglinskia44@gmail.com> 1724096508 -0500	commit: Automatically changed versions to match patch bump
+5fc89a8e40cbb0aab72e2118a35e7a8db7702bcd 6045ec30f99702cc53e132a8f3fbf08701582544 igloo1505 <iglinskia44@gmail.com> 1724098953 -0500	commit: Automatically changed versions to match patch bump
+6045ec30f99702cc53e132a8f3fbf08701582544 78fea49cbfc65dd2ecc95edf8994f250fe25ae03 igloo1505 <iglinskia44@gmail.com> 1724099875 -0500	commit: Automatically changed versions to match patch bump
+78fea49cbfc65dd2ecc95edf8994f250fe25ae03 dc7f6116d33d5ed1158ea4e606399a62cfa7e9d9 igloo1505 <iglinskia44@gmail.com> 1724100382 -0500	commit: Override missing package version.
+dc7f6116d33d5ed1158ea4e606399a62cfa7e9d9 22906a7b2283f00fefd7352d06a36e45ed2adc70 igloo1505 <iglinskia44@gmail.com> 1724102143 -0500	commit: Automatically changed versions to match patch bump
+22906a7b2283f00fefd7352d06a36e45ed2adc70 41c2b6b97b88cafeecac9a3e987a0c93f8669123 igloo1505 <iglinskia44@gmail.com> 1724103813 -0500	commit: Automatically changed versions to match patch bump
+41c2b6b97b88cafeecac9a3e987a0c93f8669123 375689c2eb3cb0023fc84b94a52763d7622893e7 igloo1505 <iglinskia44@gmail.com> 1724105080 -0500	commit: Automatically changed versions to match patch bump
+375689c2eb3cb0023fc84b94a52763d7622893e7 cd004b6546f941a846f80a0126f2cac938f65fc6 igloo1505 <iglinskia44@gmail.com> 1724166598 -0500	commit: Automatically changed versions to match patch bump
+cd004b6546f941a846f80a0126f2cac938f65fc6 4f1f89c4469553e8995b3b22b107791707cbd109 igloo1505 <iglinskia44@gmail.com> 1724167721 -0500	commit: Automatically changed versions to match patch bump
+4f1f89c4469553e8995b3b22b107791707cbd109 2ce85665e0266e67ce6dfc6134793703072911b2 igloo1505 <iglinskia44@gmail.com> 1724173954 -0500	commit: Automatically changed versions to match patch bump
+2ce85665e0266e67ce6dfc6134793703072911b2 c6df83a99a45888b6732d138748ea845b8284a70 igloo1505 <iglinskia44@gmail.com> 1724180446 -0500	commit: force-dynamic on onSync route.
+c6df83a99a45888b6732d138748ea845b8284a70 36b70864898e70d8f0af2fce5f89d5ab38f18385 igloo1505 <iglinskia44@gmail.com> 1724257503 -0500	commit: Automatically changed versions to match patch bump
+36b70864898e70d8f0af2fce5f89d5ab38f18385 2824f0edb1ac20bf1133680b0e887f37635ff064 igloo1505 <iglinskia44@gmail.com> 1724267200 -0500	commit: Automatically changed versions to match patch bump
+2824f0edb1ac20bf1133680b0e887f37635ff064 70500a3828ff67f105379d52e4156c0c4cc86440 igloo1505 <iglinskia44@gmail.com> 1724339828 -0500	commit: Automatically changed versions to match patch bump
+70500a3828ff67f105379d52e4156c0c4cc86440 1f91bb73a4880afcc68856837a6006597c4cd55c igloo1505 <iglinskia44@gmail.com> 1724356140 -0500	commit: Automatically changed versions to match patch bump
+1f91bb73a4880afcc68856837a6006597c4cd55c 7bb1da7f18a3d86e8a1d784895177df4c6211135 igloo1505 <iglinskia44@gmail.com> 1724426265 -0500	commit: Automatically changed versions to match patch bump
+7bb1da7f18a3d86e8a1d784895177df4c6211135 fdf788d08757b7933b076abf3eb994b531a852f2 igloo1505 <iglinskia44@gmail.com> 1724426370 -0500	commit: Automatically changed versions to match patch bump
+fdf788d08757b7933b076abf3eb994b531a852f2 fbbd3adc8492e24392536f7f5e7f6e626db2a4ac igloo1505 <iglinskia44@gmail.com> 1724439879 -0500	commit: Automatically changed versions to match patch bump
+fbbd3adc8492e24392536f7f5e7f6e626db2a4ac af854a22ac67938e9dc167bdbea11ae04711fdf0 igloo1505 <iglinskia44@gmail.com> 1724519714 -0500	commit: Automatically changed versions to match patch bump
+af854a22ac67938e9dc167bdbea11ae04711fdf0 e7007f92747bed020d4caed9a78e2177c5156c75 igloo1505 <iglinskia44@gmail.com> 1724605566 -0500	commit: Automatically changed versions to match patch bump
+e7007f92747bed020d4caed9a78e2177c5156c75 604854fbc857104380552d889e65ea68a1f4c2c3 igloo1505 <iglinskia44@gmail.com> 1724606758 -0500	commit: Automatically changed versions to match patch bump
+604854fbc857104380552d889e65ea68a1f4c2c3 cb00f6bfd0df005bdc2fafa06553c440b6acafd8 igloo1505 <iglinskia44@gmail.com> 1724860063 -0500	commit: Move misplaced equation detail page. Was being intercepted by the @modal route, but failed on refresh
+cb00f6bfd0df005bdc2fafa06553c440b6acafd8 bc0bdc02ba811d26f4a984e3be89092a3b944b8a igloo1505 <iglinskia44@gmail.com> 1724875434 -0500	commit: Automatically changed versions to match patch bump
+bc0bdc02ba811d26f4a984e3be89092a3b944b8a 78c95adae0dd761653d1d7bb56103ac7fc2bfadf igloo1505 <iglinskia44@gmail.com> 1724944725 -0500	commit: Automatically changed versions to match patch bump
+78c95adae0dd761653d1d7bb56103ac7fc2bfadf c96ee3e262940c478a1a514b3b5d5eeece19627b igloo1505 <iglinskia44@gmail.com> 1724952574 -0500	commit: Automatically changed versions to match patch bump
+c96ee3e262940c478a1a514b3b5d5eeece19627b bb0974d398fe818ddb2f223b2468d5a586e77a37 igloo1505 <iglinskia44@gmail.com> 1724958963 -0500	commit: Automatically changed versions to match patch bump
+bb0974d398fe818ddb2f223b2468d5a586e77a37 b5de4b414583f15bb5936f62f5e875c6d0cd40a0 igloo1505 <iglinskia44@gmail.com> 1724960000 -0500	commit: Automatically changed versions to match patch bump
+b5de4b414583f15bb5936f62f5e875c6d0cd40a0 bfd47af8d1484ceaa3dd86197bb7e1a0c3a551f9 igloo1505 <iglinskia44@gmail.com> 1725029733 -0500	commit: Automatically changed versions to match patch bump
+bfd47af8d1484ceaa3dd86197bb7e1a0c3a551f9 fbffe855b8fe2cf0c80f547ac6acd551a40aeead igloo1505 <iglinskia44@gmail.com> 1725279396 -0500	commit: Automatically changed versions to match patch bump
+fbffe855b8fe2cf0c80f547ac6acd551a40aeead 1f6f2f7adf23a408e473d15226be0a515e721e92 igloo1505 <iglinskia44@gmail.com> 1725974835 -0500	commit: Automatically changed versions to match patch bump
+1f6f2f7adf23a408e473d15226be0a515e721e92 f45a2fe1194ed3e08e3e274a80a0a3c61f1b8068 igloo1505 <iglinskia44@gmail.com> 1726150004 -0500	commit: Automatically changed versions to match patch bump
+f45a2fe1194ed3e08e3e274a80a0a3c61f1b8068 1e55870e75a32e50bb6572091c4af544accc62ca igloo1505 <iglinskia44@gmail.com> 1726150494 -0500	commit: Automatically changed versions to match patch bump
+1e55870e75a32e50bb6572091c4af544accc62ca be3bb960cee88d46ace73eda25689453b6cd8d2c igloo1505 <iglinskia44@gmail.com> 1726156724 -0500	commit: Automatically changed versions to match patch bump
+be3bb960cee88d46ace73eda25689453b6cd8d2c f569affc474af79b18ea797372ea64ee4bdd6572 igloo1505 <iglinskia44@gmail.com> 1726158326 -0500	commit: Automatically changed versions to match patch bump
+f569affc474af79b18ea797372ea64ee4bdd6572 9863070e5d266a73b01763a6514ed9855d8d9300 igloo1505 <iglinskia44@gmail.com> 1726159731 -0500	commit: Automatically changed versions to match patch bump
+9863070e5d266a73b01763a6514ed9855d8d9300 1a50d4373024bd494431fe8cc4b2c52492e911fb igloo1505 <iglinskia44@gmail.com> 1726160670 -0500	commit: Automatically changed versions to match patch bump
+1a50d4373024bd494431fe8cc4b2c52492e911fb e43ed114fbcec32ea769a71e0a2b5005d2bd49b0 igloo1505 <iglinskia44@gmail.com> 1726160902 -0500	commit: Automatically changed versions to match patch bump
+e43ed114fbcec32ea769a71e0a2b5005d2bd49b0 07734d1118959bdede915ca463066a14675fe4a6 igloo1505 <iglinskia44@gmail.com> 1726408482 -0500	commit: Automatically changed versions to match patch bump
+07734d1118959bdede915ca463066a14675fe4a6 7b6b333f594ef15cb2be1114ea8e143a77eaa25d igloo1505 <iglinskia44@gmail.com> 1726418246 -0500	commit: Automatically changed versions to match patch bump
+7b6b333f594ef15cb2be1114ea8e143a77eaa25d 5dddbf4686710d6e2d55fcf1f15e72da5d944762 igloo1505 <iglinskia44@gmail.com> 1726666328 -0500	commit: Automatically changed versions to match patch bump
+5dddbf4686710d6e2d55fcf1f15e72da5d944762 094d0f61ea1ee4b19d5bf6f1aecbbf6ac5580945 igloo1505 <iglinskia44@gmail.com> 1726848128 -0500	commit: Automatically changed versions to match patch bump
+094d0f61ea1ee4b19d5bf6f1aecbbf6ac5580945 b1bf46024c9e12ffec930f2e1a653c7b1fd11a39 igloo1505 <iglinskia44@gmail.com> 1727624753 -0500	commit: Automatically changed versions to match patch bump
+b1bf46024c9e12ffec930f2e1a653c7b1fd11a39 da80c83ff7824de48801371630f9a74c2af4c84e igloo1505 <iglinskia44@gmail.com> 1727626905 -0500	commit: Automatically changed versions to match patch bump
+da80c83ff7824de48801371630f9a74c2af4c84e dc3d896d853f12c60e56e85cfd83222e30782555 igloo1505 <iglinskia44@gmail.com> 1727799782 -0500	commit: Automatically changed versions to match patch bump
+dc3d896d853f12c60e56e85cfd83222e30782555 2e53a149ce4a86b37d99f5042d90ee571b735ea6 igloo1505 <iglinskia44@gmail.com> 1727800383 -0500	commit: Automatically changed versions to match patch bump
+2e53a149ce4a86b37d99f5042d90ee571b735ea6 9bea70d4ba117cdb1711c2246252257d5b86bf7e igloo1505 <iglinskia44@gmail.com> 1727802594 -0500	commit: Automatically changed versions to match patch bump
+9bea70d4ba117cdb1711c2246252257d5b86bf7e 368d96469e1538b2f6a9b5b8bba57cf471545a56 igloo1505 <iglinskia44@gmail.com> 1728222839 -0500	commit: Automatically changed versions to match patch bump
+368d96469e1538b2f6a9b5b8bba57cf471545a56 fbe664c26fa79fea9359cb46a82ef36f2642415c igloo1505 <iglinskia44@gmail.com> 1728225080 -0500	commit: Package not updating in cli
+fbe664c26fa79fea9359cb46a82ef36f2642415c 9e75eb2ad64d52d7d257e6aafadde7325da47db1 igloo1505 <iglinskia44@gmail.com> 1728226942 -0500	commit: Automatically changed versions to match patch bump
+9e75eb2ad64d52d7d257e6aafadde7325da47db1 5b352287864812530b422b9d8ac486b57809cb7c igloo1505 <iglinskia44@gmail.com> 1728237960 -0500	commit: Automatically changed versions to match patch bump
+5b352287864812530b422b9d8ac486b57809cb7c e0a4fdeef63f3fb78c8e6c01d9e37fdaee6b17a6 igloo1505 <iglinskia44@gmail.com> 1728675246 -0500	commit: Updated commit hooks ot more reliably format package.json to avoid diffing issues
+e0a4fdeef63f3fb78c8e6c01d9e37fdaee6b17a6 3cd4568c4ab1e0a8d6c958272adee0e387d410e0 igloo1505 <iglinskia44@gmail.com> 1728933803 -0500	commit: Automatically changed versions to match patch bump
+3cd4568c4ab1e0a8d6c958272adee0e387d410e0 03313ba32f1475c2e08fccf719c8dd1cec377109 igloo1505 <iglinskia44@gmail.com> 1728935190 -0500	commit: Automatically changed versions to match patch bump
+03313ba32f1475c2e08fccf719c8dd1cec377109 5b58686a882cd58692fb00cbacfbdec96d70d36b igloo1505 <iglinskia44@gmail.com> 1729723920 -0500	commit: Adjust props passed in to navigation components to match modifications in the monorepo.
+5b58686a882cd58692fb00cbacfbdec96d70d36b b7e1b408c96c1111b5157ee0cd2412f56b1ba9ef igloo1505 <iglinskia44@gmail.com> 1730060266 -0500	commit: Initial commit after moving template app to monorepo.

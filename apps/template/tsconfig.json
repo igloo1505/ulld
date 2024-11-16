@@ -1,0 +1,69 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "composite": false,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowImportingTsExtensions": true,
+        "inlineSources": false,
+        "isolatedModules": true,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "preserveWatchOutput": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "noEmit": true,
+        "strictNullChecks": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "allowJs": true,
+        "declaration": false,
+        "declarationMap": false,
+        "jsx": "preserve",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "resolveJsonModule": true,
+        "target": "ES2021",
+        "baseUrl": ".",
+        "paths": {
+            "#/*": [
+                "./src/*"
+            ],
+            "buildData": [
+                "./ulldBuildData.json"
+            ],
+            "appConfig": [
+                "./appConfig.ulld.json"
+            ],
+            "notePageComponents/*": [
+                "./src/components/notePageComponents/*"
+            ]
+        },
+        "incremental": true
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        ".turbo",
+        "src/**/*.test.ts",
+        "coverage",
+        "src/__scripts__"
+    ],
+    "include": [
+        "next-env.d.ts",
+        ".next/types/**/*.ts",
+        "**/*.ts",
+        "**/*.tsx"
+    ],
+    "ignore": [
+        "**.mdx"
+    ]
+}

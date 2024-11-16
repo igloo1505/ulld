@@ -1,0 +1,16 @@
+appConfig.ulld.json
+node_modules
+ulldBuildData.json
+src/app/math
+src/app/physics
+src/database/generated
+src/databaseTestData.ts
+.next
+public/sw**
+public/workbox**
+whenBackOnline.zsh
+.env**
+src/app/api/seedTestData
+installFailOutput.json
+ulldBuildData.json
+appConfig.ulld.json

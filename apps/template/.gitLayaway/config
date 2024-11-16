@@ -1,0 +1,25 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = git@github.com:igloo1505/ulldApp.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[user]
+	name = igloo1505
+	email = iglinskia44@gmail.com
+[branch "buildScript"]
+	remote = origin
+	merge = refs/heads/buildScript
+[branch "staticPrismaSchema"]
+	remote = origin
+	merge = refs/heads/staticPrismaSchema
+[branch "updateReactAndNext"]
+	remote = origin
+	merge = refs/heads/updateReactAndNext

@@ -1,0 +1,580 @@
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["fullTextSearch", "postgresqlExtensions"]
+    // output          = "./generated/client"
+}
+
+datasource db {
+    provider   = "postgresql"
+    url        = env("ULLD_POSTGRES_URL") // uses connection pooling
+    directUrl  = env("ULLD_POSTGRES_URL_NON_POOLING") // uses a direct connection
+    extensions = [citext]
+}
+
+model Subject {
+    value        String         @id @unique @db.Citext
+    MdxNotes     MdxNote[]
+    IpynbNotes   Ipynb[]
+    QaPair       QAPair[]
+    practiceExam PracticeExam[]
+    Kanban       Kanban?        @relation(fields: [kanbanId], references: [id])
+    kanbanId     Int?
+    todoList     ToDoList[]
+    toDo         ToDo[]
+    bibEntries   BibEntry[]
+    equations    Equation[]
+}
+
+model Topic {
+    value        String         @id @unique @db.Citext
+    MdxNotes     MdxNote[]
+    ipynbNotes   Ipynb[]
+    QAPair       QAPair[]
+    practiceExam PracticeExam[]
+    toDo         ToDo[]
+    Kanban       Kanban?        @relation(fields: [kanbanId], references: [id])
+    kanbanId     Int?
+    todoList     ToDoList[]
+    bibEntries   BibEntry[]
+    equations    Equation[]
+}
+
+model Tag {
+    value        String         @id @unique @db.Citext
+    MdxNotes     MdxNote[]
+    bibEntries   BibEntry[]
+    ipynbNotes   Ipynb[]
+    QAPair       QAPair[]
+    practiceExam PracticeExam[]
+    equations    Equation[]
+    toDo         ToDo[]
+    Kanban       Kanban?        @relation(fields: [kanbanId], references: [id])
+    kanbanId     Int?
+    todoList     ToDoList[]
+}
+
+enum Technologies {
+    python
+    javascript
+    lua
+    typescript
+    css
+    scss
+    react
+    prisma
+    tailwind
+    node
+    bash
+    zsh
+    bibtex
+    latex
+    json
+    applescript
+    swift
+}
+
+model Quote {
+    body      String   @id @unique
+    author    String
+    source    String?
+    pinned    Boolean  @default(false)
+    createdAt DateTime @default(now())
+}
+
+model DailyFocus {
+    value     String   @id @unique
+    createdAt DateTime @default(now())
+}
+
+enum autoSetting {
+    tag
+    topic
+    subject
+}
+
+model AutoSetting {
+    id    Int         @id @default(autoincrement())
+    type  autoSetting
+    glob  String
+    value String
+}
+
+model ReadingList {
+    name        String     @id @unique
+    description String?
+    bibEntries  BibEntry[]
+    mdxNotes    MdxNote[]
+    ipynbNotes  Ipynb[]
+    createdAt   DateTime   @default(now())
+    lastUpdate  DateTime   @updatedAt
+}
+
+// TODO: Handle the formatting of each bib entry according to csl file in appConfig before inserting into db.
+// TODO: Map escape key to escape in vim but set to nowait
+
+model BibEntry {
+    id             String           @id @unique
+    Bib            Bib?             @relation(fields: [BibId], references: [id])
+    BibId          Int?
+    OwnWork        Boolean          @default(false)
+    ColleaguesWork Boolean          @default(false)
+    read           Boolean          @default(false)
+    htmlCitation   String?
+    PdfPath        String?
+    address        String?
+    annote         String?
+    author         String?
+    booktitle      String?
+    chapter        String?
+    crossref       String?
+    doi            String?
+    edition        String?
+    editor         String?
+    email          String?
+    howpublished   String?
+    institution    String?
+    journal        String?
+    month          String?
+    note           String?
+    number         String?
+    organization   String?
+    pages          String?
+    publisher      String?
+    school         String?
+    series         String?
+    title          String?
+    volume         String?
+    type           String?
+    year           String?
+    numpages       String?
+    url            String?
+    issue          String?
+    issn           String?
+    abstract       String?
+    urldate        String?
+    keywords       String?
+    copyright      String?
+    added          DateTime         @default(now())
+    citationGroups CitationsGroup[]
+    tags           Tag[]
+    topics         Topic[]
+    subjects       Subject[]
+    MdxNotes       MdxNote[]
+    ipynbNotes     Ipynb[]
+    readingList    ReadingList[]
+}
+
+model CitationsGroup {
+    name        String     @id @unique
+    description String?
+    entries     BibEntry[]
+}
+
+model Bib {
+    id        Int        @id @default(1)
+    entries   BibEntry[]
+    filename  String
+    firstSync DateTime   @default(now())
+    lastSync  DateTime   @default(now()) @updatedAt
+}
+
+model GoogleCalendarAuth {
+    id   Int     @id @default(1)
+    auth String?
+}
+
+model Snippet {
+    id          Int          @id @default(autoincrement())
+    content     String
+    description String
+    keywords    String[]
+    language    Technologies
+}
+
+model RelatedValues {
+    id         Int        @id @default(autoincrement())
+    input      Json
+    output     Float
+    equations  Equation[]
+    equationId Int[]      @unique
+}
+
+model Equation {
+    id             Int             @id @default(autoincrement())
+    equationId     String?         @unique
+    title          String
+    desc           String?
+    content        String
+    asPython       String?
+    relatedValues  RelatedValues[]
+    variableLegend Json?
+    variables      String[]
+    keywords       String[]
+    tags           Tag[]
+    topics         Topic[]
+    subjects       Subject[]
+    createdAt      DateTime        @default(now())
+    mdxNotes       MdxNote[]
+}
+
+model Definition {
+    id                String   @id @unique
+    label             String?
+    content           String?
+    alphabeticalLabel String?
+    mdxNote           MdxNote? @relation(fields: [mdxNoteId], references: [id])
+    mdxNoteId         Int?
+}
+
+enum ImageAlignment {
+    bottom
+    center
+    top
+    left
+    right
+}
+
+model Settings {
+    id                    Int            @id @default(1)
+    tooltips              Boolean        @default(true)
+    title                 String         @default("Uh Little Less Dum")
+    summary_showCitations Boolean        @default(true)
+    summary_showTags      Boolean        @default(true)
+    landingImageAlign     ImageAlignment @default(center)
+    lockedLandingImage    String?
+    cleanOnSync           Boolean        @default(false)
+    plotTheme             String         @default("blue")
+    firstSync             DateTime       @default(now())
+    lastSync              DateTime       @default(now()) @updatedAt
+}
+
+model SettingsAppendix {
+    id        String   @id @unique
+    data      Bytes
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model RandomImage {
+    path      String   @id @unique
+    createdAt DateTime @default(now())
+}
+
+model NoteType {
+    name String @id @unique
+}
+
+model QAPair {
+    id             String         @id @unique
+    question       String         @unique
+    answer         String
+    description    String?
+    secondaryLabel String?
+    tags           Tag[]
+    topics         Topic[]
+    subjects       Subject[]
+    practiceExam   PracticeExam[]
+    correctCount   Int            @default(0)
+    inCorrectCount Int            @default(0)
+}
+
+model PracticeExam {
+    id                     Int       @id @default(autoincrement())
+    topics                 Topic[]
+    tags                   Tag[]
+    subjects               Subject[]
+    correctCount           Int
+    inCorrectCount         Int
+    timeLimitInSeconds     Int
+    timeCompletedInSeconds Int
+    questions              QAPair[]
+    date                   DateTime  @default(now())
+}
+
+model SequentialNoteList {
+    sequentialKey String    @id @unique
+    MdxNote       MdxNote[]
+    Ipynb         Ipynb[]
+}
+
+model MdxNote {
+    id                 Int                 @id @default(autoincrement())
+    isProtected        Boolean?            @default(false)
+    dietSummaryKey     String?
+    title              String
+    latexTitle         String?
+    rootRelativePath   String              @unique @db.Citext
+    noteType           String
+    content            String
+    formatted          String?
+    summary            String?
+    topics             Topic[]
+    subjects           Subject[]
+    tags               Tag[]
+    citations          BibEntry[]
+    citationsListOrder String[]
+    importantValues    Float[]
+    imageSrc           String?
+    href               String
+    sequentialList     SequentialNoteList? @relation(fields: [sequentialKey], references: [sequentialKey])
+    sequentialKey      String?
+    sequentialIndex    Float?
+    floatImages        Boolean             @default(false)
+    remoteUrl          String?
+    trackRemote        Boolean             @default(true)
+    outgoingQuickLinks String[]
+    quickLink          String?             @unique
+    bookmarked         Boolean             @default(false)
+    ReadingList        ReadingList[]
+    equations          Equation[]
+    definitions        Definition[]
+    toDo               ToDo[]
+    firstSync          DateTime            @default(now())
+    lastSync           DateTime            @updatedAt
+    lastAccess         DateTime            @default(now())
+}
+
+model Ipynb {
+    id                 Int                 @id @default(autoincrement())
+    rootRelativePath   String              @unique @db.Citext
+    isProtected        Boolean?            @default(false)
+    title              String
+    latexTitle         String?
+    tags               Tag[]
+    topics             Topic[]
+    subjects           Subject[]
+    citations          BibEntry[]
+    citationsListOrder String[]
+    importantValues    Float[]
+    href               String
+    outgoingQuickLinks String[]
+    raw                Bytes
+    sequentialList     SequentialNoteList? @relation(fields: [sequentialKey], references: [sequentialKey])
+    sequentialKey      String?
+    sequentialIndex    Int?
+    bookmarked         Boolean             @default(false)
+    firstSync          DateTime            @default(now())
+    lastSync           DateTime            @updatedAt
+    readingList        ReadingList[]
+}
+
+model ToDoList {
+    id         Int       @id @default(autoincrement())
+    label      String
+    tasks      ToDo[]
+    tags       Tag[]
+    topics     Topic[]
+    subjects   Subject[]
+    createdAt  DateTime  @default(now())
+    lastUpdate DateTime  @updatedAt
+}
+
+enum ToDoListStatus {
+    ToDo
+    In_Progress
+    Backlog
+    Cancelled
+    Done
+    Future
+}
+
+enum TaskCategory {
+    bug
+    feature
+    documentation
+    online
+    priority
+    urgent
+    work
+    gym
+    freetime
+    study
+    research
+    paper
+}
+
+model ToDo {
+    id              Int            @id @unique @default(autoincrement())
+    createdAt       DateTime       @default(now())
+    task            String
+    dueAt           DateTime?
+    details         String?
+    associatedNotes MdxNote[]
+    tags            Tag[]
+    topics          Topic[]
+    subjects        Subject[]
+    parentId        Int?
+    category        TaskCategory?
+    bookmarked      Boolean        @default(false)
+    status          ToDoListStatus @default(ToDo)
+    priority        Int            @default(5)
+    parent          ToDo?          @relation("ParentChildTask", fields: [parentId], references: [id])
+    child           ToDo[]         @relation("ParentChildTask")
+    ToDoList        ToDoList?      @relation(fields: [toDoListId], references: [id])
+    toDoListId      Int?
+}
+
+model KanBanCard {
+    id              Int         @id @default(autoincrement())
+    KanBanList      KanBanList? @relation(fields: [listId], references: [id])
+    listId          Int?
+    indexWithinList Int
+    label           String?
+    details         String?
+}
+
+model KanBanList {
+    id               Int          @id @default(autoincrement())
+    indexWithinBoard Int
+    title            String?
+    cards            KanBanCard[]
+    Kanban           Kanban?      @relation(fields: [boardId], references: [id])
+    boardId          Int?
+}
+
+model Kanban {
+    id         Int          @id @default(autoincrement())
+    title      String
+    createdAt  DateTime     @default(now())
+    lastUpdate DateTime     @updatedAt
+    lists      KanBanList[]
+    tags       Tag[]
+    subjects   Subject[]
+    topics     Topic[]
+}
+
+model TimePeriod {
+    id     Int       @id @default(autoincrement())
+    start  DateTime  @default(now())
+    end    DateTime?
+    Diet   Diet?     @relation(fields: [dietId], references: [name])
+    dietId String?
+}
+
+enum QUANTITY_GUESS {
+    nibble
+    fewBites
+    snack
+    smallMeal
+    fullMeal
+    largeMeal
+    multipleMeals
+    allMeals
+    completelyStuffed
+}
+
+enum TERTIARY_TOGGLE {
+    on
+    off
+    partial
+}
+
+enum DIETARY_GOAL {
+    weightLoss
+    muscleGain
+    autoImmune
+    allergy
+    gsd
+    skin
+    sexDrive
+    anxiety
+    memory
+    energy
+    adhd
+    sleep
+    depression
+    mentalHealth
+}
+
+model Diet {
+    name              String          @id @unique
+    items             DietaryItem[]
+    summary           String? // Very short summary. Majority of the content should be in the dietSummaryNote as defined by a front-matter key.
+    activelyFollowing Boolean         @default(false)
+    periodsFollowed   TimePeriod[]
+    HealthReport      HealthReport[]
+    gf                TERTIARY_TOGGLE @default(partial)
+    vegan             Boolean         @default(false)
+    pescatarian       Boolean         @default(false)
+    vegetarian        Boolean         @default(false)
+    fasting           TERTIARY_TOGGLE @default(partial)
+    cardioTraining    TERTIARY_TOGGLE @default(partial)
+    weightTraining    TERTIARY_TOGGLE @default(partial)
+    carb              Float? // Carb content of diet as a percentage of total calories.
+    pro               Float? // Protein content of diet as a percentage of total calories.
+    fat               Float? // Fat content of diet as a percentage of total calories.
+    goals             DIETARY_GOAL[]
+    created           DateTime        @default(now())
+    lastUpdate        DateTime        @updatedAt
+}
+
+model Serving {
+    id            Int             @id @default(autoincrement())
+    item          DietaryItem     @relation(fields: [dietaryItemId], references: [id])
+    dietaryItemId Int
+    quant_oz      Float?
+    quant_guess   QUANTITY_GUESS?
+}
+
+model DietaryItem {
+    id              Int       @id @default(autoincrement())
+    name            String
+    barcode         String?
+    Diet            Diet[]
+    gi              Int?
+    calsPerOz       Float?
+    glutenFree      Boolean   @default(false)
+    minimalFructose Boolean   @default(false)
+    natural         Boolean   @default(false)
+    organic         Boolean   @default(false)
+    impactScore     Float     @default(5.0) // accept user input for this alone, and derive a calculated peroperty that's similar to plot them both.
+    Serving         Serving[]
+}
+
+model HealthReport {
+    id                              Int      @id @default(autoincrement())
+    currentDiet                     Diet?    @relation(fields: [dietId], references: [name])
+    title                           String?
+    summary                         String?
+    overall                         Float    @default(5.0) // All ratings are 1-10
+    skin                            Float    @default(5.0) // All ratings are 1-10
+    bloat                           Float    @default(5.0) // All ratings are 1-10
+    weight_feeling                  Float    @default(5.0) // All ratings are 1-10
+    fullness                        Float    @default(5.0) // All ratings are 1-10
+    weight                          Float?
+    cardiacCapacity                 Float    @default(5.0) // All ratings are 1-10
+    jawLine                         Float    @default(5.0) // All ratings are 1-10
+    joints                          Float    @default(5.0) // All ratings are 1-10
+    flexibility                     Float    @default(5.0) // All ratings are 1-10
+    anxiety                         Float    @default(5.0) // All ratings are 1-10
+    anxiety_desc                    String?
+    mood_desc                       String? // All ratings are 1-10
+    mood                            Float    @default(5.0) // All ratings are 1-10
+    sexDrive                        Float    @default(5.0) // All ratings are 1-10
+    intruisiveThoughts              Float    @default(5.0) // All ratings are 1-10
+    caffeineIntake                  Float    @default(5.0) // All ratings are 1-10
+    glutenIntake                    Float    @default(5.0) // All ratings are 1-10
+    sugarIntake                     Float    @default(5.0) // All ratings are 1-10
+    artificialSweetenerIntake       Float    @default(5.0) // All ratings are 1-10
+    artificalDyes                   Float    @default(5.0) // All ratings are 1-10
+    sleepQuality                    Float    @default(5.0) // All ratings are 1-10
+    hydration                       Float    @default(5.0) // All ratings are 1-10
+    twitching                       Float    @default(5.0) // All ratings are 1-10
+    sleepHours                      Float?
+    calorie_est                     Int?
+    times_meals_more_than_gap_apart Int? //@default(5.0) Times the gap between meals exceeded the diet specific fasting avoidance allowance.
+    estHoursInExcessFast            Float?
+    dietId                          String?
+    created                         DateTime @default(now())
+}
+
+model Whiteboard {
+    id   String @id @unique
+    data Bytes
+}
+
+model DJT {
+    id   Int    @id @default(autoincrement())
+    type String
+    data Bytes
+}
