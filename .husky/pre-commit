@@ -1,0 +1,30 @@
+#!/bin/sh
+
+cd $ULLD_DEV_ROOT
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch" = "main" ]; then
+  echo "Don't commit directly to the main branch ace."
+  exit 1
+fi
+
+dotenvx ext precommit
+
+tsx $ULLD_DEV_ROOT/buildUtils/updateBasePackageVersions.ts
+
+git add $ULLD_DEV_ROOT/apps/template/package.json
+
+echo "Launching gum"
+
+TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert" "wip")
+SCOPE=$(gum input --placeholder "scope")
+
+test -n "$SCOPE" && SCOPE="($SCOPE)"
+
+SUMMARY=$(gum input --value "$TYPE$SCOPE: " --placeholder "Summary of this change")
+DESCRIPTION=$(gum write --placeholder "Details of this change")
+
+gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
+
+exit 1

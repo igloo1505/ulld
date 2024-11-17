@@ -16,6 +16,8 @@
 - `@ulld/developer-cli` package installed or aliased to `ulldDev`.
   - The following alias will work but requires tsx to be installed
 - `Golang` installed and available on path.
+- `dotenvx` installed globally.
+- `gum`, a shell scripting utility library used in some git hooks.
 
 ```zsh
 alias ulldDev="tsx $ULLD_DEV_ROOT/packages/developer-cli/src/cli.tsx"
