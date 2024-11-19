@@ -33,16 +33,16 @@ export type InternalAppShortName = ${
     internalAppNames.replaceAll("@ulld/", "")
     };`;
 
+// NOTE: Turned off during the rewrite in Go.
+// let prismaTypesData = fs.readFileSync(prismaTypesPath, { encoding: "utf-8" });
 
-let prismaTypesData = fs.readFileSync(prismaTypesPath, { encoding: "utf-8" });
-
-fs.writeFileSync(
-    path.join(generatedRoot, "prismaTypes.d.ts"),
-    prismaTypesData,
-    {
-        encoding: "utf-8",
-    },
-);
+// fs.writeFileSync(
+//     path.join(generatedRoot, "prismaTypes.d.ts"),
+//     prismaTypesData,
+//     {
+//         encoding: "utf-8",
+//     },
+// );
 
 fs.writeFileSync(internalAppTypePath, internalAppData, {
     encoding: "utf-8",
@@ -55,11 +55,11 @@ let pathsData = {
 };
 
 const applyLeadingSlash = (p: string) => {
-       if(p.startsWith(".")){
-        return p
-    } 
-    return `./${p}`
+    if (p.startsWith(".")) {
+        return p;
     }
+    return `./${p}`;
+};
 
 let targetPaths: {
     key: keyof typeof pathsData;
@@ -74,9 +74,9 @@ let targetPaths: {
             key: "enums",
             path: enumRoot,
             outputPath: path.join(enumRoot, "index.ts"),
-            formatExport: (p) => `export * from "${applyLeadingSlash(p.slice(0, p.lastIndexOf(".")))}"`,
+            formatExport: (p) =>
+                `export * from "${applyLeadingSlash(p.slice(0, p.lastIndexOf(".")))}"`,
         },
-
         {
             key: "manualTypes",
             path: manualTypesRoot,

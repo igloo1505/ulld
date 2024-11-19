@@ -11,7 +11,7 @@ require('../chunk-I7I3Z7IL.cjs');
 var _chunkCBXEQXAZcjs = require('../chunk-CBXEQXAZ.cjs');
 
 
-var _chunk72Y3KRUFcjs = require('../chunk-72Y3KRUF.cjs');
+var _chunkVHVL3PC6cjs = require('../chunk-VHVL3PC6.cjs');
 
 
 var _chunkO2IRHEV3cjs = require('../chunk-O2IRHEV3.cjs');
@@ -53,7 +53,7 @@ var _developerConfigSchema = _zod.z.object({
   pages: _chunkZ4N77LBIcjs.pluginAdditionalPageSchema.array().default([]),
   events: _chunkNLQB6CMGcjs.pluginEventsSchema.default({}),
   navigationLinks: _chunk7FRG3H7Vcjs.navigationLinkSchema.array().default([]),
-  commandPalette: _chunk72Y3KRUFcjs.pluginCommandPaletteSchema.default([]),
+  commandPalette: _chunkVHVL3PC6cjs.pluginCommandPaletteSchema.default([]),
   tailwind: _chunkAVWYTCDLcjs.tailwindPluginConfig.default({}),
   documentation: _zod.z.string().optional().describe("An optional export of an mdx file that describes the use of your plugin.").transform(_transformExportString.transformExportStringOptional),
   styles: _zod.z.object({

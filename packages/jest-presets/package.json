@@ -1,29 +1,29 @@
 {
-    "name": "@ulld/jest-presets",
-    "version": "0.0.116",
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "files": [
-        "src"
-    ],
-    "exports": {
-        "./new": "./jest/new/jest-next.js",
-        "./new/server": "./jest/new/jest-server.js",
-        "./node": "./jest/node/jest-preset.js",
-        "./browser": "./jest/browser/jest-preset.js"
-    },
-    "dependencies": {
-        "jest-environment-jsdom": "29.7.0",
-        "ts-jest": "29.2.5"
-    },
-    "devDependencies": {
-        "jest-environment-jsdom": "29.7.0",
-        "ts-jest": "29.2.5"
-    },
-    "peerDependencies": {
-        "@ulld/types": "workspace:*"
-    },
-    "license": "MIT"
+  "name": "@ulld/jest-presets",
+  "version": "0.0.116",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src"
+  ],
+  "exports": {
+    "./new": "./jest/new/jest-next.js",
+    "./new/server": "./jest/new/jest-server.js",
+    "./node": "./jest/node/jest-preset.js",
+    "./browser": "./jest/browser/jest-preset.js"
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "29.7.0",
+    "ts-jest": "29.2.5"
+  },
+  "devDependencies": {
+    "jest-environment-jsdom": "29.7.0",
+    "ts-jest": "29.2.5"
+  },
+  "peerDependencies": {
+    "@ulld/types": "workspace:*"
+  },
+  "license": "MIT"
 }

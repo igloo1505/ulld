@@ -4,10 +4,10 @@ export declare const parseMdxStringSchema: z.ZodObject<{
     display: z.ZodUnion<[z.ZodLiteral<"display">, z.ZodLiteral<"inline">]>;
 }, "strip", z.ZodTypeAny, {
     content: string;
-    display: "display" | "inline";
+    display: "inline" | "display";
 }, {
     content: string;
-    display: "display" | "inline";
+    display: "inline" | "display";
 }>;
 export type ParseMdxStringInput = z.input<typeof parseMdxStringSchema>;
 export type ParseMdxStringOutput = z.output<typeof parseMdxStringSchema>;

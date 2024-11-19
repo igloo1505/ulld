@@ -14,3 +14,4 @@ src/app/api/seedTestData
 installFailOutput.json
 ulldBuildData.json
 appConfig.ulld.json
+.wireit

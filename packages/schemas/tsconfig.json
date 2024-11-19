@@ -1,10 +1,10 @@
 {
-    "$schema": "/Users/bigsexy/dev-utils/jsonSchemas/src/schemas/json/tsconfig.json",
     "extends": "@ulld/typescript-config/nextjs.json",
     "compilerOptions": {
         "rootDir": "src",
         "outDir": "dist",
         "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "target": "ES2021",
         "noEmit": false,
         "incremental": false,
@@ -17,13 +17,11 @@
         "resolveJsonModule": true,
         "allowSyntheticDefaultImports": true,
         // "noEmitOnError": false,
-        "moduleResolution": "NodeNext"
     },
     "exclude": [
         "dist",
         "build",
         "node_modules",
-        "src/__scripts__",
         "tsup.config.ts",
         "src/database"
     ],

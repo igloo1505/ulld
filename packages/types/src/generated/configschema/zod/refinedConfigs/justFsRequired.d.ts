@@ -906,8 +906,8 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
             } | undefined;
         }>>>;
         fs: import("zod").ZodEffects<import("zod").ZodString, string, string>;
-        url: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodString, string, string>>;
         id: import("zod").ZodOptional<import("zod").ZodString>;
+        url: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodString, string, string>>;
         docType: import("zod").ZodOptional<import("zod").ZodEffects<import("zod").ZodString, string, string>>;
         filePathPattern: import("zod").ZodOptional<import("zod").ZodString>;
         matchWeight: import("zod").ZodDefault<import("zod").ZodNumber>;
@@ -944,8 +944,8 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
         autoSubject: string[];
         inSidebar: boolean;
         inNavbar: boolean;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         topicLabel?: string | undefined;
@@ -966,8 +966,8 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
                 } | undefined;
             } | undefined;
         } | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -1026,8 +1026,8 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
                 } | undefined;
             } | undefined;
         } | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -1086,8 +1086,8 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
                 } | undefined;
             } | undefined;
         } | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -1700,8 +1700,8 @@ export declare const appConfigOnlyFSRequired: import("zod").ZodObject<{
                 } | undefined;
             } | undefined;
         } | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;

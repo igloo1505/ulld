@@ -670,13 +670,23 @@ export function fakeWhiteboardComplete() {
 }
 export function fakeDJT() {
   return {
-    type: faker.lorem.words(5),
+    pluginName: undefined,
+    modelId: undefined,
+    utilityStringField: undefined,
+    utilityNumberField: undefined,
+    utilityDateField: undefined,
+    utilityDateFieldTwo: undefined,
   };
 }
 export function fakeDJTComplete() {
   return {
     id: faker.number.int(),
-    type: faker.lorem.words(5),
+    pluginName: undefined,
+    modelId: undefined,
+    utilityStringField: undefined,
+    utilityNumberField: undefined,
+    utilityDateField: undefined,
+    utilityDateFieldTwo: undefined,
   };
 }
 export function fakeFeatureRequest() {

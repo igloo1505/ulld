@@ -6,7 +6,8 @@
   "globalEnv": [
       ".env.local",
       "ENABLE_EXPERIMENTAL_COREPACK=1",
-      "ULLD_DEV_ROOT"
+      "ULLD_DEV_ROOT",
+      "ULLD_CLI_DEVROOT"
   ],
   "tasks": {
     "prepareWeb": {

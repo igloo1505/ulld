@@ -278,8 +278,8 @@ export declare const documentTypeConfigSchemaInner: z.ZodObject<{
         } | undefined;
     }>>>;
     fs: z.ZodEffects<z.ZodString, string, string>;
-    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     id: z.ZodOptional<z.ZodString>;
+    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     filePathPattern: z.ZodOptional<z.ZodString>;
     matchWeight: z.ZodDefault<z.ZodNumber>;
@@ -316,8 +316,8 @@ export declare const documentTypeConfigSchemaInner: z.ZodObject<{
     autoSubject: string[];
     inSidebar: boolean;
     inNavbar: boolean;
-    url?: string | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     topicLabel?: string | undefined;
@@ -338,8 +338,8 @@ export declare const documentTypeConfigSchemaInner: z.ZodObject<{
             } | undefined;
         } | undefined;
     } | undefined;
-    url?: string | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     matchWeight?: number | undefined;
@@ -421,8 +421,8 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
         } | undefined;
     }>>>;
     fs: z.ZodEffects<z.ZodString, string, string>;
-    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     id: z.ZodOptional<z.ZodString>;
+    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     filePathPattern: z.ZodOptional<z.ZodString>;
     matchWeight: z.ZodDefault<z.ZodNumber>;
@@ -459,8 +459,8 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
     autoSubject: string[];
     inSidebar: boolean;
     inNavbar: boolean;
-    url?: string | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     topicLabel?: string | undefined;
@@ -481,8 +481,8 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
             } | undefined;
         } | undefined;
     } | undefined;
-    url?: string | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     matchWeight?: number | undefined;
@@ -541,8 +541,8 @@ export declare const documentTypeConfigSchema: z.ZodEffects<z.ZodObject<{
             } | undefined;
         } | undefined;
     } | undefined;
-    url?: string | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     matchWeight?: number | undefined;
@@ -624,8 +624,8 @@ export declare const documentTypeConfigSchemaOutputSchema: z.ZodObject<z.objectU
         } | undefined;
     }>>>;
     fs: z.ZodEffects<z.ZodString, string, string>;
-    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     id: z.ZodOptional<z.ZodString>;
+    url: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     docType: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
     filePathPattern: z.ZodOptional<z.ZodString>;
     matchWeight: z.ZodDefault<z.ZodNumber>;
@@ -731,8 +731,8 @@ export declare const documentTypeConfigSchemaOutputSchema: z.ZodObject<z.objectU
         };
     };
     fs: string;
-    url: string;
     id: string;
+    url: string;
     docType: string;
     matchWeight: number;
     urlQuery: Record<string, string | number | string[] | number[]>;
@@ -761,8 +761,8 @@ export declare const documentTypeConfigSchemaOutputSchema: z.ZodObject<z.objectU
         };
     };
     fs: string;
-    url: string;
     id: string;
+    url: string;
     docType: string;
     matchWeight: number;
     urlQuery: Record<string, string | number | string[] | number[]>;
@@ -844,8 +844,8 @@ export declare const documentTypeConfigMinimalOutputSchema: z.ZodObject<z.object
         } | undefined;
     }>>>>;
     fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-    url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
     id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
     docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
     filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
     matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
@@ -952,8 +952,8 @@ export declare const documentTypeConfigMinimalOutputSchema: z.ZodObject<z.object
             };
         };
     } | undefined;
-    url?: string | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     matchWeight?: number | undefined;
@@ -982,8 +982,8 @@ export declare const documentTypeConfigMinimalOutputSchema: z.ZodObject<z.object
             };
         };
     } | undefined;
-    url?: string | undefined;
     id?: string | undefined;
+    url?: string | undefined;
     docType?: string | undefined;
     filePathPattern?: string | undefined;
     matchWeight?: number | undefined;

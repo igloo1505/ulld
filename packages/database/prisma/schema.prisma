@@ -599,7 +599,12 @@ model Whiteboard {
 
 model DJT {
     id   Int    @id @default(autoincrement())
-    type String
+    pluginName String?
+    modelId String? // A useful utility value that can be used for querying, as this utility model stores most data in a type that lacks most querying functionality.
+    utilityStringField String? // Another generic utility field for querying.
+    utilityNumberField Float? // Another generic utility field for querying.
+    utilityDateField DateTime? // Another generic utility field for querying.
+    utilityDateFieldTwo DateTime? // Because some times things have an end date.
     data Bytes
 }
 

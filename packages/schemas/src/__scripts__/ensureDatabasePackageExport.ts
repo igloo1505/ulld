@@ -1,6 +1,5 @@
 import { globSync } from "glob";
 import path from "path";
-import fs from "fs";
 import { mapLinesAndReplace } from "@ulld/file-system-utils/methods-mapLinesAndReplace";
 
 const files = globSync("**/*.ts", {

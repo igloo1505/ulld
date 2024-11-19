@@ -913,8 +913,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<z.objectUtil.extendSh
             };
         } | undefined;
         fs?: string | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -943,8 +943,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<z.objectUtil.extendSh
             };
         } | undefined;
         fs?: string | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -1170,8 +1170,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<z.objectUtil.extendSh
             } | undefined;
         }>>>>;
         fs: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
-        url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
         id: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+        url: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
         docType: z.ZodOptional<z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>>;
         filePathPattern: z.ZodOptional<z.ZodOptional<z.ZodString>>;
         matchWeight: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
@@ -1278,8 +1278,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<z.objectUtil.extendSh
                 };
             };
         } | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -1308,8 +1308,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<z.objectUtil.extendSh
                 };
             };
         } | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -1341,8 +1341,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<z.objectUtil.extendSh
                 };
             };
         } | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -1594,8 +1594,8 @@ export declare const minimalParsableAppConfig: z.ZodObject<z.objectUtil.extendSh
                 };
             };
         } | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -2746,8 +2746,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -2776,8 +2776,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -2951,8 +2951,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -3204,8 +3204,8 @@ export declare const appConfigDeepPartialWithNotetypes: z.ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -4356,8 +4356,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -4386,8 +4386,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -4561,8 +4561,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;
@@ -4814,8 +4814,8 @@ export declare const appConfigDeepPartialWithFsRoot: z.ZodObject<{
             };
         } | undefined;
         fs?: string | undefined;
-        url?: string | undefined;
         id?: string | undefined;
+        url?: string | undefined;
         docType?: string | undefined;
         filePathPattern?: string | undefined;
         matchWeight?: number | undefined;

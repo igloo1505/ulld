@@ -1,6 +1,6 @@
 import {
   pluginCommandPaletteSchema
-} from "../chunk-43PW6ZEX.mjs";
+} from "../chunk-72UHUWDL.mjs";
 export {
   pluginCommandPaletteSchema
 };

@@ -98,7 +98,7 @@
               "componentId": {
                 "type": "string",
                 "format": "uuid",
-                "default": "d29d1026-8b93-4277-b748-b2ee9fd336aa"
+                "default": "ec2c6f99-1d41-4263-80da-1c2c42180153"
               }
             },
             "required": [
@@ -315,6 +315,10 @@
                 "properties": {
                   "label": {
                     "type": "string"
+                  },
+                  "isAvailable": {
+                    "type": "string",
+                    "description": "An optional export field in your package.json that resolves to a file with a default export of a synchronous function that accepts the current pathname and returns a boolean to indicate if this item should be shown in the command palette. This method is called just before the item is to be shown."
                   }
                 },
                 "required": [
@@ -341,7 +345,6 @@
                 },
                 "required": [
                   "label",
-                  "isAvailable",
                   "href"
                 ],
                 "additionalProperties": false

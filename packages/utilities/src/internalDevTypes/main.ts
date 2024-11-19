@@ -26,12 +26,18 @@ interface DeveloperConfigKeysWithExportField {
     isArray: boolean;
 }
 
+interface PathToCopyForDocumentation {
+    glob: string
+    globRoot: string[]
+}
+
 export interface InternalBuildData {
     propsExtendsMap: Record<string, string>;
     protectedPaths: ProtectedPath[];
     reservedPublicDirs: string[];
     parsableFileExtensions: string[];
     developerConfigKeysWithExportField: DeveloperConfigKeysWithExportField[];
+    pathsToCopyForDocumentation: PathToCopyForDocumentation[];
     internalDocumentTypes: InternalDocumentConfigType[];
     internalPackageData: InternalPackageItem[];
 }

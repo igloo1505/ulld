@@ -39,6 +39,7 @@ const config = {
         "release-it",
         "commitlint",
         "license",
+        "dum-commit"
     ],
     dependencyTypes: ["prod", "dev", "peer"],
     semverGroups: [

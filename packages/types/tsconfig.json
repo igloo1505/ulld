@@ -1,0 +1,26 @@
+{ 
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
+    ],
+    "exclude": [
+        "dist",
+        "build",
+        "node_modules",
+        "src/__scripts__",
+        "tsup.config.ts"
+    ],
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "dist",
+        "noEmit": true,
+        "moduleResolution": "Bundler",
+        "module": "ESNext",
+        "target": "ES2021",
+        "jsx": "react",
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true
+    }
+}
+

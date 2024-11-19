@@ -1,45 +1,45 @@
 {
-    "name": "@ulld/developer",
-    "version": "0.0.126",
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "files": [
-        "src"
-    ],
-    "scripts": {
-        "typecheck": "tsc --noEmit -p ./tsconfig.json"
-    },
-    "exports": {
-        "./utils": "./src/utilityMethods/main.ts",
-        "./getConfig": "./src/utilityMethods/getConfig.ts",
-        "./globalStatePortal": "./src/components/globalStatePortal.tsx",
-        "./navbarPortal": "./src/components/navbarPortal.tsx",
-        "./sidebarPortal": "./src/components/sidebarPortal.tsx",
-        "./writePluginConfig": "./src/utilityMethods/writePluginConfig.ts",
-        "./readAppConfig": "./src/utilityMethods/readAppConfig.ts",
-        "./readBuildData": "./src/utilityMethods/readBuildData.ts"
-    },
-    "dependencies": {
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "trpc-openapi": "1.2.0"
-    },
-    "devDependencies": {
-        "next": "14.2.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "trpc-openapi": "1.2.0"
-    },
-    "peerDependencies": {
-        "@ulld/configschema": "workspace:*",
-        "@ulld/database": "workspace:*",
-        "@ulld/logger": "workspace:*",
-        "@ulld/types": "workspace:*",
-        "@ulld/typescript-config": "workspace:*",
-        "@ulld/utilities": "workspace:*"
-    },
-    "packageManager": "pnpm@9.0.4"
+  "name": "@ulld/developer",
+  "version": "0.0.126",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit -p ./tsconfig.json"
+  },
+  "exports": {
+    "./utils": "./src/utilityMethods/main.ts",
+    "./getConfig": "./src/utilityMethods/getConfig.ts",
+    "./globalStatePortal": "./src/components/globalStatePortal.tsx",
+    "./navbarPortal": "./src/components/navbarPortal.tsx",
+    "./sidebarPortal": "./src/components/sidebarPortal.tsx",
+    "./writePluginConfig": "./src/utilityMethods/writePluginConfig.ts",
+    "./readAppConfig": "./src/utilityMethods/readAppConfig.ts",
+    "./readBuildData": "./src/utilityMethods/readBuildData.ts"
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "trpc-openapi": "1.2.0"
+  },
+  "devDependencies": {
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "trpc-openapi": "1.2.0"
+  },
+  "peerDependencies": {
+    "@ulld/configschema": "workspace:*",
+    "@ulld/database": "workspace:*",
+    "@ulld/logger": "workspace:*",
+    "@ulld/types": "workspace:*",
+    "@ulld/typescript-config": "workspace:*",
+    "@ulld/utilities": "workspace:*"
+  },
+  "packageManager": "pnpm@9.0.4"
 }

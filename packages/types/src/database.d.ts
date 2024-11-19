@@ -43094,27 +43094,44 @@ export namespace Prisma {
 
   export type DJTAvgAggregateOutputType = {
     id: number | null
+    utilityNumberField: number | null
   }
 
   export type DJTSumAggregateOutputType = {
     id: number | null
+    utilityNumberField: number | null
   }
 
   export type DJTMinAggregateOutputType = {
     id: number | null
-    type: string | null
+    pluginName: string | null
+    modelId: string | null
+    utilityStringField: string | null
+    utilityNumberField: number | null
+    utilityDateField: Date | null
+    utilityDateFieldTwo: Date | null
     data: Buffer | null
   }
 
   export type DJTMaxAggregateOutputType = {
     id: number | null
-    type: string | null
+    pluginName: string | null
+    modelId: string | null
+    utilityStringField: string | null
+    utilityNumberField: number | null
+    utilityDateField: Date | null
+    utilityDateFieldTwo: Date | null
     data: Buffer | null
   }
 
   export type DJTCountAggregateOutputType = {
     id: number
-    type: number
+    pluginName: number
+    modelId: number
+    utilityStringField: number
+    utilityNumberField: number
+    utilityDateField: number
+    utilityDateFieldTwo: number
     data: number
     _all: number
   }
@@ -43122,27 +43139,44 @@ export namespace Prisma {
 
   export type DJTAvgAggregateInputType = {
     id?: true
+    utilityNumberField?: true
   }
 
   export type DJTSumAggregateInputType = {
     id?: true
+    utilityNumberField?: true
   }
 
   export type DJTMinAggregateInputType = {
     id?: true
-    type?: true
+    pluginName?: true
+    modelId?: true
+    utilityStringField?: true
+    utilityNumberField?: true
+    utilityDateField?: true
+    utilityDateFieldTwo?: true
     data?: true
   }
 
   export type DJTMaxAggregateInputType = {
     id?: true
-    type?: true
+    pluginName?: true
+    modelId?: true
+    utilityStringField?: true
+    utilityNumberField?: true
+    utilityDateField?: true
+    utilityDateFieldTwo?: true
     data?: true
   }
 
   export type DJTCountAggregateInputType = {
     id?: true
-    type?: true
+    pluginName?: true
+    modelId?: true
+    utilityStringField?: true
+    utilityNumberField?: true
+    utilityDateField?: true
+    utilityDateFieldTwo?: true
     data?: true
     _all?: true
   }
@@ -43235,7 +43269,12 @@ export namespace Prisma {
 
   export type DJTGroupByOutputType = {
     id: number
-    type: string
+    pluginName: string | null
+    modelId: string | null
+    utilityStringField: string | null
+    utilityNumberField: number | null
+    utilityDateField: Date | null
+    utilityDateFieldTwo: Date | null
     data: Buffer
     _count: DJTCountAggregateOutputType | null
     _avg: DJTAvgAggregateOutputType | null
@@ -43260,19 +43299,34 @@ export namespace Prisma {
 
   export type DJTSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    type?: boolean
+    pluginName?: boolean
+    modelId?: boolean
+    utilityStringField?: boolean
+    utilityNumberField?: boolean
+    utilityDateField?: boolean
+    utilityDateFieldTwo?: boolean
     data?: boolean
   }, ExtArgs["result"]["dJT"]>
 
   export type DJTSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    type?: boolean
+    pluginName?: boolean
+    modelId?: boolean
+    utilityStringField?: boolean
+    utilityNumberField?: boolean
+    utilityDateField?: boolean
+    utilityDateFieldTwo?: boolean
     data?: boolean
   }, ExtArgs["result"]["dJT"]>
 
   export type DJTSelectScalar = {
     id?: boolean
-    type?: boolean
+    pluginName?: boolean
+    modelId?: boolean
+    utilityStringField?: boolean
+    utilityNumberField?: boolean
+    utilityDateField?: boolean
+    utilityDateFieldTwo?: boolean
     data?: boolean
   }
 
@@ -43282,7 +43336,12 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      type: string
+      pluginName: string | null
+      modelId: string | null
+      utilityStringField: string | null
+      utilityNumberField: number | null
+      utilityDateField: Date | null
+      utilityDateFieldTwo: Date | null
       data: Buffer
     }, ExtArgs["result"]["dJT"]>
     composites: {}
@@ -43678,7 +43737,12 @@ export namespace Prisma {
    */ 
   interface DJTFieldRefs {
     readonly id: FieldRef<"DJT", 'Int'>
-    readonly type: FieldRef<"DJT", 'String'>
+    readonly pluginName: FieldRef<"DJT", 'String'>
+    readonly modelId: FieldRef<"DJT", 'String'>
+    readonly utilityStringField: FieldRef<"DJT", 'String'>
+    readonly utilityNumberField: FieldRef<"DJT", 'Float'>
+    readonly utilityDateField: FieldRef<"DJT", 'DateTime'>
+    readonly utilityDateFieldTwo: FieldRef<"DJT", 'DateTime'>
     readonly data: FieldRef<"DJT", 'Bytes'>
   }
     
@@ -47249,7 +47313,12 @@ export namespace Prisma {
 
   export const DJTScalarFieldEnum: {
     id: 'id',
-    type: 'type',
+    pluginName: 'pluginName',
+    modelId: 'modelId',
+    utilityStringField: 'utilityStringField',
+    utilityNumberField: 'utilityNumberField',
+    utilityDateField: 'utilityDateField',
+    utilityDateFieldTwo: 'utilityDateFieldTwo',
     data: 'data'
   };
 
@@ -47651,7 +47720,9 @@ export namespace Prisma {
 
 
   export const DJTOrderByRelevanceFieldEnum: {
-    type: 'type'
+    pluginName: 'pluginName',
+    modelId: 'modelId',
+    utilityStringField: 'utilityStringField'
   };
 
   export type DJTOrderByRelevanceFieldEnum = (typeof DJTOrderByRelevanceFieldEnum)[keyof typeof DJTOrderByRelevanceFieldEnum]
@@ -50624,13 +50695,23 @@ export namespace Prisma {
     OR?: DJTWhereInput[]
     NOT?: DJTWhereInput | DJTWhereInput[]
     id?: IntFilter<"DJT"> | number
-    type?: StringFilter<"DJT"> | string
+    pluginName?: StringNullableFilter<"DJT"> | string | null
+    modelId?: StringNullableFilter<"DJT"> | string | null
+    utilityStringField?: StringNullableFilter<"DJT"> | string | null
+    utilityNumberField?: FloatNullableFilter<"DJT"> | number | null
+    utilityDateField?: DateTimeNullableFilter<"DJT"> | Date | string | null
+    utilityDateFieldTwo?: DateTimeNullableFilter<"DJT"> | Date | string | null
     data?: BytesFilter<"DJT"> | Buffer
   }
 
   export type DJTOrderByWithRelationInput = {
     id?: SortOrder
-    type?: SortOrder
+    pluginName?: SortOrderInput | SortOrder
+    modelId?: SortOrderInput | SortOrder
+    utilityStringField?: SortOrderInput | SortOrder
+    utilityNumberField?: SortOrderInput | SortOrder
+    utilityDateField?: SortOrderInput | SortOrder
+    utilityDateFieldTwo?: SortOrderInput | SortOrder
     data?: SortOrder
     _relevance?: DJTOrderByRelevanceInput
   }
@@ -50640,13 +50721,23 @@ export namespace Prisma {
     AND?: DJTWhereInput | DJTWhereInput[]
     OR?: DJTWhereInput[]
     NOT?: DJTWhereInput | DJTWhereInput[]
-    type?: StringFilter<"DJT"> | string
+    pluginName?: StringNullableFilter<"DJT"> | string | null
+    modelId?: StringNullableFilter<"DJT"> | string | null
+    utilityStringField?: StringNullableFilter<"DJT"> | string | null
+    utilityNumberField?: FloatNullableFilter<"DJT"> | number | null
+    utilityDateField?: DateTimeNullableFilter<"DJT"> | Date | string | null
+    utilityDateFieldTwo?: DateTimeNullableFilter<"DJT"> | Date | string | null
     data?: BytesFilter<"DJT"> | Buffer
   }, "id">
 
   export type DJTOrderByWithAggregationInput = {
     id?: SortOrder
-    type?: SortOrder
+    pluginName?: SortOrderInput | SortOrder
+    modelId?: SortOrderInput | SortOrder
+    utilityStringField?: SortOrderInput | SortOrder
+    utilityNumberField?: SortOrderInput | SortOrder
+    utilityDateField?: SortOrderInput | SortOrder
+    utilityDateFieldTwo?: SortOrderInput | SortOrder
     data?: SortOrder
     _count?: DJTCountOrderByAggregateInput
     _avg?: DJTAvgOrderByAggregateInput
@@ -50660,7 +50751,12 @@ export namespace Prisma {
     OR?: DJTScalarWhereWithAggregatesInput[]
     NOT?: DJTScalarWhereWithAggregatesInput | DJTScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"DJT"> | number
-    type?: StringWithAggregatesFilter<"DJT"> | string
+    pluginName?: StringNullableWithAggregatesFilter<"DJT"> | string | null
+    modelId?: StringNullableWithAggregatesFilter<"DJT"> | string | null
+    utilityStringField?: StringNullableWithAggregatesFilter<"DJT"> | string | null
+    utilityNumberField?: FloatNullableWithAggregatesFilter<"DJT"> | number | null
+    utilityDateField?: DateTimeNullableWithAggregatesFilter<"DJT"> | Date | string | null
+    utilityDateFieldTwo?: DateTimeNullableWithAggregatesFilter<"DJT"> | Date | string | null
     data?: BytesWithAggregatesFilter<"DJT"> | Buffer
   }
 
@@ -53842,41 +53938,76 @@ export namespace Prisma {
   }
 
   export type DJTCreateInput = {
-    type: string
+    pluginName?: string | null
+    modelId?: string | null
+    utilityStringField?: string | null
+    utilityNumberField?: number | null
+    utilityDateField?: Date | string | null
+    utilityDateFieldTwo?: Date | string | null
     data: Buffer
   }
 
   export type DJTUncheckedCreateInput = {
     id?: number
-    type: string
+    pluginName?: string | null
+    modelId?: string | null
+    utilityStringField?: string | null
+    utilityNumberField?: number | null
+    utilityDateField?: Date | string | null
+    utilityDateFieldTwo?: Date | string | null
     data: Buffer
   }
 
   export type DJTUpdateInput = {
-    type?: StringFieldUpdateOperationsInput | string
+    pluginName?: NullableStringFieldUpdateOperationsInput | string | null
+    modelId?: NullableStringFieldUpdateOperationsInput | string | null
+    utilityStringField?: NullableStringFieldUpdateOperationsInput | string | null
+    utilityNumberField?: NullableFloatFieldUpdateOperationsInput | number | null
+    utilityDateField?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    utilityDateFieldTwo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     data?: BytesFieldUpdateOperationsInput | Buffer
   }
 
   export type DJTUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    type?: StringFieldUpdateOperationsInput | string
+    pluginName?: NullableStringFieldUpdateOperationsInput | string | null
+    modelId?: NullableStringFieldUpdateOperationsInput | string | null
+    utilityStringField?: NullableStringFieldUpdateOperationsInput | string | null
+    utilityNumberField?: NullableFloatFieldUpdateOperationsInput | number | null
+    utilityDateField?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    utilityDateFieldTwo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     data?: BytesFieldUpdateOperationsInput | Buffer
   }
 
   export type DJTCreateManyInput = {
     id?: number
-    type: string
+    pluginName?: string | null
+    modelId?: string | null
+    utilityStringField?: string | null
+    utilityNumberField?: number | null
+    utilityDateField?: Date | string | null
+    utilityDateFieldTwo?: Date | string | null
     data: Buffer
   }
 
   export type DJTUpdateManyMutationInput = {
-    type?: StringFieldUpdateOperationsInput | string
+    pluginName?: NullableStringFieldUpdateOperationsInput | string | null
+    modelId?: NullableStringFieldUpdateOperationsInput | string | null
+    utilityStringField?: NullableStringFieldUpdateOperationsInput | string | null
+    utilityNumberField?: NullableFloatFieldUpdateOperationsInput | number | null
+    utilityDateField?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    utilityDateFieldTwo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     data?: BytesFieldUpdateOperationsInput | Buffer
   }
 
   export type DJTUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    type?: StringFieldUpdateOperationsInput | string
+    pluginName?: NullableStringFieldUpdateOperationsInput | string | null
+    modelId?: NullableStringFieldUpdateOperationsInput | string | null
+    utilityStringField?: NullableStringFieldUpdateOperationsInput | string | null
+    utilityNumberField?: NullableFloatFieldUpdateOperationsInput | number | null
+    utilityDateField?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    utilityDateFieldTwo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     data?: BytesFieldUpdateOperationsInput | Buffer
   }
 
@@ -56420,28 +56551,45 @@ export namespace Prisma {
 
   export type DJTCountOrderByAggregateInput = {
     id?: SortOrder
-    type?: SortOrder
+    pluginName?: SortOrder
+    modelId?: SortOrder
+    utilityStringField?: SortOrder
+    utilityNumberField?: SortOrder
+    utilityDateField?: SortOrder
+    utilityDateFieldTwo?: SortOrder
     data?: SortOrder
   }
 
   export type DJTAvgOrderByAggregateInput = {
     id?: SortOrder
+    utilityNumberField?: SortOrder
   }
 
   export type DJTMaxOrderByAggregateInput = {
     id?: SortOrder
-    type?: SortOrder
+    pluginName?: SortOrder
+    modelId?: SortOrder
+    utilityStringField?: SortOrder
+    utilityNumberField?: SortOrder
+    utilityDateField?: SortOrder
+    utilityDateFieldTwo?: SortOrder
     data?: SortOrder
   }
 
   export type DJTMinOrderByAggregateInput = {
     id?: SortOrder
-    type?: SortOrder
+    pluginName?: SortOrder
+    modelId?: SortOrder
+    utilityStringField?: SortOrder
+    utilityNumberField?: SortOrder
+    utilityDateField?: SortOrder
+    utilityDateFieldTwo?: SortOrder
     data?: SortOrder
   }
 
   export type DJTSumOrderByAggregateInput = {
     id?: SortOrder
+    utilityNumberField?: SortOrder
   }
 
   export type FeatureRequestOrderByRelevanceInput = {

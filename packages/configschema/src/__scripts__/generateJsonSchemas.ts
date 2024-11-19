@@ -12,6 +12,7 @@ import {
     FetchingJSONSchemaStore,
 } from "quicktype-core";
 
+
 interface Item {
     schema: typeof buildStaticDataJsonSchema;
     file: string;
@@ -20,6 +21,7 @@ interface Item {
         var: string;
         /** Path relative to $ULLD_CLI_DEVROOT */
         path: string;
+        packageName: string
     };
 }
 
@@ -46,6 +48,7 @@ async function jsonSchemaToGoStruct(x: Item & { go: Required<Item["go"]> }) {
     });
 
     const inputData = new InputData();
+
     inputData.addInput(schemaInput);
 
     const cliRoot = process.env.ULLD_CLI_DEVROOT;
@@ -64,7 +67,17 @@ async function jsonSchemaToGoStruct(x: Item & { go: Required<Item["go"]> }) {
         outputFilename,
     });
 
-    await fs.promises.writeFile(outputFilename, res.lines.join("\n"), {
+    const lines = res.lines.map((l) => l == "package main" ? `package ${x.go.packageName}` : l)
+
+    const dirName = path.dirname(outputFilename)
+
+    if(!fs.existsSync(dirName)){
+        fs.mkdirSync(dirName, {
+            recursive: true
+        })
+    }
+
+    await fs.promises.writeFile(outputFilename, lines.join("\n"), {
         encoding: "utf-8",
     });
 }
@@ -73,21 +86,37 @@ let items: Item[] = [
     {
         schema: buildStaticDataJsonSchema,
         file: "buildStaticDataJsonSchema.json",
+        go: {
+            path: "internal/schemastructs/buildStaticDataOutput/buildStaticDataOutput.go",
+            var: "BuildStaticDataOutput",
+            packageName: "schemas_build_static_data_output"
+        },
     },
     {
         schema: pluginConfigJsonSchema,
         file: "pluginConfigJsonSchema.json",
+        go: {
+            path: "internal/schemastructs/ulldPluginConfig/ulldPluginConfig.go",
+            var: "UlldPluginConfig",
+            packageName: "schemas_ulld_plugin_config"
+        },
     },
     {
         schema: appConfigJsonSchema,
         file: "appConfigJsonSchema.json",
+        go: {
+            path: "internal/schemastructs/ulldAppConfig/ulldAppConfig.go",
+            var: "AppConfig",
+            packageName: "schemas_app_config"
+        },
     },
     {
         schema: cliConfigSchema,
         file: "cliConfigSchema.json",
         go: {
-            path: "internal/schemastructs/cliconfig.go",
+            path: "internal/schemastructs/cliConfig/cliconfig.go",
             var: "CliConfig",
+            packageName: "schemas_cli_config"
         },
     },
 ];
@@ -115,6 +144,10 @@ const generateSchemas = async (): Promise<void> => {
     console.log(`Successfully wrote json schemas to: 
 
 ${items.map((i) => `- ${i.file}`).join("\n")}\n`);
+
 };
+
+
+
 
 generateSchemas();

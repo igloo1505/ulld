@@ -14,7 +14,7 @@ export declare class DateTime {
     constructor(t: Date | string, config?: AppConfigSchemaOutput | undefined);
     private getTimezone;
     djs(t: Date | string | Dayjs): dayjs.Dayjs;
-    updateOnInterval(intervalSeconds: number, type: TimeDisplayType, callback: (s: string) => void): NodeJS.Timeout;
+    updateOnInterval(intervalSeconds: number, type: TimeDisplayType, callback: (s: string) => void): NodeJS.Timer;
     formatDate(withTime?: boolean): string;
     now(asValue?: boolean): number | Date;
     secondDifference(fromTo?: Date): number;

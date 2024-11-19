@@ -10,13 +10,13 @@ export class Path {
     #parsedData: ReturnType<typeof path.parse>;
     #exists: boolean;
     #stats: Stats
-    constructor(public path: string) { }
+    constructor(public filePath: string) { }
 
     get parsed() {
         if (this.#parsedData) {
             return this.#parsedData;
         } else {
-            let data = path.parse(this.path);
+            let data = path.parse(this.filePath);
             this.#parsedData = data;
             return data;
         }
@@ -37,10 +37,10 @@ export class Path {
 
     /** .../someDir/somePath.html -> .../someDir */
     dir() {
-        return this.pathType() === "dir" ? this.path : this.parsed.dir;
+        return this.pathType() === "dir" ? this.filePath : this.parsed.dir;
     }
     exists({ forceNewRead, touchIfNotExists }: ExistsParams = {}) {
-        let doesExist = Boolean(!forceNewRead && typeof this.#exists === "boolean") ? this.#exists : fs.existsSync(this.path)
+        let doesExist = Boolean(!forceNewRead && typeof this.#exists === "boolean") ? this.#exists : fs.existsSync(this.filePath)
         if(!doesExist && touchIfNotExists){
            return this.touch() 
         }
@@ -58,7 +58,7 @@ export class Path {
     }
     touch(): boolean {
         this.mkdir()
-        fs.closeSync(fs.openSync(this.path, "w"))
+        fs.closeSync(fs.openSync(this.filePath, "w"))
         return true
     }
     get stats(){
@@ -68,7 +68,7 @@ export class Path {
         if(this.#stats){
             return this.#stats
         }
-        let data = fs.statSync(this.path)
+        let data = fs.statSync(this.filePath)
         this.#stats = data
         return data
     }

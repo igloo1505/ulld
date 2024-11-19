@@ -11,7 +11,7 @@ import {
 } from "../chunk-JX2ADNSR.mjs";
 import {
   pluginCommandPaletteSchema
-} from "../chunk-43PW6ZEX.mjs";
+} from "../chunk-72UHUWDL.mjs";
 import {
   additionalImportsConfigSchema
 } from "../chunk-LGHVC4GE.mjs";

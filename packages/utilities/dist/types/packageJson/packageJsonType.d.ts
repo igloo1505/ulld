@@ -7,12 +7,12 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
         import: z.ZodOptional<z.ZodString>;
         require: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        types?: string | undefined;
         import?: string | undefined;
+        types?: string | undefined;
         require?: string | undefined;
     }, {
-        types?: string | undefined;
         import?: string | undefined;
+        types?: string | undefined;
         require?: string | undefined;
     }>]>>>;
     files: z.ZodDefault<z.ZodOptional<z.ZodArray<z.ZodString, "many">>>;
@@ -66,21 +66,21 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
     }>]>>;
     description: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    files: string[];
     name: string;
-    version: string;
+    files: string[];
     keywords: string[];
+    version: string;
     dependencies: Record<string, string>;
     packageManager: string;
     license: string;
-    cpu?: string[] | undefined;
     type?: string | undefined;
+    cpu?: string[] | undefined;
     main?: string | undefined;
     description?: string | undefined;
     scripts?: Record<string, string> | undefined;
     exports?: Record<string, string | {
-        types?: string | undefined;
         import?: string | undefined;
+        types?: string | undefined;
         require?: string | undefined;
     }> | undefined;
     devDependencies?: Record<string, string> | undefined;
@@ -108,17 +108,17 @@ export declare const ulldCompletePackageJsonSchema: z.ZodObject<{
 }, {
     name: string;
     dependencies: Record<string, string>;
+    type?: string | undefined;
     cpu?: string[] | undefined;
     files?: string[] | undefined;
-    type?: string | undefined;
     main?: string | undefined;
-    version?: string | undefined;
     description?: string | undefined;
     keywords?: string[] | undefined;
     scripts?: Record<string, string> | undefined;
+    version?: string | undefined;
     exports?: Record<string, string | {
-        types?: string | undefined;
         import?: string | undefined;
+        types?: string | undefined;
         require?: string | undefined;
     }> | undefined;
     packageManager?: string | undefined;

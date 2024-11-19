@@ -52,5 +52,5 @@ export declare class TargetPaths implements Record<typeof pathKeys[number] | Met
         page: string;
         individualNotePage: string;
     };
-    toJson(): Record<"src" | "tailwind" | "public" | "styles" | "packageJson" | "app" | "envLocal" | "projectRoot" | "componentDocumentation" | "fullComponentDocumentation" | "node_modules" | "shortComponentDocumentation" | "appDir" | "nextConfig" | "ulldBuildData" | "appConfig" | "methods" | "tempTargetPaths" | "mdxParserList" | "componentMap" | "unifiedUserDefinedScss" | "gitignore" | "prismaSchema" | "userDefinedStyles" | "pluginDocumentation" | "tempBuildFiles", string>;
+    toJson(): Record<"tailwind" | "src" | "public" | "styles" | "packageJson" | "app" | "envLocal" | "projectRoot" | "componentDocumentation" | "fullComponentDocumentation" | "node_modules" | "shortComponentDocumentation" | "appDir" | "nextConfig" | "ulldBuildData" | "appConfig" | "methods" | "tempTargetPaths" | "mdxParserList" | "componentMap" | "unifiedUserDefinedScss" | "gitignore" | "prismaSchema" | "userDefinedStyles" | "pluginDocumentation" | "tempBuildFiles", string>;
 }

@@ -1,1 +1,1 @@
-export * from "./moveAndChangeExtension"
+export * from "./moveAndChangeExtension.js"
