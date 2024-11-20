@@ -2,10 +2,7 @@ cd $ULLD_DEV_ROOT
 
 branch="$(git rev-parse --abbrev-ref HEAD)"
 
-
 dotenvx ext precommit
-
-tsx $ULLD_DEV_ROOT/buildUtils/updateBasePackageVersions.ts
 
 pnpm syncpack format
 
