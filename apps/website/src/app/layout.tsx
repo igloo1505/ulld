@@ -6,7 +6,6 @@ import { cookies } from "next/headers";
 import React from "react";
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI";
 import { Toaster } from "@ulld/tailwind/toaster";
-import { fontSans } from "@ulld/tailwind/defaultFont";
 import localFont from "next/font/local";
 import SetInitialRender from "#/components/utility/setInitialRender";
 import StateWrappedComponents from "#/components/utility/providers/stateWrappedComponents";
@@ -147,6 +146,7 @@ export const metadata: Metadata = {
     },
 };
 
+
 const RootLayout = async (props: {
     children: React.ReactNode;
     modal: React.ReactNode;
@@ -210,7 +210,8 @@ const RootLayout = async (props: {
                 className={clsx(
                     "group/body dark max-w-full relative h-auto overflow-x-hidden w-screen min-h-screen overflow-y-auto data-[disContents=true]:contents bg-background",
                     /* "contents", // Remove this if it causes issues. Added on 6-27 to handle sticky sidebar. */
-                    fontSans.variable,
+                    // Removed fontsans on 11-20. It was causing build fails after transpiling the tailwind package, and seems to be a duplicate outside of the template app,
+                    /* fontSans.variable, */
                     preferFs && "preferFs",
                 )}
                 id={`Ulld-body-root`}
