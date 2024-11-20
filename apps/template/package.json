@@ -14,7 +14,6 @@
     "dev-inspect": "NODE_OPTIONS='--inspect' next dev",
     "dev-inspect:windows": "cross-env NODE_OPTIONS='--inspect' next dev",
     "lint": "wireit",
-    "postinstall": "pnpm run db:generate",
     "predev": "pnpm run db:generate",
     "rebuild": "wireit",
     "runOnBuild": "wireit",
@@ -22,7 +21,8 @@
     "syncTemplatePackage": "wireit",
     "toTemplateDeps": "wireit",
     "toWorkspaceDeps": "wireit",
-    "typecheck": "wireit"
+    "typecheck": "wireit",
+    "ulld-postinstall": "pnpm run db:generate"
   },
   "wireit": {
     "syncTemplatePackage": {
