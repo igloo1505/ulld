@@ -1,0 +1,1 @@
+tsx $ULLD_DEV_ROOT/buildUtils/updateBasePackageVersions.ts toWorkspace

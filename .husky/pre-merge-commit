@@ -1,0 +1,5 @@
+ALLOWED_BRANCH="dev"
+
+echo $GIT_REFLOG_ACTION
+
+exit 1
