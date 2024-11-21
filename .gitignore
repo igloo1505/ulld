@@ -24,3 +24,4 @@ slotExistsMap.json
 **/.wireit/
 
 WHEN_RETURN_TO_ONLINE.zsh
+buildUtils/buildNotes/personal/

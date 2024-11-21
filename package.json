@@ -266,10 +266,10 @@
       "height": 10,
       "opts": [
         "Build",
-        "Dev,tools",
+        "Dev tools",
         "API",
         "Website",
-        "Template,App",
+        "Template App",
         "Config",
         "Package:Bib-Manager",
         "Package:Command Palette",
