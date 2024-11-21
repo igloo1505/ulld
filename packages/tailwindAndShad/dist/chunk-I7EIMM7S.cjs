@@ -1,10 +1,2 @@
-'use strict';
-
-var clsx = require('clsx');
-var tailwindMerge = require('tailwind-merge');
-
-function s(...r){return tailwindMerge.twMerge(clsx.clsx(r))}
-
-exports.a = s;
-//# sourceMappingURL=out.js.map
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _clsx = require('clsx');var _tailwindmerge = require('tailwind-merge');function s(...r){return _tailwindmerge.twMerge.call(void 0, _clsx.clsx.call(void 0, r))}exports.a = s;
 //# sourceMappingURL=chunk-I7EIMM7S.cjs.map

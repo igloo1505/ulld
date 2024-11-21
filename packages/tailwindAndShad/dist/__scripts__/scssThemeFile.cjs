@@ -1,13 +1,2 @@
-'use strict';
-
-var chunk4V3S5RHE_cjs = require('../chunk-4V3S5RHE.cjs');
-require('../chunk-GX4GL4KK.cjs');
-
-
-
-Object.defineProperty(exports, "ThemeFile", {
-	enumerable: true,
-	get: function () { return chunk4V3S5RHE_cjs.a; }
-});
-//# sourceMappingURL=out.js.map
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunkDMJ3KMLRcjs = require('../chunk-DMJ3KMLR.cjs');require('../chunk-GX4GL4KK.cjs');exports.ThemeFile = _chunkDMJ3KMLRcjs.a;
 //# sourceMappingURL=scssThemeFile.cjs.map

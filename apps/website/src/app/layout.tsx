@@ -1,9 +1,9 @@
+import React from "react";
 import "#/styles/mdx.scss";
 import "@ulld/tailwind/websiteStyles.scss";
 import "#/styles/globals.scss";
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
-import React from "react";
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI";
 import { Toaster } from "@ulld/tailwind/toaster";
 import localFont from "next/font/local";

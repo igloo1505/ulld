@@ -23,5 +23,11 @@ buildUtils/baseAppData.json
 slotExistsMap.json
 **/.wireit/
 
+<<<<<<< Updated upstream
 WHEN_RETURN_TO_ONLINE.zsh
 buildUtils/buildNotes/personal/
+||||||| Stash base
+WHEN_RETURN_TO_ONLINE.zsh
+=======
+buildUtils/buildNotes/
+>>>>>>> Stashed changes

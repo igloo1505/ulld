@@ -1,10 +1,2 @@
-'use strict';
-
-var chunkI7EIMM7S_cjs = require('../../../chunk-I7EIMM7S.cjs');
-require('../../../chunk-GX4GL4KK.cjs');
-
-function r({className:t,...n}){return React.createElement("div",{className:chunkI7EIMM7S_cjs.a("animate-pulse rounded-md bg-muted",t),...n})}
-
-exports.Skeleton = r;
-//# sourceMappingURL=out.js.map
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunkI7EIMM7Scjs = require('../../../chunk-I7EIMM7S.cjs');require('../../../chunk-GX4GL4KK.cjs');function r({className:t,...n}){return React.createElement("div",{className:_chunkI7EIMM7Scjs.a.call(void 0, "animate-pulse rounded-md bg-muted",t),...n})}exports.Skeleton = r;
 //# sourceMappingURL=skeleton.cjs.map

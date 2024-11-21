@@ -6,7 +6,6 @@ import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI";
 import { Toaster } from "@ulld/tailwind/toaster";
-import { fontSans } from "@ulld/tailwind/defaultFont";
 import axios from "axios";
 import appConfig from "appConfig";
 import { prisma } from "@ulld/database";
@@ -134,7 +133,7 @@ const RootLayout = async (props: {
       <body
         className={clsx(
           "group/body @container/body bg-background min-scrollbar border-border max-w-full overflow-x-hidden inline",
-          fontSans.variable,
+          /* fontSans.variable, */
           darkMode && "dark",
           preferFs && "preferFs",
           getBodyClassesFromAppConfig(appConfig as AppConfigSchemaOutput),

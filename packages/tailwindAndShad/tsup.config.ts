@@ -23,7 +23,7 @@ const getInputs = (): string[] => {
         cwd: path.join(__dirname, "src"),
         nodir: true,
         absolute: true,
-        ignore: ["src/__scripts__"],
+        ignore: ["__scripts__"],
     });
 };
 
@@ -74,7 +74,7 @@ export default defineConfig((options) => {
     const files = getInputs();
     return {
         entry: files,
-        // platform: "neutral",
+        platform: "neutral",
         splitting: true,
         sourcemap: true,
         clean: false,
@@ -85,11 +85,11 @@ export default defineConfig((options) => {
         format: ["esm", "cjs"],
         // minify: true,
         // bundle: true,
-        treeshake: true,
+        // treeshake: true,
         shims: false,
         minify: true,
-        skipNodeModulesBundle: true,
-        // external: ["react", "canvas", "@prisma/client", "prisma", "typescript", "jsdom", "react-dom"],
+        // skipNodeModulesBundle: false,
+        external: ["react", "canvas", "@prisma/client", "prisma", "typescript", "jsdom", "react-dom"],
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
         outExtension: ({ format }) => {
             return {

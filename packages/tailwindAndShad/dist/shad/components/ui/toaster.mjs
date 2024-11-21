@@ -1,11 +1,3 @@
 "use client"
-import { a, c as c$1, f, g, e, b } from '../../../chunk-2JX766TV.mjs';
-import { c } from '../../../chunk-2ULBS3FP.mjs';
-import '../../../chunk-ORBRSQKI.mjs';
-import '../../../chunk-PD25TUY5.mjs';
-
-function l(){let{toasts:p}=c();return React.createElement(a,null,p.map(function({id:c,title:o,description:t,action:m,...u}){return React.createElement(c$1,{key:c,...u},React.createElement("div",{className:"grid gap-1"},o&&React.createElement(f,null,o),t&&React.createElement(g,null,t)),m,React.createElement(e,null))}),React.createElement(b,null))}
-
-export { l as Toaster };
-//# sourceMappingURL=out.js.map
+"use client";import{a as i,b as T,c as a,e,f as n,g as m}from"../../../chunk-2JX766TV.mjs";import{c as r}from"../../../chunk-2ULBS3FP.mjs";import"../../../chunk-ORBRSQKI.mjs";import"../../../chunk-PD25TUY5.mjs";import o from"react";function D(){let{toasts:p}=r();return o.createElement(i,null,p.map(function({id:u,title:s,description:t,action:f,...d}){return o.createElement(a,{key:u,...d},o.createElement("div",{className:"grid gap-1"},s&&o.createElement(n,null,s),t&&o.createElement(m,null,t)),f,o.createElement(e,null))}),o.createElement(T,null))}export{D as Toaster};
 //# sourceMappingURL=toaster.mjs.map

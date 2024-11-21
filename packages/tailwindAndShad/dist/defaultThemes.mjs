@@ -1,7 +1,2 @@
-import './chunk-PD25TUY5.mjs';
-
-var e=["blue","gray","green","neutral","orange","red","rose","slate","stone","violet","yellow","zinc"];
-
-export { e as defaultSupportedThemes };
-//# sourceMappingURL=out.js.map
+import"./chunk-PD25TUY5.mjs";var e=["blue","gray","green","neutral","orange","red","rose","slate","stone","violet","yellow","zinc"];export{e as defaultSupportedThemes};
 //# sourceMappingURL=defaultThemes.mjs.map

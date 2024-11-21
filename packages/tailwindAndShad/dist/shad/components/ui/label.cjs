@@ -1,15 +1,3 @@
 "use client"
-'use strict';
-
-var chunkP5L7ISEP_cjs = require('../../../chunk-P5L7ISEP.cjs');
-require('../../../chunk-I7EIMM7S.cjs');
-require('../../../chunk-GX4GL4KK.cjs');
-
-
-
-Object.defineProperty(exports, "Label", {
-	enumerable: true,
-	get: function () { return chunkP5L7ISEP_cjs.a; }
-});
-//# sourceMappingURL=out.js.map
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});"use client";var _chunkP5L7ISEPcjs = require('../../../chunk-P5L7ISEP.cjs');require('../../../chunk-I7EIMM7S.cjs');require('../../../chunk-GX4GL4KK.cjs');exports.Label = _chunkP5L7ISEPcjs.a;
 //# sourceMappingURL=label.cjs.map

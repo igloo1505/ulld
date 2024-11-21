@@ -1,6 +1,3 @@
 "use client"
-export { a as Label } from '../../../chunk-WGFZJLBQ.mjs';
-import '../../../chunk-ORBRSQKI.mjs';
-import '../../../chunk-PD25TUY5.mjs';
-//# sourceMappingURL=out.js.map
+"use client";import{a}from"../../../chunk-WGFZJLBQ.mjs";import"../../../chunk-ORBRSQKI.mjs";import"../../../chunk-PD25TUY5.mjs";export{a as Label};
 //# sourceMappingURL=label.mjs.map

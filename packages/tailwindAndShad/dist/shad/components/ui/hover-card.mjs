@@ -1,11 +1,3 @@
 "use client"
-import { a } from '../../../chunk-ORBRSQKI.mjs';
-import '../../../chunk-PD25TUY5.mjs';
-import * as t from 'react';
-import * as e from '@radix-ui/react-hover-card';
-
-var f=e.Root,p=e.Trigger,s=t.forwardRef(({className:a$1,align:r="center",sideOffset:i=4,...d},n)=>t.createElement(e.Content,{ref:n,align:r,sideOffset:i,className:a("z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",a$1),...d}));s.displayName=e.Content.displayName;
-
-export { f as HoverCard, s as HoverCardContent, p as HoverCardTrigger };
-//# sourceMappingURL=out.js.map
+"use client";import{a as o}from"../../../chunk-ORBRSQKI.mjs";import"../../../chunk-PD25TUY5.mjs";import*as t from"react";import*as e from"@radix-ui/react-hover-card";var f=e.Root,p=e.Trigger,s=t.forwardRef(({className:a,align:r="center",sideOffset:i=4,...d},n)=>t.createElement(e.Content,{ref:n,align:r,sideOffset:i,className:o("z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",a),...d}));s.displayName=e.Content.displayName;export{f as HoverCard,s as HoverCardContent,p as HoverCardTrigger};
 //# sourceMappingURL=hover-card.mjs.map

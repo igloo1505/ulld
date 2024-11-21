@@ -1,17 +1,3 @@
 "use client"
-'use strict';
-
-require('../../../chunk-GX4GL4KK.cjs');
-var r = require('react');
-var nextThemes = require('next-themes');
-var sonner = require('sonner');
-
-function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
-
-var r__default = /*#__PURE__*/_interopDefault(r);
-
-var n=({...o})=>{let{theme:t="system"}=nextThemes.useTheme();return r__default.default.createElement(sonner.Toaster,{theme:t,className:"toaster group",toastOptions:{classNames:{toast:"group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",description:"group-[.toast]:text-muted-foreground",actionButton:"group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",cancelButton:"group-[.toast]:bg-muted group-[.toast]:text-muted-foreground"}},...o})};
-
-exports.Toaster = n;
-//# sourceMappingURL=out.js.map
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }"use client";require('../../../chunk-GX4GL4KK.cjs');var _react = require('react'); var _react2 = _interopRequireDefault(_react);var _nextthemes = require('next-themes');var _sonner = require('sonner');var n=({...o})=>{let{theme:t="system"}=_nextthemes.useTheme.call(void 0, );return _react2.default.createElement(_sonner.Toaster,{theme:t,className:"toaster group",toastOptions:{classNames:{toast:"group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",description:"group-[.toast]:text-muted-foreground",actionButton:"group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",cancelButton:"group-[.toast]:bg-muted group-[.toast]:text-muted-foreground"}},...o})};exports.Toaster = n;
 //# sourceMappingURL=sonner.cjs.map

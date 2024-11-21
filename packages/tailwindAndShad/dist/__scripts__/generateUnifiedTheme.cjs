@@ -1,22 +1,9 @@
-'use strict';
-
-var chunk4V3S5RHE_cjs = require('../chunk-4V3S5RHE.cjs');
-require('../chunk-GX4GL4KK.cjs');
-var n = require('fs');
-var o = require('path');
-var glob = require('glob');
-
-function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
-
-var n__default = /*#__PURE__*/_interopDefault(n);
-var o__default = /*#__PURE__*/_interopDefault(o);
-
-var r="unifiedTheme.scss",s=o__default.default.join(__dirname,`../shad/defaultThemes/${r}`),d=glob.globSync(`${o__default.default.join(__dirname,"../shad/defaultThemes/")}/*.scss`,{}),t=`@tailwind base;
+"use strict"; function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _chunkDMJ3KMLRcjs = require('../chunk-DMJ3KMLR.cjs');require('../chunk-GX4GL4KK.cjs');var _fs = require('fs'); var _fs2 = _interopRequireDefault(_fs);var _path = require('path'); var _path2 = _interopRequireDefault(_path);var _glob = require('glob');var r="unifiedTheme.scss",s=_path2.default.join(__dirname,`../shad/defaultThemes/${r}`),d=_glob.globSync.call(void 0, `${_path2.default.join(__dirname,"../shad/defaultThemes/")}/*.scss`,{}),t=`@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-`;d.map(e=>new chunk4V3S5RHE_cjs.a(e)).filter(e=>e.isValid).forEach(e=>{t+=e.getUnifiedContent();});t+=`
+`;d.map(e=>new (0, _chunkDMJ3KMLRcjs.a)(e)).filter(e=>e.isValid).forEach(e=>{t+=e.getUnifiedContent()});t+=`
     * {
       @apply border-border;
     }
@@ -25,6 +12,5 @@ var r="unifiedTheme.scss",s=o__default.default.join(__dirname,`../shad/defaultTh
       @apply bg-background text-foreground font-sans;
     }
   }
-`;n__default.default.writeFileSync(s,t,{encoding:"utf-8"});
-//# sourceMappingURL=out.js.map
+`;_fs2.default.writeFileSync(s,t,{encoding:"utf-8"});
 //# sourceMappingURL=generateUnifiedTheme.cjs.map

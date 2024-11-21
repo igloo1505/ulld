@@ -1,0 +1,64 @@
+import localFont from "next/font/local";
+import path from "path";
+
+const getPath = (p: string): string => {
+    return path.join(__dirname, p);
+};
+
+export const fontSans = localFont({
+    src: [
+        {
+            path: getPath("Roboto-Regular.ttf"),
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: getPath("Roboto-Light.ttf"),
+            weight: "300",
+            style: "normal",
+        },
+        {
+            path: getPath("Roboto-LightItalic.ttf"),
+            weight: "300",
+            style: "italic",
+        },
+        {
+            path: getPath("Roboto-Italic.ttf"),
+            weight: "400",
+            style: "italic",
+        },
+        {
+            path: getPath("Roboto-Medium.ttf"),
+            weight: "500",
+            style: "normal",
+        },
+        {
+            path: getPath("Roboto-MediumItalic.ttf"),
+            weight: "500",
+            style: "italic",
+        },
+        {
+            path: getPath("Roboto-Thin.ttf"),
+            weight: "300",
+            style: "normal",
+        },
+        {
+            path: getPath("Roboto-ThinItalic.ttf"),
+            weight: "300",
+            style: "italic",
+        },
+        {
+            path: getPath("Roboto-Bold.ttf"),
+            weight: "600",
+            style: "bold",
+        },
+        {
+            path: getPath("Roboto-BoldItalic.ttf"),
+            weight: "600",
+            style: "italic",
+        },
+    ],
+    variable: "--font-sans",
+    display: "swap",
+});
+

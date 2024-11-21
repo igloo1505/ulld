@@ -1,0 +1,3 @@
+{
+    "extends": "@ulld/typescript-config/tsconfig.vite.json",
+}

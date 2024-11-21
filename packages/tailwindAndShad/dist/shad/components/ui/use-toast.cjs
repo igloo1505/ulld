@@ -1,22 +1,3 @@
 "use client"
-'use strict';
-
-var chunkQDNOK2XR_cjs = require('../../../chunk-QDNOK2XR.cjs');
-require('../../../chunk-GX4GL4KK.cjs');
-
-
-
-Object.defineProperty(exports, "reducer", {
-	enumerable: true,
-	get: function () { return chunkQDNOK2XR_cjs.a; }
-});
-Object.defineProperty(exports, "toast", {
-	enumerable: true,
-	get: function () { return chunkQDNOK2XR_cjs.b; }
-});
-Object.defineProperty(exports, "useToast", {
-	enumerable: true,
-	get: function () { return chunkQDNOK2XR_cjs.c; }
-});
-//# sourceMappingURL=out.js.map
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});"use client";var _chunkQDNOK2XRcjs = require('../../../chunk-QDNOK2XR.cjs');require('../../../chunk-GX4GL4KK.cjs');exports.reducer = _chunkQDNOK2XRcjs.a; exports.toast = _chunkQDNOK2XRcjs.b; exports.useToast = _chunkQDNOK2XRcjs.c;
 //# sourceMappingURL=use-toast.cjs.map

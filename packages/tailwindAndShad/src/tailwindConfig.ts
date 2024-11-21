@@ -1,4 +1,3 @@
-import { fontFamily } from "tailwindcss/defaultTheme";
 import type { Config } from "tailwindcss/types/config";
 
 export const tailwindConfig: Config = {
@@ -61,7 +60,7 @@ export const tailwindConfig: Config = {
                     "monospace",
                 ],
             },
-            colors: (cfg) => ({
+            colors: () => ({
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
                 ring: "hsl(var(--ring))",

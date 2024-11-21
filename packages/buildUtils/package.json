@@ -1,0 +1,25 @@
+{
+  "name": "@ulld/build-utils",
+  "version": "0.0.1",
+  "type": "module",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "exports": {
+    "./getViteConfigReact": {
+      "types": "./dist/viteConfigs/react.d.ts",
+      "import": "./dist/viteConfigs/react.js"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
+  "packageManager": "pnpm@9.0.4"
+}

@@ -1,33 +1,3 @@
 "use client"
-'use strict';
-
-require('../../../chunk-GX4GL4KK.cjs');
-var l = require('@radix-ui/react-collapsible');
-
-function _interopNamespace(e) {
-	if (e && e.__esModule) return e;
-	var n = Object.create(null);
-	if (e) {
-		Object.keys(e).forEach(function (k) {
-			if (k !== 'default') {
-				var d = Object.getOwnPropertyDescriptor(e, k);
-				Object.defineProperty(n, k, d.get ? d : {
-					enumerable: true,
-					get: function () { return e[k]; }
-				});
-			}
-		});
-	}
-	n.default = e;
-	return Object.freeze(n);
-}
-
-var l__namespace = /*#__PURE__*/_interopNamespace(l);
-
-var i=l__namespace.Root,e=l__namespace.CollapsibleTrigger,o=l__namespace.CollapsibleContent;
-
-exports.Collapsible = i;
-exports.CollapsibleContent = o;
-exports.CollapsibleTrigger = e;
-//# sourceMappingURL=out.js.map
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { newObj[key] = obj[key]; } } } newObj.default = obj; return newObj; } }"use client";require('../../../chunk-GX4GL4KK.cjs');var _reactcollapsible = require('@radix-ui/react-collapsible'); var l = _interopRequireWildcard(_reactcollapsible);var i=l.Root,e= exports.CollapsibleTrigger =l.CollapsibleTrigger,o= exports.CollapsibleContent =l.CollapsibleContent;exports.Collapsible = i; exports.CollapsibleContent = o; exports.CollapsibleTrigger = e;
 //# sourceMappingURL=collapsible.cjs.map

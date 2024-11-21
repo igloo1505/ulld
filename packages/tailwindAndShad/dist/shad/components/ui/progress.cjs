@@ -1,34 +1,3 @@
 "use client"
-'use strict';
-
-var chunkI7EIMM7S_cjs = require('../../../chunk-I7EIMM7S.cjs');
-require('../../../chunk-GX4GL4KK.cjs');
-var r = require('react');
-var e = require('@radix-ui/react-progress');
-
-function _interopNamespace(e) {
-	if (e && e.__esModule) return e;
-	var n = Object.create(null);
-	if (e) {
-		Object.keys(e).forEach(function (k) {
-			if (k !== 'default') {
-				var d = Object.getOwnPropertyDescriptor(e, k);
-				Object.defineProperty(n, k, d.get ? d : {
-					enumerable: true,
-					get: function () { return e[k]; }
-				});
-			}
-		});
-	}
-	n.default = e;
-	return Object.freeze(n);
-}
-
-var r__namespace = /*#__PURE__*/_interopNamespace(r);
-var e__namespace = /*#__PURE__*/_interopNamespace(e);
-
-var l=r__namespace.forwardRef(({className:t,value:i,...s},a)=>r__namespace.createElement(e__namespace.Root,{ref:a,className:chunkI7EIMM7S_cjs.a("relative h-4 w-full overflow-hidden rounded-full bg-secondary",t),...s},r__namespace.createElement(e__namespace.Indicator,{className:"h-full w-full flex-1 bg-primary transition-all",style:{transform:`translateX(-${100-(i||0)}%)`}})));l.displayName=e__namespace.Root.displayName;
-
-exports.Progress = l;
-//# sourceMappingURL=out.js.map
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { newObj[key] = obj[key]; } } } newObj.default = obj; return newObj; } }"use client";var _chunkI7EIMM7Scjs = require('../../../chunk-I7EIMM7S.cjs');require('../../../chunk-GX4GL4KK.cjs');var _react = require('react'); var r = _interopRequireWildcard(_react);var _reactprogress = require('@radix-ui/react-progress'); var e = _interopRequireWildcard(_reactprogress);var l=r.forwardRef(({className:t,value:i,...s},a)=>r.createElement(e.Root,{ref:a,className:_chunkI7EIMM7Scjs.a.call(void 0, "relative h-4 w-full overflow-hidden rounded-full bg-secondary",t),...s},r.createElement(e.Indicator,{className:"h-full w-full flex-1 bg-primary transition-all",style:{transform:`translateX(-${100-(i||0)}%)`}})));l.displayName=e.Root.displayName;exports.Progress = l;
 //# sourceMappingURL=progress.cjs.map
