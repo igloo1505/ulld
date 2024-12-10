@@ -16,7 +16,7 @@ import { BuildCleanup } from "./cleanup.js";
 import { getComponentMapContent } from "./fileContent/componentMap.js";
 import { getEventMethodListContent } from "./fileContent/eventMethodList.js";
 import { BuildOptionsType } from "../../utils/options.js";
-import type { pathKeys} from "@ulld/utilities/buildUtils"
+import type { pathKeys } from "@ulld/utilities/buildUtils";
 import { todo } from "node:test";
 // import { SlotMapInternalType } from "@ulld/configschema/slotMapInternalType";
 
@@ -40,7 +40,7 @@ export class BaseApp extends ShellManager {
         this.buildStaticData = new BuildStaticData(this.paths, this.build);
         this.buildCleanup = new BuildCleanup(this.paths, this.build.packageManager);
     }
-    writeFile(location: typeof pathKeys[number], content: string) {
+    writeFile(location: (typeof pathKeys)[number], content: string) {
         return fs.writeFileSync(this.paths[location], content, {
             encoding: "utf-8",
         });
@@ -223,8 +223,8 @@ export default unifiedParserList
             this.build.packageManager,
             this.options.genDatabase,
         );
-        this.cleanUp()
-        this.log("Almost done! Running the last phase of the build script.")
+        this.cleanUp();
+        this.log("Almost done! Running the last phase of the build script.");
         this.execPackageJsonScript(
             this.build.packageManager,
             "build",
@@ -242,7 +242,7 @@ export default unifiedParserList
         this.logVerbose("Just cleaning things up a bit...");
         this.buildCleanup.runCleanup();
     }
-    logSuccessfullBuild(){
+    logSuccessfullBuild() {
         this.log(`Success! You can now run your application with:
 cd ${this.paths.targetDir} && ${this.build.packageManager} run start
 
@@ -253,6 +253,6 @@ alias myUsefulAlias="cd ${this.paths.targetDir} && ${this.build.packageManager} 
 And then run your app from anywhere with the command:
 
 myUsefulAlias
-`)
+`);
     }
 }

@@ -1,16 +1,16 @@
 import path from "path";
 import fs from "fs";
-import { pathKeys} from "@ulld/utilities/buildUtils"
+import { pathKeys } from "@ulld/utilities/buildUtils";
 import { removeLeadingDotSlash } from "../utils/removeLeadingDotSlash.js";
 import type { ParserKey } from "@ulld/configschema/developer";
-import xdgAppPaths from 'xdg-app-paths';
-import type { Options, XDGAppPaths } from 'xdg-app-paths';
-import {MethodListPathKeys, PathKeys} from "@ulld/utilities/buildTypes"
+import xdgAppPaths from "xdg-app-paths";
+import type { XDGAppPaths } from "xdg-app-paths";
+import { MethodListPathKeys, PathKeys } from "@ulld/utilities/buildTypes";
 import { PluginEventsConfig } from "@ulld/configschema/pluginEventsConfig";
 import { xdgOpts } from "../utils/getXdgPaths.js";
 
 export class TargetPaths
-    implements Record<typeof pathKeys[number] | MethodListPathKeys, string> {
+    implements Record<(typeof pathKeys)[number] | MethodListPathKeys, string> {
     public: string;
     styles: string;
     packageJson: string;
@@ -39,14 +39,14 @@ export class TargetPaths
     unifiedUserDefinedScss: string;
     prismaSchema: string;
     gitignore: string;
-    envLocal: string
-    pluginDocumentation: string
-    xdgPaths: XDGAppPaths
+    envLocal: string;
+    pluginDocumentation: string;
+    xdgPaths: XDGAppPaths;
     constructor(
         public targetDir: string,
         public isLocalDev: boolean,
     ) {
-        this.xdgPaths = (xdgAppPaths as any)(xdgOpts)
+        this.xdgPaths = (xdgAppPaths as any)(xdgOpts);
         this.public = path.join(targetDir, "public");
         this.node_modules = path.join(targetDir, "node_modules");
         this.gitignore = path.join(targetDir, ".gitignore");
@@ -54,7 +54,7 @@ export class TargetPaths
         this.unifiedUserDefinedScss = path.join(this.styles, "index.scss");
         this.userDefinedStyles = path.join(this.styles, "userProvided");
         this.app = path.join(targetDir, "src", "app");
-        this.envLocal = path.join(targetDir, ".env.local")
+        this.envLocal = path.join(targetDir, ".env.local");
         this.projectRoot = targetDir;
         this.packageJson = path.join(targetDir, "package.json");
         this.packageJson = path.join(targetDir, "package.json");
@@ -97,7 +97,10 @@ export class TargetPaths
             targetDir,
             "generatedMarkdown/componentDocs",
         );
-        this.pluginDocumentation = path.join(targetDir, "generatedMarkdown/pluginDocs")
+        this.pluginDocumentation = path.join(
+            targetDir,
+            "generatedMarkdown/pluginDocs",
+        );
         this.fullComponentDocumentation = path.join(
             this.componentDocumentation,
             "full",
@@ -121,10 +124,10 @@ export class TargetPaths
     getPathInNodeModule(packageName: string, subPath: string) {
         return this.joinPath("node_modules", `${packageName}/${subPath}`);
     }
-    joinPath(pathKey: typeof pathKeys[number], ...joinWith: string[]) {
+    joinPath(pathKey: (typeof pathKeys)[number], ...joinWith: string[]) {
         return path.join(this[pathKey], ...joinWith);
     }
-    exists(_key: typeof pathKeys[number]) {
+    exists(_key: (typeof pathKeys)[number]) {
         return fs.existsSync(this[_key]);
     }
     getEventMethodListPath(type: keyof PluginEventsConfig) {
@@ -136,12 +139,12 @@ export class TargetPaths
     makeSubPath(absolutePath: string) {
         return absolutePath.replace(`${this.projectRoot}/`, "");
     }
-    makeXdgConfigDir(){
-        let p = this.xdgPaths.config()
-        if(p && !fs.existsSync(p)){
-           fs.mkdirSync(p, {
-                recursive: true
-            }) 
+    makeXdgConfigDir() {
+        let p = this.xdgPaths.config();
+        if (p && !fs.existsSync(p)) {
+            fs.mkdirSync(p, {
+                recursive: true,
+            });
         }
     }
     getNoteTypePathsFromTargetUrl(url: string) {
@@ -161,8 +164,8 @@ export class TargetPaths
     }
 }
 
-let xdgPaths = (xdgAppPaths as any)(xdgOpts)
+let xdgPaths = (xdgAppPaths as any)(xdgOpts);
 
-let f = xdgPaths.config()
+let f = xdgPaths.config();
 
-console.log("f: ", f)
+console.log("f: ", f);

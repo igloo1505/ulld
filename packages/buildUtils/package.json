@@ -18,8 +18,8 @@
       "import": "./dist/viteConfigs/react.js"
     }
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {},
+  "dependencies": {
+    "glob": "11.0.0"
+  },
   "packageManager": "pnpm@9.0.4"
 }
