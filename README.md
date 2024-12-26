@@ -2,6 +2,12 @@
 
 _Forever free, perpetually open source note taking._
 
+<p align="center">
+  <a href="https://uhlittlelessdum.com">
+    <img alt="MDX" src="./apps/website/public/icons/android-chrome-512x512.png" width="120" />
+  </a>
+</p>
+
 - [x] Write your notes in modern markdown, [mdx](https://mdxjs.com). All of the simplicity of markdown with the ability to embed entire react components.
 - [x] Take advantage of mdx by embedding:
   - [x] Videos with the ability to link to specific time stamps elsewhere in your notes.
