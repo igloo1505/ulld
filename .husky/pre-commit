@@ -2,10 +2,6 @@ cd $ULLD_DEV_ROOT
 
 branch="$(git rev-parse --abbrev-ref HEAD)"
 
-if [ "$branch" = "main" ]; then
-  echo "Don't commit directly to the main branch ace."
-  exit 1
-fi
 
 dotenvx ext precommit
 
