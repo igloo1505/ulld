@@ -1,9 +1,19 @@
 # ULLD To-Do
 
 
+## When Online
+
+- [ ] Write tests for all package managers and make sure all are passing as that will be pretty much impossible when offline.
+
 ## Priority
 
-- [ ] Create utility scripts to read and right each file in  `/Users/bigsexy/Desktop/current/ulld/buildUtils/buildNotes/` similar to the `whenOnline` scripts.
+- [ ] Setup `BasePathFs` described [here](https://github.com/spf13/afero#using-afero-for-testing). This is pretty much exactly what we want to accomodate the `targetdir`.
+
+```go
+bp := afero.NewBasePathFs(afero.NewOsFs(), "/base/path")
+```
+
+- [ ] Create utility scripts to read and write each file in  `/Users/bigsexy/Desktop/current/ulld/buildUtils/buildNotes/` similar to the `whenOnline` scripts.
 - [ ] Cli script to render markdown using the UlldServer throught he cli and display as an independent page, similar to grip.
 
 ---

@@ -2,16 +2,31 @@ import { getCurrentPackageVersions } from "@ulld/utilities/internalDataHelpers";
 import { z } from "zod";
 import { ZodOutputSchema } from "../types.js";
 
+
+export const priorityField = z.number().default(50)
+
+export const pluginPrioritySchema = z.object({
+    styles: priorityField,
+    parser: priorityField
+})
+
+export const pluginPriorityOutputSchema = z.object({
+    styles: z.number(),
+    parser:z.number() 
+})
+
 export const pluginItemSchema = z.object({
     name: z.string(),
     version: z.string().default("latest"),
-    parserIndex: z.number().min(0).default(50),
+    priority: pluginPrioritySchema.default({})
 });
+
+
 
 export const pluginItemSchemaOutput: ZodOutputSchema<typeof pluginItemSchema> = z.object({
     name: z.string(),
     version: z.string(),
-    parserIndex: z.number().min(0)
+    priority: pluginPriorityOutputSchema
 });
 
 const getDefaultPlugins = (): z.input<typeof pluginItemSchema>[]  => {
@@ -19,12 +34,10 @@ const getDefaultPlugins = (): z.input<typeof pluginItemSchema>[]  => {
        return [
             {
                 name: "@ulld/api",
-                parserIndex: 0,
                 version: currentPackageVersions["@ulld/api"],
             },
             {
                 name: "@ulld/plot",
-                parserIndex: 0,
                 version: currentPackageVersions["@ulld/plot"],
             },
         ]

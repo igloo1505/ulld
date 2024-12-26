@@ -25,4 +25,4 @@ fs.writeFileSync(path.join(rootDir, "apps/template/src/database/schema.prisma"),
 })
 
 // eslint-disable-next-line no-console -- Just a build script #MoveToLoggerPackage
-console.info("Copied database schema to the template app sucessfully.")
+console.info("Copied database schema to the template app successfully.")

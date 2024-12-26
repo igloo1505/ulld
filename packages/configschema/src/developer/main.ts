@@ -45,10 +45,8 @@ export const _developerConfigSchema = z.object({
     commandPalette: pluginCommandPaletteSchema.default([]),
     tailwind: tailwindPluginConfig.default({}),
     documentation: z.string().optional().describe("An optional export of an mdx file that describes the use of your plugin.").transform(transformExportStringOptional),
-    styles: z.object({
-        root: z.string().optional().describe("Optional export of a scss file that should be imported to all pages."),
-        mdx: z.string().optional().describe("Optional export of a scss file that should be imported to pages with mdx content only."),
-    }).default({}),
+    styles:  z.string().optional().describe("Optional export of a scss file that should be imported to all pages."),
+    transpile: z.boolean().default(true).describe("If true, any typescript files will be transpiled during the build process.")
 });
 
 export const developerConfigSchema = _developerConfigSchema.transform(

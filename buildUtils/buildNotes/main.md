@@ -9,6 +9,7 @@
 | `ULLD_TEST_ROOT` | Path to root of template app |
 | `ULLD_ADDITIONAL_SOURCES` | Path to additional sources directory as described in the docs. |
 | `ULLD_CLI_DEVROOT` | Path to root of Go cli |
+| `ULLD_TEST_ROOT` | Path to use for testing against a build output |
 
 
 ### Development Requirements

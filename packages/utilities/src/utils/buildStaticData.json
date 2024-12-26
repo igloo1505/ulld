@@ -279,7 +279,12 @@
     "pathsToCopyForDocumentation": [
         {
             "glob": "**",
-            "globRoot": ["packages", "api", "src", "individualTypesForDocumentation"]
+            "globRoot": [
+                "packages",
+                "api",
+                "src",
+                "individualTypesForDocumentation"
+            ]
         }
     ],
     "internalDocumentTypes": [
@@ -423,5 +428,501 @@
             "inNavbar": false
         }
     ],
-    "internalPackageData": [{"currentVersion":"0.0.116","relativeDirPath":"packages/internalDevCli","name":"@ulld/internal-dev-cli","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/component-map","name":"@ulld/component-map","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/diagram","name":"@ulld/diagram","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/health-tracking","name":"@ulld/health-tracking","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.118","relativeDirPath":"packages/config-eslint","name":"@ulld/eslint-config","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.116","relativeDirPath":"packages/config-typescript","name":"@ulld/typescript-config","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.116","relativeDirPath":"packages/logger","name":"@ulld/logger","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/icons","name":"@ulld/icons","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.20","relativeDirPath":"packages/fileSystemUtilities","name":"@ulld/file-system-utils","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.126","relativeDirPath":"packages/editor","name":"@ulld/editor","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/full-form","name":"@ulld/full-form","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/calendar","name":"@ulld/calendar","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/math","name":"@ulld/math","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.7","relativeDirPath":"packages/schemas","name":"@ulld/schemas","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.126","relativeDirPath":"packages/cookbook","name":"@ulld/cookbook","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/developer","name":"@ulld/developer","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/hooks","name":"@ulld/hooks","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/note-network","name":"@ulld/note-network","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.119","relativeDirPath":"packages/database","name":"@ulld/database","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.125","relativeDirPath":"packages/build","name":"@ulld/build","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.126","relativeDirPath":"packages/bib-manager","name":"@ulld/bib-manager","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.0","relativeDirPath":"apps/template","name":"@ulld/template","type":"app","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/whiteboard","name":"@ulld/whiteboard","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/notebook","name":"@ulld/notebook","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/plot","name":"@ulld/plot","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.116","relativeDirPath":"packages/developer-schemas","name":"@ulld/developer-schemas","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/chat","name":"@ulld/chat","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.116","relativeDirPath":"packages/baseConfigs","name":"@ulld/base-configs","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/parsers","name":"@ulld/parsers","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/api","name":"@ulld/api","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/pdf","name":"@ulld/pdf","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.2","relativeDirPath":"packages/cli","name":"@ulld/cli","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.126","relativeDirPath":"packages/developer-cli","name":"@ulld/developer-cli","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.126","relativeDirPath":"apps/website","name":"@ulld/website","type":"app","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.20","relativeDirPath":"packages/testUtils","name":"@ulld/test-utils","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.116","relativeDirPath":"packages/types","name":"@ulld/types","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/landing-layouts","name":"@ulld/landing-layouts","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/command-palette","name":"@ulld/command-palette","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/task-manager","name":"@ulld/task-manager","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/equations","name":"@ulld/equations","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.116","relativeDirPath":"packages/tailwindAndShad","name":"@ulld/tailwind","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.126","relativeDirPath":"packages/journal","name":"@ulld/journal","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.116","relativeDirPath":"packages/jest-presets","name":"@ulld/jest-presets","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.126","relativeDirPath":"packages/kanban","name":"@ulld/kanban","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/embeddable-components","name":"@ulld/embeddable-components","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/configschema","name":"@ulld/configschema","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.126","relativeDirPath":"packages/render","name":"@ulld/render","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.124","relativeDirPath":"packages/ui","name":"@ulld/ui","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/state","name":"@ulld/state","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/navigation","name":"@ulld/navigation","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/default-image-map","name":"@ulld/default-image-map","type":"package","hasPluginConfig":false,"isTranspiled":false,"sourceLocation":"src"},{"currentVersion":"0.0.126","relativeDirPath":"packages/utilities","name":"@ulld/utilities","type":"package","hasPluginConfig":false,"isTranspiled":true,"sourceLocation":"dist"},{"currentVersion":"0.0.126","relativeDirPath":"packages/snippets","name":"@ulld/snippets","type":"package","hasPluginConfig":true,"isTranspiled":false,"sourceLocation":"src"}]
+    "internalPackageData": [
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/whiteboard",
+            "name": "@ulld/whiteboard",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/plot",
+            "name": "@ulld/plot",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/state",
+            "name": "@ulld/state",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/icons",
+            "name": "@ulld/icons",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/pdf",
+            "name": "@ulld/pdf",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.125",
+            "relativeDirPath": "packages/build",
+            "name": "@ulld/build",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/render",
+            "name": "@ulld/render",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/editor",
+            "name": "@ulld/editor",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/snippets",
+            "name": "@ulld/snippets",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.1",
+            "relativeDirPath": "packages/buildUtils",
+            "name": "@ulld/build-utils",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/note-network",
+            "name": "@ulld/note-network",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.0",
+            "relativeDirPath": "apps/template",
+            "name": "@ulld/template",
+            "type": "app",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/navigation",
+            "name": "@ulld/navigation",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/journal",
+            "name": "@ulld/journal",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/componentConfigs",
+            "name": "@ulld/component-configs",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/component-map",
+            "name": "@ulld/component-map",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.116",
+            "relativeDirPath": "packages/jest-presets",
+            "name": "@ulld/jest-presets",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/embeddable-components",
+            "name": "@ulld/embeddable-components",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.20",
+            "relativeDirPath": "packages/testUtils",
+            "name": "@ulld/test-utils",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/equations",
+            "name": "@ulld/equations",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/command-palette",
+            "name": "@ulld/command-palette",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.2",
+            "relativeDirPath": "packages/cli",
+            "name": "@ulld/cli",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/calendar",
+            "name": "@ulld/calendar",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.7",
+            "relativeDirPath": "packages/schemas",
+            "name": "@ulld/schemas",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.116",
+            "relativeDirPath": "packages/tailwindAndShad",
+            "name": "@ulld/tailwind",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/task-manager",
+            "name": "@ulld/task-manager",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.116",
+            "relativeDirPath": "packages/types",
+            "name": "@ulld/types",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/chat",
+            "name": "@ulld/chat",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/notebook",
+            "name": "@ulld/notebook",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/kanban",
+            "name": "@ulld/kanban",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.116",
+            "relativeDirPath": "packages/baseConfigs",
+            "name": "@ulld/base-configs",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.124",
+            "relativeDirPath": "packages/ui",
+            "name": "@ulld/ui",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.116",
+            "relativeDirPath": "packages/logger",
+            "name": "@ulld/logger",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.116",
+            "relativeDirPath": "packages/internalDevCli",
+            "name": "@ulld/internal-dev-cli",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/landing-layouts",
+            "name": "@ulld/landing-layouts",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.118",
+            "relativeDirPath": "packages/config-eslint",
+            "name": "@ulld/eslint-config",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/parsers",
+            "name": "@ulld/parsers",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/api",
+            "name": "@ulld/api",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.116",
+            "relativeDirPath": "packages/config-typescript",
+            "name": "@ulld/typescript-config",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "apps/website",
+            "name": "@ulld/website",
+            "type": "app",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/math",
+            "name": "@ulld/math",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/developer",
+            "name": "@ulld/developer",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/cookbook",
+            "name": "@ulld/cookbook",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.119",
+            "relativeDirPath": "packages/database",
+            "name": "@ulld/database",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/diagram",
+            "name": "@ulld/diagram",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.116",
+            "relativeDirPath": "packages/developer-schemas",
+            "name": "@ulld/developer-schemas",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/utilities",
+            "name": "@ulld/utilities",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/developer-cli",
+            "name": "@ulld/developer-cli",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/bib-manager",
+            "name": "@ulld/bib-manager",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/health-tracking",
+            "name": "@ulld/health-tracking",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.20",
+            "relativeDirPath": "packages/fileSystemUtilities",
+            "name": "@ulld/file-system-utils",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/configschema",
+            "name": "@ulld/configschema",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": true,
+            "sourceLocation": "dist"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/hooks",
+            "name": "@ulld/hooks",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/default-image-map",
+            "name": "@ulld/default-image-map",
+            "type": "package",
+            "hasPluginConfig": false,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        },
+        {
+            "currentVersion": "0.0.126",
+            "relativeDirPath": "packages/full-form",
+            "name": "@ulld/full-form",
+            "type": "package",
+            "hasPluginConfig": true,
+            "isTranspiled": false,
+            "sourceLocation": "src"
+        }
+    ]
 }
