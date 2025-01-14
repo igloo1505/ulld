@@ -384,11 +384,11 @@ importers:
         specifier: 14.2.3
         version: 14.2.3(next@14.2.3(@babel/core@7.25.8)(@playwright/test@1.47.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.77.8))(react@18.2.0)
       '@prisma/client':
-        specifier: 5.17.0
-        version: 5.17.0(prisma@6.2.1)
+        specifier: 6.2.1
+        version: 6.2.1(prisma@6.2.1)
       '@prisma/nextjs-monorepo-workaround-plugin':
-        specifier: 5.17.0
-        version: 5.17.0
+        specifier: 6.2.1
+        version: 6.2.1
       '@react-spring/three':
         specifier: 9.7.3
         version: 9.7.3(@react-three/fiber@8.16.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.163.0))(react@18.2.0)(three@0.163.0)
@@ -9774,8 +9774,8 @@ packages:
   '@prisma/internals@5.20.0':
     resolution: {integrity: sha512-n8ceNIpQbrLHNDcqsfmxtktpGrGNDKaGe9WNSz5B8J5ayQqarC6K/l9C3jCMNBjj8ZRI8nGN/B2yczdvEugs0w==}
 
-  '@prisma/nextjs-monorepo-workaround-plugin@5.17.0':
-    resolution: {integrity: sha512-kZ7RA2NhANbgQXWb2T/QmeRW5+I+9XZRcWG6c2nFnA7YhAidXDv2QBctKhtB369m86HBy8m2TFa9fCfo/pmEYQ==}
+  '@prisma/nextjs-monorepo-workaround-plugin@6.2.1':
+    resolution: {integrity: sha512-pUiLbQJQPvH4U8b6Ow984L+0Sz+yMfv9oOPjBj+RKs/ds9/8APnXyRlTaolmKFG+5uMWdGpll+cVN+eFt+CFEg==}
 
   '@prisma/prisma-schema-wasm@5.20.0-12.06fc58a368dc7be9fbbbe894adf8d445d208c284':
     resolution: {integrity: sha512-tE5ZxPwI381Mrzgd1/GLJFusD1SfVXGzOWRU2P9c9zk25nlfa6GkyaqCtSTIaINexPAAy4npsCoAFt2Hc4rqYQ==}
@@ -34284,7 +34284,7 @@ snapshots:
       arg: 5.0.2
       prompts: 2.4.2
 
-  '@prisma/nextjs-monorepo-workaround-plugin@5.17.0': {}
+  '@prisma/nextjs-monorepo-workaround-plugin@6.2.1': {}
 
   '@prisma/prisma-schema-wasm@5.20.0-12.06fc58a368dc7be9fbbbe894adf8d445d208c284': {}
 
