@@ -8,7 +8,7 @@
   "scripts": {
     "build": "LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release dotenv -e .env.local -- next build",
     "buildLocal": "LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release dotenv -e .env.local -- next build",
-    "db:generate": "dotenv -e .env.local -- prisma generate",
+    "db:generate": "dotenv -e .env.local -- prisma generate --schema=./src/prisma/schema.prisma",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev --schema=./src/prisma/schema.prisma",
     "db:migrateRemote": "dotenv -e .env.production -- prisma migrate dev --schema=./src/prisma/schema.prisma",
     "db:push": "prisma db push --skip-generate",
@@ -21,7 +21,7 @@
     "lint": "eslint",
     "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
     "migrateRemote": "dotenv -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.remote -- prisma migrate dev --schema=./src/prisma/schema.prisma",
-    "postinstall": "turbo db:generate --filter @ulld/website",
+    "postinstall": "pnpm turbo db:generate --filter @ulld/website",
     "prepareCommit:versionEverything": "wireit",
     "prepareCommit:webOnly": "wireit",
     "prepareWeb": "wireit",
