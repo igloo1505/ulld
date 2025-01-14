@@ -69,7 +69,7 @@
   "peerDependencies": {
     "@ulld/types": "workspace:*",
     "@ulld/typescript-config": "workspace:*",
-    "prisma": "5.17.0"
+    "prisma": "6.2.1"
   },
   "prisma": {
     "schema": "prisma/schema_postgres.prisma"
