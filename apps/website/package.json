@@ -6,7 +6,7 @@
     "src"
   ],
   "scripts": {
-    "build": "LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release dotenv -e .env.local -- next build",
+    "build": "pnpm db:generate && LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release dotenv -e .env.local -- next build",
     "buildLocal": "LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release dotenv -e .env.local -- next build",
     "db:generate": "dotenv -e .env.local -- prisma generate --schema=./src/prisma/schema.prisma",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev --schema=./src/prisma/schema.prisma",
@@ -58,8 +58,7 @@
       "command": "zsh ../../buildUtils/gatherTypes.zsh"
     }
   },
-  "packageManager": "pnpm@9.0.4",
-  "ulld-dependencies": {
+  "dependencies": {
     "@content-collections/core": "0.6.0",
     "@content-collections/mdx": "0.1.3",
     "@content-collections/next": "0.2.0",
@@ -151,7 +150,7 @@
     "unicode-emoji-json": "0.6.0",
     "zod": "3.23.8"
   },
-  "ulld-devDependencies": {
+  "devDependencies": {
     "@content-collections/core": "0.6.0",
     "@content-collections/mdx": "0.1.3",
     "@content-collections/next": "0.2.0",
@@ -241,7 +240,7 @@
     "tsx": "*",
     "twoslash": "0.2.6"
   },
-  "ulld-peerDependencies": {
+  "peerDependencies": {
     "@ulld/api": "workspace:*",
     "@ulld/base-configs": "workspace:*",
     "@ulld/bib-manager": "workspace:*",
@@ -268,5 +267,6 @@
     "@ulld/ui": "workspace:*",
     "@ulld/utilities": "workspace:*",
     "@ulld/whiteboard": "workspace:*"
-  }
+  },
+  "packageManager": "pnpm@9.0.4"
 }
