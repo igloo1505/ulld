@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import { LogoAsText } from "#/components/general/logoAsText";
 import { useLocalStorage } from "@ulld/hooks/useLocalStorage";
-import Link from "next/link"
+import Link from "next/link";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -12,35 +12,34 @@ import {
     AlertDialogTitle,
 } from "@ulld/tailwind/alert-dialog";
 import React, { useEffect, useRef, useState } from "react";
-import staticContent from "staticContent"
+import staticContent from "staticContent";
 
-const storageKey = "has-shown-pre-beta-alert"
-
+const storageKey = "has-shown-pre-beta-alert";
 
 const PreBetaAlertDialog = () => {
-    const timer = useRef<NodeJS.Timeout | null>(null)
-    const [hasShown, setHasShown] = useLocalStorage(storageKey, false)
-    const [show, setShow] = useState(false)
+    const timer = useRef<NodeJS.Timeout | null>(null);
+    const [hasShown, setHasShown] = useLocalStorage(storageKey, false);
+    const [show, setShow] = useState(false);
     useEffect(() => {
-       if(!hasShown){
+        if (!hasShown) {
             timer.current = setTimeout(() => {
-            setShow(true)
-            setHasShown(true)
-            }, 10000)
+                setShow(true);
+                setHasShown(true);
+            }, 10000);
         } else {
-            if(timer.current){
-                clearTimeout(timer.current)
+            if (timer.current) {
+                clearTimeout(timer.current);
             }
         }
-    }, [hasShown])
+    }, [hasShown]);
     return (
-        <AlertDialog 
+        <AlertDialog
             open={show}
             onOpenChange={() => {
-            if(timer.current){
-                    clearTimeout(timer.current)
+                if (timer.current) {
+                    clearTimeout(timer.current);
                 }
-            setShow(false)
+                setShow(false);
             }}
         >
             <AlertDialogContent>
@@ -48,14 +47,40 @@ const PreBetaAlertDialog = () => {
                     <AlertDialogTitle>This app is in pre-release.</AlertDialogTitle>
                     <AlertDialogDescription>
                         <div>
-                        <LogoAsText fontSize={13}/> is still in the very early stages of the initial release. Wrapping up the missing pieces and creating a simpler installation process would normally be a pretty simple and straight forward task, but my current living situation is complicating things <span className={"font-semibold italic"}>significantly</span>.
+                            <LogoAsText fontSize={13} /> is still in the very early stages of
+                            the initial release. Wrapping up the missing pieces and creating a
+                            simpler installation process would normally be a pretty simple and
+                            straight forward task, but my current living situation is
+                            complicating things{" "}
+                            <span className={"font-semibold italic"}>significantly</span>.
                         </div>
                         <div className={"mt-2"}>
-                        You can learn more about the motivation and plans for <LogoAsText fontSize={13} /> <Link href={staticContent.links.blog.ulldPreBetaLaunch} className={"text-link"}>here</Link>, and more about the atypical release of <LogoAsText fontSize={13} /> <a href={staticContent.links.blog.whyILeftWork} className={"text-link"}>here</a>, and if you like what you see, you can support the development of <LogoAsText fontSize={13} /> by clicking <Link 
-                                href={"/sponsor"}
+                            You can learn more about the motivation and plans for{" "}
+                            <LogoAsText fontSize={13} />{" "}
+                            <Link
+                                href={staticContent.links.blog.ulldPreBetaLaunch}
                                 className={"text-link"}
-                            >here</Link>.
+                            >
+                                here
+                            </Link>
+                            , and more about the atypical release of{" "}
+                            <LogoAsText fontSize={13} />{" "}
+                            <a
+                                href={staticContent.links.blog.whyILeftWork}
+                                className={"text-link"}
+                            >
+                                here
+                            </a>
+                            .{" "}
                         </div>
+                        <div className={"mt-2"}>
+                            If you you can, please consider supporting the development of <LogoAsText fontSize={13} /> by clicking{" "}
+                            <Link href={"/sponsor"} className={"text-link"}>
+                                here
+                            </Link>
+                            .
+                        </div>
+                        <div className={"mt-2"}>I am still <span className="italic font-bold">very</span> homeless. Your support goes towards finalizing the initial release of <LogoAsText /> and the continued into the model that inspired it goes further than you know.</div>
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
