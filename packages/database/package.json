@@ -14,7 +14,7 @@
     "db:generateInternalDevelopment": "prisma generate",
     "db:generateTargetProjectSchema": "run generateTargetDatabase",
     "db:migrate": "prisma generate",
-    "db:migrateTargetProjectSchema": "dotenv -e /Users/bigsexy/Desktop/current/ulld/.env.local -- prisma migrate dev --schema ./prisma/schema.prisma",
+    "db:migrateTargetProjectSchema": "dotenv -e /Users/bigsexy/Desktop/current/ulld/.env.local -- prisma migrate dev",
     "db:push": "prisma db push --skip-generate",
     "dev": "echo 'Add dev script here'",
     "generateTargetDatabase": "prisma generate",
@@ -34,7 +34,7 @@
       ]
     },
     "migrateDevelopmentDatabase": {
-      "command": "dotenv -e /Users/bigsexy/Desktop/current/ulld/.env.local -- prisma migrate dev --schema ./prisma/schema.prisma"
+      "command": "dotenv -e /Users/bigsexy/Desktop/current/ulld/.env.local -- prisma migrate dev"
     }
   },
   "types": "./src/db/main.ts",
