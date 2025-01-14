@@ -80,7 +80,7 @@ const PreBetaAlertDialog = () => {
                             </Link>
                             .
                         </div>
-                        <div className={"mt-2"}>I am still <span className="italic font-bold">very</span> homeless. Your support goes towards finalizing the initial release of <LogoAsText /> and the continued into the model that inspired it goes further than you know.</div>
+                        <div className={"mt-2"}>I am still <span className="italic font-bold">very</span> homeless. Your support towards finalizing the initial release of <LogoAsText /> and continued research into the model that inspired it goes further than you know.</div>
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
