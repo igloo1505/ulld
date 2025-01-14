@@ -21,7 +21,6 @@
     "lint": "eslint",
     "migrate:reset": "node ../../node_modules/dotenv-cli/cli.js -e ./website/.env.local -- prisma migrate reset --schema ./src/prisma/schema.prisma",
     "migrateRemote": "dotenv -e /Users/bigsexy/Desktop/current/ulld/apps/website/.env.remote -- prisma migrate dev --schema=./src/prisma/schema.prisma",
-    "postinstall": "turbo db:generate --filter @ulld/website",
     "prepareCommit:versionEverything": "wireit",
     "prepareCommit:webOnly": "wireit",
     "prepareWeb": "wireit",

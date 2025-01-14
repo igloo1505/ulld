@@ -14,7 +14,7 @@ const getConfigPath = () => {
     }
 
 export const readAppConfig = async (returnUndefinedIfNoConfig: boolean = true) => {
-    if(returnUndefinedIfNoConfig && process.env.ULLD_NO_CONFIG){
+    if(returnUndefinedIfNoConfig && process.env.ULLD_NO_CONFIG === "true"){
         return undefined
     }
     console.trace("readAppConfig")
@@ -50,7 +50,7 @@ export const readDevelopmentAppConfig = () => {
 
 // TODO: Set this to false by default and clean up all of the places where this is called.
 export const readAppConfigSync = (returnUndefinedIfNoConfig: boolean = true) => {
-    if(returnUndefinedIfNoConfig && process.env.ULLD_NO_CONFIG){
+    if(returnUndefinedIfNoConfig && process.env.ULLD_NO_CONFIG === "true"){
         return undefined
     }
     console.trace("readAppConfigSync")
