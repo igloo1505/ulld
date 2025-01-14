@@ -8,7 +8,7 @@
   "scripts": {
     "build": "LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release dotenv -e .env.local -- next build",
     "buildLocal": "LD_LIBRARY_PATH=/var/task/node_modules/canvas/build/Release dotenv -e .env.local -- next build",
-    "db:generate": "dotenv -e .env.local -- prisma generate --schema=src/prisma/schema.prisma",
+    "db:generate": "dotenv -e .env.local -- prisma generate",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev --schema=./src/prisma/schema.prisma",
     "db:migrateRemote": "dotenv -e .env.production -- prisma migrate dev --schema=./src/prisma/schema.prisma",
     "db:push": "prisma db push --skip-generate",
