@@ -1,322 +1,322 @@
 {
-    "name": "ulld",
-    "homepage": "https://uhlittlelessdum.com",
-    "keywords": [
-        "academic",
-        "markdown",
-        "math",
-        "mdx",
-        "note taking",
-        "research",
-        "STEM"
-    ],
-    "funding": [
-        {
-            "type": "paypal",
-            "url": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"
-        },
-        {
-            "type": "patreon",
-            "url": "https://www.patreon.com/uhlittlelessdum/about"
-        },
-        {
-            "type": "github",
-            "url": "https://github.com/igloo1505/ulld"
-        }
-    ],
-    "author": "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)",
-    "contributors": [
-        "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)"
-    ],
-    "private": true,
-    "scripts": {
-        "build": "./buildUtils/wireitUtils/synchronousBuild.sh",
-        "build:hack": "wireit",
-        "bundle": "wireit",
-        "checkPackages": "syncpack list-mismatches",
-        "ci:publish": "pnpm publish -r --no-git-checks",
-        "clean": "turbo clean",
-        "forcePackgeMatch": "pnpm syncpack fix-mismatches",
-        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-        "gatherTypes": "wireit",
-        "lint": "turbo lint",
-        "postinstall": "echo 'manypkg check'",
-        "prepare": "husky",
-        "publish-packages": "changeset version && changeset publish",
-        "publish-packages-full": "turbo run build lint test && changeset version && changeset publish",
-        "pull:template": "git subtree pull --prefix=apps/template --squash",
-        "push:template": "git subtree push --prefix=apps/template template template",
-        "release": "release-it",
-        "release:beta": "release-it --preRelease=beta",
-        "release:beta:no-npm": "release-it --preRelease=beta --no-npm",
-        "release:dry": "release-it --dry-run --no-npm",
-        "release:info": "release-it --release-version",
-        "release:no-npm": "release-it --no-npm",
-        "test": "turbo test",
-        "test:watch": "turbo test:watch",
-        "typecheck": "turbo typecheck",
-        "typedoc": "typedoc",
-        "update-ulldBase": "git subtree push --prefix=apps/template/ ulldBase main",
-        "whenOnWifi": "zsh ./buildUtils/network/runWhenBackOnline.zsh"
+  "name": "ulld",
+  "homepage": "https://uhlittlelessdum.com",
+  "keywords": [
+    "academic",
+    "markdown",
+    "math",
+    "mdx",
+    "note taking",
+    "research",
+    "STEM"
+  ],
+  "funding": [
+    {
+      "type": "paypal",
+      "url": "https://www.paypal.com/donate/?hosted_button_id=W22RTUJ2RPZDU"
     },
-    "wireit": {
-        "build:hack": {
-            "dependencies": [
-                "gatherTypes",
-                "./packages/database:generateTargetDatabase",
-                "./apps/template:syncTemplatePackage",
-                "bundle"
-            ]
-        },
-        "bundle": {
-            "command": "turbo build --filter=!@ulld/template --filter=!@ulld/website --filter=!@ulld/internal-dev-cli --filter=!@ulld/cli --filter=!@ulld/developer-cli",
-            "clean": false
-        },
-        "gatherTypes": {
-            "command": "zsh ./buildUtils/gatherTypes.zsh",
-            "clean": false
-        }
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/uhlittlelessdum/about"
     },
-    "engines": {
-        "node": ">=20"
-    },
-    "dependencies": {
-        "turbo": "2.0.9"
-    },
-    "devDependencies": {
-        "@changesets/cli": "2.27.5",
-        "@commitlint/cli": "^19.5.0",
-        "@commitlint/config-conventional": "19.5.0",
-        "@edge-runtime/vm": "4.0.3",
-        "@liuli-util/vite-plugin-node": "^0.9.0",
-        "@manypkg/cli": "0.21.4",
-        "@microsoft/api-extractor": "7.47.7",
-        "@playwright/test": "1.47.0",
-        "@react-mock/fetch": "0.3.0",
-        "@react-mock/localstorage": "0.1.2",
-        "@react-mock/state": "0.1.8",
-        "@release-it/bumper": "^6.0.1",
-        "@rollup/plugin-commonjs": "26.0.1",
-        "@rollup/plugin-node-resolve": "15.2.3",
-        "@svgr/rollup": "8.1.0",
-        "@testing-library/dom": "9.3.4",
-        "@testing-library/jest-dom": "6.4.2",
-        "@testing-library/react": "16.0.1",
-        "@testing-library/user-event": "14.5.2",
-        "@tsconfig/next": "2.0.1",
-        "@tsconfig/node20": "20.1.4",
-        "@tsconfig/recommended": "1.0.7",
-        "@types/eslint": "8.56.10",
-        "@types/mdx": "2.0.13",
-        "@types/npm-registry-fetch": "8.0.7",
-        "@types/react": "18.2.79",
-        "@types/react-dom": "18.2.25",
-        "@types/tinycolor2": "1.4.6",
-        "@vitejs/plugin-react": "4.3.1",
-        "@vitest/coverage-istanbul": "2.0.5",
-        "@vitest/ui": "2.0.5",
-        "@welldone-software/why-did-you-render": "8.0.3",
-        "autoprefixer": "10.4.19",
-        "axios-test-instance": "8.0.0",
-        "chai": "5.1.1",
-        "changesets-release-it-plugin": "^0.1.2",
-        "cli-testing-library": "2.0.2",
-        "commitlint": "19.4.1",
-        "deep-eql": "5.0.2",
-        "dotenv-cli": "latest",
-        "esbuild-plugin-preserve-directives": "0.0.8",
-        "eslint": "8.57.1",
-        "eslint-plugin-testing-library": "6.2.2",
-        "framer-motion": "11.5.4",
-        "glob": "11.0.0",
-        "grunt": "1.6.1",
-        "husky": "^9.1.6",
-        "is-lite": "1.2.1",
-        "jest": "29.7.0",
-        "jest-cli": "29.7.0",
-        "jest-extended": "4.0.2",
-        "jsdom": "25.0.0",
-        "knip": "5.32.0",
-        "lucide-react": "0.428.0",
-        "mocha": "10.3.0",
-        "mocha-axios": "1.4.2",
-        "moxios": "0.4.0",
-        "msq": "1.0.1",
-        "node-mocks-http": "1.15.1",
-        "npm-registry-fetch": "17.1.0",
-        "nyc": "15.1.0",
-        "playwright-testing-library": "4.5.0",
-        "postcss": "8.4.39",
-        "postcss-modules": "6.0.0",
-        "postcss-preset-env": "9.5.0",
-        "prettier": "3.3.3",
-        "r2curl": "0.2.4",
-        "react": "18.2.0",
-        "react-children-utilities": "2.10.0",
-        "react-dom": "18.2.0",
-        "react-hooks-testing-library": "0.6.0",
-        "react-responsive": "10.0.0",
-        "react-test-renderer": "18.3.1",
-        "release-it": "^17.10.0",
-        "rollup-plugin-node-externals": "^7.1.3",
-        "sass": "1.77.8",
-        "serialize-javascript": "6.0.2",
-        "server-only": "0.0.1",
-        "sinon": "18.0.0",
-        "string-hash": "1.1.3",
-        "supertest": "6.3.4",
-        "syncpack": "12.4.0",
-        "tinycolor2": "1.6.0",
-        "ts-jest": "29.2.5",
-        "ts-node": "10.9.2",
-        "tsconfig": "7.0.0",
-        "tsup": "8.0.1",
-        "type-fest": "4.26.1",
-        "typescript": "5.5.4",
-        "typescript-eslint": "8.0.0",
-        "typescript-plugin-css-modules": "5.1.0",
-        "unbuild": "2.0.0",
-        "vite": "5.4.2",
-        "vite-bundle-analyzer": "^0.13.1",
-        "vite-node": "^2.1.5",
-        "vite-plugin-dts": "4.0.3",
-        "vite-plugin-sass-dts": "^1.3.29",
-        "vite-plugin-static-copy": "^2.1.0",
-        "vite-plugin-tips": "^2.1.2",
-        "vitest": "2.0.5",
-        "vitest-mock-extended": "^2.0.2",
-        "wireit": "0.14.9",
-        "wireit-package": "1.1.2",
-        "wireit-visualizer": "1.5.12",
-        "zod": "3.23.8",
-        "zod-to-ts": "1.2.0"
-    },
-    "prisma": {
-        "schema": "packages/database/prisma/schema_postgres.prisma"
-    },
-    "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
-    "pnpm": {
-        "peerDependencyRules": {
-            "ignoreMissing": [
-                "@babel/*",
-                "@eslint/*",
-                "**eslint**"
-            ],
-            "allowAny": [
-                "@babel/*",
-                "eslint",
-                "**eslint**"
-            ]
-        },
-        "overrides": {
-            "unified": "^11.0.5",
-            "mapbox-gl": "^1.13.3",
-            "typescript": "^5.5.2",
-            "react": "18.2.0",
-            "react-dom": "18.2.0",
-            "@types/react": "~18.2.79",
-            "@types/react-dom": "~18.2.25"
-        }
-    },
-    "release-it": {
-        "git": {
-            "commitMessage": "chore(release): v${version}",
-            "push": true,
-            "commit": true,
-            "tag": true,
-            "requireCommits": false,
-            "requireCleanWorkingDir": false
-        },
-        "github": {
-            "release": true,
-            "draft": true
-        },
-        "npm": {
-            "publish": false,
-            "ignoreVersion": false
-        },
-        "plugins": {
-            "@release-it/conventional-changelog": {
-                "preset": "react",
-                "infile": "CHANGELOG.md",
-                "header": "# Changelog"
-            }
-        },
-        "hooks": {
-            "before:init": "echo 'Add useful release hooks here.'",
-            "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
-        }
-    },
-    "commitlint": {
-        "rules": {
-            "header-max-length": [
-                2,
-                "always",
-                130
-            ]
-        },
-        "extends": [
-            "@commitlint/config-conventional"
-        ]
-    },
-    "dum-commit": {
-        "type": {
-            "height": 10,
-            "opts": [
-                "Fix",
-                "Feat",
-                "Docs",
-                "Style",
-                "Refactor",
-                "Test",
-                "Chore",
-                "Revert",
-                "WIP"
-            ]
-        },
-        "scope": {
-            "height": 10,
-            "opts": [
-                "Build",
-                "Dev tools",
-                "API",
-                "Website",
-                "Template App",
-                "Config",
-                "Package:Bib-Manager",
-                "Package:Command Palette",
-                "Package:Database",
-                "Package:Editor",
-                "Package:Embeddable Components",
-                "Package:Equations",
-                "Package:Form",
-                "Package:Hooks",
-                "Package:Configschema",
-                "Package:Schemas",
-                "Package:Types",
-                "Package:UI",
-                "Package:Utilities",
-                "Package:Whiteboard",
-                "Package:Snippets",
-                "Package:Render",
-                "Package:Plot",
-                "Package:Pdf",
-                "Package:Notebook",
-                "Package:Parsers",
-                "Package:Navigation",
-                "Package:Math",
-                "Package:Logger",
-                "Package:Landing-Layouts",
-                "Package:Kanban",
-                "Package:Journal",
-                "Package:Icons",
-                "Package:FileSystemUtilities",
-                "Package:Diagram",
-                "Package:Cookbook",
-                "Package:ComponentConfigs",
-                "Package:Chat",
-                "Package:Calendar"
-            ]
-        }
+    {
+      "type": "github",
+      "url": "https://github.com/igloo1505/ulld"
     }
+  ],
+  "author": "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)",
+  "contributors": [
+    "Andrew Mueller <aiglinski414@gmail.com> (https://uhlittlelessdum.com)"
+  ],
+  "private": true,
+  "scripts": {
+    "build": "./buildUtils/wireitUtils/synchronousBuild.sh",
+    "build:hack": "wireit",
+    "bundle": "wireit",
+    "checkPackages": "syncpack list-mismatches",
+    "ci:publish": "pnpm publish -r --no-git-checks",
+    "clean": "turbo clean",
+    "forcePackgeMatch": "pnpm syncpack fix-mismatches",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "gatherTypes": "wireit",
+    "lint": "turbo lint",
+    "postinstall": "echo 'manypkg check'",
+    "prepare": "husky",
+    "publish-packages": "changeset version && changeset publish",
+    "publish-packages-full": "turbo run build lint test && changeset version && changeset publish",
+    "pull:template": "git subtree pull --prefix=apps/template --squash",
+    "push:template": "git subtree push --prefix=apps/template template template",
+    "release": "release-it",
+    "release:beta": "release-it --preRelease=beta",
+    "release:beta:no-npm": "release-it --preRelease=beta --no-npm",
+    "release:dry": "release-it --dry-run --no-npm",
+    "release:info": "release-it --release-version",
+    "release:no-npm": "release-it --no-npm",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch",
+    "typecheck": "turbo typecheck",
+    "typedoc": "typedoc",
+    "update-ulldBase": "git subtree push --prefix=apps/template/ ulldBase main",
+    "whenOnWifi": "zsh ./buildUtils/network/runWhenBackOnline.zsh"
+  },
+  "wireit": {
+    "build:hack": {
+      "dependencies": [
+        "gatherTypes",
+        "./packages/database:generateTargetDatabase",
+        "./apps/template:syncTemplatePackage",
+        "bundle"
+      ]
+    },
+    "bundle": {
+      "command": "turbo build --filter=!@ulld/template --filter=!@ulld/website --filter=!@ulld/internal-dev-cli --filter=!@ulld/cli --filter=!@ulld/developer-cli",
+      "clean": false
+    },
+    "gatherTypes": {
+      "command": "zsh ./buildUtils/gatherTypes.zsh",
+      "clean": false
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "turbo": "2.0.9"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.27.5",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "19.5.0",
+    "@edge-runtime/vm": "4.0.3",
+    "@liuli-util/vite-plugin-node": "^0.9.0",
+    "@manypkg/cli": "0.21.4",
+    "@microsoft/api-extractor": "7.47.7",
+    "@playwright/test": "1.47.0",
+    "@react-mock/fetch": "0.3.0",
+    "@react-mock/localstorage": "0.1.2",
+    "@react-mock/state": "0.1.8",
+    "@release-it/bumper": "^6.0.1",
+    "@rollup/plugin-commonjs": "26.0.1",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "@svgr/rollup": "8.1.0",
+    "@testing-library/dom": "9.3.4",
+    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/react": "16.0.1",
+    "@testing-library/user-event": "14.5.2",
+    "@tsconfig/next": "2.0.1",
+    "@tsconfig/node20": "20.1.4",
+    "@tsconfig/recommended": "1.0.7",
+    "@types/eslint": "8.56.10",
+    "@types/mdx": "2.0.13",
+    "@types/npm-registry-fetch": "8.0.7",
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25",
+    "@types/tinycolor2": "1.4.6",
+    "@vitejs/plugin-react": "4.3.1",
+    "@vitest/coverage-istanbul": "2.0.5",
+    "@vitest/ui": "2.0.5",
+    "@welldone-software/why-did-you-render": "8.0.3",
+    "autoprefixer": "10.4.19",
+    "axios-test-instance": "8.0.0",
+    "chai": "5.1.1",
+    "changesets-release-it-plugin": "^0.1.2",
+    "cli-testing-library": "2.0.2",
+    "commitlint": "19.4.1",
+    "deep-eql": "5.0.2",
+    "dotenv-cli": "latest",
+    "esbuild-plugin-preserve-directives": "0.0.8",
+    "eslint": "8.57.1",
+    "eslint-plugin-testing-library": "6.2.2",
+    "framer-motion": "11.5.4",
+    "glob": "11.0.0",
+    "grunt": "1.6.1",
+    "husky": "^9.1.6",
+    "is-lite": "1.2.1",
+    "jest": "29.7.0",
+    "jest-cli": "29.7.0",
+    "jest-extended": "4.0.2",
+    "jsdom": "25.0.0",
+    "knip": "5.32.0",
+    "lucide-react": "0.428.0",
+    "mocha": "10.3.0",
+    "mocha-axios": "1.4.2",
+    "moxios": "0.4.0",
+    "msq": "1.0.1",
+    "node-mocks-http": "1.15.1",
+    "npm-registry-fetch": "17.1.0",
+    "nyc": "15.1.0",
+    "playwright-testing-library": "4.5.0",
+    "postcss": "8.4.39",
+    "postcss-modules": "6.0.0",
+    "postcss-preset-env": "9.5.0",
+    "prettier": "3.3.3",
+    "r2curl": "0.2.4",
+    "react": "18.2.0",
+    "react-children-utilities": "2.10.0",
+    "react-dom": "18.2.0",
+    "react-hooks-testing-library": "0.6.0",
+    "react-responsive": "10.0.0",
+    "react-test-renderer": "18.3.1",
+    "release-it": "^17.10.0",
+    "rollup-plugin-node-externals": "^7.1.3",
+    "sass": "1.77.8",
+    "serialize-javascript": "6.0.2",
+    "server-only": "0.0.1",
+    "sinon": "18.0.0",
+    "string-hash": "1.1.3",
+    "supertest": "6.3.4",
+    "syncpack": "12.4.0",
+    "tinycolor2": "1.6.0",
+    "ts-jest": "29.2.5",
+    "ts-node": "10.9.2",
+    "tsconfig": "7.0.0",
+    "tsup": "8.0.1",
+    "type-fest": "4.26.1",
+    "typescript": "5.5.4",
+    "typescript-eslint": "8.0.0",
+    "typescript-plugin-css-modules": "5.1.0",
+    "unbuild": "2.0.0",
+    "vite": "5.4.2",
+    "vite-bundle-analyzer": "^0.13.1",
+    "vite-node": "^2.1.5",
+    "vite-plugin-dts": "4.0.3",
+    "vite-plugin-sass-dts": "^1.3.29",
+    "vite-plugin-static-copy": "^2.1.0",
+    "vite-plugin-tips": "^2.1.2",
+    "vitest": "2.0.5",
+    "vitest-mock-extended": "^2.0.2",
+    "wireit": "0.14.9",
+    "wireit-package": "1.1.2",
+    "wireit-visualizer": "1.5.12",
+    "zod": "3.23.8",
+    "zod-to-ts": "1.2.0"
+  },
+  "prisma": {
+    "schema": "packages/database/prisma/schema_postgres.prisma"
+  },
+  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@babel/*",
+        "@eslint/*",
+        "**eslint**"
+      ],
+      "allowAny": [
+        "@babel/*",
+        "eslint",
+        "**eslint**"
+      ]
+    },
+    "overrides": {
+      "unified": "^11.0.5",
+      "mapbox-gl": "^1.13.3",
+      "typescript": "^5.5.2",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "@types/react": "~18.2.79",
+      "@types/react-dom": "~18.2.25"
+    }
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): v${version}",
+      "push": true,
+      "commit": true,
+      "tag": true,
+      "requireCommits": false,
+      "requireCleanWorkingDir": false
+    },
+    "github": {
+      "release": true,
+      "draft": true
+    },
+    "npm": {
+      "publish": false,
+      "ignoreVersion": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "react",
+        "infile": "CHANGELOG.md",
+        "header": "# Changelog"
+      }
+    },
+    "hooks": {
+      "before:init": "echo 'Add useful release hooks here.'",
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    }
+  },
+  "commitlint": {
+    "rules": {
+      "header-max-length": [
+        2,
+        "always",
+        130
+      ]
+    },
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dum-commit": {
+    "type": {
+      "height": 10,
+      "opts": [
+        "Fix",
+        "Feat",
+        "Docs",
+        "Style",
+        "Refactor",
+        "Test",
+        "Chore",
+        "Revert",
+        "WIP"
+      ]
+    },
+    "scope": {
+      "height": 10,
+      "opts": [
+        "Build",
+        "Dev tools",
+        "API",
+        "Website",
+        "Template App",
+        "Config",
+        "Package:Bib-Manager",
+        "Package:Command Palette",
+        "Package:Database",
+        "Package:Editor",
+        "Package:Embeddable Components",
+        "Package:Equations",
+        "Package:Form",
+        "Package:Hooks",
+        "Package:Configschema",
+        "Package:Schemas",
+        "Package:Types",
+        "Package:UI",
+        "Package:Utilities",
+        "Package:Whiteboard",
+        "Package:Snippets",
+        "Package:Render",
+        "Package:Plot",
+        "Package:Pdf",
+        "Package:Notebook",
+        "Package:Parsers",
+        "Package:Navigation",
+        "Package:Math",
+        "Package:Logger",
+        "Package:Landing-Layouts",
+        "Package:Kanban",
+        "Package:Journal",
+        "Package:Icons",
+        "Package:FileSystemUtilities",
+        "Package:Diagram",
+        "Package:Cookbook",
+        "Package:ComponentConfigs",
+        "Package:Chat",
+        "Package:Calendar"
+      ]
+    }
+  }
 }
