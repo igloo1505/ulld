@@ -59,7 +59,7 @@
       "clean": false
     },
     "generateJsonSchemas": {
-      "command": "tsx src/__scripts__/generateJsonSchemas.ts",
+      "command": "dotenv -e .env.local -- tsx src/__scripts__/generateJsonSchemas.ts",
       "clean": false
     },
     "updateJsonSchemas": {

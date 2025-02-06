@@ -44,6 +44,11 @@ fig.update_layout(
 
 fig.show(renderer="browser")
 
-htmlPath = f"{os.environ["ULLD_DEV_ROOT"]}/apps/website/generatedContent/plots/fOfdxdsphiEqualsc.html"
+htmlPath = f"{os.environ["ULLD_DEV_ROOT"]
+              }/apps/website/generatedContent/plots/fOfdxdsphiEqualsc.html"
 
-fig.write_html(htmlPath)
+# fig.write_html(htmlPath)
+
+imgPath = "/Users/bigsexy/Desktop/paper/angularMomentum.png"
+
+fig.write_image(imgPath, "png")
