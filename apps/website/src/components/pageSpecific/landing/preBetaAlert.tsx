@@ -44,16 +44,30 @@ const PreBetaAlertDialog = () => {
         >
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>This app is in pre-release.</AlertDialogTitle>
+                    <AlertDialogTitle>
+                        This app is currently being rewritten with Flutter and Rust.
+                    </AlertDialogTitle>
                     <AlertDialogDescription>
-                        <div>
-                            <LogoAsText fontSize={13} /> is still in the very early stages of
-                            the initial release. Wrapping up the missing pieces and creating a
-                            simpler installation process would normally be a pretty simple and
-                            straight forward task, but my current living situation is
-                            complicating things{" "}
-                            <span className={"font-semibold italic"}>significantly</span>.
+                        <div className="text-red">
+                            You should <span className="font-bold font-italic">not</span> try
+                            to install this application in it's current form.
                         </div>
+                        <p>
+                            The web application was abondoned and this application is now
+                            being rewrittin in Flutter and Rust to incorporate all of the same
+                            features in a native application with ummatched performance. While
+                            this release won't be ready until early fall, there is already
+                            Rust powered plot generators, native, decentrialized peer-to-peer
+                            communication and more.
+                        </p>
+                        <p>
+                            The new app will be amazing, but don't even bother trying to
+                            install this web app. It was an estimated 1.8 million lines of
+                            code according to some software, but it became so over engineered
+                            that a complete rewrite was what's best in the long run. You can
+                            expect a beta by the end of July, maybe June if there aren't too
+                            many hickups.
+                        </p>
                         <div className={"mt-2"}>
                             You can learn more about the motivation and plans for{" "}
                             <LogoAsText fontSize={13} />{" "}
@@ -74,13 +88,19 @@ const PreBetaAlertDialog = () => {
                             .{" "}
                         </div>
                         <div className={"mt-2"}>
-                            If you you can, please consider supporting the development of <LogoAsText fontSize={13} /> by clicking{" "}
+                            If you you can, please consider supporting the development of{" "}
+                            <LogoAsText fontSize={13} /> by clicking{" "}
                             <Link href={"/sponsor"} className={"text-link"}>
                                 here
                             </Link>
                             .
                         </div>
-                        <div className={"mt-2"}>I am still <span className="italic font-bold">very</span> homeless. Your support towards finalizing the initial release of <LogoAsText /> and continued research into the model that inspired it goes further than you know.</div>
+                        <div className={"mt-2"}>
+                            I am still <span className="italic font-bold">very</span>{" "}
+                            homeless. Your support towards finalizing the initial release of{" "}
+                            <LogoAsText /> and continued research into the model that inspired
+                            it goes further than you know.
+                        </div>
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
