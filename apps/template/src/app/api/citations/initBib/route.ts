@@ -9,8 +9,6 @@ import { BibEntry } from "@ulld/api/classes/prismaMdxRelations/bibEntry";
 import { prisma } from "@ulld/database";
 import { bibCoreSchema } from "@ulld/api/generalPrismaSchemas";
 
-
-
 export async function POST(req: NextRequest) {
     try {
         const appConfig = await readAppConfig();

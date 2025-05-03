@@ -53,11 +53,11 @@ const PreBetaAlertDialog = () => {
                             to install this application in it's current form.
                         </div>
                         <p>
-                            The web application was abondoned and this application is now
-                            being rewrittin in Flutter and Rust to incorporate all of the same
-                            features in a native application with ummatched performance. While
+                            The web application was abandoned and this application is now
+                            being rewritten in Flutter and Rust to incorporate all of the same
+                            features in a native application with unmatched performance. While
                             this release won't be ready until early fall, there is already
-                            Rust powered plot generators, native, decentrialized peer-to-peer
+                            Rust powered plot generators, native, decentralized peer-to-peer
                             communication and more.
                         </p>
                         <p>
@@ -66,7 +66,7 @@ const PreBetaAlertDialog = () => {
                             code according to some software, but it became so over engineered
                             that a complete rewrite was what's best in the long run. You can
                             expect a beta by the end of July, maybe June if there aren't too
-                            many hickups.
+                            many hick-ups.
                         </p>
                         <div className={"mt-2"}>
                             You can learn more about the motivation and plans for{" "}
